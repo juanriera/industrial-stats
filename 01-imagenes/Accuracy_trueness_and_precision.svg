@@ -1,0 +1,489 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="550"
+   height="280"
+   version="1.0"
+   id="svg3071"
+   inkscape:version="1.1 (c68e22c387, 2021-05-23)"
+   sodipodi:docname="Accuracy_trueness_and_precision.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#"
+   xmlns:cc="http://creativecommons.org/ns#"
+   xmlns:dc="http://purl.org/dc/elements/1.1/">
+  <sodipodi:namedview
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1"
+     objecttolerance="10"
+     gridtolerance="10"
+     guidetolerance="10"
+     inkscape:pageopacity="0"
+     inkscape:pageshadow="2"
+     inkscape:window-width="1600"
+     inkscape:window-height="1251"
+     id="namedview3117"
+     showgrid="false"
+     inkscape:zoom="0.75961538"
+     inkscape:cx="260"
+     inkscape:cy="140.20253"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg3071"
+     inkscape:pagecheckerboard="0" />
+  <metadata
+     id="metadata3073">
+    <rdf:RDF>
+      <cc:Work
+         rdf:about="">
+        <dc:format>image/svg+xml</dc:format>
+        <dc:type
+           rdf:resource="http://purl.org/dc/dcmitype/StillImage" />
+        <cc:license
+           rdf:resource="http://www.gnu.org/copyleft/fdl.html" />
+      </cc:Work>
+    </rdf:RDF>
+  </metadata>
+  <defs
+     id="defs3075" />
+  <g
+     systemLanguage="cs"
+     xml:lang="cs"
+     id="g22"
+     style="font-size:20px;font-family:Arial, sans-serif;text-anchor:start">
+    <text
+       x="24"
+       y="74"
+       id="text3079"
+       style="line-height:0%">Hustota</text>
+    <text
+       x="24"
+       y="96"
+       id="text3081"
+       style="line-height:0%">pravděpodobnosti</text>
+    <text
+       x="240"
+       y="78"
+       id="text3109"
+       style="line-height:0%">Pravdivost</text>
+    <text
+       x="402"
+       y="141"
+       id="text3111"
+       style="line-height:0%">Přesnost</text>
+    <text
+       x="410"
+       y="247"
+       id="text3113"
+       style="line-height:0%">Hodnota</text>
+    <text
+       x="150"
+       y="27"
+       id="text3115"
+       style="line-height:0%">Referenční hodnota</text>
+  </g>
+  <g
+     systemLanguage="de"
+     xml:lang="de"
+     id="g36"
+     style="font-size:20px;font-family:Arial, sans-serif;text-anchor:start">
+    <text
+       x="24"
+       y="74"
+       id="text24"
+       style="line-height:0%">Wahrscheinlich-</text>
+    <text
+       x="24"
+       y="96"
+       id="text26"
+       style="line-height:0%">keitsdichte</text>
+    <text
+       x="240"
+       y="78"
+       id="text28"
+       style="line-height:0%">Richtigkeit</text>
+    <text
+       x="402"
+       y="141"
+       id="text30"
+       style="line-height:0%">Präzision</text>
+    <text
+       x="430"
+       y="247"
+       id="text32"
+       style="line-height:0%">Wert</text>
+    <text
+       x="185"
+       y="27"
+       id="text34"
+       style="line-height:0%">Sollwert</text>
+  </g>
+  <text
+     x="20.050632"
+     y="66.101257"
+     id="text38"
+     style="font-size:20px;line-height:0%;font-family:Arial, sans-serif;text-anchor:start">Densidad de</text>
+  <text
+     x="24"
+     y="90.734169"
+     id="text40"
+     style="font-size:20px;line-height:0%;font-family:Arial, sans-serif;text-anchor:start">probabilidad</text>
+  <text
+     x="278.75949"
+     y="80.050629"
+     id="text42"
+     style="font-size:20px;line-height:0%;font-family:Arial, sans-serif;text-anchor:start">Veracidad</text>
+  <text
+     x="363.82278"
+     y="267.37973"
+     id="text44"
+     style="font-size:20px;line-height:0%;font-family:Arial, sans-serif;text-anchor:start">Precisión</text>
+  <text
+     x="480.55695"
+     y="254.89873"
+     id="text46"
+     style="font-size:20px;line-height:0%;font-family:Arial, sans-serif;text-anchor:start">Valor</text>
+  <text
+     x="154.48102"
+     y="25.683538"
+     id="text48"
+     style="font-size:20px;line-height:0%;font-family:Arial, sans-serif;text-anchor:start">Valor de referencia</text>
+  <g
+     systemLanguage="fr"
+     xml:lang="fr"
+     id="g64"
+     style="font-size:20px;font-family:Arial, sans-serif;text-anchor:start">
+    <text
+       x="24"
+       y="74"
+       id="text52"
+       style="line-height:0%">Densité de</text>
+    <text
+       x="24"
+       y="96"
+       id="text54"
+       style="line-height:0%">probabilité</text>
+    <text
+       x="240"
+       y="78"
+       id="text56"
+       style="line-height:0%">Justesse</text>
+    <text
+       x="402"
+       y="141"
+       id="text58"
+       style="line-height:0%">Fidélité</text>
+    <text
+       x="420"
+       y="247"
+       id="text60"
+       style="line-height:0%">Valeur</text>
+    <text
+       x="155"
+       y="27"
+       id="text62"
+       style="line-height:0%">Valeur de consigne</text>
+  </g>
+  <g
+     systemLanguage="hu"
+     xml:lang="hu"
+     id="g77"
+     style="font-size:20px;font-family:Arial, sans-serif;text-anchor:start">
+    <text
+       x="24"
+       y="74"
+       id="text66"
+       style="line-height:0%">gyakoriság</text>
+    <text
+       x="240"
+       y="78"
+       id="text68"
+       style="line-height:0%">pontosság</text>
+    <text
+       x="402"
+       y="141"
+       id="text70"
+       style="line-height:0%">precizitás</text>
+    <text
+       x="430"
+       y="247"
+       id="text72"
+       style="line-height:0%">érték</text>
+    <text
+       x="165"
+       y="27"
+       id="text74"
+       style="line-height:0%">valódi érték</text>
+    <text
+       x="300"
+       y="47"
+       id="text3116"
+       style="line-height:0%">megfigyelt érték</text>
+  </g>
+  <g
+     systemLanguage="nl"
+     xml:lang="nl"
+     id="g89"
+     style="font-size:20px;font-family:Arial, sans-serif;text-anchor:start">
+    <text
+       x="24"
+       y="74"
+       id="text79"
+       style="line-height:0%">Kansdichtheid</text>
+    <text
+       x="240"
+       y="78"
+       id="text81"
+       style="line-height:0%">Juistheid</text>
+    <text
+       x="402"
+       y="141"
+       id="text83"
+       style="line-height:0%">Precisie</text>
+    <text
+       x="400"
+       y="247"
+       id="text85"
+       style="line-height:0%">Waarde</text>
+    <text
+       x="145"
+       y="27"
+       id="text87"
+       style="line-height:0%">Referentiewaarde</text>
+  </g>
+  <g
+     systemLanguage="sh"
+     xml:lang="sh"
+     id="g103"
+     style="font-size:20px;font-family:Arial, sans-serif;text-anchor:start">
+    <text
+       x="24"
+       y="74"
+       id="text91"
+       style="line-height:0%">Gustina</text>
+    <text
+       x="24"
+       y="96"
+       id="text93"
+       style="line-height:0%">verovatnoće</text>
+    <text
+       x="240"
+       y="78"
+       id="text95"
+       style="line-height:0%">Tačnost</text>
+    <text
+       x="402"
+       y="141"
+       id="text97"
+       style="line-height:0%">Preciznost</text>
+    <text
+       x="405"
+       y="247"
+       id="text99"
+       style="line-height:0%">Vrednost</text>
+    <text
+       x="140"
+       y="27"
+       id="text101"
+       style="line-height:0%">Referentna vrednost</text>
+  </g>
+  <g
+     systemLanguage="sk"
+     xml:lang="sk"
+     id="g117"
+     style="font-size:20px;font-family:Arial, sans-serif;text-anchor:start">
+    <text
+       x="24"
+       y="74"
+       id="text105"
+       style="line-height:0%">Hustota</text>
+    <text
+       x="24"
+       y="96"
+       id="text107"
+       style="line-height:0%">pravdepodobnosti</text>
+    <text
+       x="240"
+       y="78"
+       id="text109"
+       style="line-height:0%">Pravdivosť</text>
+    <text
+       x="402"
+       y="141"
+       id="text111"
+       style="line-height:0%">Precíznosť</text>
+    <text
+       x="410"
+       y="247"
+       id="text113"
+       style="line-height:0%">Hodnota</text>
+    <text
+       x="150"
+       y="27"
+       id="text115"
+       style="line-height:0%">Referenčná hodnota</text>
+  </g>
+  <g
+     systemLanguage="sl"
+     xml:lang="sl"
+     id="g131"
+     style="font-size:20px;font-family:Arial, sans-serif;text-anchor:start">
+    <text
+       x="24"
+       y="74"
+       id="text119"
+       style="line-height:0%">gostota</text>
+    <text
+       x="24"
+       y="96"
+       id="text121"
+       style="line-height:0%">verjetnosti</text>
+    <text
+       x="240"
+       y="78"
+       id="text123"
+       style="line-height:0%">natančnost</text>
+    <text
+       x="402"
+       y="141"
+       id="text125"
+       style="line-height:0%">točnost</text>
+    <text
+       x="410"
+       y="247"
+       id="text127"
+       style="line-height:0%">vrednost</text>
+    <text
+       x="150"
+       y="27"
+       id="text129"
+       style="line-height:0%">referenčna vrednost</text>
+  </g>
+  <g
+     systemLanguage="tr"
+     xml:lang="tr"
+     id="g145"
+     style="font-size:20px;font-family:Arial, sans-serif;text-anchor:start">
+    <text
+       x="24"
+       y="74"
+       id="text133"
+       style="line-height:0%">Olasılık</text>
+    <text
+       x="24"
+       y="96"
+       id="text135"
+       style="line-height:0%">yoğunluğu</text>
+    <text
+       x="240"
+       y="78"
+       id="text137"
+       style="line-height:0%">Doğruluk</text>
+    <text
+       x="402"
+       y="141"
+       id="text139"
+       style="line-height:0%">Kesinlik</text>
+    <text
+       x="420"
+       y="247"
+       id="text141"
+       style="line-height:0%">Değer</text>
+    <text
+       x="185"
+       y="27"
+       id="text143"
+       style="line-height:0%">Referans Değer</text>
+  </g>
+  <g
+     systemLanguage="uk"
+     xml:lang="uk"
+     id="g159"
+     style="font-size:20px;font-family:Arial, sans-serif;text-anchor:start">
+    <text
+       x="24"
+       y="74"
+       id="text147"
+       style="line-height:0%">Розподіл</text>
+    <text
+       x="24"
+       y="96"
+       id="text149"
+       style="line-height:0%">імовірності</text>
+    <text
+       x="240"
+       y="78"
+       id="text151"
+       style="line-height:0%">Точність</text>
+    <text
+       x="402"
+       y="141"
+       id="text153"
+       style="line-height:0%">Прецизійність</text>
+    <text
+       x="385"
+       y="247"
+       id="text155"
+       style="line-height:0%">Значення</text>
+    <text
+       x="125"
+       y="27"
+       id="text157"
+       style="line-height:0%">Контрольне значення</text>
+  </g>
+  <path
+     d="M 149.40294,46.206382 V 227.92026 h 343.37195"
+     style="fill:none;stroke:#000000;stroke-width:2.15365"
+     id="path1191" />
+  <path
+     d="m 487.89716,231.08343 6.39364,-3.16317 -6.39364,-3.16316 z"
+     style="fill:#000000;stroke:#000000;stroke-width:2.15365"
+     id="path1193" />
+  <path
+     d="m 152.56611,51.084109 -3.16317,-6.326335 -3.16317,6.326335 z"
+     style="fill:#000000;stroke:#000000;stroke-width:2.15365"
+     id="path1195" />
+  <path
+     d="M 397.40875,56.234297 V 227.92026"
+     style="fill:none;stroke:#000000;stroke-width:1.07682"
+     id="path1197" />
+  <path
+     d="M 247.99955,36.94824 V 227.85997"
+     style="fill:none;stroke:#000000;stroke-width:1.13552"
+     id="path1199" />
+  <path
+     d="m 247.99955,88.000577 h 149.4092"
+     style="fill:none;stroke:#000000;stroke-width:1.07682"
+     id="path1201" />
+  <path
+     d="m 389.20534,91.231046 6.32634,-3.230469 -6.32634,-3.163168 z"
+     style="fill:#000000;stroke:#000000;stroke-width:2.15365"
+     id="path1203" />
+  <path
+     d="m 256.33553,84.837409 -6.39363,3.163168 6.39363,3.230469 z"
+     style="fill:#000000;stroke:#000000;stroke-width:2.15365"
+     id="path1205" />
+  <path
+     d="M 333.80889,247.03387 H 464.17178"
+     style="fill:none;stroke:#000000;stroke-width:1.07682"
+     id="path1207" />
+  <path
+     d="m 456.63401,250.19704 6.32634,-3.16317 -6.32634,-3.23047 z"
+     style="fill:#000000;stroke:#000000;stroke-width:2.15365"
+     id="path1209" />
+  <path
+     d="m 341.41395,243.8034 -6.39364,3.23047 6.39364,3.16317 z"
+     style="fill:#000000;stroke:#000000;stroke-width:2.15365"
+     id="path1211" />
+  <path
+     d="m 317.92575,227.92026 h 0.2692 0.60571 l 0.87492,-0.0673 h 1.48064 l 1.88444,-0.1346 2.08634,-0.0673 2.42285,-0.13461 2.42285,-0.1346 2.42286,-0.1346 2.42285,-0.26921 2.08634,-0.2019 2.08635,-0.26921 1.81714,-0.2692 1.61523,-0.26921 1.48063,-0.40381 1.34603,-0.40381 1.21143,-0.4038 1.14412,-0.47111 1.07682,-0.60572 0.87492,-0.53841 0.87492,-0.67301 0.80762,-0.60572 0.87492,-0.80761 0.80762,-0.80762 0.74031,-0.94222 0.80762,-1.07682 0.67301,-1.14413 0.74032,-1.14412 0.67301,-1.41333 0.74032,-1.41333 0.67301,-1.54794 0.67302,-1.68253 0.60571,-1.74984 0.67301,-1.81714 0.60572,-1.95174 0.53841,-1.95174 0.67301,-2.01905 0.53842,-2.15364 0.60571,-2.15365 0.53841,-2.35555 0.67301,-2.35555 0.40381,-1.81714 0.40381,-1.88444 0.47111,-2.01904 0.53841,-2.01904 0.47111,-2.22095 0.53841,-2.15365 0.47111,-2.28825 0.53842,-2.42285 0.60571,-2.35555 0.53841,-2.49015 0.53841,-2.55746 0.60572,-2.55745 0.60571,-2.55746 0.60571,-2.62475 0.60571,-2.62476 0.67302,-2.62475 0.53841,-2.62476 0.60571,-2.55746 0.60572,-2.49015 0.60571,-2.42285 0.60571,-2.42285 0.53841,-2.28825 0.53841,-2.22095 0.60572,-2.08634 0.53841,-2.08635 0.60571,-1.95174 0.47111,-1.95174 0.47111,-1.74984 0.53841,-1.61523 0.47111,-1.61524 0.80762,-2.49015 0.80762,-2.35555 0.80762,-2.08635 0.74031,-1.88444 0.80762,-1.88444 0.74031,-1.68253 0.80762,-1.48064 0.80762,-1.34602 0.74032,-1.21143 0.74031,-1.07682 0.67302,-0.87492 0.67301,-0.80762 0.60571,-0.60571 0.53841,-0.60571 0.53842,-0.4038 0.47111,-0.40381 0.47111,-0.26921 0.47111,-0.2692 0.80761,-0.47112 0.74032,-0.3365 0.74032,-0.26921 0.80761,-0.2019 0.67302,-0.20191 0.60571,-0.0673 0.26921,-0.0673 h 0.0673"
+     style="fill:none;stroke:#000000;stroke-width:1.07682"
+     id="path1213" />
+  <path
+     d="m 476.89175,227.92026 h -0.26921 -0.53841 l -0.94222,-0.0673 h -1.48063 l -1.81714,-0.1346 -2.15365,-0.0673 -2.42285,-0.13461 -2.42285,-0.1346 -2.42285,-0.1346 -2.42285,-0.26921 -2.08635,-0.2019 -2.08634,-0.26921 -1.81714,-0.2692 -1.61524,-0.26921 -1.48063,-0.40381 -1.34603,-0.40381 -1.21142,-0.4038 -1.14413,-0.47111 -1.07682,-0.60572 -0.87492,-0.53841 -0.87492,-0.67301 -0.80762,-0.60572 -0.87491,-0.80761 -0.80762,-0.80762 -0.74032,-0.94222 -0.80761,-1.07682 -0.67302,-1.14413 -0.74031,-1.14412 -0.67302,-1.41333 -0.74031,-1.41333 -0.67302,-1.54794 -0.67301,-1.68253 -0.60572,-1.74984 -0.60571,-1.81714 -0.67301,-1.95174 -0.53842,-1.95174 -0.67301,-2.01905 -0.53841,-2.15364 -0.60571,-2.15365 -0.53842,-2.35555 -0.53841,-2.35555 -0.53841,-1.81714 -0.40381,-1.88444 -0.47111,-2.01904 -0.53841,-2.01904 -0.47111,-2.22095 -0.47111,-2.15365 -0.53841,-2.28825 -0.53841,-2.42285 -0.60572,-2.35555 -0.53841,-2.49015 -0.53841,-2.55746 -0.60571,-2.55745 -0.60571,-2.55746 -0.60572,-2.62475 -0.60571,-2.62476 -0.60571,-2.62475 -0.60572,-2.62476 -0.60571,-2.55746 -0.60571,-2.49015 -0.60572,-2.42285 -0.60571,-2.42285 -0.53841,-2.28825 -0.53841,-2.22095 -0.60571,-2.08634 -0.53842,-2.08635 -0.60571,-1.95174 -0.47111,-1.95174 -0.47111,-1.74984 -0.53841,-1.61523 -0.47111,-1.61524 -0.80762,-2.49015 -0.80761,-2.35555 -0.80762,-2.08635 -0.74032,-1.88444 -0.80762,-1.88444 -0.74031,-1.68253 -0.80762,-1.48064 -0.74031,-1.34602 -0.80762,-1.21143 -0.67302,-1.07682 -0.74031,-0.87492 -0.60571,-0.80762 -0.67302,-0.60571 -0.53841,-0.60571 -0.53841,-0.4038 -0.47111,-0.40381 -0.47111,-0.26921 -0.40381,-0.2692 -0.87492,-0.47112 -0.74032,-0.3365 -0.74031,-0.26921 -0.80762,-0.2019 -0.67301,-0.20191 -0.60572,-0.0673 -0.2692,-0.0673 h -0.0673"
+     style="fill:none;stroke:#000000;stroke-width:1.07682"
+     id="path1215" />
+</svg>

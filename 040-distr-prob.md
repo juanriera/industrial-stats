@@ -1,0 +1,24 @@
+# Probabilidad e inferencia
+
+## Introducción al concepto de probabilidad
+
+## Distribuciones de probabilidad
+
+### Distribución normal
+
+[How to predict record-shattering weather events | The Economist](https://www.economist.com/science-and-technology/2023/02/08/extreme-weather-events-are-getting-more-frequent)
+
+![media-y-varianza](01-imagenes\media-y-varianza.png)
+
+
+
+[Explained: Sigma | MIT News | Massachusetts Institute of Technology](https://news.mit.edu/2012/explained-sigma-0209)
+
+![img](01-imagenes\curva-normal.jpg)
+
+### Otras distribuciones
+
+### Gráficos de probabilidad
+
+
+

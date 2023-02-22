@@ -1,0 +1,363 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<svg
+   width="819"
+   height="207.66667"
+   overflow="hidden"
+   version="1.1"
+   id="svg47"
+   sodipodi:docname="palanca.svg"
+   inkscape:export-filename="palanca.svg"
+   inkscape:export-xdpi="300"
+   inkscape:export-ydpi="300"
+   inkscape:version="1.2.1 (9c6d41e410, 2022-07-14)"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview13203"
+     pagecolor="#ffffff"
+     bordercolor="#666666"
+     borderopacity="1.0"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     showgrid="false"
+     inkscape:zoom="1.7264957"
+     inkscape:cx="388.64851"
+     inkscape:cy="103.96782"
+     inkscape:window-width="1600"
+     inkscape:window-height="1251"
+     inkscape:window-x="2391"
+     inkscape:window-y="-9"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="svg47" />
+  <defs
+     id="defs5">
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath909">
+      <g
+         id="g913">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect911" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath915">
+      <g
+         id="g919">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect917" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath921">
+      <g
+         id="g925">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect923" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath927">
+      <g
+         id="g931">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect929" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath933">
+      <g
+         id="g937">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect935" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath939">
+      <g
+         id="g943">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect941" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath945">
+      <g
+         id="g949">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect947" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath951">
+      <g
+         id="g955">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect953" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath957">
+      <g
+         id="g961">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect959" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath963">
+      <g
+         id="g967">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect965" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath969">
+      <g
+         id="g973">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect971" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath975">
+      <g
+         id="g979">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect977" />
+      </g>
+    </clipPath>
+    <clipPath
+       clipPathUnits="userSpaceOnUse"
+       id="clipPath981">
+      <g
+         id="g985">
+        <rect
+           x="0"
+           y="0"
+           width="1280"
+           height="720"
+           id="rect983" />
+      </g>
+    </clipPath>
+  </defs>
+  <rect
+     x="240.5"
+     y="410.5"
+     width="745"
+     height="4"
+     stroke="#000000"
+     stroke-width="1.33333"
+     stroke-miterlimit="8"
+     id="rect9"
+     clip-path="url(#clipPath981)"
+     transform="translate(-221,-255.5)" />
+  <path
+     d="m 461.5,462.5 29.5,-46 29.5,46 z"
+     stroke="#2f528f"
+     stroke-width="1.33333"
+     stroke-miterlimit="8"
+     fill="#4472c4"
+     fill-rule="evenodd"
+     id="path11"
+     clip-path="url(#clipPath975)"
+     transform="translate(-221,-255.5)" />
+  <path
+     d="m 249.5,380 c 0,-16.845 13.208,-30.5 29.5,-30.5 16.292,0 29.5,13.655 29.5,30.5 0,16.845 -13.208,30.5 -29.5,30.5 -16.292,0 -29.5,-13.655 -29.5,-30.5 z"
+     stroke="#2f528f"
+     stroke-width="1.33333"
+     stroke-miterlimit="8"
+     fill="#4472c4"
+     fill-rule="evenodd"
+     id="path13"
+     clip-path="url(#clipPath969)"
+     transform="translate(-221,-255.5)" />
+  <path
+     d="m 492.485,317 h 473.072 v 1 H 492.485 Z m 7.753,5.599 -8.74,-5.099 8.74,-5.098 c 0.239,-0.14 0.545,-0.059 0.684,0.179 0.139,0.239 0.059,0.545 -0.18,0.684 l -8,4.667 v -0.864 l 8,4.667 c 0.239,0.139 0.319,0.445 0.18,0.684 -0.139,0.238 -0.445,0.319 -0.684,0.18 z m 457.566,-10.197 8.741,5.098 -8.741,5.099 c -0.238,0.139 -0.544,0.058 -0.683,-0.18 -0.14,-0.239 -0.059,-0.545 0.18,-0.684 l 8,-4.667 v 0.864 l -8,-4.667 c -0.239,-0.139 -0.32,-0.445 -0.18,-0.683 0.139,-0.239 0.445,-0.32 0.683,-0.18 z"
+     id="path15"
+     clip-path="url(#clipPath963)"
+     transform="translate(-221,-255.5)" />
+  <rect
+     x="603"
+     y="276"
+     width="251"
+     height="30"
+     fill="#ffffff"
+     id="rect17"
+     clip-path="url(#clipPath957)"
+     transform="translate(-221,-255.5)" />
+  <text
+     font-family="Calibri, Calibri_MSFontService, sans-serif"
+     font-weight="400"
+     font-size="19px"
+     id="text19"
+     x="421.60901"
+     y="41.5">Brazo de potencia (BP)</text>
+  <path
+     d="m 279.49,316 h 206.953 v 1 H 279.49 Z m 7.748,5.599 -8.74,-5.099 8.74,-5.098 c 0.239,-0.14 0.545,-0.059 0.684,0.179 0.139,0.239 0.059,0.545 -0.18,0.684 l -8,4.667 v -0.864 l 8,4.667 c 0.239,0.139 0.319,0.445 0.18,0.684 -0.139,0.238 -0.445,0.319 -0.684,0.18 z m 191.456,-10.197 8.741,5.098 -8.741,5.099 c -0.238,0.139 -0.544,0.058 -0.684,-0.18 -0.139,-0.239 -0.058,-0.545 0.18,-0.684 l 8,-4.667 v 0.864 l -8,-4.667 c -0.238,-0.139 -0.319,-0.445 -0.18,-0.683 0.14,-0.239 0.446,-0.32 0.684,-0.18 z"
+     id="path21"
+     clip-path="url(#clipPath951)"
+     transform="translate(-221,-255.5)" />
+  <rect
+     x="261"
+     y="282"
+     width="238"
+     height="29"
+     fill="#ffffff"
+     id="rect23"
+     clip-path="url(#clipPath945)"
+     transform="translate(-221,-255.5)" />
+  <text
+     font-family="Calibri, Calibri_MSFontService, sans-serif"
+     font-weight="400"
+     font-size="19px"
+     id="text25"
+     x="65.636993"
+     y="46.5">Brazo de resistencia</text>
+  <text
+     font-family="Calibri, Calibri_MSFontService, sans-serif"
+     font-weight="400"
+     font-size="19px"
+     id="text27"
+     x="220.19"
+     y="46.5">(BR)</text>
+  <path
+     d="m 277.9,258.5 -0.4,154.077"
+     stroke="#4472c4"
+     stroke-linejoin="round"
+     stroke-miterlimit="10"
+     stroke-dasharray="4, 3"
+     fill="none"
+     fill-rule="evenodd"
+     id="path29"
+     clip-path="url(#clipPath939)"
+     transform="translate(-221,-255.5)" />
+  <path
+     d="m 490.5,255.5 -10e-5,155.508"
+     stroke="#4472c4"
+     stroke-linejoin="round"
+     stroke-miterlimit="10"
+     stroke-dasharray="4, 3"
+     fill="none"
+     fill-rule="evenodd"
+     id="path31"
+     clip-path="url(#clipPath933)"
+     transform="translate(-221,-255.5)" />
+  <path
+     d="m 966.5,255.5 -10e-5,155.508"
+     stroke="#4472c4"
+     stroke-linejoin="round"
+     stroke-miterlimit="10"
+     stroke-dasharray="4, 3"
+     fill="none"
+     fill-rule="evenodd"
+     id="path33"
+     clip-path="url(#clipPath927)"
+     transform="translate(-221,-255.5)" />
+  <rect
+     x="893"
+     y="425"
+     width="147"
+     height="33"
+     fill="#ffffff"
+     id="rect35"
+     clip-path="url(#clipPath921)"
+     transform="translate(-221,-255.5)" />
+  <text
+     font-family="Calibri, Calibri_MSFontService, sans-serif"
+     font-weight="400"
+     font-size="24px"
+     id="text37"
+     x="713.15399"
+     y="193.5">Fuerza</text>
+  <rect
+     x="221"
+     y="425"
+     width="148"
+     height="34"
+     fill="#ffffff"
+     id="rect39"
+     clip-path="url(#clipPath915)"
+     transform="translate(-221,-255.5)" />
+  <text
+     font-family="Calibri, Calibri_MSFontService, sans-serif"
+     font-weight="400"
+     font-size="24px"
+     id="text41"
+     x="19.973007"
+     y="194.5">Resistencia</text>
+  <path
+     d="m 940.5,382.5 h 13 v -49 h 26 v 49 h 13 l -26,26 z"
+     stroke="#2f528f"
+     stroke-width="1.33333"
+     stroke-miterlimit="8"
+     fill="#4472c4"
+     fill-rule="evenodd"
+     id="path43"
+     clip-path="url(#clipPath909)"
+     transform="translate(-221,-255.5)" />
+</svg>

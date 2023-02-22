@@ -1,0 +1,418 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introducción a la estadística industrial y la ciencia de datos utilizando R y Microsoft Excel - 1&nbsp; Introducción</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./020-prep-datos.html" rel="next">
+<link href="./index.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 20,
+  "language": {
+    "search-no-results-text": "Sín resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la busqueda",
+    "search-hide-matches-text": "Esconder resultados adicionales",
+    "search-more-match-text": "hay más resultados en este documento",
+    "search-more-matches-text": "más resultados en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Eviar"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating slimcontent">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+    <div class="container-fluid d-flex justify-content-between">
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></h1>
+      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
+        <i class="bi bi-chevron-right"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Introducción a la estadística industrial y la ciencia de datos utilizando R y Microsoft Excel</a> 
+    </div>
+      </div>
+      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+      </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">Prefacio</a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./010-intro.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./020-prep-datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Obtener y preparar los datos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./030-presentacion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Resumen y presentación de los datos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./040-prob-inf.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probabilidad e inferencia</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./050-relacion-xy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./060-anova.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./070-sistema-medicion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./080-control-proc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./090-disexp.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./100-casos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Cómo usar lo aprendido</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./110-anexo-metodos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Anexo: Recetario de métodos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./120-bibliografia.html" class="sidebar-item-text sidebar-link">Bibliografía</a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Indice de contenidos</h2>
+   
+  <ul>
+  <li><a href="#el-pensamiento-estadístico" id="toc-el-pensamiento-estadístico" class="nav-link active" data-scroll-target="#el-pensamiento-estadístico"><span class="toc-section-number">1.1</span>  El pensamiento estadístico</a></li>
+  <li><a href="#estadística-y-ciencia-de-datos-en-la-actividad-industrial" id="toc-estadística-y-ciencia-de-datos-en-la-actividad-industrial" class="nav-link" data-scroll-target="#estadística-y-ciencia-de-datos-en-la-actividad-industrial"><span class="toc-section-number">1.2</span>  Estadística y ciencia de datos en la actividad industrial</a></li>
+  <li><a href="#reproducibilidad-de-los-análisis" id="toc-reproducibilidad-de-los-análisis" class="nav-link" data-scroll-target="#reproducibilidad-de-los-análisis"><span class="toc-section-number">1.3</span>  Reproducibilidad de los análisis</a></li>
+  <li><a href="#consideraciones-éticas" id="toc-consideraciones-éticas" class="nav-link" data-scroll-target="#consideraciones-éticas"><span class="toc-section-number">1.4</span>  Consideraciones éticas</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content page-columns page-full" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title d-none d-lg-block"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+    
+  </div>
+  
+
+</header>
+
+<div class="quarto-figure quarto-figure-center column-page-inset-right page-columns page-full">
+<figure class="figure page-columns page-full">
+<p class="page-columns page-full"><img src="01-imagenes%5C1520188654204.jpg" class="column-page-inset-right img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Un grupo de trabajo en planta ante un panel de variables indicadoras</figcaption><p></p>
+</figure>
+</div>
+<p>La estadística es la ciencia de aprender a partir de los datos. Implica la recolección, análisis y presentación de los datos, y su utilización para tomar decisiones y resolver problemas.</p>
+<p>Hay muchos aspectos del trabajo industrial que implican recoger datos, trabajar con ellos y utilizarlos para resolver un problema; el uso de la estadística es sólo una herramienta más, tan importante como cualquier otra disciplina en el bagaje de conocimientos de un científico, ingeniero o técnico industrial.</p>
+<p>Los métodos estadísticos nos ayudan a describir y comprender la <strong>variabilidad</strong>. Cuando hablamos de variabilidad queremos decir que sucesivas observaciones de un mismo proceso o sistema no dan exactamente los mismos resultados. Por ejemplo, el consumo de gasolina de un coche no es siempre igual, sino que varía de manera considerable. Esta variación depende de muchos factores, como la forma de conducir, el tipo de carretera, la situación del propio vehículo (presión de neumáticos, compresión del motor, …), la marca de la gasolina, el octanaje, o incluso las condiciones meteorológicas. Todos estos factores son causas de <strong>variabilidad</strong> en el consumo de gasolina. La estadística nos permite analizar estos <strong>factores</strong> y determinar cuáles son los más importantes o tienen mayor impacto en el consumo; una vez conocidos, podemos actuar sobre ellos. El objetivo industrial más importante es la <strong>reducción de la variabilidad</strong>.</p>
+<p>En este libro aprenderemos a utilizar herramientas diversas, tanto estadísticas como de la ciencia de datos, para realizar nuestro análisis; para su interpretación necesitamos siempre el conocimiento del proceso industrial que estamos analizando. Para aprender de los datos necesitamos más que sólo los números. En un análisis de la producción de un producto, por ejemplo, los números significan poco sin un conocimiento del proceso; los valores de pH, temperatura o concentración de lactosa influyen en el resultado del proceso de forma diferente . Los datos son números dentro de un contexto, y necesitamos conocer este contexto para dar sentido a los números.</p>
+
+<div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes%5CLean%20Visual%20Management%20Boards%20in%20Factories%20Keep%20It%20Simple.jpg" class="img-fluid figure-img"></p>
+</figure>
+</div></div><section id="el-pensamiento-estadístico" class="level2 page-columns page-full" data-number="1.1">
+<h2 data-number="1.1" class="anchored" data-anchor-id="el-pensamiento-estadístico"><span class="header-section-number">1.1</span> El pensamiento estadístico</h2>
+<div class="page-columns page-full"><p>Los ingenieros y técnicos resuelven problemas de interés para la empresa y la sociedad mediante la aplicación de los principios del método científico, siguiendo estos pasos: </p><div class="no-row-height column-margin column-container"><span class="aside">Razonamiento estadístico</span></div></div>
+<ol type="1">
+<li>Preparar una descripción clara y concisa del problema</li>
+<li>Identificar, al menos de forma tentativa, los principales factores que afectan al problema, o que podrían tener un papel en su resolución</li>
+<li>Proponer un modelo para el problema, usando conocimiento científico o tecnológico del proceso en estudio, dejando constancia de las limitaciones del modelo propuesto.</li>
+<li>Realizar experimentos apropiados y recolectar datos para probar o validar el modelo tentativo o las conclusiones previas obtenidas en los pasos 2 y 3</li>
+<li>Refinar el modelo sobre la base de los datos observados</li>
+<li>Manipular el modelo para desarrollar una solución al problema</li>
+<li>Realizar un experimento adecuado para confirmar que la solución propuesta es efectiva y eficiente.</li>
+<li>Sacar las conclusiones oportunas o hacer recomendaciones basándose en la solución encontrada.</li>
+</ol>
+</section>
+<section id="estadística-y-ciencia-de-datos-en-la-actividad-industrial" class="level2 page-columns page-full" data-number="1.2">
+<h2 data-number="1.2" class="anchored" data-anchor-id="estadística-y-ciencia-de-datos-en-la-actividad-industrial"><span class="header-section-number">1.2</span> Estadística y ciencia de datos en la actividad industrial</h2>
+<div class="page-columns page-full"><p>Los campos de la estadística y de la ciencia de datos tienen muchas semejanzas entre sí. Ambos tienen como objetivo la obtención de datos y su análisis para resolver problemas prácticos del mundo real. </p><div class="no-row-height column-margin column-container"><span class="aside">Diferencias y semejanzas entre estadística y ciencia de datos</span></div></div>
+<p>Estas semejanzas pueden hacer pensar que la ciencia de datos y la estadística son sólo nombres diferentes para la misma especialización profesional, pero no es así. La ciencia de datos es un campo multidisciplinar que requiere habilidades como programación, computación, aprendizaje automático y algorítmica. La ciencia de la estadística permite a los científicos de datos validar y fiabilizar sus análisis, y la ciencia de datos permite expandir la aplicación de la estadística a lo que se ha dado en llamar <em>Big Data</em>.</p>
+<p>El papel de un profesional de la estadística ha existido desde muchos años antes de que existiese el papel del científico de datos. Muchas industrias y empresas han establecido puestos para estadísticos en áreas como salud, seguridad, marketing, econometría, y otros muchos campos. Las funciones principales de un profesional estadístico incluyen (aunque no se limitan a) el diseño de experimentos, la coordinación de estudios, la creación de estimaciones y previsiones y el desarrollo de encuestas y muestreos. Para ello se necesita una buena base en matemáticas y diseño experimental. También se requieren algunas llamadas <em>habilidades blandas</em>(<em>soft skills</em>), como las que se pueden necesitar para presentar adecuadamente los resultados obtenidos a la Dirección o a un grupo de accionistas.</p>
+<p>Los científicos de datos adquieren, limpian, estructuran y modelizan datos para identificar tendencias, generar conocimiento útil y hacer predicciones. Su formación en computación les permite analizar grandes cantidades de datos y construir sistemas de aprendizaje automático para analizar los <em>big data</em>. También preparan visualizaciones de los datos para comunicar los resultados a los equipos ejecutivos de la empresa con el fin de que las decisiones que se tomen estén basadas en sus recomendaciones basadas en datos reales.</p>
+<p>En contraste, los conjuntos de datos sobre los que trabajan los estadísticos suelen ser más reducidos que los de los científicos d datos. Suelen trabajar en investigación de mercados, diseño de encuestas o sondeos, tanto en la empresa como en instituciones gubernamentales. Como investigadores de mercados, diseñan experimentos y ensayos usando los métodos estadísticos apropiados, buscan relaciones causa-efecto (problemas de causación frente a correlación), aseguran que los tamaños muestrales son suficientes, e intentan cuantificar sus resultados de una forma que sea intuitiva para los receptores de sus informes. Los modelos utilizados por estadísticos y científicos de datos se solapan en muchas ocasiones, pero los estadísticos no suelen necesitar la sofisticación de los métodos computacionales y lenguajes de programación usados por los científicos de datos para manejar los <em>big data</em></p>
+<p>Hay algunas habilidades básicas que cualquier profesional que trabaje con datos debería tener, sea estadístico o científicos de datos. Entre ellas, la resolución de problemas y habiidades analíticas, conocimientos de SQL, R, Python o Excel.</p>
+</section>
+<section id="reproducibilidad-de-los-análisis" class="level2" data-number="1.3">
+<h2 data-number="1.3" class="anchored" data-anchor-id="reproducibilidad-de-los-análisis"><span class="header-section-number">1.3</span> Reproducibilidad de los análisis</h2>
+<p><a href="https://en.wikipedia.org/wiki/Literate_programming">Literate programming - Wikipedia</a></p>
+<p><a href="https://hbiostat.org/rr/#reproducible-research-bbr-chapter-21">Reproducible Research (hbiostat.org)</a></p>
+<p><a href="https://hbiostat.org/rr/#reproducible-research-bbr-chapter-21">rr (hbiostat.org)</a></p>
+<p>En el mundo científico y técnico cada vez cobra más importancia el concepto de <strong>reproducibilidad de los análisis</strong>, sobre todo cuando se trata de comunicar o publicar el resultado de un trabajo o de una investigación. Medios, como la prestigiosa revista <em>Science</em>, se han hecho eco de ello <span class="citation" data-cites="science2015">(<a href="120-bibliografia.html#ref-science2015" role="doc-biblioref">Buck 2015</a>)</span>. Por otra parte, la utilización de un flujo de trabajo basado en hojas de cálculo hace difícil garantizar esta reproducibilidad, y a veces puede llevar a cometer errores de consecuencias graves <span class="citation" data-cites="ferrero2018 ryssdal2013">(<a href="120-bibliografia.html#ref-ferrero2018" role="doc-biblioref">Ferrero 2018</a>; <a href="120-bibliografia.html#ref-ryssdal2013" role="doc-biblioref">Ryssdal 2013</a>)</span>.</p>
+<p>Jesse Sadler <span class="citation" data-cites="sadler2017">(<a href="120-bibliografia.html#ref-sadler2017" role="doc-biblioref">Sadler 2017</a>)</span> lo explica así:</p>
+<blockquote class="blockquote">
+<p>El peligro de la hoja de cálculo deriva de su propia estructura. La mezcla de entrada de datos, análisis y visualización hace que sea fácil confundir las celdas que contienen datos sin procesar con las que son el resultado del análisis. La forma de definir la lógica programática, tal como la selección de qué celdas se van a sumar, mediante clics del mouse, significa que una acción errónea de clic o arrastre puede provocar errores o la sobreescritura de datos. Solo hace falta pensar en el pavor del momento en el que vas a cerrar una hoja de cálculo y el programa te pregunta si te gustaría guardar los cambios. Te hace preguntarte. ¿Quiero guardar? ¿Qué cambios hice? Debido a que la lógica en una hoja de cálculo se realiza a través de clics del mouse, no hay forma de rastrear de manera efectiva qué cambios se han realizado en una sesión o en la producción de un gráfico. Los errores cometidos con Excel pueden tener consecuencias graves, como se puso de manifiesto tras la controversia alrededor del <a href="https://nadaesgratis.es/garicano/el-error-de-reinhardt-y-rogoff">artículo de Carmen Reinhart y Kenneth Rogoff</a> sobre la deuda nacional de los EEUU.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Ciertamente hay razones legítimas por las que las personas usan por defecto hojas de cálculo para el análisis de datos en lugar de usar un lenguaje de programación como R. Las hojas de cálculo son mucho más atractivas y confortables de lo que cualquier lenguaje de programación podría ser para un recién llegado. Aprender a programar es intimidante y no es algo que se pueda hacer rápida o fácilmente. Las aplicaciones de interfaz gráfica de usuario (GUI) son mucho menos desalentadoras que una interfaz de línea de comandos. En segundo lugar, las hojas de cálculo son una buena herramienta para la entrada de datos, y es tentador pasar directamente al análisis de datos, manteniendo todo en el mismo documento. Finalmente, la naturaleza interactiva de las hojas de cálculo y la capacidad de crear gráficos que cambian en función de las entradas es muy atractiva, incluso si desbloquear completamente este potencial implica un conocimiento bastante complejo sobre cómo funciona el programa. La primera ventaja de las hojas de cálculo sobre la programación no se supera fácilmente, pero las dos últimas se basan en lo que creo que es un flujo de trabajo problemático. En lugar de usar un par de aplicaciones monolíticas, a menudo un conjunto de aplicaciones de oficina, para hacer todo, creo que es mejor dividir el flujo de trabajo entre varias aplicaciones que hacen una cosa bien.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Crear una división clara entre la entrada y el análisis de datos es una de las principales razones por las que el análisis de datos en un lenguaje de programación es preferible al software de hoja de cálculo. Todavía uso hojas de cálculo, pero su limito su uso estrictamente a la entrada de datos. En un programa de hoja de cálculo, el análisis manipula directamente la única copia de los datos sin procesar. Por el contrario, con R se importan los datos, creando un objeto que es una copia de los datos sin procesar. Todas las manipulaciones de los datos se realizan en esta copia, y los datos originales nunca se alteran de ninguna manera. Esto significa que no hay forma de estropear los datos sin procesar. La manipulación de una copia de los datos le permite experimentar más libremente. Los errores son intrascendentes, incluso aunque a veces puedan llegar a ser frustrantes. Una línea de código que devuelve un error se puede ajustar y volver a ejecutar, repitiendo el proceso las veces necesarias hasta que se devuelva el resultado esperado.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>Trabajar en una copia de los datos sin procesar puede incluso simplificar el proceso de entrada de datos. El análisis de datos tabulares en R da como resultado la creación de múltiples objetos, que se conocen como <em>data frames</em> y pueden considerarse equivalentes a tablas en una hoja de cálculo. La capacidad de dividir, muestrear y transformar el conjunto de datos original en muchos <em>data frames</em> diferentes tiene la ventaja de reducir drásticamente la complejidad de la entrada de datos. En lugar de necesitar hojas de cálculo a medida con múltiples hojas y tablas interrelacionadas, cada pieza de datos solo debe ingresarse una vez y todas las manipulaciones se pueden realizar en el código. Los diferentes <em>data frames</em> que se crean en el proceso de análisis ni siquiera tienen que ser guardados, porque son muy fácilmente reproducidos por el script de código.</p>
+</blockquote>
+<blockquote class="blockquote">
+<p>La separación de la entrada y el análisis de los datos reduce en gran manera el potencial de errores, pero tal vez aún más significativamente, el uso de código para el análisis de datos permite la creación de investigaciones reproducibles que no son posibles en hojas de cálculo. […] Con un lenguaje de programación, los pasos del análisis se pueden establecer claramente en el código […] Guardar el análisis en código tiene el beneficio inmediato de que se puede volver a ejecutar fácilmente en cualquier momento que se agreguen nuevos datos. El código también se puede aplicar a un conjunto de datos completamente nuevo de una manera mucho más transparente que con las hojas de cálculo. El beneficio a largo plazo es que con el código todo el análisis se documenta en lugar de ocultarse detrás de los clics del mouse. Esto hace que sea más fácil revisar los propios análisis mucho después de haber terminado con ellos, así como que otros entiendan lo que se ha hecho y comprueben si hay errores.</p>
+</blockquote>
+<p>Algunos economistas de gran prestigio, como <span class="citation" data-cites="krugman2013">Krugman (<a href="120-bibliografia.html#ref-krugman2013" role="doc-biblioref">2013</a>)</span> y <span class="citation" data-cites="garicano2013">Garicano (<a href="120-bibliografia.html#ref-garicano2013" role="doc-biblioref">2013</a>)</span> han comentado también el incidente Reinhart-Rogoff, y, concluyen, entre otras cosas, que Excel no es la herramienta más adecuada para realizar análisis económicos de impacto, por las razones que hemos visto más arriba, y también por otra consideración importante. La dificultad de auditar una hoja de cálculo con cálculos complejos hace que la detección de errores sea muy ardua, y esto facilita que en ocasiones el autor del análisis se sienta tentado a introducir modificaciones o alteraciones en los datos que permitan llegar a la conclusión a la que quiere llegar. Este fraude en el análisis de datos, aunque es más difícil en R, no es imposible, y nos lleva al siguiente punto: la responsabilidad ética del analista de datos.</p>
+</section>
+<section id="consideraciones-éticas" class="level2" data-number="1.4">
+<h2 data-number="1.4" class="anchored" data-anchor-id="consideraciones-éticas"><span class="header-section-number">1.4</span> Consideraciones éticas</h2>
+
+
+<div id="refs" class="references csl-bib-body hanging-indent" role="doc-bibliography" style="display: none">
+<div id="ref-science2015" class="csl-entry" role="doc-biblioentry">
+Buck, Stuart. 2015. <span>«Solving reproducibility»</span>. <em>Science</em> 348 (6242): 1403. <a href="https://www.science.org/doi/full/10.1126/science.aac8041">https://www.science.org/doi/full/10.1126/science.aac8041</a>.
+</div>
+<div id="ref-ferrero2018" class="csl-entry" role="doc-biblioentry">
+Ferrero, Rosana. 2018. <span>«Los errores de Reinhart &amp; Rogoff: R y la reproducibilidad»</span>. 2018. <a href="https://www.maximaformacion.es/blog-dat/los-errores-de-reinhart-rogo/">https://www.maximaformacion.es/blog-dat/los-errores-de-reinhart-rogo/</a>.
+</div>
+<div id="ref-garicano2013" class="csl-entry" role="doc-biblioentry">
+Garicano, Luis. 2013. <span>«El error de Reinhart y Rogoff»</span>. 2013. <a href="https://nadaesgratis.es/garicano/el-error-de-reinhardt-y-rogoff">https://nadaesgratis.es/garicano/el-error-de-reinhardt-y-rogoff</a>.
+</div>
+<div id="ref-krugman2013" class="csl-entry" role="doc-biblioentry">
+Krugman, Paul. 2013. <span>«La depresión del Excel»</span>. 2013. <a href="https://elpais.com/economia/2013/04/19/actualidad/1366398440_370422.html">https://elpais.com/economia/2013/04/19/actualidad/1366398440_370422.html</a>.
+</div>
+<div id="ref-ryssdal2013" class="csl-entry" role="doc-biblioentry">
+Ryssdal, Karl. 2013. <span>«The Excel mistake heard round the world»</span>. 2013. <a href="https://www.marketplace.org/2013/04/17/economy/excel-mistake-heard-round-world/">https://www.marketplace.org/2013/04/17/economy/excel-mistake-heard-round-world/</a>.
+</div>
+<div id="ref-sadler2017" class="csl-entry" role="doc-biblioentry">
+Sadler, Jesse. 2017. <span>«Excel vs R: A Brief Introduction to R»</span>. 2017. <a href="https://www.jessesadler.com/post/excel-vs-r/">https://www.jessesadler.com/post/excel-vs-r/</a>.
+</div>
+</div>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiada");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./index.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prefacio</span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./020-prep-datos.html" class="pagination-link">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Obtener y preparar los datos</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+</body></html>

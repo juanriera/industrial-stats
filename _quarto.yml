@@ -1,0 +1,39 @@
+project:
+  type: book
+  output-dir: docs
+
+book:
+  title: "Introducción a la estadística industrial y la ciencia de datos utilizando R y Microsoft Excel"
+  subtitle: "Manual para la Formación Profesional"
+  author: "Juan Riera"
+  date: 2022-12-12
+  dateformat: short
+  lang: es
+  chapters:
+    - index.qmd
+    - 010-intro.qmd
+    - 020-prep-datos.qmd
+    - 030-presentacion.md
+    - 040-prob-inf.md
+    - 050-relacion-xy.md
+    - 060-anova.md
+    - 070-sistema-medicion.md
+    - 080-control-proc.md
+    - 090-disexp.md
+    - 100-casos.md
+    - 110-anexo-metodos.md
+    - 120-bibliografia.qmd
+
+bibliography: bibliografia.bib
+
+format:
+  html:
+    theme: cosmo
+#  pdf:
+#    documentclass: scrbook
+
+author-title: AUTOR
+published-title: PUBLICADO
+lang: es  
+editor: visual
+
