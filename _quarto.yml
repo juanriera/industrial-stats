@@ -13,8 +13,8 @@ book:
     - index.qmd
     - 010-intro.qmd
     - 020-prep-datos.qmd
-    - 030-030-distr-frec-explor.md
-    - 040-040-distr-prob.md
+    - 030-distr-frec-explor.md
+    - 040-distr-prob.md
     - 050-relacion-xy.md
     - 060-anova.md
     - 070-sistema-medicion.md
