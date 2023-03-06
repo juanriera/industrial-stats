@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a la estadística industrial y la ciencia de datos utilizando R y Microsoft Excel - 10&nbsp; Cómo usar lo aprendido</title>
+<title>Introducción a la estadística industrial y la ciencia de datos utilizando R y Microsoft Excel - 10&nbsp; La calidad y la mejora de la calidad</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -70,7 +70,7 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
     <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Cómo usar lo aprendido</span></h1>
+      <h1 class="quarto-secondary-nav-title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></h1>
       <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
         <i class="bi bi-chevron-right"></i>
       </button>
@@ -145,7 +145,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100-casos.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Cómo usar lo aprendido</span></a>
+  <a href="./100-mejora-calidad.html" class="sidebar-item-text sidebar-link active"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -167,13 +167,15 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Indice de contenidos</h2>
    
   <ul>
-  <li><a href="#definir-un-problema-opex-lean-sixsigma-16" id="toc-definir-un-problema-opex-lean-sixsigma-16" class="nav-link active" data-scroll-target="#definir-un-problema-opex-lean-sixsigma-16"><span class="toc-section-number">10.1</span>  Definir un problema [OPEX Lean SixSigma #16]</a>
+  <li><a href="#six-sigma-y-mejora-de-la-calidad" id="toc-six-sigma-y-mejora-de-la-calidad" class="nav-link active" data-scroll-target="#six-sigma-y-mejora-de-la-calidad"><span class="toc-section-number">10.1</span>  Six Sigma y mejora de la calidad</a></li>
+  <li><a href="#definir-un-problema-opex-lean-sixsigma-16" id="toc-definir-un-problema-opex-lean-sixsigma-16" class="nav-link" data-scroll-target="#definir-un-problema-opex-lean-sixsigma-16"><span class="toc-section-number">10.2</span>  Definir un problema [OPEX Lean SixSigma #16]</a>
   <ul class="collapse">
-  <li><a href="#cómo-es-una-buena-definición-de-un-problema" id="toc-cómo-es-una-buena-definición-de-un-problema" class="nav-link" data-scroll-target="#cómo-es-una-buena-definición-de-un-problema"><span class="toc-section-number">10.1.1</span>  ¿Cómo es una buena definición de un problema?</a></li>
+  <li><a href="#cómo-es-una-buena-definición-de-un-problema" id="toc-cómo-es-una-buena-definición-de-un-problema" class="nav-link" data-scroll-target="#cómo-es-una-buena-definición-de-un-problema"><span class="toc-section-number">10.2.1</span>  ¿Cómo es una buena definición de un problema?</a></li>
   </ul></li>
-  <li><a href="#estrategia-de-resolucion-de-problemas" id="toc-estrategia-de-resolucion-de-problemas" class="nav-link" data-scroll-target="#estrategia-de-resolucion-de-problemas"><span class="toc-section-number">10.2</span>  Estrategia de resolucion de problemas</a></li>
-  <li><a href="#r4ds" id="toc-r4ds" class="nav-link" data-scroll-target="#r4ds"><span class="toc-section-number">10.3</span>  R4DS</a></li>
-  <li><a href="#dmaic---sixsigma" id="toc-dmaic---sixsigma" class="nav-link" data-scroll-target="#dmaic---sixsigma"><span class="toc-section-number">10.4</span>  DMAIC - SixSigma</a></li>
+  <li><a href="#estrategia-de-resolucion-de-problemas" id="toc-estrategia-de-resolucion-de-problemas" class="nav-link" data-scroll-target="#estrategia-de-resolucion-de-problemas"><span class="toc-section-number">10.3</span>  Estrategia de resolucion de problemas</a></li>
+  <li><a href="#r4ds" id="toc-r4ds" class="nav-link" data-scroll-target="#r4ds"><span class="toc-section-number">10.4</span>  R4DS</a></li>
+  <li><a href="#dmaic---sixsigma" id="toc-dmaic---sixsigma" class="nav-link" data-scroll-target="#dmaic---sixsigma"><span class="toc-section-number">10.5</span>  DMAIC - SixSigma</a></li>
+  <li><a href="#el-papel-de-los-métodos-estadísticos-en-la-mejora-six-sigma" id="toc-el-papel-de-los-métodos-estadísticos-en-la-mejora-six-sigma" class="nav-link" data-scroll-target="#el-papel-de-los-métodos-estadísticos-en-la-mejora-six-sigma"><span class="toc-section-number">10.6</span>  El papel de los métodos estadísticos en la mejora Six Sigma</a></li>
   </ul>
 </nav>
     </div>
@@ -182,7 +184,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Cómo usar lo aprendido</span></h1>
+<h1 class="title d-none d-lg-block"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></h1>
 </div>
 
 
@@ -196,10 +198,13 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<section id="definir-un-problema-opex-lean-sixsigma-16" class="level2" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="definir-un-problema-opex-lean-sixsigma-16"><span class="header-section-number">10.1</span> Definir un problema [OPEX Lean SixSigma #16]</h2>
-<section id="cómo-es-una-buena-definición-de-un-problema" class="level3" data-number="10.1.1">
-<h3 data-number="10.1.1" class="anchored" data-anchor-id="cómo-es-una-buena-definición-de-un-problema"><span class="header-section-number">10.1.1</span> ¿Cómo es una buena definición de un problema?</h3>
+<section id="six-sigma-y-mejora-de-la-calidad" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="six-sigma-y-mejora-de-la-calidad"><span class="header-section-number">10.1</span> Six Sigma y mejora de la calidad</h2>
+</section>
+<section id="definir-un-problema-opex-lean-sixsigma-16" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="definir-un-problema-opex-lean-sixsigma-16"><span class="header-section-number">10.2</span> Definir un problema [OPEX Lean SixSigma #16]</h2>
+<section id="cómo-es-una-buena-definición-de-un-problema" class="level3" data-number="10.2.1">
+<h3 data-number="10.2.1" class="anchored" data-anchor-id="cómo-es-una-buena-definición-de-un-problema"><span class="header-section-number">10.2.1</span> ¿Cómo es una buena definición de un problema?</h3>
 <ul>
 <li>Breve</li>
 <li>Evitar lenguaje técnico: debes ser capaz de explicarlo a cualquier persona de la organización usando términos sencillos</li>
@@ -210,16 +215,19 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 </section>
 </section>
-<section id="estrategia-de-resolucion-de-problemas" class="level2" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="estrategia-de-resolucion-de-problemas"><span class="header-section-number">10.2</span> Estrategia de resolucion de problemas</h2>
+<section id="estrategia-de-resolucion-de-problemas" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="estrategia-de-resolucion-de-problemas"><span class="header-section-number">10.3</span> Estrategia de resolucion de problemas</h2>
 </section>
-<section id="r4ds" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="r4ds"><span class="header-section-number">10.3</span> R4DS</h2>
+<section id="r4ds" class="level2" data-number="10.4">
+<h2 data-number="10.4" class="anchored" data-anchor-id="r4ds"><span class="header-section-number">10.4</span> R4DS</h2>
 <p>Fuente: R4DS</p>
 <p><img src="01-imagenes\data-science.png" class="img-fluid"></p>
 </section>
-<section id="dmaic---sixsigma" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="dmaic---sixsigma"><span class="header-section-number">10.4</span> DMAIC - SixSigma</h2>
+<section id="dmaic---sixsigma" class="level2" data-number="10.5">
+<h2 data-number="10.5" class="anchored" data-anchor-id="dmaic---sixsigma"><span class="header-section-number">10.5</span> DMAIC - SixSigma</h2>
+</section>
+<section id="el-papel-de-los-métodos-estadísticos-en-la-mejora-six-sigma" class="level2" data-number="10.6">
+<h2 data-number="10.6" class="anchored" data-anchor-id="el-papel-de-los-métodos-estadísticos-en-la-mejora-six-sigma"><span class="header-section-number">10.6</span> El papel de los métodos estadísticos en la mejora Six Sigma</h2>
 
 
 </section>

@@ -1,6 +1,6 @@
 # Introducción
 
-![Un grupo de trabajo en planta ante un panel de variables indicadoras](01-imagenes%5C1520188654204.jpg){.column-page-inset-right}
+![Un grupo de trabajo en planta ante un panel de variables indicadoras](01-imagenes/1520188654204.jpg){.column-page-inset-right}
 
 La estadística es la ciencia de aprender a partir de los datos. Implica la recolección, análisis y presentación de los datos, y su utilización para tomar decisiones y resolver problemas.
 
@@ -8,9 +8,9 @@ Hay muchos aspectos del trabajo industrial que implican recoger datos, trabajar 
 
 Los métodos estadísticos nos ayudan a describir y comprender la **variabilidad**. Cuando hablamos de variabilidad queremos decir que sucesivas observaciones de un mismo proceso o sistema no dan exactamente los mismos resultados. Por ejemplo, el consumo de gasolina de un coche no es siempre igual, sino que varía de manera considerable. Esta variación depende de muchos factores, como la forma de conducir, el tipo de carretera, la situación del propio vehículo (presión de neumáticos, compresión del motor, ...), la marca de la gasolina, el octanaje, o incluso las condiciones meteorológicas. Todos estos factores son causas de **variabilidad** en el consumo de gasolina. La estadística nos permite analizar estos **factores** y determinar cuáles son los más importantes o tienen mayor impacto en el consumo; una vez conocidos, podemos actuar sobre ellos. El objetivo industrial más importante es la **reducción de la variabilidad**.
 
-En este libro aprenderemos a utilizar herramientas diversas, tanto estadísticas como de la ciencia de datos, para realizar nuestro análisis; para su interpretación necesitamos siempre el conocimiento del proceso industrial que estamos analizando. Para aprender de los datos necesitamos más que sólo los números. En un análisis de la producción de un producto, por ejemplo, los números significan poco sin un conocimiento del proceso; los valores de pH, temperatura o concentración de lactosa influyen en el resultado del proceso de forma diferente . Los datos son números dentro de un contexto, y necesitamos conocer este contexto para dar sentido a los números.
+En este libro aprenderemos a utilizar herramientas diversas, tanto estadísticas como de la ciencia de datos, para realizar nuestro análisis; para su interpretación necesitamos siempre el conocimiento del proceso industrial que estamos analizando. Para aprender de los datos necesitamos más que los números. En un análisis de la producción de un producto lácteo, por ejemplo, los números significan poco sin un conocimiento del proceso; los valores de pH, temperatura o concentración de lactosa influyen en el resultado del proceso de forma diferente . Los datos son números dentro de un contexto, y necesitamos conocer este contexto para dar sentido a los números.
 
-![](01-imagenes%5CLean%20Visual%20Management%20Boards%20in%20Factories%20Keep%20It%20Simple.jpg){.column-margin}
+![](01-imagenes/Lean-Visual-Management-Boards-in-Factories-Keep-It-Simple.jpg){.column-margin}
 
 ## El pensamiento estadístico
 
@@ -35,7 +35,7 @@ El papel de un profesional de la estadística ha existido desde muchos años ant
 
 Los científicos de datos adquieren, limpian, estructuran y modelizan datos para identificar tendencias, generar conocimiento útil y hacer predicciones. Su formación en computación les permite analizar grandes cantidades de datos y construir sistemas de aprendizaje automático para analizar los *big data*. También preparan visualizaciones de los datos para comunicar los resultados a los equipos ejecutivos de la empresa con el fin de que las decisiones que se tomen estén basadas en sus recomendaciones basadas en datos reales.
 
-En contraste, los conjuntos de datos sobre los que trabajan los estadísticos suelen ser más reducidos que los de los científicos d datos. Suelen trabajar en investigación de mercados, diseño de encuestas o sondeos, tanto en la empresa como en instituciones gubernamentales. Como investigadores de mercados, diseñan experimentos y ensayos usando los métodos estadísticos apropiados, buscan relaciones causa-efecto (problemas de causación frente a correlación), aseguran que los tamaños muestrales son suficientes, e intentan cuantificar sus resultados de una forma que sea intuitiva para los receptores de sus informes. Los modelos utilizados por estadísticos y científicos de datos se solapan en muchas ocasiones, pero los estadísticos no suelen necesitar la sofisticación de los métodos computacionales y lenguajes de programación usados por los científicos de datos para manejar los *big data*
+En contraste, los conjuntos de datos sobre los que trabajan los estadísticos suelen ser más reducidos que los de los científicos de datos. Suelen trabajar en investigación de mercados, diseño de encuestas o sondeos, tanto en la empresa como en instituciones gubernamentales. Como investigadores de mercados, diseñan experimentos y ensayos usando los métodos estadísticos apropiados, buscan relaciones causa-efecto (problemas de causación frente a correlación), aseguran que los tamaños muestrales son suficientes, e intentan cuantificar sus resultados de una forma que sea intuitiva para los receptores de sus informes. Los modelos utilizados por estadísticos y científicos de datos se solapan en muchas ocasiones, pero los estadísticos no suelen necesitar la sofisticación de los métodos computacionales y lenguajes de programación usados por los científicos de datos para manejar los *big data*
 
 Hay algunas habilidades básicas que cualquier profesional que trabaje con datos debería tener, sea estadístico o científicos de datos. Entre ellas, la resolución de problemas y habiidades analíticas, conocimientos de SQL, R, Python o Excel.
 
@@ -79,3 +79,5 @@ La separación de la entrada de datos y el análisis de datos reduce en gran man
 \end{quote}
 ```
 ## Consideraciones éticas
+
+

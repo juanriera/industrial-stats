@@ -1,4 +1,6 @@
-# Cómo usar lo aprendido
+# La calidad y la mejora de la calidad
+
+## Six Sigma y mejora de la calidad
 
 ## Definir un problema [OPEX Lean SixSigma #16]
 
@@ -22,6 +24,10 @@ Fuente: R4DS
 ![](01-imagenes\data-science.png)
 
 ## DMAIC - SixSigma
+
+## El papel de los métodos estadísticos en la mejora Six Sigma
+
+
 
 
 

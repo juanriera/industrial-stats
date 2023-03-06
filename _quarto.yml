@@ -13,14 +13,14 @@ book:
     - index.qmd
     - 010-intro.qmd
     - 020-prep-datos.qmd
-    - 030-distr-frec-explor.md
+    - 030-distr-frec-explor.qmd
     - 040-distr-prob.md
     - 050-relacion-xy.md
     - 060-anova.md
     - 070-sistema-medicion.md
     - 080-control-proc.md
     - 090-disexp.md
-    - 100-casos.md
+    - 100-mejora-calidad.md
     - 110-anexo-metodos.md
     - 120-bibliografia.qmd
 
@@ -34,6 +34,7 @@ format:
 
 author-title: AUTOR
 published-title: PUBLICADO
+
 lang: es  
 editor: visual
 
