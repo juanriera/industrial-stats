@@ -2,13 +2,14 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.1.189">
+<meta name="generator" content="quarto-1.3.353">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 <meta name="author" content="Juan Riera">
+<meta name="dcterms.date" content="2022-12-12">
 
-<title>Introducción a la estadística industrial y la ciencia de datos utilizando R y Microsoft Excel</title>
+<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -18,7 +19,7 @@ div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
 ul.task-list{list-style: none;}
 ul.task-list li input[type="checkbox"] {
   width: 0.8em;
-  margin: 0 0.8em 0.2em -1.6em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
 </style>
@@ -49,31 +50,37 @@ ul.task-list li input[type="checkbox"] {
   "type": "textbox",
   "limit": 20,
   "language": {
-    "search-no-results-text": "Sín resultados",
+    "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
-    "search-copy-link-title": "Copiar el enlace en la busqueda",
-    "search-hide-matches-text": "Esconder resultados adicionales",
-    "search-more-match-text": "hay más resultados en este documento",
-    "search-more-matches-text": "más resultados en este documento",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Eviar"
+    "search-submit-button-title": "Enviar"
   }
 }</script>
 
+  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-sidebar floating slimcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
-  <nav class="quarto-secondary-nav" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
-    <div class="container-fluid d-flex justify-content-between">
-      <h1 class="quarto-secondary-nav-title">Introducción a la estadística industrial y la ciencia de datos utilizando R y Microsoft Excel</h1>
-      <button type="button" class="quarto-btn-toggle btn" aria-label="Show secondary navigation">
-        <i class="bi bi-chevron-right"></i>
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Prefacio</a></li></ol></nav>
+      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+      </a>
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
       </button>
     </div>
   </nav>
@@ -81,91 +88,111 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
-      <a href="./">Introducción a la estadística industrial y la ciencia de datos utilizando R y Microsoft Excel</a> 
+      <a href="./">Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</a> 
     </div>
       </div>
-      <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
-      </div>
+        </div>
     <div class="sidebar-menu-container"> 
     <ul class="list-unstyled mt-1">
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./index.html" class="sidebar-item-text sidebar-link active">Prefacio</a>
+  <a href="./index.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Prefacio</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./010-intro.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a>
+  <a href="./010-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./020-prep-datos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Obtener y preparar los datos</span></a>
+  <a href="./020-herramientas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis de los datos industriales</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./030-distr-frec-explor.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Resumen y presentación de los datos</span></a>
+  <a href="./030-prep-datos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Los datos industriales de producción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./040-distr-prob.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Probabilidad e inferencia</span></a>
+  <a href="./040-distr-frec-explor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./050-relacion-xy.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></a>
+  <a href="./050-distr-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de probabilidad e inferencia</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./060-anova.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></a>
+  <a href="./060-relacion-xy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./070-sistema-medicion.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></a>
+  <a href="./070-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./080-control-proc.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></a>
+  <a href="./080-sistema-medicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./090-disexp.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></a>
+  <a href="./090-control-proc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100-mejora-calidad.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></a>
+  <a href="./100-disexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./110-anexo-metodos.html" class="sidebar-item-text sidebar-link"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Anexo: Recetario de métodos</span></a>
+  <a href="./110-mejora-calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./120-bibliografia.html" class="sidebar-item-text sidebar-link">Bibliografía</a>
+  <a href="./120-anexo-metodos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Anexo: Recetario de métodos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./130-bibliografia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
+<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Indice de contenidos</h2>
+    <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
   <li><a href="#prefacio" id="toc-prefacio" class="nav-link active" data-scroll-target="#prefacio">Prefacio</a>
@@ -173,10 +200,7 @@ ul.task-list li input[type="checkbox"] {
   <li><a href="#a-quién-va-dirigido-este-libro" id="toc-a-quién-va-dirigido-este-libro" class="nav-link" data-scroll-target="#a-quién-va-dirigido-este-libro">A quién va dirigido este libro</a></li>
   <li><a href="#organización-del-libro" id="toc-organización-del-libro" class="nav-link" data-scroll-target="#organización-del-libro">Organización del libro</a></li>
   <li><a href="#cómo-usar-el-libro" id="toc-cómo-usar-el-libro" class="nav-link" data-scroll-target="#cómo-usar-el-libro">Cómo usar el libro</a></li>
-  <li><a href="#uso-del-ordenador-y-el-software-estadístico" id="toc-uso-del-ordenador-y-el-software-estadístico" class="nav-link" data-scroll-target="#uso-del-ordenador-y-el-software-estadístico">Uso del ordenador y el <em>software</em> estadístico</a>
-  <ul class="collapse">
-  <li><a href="#las-hojas-de-cálculo-y-la-programación-en-r." id="toc-las-hojas-de-cálculo-y-la-programación-en-r." class="nav-link" data-scroll-target="#las-hojas-de-cálculo-y-la-programación-en-r.">Las hojas de cálculo y la programación en R.</a></li>
-  </ul></li>
+  <li><a href="#uso-del-ordenador-y-el-software-estadístico" id="toc-uso-del-ordenador-y-el-software-estadístico" class="nav-link" data-scroll-target="#uso-del-ordenador-y-el-software-estadístico">Uso del ordenador y el <em>software</em> estadístico</a></li>
   <li><a href="#recursos-adicionales-y-cómo-usarlos" id="toc-recursos-adicionales-y-cómo-usarlos" class="nav-link" data-scroll-target="#recursos-adicionales-y-cómo-usarlos">Recursos adicionales y cómo usarlos</a></li>
   <li><a href="#sobre-el-libro" id="toc-sobre-el-libro" class="nav-link" data-scroll-target="#sobre-el-libro">Sobre el libro</a></li>
   <li><a href="#agradecimientos" id="toc-agradecimientos" class="nav-link" data-scroll-target="#agradecimientos">Agradecimientos</a></li>
@@ -185,11 +209,11 @@ ul.task-list li input[type="checkbox"] {
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title d-none d-lg-block">Introducción a la estadística industrial y la ciencia de datos utilizando R y Microsoft Excel</h1>
+<h1 class="title">Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</h1>
 <p class="subtitle lead">Manual para la Formación Profesional</p>
 </div>
 
@@ -207,23 +231,25 @@ ul.task-list li input[type="checkbox"] {
     <div>
     <div class="quarto-title-meta-heading">PUBLICADO</div>
     <div class="quarto-title-meta-contents">
-      <p class="date">12 de diciembre de 2022</p>
+      <p class="date">12/12/22</p>
     </div>
   </div>
+  
     
   </div>
   
 
 </header>
 
-<section id="prefacio" class="level1 unnumbered page-columns page-full">
+<section id="prefacio" class="level1 unnumbered">
 <h1 class="unnumbered">Prefacio</h1>
 <p>Este libro trata sobre la enseñanza de algunos métodos básicos de la estadística y la moderna ciencia de datos y su aplicación al entorno industrial. Está concebido de forma práctica con multitud de ejemplos, no sólo industriales, con el objetivo de mostrar los métodos cuantitativos de análisis, y también el razonamiento necesario para dar sentido a los resultados presentados por las herramientas de análisis de datos.</p>
 <p>El objetivo del libro es acercar a los estudiantes de la Formación Profesional al uso de las herramientas de análisis de datos industriales. El entorno de la industria 4.0 produce un enorme y constante flujo de datos como consecuencia tanto a la implantación de sistemas de captura automáticos como al aumento de la tecnificación de los puestos de trabajo; se requiere por parte de los profesionales industriales que sean capaces de analizar esta enorme cantidad de datos para transformarlos en información para la decisión. En la empresa industrial actual, son los ingenieros y técnicos de planta, y no estadísticos o ingenieros informáticos, quienes participan diariamente en la presentacion y discusion de los datos y en la toma de decisiones operativas, tanto en los equipos de trabajo como ante la Dirección. Por esta razón, considero necesario proporcionar a los estudiantes de la Formación Profesional un conocimiento suficiente de los conceptos, herramientas y métodos del análisis de datos, así como de las técnicas básicas de presentación y comunicación de la información.</p>
+<p>El control estadístico de la calidad empezó con W.E. Deming a mediados del pasado siglo XX, y fueron las empresas japonesas, sobre todo las automovilísticas, las que inicialmente recogieron el testigo de Deming y aplicaron estos principios a la mejora de la producción industrial, difundiendo su conocimiento a todos los niveles jerárquicos de las organizaciones, desde los operarios de línea hasta los más altos directivos. Desde ese momento hasta la difusión actual de los métodos Six Sigma gracias a General Electric y Motorola, la mejora industrial de los procesos ha estado siempre apoyada en la correcta utilización de estas metodologías.</p>
 <p>La enseñanza de los conceptos estadísticos está, casi siempre, a cargo de profesores con una gran formación en matemáticas. Estos profesores suelen identificar la comprensión de los conceptos estadísticos con su comprensión matemática. Sin embargo, cuando enseñamos estadística industrial, debemos hacer énfasis tanto en las ideas y la comprensión de los conceptos como en su utilización práctica, y reconocer que el razonamiento matemático no es el único camino para la comprensión conceptual.</p>
 <p>La práctica de la estadística requiere buen juicio y sentido común. Dado que el buen juicio se desarrolla con la experiencia, un curso de iniciación debe presentar unas guías claras de aplicación de los métodos, y no dar por supuestas unas exigencias excesivamente altas sobre la capacidad de juicio analítico de los estudiante; no sería un planteamiento razonable. Con el fin de desarrollar esta capacidad de juicio analítico he introducido explicaciones detalladas en la mayor parte de los ejemplos. En todos los casos, los ejercicios requerirán del estudiante no sólo una resolución numérica, sino el uso del juicio analítico y la explicación verbal (o escrita) de las decisiones tomadas y conclusiones realizadas. Creo que este planteamiento será mucho más beneficioso a largo plazo que limitarse a una simple resolución numérica.</p>
 <p>Mi experiencia industrial me ha mostrado que en las situaciones reales, sobre el terreno, la comprensión práctica de los conceptos es más importante que su rigurosa formulación matemática. Por esta razón, en el desarrollo del contenido del libro he insistido más en la forma de aplicar las herramientas y entender los análisis que en el conocimiento formal de las fórmulas estadísticas y su deducción matemática. He hecho especial hincapié en la utilización de herramientas sencillas, sobre todo gráficas, que casi siempre son una ayuda para comprender la información contenida en un conjunto de datos. El objetivo es proporcionar al estudiante las bases de la metodología del análisis de datos y del análisis estadístico, y cómo puede aplicarse a la resolución de problemas técnicos concretos, más que el conocimiento de la teoría matemática de la estadística.</p>
-<p>He evitado las explicaciones formales sobre temas estadísticos cuando no son indispensables para su aplicación práctica. Así, por ejemplo, al explicar la media de un conjunto de datos considero más importante entender el concepto físico de “centro de gravedad” que los conceptos estadísticos de esperanza matemática, que no se tocan en este texto. En este sentido, he intentado que el alumno diferencie bien el concepto de “en qué consiste” un estadístico del concepto práctico de “cómo se calcula”; entender lo que significa un valor central concreto aplicado a un conjunto de números y comprender la diferencia entre el concepto y su fórmula de cálculo es fundamental para entender en qué situación debe usarse uno u otro estadístico.</p>
+<p>He evitado las explicaciones formales sobre temas estadísticos cuando no son indispensables para su aplicación práctica. Así, por ejemplo, al explicar la media de un conjunto de datos considero más importante entender el concepto físico de “centro de gravedad” que los conceptos estadísticos de esperanza matemática, que no se tocan en este texto. En este sentido, he intentado que el alumno aprenda a diferenciar “en qué consiste” un estadístico, de “cómo se calcula”. Comprender la diferencia entre el concepto y su fórmula de cálculo es fundamental para entender en qué situación debe usarse uno u otro estadístico.</p>
 <div id="fig-intro-media" class="quarto-layout-panel">
 <figure class="figure">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
@@ -231,7 +257,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-media" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="01-imagenes/media-balanza.svg" class="img-fluid figure-img" data-ref-parent="fig-intro-media"></p>
-<p></p><figcaption class="figure-caption">(a) Diagrama de puntos (dotplot)</figcaption><p></p>
+<figcaption class="figure-caption">(a) Diagrama de puntos (dotplot) mostrando la posición de la media</figcaption>
 </figure>
 </div>
 </div>
@@ -239,7 +265,7 @@ ul.task-list li input[type="checkbox"] {
 <div id="fig-palanca" class="quarto-figure quarto-figure-center anchored">
 <figure class="figure">
 <p><img src="01-imagenes/palanca.png" class="img-fluid figure-img" data-ref-parent="fig-intro-media"></p>
-<p></p><figcaption class="figure-caption">(b) Palanca de primer grado</figcaption><p></p>
+<figcaption class="figure-caption">(b) Palanca de primer grado con el fulcro como punto de equilibrio</figcaption>
 </figure>
 </div>
 </div>
@@ -252,7 +278,8 @@ ul.task-list li input[type="checkbox"] {
 <p>Las industrias líderes destacan por la aplicación intensiva de métodos sofisticados, tales como Six Sigma, Lean Manufacturing, diseño robusto de productos, y otros que hacen un uso intensivo de los datos, tanto de los obtenidos en producción como de los obtenidos en la realización de experimentos bien diseñados. La mejora de la competitividad en estas empresas no se debe tanto a la aplicación de unos u otros métodos, como al desarrollo del juicio analítico de sus equipos y a la aplicación de lo aprendido a la mejora continua de los procesos industriales. Veremos que la experiencia y el conocimiento tecnológico de estos procesos son fundamentales para el desarrollo del buen juicio analítico, y, en consecuencia, para la buena interpretación de los resultados que se obtienen con las herramientas estadísticas y de análisis .</p>
 <section id="a-quién-va-dirigido-este-libro" class="level2">
 <h2 class="anchored" data-anchor-id="a-quién-va-dirigido-este-libro">A quién va dirigido este libro</h2>
-<p>El libro está orientado a completar la formación técnica de los estudiantes de Formación Profesional, en las especialidades relacionadas con la actividad productiva industrial. También creo que será de utilidad para los técnicos industriales en activo que no han tenido una adecuada formación en estas metodologías, y que han encontrado dificultad para lanzarse a su aprendizaje mientras desarrollan so actividad profesional. En todos los casos, el aprendizaje requerirá de un esfuerzo que quizás será mayor en los estudiantes que no tengan una base mínima en álgebra y cálculo. En estos casos, el trabajo en equipo y la discusión abierta entre compañeros y con los profesores ayudará a la comprensión de los conceptos.</p>
+<p>El libro está orientado a completar la formación técnica de los estudiantes de Formación Profesional, en las especialidades relacionadas con la actividad productiva industrial. También creo que será de utilidad para los técnicos industriales en activo que no han tenido una adecuada formación en estas metodologías, y que han encontrado dificultad para lanzarse a su aprendizaje mientras desarrollan so actividad profesional. Espero, también, que los profesores de la Formación Profesional en estos ámbitos de competencia encuentren en este documento los elementos de apoyo que les permitan integrar estas enseñanzas en sus respectivos ciclos formativos.</p>
+<p>En todos los casos, el aprendizaje requerirá de un esfuerzo que quizás será mayor en los estudiantes que no tengan una base mínima en álgebra y cálculo. En estos casos, el trabajo en equipo y la discusión abierta entre compañeros y con los profesores ayudará a la comprensión de los conceptos.</p>
 </section>
 <section id="organización-del-libro" class="level2">
 <h2 class="anchored" data-anchor-id="organización-del-libro">Organización del libro</h2>
@@ -267,46 +294,48 @@ ul.task-list li input[type="checkbox"] {
 <p>En el <strong>capítulo 9</strong> se hace una introducción al <strong>diseño de experimentos</strong>. La utilidad de esta técnica es primordial para el industrial, sobre todo para el área de I+D y el diseño de productos. Dado que esta técnica puede ser muy compleja en su aplicación real, se facilitan enlaces a otros recursos, como cursos, que serán útiles a los que quieran profundizar más.</p>
 <p>Finalmente, en el <strong>capítulo 10</strong> se presentan las líneas de lo que hemos llamado <em>pensamiento estadístico</em>. Se presentan también algunas aplicaciones prácticas de la estadística en el entorno industrial, como <strong>Six Sigma</strong>, y se analizan en detalle algunos casos interesantes, que pueden servir como colofón al libro.</p>
 </section>
-<section id="cómo-usar-el-libro" class="level2 page-columns page-full">
+<section id="cómo-usar-el-libro" class="level2">
 <h2 class="anchored" data-anchor-id="cómo-usar-el-libro">Cómo usar el libro</h2>
 <p>El diseño del libro se inspira en las recomendaciones de Edward R. Tufte, con márgenes amplios que incluyen notas, referencias y algunos elementos gráficos.</p>
 <p>He intentado que cada capítulo sea lo más autocontenido posible de forma que se facilite la organización pedagógica por temas, no obstante, hay algunos contenidos que pueden necesitar contenidos de los capítulos anteriores, por lo que se sugiere estudiarlo en el orden presentado.</p>
 <p>El libro es eminentemente práctico, con numerosos ejercicios; la resolución puede ser individual o en equipo.</p>
 <p>Algunos recuadros utilizan códigos de color para indicar el objetivo de la información que contienen. Básicamente, los colores utilizados son:</p>
-<div class="callout-tip callout callout-style-default no-icon callout-captioned">
+<div class="content-visible callout callout-style-default callout-note no-icon callout-titled" data-when-format="html">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Problema o cuestión a resolver
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El recuadro verde se utilizará para proponer problemas sencillos cuya respuesta se encuentra en el margen. El objetivo de estos problemas es estimular la reflexión sin necesidad de recurrir al cálculo.</p>
+<p>El recuadro azul se utilizará para proponer problemas sencillos cuya respuesta se encuentra más adelante en el texto. El objetivo de estos problemas es estimular la reflexión, aunque puede ser necesario recurrir a cálculos sencillos ayudados por las herramientas disponibles.</p>
 </div>
 </div>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="aside">Normalmente la respuesta al problema <em>verde</em> se sitúa en la misma página, en el margen anexo al recuadro</span></div></div>
-<div class="callout-note callout callout-style-default no-icon callout-captioned">
-<div class="callout-header d-flex align-content-center">
+<div class="content-visible callout callout-style-default callout-tip no-icon callout-titled" data-when-format="html">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-2-contents" aria-controls="callout-2" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
-Problema o cuestión a resolver
+<div class="callout-title-container flex-fill">
+Respuesta al problema o cuestión a resolver
 </div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
+<div id="callout-2" class="callout-2-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
-<p>El recuadro azul se utilizará para proponer problemas más complejos cuya resolución se ofrece al final del capítulo: Necesitan manejo de herramientas estadísticas en el ordenador y de los conceptos explicados en el texto</p>
+<p>El recuadro verde se utilizará para proponer una respuesta al problema planteado; respuesta que no tiene por qué ser la única posible. Normalmente se presentará de forma oculta.</p>
+</div>
 </div>
 </div>
 <p>Además se incluyen diferentes tipos de avisos cada vez que se introduce algún concepto que es necesario resaltar.</p>
-<div class="callout-important callout callout-style-default callout-captioned">
+<div class="content-visible callout callout-style-default callout-important callout-titled" data-when-format="html">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 Importante
 </div>
 </div>
@@ -314,12 +343,12 @@ Importante
 <p>En este formato se indican cuestiones importantes</p>
 </div>
 </div>
-<div class="callout-warning callout callout-style-default callout-captioned">
+<div class="content-visible callout callout-style-default callout-warning callout-titled" data-when-format="html">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
-<div class="callout-caption-container flex-fill">
+<div class="callout-title-container flex-fill">
 ¡Atención!
 </div>
 </div>
@@ -328,48 +357,20 @@ Importante
 </div>
 </div>
 </section>
-<section id="uso-del-ordenador-y-el-software-estadístico" class="level2 page-columns page-full">
+<section id="uso-del-ordenador-y-el-software-estadístico" class="level2">
 <h2 class="anchored" data-anchor-id="uso-del-ordenador-y-el-software-estadístico">Uso del ordenador y el <em>software</em> estadístico</h2>
 <p>En la práctica diaria, los técnicos industriales usan los ordenadores para almacenar y visualizar los datos de producción, para solucionar problemas mediante análisis estadísticos, y para presentar sus resultados de forma gráfica. De la misma forma que en el entorno industrial, en este libro se utilizarán también los ordenadores de forma habitual, y por esta razón es imprescindible que los estudiantes tengan acceso individual a un ordenador en el que esté instalado el software recomendado, y que se acostumbren a utilizarlo para resolver los problemas y casos planteados como ejercicios prácticos, individualmente y en grupo.</p>
-<section id="las-hojas-de-cálculo-y-la-programación-en-r." class="level3 page-columns page-full">
-<h3 class="anchored" data-anchor-id="las-hojas-de-cálculo-y-la-programación-en-r.">Las hojas de cálculo y la programación en R.</h3>
-<p>La hoja de cálculo es una herramienta omnipresente hoy día en todos los ámbitos de trabajo y educativos. Desde la aparición de <a href="https://es.wikipedia.org/wiki/VisiCalc">Visicalc</a>, en 1978, la hoja de cálculo ha contribuido a la gestión de miles de empresas, se ha utilizado de manera general en análisis de datos y sus gráficos se han utilizado y se utilizan en publicaciones e informes de todas clases. En la década de los años 80 del pasado siglo, la hoja de cálculo <a href="https://es.wikipedia.org/wiki/Lotus_1-2-3">Lotus 1-2-3</a> fue la aplicación más utilizada en los ordenadores IBM-PC y compatibles, y consiguió facturaciones millonarias para la empresa matriz. Lotus 1-2-3 dominó el mercado hasta la aparición de Microsoft Windows a finales de los años 80; el nuevo sistema operativo favoreció la implantación de Excel, que desde entonces se convirtió en la hoja de cálculo dominante.</p>
-
-<div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/280px-Visicalc.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Visicalc, primera hoja de cálculo para el ordenador <em>Apple II</em> (1979)</figcaption><p></p>
-</figure>
-</div></div><p>El estudiante que se incorpora a una empresa, sea en un laboratorio o en una planta de producción, se va a encontrar muy pronto delante de una hoja de cálculo, y debe saber cómo utilizarla correctamente. Actualmente, lo más probable es que esa hoja de cálculo sea Microsoft Excel, aunque hay otras alternativas posibles, como Google Sheets, Apple Numbers, OpenOffice Calc y algunas más. La gran dominancia en el mercado de Microsoft Excel ha hecho que todas estas herramientas sean totalmente compatibles o tengan modos de compatibilidad con Excel. Por esta razón, este libro se basa en la utilización de Excel como hoja de cálculo y herramienta principal para el almacenamiento de datos.</p>
-
-<div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/Lotus-123-3.0-MSDOS.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Hoja de cálculo Lotus 1-2-3 para MS-DOS (1983)</figcaption><p></p>
-</figure>
-</div></div><p>A lo largo del libro se presentarán informes y gráficos obtenidos con Microsoft Excel, y también con el <a href="https://en.wikipedia.org/wiki/R_%28programming_language%29">software estadístico R</a>. Prácticamente todos ellos pueden ser exportados a otras herramientas, como Google Sheets, OpenOffice, Minitab o Matlab, o analizarse con otros lenguajes de programación, como Python o Julia. En realidad, el método de análisis y cómo obtener un resultado correcto son aspectos más importantes que la herramienta que se utilice para ello, por lo que queda en manos del instructor la decisión final sobre qué usar y cómo. Para facilitar este trabajo de conversión, en su caso, todo el material del libro y los datos de ejemplo están disponibles en un repositorio de GitHub.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/excel.png" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Microsoft Excel (2023)</figcaption><p></p>
-</figure>
-</div>
+<p>El estudiante que se incorpora a una empresa, sea en un laboratorio o en una planta de producción, se va a encontrar muy pronto delante de una hoja de cálculo, y debe saber cómo utilizarla correctamente. Actualmente, lo más probable es que esa hoja de cálculo sea Microsoft Excel, aunque hay otras alternativas posibles, como Google Sheets, Apple Numbers, OpenOffice Calc y algunas más. La gran dominancia en el mercado de Microsoft Excel ha hecho que todas estas herramientas sean totalmente compatibles o tengan modos de compatibilidad con Excel. Por esta razón, este libro se basa en la utilización de Excel como hoja de cálculo y herramienta principal para el almacenamiento de datos.</p>
+<p>A lo largo del libro se presentarán informes y gráficos obtenidos con Microsoft Excel, y también con el <a href="https://en.wikipedia.org/wiki/R_%28programming_language%29">software estadístico R</a>. Prácticamente todos ellos pueden ser exportados a otras herramientas, como Google Sheets, OpenOffice, Minitab o Matlab, o analizarse con otros lenguajes de programación, como Python o Julia. En realidad, el método de análisis y cómo obtener un resultado correcto son aspectos más importantes que la herramienta que se utilice para ello, por lo que queda en manos del instructor la decisión final sobre qué usar y cómo. Para facilitar este trabajo de conversión, en su caso, todo el material del libro y los datos de ejemplo estarán disponibles en un repositorio de GitHub.</p>
 <p>Algunos ejercicios tienen que ver con la interpretación y presentación de los resultados. Es importante que estos trabajos se realicen en grupo y se haga énfasis en la comprensión del problema y en su correcta exposición; en los equipos industriales de hoy, la discusión de problemas y la exposición de resultados, en reuniones de trabajo o en paneles informativos a pie de planta, forma parte del trabajo diario. Estas habilidades de comunicación deben ser desarrolladas en los estudiantes de forma prioritaria.</p>
-
-<div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/Rlogo.svg" class="img-fluid figure-img"></p>
-<p></p><figcaption class="figure-caption">Logotipo de R (2023)</figcaption><p></p>
-</figure>
-</div></div><p>La ventaja de R sobre Excel es que el código R, si está bien documentado, muestra cada paso realizado, y esto permite que otras personas puedan verificar el resultado y reproducirlo a partir de los datos originales, e incluso reutilizar los procedimientos. Utilizar código en vez de clicks de ratón es esencial para asegurar la <strong>reproducibilidad de los análisis de datos</strong>, <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Por esta razón, recomiendo el uso del lenguaje R como complemento o alternativa a la hoja de cálculo, tanto para analizar como para visualizar datos. Sin embargo, como la realidad del mundo de la empresa es que los lenguajes como R están todavía poco introducidos, es inevitable mantener el uso de la hoja de cálculo; en el libro se explicarán algunas <em>mejores prácticas</em>, que permitirán el uso simultáneo de ambas herramientas de forma óptima.</p>
+<p>La ventaja de R sobre Excel es que el código R, si está bien documentado, muestra cada paso realizado, y esto permite que otras personas puedan verificar el resultado y reproducirlo a partir de los datos originales, e incluso reutilizar los procedimientos. Utilizar código en vez de clicks de ratón es esencial para asegurar la <strong>reproducibilidad de los análisis de datos</strong>, <a href="#fn1" class="footnote-ref" id="fnref1" role="doc-noteref"><sup>1</sup></a>. Por esta razón, recomiendo el uso del lenguaje R como complemento o alternativa a la hoja de cálculo, tanto para analizar como para visualizar datos. Sin embargo, como la realidad del mundo de la empresa es que los lenguajes como R están todavía poco introducidos, es inevitable mantener el uso de la hoja de cálculo; en el libro se explicarán algunas <em>mejores prácticas</em>, que permitirán el uso simultáneo de ambas herramientas de forma óptima.</p>
 <p>Respecto a la <strong>programación informática</strong>, en el libro no se hace énfasis en la programación R más que como sucesión de órdenes individuales en scripts sencillos. No se busca la eficiencia computacional ni la rapidez en el cálculo, sino la comprensión de la metodología de resolución de problemas y cómo ésta se apoya en las herramientas presentadas. De la misma manera, tampoco se hace ningún uso de la programación en Excel, ya sea con <strong>macros</strong> o con <strong>Visual Basic</strong>; estos temas quedan fuera del perímetro de este libro.</p>
-<p>Un paso en la dirección de la implantación de <strong>flujos de trabajo reproducibles</strong> es la elaboración de informes automatizados. Estos informes incluyen el código R, los comentarios del autor en forma de texto formateado en <a href="https://es.wikipedia.org/wiki/Markdown"><em>markdown</em></a>, y los resultados del código. Herramientas como <a href="https://quarto.org/">Quarto</a>, o <a href="https://colab.research.google.com/">Google Colaboratory</a>, que usa la interface Jupyter, son nuevas formas de elaborar y presentar los informes y resultados estadísticos. Estas herramientas abren posibilidades muy interesantes en la presentación de un ejercicio o un exámen escrito, ya que el alumno puede detallar perfectamente todos los pasos hasta llegar al resultado final, y facilita la revisión por sus compañeros o por el profesor a cargo de la asignatura.</p>
-</section>
+<p>Un paso en la dirección de la implantación de <strong>flujos de trabajo reproducibles</strong> es la elaboración de informes automatizados. Estos informes incluyen el código R, los comentarios del autor en forma de texto formateado en <a href="https://es.wikipedia.org/wiki/Markdown"><em>markdown</em></a>, y los resultados del código. Herramientas como <a href="https://quarto.org/">Quarto</a>, o <a href="https://colab.research.google.com/">Google Colaboratory</a>, que usa la interface Jupyter, son nuevas formas de elaborar y presentar los informes y resultados estadísticos. En el entorno docente, estas herramientas abren posibilidades muy interesantes en la presentación de un ejercicio o un exámen escrito, ya que el alumno puede detallar perfectamente todos los pasos hasta llegar al resultado final, y facilita la revisión por sus compañeros o por el profesor a cargo de la asignatura.</p>
 </section>
 <section id="recursos-adicionales-y-cómo-usarlos" class="level2">
 <h2 class="anchored" data-anchor-id="recursos-adicionales-y-cómo-usarlos">Recursos adicionales y cómo usarlos</h2>
 <p>En este libro no se hace una introducción a R ni a Excel; se presupone que el alumno tiene un conocimiento básico de ambas herramientas. Si no tiene ninguna formación sobre el lenguaje R y el entorno RStudio recomiendo hacer alguna formación previa sencilla que introduzca los conceptos básicos. <a href="https://www.datacamp.com/">Datacamp</a> tiene <a href="https://www.datacamp.com/courses/free-introduction-to-r">cursos gratuitos de introducción a <span class="math inline">\(R\)</span></a>; también hay cursos de formación tanto de R como de Excel en otras plataformas web como <a href="https://www.edx.org/">edX</a>, <a href="https://www.udemy.com/course/curso-de-introduccion-a-r/">Udemy</a> y <a href="https://es.coursera.org/courses?query=r">Coursera</a>, muchos de ellos gratuitos. El Gobierno de España, dentro de una de sus iniciativas de transformación digital, la <a href="https://datos.gob.es/es">iniciativa de datos abiertos</a>, incluye también una amplia referencia a <a href="https://datos.gob.es/es/noticia/cursos-para-aprender-mas-sobre-r">cursos de formación sobre R</a>.</p>
-<p>Todos los datos presentados en los ejemplos se incluyen en hojas de cálculo que están disponibles en … También se incluyen fuentes de datos adicionales que pueden permitir plantear nuevos ejercicios.</p>
+<p>Todos los datos presentados en los ejemplos se incluyen en hojas de cálculo que están disponibles en GitHub. También se incluyen fuentes de datos adicionales que pueden permitir plantear nuevos ejercicios.</p>
 <p>Al final del libro se incluye una bibliografía completa.</p>
 </section>
 <section id="sobre-el-libro" class="level2">
@@ -428,9 +429,23 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     icon: icon
   };
   anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
   const clipboard = new window.ClipboardJS('.code-copy-button', {
-    target: function(trigger) {
-      return trigger.previousElementSibling;
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
     }
   });
   clipboard.on('success', function(e) {
@@ -441,8 +456,25 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copiada");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
     setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
       button.setAttribute("title", currentTitle);
       button.classList.remove('code-copy-button-checked');
     }, 1000);
@@ -478,24 +510,128 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       return note.innerHTML;
     });
   }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
   var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
   for (var i=0; i<bibliorefs.length; i++) {
     const ref = bibliorefs[i];
-    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
-    tippyHover(ref, function() {
-      var popup = window.document.createElement('div');
-      cites.forEach(function(cite) {
-        var citeDiv = window.document.createElement('div');
-        citeDiv.classList.add('hanging-indent');
-        citeDiv.classList.add('csl-entry');
-        var biblioDiv = window.document.getElementById('ref-' + cite);
-        if (biblioDiv) {
-          citeDiv.innerHTML = biblioDiv.innerHTML;
-        }
-        popup.appendChild(citeDiv);
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
       });
-      return popup.innerHTML;
-    });
+    }
   }
 });
 </script>

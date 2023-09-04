@@ -1,3 +1,7 @@
+---
+lang: es
+---
+
 # Prefacio {.unnumbered}
 
 Este libro trata sobre la enseñanza de algunos métodos básicos de la estadística y la moderna ciencia de datos y su aplicación al entorno industrial. Está concebido de forma práctica con multitud de ejemplos, no sólo industriales, con el objetivo de mostrar los métodos cuantitativos de análisis, y también el razonamiento necesario para dar sentido a los resultados presentados por las herramientas de análisis de datos.
@@ -12,18 +16,20 @@ Este libro trata sobre la enseñanza de algunos métodos básicos de la estadís
 ```
 El objetivo del libro es acercar a los estudiantes de la Formación Profesional al uso de las herramientas de análisis de datos industriales. El entorno de la industria 4.0 produce un enorme y constante flujo de datos como consecuencia tanto a la implantación de sistemas de captura automáticos como al aumento de la tecnificación de los puestos de trabajo; se requiere por parte de los profesionales industriales que sean capaces de analizar esta enorme cantidad de datos para transformarlos en información para la decisión. En la empresa industrial actual, son los ingenieros y técnicos de planta, y no estadísticos o ingenieros informáticos, quienes participan diariamente en la presentacion y discusion de los datos y en la toma de decisiones operativas, tanto en los equipos de trabajo como ante la Dirección. Por esta razón, considero necesario proporcionar a los estudiantes de la Formación Profesional un conocimiento suficiente de los conceptos, herramientas y métodos del análisis de datos, así como de las técnicas básicas de presentación y comunicación de la información.
 
+El control estadístico de la calidad empezó con W.E. Deming a mediados del pasado siglo XX, y fueron las empresas japonesas, sobre todo las automovilísticas, las que inicialmente recogieron el testigo de Deming y aplicaron estos principios a la mejora de la producción industrial, difundiendo su conocimiento a todos los niveles jerárquicos de las organizaciones, desde los operarios de línea hasta los más altos directivos. Desde ese momento hasta la difusión actual de los métodos Six Sigma gracias a General Electric y Motorola, la mejora industrial de los procesos ha estado siempre apoyada en la correcta utilización de estas metodologías.
+
 La enseñanza de los conceptos estadísticos está, casi siempre, a cargo de profesores con una gran formación en matemáticas. Estos profesores suelen identificar la comprensión de los conceptos estadísticos con su comprensión matemática. Sin embargo, cuando enseñamos estadística industrial, debemos hacer énfasis tanto en las ideas y la comprensión de los conceptos como en su utilización práctica, y reconocer que el razonamiento matemático no es el único camino para la comprensión conceptual.
 
 La práctica de la estadística requiere buen juicio y sentido común. Dado que el buen juicio se desarrolla con la experiencia, un curso de iniciación debe presentar unas guías claras de aplicación de los métodos, y no dar por supuestas unas exigencias excesivamente altas sobre la capacidad de juicio analítico de los estudiante; no sería un planteamiento razonable. Con el fin de desarrollar esta capacidad de juicio analítico he introducido explicaciones detalladas en la mayor parte de los ejemplos. En todos los casos, los ejercicios requerirán del estudiante no sólo una resolución numérica, sino el uso del juicio analítico y la explicación verbal (o escrita) de las decisiones tomadas y conclusiones realizadas. Creo que este planteamiento será mucho más beneficioso a largo plazo que limitarse a una simple resolución numérica.
 
 Mi experiencia industrial me ha mostrado que en las situaciones reales, sobre el terreno, la comprensión práctica de los conceptos es más importante que su rigurosa formulación matemática. Por esta razón, en el desarrollo del contenido del libro he insistido más en la forma de aplicar las herramientas y entender los análisis que en el conocimiento formal de las fórmulas estadísticas y su deducción matemática. He hecho especial hincapié en la utilización de herramientas sencillas, sobre todo gráficas, que casi siempre son una ayuda para comprender la información contenida en un conjunto de datos. El objetivo es proporcionar al estudiante las bases de la metodología del análisis de datos y del análisis estadístico, y cómo puede aplicarse a la resolución de problemas técnicos concretos, más que el conocimiento de la teoría matemática de la estadística.
 
-He evitado las explicaciones formales sobre temas estadísticos cuando no son indispensables para su aplicación práctica. Así, por ejemplo, al explicar la media de un conjunto de datos considero más importante entender el concepto físico de "centro de gravedad" que los conceptos estadísticos de esperanza matemática, que no se tocan en este texto. En este sentido, he intentado que el alumno diferencie bien el concepto de "en qué consiste" un estadístico del concepto práctico de "cómo se calcula"; entender lo que significa un valor central concreto aplicado a un conjunto de números y comprender la diferencia entre el concepto y su fórmula de cálculo es fundamental para entender en qué situación debe usarse uno u otro estadístico.
+He evitado las explicaciones formales sobre temas estadísticos cuando no son indispensables para su aplicación práctica. Así, por ejemplo, al explicar la media de un conjunto de datos considero más importante entender el concepto físico de "centro de gravedad" que los conceptos estadísticos de esperanza matemática, que no se tocan en este texto. En este sentido, he intentado que el alumno aprenda a diferenciar "en qué consiste" un estadístico, de "cómo se calcula". Comprender la diferencia entre el concepto y su fórmula de cálculo es fundamental para entender en qué situación debe usarse uno u otro estadístico.
 
 ::: {#fig-intro-media layout-ncol="2" layout-valign="bottom"}
-![Diagrama de puntos (dotplot)](01-imagenes/media-balanza.svg){#fig-media}
+![Diagrama de puntos (dotplot) mostrando la posición de la media](01-imagenes/media-balanza.svg){#fig-media}
 
-![Palanca de primer grado](01-imagenes/palanca.png){#fig-palanca}
+![Palanca de primer grado con el fulcro como punto de equilibrio](01-imagenes/palanca.png){#fig-palanca}
 
 Comparación gráfica del significado de la media en un diagrama de puntos (*dotplot*) con una palanca de primer grado.
 :::
@@ -36,7 +42,9 @@ Las industrias líderes destacan por la aplicación intensiva de métodos sofist
 
 ## A quién va dirigido este libro
 
-El libro está orientado a completar la formación técnica de los estudiantes de Formación Profesional, en las especialidades relacionadas con la actividad productiva industrial. También creo que será de utilidad para los técnicos industriales en activo que no han tenido una adecuada formación en estas metodologías, y que han encontrado dificultad para lanzarse a su aprendizaje mientras desarrollan so actividad profesional. En todos los casos, el aprendizaje requerirá de un esfuerzo que quizás será mayor en los estudiantes que no tengan una base mínima en álgebra y cálculo. En estos casos, el trabajo en equipo y la discusión abierta entre compañeros y con los profesores ayudará a la comprensión de los conceptos.
+El libro está orientado a completar la formación técnica de los estudiantes de Formación Profesional, en las especialidades relacionadas con la actividad productiva industrial. También creo que será de utilidad para los técnicos industriales en activo que no han tenido una adecuada formación en estas metodologías, y que han encontrado dificultad para lanzarse a su aprendizaje mientras desarrollan so actividad profesional. Espero, también, que los profesores de la Formación Profesional en estos ámbitos de competencia encuentren en este documento los elementos de apoyo que les permitan integrar estas enseñanzas en sus respectivos ciclos formativos.
+
+En todos los casos, el aprendizaje requerirá de un esfuerzo que quizás será mayor en los estudiantes que no tengan una base mínima en álgebra y cálculo. En estos casos, el trabajo en equipo y la discusión abierta entre compañeros y con los profesores ayudará a la comprensión de los conceptos.
 
 ## Organización del libro
 
@@ -70,29 +78,27 @@ El libro es eminentemente práctico, con numerosos ejercicios; la resolución pu
 
 Algunos recuadros utilizan códigos de color para indicar el objetivo de la información que contienen. Básicamente, los colores utilizados son:
 
-::: {.content-visible .callout-tip when-format="html" icon="false"}
+::: {.callout-note .content-visible when-format="html" icon="false"}
 ## Problema o cuestión a resolver
 
-El recuadro verde se utilizará para proponer problemas sencillos cuya respuesta se encuentra en el margen. El objetivo de estos problemas es estimular la reflexión sin necesidad de recurrir al cálculo.
+El recuadro azul se utilizará para proponer problemas sencillos cuya respuesta se encuentra más adelante en el texto. El objetivo de estos problemas es estimular la reflexión, aunque puede ser necesario recurrir a cálculos sencillos ayudados por las herramientas disponibles.
 :::
 
-[Normalmente la respuesta al problema *verde* se sitúa en la misma página, en el margen anexo al recuadro]{.aside}
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Respuesta al problema o cuestión a resolver
 
-::: {.content-visible .callout-note when-format="html" icon="false"}
-## Problema o cuestión a resolver
-
-El recuadro azul se utilizará para proponer problemas más complejos cuya resolución se ofrece al final del capítulo: Necesitan manejo de herramientas estadísticas en el ordenador y de los conceptos explicados en el texto
+El recuadro verde se utilizará para proponer una respuesta al problema planteado; respuesta que no tiene por qué ser la única posible. Normalmente se presentará de forma oculta.
 :::
 
 Además se incluyen diferentes tipos de avisos cada vez que se introduce algún concepto que es necesario resaltar.
 
-::: {.content-visible .callout-important when-format="html"}
+::: {.callout-important .content-visible when-format="html"}
 ## Importante
 
 En este formato se indican cuestiones importantes
 :::
 
-::: {.content-visible .callout-warning when-format="html"}
+::: {.callout-warning .content-visible when-format="html"}
 ## ¡Atención!
 
 En este formato se indican cuestiones a las que hay que prestar especial atención o que pueden inducir a error
@@ -130,23 +136,11 @@ Esta es una caja que remarca un texto importante
 
 En la práctica diaria, los técnicos industriales usan los ordenadores para almacenar y visualizar los datos de producción, para solucionar problemas mediante análisis estadísticos, y para presentar sus resultados de forma gráfica. De la misma forma que en el entorno industrial, en este libro se utilizarán también los ordenadores de forma habitual, y por esta razón es imprescindible que los estudiantes tengan acceso individual a un ordenador en el que esté instalado el software recomendado, y que se acostumbren a utilizarlo para resolver los problemas y casos planteados como ejercicios prácticos, individualmente y en grupo.
 
-### Las hojas de cálculo y la programación en R.
-
-La hoja de cálculo es una herramienta omnipresente hoy día en todos los ámbitos de trabajo y educativos. Desde la aparición de [Visicalc](https://es.wikipedia.org/wiki/VisiCalc), en 1978, la hoja de cálculo ha contribuido a la gestión de miles de empresas, se ha utilizado de manera general en análisis de datos y sus gráficos se han utilizado y se utilizan en publicaciones e informes de todas clases. En la década de los años 80 del pasado siglo, la hoja de cálculo [Lotus 1-2-3](https://es.wikipedia.org/wiki/Lotus_1-2-3) fue la aplicación más utilizada en los ordenadores IBM-PC y compatibles, y consiguió facturaciones millonarias para la empresa matriz. Lotus 1-2-3 dominó el mercado hasta la aparición de Microsoft Windows a finales de los años 80; el nuevo sistema operativo favoreció la implantación de Excel, que desde entonces se convirtió en la hoja de cálculo dominante.
-
-![Visicalc, primera hoja de cálculo para el ordenador *Apple II* (1979)](01-imagenes/280px-Visicalc.png){.column-margin}
-
 El estudiante que se incorpora a una empresa, sea en un laboratorio o en una planta de producción, se va a encontrar muy pronto delante de una hoja de cálculo, y debe saber cómo utilizarla correctamente. Actualmente, lo más probable es que esa hoja de cálculo sea Microsoft Excel, aunque hay otras alternativas posibles, como Google Sheets, Apple Numbers, OpenOffice Calc y algunas más. La gran dominancia en el mercado de Microsoft Excel ha hecho que todas estas herramientas sean totalmente compatibles o tengan modos de compatibilidad con Excel. Por esta razón, este libro se basa en la utilización de Excel como hoja de cálculo y herramienta principal para el almacenamiento de datos.
 
-![Hoja de cálculo Lotus 1-2-3 para MS-DOS (1983)](01-imagenes/Lotus-123-3.0-MSDOS.png){.column-margin}
-
-A lo largo del libro se presentarán informes y gráficos obtenidos con Microsoft Excel, y también con el [software estadístico R](https://en.wikipedia.org/wiki/R_%28programming_language%29). Prácticamente todos ellos pueden ser exportados a otras herramientas, como Google Sheets, OpenOffice, Minitab o Matlab, o analizarse con otros lenguajes de programación, como Python o Julia. En realidad, el método de análisis y cómo obtener un resultado correcto son aspectos más importantes que la herramienta que se utilice para ello, por lo que queda en manos del instructor la decisión final sobre qué usar y cómo. Para facilitar este trabajo de conversión, en su caso, todo el material del libro y los datos de ejemplo están disponibles en un repositorio de GitHub.
-
-![Microsoft Excel (2023)](01-imagenes/excel.png)
+A lo largo del libro se presentarán informes y gráficos obtenidos con Microsoft Excel, y también con el [software estadístico R](https://en.wikipedia.org/wiki/R_%28programming_language%29). Prácticamente todos ellos pueden ser exportados a otras herramientas, como Google Sheets, OpenOffice, Minitab o Matlab, o analizarse con otros lenguajes de programación, como Python o Julia. En realidad, el método de análisis y cómo obtener un resultado correcto son aspectos más importantes que la herramienta que se utilice para ello, por lo que queda en manos del instructor la decisión final sobre qué usar y cómo. Para facilitar este trabajo de conversión, en su caso, todo el material del libro y los datos de ejemplo estarán disponibles en un repositorio de GitHub.
 
 Algunos ejercicios tienen que ver con la interpretación y presentación de los resultados. Es importante que estos trabajos se realicen en grupo y se haga énfasis en la comprensión del problema y en su correcta exposición; en los equipos industriales de hoy, la discusión de problemas y la exposición de resultados, en reuniones de trabajo o en paneles informativos a pie de planta, forma parte del trabajo diario. Estas habilidades de comunicación deben ser desarrolladas en los estudiantes de forma prioritaria.
-
-![Logotipo de R (2023)](01-imagenes/Rlogo.svg){.column-margin}
 
 La ventaja de R sobre Excel es que el código R, si está bien documentado, muestra cada paso realizado, y esto permite que otras personas puedan verificar el resultado y reproducirlo a partir de los datos originales, e incluso reutilizar los procedimientos. Utilizar código en vez de clicks de ratón es esencial para asegurar la **reproducibilidad de los análisis de datos**, [^index-1]. Por esta razón, recomiendo el uso del lenguaje R como complemento o alternativa a la hoja de cálculo, tanto para analizar como para visualizar datos. Sin embargo, como la realidad del mundo de la empresa es que los lenguajes como R están todavía poco introducidos, es inevitable mantener el uso de la hoja de cálculo; en el libro se explicarán algunas *mejores prácticas*, que permitirán el uso simultáneo de ambas herramientas de forma óptima.
 
@@ -154,13 +148,13 @@ La ventaja de R sobre Excel es que el código R, si está bien documentado, mues
 
 Respecto a la **programación informática**, en el libro no se hace énfasis en la programación R más que como sucesión de órdenes individuales en scripts sencillos. No se busca la eficiencia computacional ni la rapidez en el cálculo, sino la comprensión de la metodología de resolución de problemas y cómo ésta se apoya en las herramientas presentadas. De la misma manera, tampoco se hace ningún uso de la programación en Excel, ya sea con **macros** o con **Visual Basic**; estos temas quedan fuera del perímetro de este libro.
 
-Un paso en la dirección de la implantación de **flujos de trabajo reproducibles** es la elaboración de informes automatizados. Estos informes incluyen el código R, los comentarios del autor en forma de texto formateado en [*markdown*](https://es.wikipedia.org/wiki/Markdown), y los resultados del código. Herramientas como [Quarto](https://quarto.org/), o [Google Colaboratory](https://colab.research.google.com/), que usa la interface Jupyter, son nuevas formas de elaborar y presentar los informes y resultados estadísticos. Estas herramientas abren posibilidades muy interesantes en la presentación de un ejercicio o un exámen escrito, ya que el alumno puede detallar perfectamente todos los pasos hasta llegar al resultado final, y facilita la revisión por sus compañeros o por el profesor a cargo de la asignatura.
+Un paso en la dirección de la implantación de **flujos de trabajo reproducibles** es la elaboración de informes automatizados. Estos informes incluyen el código R, los comentarios del autor en forma de texto formateado en [*markdown*](https://es.wikipedia.org/wiki/Markdown), y los resultados del código. Herramientas como [Quarto](https://quarto.org/), o [Google Colaboratory](https://colab.research.google.com/), que usa la interface Jupyter, son nuevas formas de elaborar y presentar los informes y resultados estadísticos. En el entorno docente, estas herramientas abren posibilidades muy interesantes en la presentación de un ejercicio o un exámen escrito, ya que el alumno puede detallar perfectamente todos los pasos hasta llegar al resultado final, y facilita la revisión por sus compañeros o por el profesor a cargo de la asignatura.
 
 ## Recursos adicionales y cómo usarlos
 
 En este libro no se hace una introducción a R ni a Excel; se presupone que el alumno tiene un conocimiento básico de ambas herramientas. Si no tiene ninguna formación sobre el lenguaje R y el entorno RStudio recomiendo hacer alguna formación previa sencilla que introduzca los conceptos básicos. [Datacamp](https://www.datacamp.com/) tiene [cursos gratuitos de introducción a $R$](https://www.datacamp.com/courses/free-introduction-to-r); también hay cursos de formación tanto de R como de Excel en otras plataformas web como [edX](https://www.edx.org/), [Udemy](https://www.udemy.com/course/curso-de-introduccion-a-r/) y [Coursera](https://es.coursera.org/courses?query=r), muchos de ellos gratuitos. El Gobierno de España, dentro de una de sus iniciativas de transformación digital, la [iniciativa de datos abiertos](https://datos.gob.es/es), incluye también una amplia referencia a [cursos de formación sobre R](https://datos.gob.es/es/noticia/cursos-para-aprender-mas-sobre-r).
 
-Todos los datos presentados en los ejemplos se incluyen en hojas de cálculo que están disponibles en ... También se incluyen fuentes de datos adicionales que pueden permitir plantear nuevos ejercicios.
+Todos los datos presentados en los ejemplos se incluyen en hojas de cálculo que están disponibles en GitHub. También se incluyen fuentes de datos adicionales que pueden permitir plantear nuevos ejercicios.
 
 Al final del libro se incluye una bibliografía completa.
 

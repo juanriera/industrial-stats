@@ -1,0 +1,226 @@
+---
+lang: es
+editor: visual
+---
+
+# Herramientas para el análisis de los datos industriales
+
+## Las hojas de cálculo.
+
+La hoja de cálculo es una herramienta omnipresente hoy día en todos los ámbitos de trabajo y educativos. Desde la aparición de [Visicalc](https://es.wikipedia.org/wiki/VisiCalc), en 1978, la hoja de cálculo ha contribuido a la gestión de miles de empresas, se ha utilizado de manera general en análisis de datos y sus gráficos se han utilizado y se utilizan en publicaciones e informes de todas clases. En la década de los años 80 del pasado siglo, la hoja de cálculo [Lotus 1-2-3](https://es.wikipedia.org/wiki/Lotus_1-2-3) fue la aplicación más utilizada en los ordenadores IBM-PC y compatibles, y consiguió facturaciones millonarias para la empresa matriz. Lotus 1-2-3 dominó el mercado hasta la aparición de Microsoft Windows a finales de los años 80; el nuevo sistema operativo favoreció la implantación de Excel, que desde entonces se convirtió en la hoja de cálculo dominante.
+
+::: {layout="[[1,1], [1]]"}
+![Visicalc, primera hoja de cálculo para el ordenador *Apple II* (1979)](01-imagenes/280px-Visicalc.png)
+
+![Hoja de cálculo Lotus 1-2-3 para MS-DOS (1983)](01-imagenes/Lotus-123-3.0-MSDOS.png)
+
+![Microsoft Excel (2023)](01-imagenes/excel.png)
+:::
+
+## El software estadístico R
+
+## Almacenar datos en una hoja de cálculo
+
+Las **hojas de cálculo** son muy útiles para recoger la información de un conjunto de observaciones. De la misma manera que la gramática permite ordenar y estructurar un escrito de acuerdo a reglas comunes, veremos que hay reglas para que el almacenamiento de los datos sea lo más homogéneo posible y se reduzcan los errores al mínimo.
+
+En este libro trataremos exclusivamente de lo que llamaremos **datos rectangulares**: grupos de valores que están asociados a una o más variables, y a varias observaciones. Hay muchos más datos que no se ajustan a este paradigma: imágenes, sonidos, archivos documentales de texto. Pero la forma más común de almacenar datos industriales es la de las tablas rectangulares; vamos a aprender cómo organizarlas correctamente.
+
+### Preparación de los datos
+
+Los datos se pueden recoger y guardar de múltiples formas. Cuando nos incorporamos a un equipo de trabajo existente, lo más seguro es que el equipo disponga ya de un sistema de archivo de los datos, de acuerdo con sus prácticas habituales.
+
+Cuando la recogida de datos se hace de forma manual en papel, es necesario registrar en el ordenador los datos recogidos. Lo más frecuente es que este registro se haga en hojas de cálculo, como [Microsoft Excel](https://www.microsoft.com/es-es/microsoft-365/excel) o [Google Sheets](https://www.google.es/intl/es/sheets/about/). En algunos casos, el almacenamiento se hace sobre bases de datos, genéricas o desarrolladas a medida.
+
+Actualmente, la tendencia es recoger los datos o bien de forma automática, o bien de forma manual sobre sistemas informatizados (pantallas), lo que permite eliminar el papel y disponer directamente de los datos en un formato digitalizado.
+
+Los equipos y líneas de producción diseñados actualmente (IoT) se interconectan con los sistemas de información y almacenan en tiempo real todos los datos necesarios, lo que libera al operario de la pesada tarea de reintroducirlos manualmente, a la vez que reduce los errores debidos a la imputación incorrecta.
+
+En todos los casos, es imprescindible asegurar que los sistemas de información pueden exportar a ficheros de texto tipo *fichero plano* o tipo CSV, de forma que podamos importarlos tanto a Excel como a R, como veremos más adelante. Estos sistemas de exportación de datos deben diseñarse de forma flexible y abierta, para que tanto la captura como la exportación puedan modificarse y adaptar la recogida de la información a las necesidades de cada momento.
+
+### Diseño de la captura de información
+
+A veces el diseño de la captura de datos sigue aproximadamente el modelo manual en papel. Se introducen los datos en la hoja de cálculo y una vez completados, se imprime el documento para su archivo.
+
+El error más común que cometemos es tratar la hoja de cálculo como un bloc de notas, es decir, hacer anotaciones de forma libre, colocar los datos y el resultado de los análisis al lado y en cualquier parte de la hoja, y apoyarnos en el contexto para interpretar lo que hemos guardado. Pero para que el ordenador sea capaz de analizar nuestros datos de manera eficiente, debemos estructurarlos de tal forma que el programa use la información tal como nosotros queremos.
+
+Es común utilizar una hoja para guardar múltiples tablas de datos, tal como vemos en la [@fig-excel_mess]. Esta estructura, sin embargo, resulta enormemente confusa para su análisis, o lo imposibilita completamente.
+
+![Hoja Excel desordenada: ¡No hagas esto!](01-imagenes/excel_mess.png){#fig-excel_mess alt="Hoja Excel desordenada: ¡No hagas esto!"}
+
+En otros casos, los datos se guardan en hojas de cálculo que se componen de diferentes pestañas para cada semana, cada mes o cada año, como vemos en la @fig-2021-09-1_excel_1. Sin embargo, esta forma de almacenar los datos tampoco es la óptima para su análisis.
+
+![Hoja Excel con una estructura no ordenada](01-imagenes/2021-09-1_excel_1.png){#fig-2021-09-1_excel_1 alt="Hoja Excel con una estructura no ordenada"}
+
+¿Y utilizar diferentes pestañas para cada tabla? En este caso, la respuesta es sí y no. Si las diferentes tablas presentan situaciones diferentes, o datos que no son coincidentes, podemos utilizar diferentes pestañas. Pero si los datos están vinculados, por ejemplo, se corresponden con medidas hechas en fechas diferentes (meses, años), la respuesta adecuada es que las pestañas no son la forma correcta de almacenarlos datos; la forma recomendad es añadir una variable que nos permita diferenciar los datos por fecha; nuestro programa de análisis nos permitirá *filtrar* los datos según la fecha que deseemos, y todos estarán en una única tabla, facilitando la coherencia del conjunto.
+
+Hay muchas formas de almacenar la información en una hoja de cálculo, pero hay una forma que facilita la utilización de los datos tanto por la hoja de cálculo como por otros programas de análisis, A esta forma de almacenar las tablas de datos la llamamos **datos ordenados** (*tidy data*)[@wickham2014]
+
+## Los datos ordenados (*tidy data*)
+
+![Hoja Excel con estructura rectangular de datos ordenados](01-imagenes/2023-01-20.png){#fig-excel-camembert .column-margin alt="Hoja Excel con estructura rectangular de datos ordenados"}
+
+Las reglas principales al almacenar nuestros datos en una hoja de cálculo es que columnas=variables, filas=observaciones, celdas=valores. Estas tres reglas básicas son las que hacen que nuestro conjunto de datos sea ordenado [@wickham2017]:
+
+1.  Cada variable debe tener su propia columna.
+2.  Cada observación debe tener su propia fila.
+3.  Cada valor debe tener su propia celda o casilla .
+
+La @fig-tidy1 muestra estas reglas de forma visual.
+
+![Sigue estas tres reglas para tener un conjunto de datos ordenado: las variables están en columnas, las observaciones están en filas, y los valores están en celdas. Fuente de la imagen: [@wickham2017]](01-imagenes/tidy-1.png){#fig-tidy1 alt="Sigue estas tres reglas para tener un conjunto de datos ordenado: las variables están en columnas, las observaciones están en filas, y los valores están en celdas. Fuente de la imagen: [@wickham2017]"}
+
+Estas tres reglas están interrelacionadas porque es imposible satisfacer sólo dos de tres.
+
+## Los nombres de las variables
+
+Según hemos visto, existen diferentes tipos de variables, **cualitativas** (*categóricas*) y **cuantitativas** (*métricas*). Normalmente, los valores de las variables categóricas se describen mediante textos del tipo "color blanco", "hombre", "mujer", "alto", "bajo", etc. Suelen corresponder con características descriptivas, y por lo tanto, no puede hacerse cálculos directamente con ellos, a menos que se hayan resumido, por ejemplo, mediante un conteo. Las variables métricas consisten en valores numéricos, que pueden ser **enteros** ($1$;$24$;$350$) o **continuos** ($1,456$;$0,35$) y que sí pueden utilizarse directamente para hacer cálculos tales como sumas, etc.
+
+Una **variable** está descrita siempre por **un nombre**, que designa la variable, y **un valor o conjunto de valores**, que corresponden a los casos. Este conjunto de valores, como acabamos de ver, pueden ser textos o números.
+
+[Existen también otros tipos de variables que veremos más tarde, como variables lógicas o fechas, según el tipo de dato que almacenemos en esa variable.]{.aside}
+
+Ejemplos de valores de texto: "Carlos", "fruta", "Lluvia fuerte", "muy ácido", "sabor a fresa"
+
+Ejemplos de valores numéricos: $1$; $7$; $10,65$
+
+Siempre que sea posible, utilizaremos el nombre del atributo o característica que estamos midiendo o analizando, o su abreviatura, para designar una variable; por ejemplo, si estamos recogiendo la altura de una serie de personas, llamaremos `altura` a la variable; si estamos recogiendo el peso, usaremos el nombre `peso`, etc.
+
+En una hoja de cálculo, colocaremos el nombre de la variable en la primera fila, e iremos añadiendo los valores debajo, un valor por línea.
+
+A veces, asignar un nombre a una variable no es todo lo fácil que podría parecer a simple vista. Por ejemplo, ¿qué nombre daríamos a una variable que va a recoger los valores de $pH$ de la leche en una cuba de queso en el momento de añadir el cuajo? Está claro que $pH$ no es suficiente, porque en el proceso hay varias medidas de $pH$ y sería bueno que pudiésemos diferenciarlas con facilidad. En un caso como éste, es probable que necesitemos utilizar varias palabras o abreviaturas que describan mejor el nombre de la variable.
+
+![](01-imagenes/aula1.png){.column-margin}
+
+Para la construcción correcta de estos nombres, se han establecido un conjunto de normas, con el objetivo de evitar errores y facilitar el intercambio de los datos entre diferentes programas de análisis.
+
+### Reglas para los nombres de las variables
+
+Las hojas de cálculo admiten que introduzcamos cualquier texto en una celda; no hay prácticamente ninguna limitación a los nombres que podemos usar para nuestras variables. Excel utilizará los nombres con cualquier carácter sin inconvenientes.
+
+Sin embargo, otros programas informáticos, entre ellos R, son mucho más restrictivos. Por esta razón, estableceremos una serie de reglas para construir los nombres de variables, que aplicaremos a nuestras tablas de Excel, y que nos permitirán intercambiarlas con otros programas, como R, con toda seguridad.
+
+1.  Un nombre válido consiste en una combinación de letras, números y signo de subrayado ($\_$)
+2.  Un nombre de variable no puede empezar por un número, un punto o un signo de subrayado ($\_$); debe empezar siempre por una letra.
+3.  Los nombres de variables irán siempre en minúsculas. Según esta regla, $Peso$ no es un nombre válido, pero $peso$ si lo es.
+
+[En R, las mayúsculas son significativas es decir, en R, $peso$ y $Peso$ son nombres diferentes. Por esta razón, aunque el uso de mayúsculas está permitido, nosotros adoptaremos las minúsculas de forma general)]{.aside}
+
+4.  No utilizaremos espacios en blanco, acentos ni caracteres especiales como $\tilde{n}$, $\%$, guiones o paréntesis.
+
+5.  Hay veces en que nos interesa unir varias palabras para construir un nombre de variable. Se utilizan diferentes formas de unir palabras, por ejemplo:
+
+    -   un punto, como en $peso.en.cm$,
+
+    -   lo que se ha llamado *escritura de camello* (*camelCase*), que se llama así por el uso de mayúsculas y minúsculas mezcladas ($PesoEnCm$)
+
+    -   el signo de subrayado $\_$, como en $peso\_en\_cm$
+
+    Algunas de estas opciones son utilizadas en distintas comunidades de usuarios, por ejemplo la opción 1 es utilizada en la guía de estilo de Google, y la opción 2 es muy utilizada por los programadores del entorno de los lenguajes de Microsoft. Nosotros utilizaremos el signo de subrayado ($\_$), que es la forma más usada en el entorno de programación de R.
+
+6.  Siempre se separarán las palabras mediante el signo de subrayado (\_) para facilitar la lectura. Así, aunque $temperatura1$ es un nombre válido, preferiremos $temp\_1$; es más corto y de lectura más clara. Igualmente, preferiremos $peso\_empaquetado$ a $pesoempaquetado$
+
+7.  Mantendremos los nombres razonablemente cortos para facilitar la lectura. Aunque podemos hacer los nombres todo lo largos que queramos, es más cómodo utilizar nombres cortos. Por ejemplo, podríamos utilizar $temperatura\_de\_la\_leche\_al\_cuajar$, pero preferiremos abreviarlo como $temp\_cuajo$.
+
+Nombres no válidos:
+
+-   $peso\ en\ gramos$ (contiene espacios)
+-   $pH\_de\_la\_leche\_en\_Recepci\acute{o}n$ (demasiado largo, tiene un acento, tiene mayúsculas)
+-   $extracto\_seco\_total\_a\_la\_salida\_de\_la\_salmuera$ (demasiado largo)
+
+Alternativas válidas:
+
+-   $peso\_g$
+-   $pH\_leche\_rec$ (en este caso, de manera excepcional, podemos mantener el uso de la mayúscula por corrección formal)
+-   $est\_salida\_sal$
+
+Un caso particular es el uso de la $\tilde{n}$, ya que no hay una alternativa fácil para el uso en las fechas ($a\tilde{n}o$). R admite el uso de la $\tilde{n}$ en los nombres de variables, por lo que podremos usarlo con cuidado, poniendo atención a los posibles errores que se pudiesen producir en algunas librerías.
+
+::: {.content-visible .callout-tip icon="false"}
+## Para resolver
+
+Poner aquí distintos ejemplos de nombres de variables para verii son válidos o no Describir medidas y preguntar cómo llamaríamos a esa variable (por ejemplo, temperatura de laleche que acabamos de descargar de una cisterna)
+:::
+
+## Datos rectangulares en Excel
+
+La estructura de **datos ordenados** nos lleva a almacenar nuestros datos en tablas con estructura rectangular. La mejor forma de manejar los datos en Excel es convertir esta estructura en una **tabla**, para ello utilizaremos la opción `Menú`\> `Insertar`\>`Tabla`
+
+![Tabla Excel](01-imagenes%5C2023-01-20-1.png){.column-margin alt="Tabla Excel"}
+
+Aunque en Excel no es fácil modificar esta estructura, R proporciona herramientas muy útiles que permiten intercambiar filas o columnas, lo que en ocasiones es muy útil en el análisis. @wickham2017 proporciona métodos detallados para manejar tablas de datos ordenados.
+
+## De Excel a R
+
+Una vez que tenemos nuestros datos en Excel, hay dos formas en las que podemos poner los datos a disposición de R para su análisis: exportarlos a un archivo de texto con ***formato CSV***, o leer directamente los datos de Excel desde R utilizando las funciones de la librería `tidyverse`. En ambos casos, el resultado en R es un ***dataframe*** o *cuadro de datos*, que es una estructura equivalente a la de nuestra tabla de datos en Excel.
+
+### Qué es un fichero plano y un fichero CSV
+
+Se suele llamar **fichero plano** a un fichero de datos de texto sin ningún tipo de formato, donde los datos están separados por espacios o tabulaciones. Muchos equipos automáticos, como balanzas de laboratorio o básculas de proceso, producen ficheros planos de texto, que se pueden importar a Excel o R. Un [fichero CSV](https://es.wikipedia.org/wiki/Valores_separados_por_comas) es un fichero plano en el que los valores están separados por un carácter especial, llamado **separador**. Este separador puede ser una coma `,` (cuando los decimales se separan mediante un punto, como en EEUU) o un punto y coma `;` (cuando los decimales se separan mediante una coma, como en España)
+
+::: {#fig-ficheros-texto layout="[[1,1], [1]]" layout-valign="bottom"}
+![Fichero plano](01-imagenes/fichero-plano.png){alt="Fichero plano"}
+
+![Fichero CSV separado por puntos y comas](01-imagenes/fichero-csv-europeo.png){alt="Fichero CSV separado por puntos y comas"}
+
+![Fichero CSV separado por comas](01-imagenes/fichero-csv-comas.png){alt="Fichero CSV separado por comas"}
+
+Tres tipos de ficheros planos de texto.
+:::
+
+En un fichero plano o en un fichero CSV, la primera fila puede contener los nombres de las columnas. En algunos casos, los elementos de texto pueden estar entre comillas. En estos casos, los programas de importación se ocupan de la conversión de formatos.
+
+La importación de un fichero CSV en Excel en español es directa si se ha generado con puntos y comas como separador y comas para los decimales; si no es así, nos aparecerá como un fichero plano de texto sin formato, y tendremos que realizar una conversión.
+
+### Cómo exportar los datos a un fichero CSV desde Excel.
+
+## La reproducibilidad de los análisis de datos
+
+[Literate programming - Wikipedia](https://en.wikipedia.org/wiki/Literate_programming)
+
+[Reproducible Research (hbiostat.org)](https://hbiostat.org/rr/#reproducible-research-bbr-chapter-21)
+
+[rr (hbiostat.org)](https://hbiostat.org/rr/#reproducible-research-bbr-chapter-21)
+
+En el mundo científico y técnico cada vez cobra más importancia el concepto de **reproducibilidad de los análisis**, sobre todo cuando se trata de comunicar o publicar el resultado de un trabajo o de una investigación. Medios, como la prestigiosa revista *Science*, se han hecho eco de ello [@science2015]. Por otra parte, la utilización de un flujo de trabajo basado en hojas de cálculo hace difícil garantizar esta reproducibilidad, y a veces puede llevar a cometer errores de consecuencias graves [@ferrero2018; @ryssdal2013].
+
+Jesse Sadler [@sadler2017] lo explica así:
+
+> El peligro de la hoja de cálculo deriva de su propia estructura. La mezcla de entrada de datos, análisis y visualización hace que sea fácil confundir las celdas que contienen datos sin procesar con las que son el resultado del análisis. La forma de definir la lógica programática, tal como la selección de qué celdas se van a sumar, mediante clics del mouse, significa que una acción errónea de clic o arrastre puede provocar errores o la sobreescritura de datos. Solo hace falta pensar en el pavor del momento en el que vas a cerrar una hoja de cálculo y el programa te pregunta si te gustaría guardar los cambios. Te hace preguntarte. ¿Quiero guardar? ¿Qué cambios hice? Debido a que la lógica en una hoja de cálculo se realiza a través de clics del mouse, no hay forma de rastrear de manera efectiva qué cambios se han realizado en una sesión o en la producción de un gráfico. Los errores cometidos con Excel pueden tener consecuencias graves, como se puso de manifiesto tras la controversia alrededor del [artículo de Carmen Reinhart y Kenneth Rogoff](https://nadaesgratis.es/garicano/el-error-de-reinhardt-y-rogoff) sobre la deuda nacional de los EEUU.
+
+> Ciertamente hay razones legítimas por las que las personas usan por defecto hojas de cálculo para el análisis de datos en lugar de usar un lenguaje de programación como R. Las hojas de cálculo son mucho más atractivas y confortables de lo que cualquier lenguaje de programación podría ser para un recién llegado. Aprender a programar es intimidante y no es algo que se pueda hacer rápida o fácilmente. Las aplicaciones de interfaz gráfica de usuario (GUI) son mucho menos desalentadoras que una interfaz de línea de comandos. En segundo lugar, las hojas de cálculo son una buena herramienta para la entrada de datos, y es tentador pasar directamente al análisis de datos, manteniendo todo en el mismo documento. Finalmente, la naturaleza interactiva de las hojas de cálculo y la capacidad de crear gráficos que cambian en función de las entradas es muy atractiva, incluso si desbloquear completamente este potencial implica un conocimiento bastante complejo sobre cómo funciona el programa. La primera ventaja de las hojas de cálculo sobre la programación no se supera fácilmente, pero las dos últimas se basan en lo que creo que es un flujo de trabajo problemático. En lugar de usar un par de aplicaciones monolíticas, a menudo un conjunto de aplicaciones de oficina, para hacer todo, creo que es mejor dividir el flujo de trabajo entre varias aplicaciones que hacen una cosa bien.
+
+> Crear una división clara entre la entrada y el análisis de datos es una de las principales razones por las que el análisis de datos en un lenguaje de programación es preferible al software de hoja de cálculo. Todavía uso hojas de cálculo, pero su limito su uso estrictamente a la entrada de datos. En un programa de hoja de cálculo, el análisis manipula directamente la única copia de los datos sin procesar. Por el contrario, con R se importan los datos, creando un objeto que es una copia de los datos sin procesar. Todas las manipulaciones de los datos se realizan en esta copia, y los datos originales nunca se alteran de ninguna manera. Esto significa que no hay forma de estropear los datos sin procesar. La manipulación de una copia de los datos le permite experimentar más libremente. Los errores son intrascendentes, incluso aunque a veces puedan llegar a ser frustrantes. Una línea de código que devuelve un error se puede ajustar y volver a ejecutar, repitiendo el proceso las veces necesarias hasta que se devuelva el resultado esperado.
+
+> Trabajar en una copia de los datos sin procesar puede incluso simplificar el proceso de entrada de datos. El análisis de datos tabulares en R da como resultado la creación de múltiples objetos, que se conocen como *data frames* y pueden considerarse equivalentes a tablas en una hoja de cálculo. La capacidad de dividir, muestrear y transformar el conjunto de datos original en muchos *data frames* diferentes tiene la ventaja de reducir drásticamente la complejidad de la entrada de datos. En lugar de necesitar hojas de cálculo a medida con múltiples hojas y tablas interrelacionadas, cada pieza de datos solo debe ingresarse una vez y todas las manipulaciones se pueden realizar en el código. Los diferentes *data frames* que se crean en el proceso de análisis ni siquiera tienen que ser guardados, porque son muy fácilmente reproducidos por el script de código.
+
+> La separación de la entrada y el análisis de los datos reduce en gran manera el potencial de errores, pero tal vez aún más significativamente, el uso de código para el análisis de datos permite la creación de investigaciones reproducibles que no son posibles en hojas de cálculo. \[...\] Con un lenguaje de programación, los pasos del análisis se pueden establecer claramente en el código \[...\] Guardar el análisis en código tiene el beneficio inmediato de que se puede volver a ejecutar fácilmente en cualquier momento que se agreguen nuevos datos. El código también se puede aplicar a un conjunto de datos completamente nuevo de una manera mucho más transparente que con las hojas de cálculo. El beneficio a largo plazo es que con el código todo el análisis se documenta en lugar de ocultarse detrás de los clics del mouse. Esto hace que sea más fácil revisar los propios análisis mucho después de haber terminado con ellos, así como que otros entiendan lo que se ha hecho y comprueben si hay errores.
+
+## El flujo de trabajo
+
+-   En qué consiste un flujo de trabajo en el análisis de datos
+
+    Gráfico de R4DS
+
+    ![](01-imagenes/data-science.png)
+
+-   Cómo estructurar un flujo de trabajo para el análisis de datos industriales
+
+## El uso de la hoja de cálculo:
+
+-   Introducción y almacenar datos
+
+-   Tablas dinámicas
+
+-   Gráficos y edición gráfica
+
+## El uso de R
+
+-   Exploración de datos (gráficos básicos)
+
+-   Manipulación de datos y exportación para su uso en Excel
+
+-   Análisis estadísticos
+
+-   Gráficos de control
+
+Informes automatizados

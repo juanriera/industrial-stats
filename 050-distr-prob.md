@@ -1,4 +1,4 @@
-# Probabilidad e inferencia
+# Distribuciones de probabilidad e inferencia
 
 ## Introducción al concepto de probabilidad
 
