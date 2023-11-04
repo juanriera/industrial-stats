@@ -136,11 +136,11 @@ Las reglas principales al almacenar nuestros datos en una hoja de cálculo son t
 
 Cada variable debe tener su propia columna, cada observación debe tener su propia fila, y cada valor debe tener su propia celda o casilla .
 
-Estas tres reglas básicas son las que hacen que nuestro conjunto de datos sea **ordenado (o arreglado)**[@wickham2017]:
+Estas tres reglas básicas son las que hacen que nuestro conjunto de datos sea **ordenado (o arreglado)**[@wickham2023] (hay edición *online* en español: [@wickham-es2023]:
 
 La @fig-tidy1 muestra estas reglas de forma visual.
 
-![Sigue estas tres reglas para tener un conjunto de datos ordenado: las variables están en columnas, las observaciones están en filas, y los valores están en celdas. Fuente de la imagen: \[\@wickham2017\]](01-imagenes/tidy-1.png){#fig-tidy1}
+![Sigue estas tres reglas para tener un conjunto de datos ordenado: las variables están en columnas, las observaciones están en filas, y los valores están en celdas. Fuente de la imagen: @wickham2023](01-imagenes/tidy-1.png){#fig-tidy1}
 
 Estas tres reglas están interrelacionadas porque es imposible satisfacer sólo dos de tres.
 
