@@ -3,7 +3,17 @@ lang: es
 editor: visual
 ---
 
-# La exploración de los datos
+# La exploración y descripción de los datos.
+
+## El flujo de trabajo.
+
+-   En qué consiste un flujo de trabajo en el análisis de datos
+
+    Gráfico de R4DS
+
+    ![](01-imagenes/data-science.png)
+
+-   Cómo estructurar un flujo de trabajo para el análisis de datos industriales
 
 ## Describiendo un conjunto de datos
 
@@ -45,6 +55,8 @@ Tables can summarize frequency distributions of categorical variables, and measu
 -   categorization loses information and statistical power because within-interval outcome heterogeneity is ignored and between-interval ordering is not utilized
 -   intervals are arbitrary, and changing interval boundaries can significantly change the apparent relationship
 -   with cutpoints one can easily manipulate results; one can find a set of cutpoints that results in a positive relationship and a different set [that results in a negative relationship](https://www.tandfonline.com/doi/abs/10.1080/09332480.2006.10722771)
+
+Frecuencia absoluta y frecuencia relativa -\> probabilidad, area bajo histograma y área bajo la curva
 
 ## Diagramas de barra
 

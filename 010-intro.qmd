@@ -1,6 +1,5 @@
 ---
 lang: es
-editor: visual
 ---
 
 # Introducción
@@ -11,15 +10,21 @@ La estadística es la ciencia de aprender a partir de los datos. Implica la reco
 
 Hay muchos aspectos del trabajo industrial que implican recoger datos, trabajar con ellos y utilizarlos para resolver un problema; el uso de la estadística es sólo una herramienta más, tan importante como cualquier otra disciplina en el bagaje de conocimientos de un científico, ingeniero o técnico industrial.
 
-Los métodos estadísticos nos ayudan a describir y comprender la **variabilidad**. Cuando hablamos de variabilidad queremos decir que sucesivas observaciones de un mismo proceso o sistema no dan exactamente los mismos resultados. Por ejemplo, el consumo de gasolina de un coche no es siempre igual, sino que varía de manera considerable. Esta variación depende de muchos factores, como la forma de conducir, el tipo de carretera, la situación del propio vehículo (presión de neumáticos, compresión del motor, ...), la marca de la gasolina, el octanaje, o incluso las condiciones meteorológicas. Todos estos factores son causas de **variabilidad** en el consumo de gasolina. La estadística nos permite analizar estos **factores** y determinar cuáles son los más importantes o tienen mayor impacto en el consumo; una vez conocidos, podemos actuar sobre ellos. El objetivo más importante de la mejora industrial es la **reducción de la variabilidad**.
+Los métodos estadísticos nos ayudan a describir y comprender la **variabilidad**. Cuando hablamos de variabilidad queremos decir que sucesivas observaciones de un mismo proceso o sistema no dan exactamente los mismos resultados. Por ejemplo, el consumo de gasolina de un coche no es siempre igual, sino que varía de manera considerable. Esta variación depende de muchos factores, como la forma de conducir, el tipo de carretera, la situación del propio vehículo (presión de neumáticos, compresión del motor, ...), la marca de la gasolina, el octanaje, o incluso las condiciones meteorológicas. Todos estos factores son causas de **variabilidad** en el consumo de gasolina. La estadística nos permite analizar estos **factores** y determinar cuáles son los más importantes o tienen mayor impacto en el consumo; una vez conocidos, podemos actuar sobre ellos.
+
+::: {.callout-important .content-visible when-format="html"}
+
+El objetivo principal de la mejora industrial es la **reducción de la variabilidad**.
+
+:::
 
 En este libro aprenderemos a utilizar herramientas diversas, tanto estadísticas como de la ciencia de datos, para realizar nuestro análisis. Para aprender de los datos necesitamos más que los simples números; para interpretarlos necesitaremos siempre el conocimiento del proceso industrial que estamos analizando.En un análisis de la producción de un producto lácteo, por ejemplo, los números significan poco sin un conocimiento del proceso; los valores de pH, temperatura o concentración de lactosa influyen en el resultado del proceso de forma diferente. Los datos son números dentro de un contexto, y necesitamos conocer este contexto para dar sentido a los números.
 
 ![](01-imagenes/Lean-Visual-Management-Boards-in-Factories-Keep-It-Simple.jpg){.column-margin}
 
-## El pensamiento estadístico
+## Método científico y pensamiento estadístico.
 
-Los ingenieros y técnicos resuelven problemas de interés para la empresa y la sociedad mediante la aplicación de los principios del método científico, siguiendo estos pasos: [Razonamiento estadístico]{.aside}
+Los ingenieros y técnicos resuelven problemas de interés para la empresa y la sociedad mediante la aplicación de los principios del método científico, siguiendo estos pasos:
 
 1.  Preparar una descripción clara y concisa del problema
 2.  Identificar, al menos de forma tentativa, los principales factores que afectan al problema, o que podrían tener un papel en su resolución
@@ -30,12 +35,23 @@ Los ingenieros y técnicos resuelven problemas de interés para la empresa y la 
 7.  Realizar un experimento adecuado para confirmar que la solución propuesta es efectiva y eficiente.
 8.  Sacar las conclusiones oportunas o hacer recomendaciones basándose en la solución encontrada.
 
+```{mermaid}
+flowchart LR
+  A[Describir el problema <br> con claridad] --> B[Identificar <br> los factores <br> más importantes]
+  B --> C[Proponer <br> o refinar <br> un modelo]
+  C --> D[Recoger <br> datos]
+  D --> B
+  C --> E[Manipular <br> el modelo]
+  E --> F[Confirmar <br> la solución]
+  F --> G[Sacar conclusiones <br> y hacer las recomendaciones]
+```
+
+
 ## Algunas definiciones importantes
 
 ### Población y muestra
 
 Una **población** es un conjunto de de personas, cosas o, en general, objetos en estudio. A veces, una población es demasiado grande para que podamos abarcarla completa; para poder estudiarla, obtenemos una **muestra**, que consiste en un subconjunto de la población que hemos seleccionado para su estudio. El proceso de obtener una muestra se llama **muestreo**, y se realiza de acuerdo con normas y procedimientos específicos.
-
 
 En muchas ocasiones, cuando se recogen los datos como resultado de una experimentación, definimos la población como *todos los resultados que podríamos haber obtenido*. Llamamos a este conjunto de posibles resultados una **población conceptual**. Por ejemplo, cuando medimos el $pH$ de varias muestras de leche, la población es el conjunto de todos los resultados posibles que podríamos haber tenido. Muchos problemas de ingeniería y tecnología se refieren a poblaciones conceptuales.
 
@@ -68,48 +84,25 @@ Según estas definiciones que acabamos de ver, una muestra está formada por un 
 ::: {.callout-note .content-visible when-format="html" icon="false"}
 ### Ejemplo 1: Muestreando una cámara de maduración de queso
 
-Imagínate que tienes que analizar el extracto seco de una producción de queso que está en fase de maduración en una cámara. Como la cámara está muy llena, es difícil acceder al interior, y decides coger tu muestra de los quesos que están más a tu alcance, justo al lado de la puerta y a la altura de la vista.¿Crees que es una buena idea? ¿Podrías definir la población en este caso?. 
+Imagínate que tienes que analizar el extracto seco de una producción de queso que está en fase de maduración en una cámara. Como la cámara está muy llena, es difícil acceder al interior, y decides coger tu muestra de los quesos que están más a tu alcance, justo al lado de la puerta y a la altura de la vista.¿Crees que es una buena idea? ¿Podrías definir la población en este caso?.
 :::
 
-::: {.callout-tip collapse="true" .content-visible when-format="html" icon="false"}
+::: {.callout-tip .content-visible collapse="true" when-format="html" icon="false"}
 ### Respuesta al ejemplo 1: Muestreando una cámara de maduración de queso
 
 No es una buena idea porque no tenemos garantía de que las condiciones de humedad,temperatura y circulación de aire sean las mismas en toda la cámara. Para asegurar que nuestra muestra es representativa, debemos tomar una **muestra aleatoria** de la población, que en este caso es el total de quesos en la cámara.
 :::
+
 ### Tipos de variables
 
 Algunas variables, como el color, sirven para clasificar los individuos en categorías. Otras, como la altura o el peso de un individuo, pueden tomar valores numéricos con los que podemos hacer cálculos. Por ejemplo, podemos sumar la altura de varias personas, pero no tiene sentido *sumar* los colores del arco-iris (aunque sí podemos *contarlos*, y hacer cálculos con estos recuentos). También podemos *categorizar* variables continuas: podemos clasificar nuestro grupo de personas en *altas* o *bajas*, y podemos contar cuántas personas entran en cada categoría.
 
 | Variables cualitativas <br> o categóricas |                                 | Variables cuantitativas <br> o métricas |                                      |
-|-------------------|------------------|------------------|------------------|
+|-------------------|------------------|-------------------|------------------|
 | **Nominales**                             | **Ordinales**                   | **Discretas**                           | **Continuas**                        |
 | Valores en categorías arbitrarias         | Valores en categorías ordenadas | Valores enteros en escala numérica      | Valores continuos en escala numérica |
 | (sin unidades)                            | (sin unidades)                  | Unidades contadas                       | Unidades medidas                     |
 
-```{=tex}
-\begin{table}[]
-\centering
-\begin{tabular}{@{}cccc@{}}
-\toprule
-\multicolumn{2}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Variables\\ cualitativas\\ o categóricas\end{tabular}}} &
-  \multicolumn{2}{c}{\textbf{\begin{tabular}[c]{@{}c@{}}Variables \\ cuantitativas\\ o métricas\end{tabular}}} \\ 
-\cmidrule(lr){1-2} \cmidrule(lr){3-4}
-\textbf{Nominales} &
-  \textbf{Ordinales} &
-  \textbf{Discretas} &
-  \textbf{Continuas} \\ 
-\cmidrule(lr){1-2} \cmidrule(lr){3-4}
-\begin{tabular}[c]{@{}c@{}}Valores\\ en categorías \\ arbitrarias\end{tabular} &
-  \begin{tabular}[c]{@{}c@{}}Valores \\ en categorías\\ ordenadas\end{tabular} &
-  \begin{tabular}[c]{@{}c@{}}Valores enteros\\ en una escala \\ numérica\end{tabular} &
-  \begin{tabular}[c]{@{}c@{}}Valores continuos\\ en una escala \\ numérica\end{tabular} \\
-(sin unidades) &
-  (sin unidades) &
-  \begin{tabular}[c]{@{}c@{}}Unidades\\ contadas\end{tabular} &
-  \begin{tabular}[c]{@{}c@{}}Unidades\\ medidas\end{tabular} \\ \bottomrule
-\end{tabular}
-\end{table}
-```
 Una **variable categórica** coloca a un individuo en uno o más grupos o categorías
 
 Una **variable métrica** toma valores numéricos con los que tiene sentido realizar cálculos aritméticos como sumar, restar, etc.
@@ -131,16 +124,13 @@ A veces se utiliza la palabra **cualitativo** de forma incorrecta para indicar *
 
 **Ejemplo 1**. Tiramos un dado al aire. Describe a qué corresponde la variable y el caso.
 
-**Ejemplo 2**. Durante un proceso de envasado de un producto que dura una hora, controlamos el peso de cada envase cada minuto. Describe la variable y el caso.  ¿Puede haber más de una variable?
+**Ejemplo 2**. Durante un proceso de envasado de un producto que dura una hora, controlamos el peso de cada envase cada minuto. Describe la variable y el caso. ¿Puede haber más de una variable?
 :::
 
-
-::: {.callout-tip collapse="true" .content-visible icon="false"}
+::: {.callout-tip .content-visible collapse="true" icon="false"}
 ### Respuestas: Para resolver
 
-**Ejemplo 1**: La **variable** es el resultado que obtenemos cada vez; podríamos denominarla, por ejemplo, $resultado\_obtenido$. Colocaríamos este nombre en el encabezado de una columna en una hoja de cálculo. 
-<br>Cada tirada que hacemos es un **caso**; iríamos colocando el resultado que obtenemos cada vez en una nueva fila de nuestra hoja de cálculo.
+**Ejemplo 1**: La **variable** es el resultado que obtenemos cada vez; podríamos denominarla, por ejemplo, $resultado\_obtenido$. Colocaríamos este nombre en el encabezado de una columna en una hoja de cálculo. <br>Cada tirada que hacemos es un **caso**; iríamos colocando el resultado que obtenemos cada vez en una nueva fila de nuestra hoja de cálculo.
 
-**Ejemplo 2**. En este caso, la **variable** es el $peso\_obtenido$, y cada pesada constituye un **caso**. Si registrásemos, además, la hora y el minuto en el que que hemos hecho cada control de peso, podríamos definir una nueva variable, que podríamos llamar $hora$, y que colocaríamos en una columna al lado del $peso\_obtenido$. Incluso podríamos definir otra variable adicional, el $numero\_de\_pesada$, que sería un número secuencial empezando en $1$ y que se incrementaría en cada pesada, de forma que al final esta variable nos daría el número de pesadas realizadas, y nos indicaría además el orden en el que las hemos realizado.
-<br>Puesto que hemos realizado una pesada cada minuto, tendríamos tres variables y 61 líneas (un encabezado y 60 líneas correspondientes una a cada minuto)
+**Ejemplo 2**. En este caso, la **variable** es el $peso\_obtenido$, y cada pesada constituye un **caso**. Si registrásemos, además, la hora y el minuto en el que que hemos hecho cada control de peso, podríamos definir una nueva variable, que podríamos llamar $hora$, y que colocaríamos en una columna al lado del $peso\_obtenido$. Incluso podríamos definir otra variable adicional, el $numero\_de\_pesada$, que sería un número secuencial empezando en $1$ y que se incrementaría en cada pesada, de forma que al final esta variable nos daría el número de pesadas realizadas, y nos indicaría además el orden en el que las hemos realizado. <br>Puesto que hemos realizado una pesada cada minuto, tendríamos tres variables y 61 líneas (un encabezado y 60 líneas correspondientes una a cada minuto)
 :::

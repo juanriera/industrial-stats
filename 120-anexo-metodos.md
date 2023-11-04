@@ -1,2 +1,0 @@
-# Anexo: Recetario de métodos
-

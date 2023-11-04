@@ -6,15 +6,7 @@ lang: es
 
 Este libro trata sobre la enseñanza de algunos métodos básicos de la estadística y la moderna ciencia de datos y su aplicación al entorno industrial. Está concebido de forma práctica con multitud de ejemplos, no sólo industriales, con el objetivo de mostrar los métodos cuantitativos de análisis, y también el razonamiento necesario para dar sentido a los resultados presentados por las herramientas de análisis de datos.
 
-```{=tex}
-\begin{figure}[!b]
-   \centering
-   \sidecaption{Al menos dos de los conceptos y tecnologías de la industria en el siglo XXI, el Internet de las Cosas (\emph{IoT}) y el \emph{Big Data} tendrán como consecuencia la producción un gran volumen de datos, que exigirán a los ingenieros y técnicos nuevos conocimientos en el tratamiento de la información.}   
-\includegraphics[width=0.8\textwidth]{01-imagenes/Industry40.png}
- \label{fig:img1}
-\end{figure}
-```
-El objetivo del libro es acercar a los estudiantes de la Formación Profesional al uso de las herramientas de análisis de datos industriales. El entorno de la industria 4.0 produce un enorme y constante flujo de datos como consecuencia tanto a la implantación de sistemas de captura automáticos como al aumento de la tecnificación de los puestos de trabajo; se requiere por parte de los profesionales industriales que sean capaces de analizar esta enorme cantidad de datos para transformarlos en información para la decisión. En la empresa industrial actual, son los ingenieros y técnicos de planta, y no estadísticos o ingenieros informáticos, quienes participan diariamente en la presentacion y discusion de los datos y en la toma de decisiones operativas, tanto en los equipos de trabajo como ante la Dirección. Por esta razón, considero necesario proporcionar a los estudiantes de la Formación Profesional un conocimiento suficiente de los conceptos, herramientas y métodos del análisis de datos, así como de las técnicas básicas de presentación y comunicación de la información.
+El objetivo del libro es acercar a los estudiantes de la Formación Profesional al uso de las herramientas de análisis de datos industriales. El entorno de la industria 4.0 produce un enorme y constante flujo de datos como resultado tanto de la implantación de sistemas de captura automáticos como del aumento de la tecnificación de los puestos de trabajo; se requiere por parte de los profesionales industriales que sean capaces de analizar esta enorme cantidad de datos para transformarlos en información para la decisión. En la empresa industrial actual, son los ingenieros y técnicos de planta, y no estadísticos o ingenieros informáticos, quienes participan diariamente en la presentacion y discusion de los datos y en la toma de decisiones operativas, tanto en los equipos de trabajo como ante la Dirección. Por esta razón, considero necesario proporcionar a los estudiantes de la Formación Profesional un conocimiento suficiente de los conceptos, herramientas y métodos del análisis de datos, así como de las técnicas básicas de presentación y comunicación de la información.
 
 El control estadístico de la calidad empezó con W.E. Deming a mediados del pasado siglo XX, y fueron las empresas japonesas, sobre todo las automovilísticas, las que inicialmente recogieron el testigo de Deming y aplicaron estos principios a la mejora de la producción industrial, difundiendo su conocimiento a todos los niveles jerárquicos de las organizaciones, desde los operarios de línea hasta los más altos directivos. Desde ese momento hasta la difusión actual de los métodos Six Sigma gracias a General Electric y Motorola, la mejora industrial de los procesos ha estado siempre apoyada en la correcta utilización de estas metodologías.
 
@@ -38,7 +30,9 @@ Un curso de introducción a la estadística y análisis de datos industriales de
 
 He intentado mostrar la necesidad de que los estudiantes comprendan y apliquen el método científico en el entorno industrial, y no sólo apliquen un recetario de procedimientos de manera automática. Es mucho mas importante la comprensión y adecuada utilización del método científico y de las herramientas y gráficos básicos, antes que la aplicación rutinaria y mecánica de determinadas fórmulas matemáticas o métodos sofisticados y complejos que el alumno puede no comprender en toda su profundidad.
 
-Las industrias líderes destacan por la aplicación intensiva de métodos sofisticados, tales como Six Sigma, Lean Manufacturing, diseño robusto de productos, y otros que hacen un uso intensivo de los datos, tanto de los obtenidos en producción como de los obtenidos en la realización de experimentos bien diseñados. La mejora de la competitividad en estas empresas no se debe tanto a la aplicación de unos u otros métodos, como al desarrollo del juicio analítico de sus equipos y a la aplicación de lo aprendido a la mejora continua de los procesos industriales. Veremos que la experiencia y el conocimiento tecnológico de estos procesos son fundamentales para el desarrollo del buen juicio analítico, y, en consecuencia, para la buena interpretación de los resultados que se obtienen con las herramientas estadísticas y de análisis .
+Las industrias líderes destacan por la aplicación intensiva de métodos sofisticados, tales como Six Sigma, Lean Manufacturing, diseño robusto de productos, y otros que hacen un uso intensivo de los datos, tanto de los obtenidos en producción como de los obtenidos en la realización de experimentos bien diseñados. La mejora de la competitividad en estas empresas no se debe tanto a la aplicación de unos u otros métodos, como al desarrollo del juicio analítico de sus equipos y a la aplicación de lo aprendido a la mejora continua de los procesos industriales. Veremos que la experiencia y el conocimiento tecnológico de estos procesos son fundamentales para el desarrollo del buen juicio analítico, y, en consecuencia, para la buena interpretación de los resultados que se obtienen con las herramientas estadísticas y de análisis.
+
+Tratándose de un libro para el uso en la Formación Profesional, considero prioritario que su estudio se oriente al desarrollo de habilidades que sean de aplicación práctica directa en el puesto de trabajo y además faciliten la empleabilidad del estudiante, y no a la obtención de conocimiento abstracto. El [Informe sobre el futuro del empleo](https://www.weforum.org/publications/the-future-of-jobs-report-2023), publicado por el [Foro Económico MUndial](https://www.weforum.org/) en mayo de 2023, considera que las principales habilidades clave en el trabajo del futuro serán en primer lugar el desarrollo del pensamiento analítico y, en segundo, del pensamiento crítico; unidas al desarrollo de la curiosidad y la voluntad de aprendizaje a lo largo de la vida, la eficacia, la confianza en el propio trabajo y la atención al detalle. La voluntad de este libro es proporcionar conocimientos que ayuden al estudiante a desarrollarse en esta dirección.
 
 ## A quién va dirigido este libro
 
@@ -50,31 +44,31 @@ En todos los casos, el aprendizaje requerirá de un esfuerzo que quizás será m
 
 El **capítulo 1** proporciona una introducción general al **pensamiento estadístico** y su aplicación industrial. Introduce también algunos conceptos sobre la ética en análisis de datos y una reflexión sobre la honestidad del investigador o analista. Se introduce también el concepto actual de **repetibilidad** en la elaboración de los informes estadísticos.
 
-El **capítulo 2** trata fundamentalmente de la forma de recoger los datos y su almacenamiento. Introduce el concepto de **datos ordenados** o **arreglados** (*tidy data*), que resulta fundamental para las fases posteriores de análisis.
+El **capítulo 2** presenta las principales herramientas que usaremos en este libro para el análisis de los datos industriales, concretamente Microsoft Excel y R.
 
-En el **capítulo 3** se introducen los métodos básicos para resumir tablas de datos y la **presentación mediante el uso de gráficos**.
+El **capítulo 3** trata fundamentalmente de la forma de recoger los datos y su almacenamiento. Introduce el concepto de **datos ordenados** o **arreglados** (*tidy data*), que resulta fundamental para las fases posteriores de análisis.
 
-El **capítulo 4** introduce el concepto de **probabilidad**, así como las distribuciones de probabilidad, necesarias para la construcción de los tests de hipótesis y, en general, de la estadística inferencial. Este es un contenido que se presenta de forma breve y sobre todo práctica.
+En el **capítulo 4** se introducen los métodos básicos para resumir tablas de datos y la **presentación mediante el uso de gráficos**, en lo que se conoce como *exploración de datos*, que suele ser un paso previo al análisis más detallado y a la formulación de hipótesis.
 
-En el **capítulo 5** se presentan los métodos para detectar la **relación entre dos variables**, haciendo énfasis en los métodos gráficos, y se discute las diferencias entre correlación y causalidad.
+El **capítulo 5** introduce el concepto de **probabilidad**, así como las distribuciones de probabilidad, necesarias para la construcción de los tests de hipótesis y, en general, de la estadística inferencial. Este es un contenido que se presenta de forma breve y sobre todo práctica.
 
-El **capítulo 6** introduce de manera sencilla el **análisis de la varianza**, necesario para métodos importantes en la industria como el control de la precisión analítica, que se trata en el capítulo siguiente.
+En el **capítulo 6** se presentan los métodos para detectar la **relación entre dos variables**, haciendo énfasis en los métodos gráficos, y se discute las diferencias entre correlación y causalidad.
 
-El **capítulo 7** trata de la medida de la precisión analítica. Resulta sorprendente la cantidad de laboratorios que dan soporte analítico a procesos productivos de gran impacto económico en la vida de la empresa, sin realizar nunca un autocontrol sobre el nivel de precisión de sus análisis. En este capítulo se hace una presentación básica del tema con el objetivo de que resulte útil y práctica.
+El **capítulo 7** introduce de manera sencilla el **análisis de la varianza**, necesario para métodos importantes en la industria como el control de la precisión analítica, que se trata en el capítulo siguiente.
 
-El **capítulo 8** presenta una de las aplicaciones más importantes de la estadística en el entorno industrial, el **control estadístico de procesos**. Dada la importancia de este capítulo, se refuerza su contenido con numerosos ejemplos y casos prácticos, y se incluye un caso extenso para su análisis.
+El **capítulo 8** trata del análisis del sistema de medición, la calidad de las medidas y la medida de la precisión analítica. Resulta sorprendente la cantidad de laboratorios que dan soporte analítico a procesos productivos de gran impacto económico en la vida de la empresa, sin realizar nunca un autocontrol sobre el nivel de precisión de sus análisis. En este capítulo se hace una presentación básica del tema con el objetivo de que resulte útil y práctica.
 
-En el **capítulo 9** se hace una introducción al **diseño de experimentos**. La utilidad de esta técnica es primordial para el industrial, sobre todo para el área de I+D y el diseño de productos. Dado que esta técnica puede ser muy compleja en su aplicación real, se facilitan enlaces a otros recursos, como cursos, que serán útiles a los que quieran profundizar más.
+El **capítulo 9** presenta una de las aplicaciones más importantes de la estadística en el entorno industrial, el **control estadístico de procesos**. Dada la importancia de este capítulo, se refuerza su contenido con numerosos ejemplos y casos prácticos, y se incluye un caso extenso para su análisis.
 
-Finalmente, en el **capítulo 10** se presentan las líneas de lo que hemos llamado *pensamiento estadístico*. Se presentan también algunas aplicaciones prácticas de la estadística en el entorno industrial, como **Six Sigma**, y se analizan en detalle algunos casos interesantes, que pueden servir como colofón al libro.
+En el **capítulo 10** se hace una introducción al **diseño de experimentos**. La utilidad de esta técnica es primordial para el industrial, sobre todo para el área de I+D y el diseño de productos. Dado que esta técnica puede ser muy compleja en su aplicación real, se facilitan enlaces a otros recursos, como cursos, que serán útiles a los que quieran profundizar más.
+
+Finalmente, en el **capítulo 11** se presenta el uso de los conceptos y técnicas estudiadas en los procesos de mejora de la calidad industrial, y se introducen algunas aplicaciones prácticas de la estadística en el entorno industrial, como **Six Sigma**.
 
 ## Cómo usar el libro
 
-El diseño del libro se inspira en las recomendaciones de Edward R. Tufte, con márgenes amplios que incluyen notas, referencias y algunos elementos gráficos.
+He intentado que cada capítulo sea lo más autocontenido posible de forma que se facilite la organización pedagógica por temas. No obstante, hay algunos contenidos que pueden necesitar contenidos de los capítulos anteriores, por lo que se sugiere estudiarlo en el orden presentado.
 
-He intentado que cada capítulo sea lo más autocontenido posible de forma que se facilite la organización pedagógica por temas, no obstante, hay algunos contenidos que pueden necesitar contenidos de los capítulos anteriores, por lo que se sugiere estudiarlo en el orden presentado.
-
-El libro es eminentemente práctico, con numerosos ejercicios; la resolución puede ser individual o en equipo.
+El libro es eminentemente práctico, con numerosos ejercicios; su resolución puede ser individual o en equipo.
 
 Algunos recuadros utilizan códigos de color para indicar el objetivo de la información que contienen. Básicamente, los colores utilizados son:
 
@@ -104,34 +98,6 @@ En este formato se indican cuestiones importantes
 En este formato se indican cuestiones a las que hay que prestar especial atención o que pueden inducir a error
 :::
 
-```{=tex}
-\begin{cajaverde}{ PROBLEMA : \emph{Tema del problema}}
-
-El recuadro verde se utilizará para proponer problemas sencillos cuya respuesta se encuentra en el margen. El objetivo de estos problemas es estimular la reflexión sin necesidad de recurrir al cálculo.
-
-\end{cajaverde}
-```
-```{=tex}
-\begin{cajaazul}{ PROBLEMA: \emph{Tema del problema}}
-
-El recuadro azul se utilizará para proponer problemas más complejos cuya resolución se ofrece al final del capítulo: Necesitan manejo de herramientas estadísticas en el ordenador y de los conceptos explicados en el texto
-
-\end{cajaazul}
-```
-```{=tex}
-\begin{cajanaranja}{ PROBLEMA: \emph{Tema del problema}}
-
-El recuadro anaranjado se utilizará para plantear casos que necesitarán de trabajo en equipo y la utilización de varias de las herramientas explicadas en nel texto.
-
-\end{cajanaranja}
-```
-```{=tex}
-\begin{tcolorbox}
-
-Esta es una caja que remarca un texto importante
-
-\end{tcolorbox}
-```
 ## Uso del ordenador y el *software* estadístico
 
 En la práctica diaria, los técnicos industriales usan los ordenadores para almacenar y visualizar los datos de producción, para solucionar problemas mediante análisis estadísticos, y para presentar sus resultados de forma gráfica. De la misma forma que en el entorno industrial, en este libro se utilizarán también los ordenadores de forma habitual, y por esta razón es imprescindible que los estudiantes tengan acceso individual a un ordenador en el que esté instalado el software recomendado, y que se acostumbren a utilizarlo para resolver los problemas y casos planteados como ejercicios prácticos, individualmente y en grupo.
@@ -142,7 +108,7 @@ A lo largo del libro se presentarán informes y gráficos obtenidos con Microsof
 
 Algunos ejercicios tienen que ver con la interpretación y presentación de los resultados. Es importante que estos trabajos se realicen en grupo y se haga énfasis en la comprensión del problema y en su correcta exposición; en los equipos industriales de hoy, la discusión de problemas y la exposición de resultados, en reuniones de trabajo o en paneles informativos a pie de planta, forma parte del trabajo diario. Estas habilidades de comunicación deben ser desarrolladas en los estudiantes de forma prioritaria.
 
-La ventaja de R sobre Excel es que el código R, si está bien documentado, muestra cada paso realizado, y esto permite que otras personas puedan verificar el resultado y reproducirlo a partir de los datos originales, e incluso reutilizar los procedimientos. Utilizar código en vez de clicks de ratón es esencial para asegurar la **reproducibilidad de los análisis de datos**, [^index-1]. Por esta razón, recomiendo el uso del lenguaje R como complemento o alternativa a la hoja de cálculo, tanto para analizar como para visualizar datos. Sin embargo, como la realidad del mundo de la empresa es que los lenguajes como R están todavía poco introducidos, es inevitable mantener el uso de la hoja de cálculo; en el libro se explicarán algunas *mejores prácticas*, que permitirán el uso simultáneo de ambas herramientas de forma óptima.
+La ventaja de R sobre Excel es que el código R, si está bien documentado, muestra cada paso realizado, y esto permite que otras personas puedan verificar el resultado y reproducirlo a partir de los datos originales, e incluso reutilizar los procedimientos. Utilizar código en vez de clicks de ratón es esencial para asegurar la **reproducibilidad de los análisis de datos**[^index-1]. Por esta razón, recomiendo el uso del lenguaje R como complemento o alternativa a la hoja de cálculo, tanto para analizar como para visualizar datos. Sin embargo, como la realidad del mundo de la empresa es que los lenguajes como R están todavía poco introducidos, es inevitable mantener el uso de la hoja de cálculo; en el libro se explicarán algunas *mejores prácticas*, que permitirán el uso simultáneo de ambas herramientas de forma óptima.
 
 [^index-1]: El concepto de reproducibilidad, cada vez más importante, se desarrolla en el capítulo 2
 

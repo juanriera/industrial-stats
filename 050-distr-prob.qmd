@@ -5,6 +5,7 @@
 ## Distribuciones de probabilidad
 
 ### Distribución normal
+dirtib de frecuencia y distr normal: área bajo la curva
 
 [How to predict record-shattering weather events | The Economist](https://www.economist.com/science-and-technology/2023/02/08/extreme-weather-events-are-getting-more-frequent)
 

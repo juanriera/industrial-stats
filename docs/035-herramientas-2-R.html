@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.353">
+<meta name="generator" content="quarto-1.3.433">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 3&nbsp; Los datos industriales de producción</title>
+<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 4&nbsp; Herramientas para el análisis: El software estadístico R.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -31,7 +31,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
 <link href="./040-distr-frec-explor.html" rel="next">
-<link href="./020-herramientas.html" rel="prev">
+<link href="./030-herramientas-1-hoja.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -57,16 +57,15 @@ ul.task-list li input[type="checkbox"] {
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
     "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar"
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 </head>
 
-<body class="nav-sidebar floating slimcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -75,10 +74,10 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./030-prep-datos.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Los datos industriales de producción</span></a></li></ol></nav>
+      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./035-herramientas-2-R.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: El software estadístico R.</span></a></li></ol></nav>
       <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
       </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -114,68 +113,74 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./020-herramientas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis de los datos industriales</span></span></a>
+  <a href="./020-datos-industriales.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Los datos industriales de producción</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./030-prep-datos.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Los datos industriales de producción</span></span></a>
+  <a href="./030-herramientas-1-hoja.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: La hoja de cálculo.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./035-herramientas-2-R.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: El software estadístico R.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./040-distr-frec-explor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">La exploración y descripción de los datos.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./050-distr-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de probabilidad e inferencia</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de probabilidad e inferencia</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./060-relacion-xy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./070-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./080-sistema-medicion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./090-control-proc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./100-disexp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./110-mejora-calidad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./120-anexo-metodos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Anexo: Recetario de métodos</span></span></a>
+ <span class="menu-text">Anexo: Recetario de métodos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -194,19 +199,17 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#estudios-retrospectivos-o-históricos" id="toc-estudios-retrospectivos-o-históricos" class="nav-link active" data-scroll-target="#estudios-retrospectivos-o-históricos"><span class="header-section-number">3.1</span> Estudios retrospectivos o históricos</a></li>
-  <li><a href="#estudios-observacionales" id="toc-estudios-observacionales" class="nav-link" data-scroll-target="#estudios-observacionales"><span class="header-section-number">3.2</span> Estudios observacionales</a></li>
-  <li><a href="#experimentos-diseñados" id="toc-experimentos-diseñados" class="nav-link" data-scroll-target="#experimentos-diseñados"><span class="header-section-number">3.3</span> Experimentos diseñados</a></li>
-  <li><a href="#experimentos-diseñados-1" id="toc-experimentos-diseñados-1" class="nav-link" data-scroll-target="#experimentos-diseñados-1"><span class="header-section-number">3.4</span> Experimentos diseñados</a></li>
+  <li><a href="#uso-de-r" id="toc-uso-de-r" class="nav-link active" data-scroll-target="#uso-de-r"><span class="header-section-number">4.1</span> Uso de R</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">4.2</span> </a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Los datos industriales de producción</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: El software estadístico R.</span></h1>
 </div>
 
 
@@ -221,43 +224,20 @@ ul.task-list li input[type="checkbox"] {
 
 </header>
 
-<p>En el entorno industrial, los datos son recogidos casi siempre por uno de estos tres caminos:</p>
+<p>Historia</p>
+<section id="uso-de-r" class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="uso-de-r"><span class="header-section-number">4.1</span> Uso de R</h2>
 <ul>
-<li>Estudio retrospectivo, basado en datos históricos</li>
-<li>Estudio observacional</li>
-<li>Experimento diseñado</li>
+<li><p>Importación de datos y exportación de datos</p></li>
+<li><p>Manipulación de datos: depuración, corrección, filtrado de datos.</p></li>
+<li><p>Exploración gráfica de los datos</p></li>
+<li><p>Análisis estadísticos específicos.</p></li>
+<li><p>Gráficos de control</p></li>
+<li><p>Informes automatizados</p></li>
 </ul>
-<p>Un buen sistema de recogida de datos facilitará el estudio posterior. Si ponemos poco cuidado en la toma de datos y en la forma de guardarlos, nos encontraremos después con problemas complicados de resolver en la fase de análisis o en la de interpretación , y, en algunos casos, estos problemas serán imposibles de resolver.</p>
-<section id="estudios-retrospectivos-o-históricos" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="estudios-retrospectivos-o-históricos"><span class="header-section-number">3.1</span> Estudios retrospectivos o históricos</h2>
-<p>Un <strong>estudio retrospectivo o histórico</strong> es el que utiliza una muestra o todos los datos históricos de un proceso, recogidos en el pasado durante un período determinado de tiempo. El objetivo de un estudio de este tipo puede ser la investigación sobre la relación entre algunas variables, o explorar la calidad de la información disponible, o construir un modelo que permita explicar el proceso tal como es actualmente, o saber si se ha desviado. Estos modelos del proceso se denominan <strong>modelos empíricos</strong>, porque están basados en los propios datos del proceso y no en una formulación teórica sobre el mismo.</p>
-<p>Un estudio retrospectivo tiene la ventaja de tener a su disposición un gran número de datos que ya han sido recogidos, minimizando el esfuerzo de obtenerlos. Sin embargo, tiene varios problemas potenciales:</p>
-<ol type="1">
-<li>Si no disponemos de detalles suficientes, es posible que no podamos determinar si las condiciones de variación de los valores obtenidos responden a las mismas causas que en la situación actual.</li>
-<li>Es posible que nos falte algún valor clave que no haya sido recogido o que lo haya sido de manera defectuosa</li>
-<li>Algunas veces, la fiabilidad y validez de los datos de proceso históricos son dudosas, o al menos, cuestionables.</li>
-<li>Los datos históricos no siempre se han recogido con la perspectiva actual del proceso, y es posible que no nos proporciones explicaciones adecuadas del proceso en su situación actual.</li>
-<li>A veces queremos utilizar los datos históricos de proceso para fines que no estaban previstos cuando se recogieron</li>
-<li>Las notas sobre los valores del proceso, incluyendo los valores anormales, pueden ser insuficientes o inexistentes, y no tenemos ninguna explicación sobre los posibles valores anómalos que detectamos en el análisis.</li>
-</ol>
-<p>Usar datos históricos siempre tiene el riesgo de que, por la razón que sea, no se hayan recogido datos importantes, o que estos datos se hayan perdido, o se hayan transcrito de forma inadecuada o incorrecta. Es decir, los datos históricos pueden tener problemas de calidad de datos.</p>
-<p>El hecho de que algunos datos se hayan recogido históricamente no siempre quiere decir que estos datos sean relevantes o útiles. Cuando el grado de conocimiento del proceso no es suficiente, o no se basa en un análisis metódico y riguroso de los datos, es posible que no se hayan recogido algunos datos que pueden ser importantes para el proceso, a veces simplemente porque son complejos o difíciles de analizar. Los datos históricos no pueden proporcionar la información que buscamos si la información de las variables clave nunca se ha recogido o se ha hecho sin una buena base experimental.</p>
-<p>El propósito del análisis de los datos industriales es aislar las causas que están detrás de los sucesos que afectan e influyen en los procesos. En los datos históricos, estos sucesos pueden haber ocurrido semanas, meses o incluso años antes, sin que haya registros ni notas que hayan intentado explicar estas causas, y los recuerdos de las personas que han participado en ellos se pierden con el tiempo, o se alteran involuntariamente, proporcionando explicaciones supuestamente válidas pero que en realidad son incorrectas. Por eso, con frecuencia, el análisis de los datos históricos puede poner de manifiesto hechos interesantes, pero sus causas quedan sin explicar.</p>
-<p>Los estudios históricos pueden requerir una fase previa de preparación y depuración de datos que puede llegar a ser muy larga y tediosa. Se estima que en muchos estudios de ciencia de datos, el tiempo de preparación de los datos puede llegar al <span class="math inline">\(60\%\)</span> del tiempo total empleado en el estudio. Las herramientas de análisis de datos son de gran ayuda en esta fase del proceso, aunque en muchas ocasiones será necesario un trabajo manual de recolección de datos en papel, hojas de cálculo diversas y otras fuentes. Esta fase es muy útil no sólo para la preparación de datos para el estudio, sino para mejorar el conocimiento de los datos, cómo se originan y cómo se almacenan. Este conocimiento siempre es de gran utilidad para mejorar los procedimientos actuales de captura de datos, facilitando la fiabilidad de los análisis futuros.</p>
 </section>
-<section id="estudios-observacionales" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="estudios-observacionales"><span class="header-section-number">3.2</span> Estudios observacionales</h2>
-<p>Como su nombre indica, un <strong>estudio observacional</strong> simplemente observa un proceso durante un tiempo de operación en rutina. Normalmente, el ingeniero o técnico interfiere lo mínimo posible en el proceso, sólo lo suficiente para recoger la información que necesita, que en muchas ocasiones no forma parte de los controles de rutina, si piensa que esa información puede ser relevante. Si se planifican adecuadamente, los estudios observacionales proporcionan datos fiables, precisos y completos para documentar un proceso. Por otra parte, estos estudios proporcionan una información limitada sobre las relaciones entre las variables del proceso, porque es posible que durante el tiempo limitado de observación, el rango de variación de las variables no recoja todas las situaciones posibles, incluyendo situaciones extraordinarias.</p>
-</section>
-<section id="experimentos-diseñados" class="level2 page-columns page-full" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="experimentos-diseñados"><span class="header-section-number">3.3</span> Experimentos diseñados</h2>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Factores experimentales</span></div></div>
-<p>La tercera forma de recoger información de un proceso son los <strong>experimentos diseñados</strong>. En un experimento de este tipo, el ingeniero o técnico hace un cambio deliberado en las variables que controla (llamadas <strong>factores</strong>), observa el resultado, y toma una decisión respecto a qué variable o variables son responsables de los cambios que observa en el proceso.</p>
-<p>Una diferencia importante respecto a los estudios históricos y los observacionales es que las diferentes combinaciones de factores se aplican al azar sobre un conjunto de unidades experimentales. Esto permite establecer con precisión las relaciones causa-efecto, cosa que no suele ser posible en los estudios históricos ni en los observacionales.</p>
-</section>
-<section id="experimentos-diseñados-1" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="experimentos-diseñados-1"><span class="header-section-number">3.4</span> Experimentos diseñados</h2>
-<p>En el capítulo 7 se hará una introducción básica al **diseño de experimentos**</p>
+<section id="section" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="section"><span class="header-section-number">4.2</span> </h2>
 
 
 </section>
@@ -498,13 +478,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./020-herramientas.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis de los datos industriales</span></span>
+      <a href="./030-herramientas-1-hoja.html" class="pagination-link">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: La hoja de cálculo.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./040-distr-frec-explor.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">La exploración y descripción de los datos.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

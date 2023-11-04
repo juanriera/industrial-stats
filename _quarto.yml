@@ -11,17 +11,18 @@ book:
   chapters:
     - index.qmd
     - 010-intro.qmd
-    - 020-herramientas.qmd
-    - 030-prep-datos.qmd    
+    - 020-datos-industriales.qmd
+    - 030-herramientas-1-hoja.qmd    
+    - 035-herramientas-2-R.qmd    
     - 040-distr-frec-explor.qmd
-    - 050-distr-prob.md
-    - 060-relacion-xy.md
-    - 070-anova.md
-    - 080-sistema-medicion.md
-    - 090-control-proc.md
-    - 100-disexp.md
-    - 110-mejora-calidad.md
-    - 120-anexo-metodos.md
+    - 050-distr-prob.qmd
+    - 060-relacion-xy.qmd
+    - 070-anova.qmd
+    - 080-sistema-medicion.qmd
+    - 090-control-proc.qmd
+    - 100-disexp.qmd
+    - 110-mejora-calidad.qmd
+    - 120-anexo-metodos.qmd
     - 130-bibliografia.qmd
 
 bibliography: bibliografia.bib
@@ -30,7 +31,7 @@ format:
   html:
     theme: cosmo
 #  pdf:
-#    documentclass: scrbook
+#    documentclass: book
 
 author-title: AUTOR
 published-title: PUBLICADO
