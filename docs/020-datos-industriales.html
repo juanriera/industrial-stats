@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 2&nbsp; Los datos industriales de producción</title>
+<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 2&nbsp; Entendiendo y organizando los datos industriales con la hoja de cálculo.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -24,6 +24,7 @@ ul.task-list li input[type="checkbox"] {
 div.csl-bib-body { }
 div.csl-entry {
   clear: both;
+  margin-bottom: 0em;
 }
 .hanging-indent div.csl-entry {
   margin-left:2em;
@@ -49,7 +50,7 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./030-herramientas-1-hoja.html" rel="next">
+<link href="./040-herramientas-2-R.html" rel="next">
 <link href="./010-intro.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -66,7 +67,13 @@ div.csl-indent {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -75,6 +82,7 @@ div.csl-indent {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -84,6 +92,33 @@ div.csl-indent {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar floating slimcontent">
@@ -92,12 +127,12 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./020-datos-industriales.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Los datos industriales de producción</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./020-datos-industriales.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Entendiendo y organizando los datos industriales con la hoja de cálculo.</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -107,7 +142,7 @@ div.csl-indent {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</a> 
@@ -135,103 +170,101 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./020-datos-industriales.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Los datos industriales de producción</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Entendiendo y organizando los datos industriales con la hoja de cálculo.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./030-herramientas-1-hoja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: La hoja de cálculo.</span></span></a>
+  <a href="./040-herramientas-2-R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El software estadístico R.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./035-herramientas-2-R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: El software estadístico R.</span></span></a>
+  <a href="./050-distr-frec-explor.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración y descripción de los datos.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./040-distr-frec-explor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">La exploración y descripción de los datos.</span></span></a>
+  <a href="./060-distr-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de probabilidad e inferencia</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./050-distr-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de probabilidad e inferencia</span></span></a>
+  <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./060-relacion-xy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+  <a href="./080-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./070-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+  <a href="./090-sistema-medicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./080-sistema-medicion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./090-control-proc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+  <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100-disexp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+  <a href="./120-mejora-calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./110-mejora-calidad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./120-anexo-metodos.html" class="sidebar-item-text sidebar-link">
+  <a href="./130-anexo-metodos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anexo: Recetario de métodos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./130-bibliografia.html" class="sidebar-item-text sidebar-link">
+  <a href="./140-bibliografia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#el-origen-de-los-datos" id="toc-el-origen-de-los-datos" class="nav-link active" data-scroll-target="#el-origen-de-los-datos"><span class="header-section-number">2.1</span> El origen de los datos</a>
+  <li><a href="#usos-de-la-hoja-de-cálculo." id="toc-usos-de-la-hoja-de-cálculo." class="nav-link active" data-scroll-target="#usos-de-la-hoja-de-cálculo."><span class="header-section-number">2.1</span> Usos de la hoja de cálculo.</a></li>
+  <li><a href="#algunas-definiciones-importantes" id="toc-algunas-definiciones-importantes" class="nav-link" data-scroll-target="#algunas-definiciones-importantes"><span class="header-section-number">2.2</span> Algunas definiciones importantes</a>
   <ul class="collapse">
-  <li><a href="#estudios-retrospectivos-o-históricos" id="toc-estudios-retrospectivos-o-históricos" class="nav-link" data-scroll-target="#estudios-retrospectivos-o-históricos"><span class="header-section-number">2.1.1</span> Estudios retrospectivos o históricos</a></li>
-  <li><a href="#estudios-observacionales" id="toc-estudios-observacionales" class="nav-link" data-scroll-target="#estudios-observacionales"><span class="header-section-number">2.1.2</span> Estudios observacionales</a></li>
-  <li><a href="#experimentos-diseñados" id="toc-experimentos-diseñados" class="nav-link" data-scroll-target="#experimentos-diseñados"><span class="header-section-number">2.1.3</span> Experimentos diseñados</a></li>
+  <li><a href="#población-y-muestra" id="toc-población-y-muestra" class="nav-link" data-scroll-target="#población-y-muestra"><span class="header-section-number">2.2.1</span> Población y muestra</a></li>
+  <li><a href="#parámetro-y-estadístico" id="toc-parámetro-y-estadístico" class="nav-link" data-scroll-target="#parámetro-y-estadístico"><span class="header-section-number">2.2.2</span> Parámetro y estadístico</a></li>
+  <li><a href="#variables-y-casos" id="toc-variables-y-casos" class="nav-link" data-scroll-target="#variables-y-casos"><span class="header-section-number">2.2.3</span> Variables y casos</a></li>
+  <li><a href="#tipos-de-variables" id="toc-tipos-de-variables" class="nav-link" data-scroll-target="#tipos-de-variables"><span class="header-section-number">2.2.4</span> Tipos de variables</a></li>
+  <li><a href="#ejemplos-de-variables" id="toc-ejemplos-de-variables" class="nav-link" data-scroll-target="#ejemplos-de-variables"><span class="header-section-number">2.2.5</span> Ejemplos de variables</a></li>
   </ul></li>
-  <li><a href="#la-organización-de-los-datos." id="toc-la-organización-de-los-datos." class="nav-link" data-scroll-target="#la-organización-de-los-datos."><span class="header-section-number">2.2</span> La organización de los datos.</a>
+  <li><a href="#reglas-básicas-para-la-creación-de-las-variables." id="toc-reglas-básicas-para-la-creación-de-las-variables." class="nav-link" data-scroll-target="#reglas-básicas-para-la-creación-de-las-variables."><span class="header-section-number">2.3</span> Reglas básicas para la creación de las variables.</a>
   <ul class="collapse">
-  <li><a href="#reglas-para-los-nombres-de-las-variables" id="toc-reglas-para-los-nombres-de-las-variables" class="nav-link" data-scroll-target="#reglas-para-los-nombres-de-las-variables"><span class="header-section-number">2.2.1</span> Reglas para los nombres de las variables</a></li>
+  <li><a href="#reglas-para-los-nombres-de-las-variables" id="toc-reglas-para-los-nombres-de-las-variables" class="nav-link" data-scroll-target="#reglas-para-los-nombres-de-las-variables"><span class="header-section-number">2.3.1</span> Reglas para los nombres de las variables</a></li>
   </ul></li>
-  <li><a href="#para-resolver" id="toc-para-resolver" class="nav-link" data-scroll-target="#para-resolver"><span class="header-section-number">2.3</span> Para resolver</a></li>
-  <li><a href="#los-datos-ordenados-tidy-data" id="toc-los-datos-ordenados-tidy-data" class="nav-link" data-scroll-target="#los-datos-ordenados-tidy-data"><span class="header-section-number">2.4</span> Los datos ordenados (<em>tidy data</em>)</a></li>
+  <li><a href="#almacenando-nuestros-datos-algunos-errores-comunes." id="toc-almacenando-nuestros-datos-algunos-errores-comunes." class="nav-link" data-scroll-target="#almacenando-nuestros-datos-algunos-errores-comunes."><span class="header-section-number">2.4</span> Almacenando nuestros datos: algunos errores comunes.</a></li>
+  <li><a href="#los-datos-ordenados-o-arreglados-tidy-data" id="toc-los-datos-ordenados-o-arreglados-tidy-data" class="nav-link" data-scroll-target="#los-datos-ordenados-o-arreglados-tidy-data"><span class="header-section-number">2.5</span> Los datos ordenados o arreglados (<em>tidy data</em>)</a></li>
+  <li><a href="#para-resolver-1" id="toc-para-resolver-1" class="nav-link" data-scroll-target="#para-resolver-1"><span class="header-section-number">2.6</span> Para resolver</a></li>
   </ul>
 </nav>
     </div>
@@ -240,7 +273,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Los datos industriales de producción</span></h1>
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Entendiendo y organizando los datos industriales con la hoja de cálculo.</span></h1>
 </div>
 
 
@@ -253,75 +286,239 @@ div.csl-indent {
   </div>
   
 
+
 </header>
 
-<section id="el-origen-de-los-datos" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="el-origen-de-los-datos"><span class="header-section-number">2.1</span> El origen de los datos</h2>
-<p>En el entorno industrial <span class="citation" data-cites="montgomery2011">(<a href="130-bibliografia.html#ref-montgomery2011" role="doc-biblioref">Douglas C Montgomery 2011</a>)</span>, los datos provienen casi siempre de una de estas tres vías:</p>
+
+<p>La hoja de cálculo es una herramienta omnipresente hoy día en todos los ámbitos de trabajo y educativos. Desde la aparición de <a href="https://es.wikipedia.org/wiki/VisiCalc">Visicalc</a>, en 1978, ha contribuido a la gestión de miles de empresas, se ha utilizado de manera general en análisis de datos y sus gráficos se han utilizado y se utilizan en publicaciones e informes de todas clases. En la década de los años 80 del pasado siglo, la hoja de cálculo <a href="https://es.wikipedia.org/wiki/Lotus_1-2-3">Lotus 1-2-3</a> fue la aplicación más utilizada en los ordenadores IBM-PC y compatibles, y consiguió facturaciones millonarias para la empresa matriz. Lotus 1-2-3 dominó el mercado hasta la aparición de Microsoft Windows a finales de los años 80; el nuevo sistema operativo favoreció la implantación de Excel, que desde entonces se convirtió en la hoja de cálculo dominante.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1,1], [1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes/280px-Visicalc.png" class="img-fluid figure-img"></p>
+<figcaption>Visicalc, primera hoja de cálculo para el ordenador <em>Apple II</em> (1979)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes/Lotus-123-3.0-MSDOS.png" class="img-fluid figure-img"></p>
+<figcaption>Hoja de cálculo Lotus 1-2-3 para MS-DOS (1983)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes/excel.png" class="img-fluid figure-img"></p>
+<figcaption>Microsoft Excel (2023)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<section id="usos-de-la-hoja-de-cálculo." class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="usos-de-la-hoja-de-cálculo."><span class="header-section-number">2.1</span> Usos de la hoja de cálculo.</h2>
+<p>Las <strong>hojas de cálculo</strong> son muy útiles para recoger la información de un conjunto de observaciones. Entre sus principales usos, están:</p>
 <ul>
-<li>Estudio retrospectivo, basado en datos históricos</li>
-<li>Estudio observacional</li>
-<li>Experimento diseñado</li>
+<li>La introducción, edición y almacenamiento datos.</li>
+<li>El filtrado y corrección de errores.</li>
+<li>La manipulación básica, por ejemplo, mediante tablas dinámicas</li>
+<li>La preparación y edición de gráficos, incluyendo gráficos dinámicos</li>
+<li>La presentación de la información, pudiendo apoyarse en herramientas adicionales como Microsoft PowerPoint.</li>
 </ul>
-<p>Un buen sistema de recogida de datos facilitará el estudio posterior. Si ponemos poco cuidado en la toma de datos y en la forma de guardarlos, nos encontraremos después con problemas complicados de resolver en la fase de análisis o en la de interpretación , y, en algunos casos, estos problemas serán imposibles de resolver.</p>
-<section id="estudios-retrospectivos-o-históricos" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="estudios-retrospectivos-o-históricos"><span class="header-section-number">2.1.1</span> Estudios retrospectivos o históricos</h3>
-<p>Un <strong>estudio retrospectivo o histórico</strong> es el que utiliza una muestra o todos los datos históricos de un proceso, recogidos en el pasado durante un período determinado de tiempo. El objetivo de un estudio de este tipo puede ser la investigación sobre la relación entre algunas variables, o explorar la calidad de la información disponible, o construir un modelo que permita explicar el proceso tal como es actualmente, o saber si se ha desviado. Estos modelos del proceso se denominan <strong>modelos empíricos</strong>, porque están basados en los propios datos del proceso y no en una formulación teórica sobre el mismo.</p>
-<p>Un estudio retrospectivo tiene la ventaja de tener a su disposición un gran número de datos que ya han sido recogidos, minimizando el esfuerzo de obtenerlos. Sin embargo, tiene varios problemas potenciales:</p>
-<ol type="1">
-<li>Si no disponemos de detalles suficientes, es posible que no podamos determinar si las condiciones de variación de los valores obtenidos responden a las mismas causas que en la situación actual.</li>
-<li>Es posible que nos falte algún valor clave que no haya sido recogido o que lo haya sido de manera defectuosa</li>
-<li>Algunas veces, la fiabilidad y validez de los datos de proceso históricos son dudosas, o al menos, cuestionables.</li>
-<li>Los datos históricos no siempre se han recogido con la perspectiva actual del proceso, y es posible que no nos proporciones explicaciones adecuadas del proceso en su situación actual.</li>
-<li>A veces queremos utilizar los datos históricos de proceso para fines que no estaban previstos cuando se recogieron</li>
-<li>Las notas sobre los valores del proceso, incluyendo los valores anormales, pueden ser insuficientes o inexistentes, y no tenemos ninguna explicación sobre los posibles valores anómalos que detectamos en el análisis.</li>
-</ol>
-<p>Usar datos históricos siempre tiene el riesgo de que, por la razón que sea, no se hayan recogido datos importantes, o que estos datos se hayan perdido, o se hayan transcrito de forma inadecuada o incorrecta. Es decir, los datos históricos pueden tener problemas de calidad de datos.</p>
-<p>El hecho de que algunos datos se hayan recogido históricamente no siempre quiere decir que estos datos sean relevantes o útiles. Cuando el grado de conocimiento del proceso no es suficiente, o no se basa en un análisis metódico y riguroso de los datos, es posible que no se hayan recogido algunos datos que pueden ser importantes para el proceso, a veces simplemente porque son complejos o difíciles de analizar. Los datos históricos no pueden proporcionar la información que buscamos si la información de las variables clave nunca se ha recogido o se ha hecho sin una buena base experimental.</p>
-<p>El propósito del análisis de los datos industriales es aislar las causas que están detrás de los sucesos que afectan e influyen en los procesos. En los datos históricos, estos sucesos pueden haber ocurrido semanas, meses o incluso años antes, sin que haya registros ni notas que hayan intentado explicar estas causas, y los recuerdos de las personas que han participado en ellos se pierden con el tiempo, o se alteran involuntariamente, proporcionando explicaciones supuestamente válidas pero que en realidad son incorrectas. Por eso, con frecuencia, el análisis de los datos históricos puede poner de manifiesto hechos interesantes, pero sus causas quedan sin explicar.</p>
-<p>Los estudios históricos pueden requerir una fase previa de preparación y depuración de datos que puede llegar a ser muy larga y tediosa. Se estima que en muchos estudios de ciencia de datos, el tiempo de preparación de los datos puede llegar al <span class="math inline">\(60\%\)</span> del tiempo total empleado en el estudio. Las herramientas de análisis de datos son de gran ayuda en esta fase del proceso, aunque en muchas ocasiones será necesario un trabajo manual de recolección de datos en papel, hojas de cálculo diversas y otras fuentes. Esta fase es muy útil no sólo para la preparación de datos para el estudio, sino para mejorar el conocimiento de los datos, cómo se originan y cómo se almacenan. Este conocimiento siempre es de gran utilidad para mejorar los procedimientos actuales de captura de datos, facilitando la fiabilidad de los análisis futuros.</p>
+<p>Los datos se pueden recoger y guardar de múltiples formas. Cuando la recogida de datos se hace de forma manual en papel, es necesario registrar en el ordenador los datos recogidos. Lo más frecuente es que este registro se haga en hojas de cálculo, como <a href="https://www.microsoft.com/es-es/microsoft-365/excel">Microsoft Excel</a> o <a href="https://www.google.es/intl/es/sheets/about/">Google Sheets</a>. En algunos casos, el almacenamiento se hace sobre bases de datos, genéricas o desarrolladas a medida.</p>
+<p>Actualmente, la tendencia es recoger los datos o bien de forma automática, o bien de forma manual sobre sistemas informatizados (pantallas), lo que permite eliminar el papel y disponer directamente de los datos en un formato digitalizado.</p>
+<p>En la actualidad, la mayoría de los equipos y líneas de producción se interconectan con los sistemas de información (ver IoT) y almacenan en tiempo real todos los datos necesarios, lo que libera al operario de la pesada tarea de reintroducirlos manualmente, a la vez que reduce los errores debidos a la imputación incorrecta.</p>
+<p>En todos los casos, es imprescindible asegurar que los sistemas de información pueden exportar sus datos a ficheros de texto tipo <em>fichero plano</em> o tipo CSV, de forma que podamos importarlos tanto a Excel como a R, como veremos más adelante. Estos sistemas de exportación de datos deben diseñarse de forma flexible y abierta, para que tanto la captura como la exportación puedan modificarse y adaptar la recogida de la información a las necesidades de cada momento.</p>
+<p>En este libro trataremos exclusivamente de lo que llamaremos <strong>datos rectangulares</strong>: grupos de valores que están asociados a una o más variables, y a varias observaciones. Hay muchos más datos que no se ajustan a esta organziación: imágenes, sonidos, archivos documentales de texto. Pero la forma más común de almacenar datos industriales es la de las tablas rectangulares, organizadas según el principio de los <strong>datos arreglados</strong>.</p>
 </section>
-<section id="estudios-observacionales" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="estudios-observacionales"><span class="header-section-number">2.1.2</span> Estudios observacionales</h3>
-<p>Como su nombre indica, un <strong>estudio observacional</strong> simplemente observa un proceso durante un tiempo de operación en rutina. Normalmente, el ingeniero o técnico interfiere lo mínimo posible en el proceso, sólo lo suficiente para recoger la información que necesita, que en muchas ocasiones no forma parte de los controles de rutina, si piensa que esa información puede ser relevante. Si se planifican adecuadamente, los estudios observacionales proporcionan datos fiables, precisos y completos para documentar un proceso. Por otra parte, estos estudios proporcionan una información limitada sobre las relaciones entre las variables del proceso, porque es posible que durante el tiempo limitado de observación, el rango de variación de las variables no recoja todas las situaciones posibles; por ejemplo, las situaciones extraordinarias.</p>
-</section>
-<section id="experimentos-diseñados" class="level3" data-number="2.1.3">
-<h3 data-number="2.1.3" class="anchored" data-anchor-id="experimentos-diseñados"><span class="header-section-number">2.1.3</span> Experimentos diseñados</h3>
-<p>La tercera forma de recoger información de un proceso son los <strong>experimentos diseñados</strong>. En un experimento de este tipo, el ingeniero o técnico hace un cambio deliberado en las variables que controla (llamadas <strong>factores</strong>), observa el resultado, y toma una decisión respecto a qué variable o variables son responsables de los cambios que observa en el proceso.</p>
-<p>Una diferencia importante respecto a los estudios históricos y los observacionales es que las diferentes combinaciones de factores se aplican al azar sobre un conjunto de unidades experimentales. Esto permite establecer con precisión las relaciones causa-efecto, cosa que no suele ser posible en los estudios históricos ni en los observacionales.</p>
+<section id="algunas-definiciones-importantes" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="algunas-definiciones-importantes"><span class="header-section-number">2.2</span> Algunas definiciones importantes</h2>
+<section id="población-y-muestra" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="población-y-muestra"><span class="header-section-number">2.2.1</span> Población y muestra</h3>
+<p>Una <strong>población</strong> es un conjunto de de personas, cosas o, en general, objetos en estudio. A veces, una población es demasiado grande para que podamos abarcarla completa; para poder estudiarla, obtenemos una <strong>muestra</strong>, que consiste en un subconjunto de la población que hemos seleccionado para su estudio. El proceso de obtener una muestra se llama <strong>muestreo</strong>, y se realiza de acuerdo con normas y procedimientos específicos.</p>
+<p>En muchas ocasiones, cuando se recogen los datos como resultado de una experimentación, definimos la población como <em>todos los resultados que podríamos haber obtenido</em>. Llamamos a este conjunto de posibles resultados una <strong>población conceptual</strong>. Por ejemplo, cuando medimos el <span class="math inline">\(pH\)</span> de varias muestras de leche, la población es el conjunto de todos los resultados posibles que podríamos haber tenido. Muchos problemas de ingeniería y tecnología se refieren a poblaciones conceptuales.</p>
 <div class="content-visible callout callout-style-default callout-important callout-titled" data-when-format="html">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
 <i class="callout-icon"></i>
 </div>
 <div class="callout-title-container flex-fill">
-Experimentos diseñados
+Recuerda
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>En el capítulo 11 se hará una introducción básica al <strong>diseño de experimentos</strong></p>
+<p>En la mayoría de las ocasiones, nuestros datos provienen de una <strong>muestra</strong> obtenida de una <strong>población</strong>,</p>
+</div>
+</div>
+<p>Cuando tomamos una muestra, debemos estar seguros de que contiene las propiedades que queremos estudiar en la población. En ese caso, decimos que la muestra es <strong>representativa</strong>: los individuos de la muestra son representativos de la población. Para que la muestra sea representativa, debe ser obtenida mediante un <strong>muestreo aleatorio</strong>. Una <strong>muestra aleatoria simple</strong> de tamaño <span class="math inline">\(n\)</span> consiste en <span class="math inline">\(n\)</span> individuos de una población, elegidos de forma que cada conjunto posible de <span class="math inline">\(n\)</span> individuos tiene la misma <strong>probabilidad</strong> de ser elegido.</p>
+<div class="content-visible callout callout-style-default callout-important callout-titled" data-when-format="html">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Qué es la probabilidad?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El concepto de probabilidad se explica en el capítulo 6</p>
+</div>
+</div>
+</section>
+<section id="parámetro-y-estadístico" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="parámetro-y-estadístico"><span class="header-section-number">2.2.2</span> Parámetro y estadístico</h3>
+<p>Un <strong>parámetro</strong> es una característica de una población. Podemos estimar su valor mediante la extracción de una <strong>muestra</strong>, que utilizaremos para calcular un <strong>estadístico muestral</strong>. Llamamos <strong>estadístico</strong> a un número que representa una propiedad o característica de la muestra, y constituye una estimación del valor de un parámetro de la población que estamos estudiando.</p>
+</section>
+<section id="variables-y-casos" class="level3" data-number="2.2.3">
+<h3 data-number="2.2.3" class="anchored" data-anchor-id="variables-y-casos"><span class="header-section-number">2.2.3</span> Variables y casos</h3>
+<p>A los objetos descritos en un conjunto de datos los llamamos <strong>casos</strong>, de forma genérica. A veces, estos casos pueden corresponder a personas; en ese caso podemos llamarlos <strong>individuos</strong>. Cuando los objetos que estudiamos no son personas, como es lo habitual en el entorno industrial, utilizamos la nomenclatura genérica.</p>
+<p>Un <strong>atributo</strong> es una característica que define una propiedad de un objeto, persona o cosa. Por ejemplo, edad, peso, altura, sexo, color de ojos, son atributos de una persona. Llamamos <strong>variable</strong> a una característica cualquiera de un individuo que puede ser medida. Una variable puede tomar diferentes valores en diferentes individuos o casos.</p>
+<p>Según estas definiciones que acabamos de ver, una muestra está formada por un conjunto de casos, y cada caso contiene un determinado número de variables, que contienen los valores que hemos analizado o medido.</p>
+<div class="content-visible callout callout-style-default callout-note no-icon callout-titled" data-when-format="html">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo 1: Muestreando una cámara de maduración de queso
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imagínate que tienes que analizar el extracto seco de una producción de queso que está en fase de maduración en una cámara. Como la cámara está muy llena, es difícil acceder al interior, y decides coger tu muestra de los quesos que están más a tu alcance, justo al lado de la puerta y a la altura de la vista.¿Crees que es una buena idea? ¿Podrías definir la población en este caso?.</p>
+</div>
+</div>
+<div class="content-visible callout callout-style-default callout-tip no-icon callout-titled" data-when-format="html">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Respuesta al ejemplo 1: Muestreando una cámara de maduración de queso
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>No es una buena idea porque no tenemos garantía de que las condiciones de humedad,temperatura y circulación de aire sean las mismas en toda la cámara. Para asegurar que nuestra muestra es representativa, debemos tomar una <strong>muestra aleatoria</strong> de la población, que en este caso es el total de quesos en la cámara.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="tipos-de-variables" class="level3" data-number="2.2.4">
+<h3 data-number="2.2.4" class="anchored" data-anchor-id="tipos-de-variables"><span class="header-section-number">2.2.4</span> Tipos de variables</h3>
+<p>Algunas variables, como el color, sirven para clasificar los individuos en categorías. Otras, como la altura o el peso de un individuo, pueden tomar valores numéricos con los que podemos hacer cálculos. Por ejemplo, podemos sumar la altura de varias personas, pero no tiene sentido <em>sumar</em> los colores del arco-iris (aunque sí podemos <em>contarlos</em>, y hacer cálculos con estos recuentos). También podemos <em>categorizar</em> variables continuas: podemos clasificar nuestro grupo de personas en <em>altas</em> o <em>bajas</em>, y podemos contar cuántas personas entran en cada categoría.</p>
+<table class="table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variables cualitativas <br> o categóricas</th>
+<th></th>
+<th>Variables cuantitativas <br> o métricas</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Nominales</strong></td>
+<td><strong>Ordinales</strong></td>
+<td><strong>Discretas</strong></td>
+<td><strong>Continuas</strong></td>
+</tr>
+<tr class="even">
+<td>Valores en categorías arbitrarias</td>
+<td>Valores en categorías ordenadas</td>
+<td>Valores enteros en escala numérica</td>
+<td>Valores continuos en escala numérica</td>
+</tr>
+<tr class="odd">
+<td>(sin unidades)</td>
+<td>(sin unidades)</td>
+<td>Unidades contadas</td>
+<td>Unidades medidas</td>
+</tr>
+</tbody>
+</table>
+<p>Una <strong>variable categórica</strong> coloca a un individuo en uno o más grupos o categorías</p>
+<p>Una <strong>variable métrica</strong> toma valores numéricos con los que tiene sentido realizar cálculos aritméticos como sumar, restar, etc.</p>
+<p>Las variables categóricas se conocen también como <strong>variables cualitativas</strong> porque indican <em>cualidades</em>.</p>
+<p>Las variables métricas se conocen también como <strong>variables cuantitativas</strong> porque indican <em>cantidades</em>.</p>
+<div class="content-visible callout callout-style-default callout-warning callout-titled" data-when-format="html">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comentario: ¿Cualitativo quiere decir “que tiene calidad”?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A veces se utiliza la palabra <strong>cualitativo</strong> de forma incorrecta para indicar <strong>calidad</strong>, por ejemplo cuando alguien dice: “Este envase es muy <strong>cualitativo</strong>”. Deberíamos decir “Este envase tiene gran calidad”. <strong>Cualitativo</strong> no se deriva de <strong>calidad</strong>, sino de <strong>cualidad</strong>.</p>
+</div>
+</div>
+</section>
+<section id="ejemplos-de-variables" class="level3" data-number="2.2.5">
+<h3 data-number="2.2.5" class="anchored" data-anchor-id="ejemplos-de-variables"><span class="header-section-number">2.2.5</span> Ejemplos de variables</h3>
+<div class="content-visible callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Para resolver
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Ejemplo 1</strong>. Tiramos un dado al aire. Describe a qué corresponde la variable y el caso.</p>
+<p><strong>Ejemplo 2</strong>. Durante un proceso de envasado de un producto que dura una hora, controlamos el peso de cada envase cada minuto. Describe la variable y el caso. ¿Puede haber más de una variable?</p>
+</div>
+</div>
+<div class="content-visible callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Respuestas: Para resolver
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Ejemplo 1</strong>: La <strong>variable</strong> es el resultado que obtenemos cada vez; podríamos denominarla, por ejemplo, <span class="math inline">\(resultado\_obtenido\)</span>. Colocaríamos este nombre en el encabezado de una columna en una hoja de cálculo. <br>Cada tirada que hacemos es un <strong>caso</strong>; iríamos colocando el resultado que obtenemos cada vez en una nueva fila de nuestra hoja de cálculo.</p>
+<p><strong>Ejemplo 2</strong>. En este caso, la <strong>variable</strong> es el <span class="math inline">\(peso\_obtenido\)</span>, y cada pesada constituye un <strong>caso</strong>. Si registrásemos, además, la hora y el minuto en el que que hemos hecho cada control de peso, podríamos definir una nueva variable, que podríamos llamar <span class="math inline">\(hora\)</span>, y que colocaríamos en una columna al lado del <span class="math inline">\(peso\_obtenido\)</span>. Incluso podríamos definir otra variable adicional, el <span class="math inline">\(numero\_de\_pesada\)</span>, que sería un número secuencial empezando en <span class="math inline">\(1\)</span> y que se incrementaría en cada pesada, de forma que al final esta variable nos daría el número de pesadas realizadas, y nos indicaría además el orden en el que las hemos realizado. <br>Puesto que hemos realizado una pesada cada minuto, tendríamos tres variables y 61 líneas (un encabezado y 60 líneas correspondientes una a cada minuto)</p>
+</div>
 </div>
 </div>
 </section>
 </section>
-<section id="la-organización-de-los-datos." class="level2 page-columns page-full" data-number="2.2">
-<h2 data-number="2.2" class="anchored" data-anchor-id="la-organización-de-los-datos."><span class="header-section-number">2.2</span> La organización de los datos.</h2>
+<section id="reglas-básicas-para-la-creación-de-las-variables." class="level2 page-columns page-full" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="reglas-básicas-para-la-creación-de-las-variables."><span class="header-section-number">2.3</span> Reglas básicas para la creación de las variables.</h2>
 <p>Según hemos visto, existen diferentes tipos de variables, <strong>cualitativas</strong> (<em>categóricas</em>) y <strong>cuantitativas</strong> (<em>métricas</em>). Normalmente, los valores de las variables categóricas se describen mediante textos del tipo “color blanco”, “hombre”, “mujer”, “alto”, “bajo”, etc. Suelen corresponder con características descriptivas, y por lo tanto, no puede hacerse cálculos directamente con ellos, a menos que se hayan resumido, por ejemplo, mediante un conteo. Las variables métricas consisten en valores numéricos, que pueden ser <strong>enteros</strong> (<span class="math inline">\(1\)</span>;<span class="math inline">\(24\)</span>;<span class="math inline">\(350\)</span>) o <strong>continuos</strong> (<span class="math inline">\(1,456\)</span>;<span class="math inline">\(0,35\)</span>) y que sí pueden utilizarse directamente para hacer cálculos tales como sumas, etc.</p>
 <p>Una <strong>variable</strong> está descrita siempre por <strong>un nombre</strong>, que designa la variable, y <strong>un valor o conjunto de valores</strong>, que corresponden a los casos. Este conjunto de valores, como acabamos de ver, pueden ser textos o números.</p>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">Existen también otros tipos de variables que veremos más tarde, como variables lógicas o fechas, según el tipo de dato que almacenemos en esa variable.</span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Existen también otros tipos de variables que veremos más tarde, como variables lógicas o fechas, según el tipo de dato que almacenemos en esa variable.</span></div></div>
 <p>Ejemplos de valores de texto: “Carlos”, “fruta”, “Lluvia fuerte”, “muy ácido”, “sabor a fresa”</p>
 <p>Ejemplos de valores numéricos: <span class="math inline">\(1\)</span>; <span class="math inline">\(7\)</span>; <span class="math inline">\(10,65\)</span></p>
 <p>Siempre que sea posible, utilizaremos el nombre del atributo o característica que estamos midiendo o analizando, o su abreviatura, para designar una variable; por ejemplo, si estamos recogiendo la altura de una serie de personas, llamaremos <code>altura</code> a la variable; si estamos recogiendo el peso, usaremos el nombre <code>peso</code>, etc.</p>
 <p>En una hoja de cálculo, colocaremos el nombre de la variable en la primera fila, e iremos añadiendo los valores debajo, un valor por línea.</p>
 <p>A veces, asignar un nombre a una variable no es todo lo fácil que podría parecer a simple vista. Por ejemplo, ¿qué nombre daríamos a una variable que va a recoger los valores de <span class="math inline">\(pH\)</span> de la leche en una cuba de queso en el momento de añadir el cuajo? Está claro que <span class="math inline">\(pH\)</span> no es suficiente, porque en el proceso hay varias medidas de <span class="math inline">\(pH\)</span> y sería bueno que pudiésemos diferenciarlas con facilidad. En un caso como éste, es probable que necesitemos utilizar varias palabras o abreviaturas que describan mejor el nombre de la variable.</p>
-
-<div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/aula1.png" class="img-fluid figure-img"></p>
-</figure>
-</div></div><p>Para la construcción correcta de estos nombres, se han establecido un conjunto de normas, con el objetivo de evitar errores y facilitar el intercambio de los datos entre diferentes programas de análisis.</p>
-<section id="reglas-para-los-nombres-de-las-variables" class="level3 page-columns page-full" data-number="2.2.1">
-<h3 data-number="2.2.1" class="anchored" data-anchor-id="reglas-para-los-nombres-de-las-variables"><span class="header-section-number">2.2.1</span> Reglas para los nombres de las variables</h3>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><img src="01-imagenes/aula1.png" class="img-fluid"></div></div>
+<p>Para la construcción correcta de estos nombres, se han establecido un conjunto de normas, con el objetivo de evitar errores y facilitar el intercambio de los datos entre diferentes programas de análisis.</p>
+<section id="reglas-para-los-nombres-de-las-variables" class="level3 page-columns page-full" data-number="2.3.1">
+<h3 data-number="2.3.1" class="anchored" data-anchor-id="reglas-para-los-nombres-de-las-variables"><span class="header-section-number">2.3.1</span> Reglas para los nombres de las variables</h3>
 <p>Las hojas de cálculo admiten que introduzcamos cualquier texto en una celda; no hay prácticamente ninguna limitación a los nombres que podemos usar para nuestras variables. Excel utilizará los nombres con cualquier carácter sin inconvenientes.</p>
 <p>Sin embargo, otros programas informáticos, entre ellos R, son mucho más restrictivos. Por esta razón, estableceremos una serie de reglas para construir los nombres de variables, que aplicaremos a nuestras tablas de Excel, y que nos permitirán intercambiarlas con otros programas, como R, con toda seguridad.</p>
 <ol type="1">
@@ -329,7 +526,7 @@ Experimentos diseñados
 <li>Un nombre de variable no puede empezar por un número, un punto o un signo de subrayado (<span class="math inline">\(\_\)</span>); debe empezar siempre por una letra.</li>
 <li>Los nombres de variables irán siempre en minúsculas. Según esta regla, <span class="math inline">\(Peso\)</span> no es un nombre válido, pero <span class="math inline">\(peso\)</span> si lo es.</li>
 </ol>
-<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="">En R, las mayúsculas son significativas es decir, en R, <span class="math inline">\(peso\)</span> y <span class="math inline">\(Peso\)</span> son nombres diferentes. Por esta razón, aunque el uso de mayúsculas está permitido, nosotros adoptaremos las minúsculas de forma general)</span></div></div>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">En R, las mayúsculas son significativas es decir, en R, <span class="math inline">\(peso\)</span> y <span class="math inline">\(Peso\)</span> son nombres diferentes. Por esta razón, aunque el uso de mayúsculas está permitido, nosotros adoptaremos las minúsculas de forma general)</span></div></div>
 <ol start="4" type="1">
 <li><p>No utilizaremos espacios en blanco, acentos ni caracteres especiales como <span class="math inline">\(\tilde{n}\)</span>, <span class="math inline">\(\%\)</span>, guiones o paréntesis.</p></li>
 <li><p>Hay veces en que nos interesa unir varias palabras para construir un nombre de variable. Se utilizan diferentes formas de unir palabras, por ejemplo:</p>
@@ -357,12 +554,37 @@ Experimentos diseñados
 <p>Un caso particular es el uso de la <span class="math inline">\(\tilde{n}\)</span>, ya que no hay una alternativa fácil para el uso en las fechas (<span class="math inline">\(a\tilde{n}o\)</span>). R admite el uso de la <span class="math inline">\(\tilde{n}\)</span> en los nombres de variables, por lo que podremos usarlo con cuidado, poniendo atención a los posibles errores que se pudiesen producir en algunas librerías.</p>
 </section>
 </section>
-<section id="para-resolver" class="level2" data-number="2.3">
-<h2 data-number="2.3" class="anchored" data-anchor-id="para-resolver"><span class="header-section-number">2.3</span> Para resolver</h2>
-<p>Poner aquí distintos ejemplos de nombres de variables para verii son válidos o no Describir medidas y preguntar cómo llamaríamos a esa variable (por ejemplo, temperatura de laleche que acabamos de descargar de una cisterna)</p>
+<section id="almacenando-nuestros-datos-algunos-errores-comunes." class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="almacenando-nuestros-datos-algunos-errores-comunes."><span class="header-section-number">2.4</span> Almacenando nuestros datos: algunos errores comunes.</h2>
+<p>Cuando nos incorporamos a un equipo de trabajo existente, lo más seguro es que el equipo disponga ya de un sistema de archivo de los datos, de acuerdo con sus prácticas habituales. A veces el diseño de la captura de datos sigue aproximadamente el modelo manual en papel. Se introducen los datos en la hoja de cálculo y una vez completados, se imprime el documento para su archivo.</p>
+<p>El error más común que cometemos es tratar la hoja de cálculo como un bloc de notas, es decir, hacer anotaciones de forma libre, colocar los datos y el resultado de los análisis al lado y en cualquier parte de la hoja, y apoyarnos en el contexto para interpretar lo que hemos guardado. Pero para que el ordenador sea capaz de analizar nuestros datos de manera eficiente, debemos estructurarlos de tal forma que el programa use la información tal como nosotros queremos.</p>
+<p>Es común utilizar una hoja para guardar múltiples tablas de datos, tal como vemos en la <a href="#fig-excel_mess" class="quarto-xref">Figura&nbsp;<span>2.1</span></a>. Esta estructura, sin embargo, resulta enormemente confusa para su análisis, o lo imposibilita completamente.</p>
+<div id="fig-excel_mess" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-excel_mess-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-imagenes/excel_mess.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-excel_mess-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.1: Hoja Excel desordenada: ¡No hagas esto!
+</figcaption>
+</figure>
+</div>
+<p>En otros casos, los datos se guardan en hojas de cálculo que se componen de diferentes pestañas para cada semana, cada mes o cada año, como vemos en la <a href="#fig-2021-09-1_excel_1" class="quarto-xref">Figura&nbsp;<span>2.2</span></a>. Sin embargo, esta forma de almacenar los datos tampoco es la óptima para su análisis.</p>
+<div id="fig-2021-09-1_excel_1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-2021-09-1_excel_1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-imagenes/2021-09-1_excel_1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-2021-09-1_excel_1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.2: Hoja Excel con una estructura no ordenada
+</figcaption>
+</figure>
+</div>
+<p>¿Y utilizar diferentes pestañas para cada tabla? En este caso, la respuesta es sí y no. Si las diferentes tablas presentan situaciones diferentes, o datos que no son coincidentes, podemos utilizar diferentes pestañas. Pero si los datos están vinculados, por ejemplo, se corresponden con medidas hechas en fechas diferentes (meses, años), la respuesta adecuada es que las pestañas no son la forma correcta de almacenarlos datos; la forma recomendad es añadir una variable que nos permita diferenciar los datos por fecha; nuestro programa de análisis nos permitirá <em>filtrar</em> los datos según la fecha que deseemos, y todos estarán en una única tabla, facilitando la coherencia del conjunto.</p>
+<p>Hay muchas formas de almacenar la información en una hoja de cálculo, pero sólo la estructura de <strong>datos ordenados o arreglados</strong> facilita la utilización de los datos tanto por la hoja de cálculo como por otros programas de análisis.</p>
 </section>
-<section id="los-datos-ordenados-tidy-data" class="level2" data-number="2.4">
-<h2 data-number="2.4" class="anchored" data-anchor-id="los-datos-ordenados-tidy-data"><span class="header-section-number">2.4</span> Los datos ordenados (<em>tidy data</em>)</h2>
+<section id="los-datos-ordenados-o-arreglados-tidy-data" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="los-datos-ordenados-o-arreglados-tidy-data"><span class="header-section-number">2.5</span> Los datos ordenados o arreglados (<em>tidy data</em>)</h2>
 <p>De la misma manera que la gramática permite ordenar y estructurar un escrito de acuerdo a reglas comunes, hay reglas para que el almacenamiento de los datos sea lo más homogéneo posible y se reduzcan los errores al mínimo.</p>
 <p>Las reglas principales al almacenar nuestros datos en una hoja de cálculo son tres:</p>
 <ul>
@@ -371,28 +593,38 @@ Experimentos diseñados
 <li><p>celdas=valores.</p></li>
 </ul>
 <p>Cada variable debe tener su propia columna, cada observación debe tener su propia fila, y cada valor debe tener su propia celda o casilla .</p>
-<p>Estas tres reglas básicas son las que hacen que nuestro conjunto de datos sea <strong>ordenado (o arreglado)</strong><span class="citation" data-cites="wickham2023">(<a href="130-bibliografia.html#ref-wickham2023" role="doc-biblioref">Garret Grolemund Hadley Wickham Mine Çetinkaya-Rundel 2023</a>)</span> (hay edición <em>online</em> en español: <span class="citation" data-cites="wickham-es2023">(<a href="130-bibliografia.html#ref-wickham-es2023" role="doc-biblioref">Garret Grolemund Hadley Wickham 2023</a>)</span>:</p>
-<p>La <a href="#fig-tidy1">Figura&nbsp;<span>2.1</span></a> muestra estas reglas de forma visual.</p>
-<div id="fig-tidy1" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="01-imagenes/tidy-1.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.1: Sigue estas tres reglas para tener un conjunto de datos ordenado: las variables están en columnas, las observaciones están en filas, y los valores están en celdas. Fuente de la imagen: <span class="citation" data-cites="wickham2023">Garret Grolemund Hadley Wickham Mine Çetinkaya-Rundel (<a href="130-bibliografia.html#ref-wickham2023" role="doc-biblioref">2023</a>)</span></figcaption>
+<p>Estas tres reglas básicas son las que hacen que nuestro conjunto de datos sea <strong>ordenado (o arreglado)</strong><span class="citation" data-cites="wickham2023">(<a href="140-bibliografia.html#ref-wickham2023" role="doc-biblioref">Garret Grolemund Hadley Wickham Mine Çetinkaya-Rundel 2023</a>)</span> (hay edición <em>online</em> en español: <span class="citation" data-cites="wickham-es2023">(<a href="140-bibliografia.html#ref-wickham-es2023" role="doc-biblioref">Garret Grolemund Hadley Wickham 2023</a>)</span>:</p>
+<p>La <a href="#fig-tidy" class="quarto-xref">Figura&nbsp;<span>2.3</span></a> muestra estas reglas de forma visual.</p>
+<div id="fig-tidy" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-tidy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-imagenes/tidy-1.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tidy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.3: Sigue estas tres reglas para tener un conjunto de datos ordenado: las variables están en columnas, las observaciones están en filas, y los valores están en celdas. Fuente de la imagen: <span class="citation" data-cites="wickham2023">Garret Grolemund Hadley Wickham Mine Çetinkaya-Rundel (<a href="140-bibliografia.html#ref-wickham2023" role="doc-biblioref">2023</a>)</span>
+</figcaption>
 </figure>
 </div>
 <p>Estas tres reglas están interrelacionadas porque es imposible satisfacer sólo dos de tres.</p>
 <p>En una hoja de cálculo, una tabla de datos arreglada tendría este aspecto:</p>
-<div id="fig-excel-camembert" class="quarto-figure quarto-figure-center anchored">
-<figure class="figure">
-<p><img src="01-imagenes/2023-01-20.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Figura&nbsp;2.2: Hoja Excel con estructura rectangular de datos ordenados</figcaption>
+<div id="fig-excel-camembert" class="quarto-figure quarto-figure-center quarto-float anchored">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-excel-camembert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="01-imagenes/2023-11-17.png" class="img-fluid figure-img">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-excel-camembert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;2.4: Hoja Excel con estructura rectangular de datos ordenados
+</figcaption>
 </figure>
 </div>
+<p>Datos rectangulares: formato tabla</p>
+</section>
+<section id="para-resolver-1" class="level2" data-number="2.6">
+<h2 data-number="2.6" class="anchored" data-anchor-id="para-resolver-1"><span class="header-section-number">2.6</span> Para resolver</h2>
+<p>Poner aquí distintos ejemplos de nombres de variables para verii son válidos o no Describir medidas y preguntar cómo llamaríamos a esa variable (por ejemplo, temperatura de laleche que acabamos de descargar de una cisterna)</p>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" role="list" style="display: none">
-<div id="ref-montgomery2011" class="csl-entry" role="listitem">
-Douglas C Montgomery, Norma Faris Hubele, George C Runger. 2011. <em>Engineering Statistics</em>. 111 River Street, Hoboken, NJ 07030-5774: John Wiley &amp; Sons, Inc.
-</div>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
 <div id="ref-wickham-es2023" class="csl-entry" role="listitem">
 Hadley Wickham, Garret Grolemund. 2023. <span>«R Para Ciencia de Datos»</span>. 2023. <a href="https://es.r4ds.hadley.nz/">https://es.r4ds.hadley.nz/</a>.
 </div>
@@ -482,10 +714,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -495,8 +744,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -508,7 +766,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -552,6 +933,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -577,6 +959,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -638,17 +1046,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./010-intro.html" class="pagination-link">
+      <a href="./010-intro.html" class="pagination-link" aria-label="Introducción">
         <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./030-herramientas-1-hoja.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: La hoja de cálculo.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./040-herramientas-2-R.html" class="pagination-link" aria-label="El software estadístico R.">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El software estadístico R.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.3.433">
+<meta name="generator" content="quarto-1.4.553">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 5&nbsp; La exploración y descripción de los datos.</title>
+<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 4&nbsp; La exploración y descripción de los datos.</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./050-distr-prob.html" rel="next">
-<link href="./035-herramientas-2-R.html" rel="prev">
+<link href="./060-distr-prob.html" rel="next">
+<link href="./040-herramientas-2-R.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -47,7 +47,13 @@ ul.task-list li input[type="checkbox"] {
   "collapse-after": 3,
   "panel-placement": "start",
   "type": "textbox",
-  "limit": 20,
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
   "language": {
     "search-no-results-text": "Sin resultados",
     "search-matching-documents-text": "documentos encontrados",
@@ -56,6 +62,7 @@ ul.task-list li input[type="checkbox"] {
     "search-more-match-text": "resultado adicional en este documento",
     "search-more-matches-text": "resultados adicionales en este documento",
     "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
     "search-detached-cancel-button-title": "Cancelar",
     "search-submit-button-title": "Enviar",
     "search-label": "Buscar"
@@ -65,6 +72,33 @@ ul.task-list li input[type="checkbox"] {
   <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
+
 </head>
 
 <body class="nav-sidebar floating slimcontent">
@@ -73,12 +107,12 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-      <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./040-distr-frec-explor.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">La exploración y descripción de los datos.</span></a></li></ol></nav>
-      <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
-      </a>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./050-distr-frec-explor.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración y descripción de los datos.</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
@@ -88,7 +122,7 @@ ul.task-list li input[type="checkbox"] {
 <!-- content -->
 <div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
 <!-- sidebar -->
-  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal sidebar-navigation floating overflow-auto">
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
     <div class="pt-lg-2 mt-2 text-left sidebar-header">
     <div class="sidebar-title mb-0 py-0">
       <a href="./">Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</a> 
@@ -116,107 +150,101 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./020-datos-industriales.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Los datos industriales de producción</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Entendiendo los datos industriales. Introducción a la hoja de cálculo.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./030-herramientas-1-hoja.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: La hoja de cálculo.</span></span></a>
+  <a href="./040-herramientas-2-R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: El software estadístico R.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./035-herramientas-2-R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: El software estadístico R.</span></span></a>
+  <a href="./050-distr-frec-explor.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración y descripción de los datos.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./040-distr-frec-explor.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">La exploración y descripción de los datos.</span></span></a>
+  <a href="./060-distr-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de probabilidad e inferencia</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./050-distr-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de probabilidad e inferencia</span></span></a>
+  <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./060-relacion-xy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+  <a href="./080-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./070-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+  <a href="./090-sistema-medicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./080-sistema-medicion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./090-control-proc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+  <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100-disexp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+  <a href="./120-mejora-calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./110-mejora-calidad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./120-anexo-metodos.html" class="sidebar-item-text sidebar-link">
+  <a href="./130-anexo-metodos.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anexo: Recetario de métodos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./130-bibliografia.html" class="sidebar-item-text sidebar-link">
+  <a href="./140-bibliografia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
     </ul>
     </div>
 </nav>
-<div id="quarto-sidebar-glass" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar,#quarto-sidebar-glass"></div>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#el-flujo-de-trabajo." id="toc-el-flujo-de-trabajo." class="nav-link active" data-scroll-target="#el-flujo-de-trabajo."><span class="header-section-number">5.1</span> El flujo de trabajo.</a></li>
-  <li><a href="#describiendo-un-conjunto-de-datos" id="toc-describiendo-un-conjunto-de-datos" class="nav-link" data-scroll-target="#describiendo-un-conjunto-de-datos"><span class="header-section-number">5.2</span> Describiendo un conjunto de datos</a></li>
-  <li><a href="#el-diagrama-de-puntos-o-dotplot" id="toc-el-diagrama-de-puntos-o-dotplot" class="nav-link" data-scroll-target="#el-diagrama-de-puntos-o-dotplot"><span class="header-section-number">5.3</span> El diagrama de puntos o <em>dotplot</em></a></li>
-  <li><a href="#la-distribución-de-frecuencias" id="toc-la-distribución-de-frecuencias" class="nav-link" data-scroll-target="#la-distribución-de-frecuencias"><span class="header-section-number">5.4</span> La distribución de frecuencias</a></li>
-  <li><a href="#diagramas-de-barra" id="toc-diagramas-de-barra" class="nav-link" data-scroll-target="#diagramas-de-barra"><span class="header-section-number">5.5</span> Diagramas de barra</a></li>
-  <li><a href="#histogramas" id="toc-histogramas" class="nav-link" data-scroll-target="#histogramas"><span class="header-section-number">5.6</span> Histogramas</a></li>
-  <li><a href="#gráficos-de-densidad" id="toc-gráficos-de-densidad" class="nav-link" data-scroll-target="#gráficos-de-densidad"><span class="header-section-number">5.7</span> Gráficos de densidad</a></li>
-  <li><a href="#los-valores-centrales-media-mediana-moda" id="toc-los-valores-centrales-media-mediana-moda" class="nav-link" data-scroll-target="#los-valores-centrales-media-mediana-moda"><span class="header-section-number">5.8</span> Los valores centrales: media, mediana, moda</a></li>
-  <li><a href="#los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil" id="toc-los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil" class="nav-link" data-scroll-target="#los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil"><span class="header-section-number">5.9</span> Los valores de dispersión: varianza y desviación típica, rango intercuartil</a></li>
-  <li><a href="#diagramas-de-caja-box-plot" id="toc-diagramas-de-caja-box-plot" class="nav-link" data-scroll-target="#diagramas-de-caja-box-plot"><span class="header-section-number">5.10</span> Diagramas de caja (<em>box plot</em>)</a>
+  <li><a href="#el-flujo-de-trabajo." id="toc-el-flujo-de-trabajo." class="nav-link active" data-scroll-target="#el-flujo-de-trabajo."><span class="header-section-number">4.1</span> El flujo de trabajo.</a></li>
+  <li><a href="#describiendo-un-conjunto-de-datos" id="toc-describiendo-un-conjunto-de-datos" class="nav-link" data-scroll-target="#describiendo-un-conjunto-de-datos"><span class="header-section-number">4.2</span> Describiendo un conjunto de datos</a></li>
+  <li><a href="#el-diagrama-de-puntos-o-dotplot" id="toc-el-diagrama-de-puntos-o-dotplot" class="nav-link" data-scroll-target="#el-diagrama-de-puntos-o-dotplot"><span class="header-section-number">4.3</span> El diagrama de puntos o <em>dotplot</em></a></li>
+  <li><a href="#la-distribución-de-frecuencias" id="toc-la-distribución-de-frecuencias" class="nav-link" data-scroll-target="#la-distribución-de-frecuencias"><span class="header-section-number">4.4</span> La distribución de frecuencias</a></li>
+  <li><a href="#diagramas-de-barra" id="toc-diagramas-de-barra" class="nav-link" data-scroll-target="#diagramas-de-barra"><span class="header-section-number">4.5</span> Diagramas de barra</a></li>
+  <li><a href="#histogramas" id="toc-histogramas" class="nav-link" data-scroll-target="#histogramas"><span class="header-section-number">4.6</span> Histogramas</a></li>
+  <li><a href="#gráficos-de-densidad" id="toc-gráficos-de-densidad" class="nav-link" data-scroll-target="#gráficos-de-densidad"><span class="header-section-number">4.7</span> Gráficos de densidad</a></li>
+  <li><a href="#los-valores-centrales-media-mediana-moda" id="toc-los-valores-centrales-media-mediana-moda" class="nav-link" data-scroll-target="#los-valores-centrales-media-mediana-moda"><span class="header-section-number">4.8</span> Los valores centrales: media, mediana, moda</a></li>
+  <li><a href="#los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil" id="toc-los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil" class="nav-link" data-scroll-target="#los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil"><span class="header-section-number">4.9</span> Los valores de dispersión: varianza y desviación típica, rango intercuartil</a></li>
+  <li><a href="#diagramas-de-caja-box-plot" id="toc-diagramas-de-caja-box-plot" class="nav-link" data-scroll-target="#diagramas-de-caja-box-plot"><span class="header-section-number">4.10</span> Diagramas de caja (<em>box plot</em>)</a>
   <ul class="collapse">
-  <li><a href="#gráficos-de-series" id="toc-gráficos-de-series" class="nav-link" data-scroll-target="#gráficos-de-series"><span class="header-section-number">5.10.1</span> Gráficos de series</a></li>
-  <li><a href="#otros-gráficos" id="toc-otros-gráficos" class="nav-link" data-scroll-target="#otros-gráficos"><span class="header-section-number">5.10.2</span> Otros gráficos</a></li>
-  <li><a href="#la-media-o-promedio-una-medida-central" id="toc-la-media-o-promedio-una-medida-central" class="nav-link" data-scroll-target="#la-media-o-promedio-una-medida-central"><span class="header-section-number">5.10.3</span> La media o promedio: una medida central</a></li>
-  <li><a href="#las-medidas-de-dispersión-la-desviación-típica" id="toc-las-medidas-de-dispersión-la-desviación-típica" class="nav-link" data-scroll-target="#las-medidas-de-dispersión-la-desviación-típica"><span class="header-section-number">5.10.4</span> Las medidas de dispersión: la desviación típica</a></li>
-  <li><a href="#las-limitaciones-de-la-media-y-la-desviación-típica" id="toc-las-limitaciones-de-la-media-y-la-desviación-típica" class="nav-link" data-scroll-target="#las-limitaciones-de-la-media-y-la-desviación-típica"><span class="header-section-number">5.10.5</span> Las limitaciones de la media y la desviación típica</a></li>
+  <li><a href="#gráficos-de-series" id="toc-gráficos-de-series" class="nav-link" data-scroll-target="#gráficos-de-series"><span class="header-section-number">4.10.1</span> Gráficos de series</a></li>
+  <li><a href="#otros-gráficos" id="toc-otros-gráficos" class="nav-link" data-scroll-target="#otros-gráficos"><span class="header-section-number">4.10.2</span> Otros gráficos</a></li>
+  <li><a href="#la-media-o-promedio-una-medida-central" id="toc-la-media-o-promedio-una-medida-central" class="nav-link" data-scroll-target="#la-media-o-promedio-una-medida-central"><span class="header-section-number">4.10.3</span> La media o promedio: una medida central</a></li>
+  <li><a href="#las-medidas-de-dispersión-la-desviación-típica" id="toc-las-medidas-de-dispersión-la-desviación-típica" class="nav-link" data-scroll-target="#las-medidas-de-dispersión-la-desviación-típica"><span class="header-section-number">4.10.4</span> Las medidas de dispersión: la desviación típica</a></li>
+  <li><a href="#las-limitaciones-de-la-media-y-la-desviación-típica" id="toc-las-limitaciones-de-la-media-y-la-desviación-típica" class="nav-link" data-scroll-target="#las-limitaciones-de-la-media-y-la-desviación-típica"><span class="header-section-number">4.10.5</span> Las limitaciones de la media y la desviación típica</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -226,7 +254,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">La exploración y descripción de los datos.</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración y descripción de los datos.</span></h1>
 </div>
 
 
@@ -239,10 +267,12 @@ ul.task-list li input[type="checkbox"] {
   </div>
   
 
+
 </header>
 
-<section id="el-flujo-de-trabajo." class="level2" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="el-flujo-de-trabajo."><span class="header-section-number">5.1</span> El flujo de trabajo.</h2>
+
+<section id="el-flujo-de-trabajo." class="level2" data-number="4.1">
+<h2 data-number="4.1" class="anchored" data-anchor-id="el-flujo-de-trabajo."><span class="header-section-number">4.1</span> El flujo de trabajo.</h2>
 <ul>
 <li><p>En qué consiste un flujo de trabajo en el análisis de datos</p>
 <p>Gráfico de R4DS</p>
@@ -250,8 +280,8 @@ ul.task-list li input[type="checkbox"] {
 <li><p>Cómo estructurar un flujo de trabajo para el análisis de datos industriales</p></li>
 </ul>
 </section>
-<section id="describiendo-un-conjunto-de-datos" class="level2" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="describiendo-un-conjunto-de-datos"><span class="header-section-number">5.2</span> Describiendo un conjunto de datos</h2>
+<section id="describiendo-un-conjunto-de-datos" class="level2" data-number="4.2">
+<h2 data-number="4.2" class="anchored" data-anchor-id="describiendo-un-conjunto-de-datos"><span class="header-section-number">4.2</span> Describiendo un conjunto de datos</h2>
 <p>Supongamos que queremos medir la altura de los alumnos de nuestra clase. nuestro analista de la OMS ha realizado la medida de la altura de una niña siguiendo rigurosamente el método establecido, y, por lo tanto, que está razonablemente seguro de su resultado.</p>
 <p>Al cabo de varias jornadas de trabajo, habrá realizado varias medidas, que representarán al conjunto de niños de la población en la que ha estado trabajando. Otros investigadores pueden haber estado trabajando a la vez en otras poblaciones, y al final de sus jornadas de trabajo, quieren comparar sus resultados: ¿Hay alguna de estas poblaciones en las que los niños sean significativamente más altos (o más bajos) que en las otras? ¿Cómo describir la altura de un conjunto de individuos de manera que se puedan hacer comparaciones con otros conjuntos?</p>
 <p>Para responder a estas preguntas, vamos a cambiar el entorno de trabajo a un grupo de niños imaginario, que vamos a llamar <em>aula1</em>: son nuestros compañeros y compañeras, a los cuales realizaremos una medida de altura siguiendo el <em>procedimiento</em> especificado en nuestro <em>método</em>.</p>
@@ -260,13 +290,13 @@ ul.task-list li input[type="checkbox"] {
 <p>Supongamos que hemos realizado las medidas. Lo primero que hacemos es registrar la altura de cada persona en una hoja de cálculo:</p>
 <p><img src="01-imagenes/aula1(2).png" class="img-fluid"></p>
 </section>
-<section id="el-diagrama-de-puntos-o-dotplot" class="level2" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="el-diagrama-de-puntos-o-dotplot"><span class="header-section-number">5.3</span> El diagrama de puntos o <em>dotplot</em></h2>
+<section id="el-diagrama-de-puntos-o-dotplot" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="el-diagrama-de-puntos-o-dotplot"><span class="header-section-number">4.3</span> El diagrama de puntos o <em>dotplot</em></h2>
 <p>El diagrama de tallo y hojas</p>
 <p>Construcción en Excel</p>
 </section>
-<section id="la-distribución-de-frecuencias" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="la-distribución-de-frecuencias"><span class="header-section-number">5.4</span> La distribución de frecuencias</h2>
+<section id="la-distribución-de-frecuencias" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="la-distribución-de-frecuencias"><span class="header-section-number">4.4</span> La distribución de frecuencias</h2>
 <p>Si agrupamos nuestros valores por intervalos, y contamos el número de observaciones que aparecen en cada intervalo, obtenemos una <em>distribución de frecuencias</em>, que puede ser <em>absoluta</em> o <em>relativa</em> según que sus valores sean un recuento simple de los valores o el porcentaje que corresponde al número de observaciones en cada clase respecto al total de observaciones</p>
 <p>Las formas más habituales de representar una distribución de frecuencias son la tabla de frecuencias o bien un gráfico de barras o histograma.</p>
 <p>El gráfico a continuación muestra una distribución de frecuencias absoluta, calculada mediante una tabla dinámica de Excel, junto con su tabla de frecuencias absolutas.</p>
@@ -281,37 +311,37 @@ ul.task-list li input[type="checkbox"] {
 </ul>
 <p>Frecuencia absoluta y frecuencia relativa -&gt; probabilidad, area bajo histograma y área bajo la curva</p>
 </section>
-<section id="diagramas-de-barra" class="level2" data-number="5.5">
-<h2 data-number="5.5" class="anchored" data-anchor-id="diagramas-de-barra"><span class="header-section-number">5.5</span> Diagramas de barra</h2>
+<section id="diagramas-de-barra" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="diagramas-de-barra"><span class="header-section-number">4.5</span> Diagramas de barra</h2>
 </section>
-<section id="histogramas" class="level2" data-number="5.6">
-<h2 data-number="5.6" class="anchored" data-anchor-id="histogramas"><span class="header-section-number">5.6</span> Histogramas</h2>
+<section id="histogramas" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="histogramas"><span class="header-section-number">4.6</span> Histogramas</h2>
 </section>
-<section id="gráficos-de-densidad" class="level2" data-number="5.7">
-<h2 data-number="5.7" class="anchored" data-anchor-id="gráficos-de-densidad"><span class="header-section-number">5.7</span> Gráficos de densidad</h2>
+<section id="gráficos-de-densidad" class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="gráficos-de-densidad"><span class="header-section-number">4.7</span> Gráficos de densidad</h2>
 </section>
-<section id="los-valores-centrales-media-mediana-moda" class="level2" data-number="5.8">
-<h2 data-number="5.8" class="anchored" data-anchor-id="los-valores-centrales-media-mediana-moda"><span class="header-section-number">5.8</span> Los valores centrales: media, mediana, moda</h2>
+<section id="los-valores-centrales-media-mediana-moda" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="los-valores-centrales-media-mediana-moda"><span class="header-section-number">4.8</span> Los valores centrales: media, mediana, moda</h2>
 </section>
-<section id="los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil" class="level2" data-number="5.9">
-<h2 data-number="5.9" class="anchored" data-anchor-id="los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil"><span class="header-section-number">5.9</span> Los valores de dispersión: varianza y desviación típica, rango intercuartil</h2>
+<section id="los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil"><span class="header-section-number">4.9</span> Los valores de dispersión: varianza y desviación típica, rango intercuartil</h2>
 </section>
-<section id="diagramas-de-caja-box-plot" class="level2 page-columns page-full" data-number="5.10">
-<h2 data-number="5.10" class="anchored" data-anchor-id="diagramas-de-caja-box-plot"><span class="header-section-number">5.10</span> Diagramas de caja (<em>box plot</em>)</h2>
+<section id="diagramas-de-caja-box-plot" class="level2 page-columns page-full" data-number="4.10">
+<h2 data-number="4.10" class="anchored" data-anchor-id="diagramas-de-caja-box-plot"><span class="header-section-number">4.10</span> Diagramas de caja (<em>box plot</em>)</h2>
 <p><a href="https://www.leansigmacorporation.com/box-plot-with-minitab/">Box Plot with Minitab - Lean Sigma Corporation</a></p>
 <p><img src="01-imagenes/boxplot-minitab.png" class="img-fluid"></p>
 <p><img src="01-imagenes/boxplot.png" class="img-fluid"></p>
 <p><a href="http://r-graph-gallery.com/boxplot.html">Boxplot | the R Graph Gallery (r-graph-gallery.com)</a></p>
-<section id="gráficos-de-series" class="level3" data-number="5.10.1">
-<h3 data-number="5.10.1" class="anchored" data-anchor-id="gráficos-de-series"><span class="header-section-number">5.10.1</span> Gráficos de series</h3>
+<section id="gráficos-de-series" class="level3" data-number="4.10.1">
+<h3 data-number="4.10.1" class="anchored" data-anchor-id="gráficos-de-series"><span class="header-section-number">4.10.1</span> Gráficos de series</h3>
 </section>
-<section id="otros-gráficos" class="level3" data-number="5.10.2">
-<h3 data-number="5.10.2" class="anchored" data-anchor-id="otros-gráficos"><span class="header-section-number">5.10.2</span> Otros gráficos</h3>
+<section id="otros-gráficos" class="level3" data-number="4.10.2">
+<h3 data-number="4.10.2" class="anchored" data-anchor-id="otros-gráficos"><span class="header-section-number">4.10.2</span> Otros gráficos</h3>
 <p>dotplot</p>
 <p><a href="https://ggplot2.tidyverse.org/reference/geom_dotplot.html">Dot plot — geom_dotplot • ggplot2 (tidyverse.org)</a></p>
 </section>
-<section id="la-media-o-promedio-una-medida-central" class="level3 page-columns page-full" data-number="5.10.3">
-<h3 data-number="5.10.3" class="anchored" data-anchor-id="la-media-o-promedio-una-medida-central"><span class="header-section-number">5.10.3</span> La media o promedio: una medida central</h3>
+<section id="la-media-o-promedio-una-medida-central" class="level3 page-columns page-full" data-number="4.10.3">
+<h3 data-number="4.10.3" class="anchored" data-anchor-id="la-media-o-promedio-una-medida-central"><span class="header-section-number">4.10.3</span> La media o promedio: una medida central</h3>
 <p>Una primera posibilidad es suponer que en nuestro grupo de once personas no hubiese variación: que todos ellos tuviesen la misma altura. Si fuese así, podemos encontrar un valor <span class="math inline">\(x\)</span> de altura que, repetido once veces, sea equivalente a la suma de las alturas de todos ellos. Si representamos cada alumno con una letra, la suma de sus alturas sería: <span class="math display">\[
 a+ b + c + d + e + f + g + h + i + j + k
 \]</span> y el valor que buscamos sería un valor tal que, sumado once veces, el valor obtenido fuese igual a la suma de la alturas medidas: <span class="math display">\[
@@ -343,7 +373,7 @@ x = \frac{a+b+c+d+e+f+g+h+i+j+k}{11}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221115202048866.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Hoja de cálculo con los valores y el gráfico de puntos</figcaption>
+<figcaption>Hoja de cálculo con los valores y el gráfico de puntos</figcaption>
 </figure>
 </div>
 <p>Esta línea azul de puntos representa la <em>distancia</em> de cada valor a la media. Usaremos esta distancia para calcular una <em>distancia media</em>, que será una medida de la dispersión de nuestros valores.</p>
@@ -355,34 +385,34 @@ x = \frac{a+b+c+d+e+f+g+h+i+j+k}{11}
 <div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116105300331.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Dos grupos de valores con la misma media</figcaption>
+<figcaption>Dos grupos de valores con la misma media</figcaption>
 </figure>
 </div></div><p>¿Podemos describir adecuadamente los valores de la altura de cada uno de los grupos utilizando el valor medio? Parece evidente que no, ya que a partir de diferentes valores de altura estamos obteniendo el mismo valor medio. Sin embargo, uno de los grupos <em>es más alto</em> que el otro, si no fuera por un sólo individuo que aparentemente distorsiona el cálculo. Podríamos incluir nuestro grupo original, y veremos que los tres grupos son diferentes, aunque su valor medio es idéntico.</p>
 
 <div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116110426263.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Tres grupos de valores con la misma media</figcaption>
+<figcaption>Tres grupos de valores con la misma media</figcaption>
 </figure>
 </div></div><p>Si nos ayudamos de un gráfico equivalente al que hemos utilizado antes, vemos estas diferencias con claridad:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116110925933.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfico de tres grupos de valores</figcaption>
+<figcaption>Gráfico de tres grupos de valores</figcaption>
 </figure>
 </div>
 <p>Aunque el valor medio de estos tres grupos de datos es idéntico, parece claro que los tres grupos son muy distintos en su composición, y por lo tanto la <em>media</em> no es suficiente para describir con suficiente precisión cada uno de los grupos. Necesitamos un valor adicional, que nos indique de qué forma los valores se alejan del valor medio. Para ello, vamos a introducir un concepto nuevo: la <em>medida de la dispersión</em>, que nos indica precisamente la distancia de los valores al valor medio, e introduciremos también la <em>distribución de frecuencias</em>, que nos permite representar <em>la forma</em> en la que se distribuyen nuestros valores.</p>
 <p>La media como centro de gravedad: <a href="https://www.physicsclassroom.com/Physics-Interactives/Balance-and-Rotation/COM-Builder/Center-Of-Mass-Interactive">Physics Simulation: Center of Mass (physicsclassroom.com)</a></p>
 </section>
-<section id="las-medidas-de-dispersión-la-desviación-típica" class="level3 page-columns page-full" data-number="5.10.4">
-<h3 data-number="5.10.4" class="anchored" data-anchor-id="las-medidas-de-dispersión-la-desviación-típica"><span class="header-section-number">5.10.4</span> Las medidas de dispersión: la desviación típica</h3>
+<section id="las-medidas-de-dispersión-la-desviación-típica" class="level3 page-columns page-full" data-number="4.10.4">
+<h3 data-number="4.10.4" class="anchored" data-anchor-id="las-medidas-de-dispersión-la-desviación-típica"><span class="header-section-number">4.10.4</span> Las medidas de dispersión: la desviación típica</h3>
 <p>Como hemos visto en el apartado anterior, diferentes conjuntos de datos pueden tener el mismo valor medio y sin embargo ser muy diferentes. En la última gráfica que hemos visto, el primer grupo se caracteriza por tener todos sus valores idénticos; el segundo tiene todos sus valores idénticos menos uno, que está muy apartado del resto, y el tercero tiene todos sus valores diferentes.</p>
 <p>Ahora que conocemos cómo calcular un valor resumen de un conjunto de datos, podríamos utilizar una medida semejante para describir de qué forma en cada caso los valores se separan de la media. Podríamos utilizar una <em>distancia media</em>: calculamos las diferencias entre cada valor y la media, y hacemos su promedio: esto debería darnos una indicación de la magnitud de la separación de los valores en cada uno de los tres grupos.</p>
 <p>Usemos la hoja de cálculo para ello:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116113404185.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Tres grupos de valores en la hoja de cálculo</figcaption>
+<figcaption>Tres grupos de valores en la hoja de cálculo</figcaption>
 </figure>
 </div>
 <p>Algo parece que no está funcionando aquí: el promedio de las diferencias es cero en los tres casos; no podemos usar este cálculo para calcular la dispersión. Pero esto es esperable: ya que la media es un valor central, como hemos visto antes, la suma de las diferencias de todos los valores respecto de su media debe ser forzosamente cero, y esto es lo que estamos obteniendo.</p>
@@ -393,7 +423,7 @@ h^2= a^2+b^2
 <div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116114659713.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Distancia entre dos puntos</figcaption>
+<figcaption>Distancia entre dos puntos</figcaption>
 </figure>
 </div></div><p><span class="math display">\[
 d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
@@ -411,7 +441,7 @@ d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116123915941.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Tres grupos de valores en la hoja de cálculo, con la misma media y distinta desviación típica</figcaption>
+<figcaption>Tres grupos de valores en la hoja de cálculo, con la misma media y distinta desviación típica</figcaption>
 </figure>
 </div>
 <p>Vamos a analizar con detalle esta tabla.</p>
@@ -422,7 +452,7 @@ d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116135458643.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfico con tres conjuntos de datos con la misma media y diferente desviación típica</figcaption>
+<figcaption>Gráfico con tres conjuntos de datos con la misma media y diferente desviación típica</figcaption>
 </figure>
 </div>
 <p>Ahora sí tenemos una forma más completa de describir nuestro conjunto de valores. Aunque el valor medio es el mismo en los tres casos, la <em>dispersión</em> de los valores es muy distinta.</p>
@@ -431,33 +461,33 @@ d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
 <p>En el segundo grupo, todos los valores son idénticos, salvo uno, que se distancia mucho. ¿Debemos aceptar esto como bueno? En realidad, ¿es cierto que el valor medio de este grupo sea el mismo que el del primero? Para responder a esta pregunta debemos recurrir a nuestra experiencia, la estadística no nos da <em>fórmulas mágicas</em>. Pero, con un poco de sentido común, parece que el caso extremo que aparece en este grupo no es coherente con el resto de valores. Es lo que se llama un <em>valor anormal</em> o <em>extraño</em> (en inglés, <em>outlier</em>), y debe hacernos reflexionar sobre si el valor es correcto y realmente pertenece a esta población, o es un error de medida. O, simplemente, un valor que corresponde a otro grupo y que por error hemos situado en éste. La decisión de eliminar o no un valor anormal es una de las decisiones más complejas en estadística, que pueden tener una influencia enorme en la interpretación de los datos, y por lo tanto, hay que hacer con sumo cuidado. En este caso, extremo y artificial, el valor anormal debería ser eliminado, ya que, en realidad, todos los valores restantes son idénticos y más bajos que los del grupo 1. No tiene sentido lógico decir que sus medias son idénticas.</p>
 <p>En el tercer grupo todos los valores son diferentes, y no podemos decir nada especial sobre sus valores individuales. Hay un valor que se destaca del resto, pero ¿podemos afirmar que es anormal? Seguramente, no con seguridad. De nuevo la experiencia debe indicarnos cómo proceder, aunque en este caso no tendría sentido eliminar este valor. En la situación real, todos conocemos a niños que han <em>pegado el estirón</em> antes que sus compañeros, y en algunos casos, pueden llegar a ser mucho más altos (o más bajos, si han tenido un retraso en este <em>estirón</em>) La experiencia nos dice que no es seguro que este valor sea realmente anormal, y por lo tanto, deberíamos conservarlo.</p>
 </section>
-<section id="las-limitaciones-de-la-media-y-la-desviación-típica" class="level3 page-columns page-full" data-number="5.10.5">
-<h3 data-number="5.10.5" class="anchored" data-anchor-id="las-limitaciones-de-la-media-y-la-desviación-típica"><span class="header-section-number">5.10.5</span> Las limitaciones de la media y la desviación típica</h3>
+<section id="las-limitaciones-de-la-media-y-la-desviación-típica" class="level3 page-columns page-full" data-number="4.10.5">
+<h3 data-number="4.10.5" class="anchored" data-anchor-id="las-limitaciones-de-la-media-y-la-desviación-típica"><span class="header-section-number">4.10.5</span> Las limitaciones de la media y la desviación típica</h3>
 <p>En ocasiones nos enfrentamos a conjuntos de datos con valores de media y desviación típica idénticos o muy parecidos, pero que en realidad son muy diferentes. Veamos un ejemplo, semejante a los que hemos visto hasta ahora.</p>
 
 <div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116164339577.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Hoja de cálculo con dos conjuntos de datos diferentes, con la misma media y desviación típica</figcaption>
+<figcaption>Hoja de cálculo con dos conjuntos de datos diferentes, con la misma media y desviación típica</figcaption>
 </figure>
 </div></div><p>(cambiar a caso 3)</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="01-imagenes\media-balanza.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Diagrama de puntos de las alturas de los alumnos, con indicación del valor medio</figcaption>
+<figcaption>Diagrama de puntos de las alturas de los alumnos, con indicación del valor medio</figcaption>
 </figure>
 </div>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="01-imagenes/plot_varianzas.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Diagrama de puntos indicando la variabilidad</figcaption>
+<figcaption>Diagrama de puntos indicando la variabilidad</figcaption>
 </figure>
 </div>
 <p>En este caso, vemos que tanto la media como la desviación típica son idénticos, y sin embargo los datos son muy diferentes, tal como nos muestra el gráfico de dispersión que hemos estado utilizando:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
 <p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116164430210.png" class="img-fluid figure-img"></p>
-<figcaption class="figure-caption">Gráfico con dos conjuntos de datos diferentes, con la misma media y desviación típica</figcaption>
+<figcaption>Gráfico con dos conjuntos de datos diferentes, con la misma media y desviación típica</figcaption>
 </figure>
 </div>
 <p>La existencia de valores anormales o extremos muestra una de las debilidades de la media y la desviación típicas como <em>descriptores</em> de una población: ambos parámetros son muy sensibles a los casos extremos. En realidad, sólo deberíamos utilizar la media y la desviación típica para describir un conjunto de datos cuando estamos seguros de que <em>la distribución de estos datos</em> tienen una <em>forma</em> determinada, la de la <strong>campana de Gauss</strong>. Lo cual nos lleva al siguiente capítulo: las <strong>distribuciones de frecuencias</strong>.</p>
@@ -549,10 +579,27 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // clear code selection
     e.clearSelection();
   });
-  function tippyHover(el, contentFn) {
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
     const config = {
       allowHTML: true,
-      content: contentFn,
       maxWidth: 500,
       delay: 100,
       arrow: false,
@@ -562,8 +609,17 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       interactive: true,
       interactiveBorder: 10,
       theme: 'quarto',
-      placement: 'bottom-start'
+      placement: 'bottom-start',
     };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
     window.tippy(el, config); 
   }
   const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
@@ -575,7 +631,130 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       try { href = new URL(href).hash; } catch {}
       const id = href.replace(/^#\/?/, "");
       const note = window.document.getElementById(id);
-      return note.innerHTML;
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
     });
   }
       let selectedAnnoteEl;
@@ -619,6 +798,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
             }
             div.style.top = top - 2 + "px";
             div.style.height = height + 4 + "px";
+            div.style.left = 0;
             let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
             if (gutterDiv === null) {
               gutterDiv = window.document.createElement("div");
@@ -644,6 +824,32 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         });
         selectedAnnoteEl = undefined;
       };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
       // Attach click handler to the DT
       const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
       for (const annoteDlNode of annoteDls) {
@@ -705,17 +911,18 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./035-herramientas-2-R.html" class="pagination-link">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: El software estadístico R.</span></span>
+      <a href="./040-herramientas-2-R.html" class="pagination-link" aria-label="Herramientas para el análisis: El software estadístico R.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: El software estadístico R.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./050-distr-prob.html" class="pagination-link">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de probabilidad e inferencia</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./060-distr-prob.html" class="pagination-link" aria-label="Distribuciones de probabilidad e inferencia">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de probabilidad e inferencia</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
 </div> <!-- /content -->
+
 
 
 

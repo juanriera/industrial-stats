@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.4.553">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 1&nbsp; Introducción</title>
+<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 9&nbsp; El control estadístico de procesos</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,27 +20,7 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-/* CSS for citations */
-div.csl-bib-body { }
-div.csl-entry {
-  clear: both;
-  margin-bottom: 0em;
-}
-.hanging-indent div.csl-entry {
-  margin-left:2em;
-  text-indent:-2em;
-}
-div.csl-left-margin {
-  min-width:2em;
-  float:left;
-}
-div.csl-right-inline {
-  margin-left:2em;
-  padding-left:1em;
-}
-div.csl-indent {
-  margin-left: 2em;
-}</style>
+</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -50,8 +30,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./020-datos-industriales.html" rel="next">
-<link href="./index.html" rel="prev">
+<link href="./110-disexp.html" rel="next">
+<link href="./090-sistema-medicion.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -75,52 +55,20 @@ div.csl-indent {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "Sin resultados",
-    "search-matching-documents-text": "documentos encontrados",
-    "search-copy-link-title": "Copiar el enlace en la búsqueda",
-    "search-hide-matches-text": "Ocultar resultados adicionales",
-    "search-more-match-text": "resultado adicional en este documento",
-    "search-more-matches-text": "resultados adicionales en este documento",
-    "search-clear-button-title": "Borrar",
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancelar",
-    "search-submit-button-title": "Enviar",
-    "search-label": "Buscar"
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
   }
 }</script>
-<script src="site_libs/quarto-diagram/mermaid.min.js"></script>
-<script src="site_libs/quarto-diagram/mermaid-init.js"></script>
-<link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -130,11 +78,11 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010-intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./100-control-proc.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
@@ -153,7 +101,7 @@ window.Quarto = {
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Buscar"></div>
+        <div id="quarto-search" class="" title="Search"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -166,7 +114,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./010-intro.html" class="sidebar-item-text sidebar-link active">
+  <a href="./010-intro.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
   </div>
 </li>
@@ -214,7 +162,7 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
+  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
@@ -249,28 +197,26 @@ window.Quarto = {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Tabla de contenidos</h2>
+    <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#método-científico-y-pensamiento-estadístico." id="toc-método-científico-y-pensamiento-estadístico." class="nav-link active" data-scroll-target="#método-científico-y-pensamiento-estadístico."><span class="header-section-number">1.1</span> Método científico y pensamiento estadístico.</a></li>
-  <li><a href="#los-datos-industriales-de-producción" id="toc-los-datos-industriales-de-producción" class="nav-link" data-scroll-target="#los-datos-industriales-de-producción"><span class="header-section-number">2</span> Los datos industriales de producción</a>
+  <li><a href="#la-mejora-de-la-calidad-y-el-control-estadístico-de-procesos" id="toc-la-mejora-de-la-calidad-y-el-control-estadístico-de-procesos" class="nav-link active" data-scroll-target="#la-mejora-de-la-calidad-y-el-control-estadístico-de-procesos"><span class="header-section-number">9.1</span> La mejora de la calidad y el control estadístico de procesos</a></li>
+  <li><a href="#introducción-a-los-gráficos-de-control" id="toc-introducción-a-los-gráficos-de-control" class="nav-link" data-scroll-target="#introducción-a-los-gráficos-de-control"><span class="header-section-number">9.2</span> Introducción a los gráficos de control</a>
   <ul class="collapse">
-  <li><a href="#el-origen-de-los-datos" id="toc-el-origen-de-los-datos" class="nav-link" data-scroll-target="#el-origen-de-los-datos"><span class="header-section-number">2.1</span> El origen de los datos</a>
-  <ul class="collapse">
-  <li><a href="#estudios-retrospectivos-o-históricos" id="toc-estudios-retrospectivos-o-históricos" class="nav-link" data-scroll-target="#estudios-retrospectivos-o-históricos"><span class="header-section-number">2.1.1</span> Estudios retrospectivos o históricos</a></li>
-  <li><a href="#estudios-observacionales" id="toc-estudios-observacionales" class="nav-link" data-scroll-target="#estudios-observacionales"><span class="header-section-number">2.1.2</span> Estudios observacionales</a></li>
-  <li><a href="#experimentos-diseñados" id="toc-experimentos-diseñados" class="nav-link" data-scroll-target="#experimentos-diseñados"><span class="header-section-number">2.1.3</span> Experimentos diseñados</a></li>
+  <li><a href="#causas-comunes-y-causas-especiales-de-variación" id="toc-causas-comunes-y-causas-especiales-de-variación" class="nav-link" data-scroll-target="#causas-comunes-y-causas-especiales-de-variación"><span class="header-section-number">9.2.1</span> Causas comunes y causas especiales de variación</a></li>
+  <li><a href="#variación-a-corto-plazo-y-variación-a-largo-plazo" id="toc-variación-a-corto-plazo-y-variación-a-largo-plazo" class="nav-link" data-scroll-target="#variación-a-corto-plazo-y-variación-a-largo-plazo"><span class="header-section-number">9.2.2</span> Variación a corto plazo y variación a largo plazo</a></li>
   </ul></li>
-  </ul></li>
+  <li><a href="#la-capacidad-de-un-proceso" id="toc-la-capacidad-de-un-proceso" class="nav-link" data-scroll-target="#la-capacidad-de-un-proceso"><span class="header-section-number">9.3</span> La capacidad de un proceso</a></li>
+  <li><a href="#ejemplo-establecer-las-especificaciones-de-un-producto" id="toc-ejemplo-establecer-las-especificaciones-de-un-producto" class="nav-link" data-scroll-target="#ejemplo-establecer-las-especificaciones-de-un-producto"><span class="header-section-number">9.4</span> Ejemplo: establecer las especificaciones de un producto</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></h1>
 </div>
 
 
@@ -287,120 +233,25 @@ window.Quarto = {
 </header>
 
 
-<div class="quarto-figure quarto-figure-center page-columns page-full">
-<figure class="figure page-columns page-full">
-<p class="page-columns page-full"><img src="01-imagenes/1520188654204.jpg" class="img-fluid figure-img column-page-inset-right"></p>
-<figcaption>Un grupo de trabajo en planta ante un panel de variables indicadoras</figcaption>
-</figure>
-</div>
-<p>La estadística es la ciencia de aprender a partir de los datos. Implica la recolección, análisis y presentación de los datos, y su utilización para tomar decisiones y resolver problemas.</p>
-<p>Hay muchos aspectos del trabajo industrial que implican recoger datos, trabajar con ellos y utilizarlos para resolver un problema; el uso de la estadística es sólo una herramienta más, tan importante como cualquier otra disciplina en el bagaje de conocimientos de un científico, ingeniero o técnico industrial.</p>
-<p>Los métodos estadísticos nos ayudan a describir y comprender la <strong>variabilidad</strong>. Cuando hablamos de variabilidad queremos decir que sucesivas observaciones de un mismo proceso o sistema no dan exactamente los mismos resultados. Por ejemplo, el consumo de gasolina de un coche no es siempre igual, sino que varía de manera considerable. Esta variación depende de muchos factores, como la forma de conducir, el tipo de carretera, la situación del propio vehículo (presión de neumáticos, compresión del motor, …), la marca de la gasolina, el octanaje, o incluso las condiciones meteorológicas. Todos estos factores son causas de <strong>variabilidad</strong> en el consumo de gasolina. La estadística nos permite analizar estos <strong>factores</strong> y determinar cuáles son los más importantes o tienen mayor impacto en el consumo; una vez conocidos, podemos actuar sobre ellos.</p>
-<div class="content-visible callout callout-style-default callout-important callout-titled" data-when-format="html">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Importante
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>El objetivo principal de la mejora industrial es la <strong>reducción de la variabilidad</strong>.</p>
-</div>
-</div>
-<p>En este libro aprenderemos a utilizar herramientas diversas, tanto estadísticas como de la ciencia de datos, para realizar nuestro análisis. Para aprender de los datos necesitamos más que los simples números; para interpretarlos necesitaremos siempre el conocimiento del proceso industrial que estamos analizando.En un análisis de la producción de un producto lácteo, por ejemplo, los números significan poco sin un conocimiento del proceso; los valores de pH, temperatura o concentración de lactosa influyen en el resultado del proceso de forma diferente. Los datos son números dentro de un contexto, y necesitamos conocer este contexto para dar sentido a los números.</p>
-<section id="método-científico-y-pensamiento-estadístico." class="level2" data-number="1.1">
-<h2 data-number="1.1" class="anchored" data-anchor-id="método-científico-y-pensamiento-estadístico."><span class="header-section-number">1.1</span> Método científico y pensamiento estadístico.</h2>
-<p>Los ingenieros y técnicos resuelven problemas de interés para la empresa y la sociedad mediante la aplicación de los principios del método científico, siguiendo estos pasos:</p>
-<ol type="1">
-<li>Preparar una descripción clara y concisa del problema</li>
-<li>Identificar, al menos de forma tentativa, los principales factores que afectan al problema, o que podrían tener un papel en su resolución</li>
-<li>Proponer un modelo para el problema, usando conocimiento científico o tecnológico del proceso en estudio, dejando constancia de las limitaciones del modelo propuesto.</li>
-<li>Realizar experimentos apropiados y recolectar datos para probar o validar el modelo tentativo o las conclusiones previas obtenidas en los pasos 2 y 3</li>
-<li>Refinar el modelo sobre la base de los datos observados</li>
-<li>Manipular el modelo para desarrollar una solución al problema</li>
-<li>Realizar un experimento adecuado para confirmar que la solución propuesta es efectiva y eficiente.</li>
-<li>Sacar las conclusiones oportunas o hacer recomendaciones basándose en la solución encontrada.</li>
-</ol>
-<div class="cell" data-layout-align="default">
-<div class="cell-output-display">
-<div>
-<p></p><figure class="figure"><p></p>
-<div>
-<pre class="mermaid mermaid-js">flowchart LR
-  A[Describir el problema &lt;br&gt; con claridad] --&gt; B[Identificar &lt;br&gt; los factores &lt;br&gt; más importantes]
-  B --&gt; C[Proponer &lt;br&gt; o refinar &lt;br&gt; un modelo]
-  C --&gt; D[Recoger &lt;br&gt; datos]
-  D --&gt; B
-  C --&gt; E[Manipular &lt;br&gt; el modelo]
-  E --&gt; F[Confirmar &lt;br&gt; la solución]
-  F --&gt; G[Sacar conclusiones &lt;br&gt; y hacer las recomendaciones]
-</pre>
-</div>
-<p></p></figure><p></p>
-</div>
-</div>
-</div>
+<section id="la-mejora-de-la-calidad-y-el-control-estadístico-de-procesos" class="level2" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="la-mejora-de-la-calidad-y-el-control-estadístico-de-procesos"><span class="header-section-number">9.1</span> La mejora de la calidad y el control estadístico de procesos</h2>
 </section>
-<section id="los-datos-industriales-de-producción" class="level1" data-number="2">
-<h1 data-number="2"><span class="header-section-number">2</span> Los datos industriales de producción</h1>
-<section id="el-origen-de-los-datos" class="level2" data-number="2.1">
-<h2 data-number="2.1" class="anchored" data-anchor-id="el-origen-de-los-datos"><span class="header-section-number">2.1</span> El origen de los datos</h2>
-<p>En el entorno industrial <span class="citation" data-cites="montgomery2011">(<a href="140-bibliografia.html#ref-montgomery2011" role="doc-biblioref">Douglas C Montgomery 2011</a>)</span>, los datos provienen casi siempre de una de estas tres vías:</p>
-<ul>
-<li>Estudio retrospectivo, basado en datos históricos</li>
-<li>Estudio observacional</li>
-<li>Experimento diseñado</li>
-</ul>
-<p>Un buen sistema de recogida de datos facilitará el estudio posterior. Si ponemos poco cuidado en la toma de datos y en la forma de guardarlos, nos encontraremos después con problemas complicados de resolver en la fase de análisis o en la de interpretación , y, en algunos casos, estos problemas serán imposibles de resolver.</p>
-<section id="estudios-retrospectivos-o-históricos" class="level3" data-number="2.1.1">
-<h3 data-number="2.1.1" class="anchored" data-anchor-id="estudios-retrospectivos-o-históricos"><span class="header-section-number">2.1.1</span> Estudios retrospectivos o históricos</h3>
-<p>Un <strong>estudio retrospectivo o histórico</strong> es el que utiliza una muestra o todos los datos históricos de un proceso, recogidos en el pasado durante un período determinado de tiempo. El objetivo de un estudio de este tipo puede ser la investigación sobre la relación entre algunas variables, o explorar la calidad de la información disponible, o construir un modelo que permita explicar el proceso tal como es actualmente, o saber si se ha desviado. Estos modelos del proceso se denominan <strong>modelos empíricos</strong>, porque están basados en los propios datos del proceso y no en una formulación teórica sobre el mismo.</p>
-<p>Un estudio retrospectivo tiene la ventaja de tener a su disposición un gran número de datos que ya han sido recogidos, minimizando el esfuerzo de obtenerlos. Sin embargo, tiene varios problemas potenciales:</p>
-<ol type="1">
-<li>Si no disponemos de detalles suficientes, es posible que no podamos determinar si las condiciones de variación de los valores obtenidos responden a las mismas causas que en la situación actual.</li>
-<li>Es posible que nos falte algún valor clave que no haya sido recogido o que lo haya sido de manera defectuosa</li>
-<li>Algunas veces, la fiabilidad y validez de los datos de proceso históricos son dudosas, o al menos, cuestionables.</li>
-<li>Los datos históricos no siempre se han recogido con la perspectiva actual del proceso, y es posible que no nos proporciones explicaciones adecuadas del proceso en su situación actual.</li>
-<li>A veces queremos utilizar los datos históricos de proceso para fines que no estaban previstos cuando se recogieron</li>
-<li>Las notas sobre los valores del proceso, incluyendo los valores anormales, pueden ser insuficientes o inexistentes, y no tenemos ninguna explicación sobre los posibles valores anómalos que detectamos en el análisis.</li>
-</ol>
-<p>Usar datos históricos siempre tiene el riesgo de que, por la razón que sea, no se hayan recogido datos importantes, o que estos datos se hayan perdido, o se hayan transcrito de forma inadecuada o incorrecta. Es decir, los datos históricos pueden tener problemas de calidad de datos.</p>
-<p>El hecho de que algunos datos se hayan recogido históricamente no siempre quiere decir que estos datos sean relevantes o útiles. Cuando el grado de conocimiento del proceso no es suficiente, o no se basa en un análisis metódico y riguroso de los datos, es posible que no se hayan recogido algunos datos que pueden ser importantes para el proceso, a veces simplemente porque son complejos o difíciles de analizar. Los datos históricos no pueden proporcionar la información que buscamos si la información de las variables clave nunca se ha recogido o se ha hecho sin una buena base experimental.</p>
-<p>El propósito del análisis de los datos industriales es aislar las causas que están detrás de los sucesos que afectan e influyen en los procesos. En los datos históricos, estos sucesos pueden haber ocurrido semanas, meses o incluso años antes, sin que haya registros ni notas que hayan intentado explicar estas causas, y los recuerdos de las personas que han participado en ellos se pierden con el tiempo, o se alteran involuntariamente, proporcionando explicaciones supuestamente válidas pero que en realidad son incorrectas. Por eso, con frecuencia, el análisis de los datos históricos puede poner de manifiesto hechos interesantes, pero sus causas quedan sin explicar.</p>
-<p>Los estudios históricos pueden requerir una fase previa de preparación y depuración de datos que puede llegar a ser muy larga y tediosa. Se estima que en muchos estudios de ciencia de datos, el tiempo de preparación de los datos puede llegar al <span class="math inline">\(60\%\)</span> del tiempo total empleado en el estudio. Las herramientas de análisis de datos son de gran ayuda en esta fase del proceso, aunque en muchas ocasiones será necesario un trabajo manual de recolección de datos en papel, hojas de cálculo diversas y otras fuentes. Esta fase es muy útil no sólo para la preparación de datos para el estudio, sino para mejorar el conocimiento de los datos, cómo se originan y cómo se almacenan. Este conocimiento siempre es de gran utilidad para mejorar los procedimientos actuales de captura de datos, facilitando la fiabilidad de los análisis futuros.</p>
+<section id="introducción-a-los-gráficos-de-control" class="level2" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="introducción-a-los-gráficos-de-control"><span class="header-section-number">9.2</span> Introducción a los gráficos de control</h2>
+<section id="causas-comunes-y-causas-especiales-de-variación" class="level3" data-number="9.2.1">
+<h3 data-number="9.2.1" class="anchored" data-anchor-id="causas-comunes-y-causas-especiales-de-variación"><span class="header-section-number">9.2.1</span> Causas comunes y causas especiales de variación</h3>
 </section>
-<section id="estudios-observacionales" class="level3" data-number="2.1.2">
-<h3 data-number="2.1.2" class="anchored" data-anchor-id="estudios-observacionales"><span class="header-section-number">2.1.2</span> Estudios observacionales</h3>
-<p>Como su nombre indica, un <strong>estudio observacional</strong> simplemente observa un proceso durante un tiempo de operación en rutina. Normalmente, el ingeniero o técnico interfiere lo mínimo posible en el proceso, sólo lo suficiente para recoger la información que necesita, que en muchas ocasiones no forma parte de los controles de rutina, si piensa que esa información puede ser relevante. Si se planifican adecuadamente, los estudios observacionales proporcionan datos fiables, precisos y completos para documentar un proceso. Por otra parte, estos estudios proporcionan una información limitada sobre las relaciones entre las variables del proceso, porque es posible que durante el tiempo limitado de observación, el rango de variación de las variables no recoja todas las situaciones posibles; por ejemplo, las situaciones extraordinarias.</p>
+<section id="variación-a-corto-plazo-y-variación-a-largo-plazo" class="level3" data-number="9.2.2">
+<h3 data-number="9.2.2" class="anchored" data-anchor-id="variación-a-corto-plazo-y-variación-a-largo-plazo"><span class="header-section-number">9.2.2</span> Variación a corto plazo y variación a largo plazo</h3>
 </section>
-<section id="experimentos-diseñados" class="level3" data-number="2.1.3">
-<h3 data-number="2.1.3" class="anchored" data-anchor-id="experimentos-diseñados"><span class="header-section-number">2.1.3</span> Experimentos diseñados</h3>
-<p>La tercera forma de recoger información de un proceso son los <strong>experimentos diseñados</strong>. En un experimento de este tipo, el ingeniero o técnico hace un cambio deliberado en las variables que controla (llamadas <strong>factores</strong>), observa el resultado, y toma una decisión respecto a qué variable o variables son responsables de los cambios que observa en el proceso.</p>
-<p>Una diferencia importante respecto a los estudios históricos y los observacionales es que las diferentes combinaciones de factores se aplican al azar sobre un conjunto de unidades experimentales. Esto permite establecer con precisión las relaciones causa-efecto, cosa que no suele ser posible en los estudios históricos ni en los observacionales.</p>
-<div class="content-visible callout callout-style-default callout-important callout-titled" data-when-format="html">
-<div class="callout-header d-flex align-content-center">
-<div class="callout-icon-container">
-<i class="callout-icon"></i>
-</div>
-<div class="callout-title-container flex-fill">
-Experimentos diseñados
-</div>
-</div>
-<div class="callout-body-container callout-body">
-<p>En el capítulo 11 se hará una introducción básica al <strong>diseño de experimentos</strong></p>
-</div>
-</div>
+</section>
+<section id="la-capacidad-de-un-proceso" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="la-capacidad-de-un-proceso"><span class="header-section-number">9.3</span> La capacidad de un proceso</h2>
+</section>
+<section id="ejemplo-establecer-las-especificaciones-de-un-producto" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="ejemplo-establecer-las-especificaciones-de-un-producto"><span class="header-section-number">9.4</span> Ejemplo: establecer las especificaciones de un producto</h2>
 
 
-<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-montgomery2011" class="csl-entry" role="listitem">
-Douglas C Montgomery, Norma Faris Hubele, George C Runger. 2011. <em>Engineering Statistics</em>. 111 River Street, Hoboken, NJ 07030-5774: John Wiley &amp; Sons, Inc.
-</div>
-</div>
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
@@ -458,12 +309,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copiado");
+    button.setAttribute("title", "Copied!");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copiado");
+      button.setAttribute("data-bs-title", "Copied!");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -815,13 +666,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./index.html" class="pagination-link" aria-label="Prefacio">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Prefacio</span>
+      <a href="./090-sistema-medicion.html" class="pagination-link" aria-label="El análisis del sistema de medición">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./020-datos-industriales.html" class="pagination-link" aria-label="Entendiendo los datos industriales. Introducción a la hoja de cálculo.">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Entendiendo los datos industriales. Introducción a la hoja de cálculo.</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./110-disexp.html" class="pagination-link" aria-label="Diseño de experimentos">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

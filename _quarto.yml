@@ -6,24 +6,23 @@ book:
   title: "Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R"
   subtitle: "Manual para la Formación Profesional"
   author: "Juan Riera"
-  date: 2022-12-12
+  date: 2024-05
   date-format: short
   chapters:
     - index.qmd
     - 010-intro.qmd
-    - 020-datos-industriales.qmd
-    - 030-herramientas-1-hoja.qmd    
-    - 035-herramientas-2-R.qmd    
-    - 040-distr-frec-explor.qmd
-    - 050-distr-prob.qmd
-    - 060-relacion-xy.qmd
-    - 070-anova.qmd
-    - 080-sistema-medicion.qmd
-    - 090-control-proc.qmd
-    - 100-disexp.qmd
-    - 110-mejora-calidad.qmd
-    - 120-anexo-metodos.qmd
-    - 130-bibliografia.qmd
+    - 020-datos-industriales.qmd   
+    - 040-herramientas-2-R.qmd    
+    - 050-distr-frec-explor.qmd
+    - 060-distr-prob.qmd
+    - 070-relacion-xy.qmd
+    - 080-anova.qmd
+    - 090-sistema-medicion.qmd
+    - 100-control-proc.qmd
+    - 110-disexp.qmd
+    - 120-mejora-calidad.qmd
+    - 130-anexo-metodos.qmd
+    - 140-bibliografia.qmd
 
 bibliography: bibliografia.bib
 
