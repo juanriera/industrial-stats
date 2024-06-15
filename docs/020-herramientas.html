@@ -1,0 +1,808 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 2&nbsp; Herramientas para el análisis. La reproducibilidad</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./030-organizacion.html" rel="next">
+<link href="./010-intro.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./020-herramientas.html"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Buscar"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./010-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">La estadística en el entorno industrial.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./020-herramientas.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./030-organizacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El flujo de trabajo en el análisis de datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./040-exploracion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./050-descripcion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resumir los datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./060-distr-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias y de probabilidad</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./080-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./090-sistema-medicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./120-mejora-calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./130-comunicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./140-anexo-R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anexo: Instalación de R y conceptos básicos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./150-bibliografia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografía</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Tabla de contenidos</h2>
+   
+  <ul>
+  <li><a href="#la-hoja-de-cálculo" id="toc-la-hoja-de-cálculo" class="nav-link active" data-scroll-target="#la-hoja-de-cálculo"><span class="header-section-number">2.1</span> La hoja de cálculo</a>
+  <ul class="collapse">
+  <li><a href="#usos-de-la-hoja-de-cálculo" id="toc-usos-de-la-hoja-de-cálculo" class="nav-link" data-scroll-target="#usos-de-la-hoja-de-cálculo"><span class="header-section-number">2.1.1</span> Usos de la hoja de cálculo</a></li>
+  </ul></li>
+  <li><a href="#el-software-estadístico-r" id="toc-el-software-estadístico-r" class="nav-link" data-scroll-target="#el-software-estadístico-r"><span class="header-section-number">2.2</span> El software estadístico R</a>
+  <ul class="collapse">
+  <li><a href="#usos-y-aplicaciones-de-r-en-la-estadística-industrial" id="toc-usos-y-aplicaciones-de-r-en-la-estadística-industrial" class="nav-link" data-scroll-target="#usos-y-aplicaciones-de-r-en-la-estadística-industrial"><span class="header-section-number">2.2.1</span> Usos y aplicaciones de R en la estadística industrial</a></li>
+  <li><a href="#utilización-práctica-de-r-en-el-entorno-industrial" id="toc-utilización-práctica-de-r-en-el-entorno-industrial" class="nav-link" data-scroll-target="#utilización-práctica-de-r-en-el-entorno-industrial"><span class="header-section-number">2.2.2</span> Utilización práctica de R en el entorno industrial</a></li>
+  </ul></li>
+  <li><a href="#otras-herramientas-python-julia" id="toc-otras-herramientas-python-julia" class="nav-link" data-scroll-target="#otras-herramientas-python-julia"><span class="header-section-number">2.3</span> Otras herramientas: Python, Julia</a></li>
+  <li><a href="#el-concepto-de-reproducibilidad" id="toc-el-concepto-de-reproducibilidad" class="nav-link" data-scroll-target="#el-concepto-de-reproducibilidad"><span class="header-section-number">2.4</span> El concepto de reproducibilidad</a>
+  <ul class="collapse">
+  <li><a href="#importancia-en-la-ciencia" id="toc-importancia-en-la-ciencia" class="nav-link" data-scroll-target="#importancia-en-la-ciencia"><span class="header-section-number">2.4.1</span> Importancia en la Ciencia</a></li>
+  <li><a href="#reproducibilidad-en-metrología" id="toc-reproducibilidad-en-metrología" class="nav-link" data-scroll-target="#reproducibilidad-en-metrología"><span class="header-section-number">2.4.2</span> Reproducibilidad en metrología</a></li>
+  </ul></li>
+  <li><a href="#ventajas-de-r-frente-a-la-hoja-de-cálculo-en-la-reproducibilidad-de-un-análisis" id="toc-ventajas-de-r-frente-a-la-hoja-de-cálculo-en-la-reproducibilidad-de-un-análisis" class="nav-link" data-scroll-target="#ventajas-de-r-frente-a-la-hoja-de-cálculo-en-la-reproducibilidad-de-un-análisis"><span class="header-section-number">2.5</span> Ventajas de R frente a la hoja de cálculo en la reproducibilidad de un análisis</a></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad</span></h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="la-hoja-de-cálculo" class="level2" data-number="2.1">
+<h2 data-number="2.1" class="anchored" data-anchor-id="la-hoja-de-cálculo"><span class="header-section-number">2.1</span> La hoja de cálculo</h2>
+<p>La hoja de cálculo es una herramienta presente hoy día en todos los ámbitos de trabajo y educativos. Desde la aparición de <a href="https://es.wikipedia.org/wiki/VisiCalc">Visicalc</a>, en 1978, ha contribuido a la gestión de miles de empresas, se ha utilizado de manera general en análisis de datos y sus gráficos se han utilizado y se utilizan en publicaciones e informes de todas clases. En la década de los años 80 del pasado siglo, la hoja de cálculo <a href="https://es.wikipedia.org/wiki/Lotus_1-2-3">Lotus 1-2-3</a> fue la aplicación más utilizada en los ordenadores IBM-PC y compatibles, y consiguió facturaciones millonarias para la empresa matriz. Lotus 1-2-3 dominó el mercado hasta la aparición de Microsoft Windows a finales de los años 80; este nuevo sistema operativo favoreció la implantación de Microsoft Excel, que desde entonces se convirtió en la hoja de cálculo dominante.</p>
+<div>
+
+</div>
+<div class="quarto-layout-panel" data-layout="[[1,1], [1]]">
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes/280px-Visicalc.png" class="img-fluid figure-img"></p>
+<figcaption>Visicalc, primera hoja de cálculo para el ordenador <em>Apple II</em> (1979)</figcaption>
+</figure>
+</div>
+</div>
+<div class="quarto-layout-cell" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes/Lotus-123-3.0-MSDOS.png" class="img-fluid figure-img"></p>
+<figcaption>Hoja de cálculo Lotus 1-2-3 para MS-DOS (1983)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+<div class="quarto-layout-row">
+<div class="quarto-layout-cell" style="flex-basis: 100.0%;justify-content: flex-start;">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes/excel.png" class="img-fluid figure-img"></p>
+<figcaption>Microsoft Excel (2023)</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<section id="usos-de-la-hoja-de-cálculo" class="level3" data-number="2.1.1">
+<h3 data-number="2.1.1" class="anchored" data-anchor-id="usos-de-la-hoja-de-cálculo"><span class="header-section-number">2.1.1</span> Usos de la hoja de cálculo</h3>
+<p>Las <strong>hojas de cálculo</strong> son muy útiles para recoger la información de un conjunto de observaciones. Entre sus principales usos, están:</p>
+<ul>
+<li>La introducción, edición y almacenamiento datos.</li>
+<li>El filtrado y corrección de errores.</li>
+<li>La manipulación básica, por ejemplo, mediante tablas dinámicas</li>
+<li>La preparación y edición de gráficos, incluyendo gráficos dinámicos</li>
+<li>La presentación de la información, pudiendo apoyarse en herramientas adicionales como Microsoft PowerPoint.</li>
+</ul>
+<p>Los datos se pueden recoger y guardar de múltiples formas. Cuando la recogida de datos se hace de forma manual en papel, es necesario registrar en el ordenador los datos recogidos. Lo más frecuente es que este registro se haga en hojas de cálculo, como <a href="https://www.microsoft.com/es-es/microsoft-365/excel">Microsoft Excel</a> o <a href="https://www.google.es/intl/es/sheets/about/">Google Sheets</a>. En algunos casos, el almacenamiento se hace sobre bases de datos, genéricas o desarrolladas a medida.</p>
+<p>Actualmente, la tendencia es recoger los datos o bien de forma automática, o bien de forma manual sobre sistemas informatizados (pantallas), lo que permite eliminar el papel y disponer directamente de los datos en un formato digitalizado.</p>
+<p>En la actualidad, la mayoría de los equipos y líneas de producción se interconectan con los sistemas de información (ver IoT) y almacenan en tiempo real todos los datos necesarios, lo que libera al operario de la pesada tarea de reintroducirlos manualmente, a la vez que reduce los errores debidos a la imputación incorrecta.</p>
+<p>En todos los casos, es imprescindible asegurar que los sistemas de información pueden exportar sus datos a ficheros de texto tipo <em>fichero plano</em> o tipo CSV, de forma que podamos importarlos tanto a Excel como a R, como veremos más adelante. Estos sistemas de exportación de datos deben diseñarse de forma flexible y abierta, para que tanto la captura como la exportación puedan modificarse y adaptar la recogida de la información a las necesidades de cada momento.</p>
+<p>En este libro trataremos exclusivamente de lo que llamaremos <strong>datos rectangulares</strong>: grupos de valores que están asociados a una o más variables, y a varias observaciones. Hay muchos más datos que no se ajustan a esta organización tabular, es el caso de imágenes, sonidos o archivos documentales de texto. Pero la forma más común de almacenar datos industriales es la de las tablas rectangulares, organizadas según el principio de los <strong>datos arreglados</strong>, que detallaremos en el siguiente capítulo.</p>
+</section>
+</section>
+<section id="el-software-estadístico-r" class="level2" data-number="2.2">
+<h2 data-number="2.2" class="anchored" data-anchor-id="el-software-estadístico-r"><span class="header-section-number">2.2</span> El software estadístico R</h2>
+<p>R es un lenguaje de programación y un entorno de software utilizado para el análisis estadístico, la visualización de datos y la modelización. Algunas de las características clave de R son:</p>
+<ol type="1">
+<li><p><strong>Amplio espectro de funcionalidades</strong>: R abarca una amplia gama de herramientas y paquetes diseñados para realizar diversos análisis estadísticos, exploración de datos y modelización.</p></li>
+<li><p><strong>Herramientas gráficas</strong>: R dispone de algunas de las bibliotecas gráficas más potentes para la exploración y descripción de datos.</p></li>
+<li><p><strong>Estadística descriptiva</strong>: R ofrece funciones para calcular estadísticas descriptivas básicas, como la media, mediana, desviación estándar, varianza, rango, cuartiles y percentiles. Estas funciones son esenciales para explorar y resumir datos.</p></li>
+<li><p><strong>Contrastes de hipótesis</strong>: R proporciona funciones para realizar pruebas estadísticas, como t-tests, test chi-cuadrado, ANOVA y pruebas no paramétricas. Estas pruebas permiten evaluar hipótesis y comparar grupos de datos.</p></li>
+<li><p><strong>Distribuciones de probabilidad</strong>: R incluye una amplia variedad de funciones para trabajar con distribuciones de probabilidad (por ejemplo, normal, uniforme, binomial, Poisson). Esto es útil para generar números aleatorios, calcular probabilidades y cuantiles.</p></li>
+<li><p><strong>Bibliotecas de funciones (librerías)</strong>: Además de las amplias funciones básicas de las que dispone, R es capaz de utilizar bibliotecas de funciones (llamadas <em>librerías</em>) que han sido desarrolladas por los propios usuarios, y que amplían sus funcionalidades a todos los campos imaginables, desde el análisis genético al análisis de riesgos bancarios o el control estadístico de procesos.</p></li>
+</ol>
+<section id="usos-y-aplicaciones-de-r-en-la-estadística-industrial" class="level3" data-number="2.2.1">
+<h3 data-number="2.2.1" class="anchored" data-anchor-id="usos-y-aplicaciones-de-r-en-la-estadística-industrial"><span class="header-section-number">2.2.1</span> Usos y aplicaciones de R en la estadística industrial</h3>
+<p>En el contexto de la estadística industrial, R se utiliza para:</p>
+<ul>
+<li><p><strong>Control de calidad</strong>: R permite analizar datos de procesos industriales, identificar desviaciones y controlar la calidad de los productos.</p></li>
+<li><p><strong>Optimización de procesos</strong>: Mediante técnicas estadísticas avanzadas, R ayuda a optimizar procesos industriales, reducir costos y mejorar la eficiencia.</p></li>
+<li><p><strong>Análisis de fiabilidad</strong>: R se utiliza para evaluar la confiabilidad de sistemas y componentes en la industria.</p></li>
+</ul>
+</section>
+<section id="utilización-práctica-de-r-en-el-entorno-industrial" class="level3" data-number="2.2.2">
+<h3 data-number="2.2.2" class="anchored" data-anchor-id="utilización-práctica-de-r-en-el-entorno-industrial"><span class="header-section-number">2.2.2</span> Utilización práctica de R en el entorno industrial</h3>
+<p>[..a desarrollar..]</p>
+<ul>
+<li><p>Importación de datos y exportación de datos</p></li>
+<li><p>Manipulación de datos: depuración, corrección, filtrado de datos.</p></li>
+<li><p>Exploración gráfica de los datos</p></li>
+<li><p>Análisis estadísticos específicos.</p></li>
+<li><p>Gráficos de control</p></li>
+<li><p>Informes automatizados</p></li>
+</ul>
+</section>
+</section>
+<section id="otras-herramientas-python-julia" class="level2" data-number="2.3">
+<h2 data-number="2.3" class="anchored" data-anchor-id="otras-herramientas-python-julia"><span class="header-section-number">2.3</span> Otras herramientas: Python, Julia</h2>
+<p>[..a desarrollar..]</p>
+</section>
+<section id="el-concepto-de-reproducibilidad" class="level2" data-number="2.4">
+<h2 data-number="2.4" class="anchored" data-anchor-id="el-concepto-de-reproducibilidad"><span class="header-section-number">2.4</span> El concepto de reproducibilidad</h2>
+<p>La <strong>reproducibilidad</strong> de un ensayo o experimento es la capacidad de ser reproducido o replicado por otros, en particular, por la comunidad científica. La reproducibilidad se refiere a la capacidad de obtener resultados consistentes al replicar un estudio o experimento <em>utilizando los mismos datos</em>, metodología original y, en su caso, el mismo código informático empleado para los análisis.En otras palabras, cuando se replica un análisis de datos o un experimento, los resultados deben ser alcanzados nuevamente con un alto grado de confiabilidad.</p>
+<p>La <strong>repetibilidad</strong> o <strong>replicabilidad</strong> se refiere a la posibilidad de obtener resultados consistentes al replicar un estudio con un <em>conjunto distinto de datos</em>, pero obtenidos siguiendo el mismo diseño experimental. Implica obtener resultados consistentes utilizando nuevos datos o nuevos resultados computacionales para responder a la misma pregunta científica.</p>
+<p>El químico irlandés <strong>Robert Boyle</strong>, en el siglo XVII, subrayó la importancia de la reproducibilidad en la ciencia. Boyle sostenía que los fundamentos del conocimiento debían basarse en hechos producidos experimentalmente, que pudieran volverse creíbles para la comunidad científica por su reproducibilidad. La <strong>bomba de aire de Boyle</strong>, un aparato científico complicado y costoso en ese momento, condujo a una de las primeras disputas documentadas sobre la reproducibilidad de un fenómeno científico.</p>
+<section id="importancia-en-la-ciencia" class="level3" data-number="2.4.1">
+<h3 data-number="2.4.1" class="anchored" data-anchor-id="importancia-en-la-ciencia"><span class="header-section-number">2.4.1</span> Importancia en la Ciencia</h3>
+<p>La reproducibilidad es esencial para la investigación científica, ya que permite validar y verificar los resultados obtenidos. En las últimas décadas, ha habido una creciente preocupación por la falta de reproducibilidad en muchos resultados científicos publicados, lo que ha llevado a una crisis de reproducibilidad o replicación. La reproducibilidad garantiza que los resultados científicos sean confiables y puedan ser validados por otros investigadores. Es un pilar fundamental para el avance del conocimiento en todas las disciplinas.</p>
+</section>
+<section id="reproducibilidad-en-metrología" class="level3" data-number="2.4.2">
+<h3 data-number="2.4.2" class="anchored" data-anchor-id="reproducibilidad-en-metrología"><span class="header-section-number">2.4.2</span> Reproducibilidad en metrología</h3>
+<p>En metrología, la reproducibilidad es la capacidad de un instrumento de dar el mismo resultado en mediciones diferentes, realizadas en las mismas condiciones a lo largo de periodos dilatados de tiempo. Esta cualidad debe evaluarse a largo plazo.</p>
+</section>
+</section>
+<section id="ventajas-de-r-frente-a-la-hoja-de-cálculo-en-la-reproducibilidad-de-un-análisis" class="level2" data-number="2.5">
+<h2 data-number="2.5" class="anchored" data-anchor-id="ventajas-de-r-frente-a-la-hoja-de-cálculo-en-la-reproducibilidad-de-un-análisis"><span class="header-section-number">2.5</span> Ventajas de R frente a la hoja de cálculo en la reproducibilidad de un análisis</h2>
+<p>Las ventajas de utilizar R en lugar de hojas de cálculo tradicionales (como Microsoft Excel) incluyen:</p>
+<ol type="1">
+<li><strong>Código abierto (<em>scripts</em>)</strong>: R permite crear flujos de trabajo basados en código, lo que mejora la reproducibilidad de los análisis y facilita la colaboración entre investigadores. Puedes escribir scripts en <strong>R</strong> para automatizar tareas y asegurar la reproducibilidad. Los scripts son transparentes y pueden ser compartidos y verificados por otros investigadores.</li>
+<li><strong>Flexibilidad estadística</strong>: R es especialmente útil para técnicas avanzadas de análisis, lo que lo convierte en una excelente opción para investigadores que buscan análisis de vanguardia.</li>
+<li><strong>Capacidad para tratar grandes cantidades de datos</strong>: R puede manejar grandes conjuntos de datos sin problemas, lo que es fundamental en la estadística industrial.</li>
+<li><strong>Precisión</strong>: <strong>R</strong> está diseñado específicamente para análisis estadístico, lo que lo hace más preciso que <strong>Excel</strong> en ciertos casos, como en análisis de regresión lineal.</li>
+<li><strong>Capacidad avanzada</strong>: <strong>R</strong> ofrece una amplia gama de paquetes y funciones para realizar análisis estadísticos avanzados, como modelos lineales, series temporales, análisis multivariante y más.</li>
+</ol>
+<p>Por su parte, la hoja de cálculo tiene una <em>curva de aprendizaje</em> más sencilla y es en general más fácil de usar, pero tiene algunos inconvenientes:</p>
+<ol start="6" type="1">
+<li><strong>Inexactitudes</strong>: Estudios han demostrado que <strong>Excel</strong> puede mostrar ciertas inexactitudes en análisis de regresión lineal y otros métodos estadísticos.</li>
+<li><strong>Limitaciones estadísticas</strong>: <strong>Excel</strong> no está diseñado específicamente para análisis estadístico avanzado, por lo que puede carecer de algunas capacidades necesarias para investigaciones más complejas.</li>
+<li><strong>Falta de transparencia para la auditoría</strong>: Las fórmulas y cálculos en <strong>Excel</strong> pueden ser difíciles de rastrear y verificar, lo que afecta la reproducibilidad.</li>
+</ol>
+<p>Por estas razones usaremos Excel para el almacenamiento de datos y el análisis básico, y usaremos R para el análisis gráfico más detallado y el análisis numérico y estadístico.</p>
+
+
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copiado");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copiado");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./010-intro.html" class="pagination-link" aria-label="La estadística en el entorno industrial.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">La estadística en el entorno industrial.</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./030-organizacion.html" class="pagination-link" aria-label="El flujo de trabajo en el análisis de datos">
+        <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El flujo de trabajo en el análisis de datos</span></span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

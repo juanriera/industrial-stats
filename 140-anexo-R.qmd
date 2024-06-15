@@ -1,0 +1,326 @@
+# Anexo: Instalación de R y conceptos básicos {.unnumbered}
+
+## Instalación de R en Windows
+1. Accede al sitio oficial de **CRAN** (Comprehensive R Archive Network), que es el repositorio central de software de R⁴.
+2. Haz clic en el enlace "Download R for Windows".
+3. Selecciona "install R for the first time" en la parte superior de la página.
+4. Elige la versión de R que deseas instalar (por ejemplo, R 4.0.3).
+5. Guarda el archivo ejecutable en tu computadora (puedes guardarlo en el escritorio).
+6. Haz doble clic en el archivo descargado para ejecutarlo.
+7. Acepta los permisos para que la aplicación realice cambios en tu dispositivo.
+8. Selecciona el idioma de tu preferencia y sigue las opciones de instalación (puedes aceptar las opciones preestablecidas).
+
+## Instalación de RStudio en Windows
+1. Abre tu navegador y dirígete al sitio oficial de **RStudio**.
+2. Haz clic en "DOWNLOAD".
+3. Busca la opción "RStudio Desktop" y selecciona "DOWNLOAD".
+4. Haz clic en "DOWNLOAD RSTUDIO FOR WINDOWS".
+5. Guarda el archivo ejecutable.
+6. Ejecuta el archivo descargado y sigue las instrucciones de instalación.
+
+## Introducción a R
+
+### Tipos de datos en R
+
+1. **Numérico (numeric)**:
+   - Representa valores decimales, tanto enteros como de punto flotante (double).
+   - Ejemplo: `3.14`, `42`, `0.5`.
+
+2. **Entero (integer)**:
+   - Representa números enteros.
+   - Ejemplo: `5`, `-10`, `100`.
+
+3. **Lógico (logical)**:
+   - Representa valores booleanos: `TRUE` o `FALSE`.
+   - Ejemplo: `TRUE`, `FALSE`.
+
+4. **Carácter (character)**:
+   - Representa cadenas de texto.
+   - Ejemplo: `"Hola, mundo"`, `"R es genial"`.
+
+5. **Complejo (complex)**:
+   - Representa números complejos con parte real e imaginaria.
+   - Ejemplo: `1 + 2i`, `3 - 4i`.
+
+6. **Raw**:
+   - Representa datos en formato binario sin procesar.
+   - Ejemplo: `as.raw(0:5)` (crea un vector de bytes).
+
+
+### Vectores
+En **R**, un **vector** es una estructura de datos fundamental que almacena elementos del mismo tipo, ya sean números, caracteres o lógicos². Aquí tienes una breve explicación:
+
+- **¿Qué es un vector en R?**
+  - Un vector es una secuencia de elementos de datos del mismo tipo básico.
+  - Los miembros de un vector se llaman oficialmente **componentes**.
+  - Pueden ser de dos tipos: **vectores atómicos** y **listas**².
+
+Los **vectores atómicos** son los más comunes y se utilizan para almacenar datos homogéneos. Algunos ejemplos de vectores atómicos incluyen:
+
+1. **Numéricos (numeric)**:
+   - Representan valores decimales, tanto enteros como de punto flotante.
+   - Ejemplo: `c(3.14, 42, 0.5)`.
+
+2. **Caracteres (character)**:
+   - Almacenan cadenas de texto.
+   - Ejemplo: `c("Hola", "Mundo")`.
+
+3. **Lógicos (logical)**:
+   - Contienen valores booleanos: `TRUE` o `FALSE`.
+   - Ejemplo: `c(TRUE, FALSE, TRUE)`.
+
+4. **Enteros (integer)**:
+   - Representan números enteros.
+   - Ejemplo: `c(5, -10, 100)`.
+
+Los vectores son fundamentales para realizar operaciones matemáticas, análisis de datos y manipulación de información en R.
+
+#### Ejemplos de creación de vectores en R
+Los vectores en **R** pueden contener datos del mismo tipo y se crean utilizando la función `c()`. 
+
+1. **Vectores numéricos**:
+   - Puedes crear un vector numérico utilizando la función `c()`:
+     ```R
+     numeros <- c(1, 2, 3, 4, 5)
+     ```
+     Esto crea un vector con los números del 1 al 5.
+
+2. **Vectores de caracteres**:
+   - Para crear un vector de caracteres, simplemente proporciona las cadenas de texto entre comillas:
+     ```R
+     frutas <- c("manzana", "banana", "cereza")
+     ```
+     Esto crea un vector con los nombres de algunas frutas.
+
+3. **Vectores lógicos**:
+   - Los vectores lógicos contienen valores `TRUE` o `FALSE`. Puedes crear uno así:
+     ```R
+     logico <- c(TRUE, FALSE, TRUE)
+     ```
+     Esto crea un vector con tres valores lógicos.
+
+4. **Vectores con nombres**:
+   - Puedes asignar nombres a los elementos de un vector:
+     ```R
+     mi_vector <- c(naranja = 4, manzana = 6)
+     ```
+     Esto crea un vector con dos elementos nombrados: "naranja" y "manzana".
+
+
+
+5. **Data frames**:
+   - Introduce los data frames como tablas de datos con filas y columnas.
+   - Explica cómo crear, acceder y modificar data frames.
+   - Destaca la importancia de los data frames para el análisis de datos.
+  
+ Un **data frame** en **R** es una estructura de datos bidimensional que se utiliza para almacenar información tabular. Es similar a una tabla o una hoja de cálculo, donde cada columna puede contener diferentes tipos de datos (números, cadenas de texto, etc.). 
+Los *data frames* son muy útiles para trabajar con datos estructurados en **R**. Puedes acceder a las columnas y realizar análisis estadísticos sobre ellos.   
+Aquí tienes una descripción más detallada y algunos ejemplos:
+
+1. **Concepto de Data Frame**:
+   - Un data frame es una estructura especializada de tipo lista en **R**.
+   - Cada componente del data frame tiene la misma longitud y forma una columna.
+   - Los componentes individuales forman las filas del data frame.
+   - Puedes pensar en un data frame como una matriz donde cada columna puede contener diferentes tipos de datos¹.
+
+2. **Ejemplo de Creación de Data Frame desde Vectores**:
+   - Puedes crear un data frame utilizando la función `data.frame()`.
+   - Por ejemplo, consideremos los siguientes datos:
+     ```R
+     Name <- c("Jon", "Bill", "Maria", "Ben", "Tina")
+     Age <- c(23, 41, 32, 58, 26)
+     df <- data.frame(Name, Age)
+     print(df)
+     ```
+     Esto creará un data frame con dos columnas: "Name" y "Age". Los valores coincidirán con los datos proporcionados.
+
+3. **Ejemplo de Creación de Data Frame desde una Matriz**:
+   - También puedes crear un data frame a partir de una matriz existente.
+   - Supongamos que tenemos una matriz llamada `my_matrix`:
+     ```R
+     my_matrix <- matrix(c(1, 2, 3, 4, 5, 6), ncol = 2)
+     df_from_matrix <- data.frame(my_matrix)
+     print(df_from_matrix)
+     ```
+     Esto convertirá la matriz en un data frame con dos columnas.
+
+4. **Ejemplo de Creación de Data Frame desde Valores Iniciales**:
+   - Si deseas crear un data frame con valores específicos, puedes hacerlo directamente:
+     ```R
+     df_custom <- data.frame(
+       Name = c("Alice", "Bob", "Carol"),
+       Age = c(30, 25, 28)
+     )
+     print(df_custom)
+     ```
+     Esto creará un data frame personalizado con los valores proporcionados.
+
+5. **Ejemplo de Creación de Data Frame Vacío con Nombres de Columna**:
+   - Si necesitas un data frame vacío con nombres de columna, puedes hacerlo así:
+     ```R
+     empty_df <- data.frame(Name = character(0), Age = numeric(0))
+     print(empty_df)
+     ```
+     Esto crea un data frame sin filas pero con las columnas "Name" y "Age".
+     
+### Creación de un dataframe a partir de un fichero CSV
+
+crear un **data frame** en **R** a partir de la lectura de un archivo CSV es una tarea común. Aquí tienes los pasos para hacerlo:
+
+1. **Leer el archivo CSV**:
+   - Primero, necesitas tener un archivo CSV con los datos que deseas cargar en un data frame.
+   - Utiliza la función `read.csv()` para leer el archivo CSV y convertirlo en un data frame. Por ejemplo:
+     ```R
+     mi_data_frame <- read.csv("ruta/al/archivo.csv")
+     ```
+     Reemplaza `"ruta/al/archivo.csv"` con la ubicación real de tu archivo CSV.
+
+2. **Explorar el data frame**:
+   - Una vez que hayas leído el archivo, puedes explorar el contenido del data frame utilizando funciones como `head(mi_data_frame)` para ver las primeras filas o `summary(mi_data_frame)` para obtener estadísticas resumidas.
+
+3. **Acceder a los datos**:
+   - Puedes acceder a las columnas del data frame utilizando el operador `$`. Por ejemplo:
+     ```R
+     primera_columna <- mi_data_frame$NombreColumna
+     ```
+
+4. **Manipular los datos**:
+   - Puedes realizar operaciones, filtrar filas y modificar los valores en el data frame según tus necesidades.
+
+5. **Guardar cambios**:
+   - Si realizas modificaciones en el data frame, puedes guardar los cambios en un nuevo archivo CSV utilizando la función `write.csv()`:
+     ```R
+     write.csv(mi_data_frame, "ruta/nuevo_archivo.csv", row.names = FALSE)
+     ```
+     Esto creará un nuevo archivo CSV con los datos actualizados.
+
+Recuerda adaptar los nombres de las columnas y las rutas de los archivos según tu caso específico. 
+
+
+7. **Visualización de datos**:
+   - Menciona la importancia de la visualización en el análisis estadístico.
+   - Si hay tiempo, muestra cómo crear gráficos básicos con R (histogramas, scatter plots, etc.).
+
+¡Por supuesto! La visualización de datos es fundamental en el análisis de datos, y **R** ofrece varias opciones para crear gráficos. Aquí te presento una breve descripción y ejemplos de cómo utilizar tanto el **programa base** como la biblioteca **ggplot2** del paquete **tidyverse**:
+
+1. **Programa Base de R**:
+   - El programa base de **R** proporciona funciones para crear gráficos básicos directamente desde los datos.
+   - Algunos ejemplos de gráficos básicos son:
+     - **Gráfico de dispersión**:
+       ```R
+       # Crear un gráfico de dispersión
+       plot(mpg$displ, mpg$hwy, main = "Consumo de combustible", xlab = "Desplazamiento", ylab = "Millas por galón")
+       ```
+     - **Histograma**:
+       ```R
+       # Crear un histograma
+       hist(mpg$hwy, main = "Distribución de millas por galón", xlab = "Millas por galón")
+       ```
+     - **Gráfico de barras**:
+       ```R
+       # Crear un gráfico de barras
+       barplot(table(mpg$class), main = "Distribución de clases de vehículos", xlab = "Clase", ylab = "Frecuencia")
+       ```
+
+2. **Biblioteca ggplot2**:
+   - **ggplot2** es una poderosa biblioteca para crear gráficos basada en la "Gramática de Gráficos".
+   - Aquí tienes un ejemplo de cómo crear un gráfico de dispersión utilizando **ggplot2**:
+     ```R
+     library(ggplot2)
+     ggplot(mpg, aes(x = displ, y = hwy, color = class)) +
+       geom_point() +
+       labs(title = "Consumo de combustible", x = "Desplazamiento", y = "Millas por galón")
+     ```
+     En este ejemplo, `aes()` define las variables estéticas (mapeo de datos a elementos visuales), `geom_point()` agrega los puntos al gráfico y `labs()` establece etiquetas para el título y los ejes.
+
+3. **Ventajas de ggplot2**:
+   - **Declarativo**: Describe lo que deseas visualizar y ggplot2 se encarga de los detalles.
+   - **Capas**: Puedes agregar capas (geometrías, escalas, facetas) para personalizar tus gráficos.
+   - **Ecosistema rico**: ggplot2 tiene muchas extensiones y opciones para gráficos más avanzados¹.
+
+Recuerda que **ggplot2** es especialmente útil para crear gráficos más complejos y personalizados. Si tienes más preguntas, no dudes en preguntar. 😊
+
+La **visualización de datos** es una faceta esencial en el campo de la **estadística industrial**. Permite convertir conjuntos de datos complejos en representaciones visuales accesibles y fáciles de interpretar. Aquí te explico por qué es tan relevante:
+
+1. **Comunicación efectiva**:
+   - La visualización gráfica permite comunicar hallazgos y resultados de manera más clara y efectiva.
+   - Los gráficos y diagramas facilitan la comprensión de patrones, tendencias y relaciones entre variables.
+
+2. **Identificación de patrones**:
+   - Al visualizar datos, es más sencillo detectar patrones ocultos o anómalos.
+   - Los gráficos pueden revelar información valiosa sobre procesos industriales, como fluctuaciones en la producción o tendencias en la calidad del producto.
+
+3. **Toma de decisiones informada**:
+   - Los líderes y analistas industriales pueden tomar decisiones basadas en evidencia visual.
+   - La visualización ayuda a evaluar el rendimiento de la producción, identificar áreas de mejora y optimizar procesos.
+
+
+En la **estadística industrial**, la visualización de datos es crucial para comprender patrones, tendencias y relaciones en los procesos de producción. **R**, como lenguaje estadístico, ofrece varias herramientas poderosas para crear gráficos y representaciones visuales. A continuación, menciono algunas de las más útiles:
+
+1. **ggplot2**:
+   - **ggplot2** es una biblioteca ampliamente utilizada para la visualización de datos en **R**.
+   - Se basa en la "Gramática de Gráficos", lo que permite crear gráficos personalizados y versátiles.
+   - Ejemplo de uso:
+     ```R
+     library(ggplot2)
+     ggplot(datos, aes(x = variable1, y = variable2)) +
+       geom_point() +
+       labs(title = "Relación entre dos variables")
+     ```
+     En este ejemplo, `aes()` define las variables estéticas, `geom_point()` agrega puntos al gráfico y `labs()` establece etiquetas para el título y los ejes².
+
+2. **Paquete base de R**:
+   - R tiene funciones básicas para gráficos, como `plot`, `hist`, `boxplot`, entre otras.
+   - Estas funciones son parte del paquete base y son útiles para gráficos simples.
+   - Ejemplo de uso:
+     ```R
+     plot(datos$variable1, datos$variable2, main = "Gráfico de dispersión")
+     ```
+     Esto crea un gráfico de dispersión entre dos variables¹.
+
+3. **Galería de gráficos de R**:
+   - La **Galería de gráficos de R** es una colección de ejemplos reproducibles creados en **R**.
+   - Muestra cientos de gráficos con su código disponible para aprender y adaptar.
+   - Puedes explorar diferentes tipos de gráficos y encontrar inspiración para tus propios análisis¹.
+   
+### Las funciones en R
+
+Las **funciones** en **R** son bloques de código que realizan tareas específicas y se pueden reutilizar en diferentes partes de un programa. Aquí tienes una breve descripción y algunos ejemplos:
+
+1. **Sintaxis Básica de una Función en R**:
+   - Para crear una función en **R**, utilizamos la siguiente sintaxis:
+     ```R
+     nombre_funcion <- function(arg1, arg2, ...) {
+       # Código
+     }
+     ```
+     - `nombre_funcion`: El nombre que le das a tu función.
+     - `arg1`, `arg2`, ...: Los argumentos de entrada que la función acepta.
+     - `# Código`: El bloque de código que realiza la tarea deseada.
+
+2. **Ejemplo de Función en R**:
+   - Supongamos que queremos calcular el término general de una progresión geométrica.
+   - Creamos la función `an` que calcula el término general:
+     ```R
+     an <- function(a1, r, n) {
+       a1 * r^(n - 1)
+     }
+     ```
+     - `a1`: Primer término.
+     - `r`: Razón o ratio.
+     - `n`: Número de términos.
+   - Ejemplos de uso:
+     ```R
+     an(a1 = 1, r = 2, n = 5)  # Resultado: 16
+     an(a1 = 4, r = -2, n = 6)  # Resultado: -128
+     ```
+
+3. **Funciones Integradas en R**:
+   - R tiene muchas funciones incorporadas, como `print()`, `min()`, `max()`, `sum()`, etc.
+   - Por ejemplo:
+     ```R
+     print("¡Hola, mundo!")
+     min(1, 2, 3)  # Resultado: 1
+     sum(1:5)  # Resultado: 15
+     ```
+Las funciones en **R** te permiten modularizar tu código y reutilizarlo.

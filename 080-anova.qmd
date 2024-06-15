@@ -2,6 +2,11 @@
 
 ## Introducción
 
+Supongamos que un analista de la OMS ha realizado la medida de la altura de un grupo de niños y niñas niña siguiendo rigurosamente el método establecido, y, por lo tanto, que está razonablemente seguro de su resultado.
+
+Al cabo de varias jornadas de trabajo, habrá realizado varias medidas, que representarán al conjunto de niños de la población en la que ha estado trabajando. Otros investigadores pueden haber estado trabajando a la vez en otras poblaciones, y al final de sus jornadas de trabajo, quieren comparar sus resultados: ¿Hay alguna de estas poblaciones en las que los niños sean significativamente más altos (o más bajos) que en las otras? ¿Cómo describir la altura de un conjunto de individuos de manera que se puedan hacer comparaciones con otros conjuntos?
+
+Para responder a estas preguntas, vamos a cambiar el entorno de trabajo a un grupo de niños imaginario, que vamos a llamar *aula1*: son nuestros compañeros y compañeras, a los cuales realizaremos una medida de altura siguiendo el *procedimiento* especificado en nuestro *método*.
 ## Análisis de la varianza de un factor
 
 ## Análisis de la varianza de dos factores

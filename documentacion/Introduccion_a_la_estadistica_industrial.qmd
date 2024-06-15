@@ -1,0 +1,80 @@
+---
+title: "Introducción a la estadística industrial y la ciencia de datos utilizando R y Microsoft Excel"
+subtitle: "Manual para la Formación Profesional"
+author: "Juan Riera"
+date: 2022-12-12
+dateformat: short
+lang: es
+title-block-style: default
+number-sections: TRUE
+number-depth: 0
+toc-title: "Contenido"
+crossref:
+    lof-title: "Lista de figuras"
+format:
+   pdf:
+    documentclass: scrbook
+    papersize: a4
+    keep-tex: true
+    toc: true
+    toc-depth: 3    
+    include-in-header:
+      - text: |
+            \KOMAoptions{twoside = true}
+            \usepackage{tcolorbox}
+            \usepackage{awesomebox}
+            \usepackage{geometry}
+            \usepackage[document]{ragged2e}
+            \usepackage{microtype}
+            \usepackage{sidenotes}
+            \usepackage{biblatex}
+            \usepackage{booktabs}
+            \geometry{
+             top=3cm,
+             bottom=3cm,
+             left=2.5cm,
+             right=7cm
+             }
+    include-before-body:  
+      - text: | 
+            \newtcolorbox{cajaazul}[1]{colback=blue!5!white,colframe=blue!75!black,fonttitle=\bfseries,title=#1} 
+            \newtcolorbox{cajaverde}[1]{colback=green!5!white,colframe=green!75!black,fonttitle=\bfseries,title=#1} 
+            \newtcolorbox{cajanaranja}[1]{colback=orange!5!white,colframe=orange!75!black,fonttitle=\bfseries,title=#1} 
+            \marginparwidth = 5cm
+            \marginparsep = 24pt
+            
+    reference-location: margin
+#    citation-location: margin
+
+bibliography: bibliografia.bib
+link-citations: yes                        
+---
+
+<!-- https://tex.stackexchange.com/questions/408274/koma-script-how-to-let-one-specific-chapter-start-on-even-page -->
+
+\KOMAoptions{open=right}
+
+<!-- {{< include Introduccion_a_la_estadistica_industrial-000.md >}} -->
+<!-- {{< include Introduccion_a_la_estadistica_industrial-010.md >}} -->
+{{< include Introduccion_a_la_estadistica_industrial-020.md >}}
+<!-- {{< include Introduccion_a_la_estadistica_industrial-030.md >}} -->
+<!-- {{< include Introduccion_a_la_estadistica_industrial-040.md >}} -->
+<!-- {{< include Introduccion_a_la_estadistica_industrial-050.md >}} -->
+<!-- {{< include Introduccion_a_la_estadistica_industrial-060.md >}} -->
+<!-- {{< include Introduccion_a_la_estadistica_industrial-070.md >}} -->
+<!-- {{< include Introduccion_a_la_estadistica_industrial-080.md >}} -->
+<!-- {{< include Introduccion_a_la_estadistica_industrial-090.md >}} -->
+<!-- {{< include Introduccion_a_la_estadistica_industrial-100.md >}} -->
+<!-- {{< include Introduccion_a_la_estadistica_industrial-110.md >}} -->
+
+
+<!-- \listoffigures -->
+
+<!-- # Bibliografía{.unnumbered} -->
+
+<!-- \nocite{*} -->
+
+<!-- \printbibliography -->
+
+<!-- # Bibliografía{.unnumbered} -->
+

@@ -11,9 +11,10 @@ book:
   chapters:
     - index.qmd
     - 010-intro.qmd
-    - 020-datos-industriales.qmd   
-    - 040-herramientas-2-R.qmd    
-    - 050-distr-frec-explor.qmd
+    - 020-herramientas.qmd   
+    - 030-organizacion.qmd  
+    - 040-exploracion.qmd
+    - 050-descripcion.qmd
     - 060-distr-prob.qmd
     - 070-relacion-xy.qmd
     - 080-anova.qmd
@@ -21,8 +22,9 @@ book:
     - 100-control-proc.qmd
     - 110-disexp.qmd
     - 120-mejora-calidad.qmd
-    - 130-anexo-metodos.qmd
-    - 140-bibliografia.qmd
+    - 130-comunicacion.qmd
+    - 140-anexo-R.qmd
+    - 150-bibliografia.qmd
 
 bibliography: bibliografia.bib
 

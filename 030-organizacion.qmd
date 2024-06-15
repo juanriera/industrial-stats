@@ -1,0 +1,95 @@
+---
+lang: es
+---
+
+# El flujo de trabajo en el análisis de datos
+
+Lo que veremos en el capítulo
+
+-   En qué consiste un flujo de trabajo en el análisis de datos
+
+    Gráfico de R4DS
+
+    ![](01-imagenes/data-science.png)
+
+-   Cómo estructurar un flujo de trabajo para el análisis de datos industriales
+
+
+## La organización y preparación de los datos.
+
+Cuando nos incorporamos a un equipo de trabajo existente, lo más seguro es que el equipo disponga ya de un sistema de archivo de los datos, de acuerdo con sus prácticas habituales. A veces el diseño de la captura de datos sigue aproximadamente el modelo manual en papel. Se introducen los datos en la hoja de cálculo y una vez completados, se imprime el documento para su archivo.
+
+El error más común que cometemos es tratar la hoja de cálculo como un bloc de notas, es decir, hacer anotaciones de forma libre, colocar los datos y el resultado de los análisis al lado y en cualquier parte de la hoja, y apoyarnos en el contexto para interpretar lo que hemos guardado. Pero para que el ordenador sea capaz de analizar nuestros datos de manera eficiente, debemos estructurarlos de tal forma que el programa use la información tal como nosotros queremos.
+
+Es común utilizar una hoja para guardar múltiples tablas de datos, tal como vemos en la [@fig-excel_mess]. Esta estructura, sin embargo, resulta enormemente confusa para su análisis, o lo imposibilita completamente.
+
+![Hoja Excel desordenada: ¡No hagas esto!](01-imagenes/excel_mess.png){#fig-excel_mess}
+
+En otros casos, los datos se guardan en hojas de cálculo que se componen de diferentes pestañas para cada semana, cada mes o cada año, como vemos en la @fig-2021-09-1_excel_1. Sin embargo, esta forma de almacenar los datos tampoco es la óptima para su análisis.
+
+![Hoja Excel con una estructura no ordenada](01-imagenes/2021-09-1_excel_1.png){#fig-2021-09-1_excel_1}
+
+¿Y utilizar diferentes pestañas para cada tabla? En este caso, la respuesta es sí y no. Si las diferentes tablas presentan situaciones diferentes, o datos que no son coincidentes, podemos utilizar diferentes pestañas. Pero si los datos están vinculados, por ejemplo, se corresponden con medidas hechas en fechas diferentes (meses, años), la respuesta adecuada es que las pestañas no son la forma correcta de almacenarlos datos; la forma recomendad es añadir una variable que nos permita diferenciar los datos por fecha; nuestro programa de análisis nos permitirá *filtrar* los datos según la fecha que deseemos, y todos estarán en una única tabla, facilitando la coherencia del conjunto.
+
+Hay muchas formas de almacenar la información en una hoja de cálculo, pero sólo la estructura de **datos ordenados o arreglados** facilita la utilización de los datos tanto por la hoja de cálculo como por otros programas de análisis.
+
+## Los datos ordenados o arreglados (*tidy data*)
+
+De la misma manera que la gramática permite ordenar y estructurar un escrito de acuerdo a reglas comunes, hay reglas para que el almacenamiento de los datos sea lo más homogéneo posible y se reduzcan los errores al mínimo.
+
+Las reglas principales al almacenar nuestros datos en una hoja de cálculo son tres:
+
+-   columnas=variables,
+
+-   filas=observaciones,
+
+-   celdas=valores.
+
+Cada variable debe tener su propia columna, cada observación debe tener su propia fila, y cada valor debe tener su propia celda o casilla .
+
+Estas tres reglas básicas son las que hacen que nuestro conjunto de datos sea **ordenado (o arreglado)**[@wickham2023] (hay edición *online* en español: [@wickham-es2023]:
+
+La @fig-tidy muestra estas reglas de forma visual.
+
+![Sigue estas tres reglas para tener un conjunto de datos ordenado: las variables están en columnas, las observaciones están en filas, y los valores están en celdas. Fuente de la imagen: @wickham2023](01-imagenes/tidy-1.png){#fig-tidy}
+
+Estas tres reglas están interrelacionadas porque es imposible satisfacer sólo dos de tres.
+
+En una hoja de cálculo, una tabla de datos arreglada tendría este aspecto:
+
+![Hoja Excel con estructura rectangular de datos ordenados](01-imagenes/2023-11-17.png){#fig-excel-camembert}
+
+Datos rectangulares: formato tabla
+
+## Exportar los datos de Excel a R
+
+Una vez que tenemos nuestros datos en Excel, hay dos formas en las que podemos poner los datos a disposición de R para su análisis: exportarlos a un archivo de texto con ***formato CSV***, o leer directamente los datos de Excel desde R utilizando las funciones de la librería `tidyverse`. En ambos casos, el resultado en R es un ***dataframe*** o *cuadro de datos*, que es una estructura equivalente a la de nuestra tabla de datos en Excel.
+
+### Qué es un fichero plano y un fichero CSV
+
+Se suele llamar **fichero plano** a un fichero de datos de texto sin ningún tipo de formato, donde los datos están separados por espacios o tabulaciones. Muchos equipos automáticos, como balanzas de laboratorio o básculas de proceso, producen ficheros planos de texto, que se pueden importar a Excel o R. Un [fichero CSV](https://es.wikipedia.org/wiki/Valores_separados_por_comas) es un fichero plano en el que los valores están separados por un carácter especial, llamado **separador**. Este separador puede ser una coma `,` (cuando los decimales se separan mediante un punto, como en EEUU) o un punto y coma `;` (cuando los decimales se separan mediante una coma, como en España)
+
+::: {#fig-ficheros-texto layout="[[1,1], [1]]" layout-valign="bottom"}
+![Fichero plano](01-imagenes/fichero-plano.png)
+
+![Fichero CSV separado por puntos y comas](01-imagenes/fichero-csv-europeo.png)
+
+![Fichero CSV separado por comas](01-imagenes/fichero-csv-comas.png)
+
+Tres tipos de ficheros planos de texto.
+:::
+
+En un fichero plano o en un fichero CSV, la primera fila puede contener los nombres de las columnas. En algunos casos, los elementos de texto pueden estar entre comillas. En estos casos, los programas de importación se ocupan de la conversión de formatos.
+
+La importación de un fichero CSV en Excel en español es directa si se ha generado con puntos y comas como separador y comas para los decimales; si no es así, nos aparecerá como un fichero plano de texto sin formato, y tendremos que realizar una conversión.
+
+### Cómo exportar los datos a un fichero CSV desde Excel.
+
+
+
+::: {.content-visible .callout-tip icon="false"}
+## Para resolver
+
+Poner aquí distintos ejemplos de nombres de variables para verii son válidos o no Describir medidas y preguntar cómo llamaríamos a esa variable (por ejemplo, temperatura de laleche que acabamos de descargar de una cisterna)
+:::
+

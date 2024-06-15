@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.553">
+<meta name="generator" content="quarto-1.4.555">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 7&nbsp; El análisis de la varianza</title>
+<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 8&nbsp; El análisis de la varianza</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -81,7 +81,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./080-anova.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./080-anova.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></a></li></ol></nav>
         <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
@@ -115,78 +115,90 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./010-intro.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">Introducción</span></span></a>
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">La estadística en el entorno industrial.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./020-datos-industriales.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Entendiendo los datos industriales. Introducción a la hoja de cálculo.</span></span></a>
+  <a href="./020-herramientas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./040-herramientas-2-R.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">Herramientas para el análisis: El software estadístico R.</span></span></a>
+  <a href="./030-organizacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El flujo de trabajo en el análisis de datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./050-distr-frec-explor.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración y descripción de los datos.</span></span></a>
+  <a href="./040-exploracion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./050-descripcion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resumir los datos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./060-distr-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de probabilidad e inferencia</span></span></a>
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias y de probabilidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./080-anova.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./090-sistema-medicion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./120-mejora-calidad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./130-anexo-metodos.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text">Anexo: Recetario de métodos</span></a>
+  <a href="./130-comunicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./140-bibliografia.html" class="sidebar-item-text sidebar-link">
+  <a href="./140-anexo-R.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Anexo: Instalación de R y conceptos básicos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./150-bibliografia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
@@ -200,10 +212,9 @@ ul.task-list li input[type="checkbox"] {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">7.1</span> Introducción</a></li>
-  <li><a href="#análisis-de-la-varianza-de-un-factor" id="toc-análisis-de-la-varianza-de-un-factor" class="nav-link" data-scroll-target="#análisis-de-la-varianza-de-un-factor"><span class="header-section-number">7.2</span> Análisis de la varianza de un factor</a></li>
-  <li><a href="#análisis-de-la-varianza-de-dos-factores" id="toc-análisis-de-la-varianza-de-dos-factores" class="nav-link" data-scroll-target="#análisis-de-la-varianza-de-dos-factores"><span class="header-section-number">7.3</span> Análisis de la varianza de dos factores</a></li>
-  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">7.4</span> </a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">8.1</span> Introducción</a></li>
+  <li><a href="#análisis-de-la-varianza-de-dos-factores" id="toc-análisis-de-la-varianza-de-dos-factores" class="nav-link" data-scroll-target="#análisis-de-la-varianza-de-dos-factores"><span class="header-section-number">8.2</span> Análisis de la varianza de dos factores</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">8.3</span> </a></li>
   </ul>
 </nav>
     </div>
@@ -212,7 +223,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></h1>
 </div>
 
 
@@ -229,17 +240,17 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introducción" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">7.1</span> Introducción</h2>
+<section id="introducción" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">8.1</span> Introducción</h2>
+<p>Supongamos que un analista de la OMS ha realizado la medida de la altura de un grupo de niños y niñas niña siguiendo rigurosamente el método establecido, y, por lo tanto, que está razonablemente seguro de su resultado.</p>
+<p>Al cabo de varias jornadas de trabajo, habrá realizado varias medidas, que representarán al conjunto de niños de la población en la que ha estado trabajando. Otros investigadores pueden haber estado trabajando a la vez en otras poblaciones, y al final de sus jornadas de trabajo, quieren comparar sus resultados: ¿Hay alguna de estas poblaciones en las que los niños sean significativamente más altos (o más bajos) que en las otras? ¿Cómo describir la altura de un conjunto de individuos de manera que se puedan hacer comparaciones con otros conjuntos?</p>
+<p>Para responder a estas preguntas, vamos a cambiar el entorno de trabajo a un grupo de niños imaginario, que vamos a llamar <em>aula1</em>: son nuestros compañeros y compañeras, a los cuales realizaremos una medida de altura siguiendo el <em>procedimiento</em> especificado en nuestro <em>método</em>. ## Análisis de la varianza de un factor</p>
 </section>
-<section id="análisis-de-la-varianza-de-un-factor" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="análisis-de-la-varianza-de-un-factor"><span class="header-section-number">7.2</span> Análisis de la varianza de un factor</h2>
+<section id="análisis-de-la-varianza-de-dos-factores" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="análisis-de-la-varianza-de-dos-factores"><span class="header-section-number">8.2</span> Análisis de la varianza de dos factores</h2>
 </section>
-<section id="análisis-de-la-varianza-de-dos-factores" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="análisis-de-la-varianza-de-dos-factores"><span class="header-section-number">7.3</span> Análisis de la varianza de dos factores</h2>
-</section>
-<section id="section" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="section"><span class="header-section-number">7.4</span> </h2>
+<section id="section" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="section"><span class="header-section-number">8.3</span> </h2>
 
 
 </section>
@@ -657,12 +668,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
       <a href="./070-relacion-xy.html" class="pagination-link" aria-label="La relación entre las variables">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span>
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
       <a href="./090-sistema-medicion.html" class="pagination-link" aria-label="El análisis del sistema de medición">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span> <i class="bi bi-arrow-right-short"></i>
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

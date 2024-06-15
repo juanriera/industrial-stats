@@ -1,4 +1,4 @@
-# Distribuciones de probabilidad e inferencia
+# Distribuciones de frecuencias y de probabilidad 
 
 ## Introducción al concepto de probabilidad
 
@@ -22,4 +22,9 @@ dirtib de frecuencia y distr normal: área bajo la curva
 ### Gráficos de probabilidad
 
 
+## Fútbol
+
+## Proceso de dosificación de líquidos
+
+## Ley de contenido efectivo
 

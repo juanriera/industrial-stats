@@ -1,0 +1,1059 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.4.555">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - Anexo: Instalación de R y conceptos básicos</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+</style>
+
+
+<script src="site_libs/quarto-nav/quarto-nav.js"></script>
+<script src="site_libs/quarto-nav/headroom.min.js"></script>
+<script src="site_libs/clipboard/clipboard.min.js"></script>
+<script src="site_libs/quarto-search/autocomplete.umd.js"></script>
+<script src="site_libs/quarto-search/fuse.min.js"></script>
+<script src="site_libs/quarto-search/quarto-search.js"></script>
+<meta name="quarto:offset" content="./">
+<link href="./150-bibliografia.html" rel="next">
+<link href="./130-comunicacion.html" rel="prev">
+<script src="site_libs/quarto-html/quarto.js"></script>
+<script src="site_libs/quarto-html/popper.min.js"></script>
+<script src="site_libs/quarto-html/tippy.umd.min.js"></script>
+<script src="site_libs/quarto-html/anchor.min.js"></script>
+<link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="site_libs/bootstrap/bootstrap.min.js"></script>
+<link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<script id="quarto-search-options" type="application/json">{
+  "location": "sidebar",
+  "copy-button": false,
+  "collapse-after": 3,
+  "panel-placement": "start",
+  "type": "textbox",
+  "limit": 50,
+  "keyboard-shortcut": [
+    "f",
+    "/",
+    "s"
+  ],
+  "show-item-context": false,
+  "language": {
+    "search-no-results-text": "No results",
+    "search-matching-documents-text": "matching documents",
+    "search-copy-link-title": "Copy link to search",
+    "search-hide-matches-text": "Hide additional matches",
+    "search-more-match-text": "more match in this document",
+    "search-more-matches-text": "more matches in this document",
+    "search-clear-button-title": "Clear",
+    "search-text-placeholder": "",
+    "search-detached-cancel-button-title": "Cancel",
+    "search-submit-button-title": "Submit",
+    "search-label": "Search"
+  }
+}</script>
+
+
+</head>
+
+<body class="nav-sidebar floating">
+
+<div id="quarto-search-results"></div>
+  <header id="quarto-header" class="headroom fixed-top">
+  <nav class="quarto-secondary-nav">
+    <div class="container-fluid d-flex">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+        <i class="bi bi-layout-text-sidebar-reverse"></i>
+      </button>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./140-anexo-R.html">Anexo: Instalación de R y conceptos básicos</a></li></ol></nav>
+        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        </a>
+      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+        <i class="bi bi-search"></i>
+      </button>
+    </div>
+  </nav>
+</header>
+<!-- content -->
+<div id="quarto-content" class="quarto-container page-columns page-rows-contents page-layout-article">
+<!-- sidebar -->
+  <nav id="quarto-sidebar" class="sidebar collapse collapse-horizontal quarto-sidebar-collapse-item sidebar-navigation floating overflow-auto">
+    <div class="pt-lg-2 mt-2 text-left sidebar-header">
+    <div class="sidebar-title mb-0 py-0">
+      <a href="./">Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</a> 
+    </div>
+      </div>
+        <div class="mt-2 flex-shrink-0 align-items-center">
+        <div class="sidebar-search">
+        <div id="quarto-search" class="" title="Search"></div>
+        </div>
+        </div>
+    <div class="sidebar-menu-container"> 
+    <ul class="list-unstyled mt-1">
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./index.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Prefacio</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./010-intro.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">La estadística en el entorno industrial.</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./020-herramientas.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./030-organizacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El flujo de trabajo en el análisis de datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./040-exploracion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./050-descripcion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resumir los datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./060-distr-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias y de probabilidad</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./080-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./090-sistema-medicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./120-mejora-calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./130-comunicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./140-anexo-R.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text">Anexo: Instalación de R y conceptos básicos</span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./150-bibliografia.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text">Bibliografía</span></a>
+  </div>
+</li>
+    </ul>
+    </div>
+</nav>
+<div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
+<!-- margin-sidebar -->
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
+        <nav id="TOC" role="doc-toc" class="toc-active">
+    <h2 id="toc-title">Table of contents</h2>
+   
+  <ul>
+  <li><a href="#instalación-de-r-en-windows" id="toc-instalación-de-r-en-windows" class="nav-link active" data-scroll-target="#instalación-de-r-en-windows">Instalación de R en Windows</a></li>
+  <li><a href="#instalación-de-rstudio-en-windows" id="toc-instalación-de-rstudio-en-windows" class="nav-link" data-scroll-target="#instalación-de-rstudio-en-windows">Instalación de RStudio en Windows</a></li>
+  <li><a href="#introducción-a-r" id="toc-introducción-a-r" class="nav-link" data-scroll-target="#introducción-a-r">Introducción a R</a>
+  <ul class="collapse">
+  <li><a href="#tipos-de-datos-en-r" id="toc-tipos-de-datos-en-r" class="nav-link" data-scroll-target="#tipos-de-datos-en-r">Tipos de datos en R</a></li>
+  <li><a href="#vectores" id="toc-vectores" class="nav-link" data-scroll-target="#vectores">Vectores</a></li>
+  <li><a href="#creación-de-un-dataframe-a-partir-de-un-fichero-csv" id="toc-creación-de-un-dataframe-a-partir-de-un-fichero-csv" class="nav-link" data-scroll-target="#creación-de-un-dataframe-a-partir-de-un-fichero-csv">Creación de un dataframe a partir de un fichero CSV</a></li>
+  <li><a href="#las-funciones-en-r" id="toc-las-funciones-en-r" class="nav-link" data-scroll-target="#las-funciones-en-r">Las funciones en R</a></li>
+  </ul></li>
+  </ul>
+</nav>
+    </div>
+<!-- main -->
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Anexo: Instalación de R y conceptos básicos</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="instalación-de-r-en-windows" class="level2">
+<h2 class="anchored" data-anchor-id="instalación-de-r-en-windows">Instalación de R en Windows</h2>
+<ol type="1">
+<li>Accede al sitio oficial de <strong>CRAN</strong> (Comprehensive R Archive Network), que es el repositorio central de software de R⁴.</li>
+<li>Haz clic en el enlace “Download R for Windows”.</li>
+<li>Selecciona “install R for the first time” en la parte superior de la página.</li>
+<li>Elige la versión de R que deseas instalar (por ejemplo, R 4.0.3).</li>
+<li>Guarda el archivo ejecutable en tu computadora (puedes guardarlo en el escritorio).</li>
+<li>Haz doble clic en el archivo descargado para ejecutarlo.</li>
+<li>Acepta los permisos para que la aplicación realice cambios en tu dispositivo.</li>
+<li>Selecciona el idioma de tu preferencia y sigue las opciones de instalación (puedes aceptar las opciones preestablecidas).</li>
+</ol>
+</section>
+<section id="instalación-de-rstudio-en-windows" class="level2">
+<h2 class="anchored" data-anchor-id="instalación-de-rstudio-en-windows">Instalación de RStudio en Windows</h2>
+<ol type="1">
+<li>Abre tu navegador y dirígete al sitio oficial de <strong>RStudio</strong>.</li>
+<li>Haz clic en “DOWNLOAD”.</li>
+<li>Busca la opción “RStudio Desktop” y selecciona “DOWNLOAD”.</li>
+<li>Haz clic en “DOWNLOAD RSTUDIO FOR WINDOWS”.</li>
+<li>Guarda el archivo ejecutable.</li>
+<li>Ejecuta el archivo descargado y sigue las instrucciones de instalación.</li>
+</ol>
+</section>
+<section id="introducción-a-r" class="level2">
+<h2 class="anchored" data-anchor-id="introducción-a-r">Introducción a R</h2>
+<section id="tipos-de-datos-en-r" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-datos-en-r">Tipos de datos en R</h3>
+<ol type="1">
+<li><strong>Numérico (numeric)</strong>:
+<ul>
+<li>Representa valores decimales, tanto enteros como de punto flotante (double).</li>
+<li>Ejemplo: <code>3.14</code>, <code>42</code>, <code>0.5</code>.</li>
+</ul></li>
+<li><strong>Entero (integer)</strong>:
+<ul>
+<li>Representa números enteros.</li>
+<li>Ejemplo: <code>5</code>, <code>-10</code>, <code>100</code>.</li>
+</ul></li>
+<li><strong>Lógico (logical)</strong>:
+<ul>
+<li>Representa valores booleanos: <code>TRUE</code> o <code>FALSE</code>.</li>
+<li>Ejemplo: <code>TRUE</code>, <code>FALSE</code>.</li>
+</ul></li>
+<li><strong>Carácter (character)</strong>:
+<ul>
+<li>Representa cadenas de texto.</li>
+<li>Ejemplo: <code>"Hola, mundo"</code>, <code>"R es genial"</code>.</li>
+</ul></li>
+<li><strong>Complejo (complex)</strong>:
+<ul>
+<li>Representa números complejos con parte real e imaginaria.</li>
+<li>Ejemplo: <code>1 + 2i</code>, <code>3 - 4i</code>.</li>
+</ul></li>
+<li><strong>Raw</strong>:
+<ul>
+<li>Representa datos en formato binario sin procesar.</li>
+<li>Ejemplo: <code>as.raw(0:5)</code> (crea un vector de bytes).</li>
+</ul></li>
+</ol>
+</section>
+<section id="vectores" class="level3">
+<h3 class="anchored" data-anchor-id="vectores">Vectores</h3>
+<p>En <strong>R</strong>, un <strong>vector</strong> es una estructura de datos fundamental que almacena elementos del mismo tipo, ya sean números, caracteres o lógicos². Aquí tienes una breve explicación:</p>
+<ul>
+<li><strong>¿Qué es un vector en R?</strong>
+<ul>
+<li>Un vector es una secuencia de elementos de datos del mismo tipo básico.</li>
+<li>Los miembros de un vector se llaman oficialmente <strong>componentes</strong>.</li>
+<li>Pueden ser de dos tipos: <strong>vectores atómicos</strong> y <strong>listas</strong>².</li>
+</ul></li>
+</ul>
+<p>Los <strong>vectores atómicos</strong> son los más comunes y se utilizan para almacenar datos homogéneos. Algunos ejemplos de vectores atómicos incluyen:</p>
+<ol type="1">
+<li><strong>Numéricos (numeric)</strong>:
+<ul>
+<li>Representan valores decimales, tanto enteros como de punto flotante.</li>
+<li>Ejemplo: <code>c(3.14, 42, 0.5)</code>.</li>
+</ul></li>
+<li><strong>Caracteres (character)</strong>:
+<ul>
+<li>Almacenan cadenas de texto.</li>
+<li>Ejemplo: <code>c("Hola", "Mundo")</code>.</li>
+</ul></li>
+<li><strong>Lógicos (logical)</strong>:
+<ul>
+<li>Contienen valores booleanos: <code>TRUE</code> o <code>FALSE</code>.</li>
+<li>Ejemplo: <code>c(TRUE, FALSE, TRUE)</code>.</li>
+</ul></li>
+<li><strong>Enteros (integer)</strong>:
+<ul>
+<li>Representan números enteros.</li>
+<li>Ejemplo: <code>c(5, -10, 100)</code>.</li>
+</ul></li>
+</ol>
+<p>Los vectores son fundamentales para realizar operaciones matemáticas, análisis de datos y manipulación de información en R.</p>
+<section id="ejemplos-de-creación-de-vectores-en-r" class="level4">
+<h4 class="anchored" data-anchor-id="ejemplos-de-creación-de-vectores-en-r">Ejemplos de creación de vectores en R</h4>
+<p>Los vectores en <strong>R</strong> pueden contener datos del mismo tipo y se crean utilizando la función <code>c()</code>.</p>
+<ol type="1">
+<li><strong>Vectores numéricos</strong>:
+<ul>
+<li><p>Puedes crear un vector numérico utilizando la función <code>c()</code>:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>numeros <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto crea un vector con los números del 1 al 5.</p></li>
+</ul></li>
+<li><strong>Vectores de caracteres</strong>:
+<ul>
+<li><p>Para crear un vector de caracteres, simplemente proporciona las cadenas de texto entre comillas:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a>frutas <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"manzana"</span>, <span class="st">"banana"</span>, <span class="st">"cereza"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto crea un vector con los nombres de algunas frutas.</p></li>
+</ul></li>
+<li><strong>Vectores lógicos</strong>:
+<ul>
+<li><p>Los vectores lógicos contienen valores <code>TRUE</code> o <code>FALSE</code>. Puedes crear uno así:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>logico <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="cn">TRUE</span>, <span class="cn">FALSE</span>, <span class="cn">TRUE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto crea un vector con tres valores lógicos.</p></li>
+</ul></li>
+<li><strong>Vectores con nombres</strong>:
+<ul>
+<li><p>Puedes asignar nombres a los elementos de un vector:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>mi_vector <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="at">naranja =</span> <span class="dv">4</span>, <span class="at">manzana =</span> <span class="dv">6</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto crea un vector con dos elementos nombrados: “naranja” y “manzana”.</p></li>
+</ul></li>
+<li><strong>Data frames</strong>:
+<ul>
+<li>Introduce los data frames como tablas de datos con filas y columnas.</li>
+<li>Explica cómo crear, acceder y modificar data frames.</li>
+<li>Destaca la importancia de los data frames para el análisis de datos.</li>
+</ul></li>
+</ol>
+<p>Un <strong>data frame</strong> en <strong>R</strong> es una estructura de datos bidimensional que se utiliza para almacenar información tabular. Es similar a una tabla o una hoja de cálculo, donde cada columna puede contener diferentes tipos de datos (números, cadenas de texto, etc.). Los <em>data frames</em> son muy útiles para trabajar con datos estructurados en <strong>R</strong>. Puedes acceder a las columnas y realizar análisis estadísticos sobre ellos.<br>
+Aquí tienes una descripción más detallada y algunos ejemplos:</p>
+<ol type="1">
+<li><strong>Concepto de Data Frame</strong>:
+<ul>
+<li>Un data frame es una estructura especializada de tipo lista en <strong>R</strong>.</li>
+<li>Cada componente del data frame tiene la misma longitud y forma una columna.</li>
+<li>Los componentes individuales forman las filas del data frame.</li>
+<li>Puedes pensar en un data frame como una matriz donde cada columna puede contener diferentes tipos de datos¹.</li>
+</ul></li>
+<li><strong>Ejemplo de Creación de Data Frame desde Vectores</strong>:
+<ul>
+<li><p>Puedes crear un data frame utilizando la función <code>data.frame()</code>.</p></li>
+<li><p>Por ejemplo, consideremos los siguientes datos:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a>Name <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="st">"Jon"</span>, <span class="st">"Bill"</span>, <span class="st">"Maria"</span>, <span class="st">"Ben"</span>, <span class="st">"Tina"</span>)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>Age <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">41</span>, <span class="dv">32</span>, <span class="dv">58</span>, <span class="dv">26</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(Name, Age)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto creará un data frame con dos columnas: “Name” y “Age”. Los valores coincidirán con los datos proporcionados.</p></li>
+</ul></li>
+<li><strong>Ejemplo de Creación de Data Frame desde una Matriz</strong>:
+<ul>
+<li><p>También puedes crear un data frame a partir de una matriz existente.</p></li>
+<li><p>Supongamos que tenemos una matriz llamada <code>my_matrix</code>:</p>
+<div class="sourceCode" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>my_matrix <span class="ot">&lt;-</span> <span class="fu">matrix</span>(<span class="fu">c</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>, <span class="dv">4</span>, <span class="dv">5</span>, <span class="dv">6</span>), <span class="at">ncol =</span> <span class="dv">2</span>)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>df_from_matrix <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(my_matrix)</span>
+<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df_from_matrix)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto convertirá la matriz en un data frame con dos columnas.</p></li>
+</ul></li>
+<li><strong>Ejemplo de Creación de Data Frame desde Valores Iniciales</strong>:
+<ul>
+<li><p>Si deseas crear un data frame con valores específicos, puedes hacerlo directamente:</p>
+<div class="sourceCode" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_custom <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="at">Name =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Carol"</span>),</span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Age =</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">25</span>, <span class="dv">28</span>)</span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df_custom)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto creará un data frame personalizado con los valores proporcionados.</p></li>
+</ul></li>
+<li><strong>Ejemplo de Creación de Data Frame Vacío con Nombres de Columna</strong>:
+<ul>
+<li><p>Si necesitas un data frame vacío con nombres de columna, puedes hacerlo así:</p>
+<div class="sourceCode" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a>empty_df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(<span class="at">Name =</span> <span class="fu">character</span>(<span class="dv">0</span>), <span class="at">Age =</span> <span class="fu">numeric</span>(<span class="dv">0</span>))</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(empty_df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto crea un data frame sin filas pero con las columnas “Name” y “Age”.</p></li>
+</ul></li>
+</ol>
+</section>
+</section>
+<section id="creación-de-un-dataframe-a-partir-de-un-fichero-csv" class="level3">
+<h3 class="anchored" data-anchor-id="creación-de-un-dataframe-a-partir-de-un-fichero-csv">Creación de un dataframe a partir de un fichero CSV</h3>
+<p>crear un <strong>data frame</strong> en <strong>R</strong> a partir de la lectura de un archivo CSV es una tarea común. Aquí tienes los pasos para hacerlo:</p>
+<ol type="1">
+<li><strong>Leer el archivo CSV</strong>:
+<ul>
+<li><p>Primero, necesitas tener un archivo CSV con los datos que deseas cargar en un data frame.</p></li>
+<li><p>Utiliza la función <code>read.csv()</code> para leer el archivo CSV y convertirlo en un data frame. Por ejemplo:</p>
+<div class="sourceCode" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>mi_data_frame <span class="ot">&lt;-</span> <span class="fu">read.csv</span>(<span class="st">"ruta/al/archivo.csv"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Reemplaza <code>"ruta/al/archivo.csv"</code> con la ubicación real de tu archivo CSV.</p></li>
+</ul></li>
+<li><strong>Explorar el data frame</strong>:
+<ul>
+<li>Una vez que hayas leído el archivo, puedes explorar el contenido del data frame utilizando funciones como <code>head(mi_data_frame)</code> para ver las primeras filas o <code>summary(mi_data_frame)</code> para obtener estadísticas resumidas.</li>
+</ul></li>
+<li><strong>Acceder a los datos</strong>:
+<ul>
+<li><p>Puedes acceder a las columnas del data frame utilizando el operador <code>$</code>. Por ejemplo:</p>
+<div class="sourceCode" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>primera_columna <span class="ot">&lt;-</span> mi_data_frame<span class="sc">$</span>NombreColumna</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+<li><strong>Manipular los datos</strong>:
+<ul>
+<li>Puedes realizar operaciones, filtrar filas y modificar los valores en el data frame según tus necesidades.</li>
+</ul></li>
+<li><strong>Guardar cambios</strong>:
+<ul>
+<li><p>Si realizas modificaciones en el data frame, puedes guardar los cambios en un nuevo archivo CSV utilizando la función <code>write.csv()</code>:</p>
+<div class="sourceCode" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">write.csv</span>(mi_data_frame, <span class="st">"ruta/nuevo_archivo.csv"</span>, <span class="at">row.names =</span> <span class="cn">FALSE</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto creará un nuevo archivo CSV con los datos actualizados.</p></li>
+</ul></li>
+</ol>
+<p>Recuerda adaptar los nombres de las columnas y las rutas de los archivos según tu caso específico.</p>
+<ol start="7" type="1">
+<li><strong>Visualización de datos</strong>:
+<ul>
+<li>Menciona la importancia de la visualización en el análisis estadístico.</li>
+<li>Si hay tiempo, muestra cómo crear gráficos básicos con R (histogramas, scatter plots, etc.).</li>
+</ul></li>
+</ol>
+<p>¡Por supuesto! La visualización de datos es fundamental en el análisis de datos, y <strong>R</strong> ofrece varias opciones para crear gráficos. Aquí te presento una breve descripción y ejemplos de cómo utilizar tanto el <strong>programa base</strong> como la biblioteca <strong>ggplot2</strong> del paquete <strong>tidyverse</strong>:</p>
+<ol type="1">
+<li><strong>Programa Base de R</strong>:
+<ul>
+<li>El programa base de <strong>R</strong> proporciona funciones para crear gráficos básicos directamente desde los datos.</li>
+<li>Algunos ejemplos de gráficos básicos son:
+<ul>
+<li><p><strong>Gráfico de dispersión</strong>:</p>
+<div class="sourceCode" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un gráfico de dispersión</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(mpg<span class="sc">$</span>displ, mpg<span class="sc">$</span>hwy, <span class="at">main =</span> <span class="st">"Consumo de combustible"</span>, <span class="at">xlab =</span> <span class="st">"Desplazamiento"</span>, <span class="at">ylab =</span> <span class="st">"Millas por galón"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Histograma</strong>:</p>
+<div class="sourceCode" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un histograma</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(mpg<span class="sc">$</span>hwy, <span class="at">main =</span> <span class="st">"Distribución de millas por galón"</span>, <span class="at">xlab =</span> <span class="st">"Millas por galón"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+<li><p><strong>Gráfico de barras</strong>:</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un gráfico de barras</span></span>
+<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(mpg<span class="sc">$</span>class), <span class="at">main =</span> <span class="st">"Distribución de clases de vehículos"</span>, <span class="at">xlab =</span> <span class="st">"Clase"</span>, <span class="at">ylab =</span> <span class="st">"Frecuencia"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+</ul></li>
+<li><strong>Biblioteca ggplot2</strong>:
+<ul>
+<li><p><strong>ggplot2</strong> es una poderosa biblioteca para crear gráficos basada en la “Gramática de Gráficos”.</p></li>
+<li><p>Aquí tienes un ejemplo de cómo crear un gráfico de dispersión utilizando <strong>ggplot2</strong>:</p>
+<div class="sourceCode" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(mpg, <span class="fu">aes</span>(<span class="at">x =</span> displ, <span class="at">y =</span> hwy, <span class="at">color =</span> class)) <span class="sc">+</span></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Consumo de combustible"</span>, <span class="at">x =</span> <span class="st">"Desplazamiento"</span>, <span class="at">y =</span> <span class="st">"Millas por galón"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, <code>aes()</code> define las variables estéticas (mapeo de datos a elementos visuales), <code>geom_point()</code> agrega los puntos al gráfico y <code>labs()</code> establece etiquetas para el título y los ejes.</p></li>
+</ul></li>
+<li><strong>Ventajas de ggplot2</strong>:
+<ul>
+<li><strong>Declarativo</strong>: Describe lo que deseas visualizar y ggplot2 se encarga de los detalles.</li>
+<li><strong>Capas</strong>: Puedes agregar capas (geometrías, escalas, facetas) para personalizar tus gráficos.</li>
+<li><strong>Ecosistema rico</strong>: ggplot2 tiene muchas extensiones y opciones para gráficos más avanzados¹.</li>
+</ul></li>
+</ol>
+<p>Recuerda que <strong>ggplot2</strong> es especialmente útil para crear gráficos más complejos y personalizados. Si tienes más preguntas, no dudes en preguntar. 😊</p>
+<p>La <strong>visualización de datos</strong> es una faceta esencial en el campo de la <strong>estadística industrial</strong>. Permite convertir conjuntos de datos complejos en representaciones visuales accesibles y fáciles de interpretar. Aquí te explico por qué es tan relevante:</p>
+<ol type="1">
+<li><strong>Comunicación efectiva</strong>:
+<ul>
+<li>La visualización gráfica permite comunicar hallazgos y resultados de manera más clara y efectiva.</li>
+<li>Los gráficos y diagramas facilitan la comprensión de patrones, tendencias y relaciones entre variables.</li>
+</ul></li>
+<li><strong>Identificación de patrones</strong>:
+<ul>
+<li>Al visualizar datos, es más sencillo detectar patrones ocultos o anómalos.</li>
+<li>Los gráficos pueden revelar información valiosa sobre procesos industriales, como fluctuaciones en la producción o tendencias en la calidad del producto.</li>
+</ul></li>
+<li><strong>Toma de decisiones informada</strong>:
+<ul>
+<li>Los líderes y analistas industriales pueden tomar decisiones basadas en evidencia visual.</li>
+<li>La visualización ayuda a evaluar el rendimiento de la producción, identificar áreas de mejora y optimizar procesos.</li>
+</ul></li>
+</ol>
+<p>En la <strong>estadística industrial</strong>, la visualización de datos es crucial para comprender patrones, tendencias y relaciones en los procesos de producción. <strong>R</strong>, como lenguaje estadístico, ofrece varias herramientas poderosas para crear gráficos y representaciones visuales. A continuación, menciono algunas de las más útiles:</p>
+<ol type="1">
+<li><strong>ggplot2</strong>:
+<ul>
+<li><p><strong>ggplot2</strong> es una biblioteca ampliamente utilizada para la visualización de datos en <strong>R</strong>.</p></li>
+<li><p>Se basa en la “Gramática de Gráficos”, lo que permite crear gráficos personalizados y versátiles.</p></li>
+<li><p>Ejemplo de uso:</p>
+<div class="sourceCode" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos, <span class="fu">aes</span>(<span class="at">x =</span> variable1, <span class="at">y =</span> variable2)) <span class="sc">+</span></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Relación entre dos variables"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>En este ejemplo, <code>aes()</code> define las variables estéticas, <code>geom_point()</code> agrega puntos al gráfico y <code>labs()</code> establece etiquetas para el título y los ejes².</p></li>
+</ul></li>
+<li><strong>Paquete base de R</strong>:
+<ul>
+<li><p>R tiene funciones básicas para gráficos, como <code>plot</code>, <code>hist</code>, <code>boxplot</code>, entre otras.</p></li>
+<li><p>Estas funciones son parte del paquete base y son útiles para gráficos simples.</p></li>
+<li><p>Ejemplo de uso:</p>
+<div class="sourceCode" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(datos<span class="sc">$</span>variable1, datos<span class="sc">$</span>variable2, <span class="at">main =</span> <span class="st">"Gráfico de dispersión"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto crea un gráfico de dispersión entre dos variables¹.</p></li>
+</ul></li>
+<li><strong>Galería de gráficos de R</strong>:
+<ul>
+<li>La <strong>Galería de gráficos de R</strong> es una colección de ejemplos reproducibles creados en <strong>R</strong>.</li>
+<li>Muestra cientos de gráficos con su código disponible para aprender y adaptar.</li>
+<li>Puedes explorar diferentes tipos de gráficos y encontrar inspiración para tus propios análisis¹.</li>
+</ul></li>
+</ol>
+</section>
+<section id="las-funciones-en-r" class="level3">
+<h3 class="anchored" data-anchor-id="las-funciones-en-r">Las funciones en R</h3>
+<p>Las <strong>funciones</strong> en <strong>R</strong> son bloques de código que realizan tareas específicas y se pueden reutilizar en diferentes partes de un programa. Aquí tienes una breve descripción y algunos ejemplos:</p>
+<ol type="1">
+<li><strong>Sintaxis Básica de una Función en R</strong>:
+<ul>
+<li><p>Para crear una función en <strong>R</strong>, utilizamos la siguiente sintaxis:</p>
+<div class="sourceCode" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>nombre_funcion <span class="ot">&lt;-</span> <span class="cf">function</span>(arg1, arg2, ...) {</span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="co"># Código</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>nombre_funcion</code>: El nombre que le das a tu función.</li>
+<li><code>arg1</code>, <code>arg2</code>, …: Los argumentos de entrada que la función acepta.</li>
+<li><code># Código</code>: El bloque de código que realiza la tarea deseada.</li>
+</ul></li>
+</ul></li>
+<li><strong>Ejemplo de Función en R</strong>:
+<ul>
+<li><p>Supongamos que queremos calcular el término general de una progresión geométrica.</p></li>
+<li><p>Creamos la función <code>an</code> que calcula el término general:</p>
+<div class="sourceCode" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>an <span class="ot">&lt;-</span> <span class="cf">function</span>(a1, r, n) {</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  a1 <span class="sc">*</span> r<span class="sc">^</span>(n <span class="sc">-</span> <span class="dv">1</span>)</span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>}</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ul>
+<li><code>a1</code>: Primer término.</li>
+<li><code>r</code>: Razón o ratio.</li>
+<li><code>n</code>: Número de términos.</li>
+</ul></li>
+<li><p>Ejemplos de uso:</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">an</span>(<span class="at">a1 =</span> <span class="dv">1</span>, <span class="at">r =</span> <span class="dv">2</span>, <span class="at">n =</span> <span class="dv">5</span>)  <span class="co"># Resultado: 16</span></span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a><span class="fu">an</span>(<span class="at">a1 =</span> <span class="dv">4</span>, <span class="at">r =</span> <span class="sc">-</span><span class="dv">2</span>, <span class="at">n =</span> <span class="dv">6</span>)  <span class="co"># Resultado: -128</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div></li>
+</ul></li>
+<li><strong>Funciones Integradas en R</strong>:
+<ul>
+<li><p>R tiene muchas funciones incorporadas, como <code>print()</code>, <code>min()</code>, <code>max()</code>, <code>sum()</code>, etc.</p></li>
+<li><p>Por ejemplo:</p>
+<div class="sourceCode" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(<span class="st">"¡Hola, mundo!"</span>)</span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">min</span>(<span class="dv">1</span>, <span class="dv">2</span>, <span class="dv">3</span>)  <span class="co"># Resultado: 1</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a><span class="fu">sum</span>(<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>)  <span class="co"># Resultado: 15</span></span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Las funciones en <strong>R</strong> te permiten modularizar tu código y reutilizarlo.</p></li>
+</ul></li>
+</ol>
+
+
+</section>
+</section>
+
+</main> <!-- /main -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const isCodeAnnotation = (el) => {
+    for (const clz of el.classList) {
+      if (clz.startsWith('code-annotation-')) {                     
+        return true;
+      }
+    }
+    return false;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    text: function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    let tooltip;
+    if (window.bootstrap) {
+      button.setAttribute("data-bs-toggle", "tooltip");
+      button.setAttribute("data-bs-placement", "left");
+      button.setAttribute("data-bs-title", "Copied!");
+      tooltip = new bootstrap.Tooltip(button, 
+        { trigger: "manual", 
+          customClass: "code-copy-button-tooltip",
+          offset: [0, -8]});
+      tooltip.show();    
+    }
+    setTimeout(function() {
+      if (tooltip) {
+        tooltip.hide();
+        button.removeAttribute("data-bs-title");
+        button.removeAttribute("data-bs-toggle");
+        button.removeAttribute("data-bs-placement");
+      }
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+    var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+    var mailtoRegex = new RegExp(/^mailto:/);
+      var filterRegex = new RegExp('/' + window.location.host + '/');
+    var isInternal = (href) => {
+        return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+    }
+    // Inspect non-navigation links and adorn them if external
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+    for (var i=0; i<links.length; i++) {
+      const link = links[i];
+      if (!isInternal(link.href)) {
+        // undo the damage that might have been done by quarto-nav.js in the case of
+        // links that we want to consider external
+        if (link.dataset.originalHref !== undefined) {
+          link.href = link.dataset.originalHref;
+        }
+      }
+    }
+  function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+    const config = {
+      allowHTML: true,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start',
+    };
+    if (contentFn) {
+      config.content = contentFn;
+    }
+    if (onTriggerFn) {
+      config.onTrigger = onTriggerFn;
+    }
+    if (onUntriggerFn) {
+      config.onUntrigger = onUntriggerFn;
+    }
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      if (note) {
+        return note.innerHTML;
+      } else {
+        return "";
+      }
+    });
+  }
+  const xrefs = window.document.querySelectorAll('a.quarto-xref');
+  const processXRef = (id, note) => {
+    // Strip column container classes
+    const stripColumnClz = (el) => {
+      el.classList.remove("page-full", "page-columns");
+      if (el.children) {
+        for (const child of el.children) {
+          stripColumnClz(child);
+        }
+      }
+    }
+    stripColumnClz(note)
+    if (id === null || id.startsWith('sec-')) {
+      // Special case sections, only their first couple elements
+      const container = document.createElement("div");
+      if (note.children && note.children.length > 2) {
+        container.appendChild(note.children[0].cloneNode(true));
+        for (let i = 1; i < note.children.length; i++) {
+          const child = note.children[i];
+          if (child.tagName === "P" && child.innerText === "") {
+            continue;
+          } else {
+            container.appendChild(child.cloneNode(true));
+            break;
+          }
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(container);
+        }
+        return container.innerHTML
+      } else {
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        return note.innerHTML;
+      }
+    } else {
+      // Remove any anchor links if they are present
+      const anchorLink = note.querySelector('a.anchorjs-link');
+      if (anchorLink) {
+        anchorLink.remove();
+      }
+      if (window.Quarto?.typesetMath) {
+        window.Quarto.typesetMath(note);
+      }
+      // TODO in 1.5, we should make sure this works without a callout special case
+      if (note.classList.contains("callout")) {
+        return note.outerHTML;
+      } else {
+        return note.innerHTML;
+      }
+    }
+  }
+  for (var i=0; i<xrefs.length; i++) {
+    const xref = xrefs[i];
+    tippyHover(xref, undefined, function(instance) {
+      instance.disable();
+      let url = xref.getAttribute('href');
+      let hash = undefined; 
+      if (url.startsWith('#')) {
+        hash = url;
+      } else {
+        try { hash = new URL(url).hash; } catch {}
+      }
+      if (hash) {
+        const id = hash.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note !== null) {
+          try {
+            const html = processXRef(id, note.cloneNode(true));
+            instance.setContent(html);
+          } finally {
+            instance.enable();
+            instance.show();
+          }
+        } else {
+          // See if we can fetch this
+          fetch(url.split('#')[0])
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.getElementById(id);
+            if (note !== null) {
+              const html = processXRef(id, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      } else {
+        // See if we can fetch a full url (with no hash to target)
+        // This is a special case and we should probably do some content thinning / targeting
+        fetch(url)
+        .then(res => res.text())
+        .then(html => {
+          const parser = new DOMParser();
+          const htmlDoc = parser.parseFromString(html, "text/html");
+          const note = htmlDoc.querySelector('main.content');
+          if (note !== null) {
+            // This should only happen for chapter cross references
+            // (since there is no id in the URL)
+            // remove the first header
+            if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+              note.children[0].remove();
+            }
+            const html = processXRef(null, note);
+            instance.setContent(html);
+          } 
+        }).finally(() => {
+          instance.enable();
+          instance.show();
+        });
+      }
+    }, function(instance) {
+    });
+  }
+      let selectedAnnoteEl;
+      const selectorForAnnotation = ( cell, annotation) => {
+        let cellAttr = 'data-code-cell="' + cell + '"';
+        let lineAttr = 'data-code-annotation="' +  annotation + '"';
+        const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+        return selector;
+      }
+      const selectCodeLines = (annoteEl) => {
+        const doc = window.document;
+        const targetCell = annoteEl.getAttribute("data-target-cell");
+        const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+        const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+        const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+        const lineIds = lines.map((line) => {
+          return targetCell + "-" + line;
+        })
+        let top = null;
+        let height = null;
+        let parent = null;
+        if (lineIds.length > 0) {
+            //compute the position of the single el (top and bottom and make a div)
+            const el = window.document.getElementById(lineIds[0]);
+            top = el.offsetTop;
+            height = el.offsetHeight;
+            parent = el.parentElement.parentElement;
+          if (lineIds.length > 1) {
+            const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+            const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+            height = bottom - top;
+          }
+          if (top !== null && height !== null && parent !== null) {
+            // cook up a div (if necessary) and position it 
+            let div = window.document.getElementById("code-annotation-line-highlight");
+            if (div === null) {
+              div = window.document.createElement("div");
+              div.setAttribute("id", "code-annotation-line-highlight");
+              div.style.position = 'absolute';
+              parent.appendChild(div);
+            }
+            div.style.top = top - 2 + "px";
+            div.style.height = height + 4 + "px";
+            div.style.left = 0;
+            let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+            if (gutterDiv === null) {
+              gutterDiv = window.document.createElement("div");
+              gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+              gutterDiv.style.position = 'absolute';
+              const codeCell = window.document.getElementById(targetCell);
+              const gutter = codeCell.querySelector('.code-annotation-gutter');
+              gutter.appendChild(gutterDiv);
+            }
+            gutterDiv.style.top = top - 2 + "px";
+            gutterDiv.style.height = height + 4 + "px";
+          }
+          selectedAnnoteEl = annoteEl;
+        }
+      };
+      const unselectCodeLines = () => {
+        const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+        elementsIds.forEach((elId) => {
+          const div = window.document.getElementById(elId);
+          if (div) {
+            div.remove();
+          }
+        });
+        selectedAnnoteEl = undefined;
+      };
+        // Handle positioning of the toggle
+    window.addEventListener(
+      "resize",
+      throttle(() => {
+        elRect = undefined;
+        if (selectedAnnoteEl) {
+          selectCodeLines(selectedAnnoteEl);
+        }
+      }, 10)
+    );
+    function throttle(fn, ms) {
+    let throttle = false;
+    let timer;
+      return (...args) => {
+        if(!throttle) { // first call gets through
+            fn.apply(this, args);
+            throttle = true;
+        } else { // all the others get throttled
+            if(timer) clearTimeout(timer); // cancel #2
+            timer = setTimeout(() => {
+              fn.apply(this, args);
+              timer = throttle = false;
+            }, ms);
+        }
+      };
+    }
+      // Attach click handler to the DT
+      const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+      for (const annoteDlNode of annoteDls) {
+        annoteDlNode.addEventListener('click', (event) => {
+          const clickedEl = event.target;
+          if (clickedEl !== selectedAnnoteEl) {
+            unselectCodeLines();
+            const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+            if (activeEl) {
+              activeEl.classList.remove('code-annotation-active');
+            }
+            selectCodeLines(clickedEl);
+            clickedEl.classList.add('code-annotation-active');
+          } else {
+            // Unselect the line
+            unselectCodeLines();
+            clickedEl.classList.remove('code-annotation-active');
+          }
+        });
+      }
+  const findCites = (el) => {
+    const parentEl = el.parentElement;
+    if (parentEl) {
+      const cites = parentEl.dataset.cites;
+      if (cites) {
+        return {
+          el,
+          cites: cites.split(' ')
+        };
+      } else {
+        return findCites(el.parentElement)
+      }
+    } else {
+      return undefined;
+    }
+  };
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const citeInfo = findCites(ref);
+    if (citeInfo) {
+      tippyHover(citeInfo.el, function() {
+        var popup = window.document.createElement('div');
+        citeInfo.cites.forEach(function(cite) {
+          var citeDiv = window.document.createElement('div');
+          citeDiv.classList.add('hanging-indent');
+          citeDiv.classList.add('csl-entry');
+          var biblioDiv = window.document.getElementById('ref-' + cite);
+          if (biblioDiv) {
+            citeDiv.innerHTML = biblioDiv.innerHTML;
+          }
+          popup.appendChild(citeDiv);
+        });
+        return popup.innerHTML;
+      });
+    }
+  }
+});
+</script>
+<nav class="page-navigation">
+  <div class="nav-page nav-page-previous">
+      <a href="./130-comunicacion.html" class="pagination-link" aria-label="La comunicación">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La comunicación</span></span>
+      </a>          
+  </div>
+  <div class="nav-page nav-page-next">
+      <a href="./150-bibliografia.html" class="pagination-link" aria-label="Bibliografía">
+        <span class="nav-page-text">Bibliografía</span> <i class="bi bi-arrow-right-short"></i>
+      </a>
+  </div>
+</nav>
+</div> <!-- /content -->
+
+
+
+
+</body></html>

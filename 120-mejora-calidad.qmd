@@ -13,15 +13,7 @@
 * Define el ámbito del problema: usa los términos que sean necesarios para delimitarlo con precisión.
 * La definición de un problema debe conseguir formularlo de forma que sea específico, medible, realizable, relevante y acotado en el tiempo (plazo)
 
-
-
 ## Estrategia de resolucion de problemas
-
-## R4DS
-
-Fuente: R4DS
-
-![](01-imagenes\data-science.png)
 
 ## DMAIC - SixSigma
 
