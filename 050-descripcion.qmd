@@ -1,15 +1,12 @@
 ---
 lang: es
 ---
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, fig.showtext = T)
+```
+
 # Resumir los datos
 
-Supongamos que queremos medir la altura de los alumnos de nuestra clase. Éste es nuestro grupo de estudiantes:
-
-![](01-imagenes/grupo1.jpg)
-
-Realizamos las medidas y registramos la altura de cada persona en una hoja de cálculo, siguiendo las buenas prácticas que hemos visto al estudiar los *datos ordenados*.
-
-Exploramos los datos con el histograma y el boxplot
 
 ### La media o promedio: una medida central
 
@@ -39,15 +36,15 @@ La fórmula para obtener la media en la hoja de cálculo, por ejemplo en la vers
 
 Para representar más cómodamente nuestros valores, dibujamos un punto a la altura de cada alumno,
 
-![](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/aula1_puntos-1.png)
+![](01-imagenes/aula1_puntos-1.png)
 
 y eliminamos del gráfico los dibujos de nuestros alumnos; así hemos convertido nuestro dibujo en un *diagrama de puntos*:
 
-![](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/aula1_puntos.png)
+![](01-imagenes/aula1_puntos.png)
 
 Para representar la media, aunque la media es un valor único, necesitamos añadir una columna a la derecha de nuestros datos, que rotulamos en la fila 1, celda C como `altura media`, e introducimos en cada una de las celdas desde `C2`hasta `C12`la fórmula del promedio, con el valor de nuestro rango de datos (Verificar hoja de cálculo). A continuación, designamos nuestro rango de datos para hacer un gráfico de puntos, y hacemos un *zoom* en los valores de manera que el eje Y se escale mejor entre los valores mínimo y máximo. Por último, hacemos unos ajustes en el formato para dibujar las líneas verticales que nos representan la distancia de cada valor a la media.
 
-![](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221115203450170.png)
+![](01-imagenes/image-20221115203450170.png)
 
 Si verificamos el eje $Y$ , veremos que en este gráfico hemos ajustado la escala respecto al gráfico anterior, situando el mínimo en $130$. Esto permite visualizar las diferencias con mucha más claridad. Hemos representado la media $\bar{x}$ como una línea, y hemos dibujado unas líneas que unen cada valor individual con la media, que se sitúa en el valor $149,55$, tal como calculamos más arriba.
 
@@ -55,7 +52,7 @@ Hemos representado la media como una serie de puntos unidos por una línea amari
 
 Representamos en azul nuestros valores, uniendo cada valor con la línea media mediante una línea de puntos vertical. A partir de ahora, por conveniencia, eliminaremos los puntos en la linea media, dejando sólo la línea.
 
-![Hoja de cálculo con los valores y el gráfico de puntos](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221115202048866.png)
+![Hoja de cálculo con los valores y el gráfico de puntos](01-imagenes/image-20221115202048866.png)
 
 Esta línea azul de puntos representa la *distancia* de cada valor a la media. Usaremos esta distancia para calcular una *distancia media*, que será una medida de la dispersión de nuestros valores.
 
@@ -67,15 +64,15 @@ Hemos visto que para describir un conjunto de números, en nuestro ejemplo, las 
 
 Veamos un caso extremo. Comparemos dos grupos, uno formado por individuos iguales y otro formado por diez individuos iguales y uno distinto. Para ello usaremos nuestra hoja de cálculo:
 
-![Dos grupos de valores con la misma media](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116105300331.png){.column-margin}
+![Dos grupos de valores con la misma media](01-imagenes/image-20221116105300331.png){.column-margin}
 
 ¿Podemos describir adecuadamente los valores de la altura de cada uno de los grupos utilizando el valor medio? Parece evidente que no, ya que a partir de diferentes valores de altura estamos obteniendo el mismo valor medio. Sin embargo, uno de los grupos *es más alto* que el otro, si no fuera por un sólo individuo que aparentemente distorsiona el cálculo. Podríamos incluir nuestro grupo original, y veremos que los tres grupos son diferentes, aunque su valor medio es idéntico.
 
-![Tres grupos de valores con la misma media](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116110426263.png){.column-margin}
+![Tres grupos de valores con la misma media](01-imagenes/image-20221116110426263.png){.column-margin}
 
 Si nos ayudamos de un gráfico equivalente al que hemos utilizado antes, vemos estas diferencias con claridad:
 
-![Gráfico de tres grupos de valores](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116110925933.png)
+![Gráfico de tres grupos de valores](01-imagenes/image-20221116110925933.png)
 
 Aunque el valor medio de estos tres grupos de datos es idéntico, parece claro que los tres grupos son muy distintos en su composición, y por lo tanto la *media* no es suficiente para describir con suficiente precisión cada uno de los grupos. Necesitamos un valor adicional, que nos indique de qué forma los valores se alejan del valor medio. Para ello, vamos a introducir un concepto nuevo: la *medida de la dispersión*, que nos indica precisamente la distancia de los valores al valor medio, e introduciremos también la *distribución de frecuencias*, que nos permite representar *la forma* en la que se distribuyen nuestros valores.
 
@@ -91,7 +88,7 @@ Ahora que conocemos cómo calcular un valor resumen de un conjunto de datos, pod
 
 Usemos la hoja de cálculo para ello:
 
-![Tres grupos de valores en la hoja de cálculo](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116113404185.png)
+![Tres grupos de valores en la hoja de cálculo](01-imagenes/image-20221116113404185.png)
 
 Algo parece que no está funcionando aquí: el promedio de las diferencias es cero en los tres casos; no podemos usar este cálculo para calcular la dispersión. Pero esto es esperable: ya que la media es un valor central, como hemos visto antes, la suma de las diferencias de todos los valores respecto de su media debe ser forzosamente cero, y esto es lo que estamos obteniendo.
 
@@ -99,7 +96,7 @@ Para encontrar una solución, vamos a recurrir al viejo teorema de Pitágoras, q
 h^2= a^2+b^2
 $$ Esta fórmula es la base del cálculo de la distancia entre dos puntos:
 
-![Distancia entre dos puntos](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116114659713.png){.column-margin}
+![Distancia entre dos puntos](01-imagenes/image-20221116114659713.png){.column-margin}
 
 $$
 d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
@@ -119,7 +116,7 @@ Es importante resaltar que la desviación típica *es una medida de la distancia
 
 Con estos nuevos hallazgos, recalculamos nuestra hoja de cálculo:
 
-![Tres grupos de valores en la hoja de cálculo, con la misma media y distinta desviación típica](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116123915941.png)
+![Tres grupos de valores en la hoja de cálculo, con la misma media y distinta desviación típica](01-imagenes/image-20221116123915941.png)
 
 Vamos a analizar con detalle esta tabla.
 
@@ -131,7 +128,7 @@ En la siguiente columna a la derecha, para los tres grupos (columnas `E`, `I`y `
 
 Por último, en la fila `15`calculamos la desviación típica de ambas formas, con la fórmula de la hoja de cálculo para la **desviación típica poblacional** (columnas `B`, `F`y `J`), que Excel llama **desviación estándar**, y como la raíz cuadrada del promedio calculado antes (columnas `E`, `I`y `M`). De nuevo, ambos valores coinciden exactamente, como esperamos.
 
-![Gráfico con tres conjuntos de datos con la misma media y diferente desviación típica](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116135458643.png)
+![Gráfico con tres conjuntos de datos con la misma media y diferente desviación típica](01-imagenes/image-20221116135458643.png)
 
 Ahora sí tenemos una forma más completa de describir nuestro conjunto de valores. Aunque el valor medio es el mismo en los tres casos, la *dispersión* de los valores es muy distinta.
 
@@ -147,17 +144,17 @@ En el tercer grupo todos los valores son diferentes, y no podemos decir nada esp
 
 En ocasiones nos enfrentamos a conjuntos de datos con valores de media y desviación típica idénticos o muy parecidos, pero que en realidad son muy diferentes. Veamos un ejemplo, semejante a los que hemos visto hasta ahora.
 
-![Hoja de cálculo con dos conjuntos de datos diferentes, con la misma media y desviación típica](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116164339577.png){.column-margin}
+![Hoja de cálculo con dos conjuntos de datos diferentes, con la misma media y desviación típica](01-imagenes/image-20221116164339577.png){.column-margin}
 
 (cambiar a caso 3)
 
-![Diagrama de puntos de las alturas de los alumnos, con indicación del valor medio](01-imagenes%5Cmedia-balanza.png)
+![Diagrama de puntos de las alturas de los alumnos, con indicación del valor medio](01-imagenes/media-balanza.svg)
 
 ![Diagrama de puntos indicando la variabilidad](01-imagenes/plot_varianzas.png)
 
 En este caso, vemos que tanto la media como la desviación típica son idénticos, y sin embargo los datos son muy diferentes, tal como nos muestra el gráfico de dispersión que hemos estado utilizando:
 
-![Gráfico con dos conjuntos de datos diferentes, con la misma media y desviación típica](D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116164430210.png)
+![Gráfico con dos conjuntos de datos diferentes, con la misma media y desviación típica](01-imagenes/image-20221116164430210.png)
 
 La existencia de valores anormales o extremos muestra una de las debilidades de la media y la desviación típicas como *descriptores* de una población: ambos parámetros son muy sensibles a los casos extremos. En realidad, sólo deberíamos utilizar la media y la desviación típica para describir un conjunto de datos cuando estamos seguros de que *la distribución de estos datos* tienen una *forma* determinada, la de la **campana de Gauss**. Lo cual nos lleva al siguiente capítulo: las **distribuciones de frecuencias**.
 

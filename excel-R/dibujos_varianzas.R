@@ -2,7 +2,7 @@ library(tidyverse)
 library(readxl)
 library(ggdist)
 
-df <- read_excel("dibujos_varianza.xlsx","Total_BD_2")
+df <- read_excel("excel-R/dibujos_varianza.xlsx","Total_BD_2")
 df2 <- pivot_longer(df, !id, names_to="analista", values_to="extracto_seco_total") 
 
 qqnorm(df$analista1)
@@ -163,3 +163,4 @@ ggsave("plot_medias.png", plot = g,
 ggsave("plot_medias.pdf", plot = g, 
        device = cairo_pdf,
        width = 6, height = 6, dpi = 150) 
+

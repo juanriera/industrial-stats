@@ -1,60 +1,298 @@
 ---
 lang: es
+format: 
+  html:
+    encoding: 'latin1'
 ---
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = TRUE, warning = FALSE, fig.showtext = T)
+```
 
 # La exploración de los datos
 
+En este capítulo veremos cómo describir un conjunto de datos de forma visual, utilizando diversas herramientas gráficas.
+
+Supongamos que queremos medir la altura de un grupo de alumnos de nuestra clase. Éste es nuestro grupo:
+
+![](01-imagenes/grupo1.jpg)
+
+Realizamos la medida de altura de cada persona y registramos los valores en una hoja de cálculo, siguiendo las buenas prácticas que hemos visto al estudiar los *datos ordenados*.
+
+![](01-imagenes/aula1.png)
+
+Guardaremos esta tabla en un archivo CSV y lo importamos a un dataframe de R para su uso a lo largo del capítulo. Utilizamos la opción `fileEncoding='latin1'` para importar correctamente los caracteres acentuados.
+
+```{r message=FALSE, warning=FALSE}
+df <- read.csv2("excel-R/aula1.csv",fileEncoding='latin1')
+df
+```
+
+## El diagrama de tallo y hojas (*stem and leaf plot* o *stemplot*)
+
+El *stemplot* recibe este nombre porque el dibujo que resulta se asemeja a un tallo el que le salen las hojas que son los datos individuales. Para construirlo, quitamos el último dígito a la derecha de nuestros valores y colocamos verticalmente los valores resultantes ordenándolos de menor a mayor, y evitando las repeticiones. Paraevitar errores en la escala, debemos incluir los valores intermedios aunque no haya ninguno en nuestros datos (en el ejemplo, el valor 16 que correspondería a los 160). Esto forma el "tallo" de nuestro diagrama:
+
+![](01-imagenes/aula1-stemplot-paso1.png)
+
+A continuación añadimos las hojas en la celda a la derecha, que consisten en los valores que hemos "cortado" de nuestro árbol, uno al lado de otro, incluyendo esta vez los valores repetidos, en orden de menor a mayor. Por ejemplo, para el valor 135, descartamos 13 y utlizamos 5; para el valor 138, descartamos 13 y utilizamos 8, y así sucesivamente para todos los valores.
+
+![](01-imagenes/aula1-stemplot-paso2.png)
+
+El diagrama nos dice que nuestros valores son 135, 138, 140, 140, 145, ... Podemos ver que los valores en torno a 150 cm son los más frecuentes, y que hay un valor alto (175) que se separa un poco del resto.
+
+R permite realizar el *stemplot* mediante la función $stem()$ de forma automática:
+
+```{r message=FALSE, warning=FALSE}
+stem(df$altura_cm)
+```
+
+El *stemplot* es muy sencillo de hacer y nos da una visión rápida de la *distribución* de nuestros valores, así como de la posible existencia de valores que se separan del conjunto. Estos valores alejados, que se conocen en inglés como *outliers*, tienen mucha importancia en el analisis e interpretación de los datos, como veremos más adelante.
+
+La ventaja principal del *stemplot* es que mantiene los valores originales de las observaciones, y puede hacerse fácilmente con bolígrafo y papel, sin necesidad de más herramientas.
+
 ## El diagrama de puntos o *dotplot*
 
-El diagrama de tallo y hojas
+Otro gráfico que permite visualizar el conjunto de valores es el diagrama de puntos llamado *dotplot*. Podemos hacer este gráfico con R utilizando la función `ggplot()`, añadiendo la geometria `geom_dotplot()`:
 
-Construcción en Excel
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+ggplot(df, aes(x=altura_cm)) +
+  geom_dotplot()
+```
 
 ## La distribución de frecuencias
 
-Si agrupamos nuestros valores por intervalos, y contamos el número de observaciones que aparecen en cada intervalo, obtenemos una *distribución de frecuencias*, que puede ser *absoluta* o *relativa* según que sus valores sean un recuento simple de los valores o el porcentaje que corresponde al número de observaciones en cada clase respecto al total de observaciones
+Si agrupamos nuestros valores por intervalos, y contamos el número de observaciones que aparecen en cada intervalo, obtenemos una *distribución de frecuencias*, que puede expresarse de forma *absoluta* o *relativa*. 
 
-Las formas más habituales de representar una distribución de frecuencias son la tabla de frecuencias o bien un gráfico de barras o histograma.
+- La **frecuencia absoluta** es un *recuento simple* de cuántas veces aparece cada valor en un conjunto de datos. 
+- La **frecuencia relativa** nos muestra la *proporción* de cada valor frente al total. Puede expresarse como fracción (entre 0 y 1) o como porcentaje (respecto a 100)
 
-El gráfico a continuación muestra una distribución de frecuencias absoluta, calculada mediante una tabla dinámica de Excel, junto con su tabla de frecuencias absolutas.
+La tabla a continuación muestra una distribución de frecuencias, calculada mediante una tabla dinámica de Excel.
 
-![](01-imagenes/image-20221115205524355.png)
+![](01-imagenes/aula1-td-frec.png)
 
-[Statistical Thinking - R Workflow (fharrell.com)](https://www.fharrell.com/post/rflow/#descriptive-statistics)
+También podemos calcular las frecuencias absolutas y relativas en R; en este caso, dado que los intervalos se han calulado de forma ligeramente diferente, las frecuencias calculadas son también ligeramente diferentes de las que hemos obtenido en Excel.
 
-Tables can summarize frequency distributions of categorical variables, and measures of central tendency, selected quantiles, and measures of spread for continuous variables. When there is a truly discrete baseline variable one can stratify on it and compute the above types of summary measures. Tables fail completely when one attempts to stratify on a continuous baseline variable after grouping it into intervals. This is because categorization of continuous variables [is a bad idea](https://discourse.datamethods.org/t/categorizing-continuous-variables). Among other problems,
+```{r message=FALSE, warning=FALSE}
+df |>
+  mutate (grupo = cut_interval(altura_cm, 4)) |>
+  group_by(grupo) |>
+  summarise (frec_abs = n()) |>
+  mutate(frec_rel = frec_abs / sum(frec_abs))
+```
 
--   categorization misses relationships occurring in an interval (this happens most often when an interval is wide such as an outer quartile)
--   categorization loses information and statistical power because within-interval outcome heterogeneity is ignored and between-interval ordering is not utilized
--   intervals are arbitrary, and changing interval boundaries can significantly change the apparent relationship
--   with cutpoints one can easily manipulate results; one can find a set of cutpoints that results in a positive relationship and a different set [that results in a negative relationship](https://www.tandfonline.com/doi/abs/10.1080/09332480.2006.10722771)
+R utiliza los símbolos `(` y `[` para definir los intervalos, tal como se hace en matemáticas.
 
-Frecuencia absoluta y frecuencia relativa -\> probabilidad, area bajo histograma y área bajo la curva
+-   Intervalo **abierto**: El símbolo `(` se utiliza para denotar un intervalo abierto. Por ejemplo,el intervalo $(a, b)$ representa todos los números reales mayores que $a$ y menores que $b$ (excluye los valores $a$ y $b$).
+-   Intervalo **cerrado o semiabierto**:El símbolo `[` se utiliza para denotar un intervalo cerrado o semiabierto. Por ejemplo:
+    -   $[a, b]$ representa todos los números reales mayores o iguales que $a$ y menores o iguales que $b$ (incluye $a$ y $b$).
+    -   $[a, b)$ representa todos los números reales mayores o iguales que $a$ y menores que $b$ (incluye $a$, pero excluye $b$).
 
 ## Diagramas de barra
+Cuando nuestra variable es *discreta*, podemos representar las frecuencias de cada valor de forma gráfica utilizando un diagrama de barras. Este diagrama utiliza barras rectangulares para representar la frecuencia de cada categoría. 
 
-## Histogramas
+Incluir ejemplo de tabla discreta: por ejemplo, utilización de fermentos o votaciones
+
+
+## Histograma
+
+Un histograma es un diagrama que utiliza las barras rectangulares para hacer un gráfico de la distribución de valores continuos, agrupados en clases. La anchura de esos grupos o clases (en inglés, *bins*), puede variarse, lo que cambia el perfil del gráfico obtenido.
+
+En Excel, si representamos las frecuencias absolutas de nuestra tabla dinámica anterior, el diagrama resultante sería éste:
+
+![](01-imagenes/aula1-diag-barras.png)
+
+En el caso de la tabla dinámica, Excel no construye el diagrama de barras a partir de la tabla de los valores originales, sino de las categorías de la tabla dinámica. Dado que estas categorías (los grupos que ha formado la tabla dinámica) son discretas, Excel utiliza el resultado de la tabla dinámica para hacer el gráfico con un diagrama de barras.
+
+El histograma muestra su utilidad cuando representamos la distribución de un conjunto de valores más grande que nuestros once alumnos. Veamos su aplicación a los datos diarios de una fabricación de queso camembert a lo largo de un año.
+
+La tabla de datos tiene esta estructura:
+
+![](01-imagenes/camembert-tabla-datos.png)
+
+Analicemos los datos con Excel. Los pasos son:
+
+1. Construir la tabla dinámica
+2. Agrupar los datos
+3. Insertar el gráfico a partir de la tabla
+
+Con una agrupación de datos en intervalos de 1, esta es nuestra tabla dinámica:
+
+![](01-imagenes/camembert-td.png)
+
+A partir de esta tabla, construimos nuestro histograma
+
+![](01-imagenes/camembert-histo1.png)
+
+Si nuestro intervalo de clase fuese de 2 puntos de extracto seco en vez de 1, el histograma tendría este aspecto:
+
+
+![](01-imagenes/camembert-histo2.png)
+
+Si por el contrario hubiésemos agrupado en intervalos de 0,5 puntos, el histograma sería este:
+
+![](01-imagenes/camembert-histo3.png)
+
+La decisión de agrupar las variables continuas en intervalos de diferentes anchuras tiene efectos sobre el aspecto del gráfico; no obstante, debemos ser capaces de interpretar que la distribución de los valores es la misma en los tres casos: hay una mayoría de casos con valores entre 46 y 48, y muy pocos casos con valores muy bajos o muy altos. En este caso, la distribución de los valores es aproximadamente simétrica, y se reparten alrededor de una mayoría de valores centrales.
+
+En otras ocasiones, nos encontramos con datos que son asimétricos: hay una mayoría de valores bajos o bien de valores altos. Veamos un caso: los recuentos bacterianos de bacterias coliformes, que tenemos en la última columna ala derecha de nuestra tabla.
+
+![](01-imagenes/camembert-graf-colis.png)
+
+En este caso, vemos que la mayoría de los casos tienen valor cero. Es el caso de los recuentos de bacterias contaminantes, en el que la mayoría de los análisis tienen recuentos cero o muy bajos, y sólo en pocos casos tienen valores altos. Veremos con más detalle cómo tratar estas distribuciones cuando hablemos de las distribuciones de probabilidad, en capítulos posteriores.
+
+Podemos repetir la tabla de frecuencias y el histograma en R.
+
+```{r message=FALSE, warning=FALSE}
+library(tidyverse)
+df <- read.csv2("excel-R/camembert.csv")
+head(df)
+```
+
+```{r message=FALSE, warning=FALSE}
+df |>
+  mutate (grupo = cut_width(est, width=1, boundary=1)) |>
+  group_by(grupo) |>
+  summarise (frec_abs = n()) |>
+  mutate(frec_rel = frec_abs / sum(frec_abs))
+```
+
+R tiene una función básica, la función `hist()`, que construye el histograma directamente sin necesidad de hacer previamente ua tabla de frecuencias (en realidad, la tabla de frecuencias se calcula internamente). 
+
+```{r message=FALSE, warning=FALSE}
+#| label: fig-histo1
+#| fig-cap: "Ejemplos de histogramas"
+#| fig-subcap: 
+#|   - "Función básica de R"
+#|   - "Función ggplot()"
+#| layout-ncol: 2
+hist(df$est)
+
+df |>
+  ggplot(aes(x=est)) +
+    geom_histogram()
+```
+
+En general, son más útiles las opciones de la función `ggplot()`, en la biblioteca `tidyverse`.
+
+En los histogramas de los recuentos bacterianos,utilizamos una opción para aumentar el número de barras que queremos en el histograma: `breaks=` en la función base, `bins=` en `ggplot()`:
+
+
+```{r}
+#| label: fig-histo2
+#| fig-cap: "Ejemplos de histogramas"
+#| fig-subcap: 
+#|   - "Función básica de R"
+#|   - "Función ggplot()"
+#| layout-ncol: 2
+
+hist(df$coliformes, breaks=50)
+
+df |>
+  ggplot(aes(x=coliformes)) +
+    geom_histogram(bins=50)
+```
+
+En casos de distribuciones muy asimétricas, a veces es conveniente aplicar una transformación a los datos, tal como el logaritmo decimal, mediante la función `log10()`; esto facilita la interpretación del gráfico:
+
+```{r}
+df |>
+  ggplot(aes(x=log10(coliformes+1))) +
+    geom_histogram(bins=50)
+```
 
 ## Gráficos de densidad
 
-## Diagramas de caja (*box plot*)
+Un gráfico de densidad en R es una representación visual suavizada de la distribución de un conjunto de datos. A diferencia de los histogramas, que dividen los datos en intervalos y cuentan las frecuencias, los gráficos de densidad utilizan técnicas estadísticas no paramétricas para estimar la función de densidad de probabilidad.
 
-[Box Plot with Minitab - Lean Sigma Corporation](https://www.leansigmacorporation.com/box-plot-with-minitab/)
+Excel no permite la representación de los gráficos de densidad; en R pueden hacerse con la función `ggplot()`simplemente añadiendo la geometría `geom_density()`
 
-![](01-imagenes/boxplot-minitab.png)
+```{r}
+#| label: fig-charts
+#| fig-cap: "Ejemplos de diagramas de densidad"
+#| fig-subcap: 
+#|   - "EST"
+#|   - "coliformes"
+#| layout-ncol: 2
 
-![](01-imagenes/boxplot.png)
+df |>
+  ggplot(aes(x=est)) +
+    geom_density()
 
-[Boxplot \| the R Graph Gallery (r-graph-gallery.com)](http://r-graph-gallery.com/boxplot.html)
+df |>
+  ggplot(aes(x=log(coliformes+1))) +
+    geom_density()
+```
 
-### Gráficos de series
-Series en el tiempo: líneas
-Diferencia de uso entre gráfico de líneas y de barras
+Podemos representar simultáneamente el histograma y la función de densidad:
 
-### Otros gráficos
+```{r}
+df |>
+  ggplot(aes(x=est)) +
+    geom_histogram(aes(y = ..density..), bins = 20, fill = "lightblue", color = "black") +
+    geom_density(color = "red", size = 1) +
+    labs(title = "Histograma y densidad", x = "Valores", y = "Densidad")
+```
+La ventaja de los gráficos de densidad es que como no tenemos que fraccionar los datos en intervalos arbitrarios, no estamos afectados por el efecto visual de la anchura de estos intervalos. También hay otras ventajas desde el punto de vista estadístico, que veremos al hablar de las distribuciones de probabilidad.
 
-dotplot
+## Diagramas de caja (*boxplot*)
+Este gráfico fue creado por el estadístico John Tukey en 1977, y es una herramienta fundamental en la exploración de datos. Se basa en un grupo de medidas que se utiliza ampliamente en la descripción de conjuntos de datos, el conjunto de **cuartiles**. Si dividimos un grupo de datos en cuatro partes iguales, mediante **tres** puntos de corte, llamamos **primer cuartil** o $Q1$ al valor que se situa en el 25%; **segundo cuartil**, o $Q2$, al valor que se sitúa en el centro (50%), y **tercer cuartil**, o $Q3$, al punto que se situa en el 75% de los datos. A estos tres valores añadimos el mínimo y el máximo, y tenemos un conjunto de **cinco números** que nos permiten describir la forma de la distribución de datos con precisión. El segundo cuartil ($Q2$), que corresponde al 50% de los datos, se conoce habitualmente como **mediana**. El valor resultante de restar $Q3-Q1$ es lo que se conoce como **rango intercuartil** o $IQR$, y es una medida de la dispersión de la distribución de datos (mide la amplitud de la distribución).
 
-[Dot plot --- geom_dotplot • ggplot2 (tidyverse.org)](https://ggplot2.tidyverse.org/reference/geom_dotplot.html)
+El **diagrama de caja**, también conocido como *boxplot*, es un gráfico que permite resumir las características principales de un conjunto de datos utilizando estos cinco números, tal como se explica a continuación. Sus ventajas son:
 
-Datos de futbol: distribución asimétrica ver también en distribuciones de probabilidad --> modelos
+- Muestra la mediana y los cuartiles (Q1 y Q3) de los datos.
+- Permite identificar la simetría de la distribución: si la mediana no está en el centro, la distribución no es simétrica.
+- Permite detectar posibles valores atípicos, representando los valores atípicos (*outliers*) que están lejos del resto de los datos (un valor es atípico si está más allá de \(Q3 + 1.5 \cdot IQR\) o \(Q1 - 1.5 \cdot IQR\).
+
+La construcción de un diagrama de caja es como sigue:
+
+![](01-imagenes/boxplot.svg)
+
+Microsoft Excel no dispone de un diseño de gráficos de caja utilizable, por lo que recurriremos siempre a R para realizarlos.
+
+Como casi siempre, hay una función de base que dibuja un *boxplot* y también una geometría de `ggplot()`que lo hace: `geom_boxplot()`, con muchas más opciones de diseño y formato que la opción de base.
+
+```{r}
+#| label: fig-boxplot
+#| fig-cap: "Boxplot"
+#| fig-subcap: 
+#|   - "Función básica de R"
+#|   - "Con ggplot()"
+#| layout-ncol: 2
+
+boxplot(df$est)
+
+df |>
+  ggplot(aes(y=est)) +
+    geom_boxplot()
+```
+
+Resulta muy útil comprender la relación entre el *boxplot* y el histograma para entender la distribución de los datos. En la gráfica siguiente se representan ambos simultáneamente
+
+```{r}
+df |>
+ggplot(aes(x = est)) +
+  geom_histogram(fill = "lightblue", color = "black", bins = 20, alpha = 0.7) +
+  geom_boxplot(width = 2, fill = "darkgrey", alpha = 0.7, position = position_nudge(y = -2)) +
+  labs(title = "Histograma y Boxplot", y = "Frecuencias")
+
+```
+
+```{r}
+df |>
+ggplot(aes(x = log10(coliformes+1))) +
+  geom_histogram(fill = "lightblue", color = "black", bins = 20, alpha = 0.7) +
+  geom_boxplot(width = 4, fill = "darkgrey", alpha = 0.7, position = position_nudge(y = -4)) +
+  labs(title = "Histograma y Boxplot", y = "Frecuencias")
+
+```
+
+
+
+## Gráficos de series
+
+Series en el tiempo: líneas Diferencia de uso entre gráfico de líneas y de barras
+
+## Otros gráficos
+
+Datos de futbol: distribución asimétrica ver también en distribuciones de probabilidad --\> modelos

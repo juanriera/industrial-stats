@@ -150,7 +150,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./020-herramientas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -272,10 +272,6 @@ window.Quarto = {
 </header>
 
 
-<p>Supongamos que queremos medir la altura de los alumnos de nuestra clase. Éste es nuestro grupo de estudiantes:</p>
-<p><img src="01-imagenes/grupo1.jpg" class="img-fluid"></p>
-<p>Realizamos las medidas y registramos la altura de cada persona en una hoja de cálculo, siguiendo las buenas prácticas que hemos visto al estudiar los <em>datos ordenados</em>.</p>
-<p>Exploramos los datos con el histograma y el boxplot</p>
 <section id="la-media-o-promedio-una-medida-central" class="level3 page-columns page-full" data-number="5.0.1">
 <h3 data-number="5.0.1" class="anchored" data-anchor-id="la-media-o-promedio-una-medida-central"><span class="header-section-number">5.0.1</span> La media o promedio: una medida central</h3>
 <p>Una primera posibilidad es suponer que en nuestro grupo de once personas no hubiese variación: que todos ellos tuviesen la misma altura. Si fuese así, podemos encontrar un valor <span class="math inline">\(x\)</span> de altura que, repetido once veces, sea equivalente a la suma de las alturas de todos ellos. Si representamos cada alumno con una letra, la suma de sus alturas sería: <span class="math display">\[
@@ -298,17 +294,17 @@ x = \frac{a+b+c+d+e+f+g+h+i+j+k}{11}
 \]</span> Utilicemos una hoja de cálculo para guardar nuestros valores.</p>
 <p>La fórmula para obtener la media en la hoja de cálculo, por ejemplo en la versión en español de <em>Microsoft Excel</em>, es <code>=PROMEDIO(...)</code>, donde los puntos suspensivos deben sustituirse por el rango a calcular. En nuestro ejemplo, introduciríamos la fórmula en la celda <code>B13</code>como <code>=PROMEDIO(B2..B12)</code> (Para más detalles, verificar la hoja Excel adjunta).</p>
 <p>Para representar más cómodamente nuestros valores, dibujamos un punto a la altura de cada alumno,</p>
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/aula1_puntos-1.png" class="img-fluid"></p>
+<p><img src="01-imagenes/aula1_puntos-1.png" class="img-fluid"></p>
 <p>y eliminamos del gráfico los dibujos de nuestros alumnos; así hemos convertido nuestro dibujo en un <em>diagrama de puntos</em>:</p>
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/aula1_puntos.png" class="img-fluid"></p>
+<p><img src="01-imagenes/aula1_puntos.png" class="img-fluid"></p>
 <p>Para representar la media, aunque la media es un valor único, necesitamos añadir una columna a la derecha de nuestros datos, que rotulamos en la fila 1, celda C como <code>altura media</code>, e introducimos en cada una de las celdas desde <code>C2</code>hasta <code>C12</code>la fórmula del promedio, con el valor de nuestro rango de datos (Verificar hoja de cálculo). A continuación, designamos nuestro rango de datos para hacer un gráfico de puntos, y hacemos un <em>zoom</em> en los valores de manera que el eje Y se escale mejor entre los valores mínimo y máximo. Por último, hacemos unos ajustes en el formato para dibujar las líneas verticales que nos representan la distancia de cada valor a la media.</p>
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221115203450170.png" class="img-fluid"></p>
+<p><img src="01-imagenes/image-20221115203450170.png" class="img-fluid"></p>
 <p>Si verificamos el eje <span class="math inline">\(Y\)</span> , veremos que en este gráfico hemos ajustado la escala respecto al gráfico anterior, situando el mínimo en <span class="math inline">\(130\)</span>. Esto permite visualizar las diferencias con mucha más claridad. Hemos representado la media <span class="math inline">\(\bar{x}\)</span> como una línea, y hemos dibujado unas líneas que unen cada valor individual con la media, que se sitúa en el valor <span class="math inline">\(149,55\)</span>, tal como calculamos más arriba.</p>
 <p>Hemos representado la media como una serie de puntos unidos por una línea amarilla. Tal como hemos visto cuando hacíamos la descripción de este parámetro, representamos un conjunto de valores idénticos, ya que según hemos visto, la media <strong>es aquel valor tal que repetido tantas veces como individuos tenemos, es equivalente a la suma de los valores reales que hemos obtenido</strong></p>
 <p>Representamos en azul nuestros valores, uniendo cada valor con la línea media mediante una línea de puntos vertical. A partir de ahora, por conveniencia, eliminaremos los puntos en la linea media, dejando sólo la línea.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221115202048866.png" class="img-fluid figure-img"></p>
+<p><img src="01-imagenes/image-20221115202048866.png" class="img-fluid figure-img"></p>
 <figcaption>Hoja de cálculo con los valores y el gráfico de puntos</figcaption>
 </figure>
 </div>
@@ -320,20 +316,20 @@ x = \frac{a+b+c+d+e+f+g+h+i+j+k}{11}
 
 <div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116105300331.png" class="img-fluid figure-img"></p>
+<p><img src="01-imagenes/image-20221116105300331.png" class="img-fluid figure-img"></p>
 <figcaption>Dos grupos de valores con la misma media</figcaption>
 </figure>
 </div></div><p>¿Podemos describir adecuadamente los valores de la altura de cada uno de los grupos utilizando el valor medio? Parece evidente que no, ya que a partir de diferentes valores de altura estamos obteniendo el mismo valor medio. Sin embargo, uno de los grupos <em>es más alto</em> que el otro, si no fuera por un sólo individuo que aparentemente distorsiona el cálculo. Podríamos incluir nuestro grupo original, y veremos que los tres grupos son diferentes, aunque su valor medio es idéntico.</p>
 
 <div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116110426263.png" class="img-fluid figure-img"></p>
+<p><img src="01-imagenes/image-20221116110426263.png" class="img-fluid figure-img"></p>
 <figcaption>Tres grupos de valores con la misma media</figcaption>
 </figure>
 </div></div><p>Si nos ayudamos de un gráfico equivalente al que hemos utilizado antes, vemos estas diferencias con claridad:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116110925933.png" class="img-fluid figure-img"></p>
+<p><img src="01-imagenes/image-20221116110925933.png" class="img-fluid figure-img"></p>
 <figcaption>Gráfico de tres grupos de valores</figcaption>
 </figure>
 </div>
@@ -349,7 +345,7 @@ x = \frac{a+b+c+d+e+f+g+h+i+j+k}{11}
 <p>Usemos la hoja de cálculo para ello:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116113404185.png" class="img-fluid figure-img"></p>
+<p><img src="01-imagenes/image-20221116113404185.png" class="img-fluid figure-img"></p>
 <figcaption>Tres grupos de valores en la hoja de cálculo</figcaption>
 </figure>
 </div>
@@ -360,7 +356,7 @@ h^2= a^2+b^2
 
 <div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116114659713.png" class="img-fluid figure-img"></p>
+<p><img src="01-imagenes/image-20221116114659713.png" class="img-fluid figure-img"></p>
 <figcaption>Distancia entre dos puntos</figcaption>
 </figure>
 </div></div><p><span class="math display">\[
@@ -378,7 +374,7 @@ d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
 <p>Con estos nuevos hallazgos, recalculamos nuestra hoja de cálculo:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116123915941.png" class="img-fluid figure-img"></p>
+<p><img src="01-imagenes/image-20221116123915941.png" class="img-fluid figure-img"></p>
 <figcaption>Tres grupos de valores en la hoja de cálculo, con la misma media y distinta desviación típica</figcaption>
 </figure>
 </div>
@@ -389,7 +385,7 @@ d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
 <p>Por último, en la fila <code>15</code>calculamos la desviación típica de ambas formas, con la fórmula de la hoja de cálculo para la <strong>desviación típica poblacional</strong> (columnas <code>B</code>, <code>F</code>y <code>J</code>), que Excel llama <strong>desviación estándar</strong>, y como la raíz cuadrada del promedio calculado antes (columnas <code>E</code>, <code>I</code>y <code>M</code>). De nuevo, ambos valores coinciden exactamente, como esperamos.</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116135458643.png" class="img-fluid figure-img"></p>
+<p><img src="01-imagenes/image-20221116135458643.png" class="img-fluid figure-img"></p>
 <figcaption>Gráfico con tres conjuntos de datos con la misma media y diferente desviación típica</figcaption>
 </figure>
 </div>
@@ -405,13 +401,13 @@ d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
 
 <div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116164339577.png" class="img-fluid figure-img"></p>
+<p><img src="01-imagenes/image-20221116164339577.png" class="img-fluid figure-img"></p>
 <figcaption>Hoja de cálculo con dos conjuntos de datos diferentes, con la misma media y desviación típica</figcaption>
 </figure>
 </div></div><p>(cambiar a caso 3)</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="01-imagenes\media-balanza.png" class="img-fluid figure-img"></p>
+<p><img src="01-imagenes/media-balanza.svg" class="img-fluid figure-img"></p>
 <figcaption>Diagrama de puntos de las alturas de los alumnos, con indicación del valor medio</figcaption>
 </figure>
 </div>
@@ -424,7 +420,7 @@ d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
 <p>En este caso, vemos que tanto la media como la desviación típica son idénticos, y sin embargo los datos son muy diferentes, tal como nos muestra el gráfico de dispersión que hemos estado utilizando:</p>
 <div class="quarto-figure quarto-figure-center">
 <figure class="figure">
-<p><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formaci%C3%B3n/001-Libro%20estadistica/01-imagenes/image-20221116164430210.png" class="img-fluid figure-img"></p>
+<p><img src="01-imagenes/image-20221116164430210.png" class="img-fluid figure-img"></p>
 <figcaption>Gráfico con dos conjuntos de datos diferentes, con la misma media y desviación típica</figcaption>
 </figure>
 </div>

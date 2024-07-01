@@ -2,7 +2,7 @@ library(tidyverse)
 library(readxl)
 library(ggdist)
 
-df <- read_excel("dibujos_varianza.xlsx","Total_BD_2")
+df <- read_excel("excel-R/dibujos_varianza.xlsx","Total_BD_2")
 df2 <- pivot_longer(df, !id, names_to="analista", values_to="est") 
 
 qqnorm(df$analista1)
@@ -45,7 +45,7 @@ df2 |>
   )
 
 ################################################################
-df2 <- read_csv2("analistas_simulacion.csv")
+df2 <- read_csv2("excel-R/analistas_simulacion.csv")
 est_medio <- mean(df2$est)
 df2 |>
   ggplot(aes( x = est, y = muestra)) +
