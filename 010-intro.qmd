@@ -15,7 +15,7 @@ Hay muchos aspectos del trabajo industrial que implican recoger datos, trabajar 
 Los métodos estadísticos nos ayudan a describir y comprender la **variabilidad**. Cuando hablamos de variabilidad queremos decir que sucesivas observaciones de un mismo proceso o sistema no dan exactamente los mismos resultados. Por ejemplo, el consumo de gasolina de un coche no es siempre igual, sino que varía de manera considerable. Esta variación depende de muchos factores, como la forma de conducir, el tipo de carretera, la situación del propio vehículo (presión de neumáticos, compresión del motor, ...), la marca de la gasolina, el octanaje, o incluso las condiciones meteorológicas. Todos estos factores son causas de **variabilidad** en el consumo de gasolina. La estadística nos permite analizar estos **factores** y determinar cuáles son los más importantes o tienen mayor impacto en el consumo; una vez conocidos, podemos actuar sobre ellos.
 
 ::: {.callout-important .content-visible when-format="html"}
-El objetivo principal de la mejora industrial es la **reducción de la variabilidad**.
+El objetivo principal de la **mejora industrial** es la **reducción de la variabilidad**.
 :::
 
 En este libro aprenderemos a utilizar herramientas diversas, tanto estadísticas como de la ciencia de datos, para realizar nuestro análisis. Para aprender de los datos necesitamos más que los simples números; para interpretarlos necesitaremos siempre el conocimiento del proceso industrial que estamos analizando.En un análisis de la producción de un producto lácteo, por ejemplo, los números significan poco sin un conocimiento del proceso; los valores de pH, temperatura o concentración de lactosa influyen en el resultado del proceso de forma diferente. Los datos son números dentro de un contexto, y necesitamos conocer este contexto para dar sentido a los números.
@@ -54,7 +54,7 @@ En el entorno industrial [@montgomery2011], los datos provienen casi siempre de 
 -   Estudio observacional
 -   Experimento diseñado
 
-Un buen sistema de recogida de datos facilitará el estudio posterior. Si ponemos poco cuidado en la toma de datos y en la forma de guardarlos, nos encontraremos después con problemas complicados de resolver en la fase de análisis o en la de interpretación , y, en algunos casos, estos problemas serán imposibles de resolver.
+Un buen sistema de recogida de datos facilitará el estudio posterior. Si ponemos poco cuidado en la toma de datos y en la forma de guardarlos, nos encontraremos después con dificultades en la fase de análisis o en la de interpretación; en algunos casos, estas dificultades se convertirán en problemas imposibles de resolver.
 
 ### Estudios retrospectivos o históricos
 
@@ -79,13 +79,15 @@ Los estudios históricos pueden requerir una fase previa de preparación y depur
 
 ### Estudios observacionales
 
-Como su nombre indica, un **estudio observacional** simplemente observa un proceso durante un tiempo de operación en rutina. Normalmente, el ingeniero o técnico interfiere lo mínimo posible en el proceso, sólo lo suficiente para recoger la información que necesita, que en muchas ocasiones no forma parte de los controles de rutina, si piensa que esa información puede ser relevante. Si se planifican adecuadamente, los estudios observacionales proporcionan datos fiables, precisos y completos para documentar un proceso. Por otra parte, estos estudios proporcionan una información limitada sobre las relaciones entre las variables del proceso, porque es posible que durante el tiempo limitado de observación, el rango de variación de las variables no recoja todas las situaciones posibles; por ejemplo, las situaciones extraordinarias.
+Como su nombre indica, un **estudio observacional** simplemente observa un proceso durante un tiempo de operación en rutina. Normalmente, el ingeniero o técnico interfiere lo mínimo posible en el proceso; sólo lo suficiente para recoger la información que necesita, si piensa que esa información puede ser relevante. En muchas ocasiones, el estudio no forma parte de los controles de rutina, y representa un trabajo adicional. 
+
+Si se planifican adecuadamente, los estudios observacionales proporcionan datos fiables, precisos y completos para documentar un proceso. Por otra parte, estos estudios proporcionan una información limitada sobre las relaciones entre las variables del proceso, porque es posible que durante el tiempo limitado de observación, el rango de variación de las variables no recoja todas las situaciones posibles; por ejemplo, las situaciones extraordinarias.
 
 ### Experimentos diseñados
 
 La tercera forma de recoger información de un proceso son los **experimentos diseñados**. En un experimento de este tipo, el ingeniero o técnico hace un cambio deliberado en las variables que controla (llamadas **factores**), observa el resultado, y toma una decisión respecto a qué variable o variables son responsables de los cambios que observa en el proceso.
 
-Una diferencia importante respecto a los estudios históricos y los observacionales es que las diferentes combinaciones de factores se aplican al azar sobre un conjunto de unidades experimentales. Esto permite establecer con precisión las relaciones causa-efecto, cosa que no suele ser posible en los estudios históricos ni en los observacionales.
+Una diferencia importante respecto a los estudios históricos y los observacionales es que las diferentes combinaciones de factores se aplican al azar sobre un conjunto de unidades experimentales. Esto permite establecer con precisión las relaciones causa-efecto, cosa que no suele ser posible ni en los estudios históricos ni en los observacionales.
 
 ::: {.callout-important .content-visible when-format="html"}
 ## Experimentos diseñados
@@ -182,7 +184,7 @@ A veces se utiliza la palabra **cualitativo** de forma incorrecta para indicar *
 
 Según hemos visto, existen diferentes tipos de variables, **cualitativas** (*categóricas*) y **cuantitativas** (*métricas*). Normalmente, los valores de las variables categóricas se describen mediante textos del tipo "color blanco", "hombre", "mujer", "alto", "bajo", etc. 
 [A partir de aquí utilizaremos una nomenclatura compatible con las hojas de cálculo en formato europeo para escribir los números; usaremos la **coma** para la separación decimal y el **punto y coma** para la separación de los números cuando los escribamos de forma seriada.]{.aside}
-Suelen corresponder con características descriptivas, y por lo tanto, no puede hacerse cálculos directamente con ellos, a menos que se hayan resumido, por ejemplo, mediante un conteo. Las variables métricas consisten en valores numéricos, que pueden ser **enteros** ($1$;$24$;$350$) o **continuos** ($1,456$;$0,35$) y que sí pueden utilizarse directamente para hacer cálculos tales como sumas, etc.
+Suelen corresponder con características descriptivas, y por lo tanto, no puede hacerse cálculos directamente con ellos, a menos que se hayan resumido, por ejemplo, mediante un conteo. Las variables métricas consisten en valores numéricos, que pueden ser **enteros** o **continuos**, y pueden utilizarse directamente para hacer cálculos tales como sumas, etc.
 
 Una **variable** está descrita siempre por **un nombre**, que designa la variable, y **un valor o conjunto de valores**, que corresponden a los casos. Este conjunto de valores, como acabamos de ver, pueden ser textos o números.
 

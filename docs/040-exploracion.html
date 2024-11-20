@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 4&nbsp; La exploración de los datos</title>
+<title>4&nbsp; La exploración de los datos – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -33,7 +33,7 @@ div.sourceCode { overflow: auto; }
 }
 @media print {
 pre > code.sourceCode { white-space: pre-wrap; }
-pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
 }
 pre.numberSource code
   { counter-reset: source-line 0; }
@@ -103,7 +103,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
   }
 }</script>
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -141,13 +141,13 @@ window.Quarto = {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./040-exploracion.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -184,7 +184,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./020-herramientas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -275,15 +275,26 @@ window.Quarto = {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" id="toc-el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" class="nav-link active" data-scroll-target="#el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot"><span class="header-section-number">4.1</span> El diagrama de tallo y hojas (<em>stem and leaf plot</em> o <em>stemplot</em>)</a></li>
-  <li><a href="#el-diagrama-de-puntos-o-dotplot" id="toc-el-diagrama-de-puntos-o-dotplot" class="nav-link" data-scroll-target="#el-diagrama-de-puntos-o-dotplot"><span class="header-section-number">4.2</span> El diagrama de puntos o <em>dotplot</em></a></li>
-  <li><a href="#la-distribución-de-frecuencias" id="toc-la-distribución-de-frecuencias" class="nav-link" data-scroll-target="#la-distribución-de-frecuencias"><span class="header-section-number">4.3</span> La distribución de frecuencias</a></li>
-  <li><a href="#diagramas-de-barra" id="toc-diagramas-de-barra" class="nav-link" data-scroll-target="#diagramas-de-barra"><span class="header-section-number">4.4</span> Diagramas de barra</a></li>
-  <li><a href="#histograma" id="toc-histograma" class="nav-link" data-scroll-target="#histograma"><span class="header-section-number">4.5</span> Histograma</a></li>
-  <li><a href="#gráficos-de-densidad" id="toc-gráficos-de-densidad" class="nav-link" data-scroll-target="#gráficos-de-densidad"><span class="header-section-number">4.6</span> Gráficos de densidad</a></li>
-  <li><a href="#diagramas-de-caja-boxplot" id="toc-diagramas-de-caja-boxplot" class="nav-link" data-scroll-target="#diagramas-de-caja-boxplot"><span class="header-section-number">4.7</span> Diagramas de caja (<em>boxplot</em>)</a></li>
-  <li><a href="#gráficos-de-series" id="toc-gráficos-de-series" class="nav-link" data-scroll-target="#gráficos-de-series"><span class="header-section-number">4.8</span> Gráficos de series</a></li>
-  <li><a href="#otros-gráficos" id="toc-otros-gráficos" class="nav-link" data-scroll-target="#otros-gráficos"><span class="header-section-number">4.9</span> Otros gráficos</a></li>
+  <li><a href="#recolección-y-carga-de-datos" id="toc-recolección-y-carga-de-datos" class="nav-link active" data-scroll-target="#recolección-y-carga-de-datos"><span class="header-section-number">4.0.1</span> 1. Recolección y carga de datos</a></li>
+  <li><a href="#inspección-de-datos" id="toc-inspección-de-datos" class="nav-link" data-scroll-target="#inspección-de-datos"><span class="header-section-number">4.0.2</span> 2. Inspección de datos</a></li>
+  <li><a href="#limpieza-de-datos" id="toc-limpieza-de-datos" class="nav-link" data-scroll-target="#limpieza-de-datos"><span class="header-section-number">4.0.3</span> 3. Limpieza de datos</a></li>
+  <li><a href="#transformación-de-datos" id="toc-transformación-de-datos" class="nav-link" data-scroll-target="#transformación-de-datos"><span class="header-section-number">4.0.4</span> 4. Transformación de datos</a></li>
+  <li><a href="#análisis-exploratorio-de-datos-eda" id="toc-análisis-exploratorio-de-datos-eda" class="nav-link" data-scroll-target="#análisis-exploratorio-de-datos-eda"><span class="header-section-number">4.0.5</span> 5. Análisis exploratorio de datos (EDA)</a></li>
+  <li><a href="#modelado-de-datos" id="toc-modelado-de-datos" class="nav-link" data-scroll-target="#modelado-de-datos"><span class="header-section-number">4.0.6</span> 6. Modelado de datos</a></li>
+  <li><a href="#comunicación-de-resultados" id="toc-comunicación-de-resultados" class="nav-link" data-scroll-target="#comunicación-de-resultados"><span class="header-section-number">4.0.7</span> 7. Comunicación de resultados</a></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">4.0.8</span> Resumen</a></li>
+  <li><a href="#explorando-los-datos-con-excel-y-r-un-ejemplo." id="toc-explorando-los-datos-con-excel-y-r-un-ejemplo." class="nav-link" data-scroll-target="#explorando-los-datos-con-excel-y-r-un-ejemplo."><span class="header-section-number">5</span> Explorando los datos con Excel y R: un ejemplo.</a>
+  <ul class="collapse">
+  <li><a href="#el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" id="toc-el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" class="nav-link" data-scroll-target="#el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot"><span class="header-section-number">5.1</span> El diagrama de tallo y hojas (<em>stem and leaf plot</em> o <em>stemplot</em>)</a></li>
+  <li><a href="#el-diagrama-de-puntos-o-dotplot" id="toc-el-diagrama-de-puntos-o-dotplot" class="nav-link" data-scroll-target="#el-diagrama-de-puntos-o-dotplot"><span class="header-section-number">5.2</span> El diagrama de puntos o <em>dotplot</em></a></li>
+  <li><a href="#la-distribución-de-frecuencias" id="toc-la-distribución-de-frecuencias" class="nav-link" data-scroll-target="#la-distribución-de-frecuencias"><span class="header-section-number">5.3</span> La distribución de frecuencias</a></li>
+  <li><a href="#diagramas-de-barra" id="toc-diagramas-de-barra" class="nav-link" data-scroll-target="#diagramas-de-barra"><span class="header-section-number">5.4</span> Diagramas de barra</a></li>
+  <li><a href="#histograma" id="toc-histograma" class="nav-link" data-scroll-target="#histograma"><span class="header-section-number">5.5</span> Histograma</a></li>
+  <li><a href="#gráficos-de-densidad" id="toc-gráficos-de-densidad" class="nav-link" data-scroll-target="#gráficos-de-densidad"><span class="header-section-number">5.6</span> Gráficos de densidad</a></li>
+  <li><a href="#diagramas-de-caja-boxplot" id="toc-diagramas-de-caja-boxplot" class="nav-link" data-scroll-target="#diagramas-de-caja-boxplot"><span class="header-section-number">5.7</span> Diagramas de caja (<em>boxplot</em>)</a></li>
+  <li><a href="#gráficos-de-series" id="toc-gráficos-de-series" class="nav-link" data-scroll-target="#gráficos-de-series"><span class="header-section-number">5.8</span> Gráficos de series</a></li>
+  <li><a href="#otros-gráficos" id="toc-otros-gráficos" class="nav-link" data-scroll-target="#otros-gráficos"><span class="header-section-number">5.9</span> Otros gráficos</a></li>
+  </ul></li>
   </ul>
 </nav>
     </div>
@@ -310,14 +321,68 @@ window.Quarto = {
 
 
 <p>En este capítulo veremos cómo describir un conjunto de datos de forma visual, utilizando diversas herramientas gráficas.</p>
+<p>Explorar datos en R siguiendo los principios de <strong>Hadley Wickham</strong> implica estructurar los datos de una manera ordenada y fácil de analizar, utilizando herramientas y técnicas específicas. Aquí tienes una guía con ejemplos de cómo seguir este proceso:</p>
+<section id="recolección-y-carga-de-datos" class="level3" data-number="4.0.1">
+<h3 data-number="4.0.1" class="anchored" data-anchor-id="recolección-y-carga-de-datos"><span class="header-section-number">4.0.1</span> 1. Recolección y carga de datos</h3>
+<p>Primero, necesitas importar tus datos a R. Esto puede hacerse desde archivos CSV, bases de datos, o incluso APIs.</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar y cargar tidyverse, que incluye readr y dplyr</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"tidyverse"</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Importar datos desde un archivo CSV</span></span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="st">"ruta/al/archivo.csv"</span>)</span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver las primeras filas del dataframe</span></span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="inspección-de-datos" class="level3" data-number="4.0.2">
+<h3 data-number="4.0.2" class="anchored" data-anchor-id="inspección-de-datos"><span class="header-section-number">4.0.2</span> 2. Inspección de datos</h3>
+<p>Una vez cargados los datos, el siguiente paso es inspeccionarlos para comprender su estructura y contenido.</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver un resumen de los datos</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver la estructura de los datos</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">str</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="limpieza-de-datos" class="level3" data-number="4.0.3">
+<h3 data-number="4.0.3" class="anchored" data-anchor-id="limpieza-de-datos"><span class="header-section-number">4.0.3</span> 3. Limpieza de datos</h3>
+<p>La limpieza de datos es crucial para asegurar que la información sea precisa y esté en el formato adecuado. Esto incluye manejar valores faltantes, duplicados y datos inconsistentes.</p>
+<p>En Excel, utilizaremos a menudo la opción de ´filtro´para inspeccionar los datos.</p>
+</section>
+<section id="transformación-de-datos" class="level3" data-number="4.0.4">
+<h3 data-number="4.0.4" class="anchored" data-anchor-id="transformación-de-datos"><span class="header-section-number">4.0.4</span> 4. Transformación de datos</h3>
+<p>Hadley Wickham promueve la transformación de datos para que estén en formato “tidy”. Esto implica que cada variable debe estar en una columna, cada observación en una fila, y cada valor debe tener su propia celda.</p>
+</section>
+<section id="análisis-exploratorio-de-datos-eda" class="level3" data-number="4.0.5">
+<h3 data-number="4.0.5" class="anchored" data-anchor-id="análisis-exploratorio-de-datos-eda"><span class="header-section-number">4.0.5</span> 5. Análisis exploratorio de datos (EDA)</h3>
+<p>El análisis exploratorio de datos (EDA) es fundamental para entender las relaciones y patrones dentro del conjunto de datos. Esto se hace mediante estadísticas descriptivas y visualizaciones.</p>
+</section>
+<section id="modelado-de-datos" class="level3" data-number="4.0.6">
+<h3 data-number="4.0.6" class="anchored" data-anchor-id="modelado-de-datos"><span class="header-section-number">4.0.6</span> 6. Modelado de datos</h3>
+<p>Dependiendo del objetivo del análisis, se pueden aplicar diversos modelos estadísticos para extraer información y hacer predicciones.</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Regresión lineal simple</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>modelo <span class="ot">&lt;-</span> <span class="fu">lm</span>(variable2 <span class="sc">~</span> variable1, <span class="at">data =</span> data_long)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(modelo)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="comunicación-de-resultados" class="level3" data-number="4.0.7">
+<h3 data-number="4.0.7" class="anchored" data-anchor-id="comunicación-de-resultados"><span class="header-section-number">4.0.7</span> 7. Comunicación de resultados</h3>
+<p>Finalmente, es importante comunicar los resultados de manera clara y efectiva, utilizando tablas, gráficos y resúmenes interpretativos.</p>
+<p>Ver ejemplo de pinguinos en Excel, insertar gráficos</p>
+</section>
+<section id="resumen" class="level3" data-number="4.0.8">
+<h3 data-number="4.0.8" class="anchored" data-anchor-id="resumen"><span class="header-section-number">4.0.8</span> Resumen</h3>
+<p>Siguiendo los principios de Hadley Wickham y utilizando las herramientas del tidyverse, puedes realizar un análisis de datos sistemático y efectivo en R. Este proceso incluye la recolección y carga de datos, inspección, limpieza, transformación, análisis exploratorio, modelado y comunicación de resultados.</p>
+</section>
+<section id="explorando-los-datos-con-excel-y-r-un-ejemplo." class="level1" data-number="5">
+<h1 data-number="5"><span class="header-section-number">5</span> Explorando los datos con Excel y R: un ejemplo.</h1>
 <p>Supongamos que queremos medir la altura de un grupo de alumnos de nuestra clase. Éste es nuestro grupo:</p>
 <p><img src="01-imagenes/grupo1.jpg" class="img-fluid"></p>
 <p>Realizamos la medida de altura de cada persona y registramos los valores en una hoja de cálculo, siguiendo las buenas prácticas que hemos visto al estudiar los <em>datos ordenados</em>.</p>
 <p><img src="01-imagenes/aula1.png" class="img-fluid"></p>
 <p>Guardaremos esta tabla en un archivo CSV y lo importamos a un dataframe de R para su uso a lo largo del capítulo. Utilizamos la opción <code>fileEncoding='latin1'</code> para importar correctamente los caracteres acentuados.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"excel-R/aula1.csv"</span>,<span class="at">fileEncoding=</span><span class="st">'latin1'</span>)</span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"excel-R/aula1.csv"</span>,<span class="at">fileEncoding=</span><span class="st">'latin1'</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>    nombre altura_cm
 1     Luis       153
@@ -333,8 +398,8 @@ window.Quarto = {
 11   María       154</code></pre>
 </div>
 </div>
-<section id="el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" class="level2" data-number="4.1">
-<h2 data-number="4.1" class="anchored" data-anchor-id="el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot"><span class="header-section-number">4.1</span> El diagrama de tallo y hojas (<em>stem and leaf plot</em> o <em>stemplot</em>)</h2>
+<section id="el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" class="level2" data-number="5.1">
+<h2 data-number="5.1" class="anchored" data-anchor-id="el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot"><span class="header-section-number">5.1</span> El diagrama de tallo y hojas (<em>stem and leaf plot</em> o <em>stemplot</em>)</h2>
 <p>El <em>stemplot</em> recibe este nombre porque el dibujo que resulta se asemeja a un tallo el que le salen las hojas que son los datos individuales. Para construirlo, quitamos el último dígito a la derecha de nuestros valores y colocamos verticalmente los valores resultantes ordenándolos de menor a mayor, y evitando las repeticiones. Paraevitar errores en la escala, debemos incluir los valores intermedios aunque no haya ninguno en nuestros datos (en el ejemplo, el valor 16 que correspondería a los 160). Esto forma el “tallo” de nuestro diagrama:</p>
 <p><img src="01-imagenes/aula1-stemplot-paso1.png" class="img-fluid"></p>
 <p>A continuación añadimos las hojas en la celda a la derecha, que consisten en los valores que hemos “cortado” de nuestro árbol, uno al lado de otro, incluyendo esta vez los valores repetidos, en orden de menor a mayor. Por ejemplo, para el valor 135, descartamos 13 y utlizamos 5; para el valor 138, descartamos 13 y utilizamos 8, y así sucesivamente para todos los valores.</p>
@@ -342,7 +407,7 @@ window.Quarto = {
 <p>El diagrama nos dice que nuestros valores son 135, 138, 140, 140, 145, … Podemos ver que los valores en torno a 150 cm son los más frecuentes, y que hay un valor alto (175) que se separa un poco del resto.</p>
 <p>R permite realizar el <em>stemplot</em> mediante la función <span class="math inline">\(stem()\)</span> de forma automática:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(df<span class="sc">$</span>altura_cm)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(df<span class="sc">$</span>altura_cm)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>
   The decimal point is 1 digit(s) to the right of the |
@@ -357,13 +422,13 @@ window.Quarto = {
 <p>El <em>stemplot</em> es muy sencillo de hacer y nos da una visión rápida de la <em>distribución</em> de nuestros valores, así como de la posible existencia de valores que se separan del conjunto. Estos valores alejados, que se conocen en inglés como <em>outliers</em>, tienen mucha importancia en el analisis e interpretación de los datos, como veremos más adelante.</p>
 <p>La ventaja principal del <em>stemplot</em> es que mantiene los valores originales de las observaciones, y puede hacerse fácilmente con bolígrafo y papel, sin necesidad de más herramientas.</p>
 </section>
-<section id="el-diagrama-de-puntos-o-dotplot" class="level2" data-number="4.2">
-<h2 data-number="4.2" class="anchored" data-anchor-id="el-diagrama-de-puntos-o-dotplot"><span class="header-section-number">4.2</span> El diagrama de puntos o <em>dotplot</em></h2>
+<section id="el-diagrama-de-puntos-o-dotplot" class="level2" data-number="5.2">
+<h2 data-number="5.2" class="anchored" data-anchor-id="el-diagrama-de-puntos-o-dotplot"><span class="header-section-number">5.2</span> El diagrama de puntos o <em>dotplot</em></h2>
 <p>Otro gráfico que permite visualizar el conjunto de valores es el diagrama de puntos llamado <em>dotplot</em>. Podemos hacer este gráfico con R utilizando la función <code>ggplot()</code>, añadiendo la geometria <code>geom_dotplot()</code>:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x=</span>altura_cm)) <span class="sc">+</span></span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x=</span>altura_cm)) <span class="sc">+</span></span>
+<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_dotplot</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -373,8 +438,8 @@ window.Quarto = {
 </div>
 </div>
 </section>
-<section id="la-distribución-de-frecuencias" class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="la-distribución-de-frecuencias"><span class="header-section-number">4.3</span> La distribución de frecuencias</h2>
+<section id="la-distribución-de-frecuencias" class="level2" data-number="5.3">
+<h2 data-number="5.3" class="anchored" data-anchor-id="la-distribución-de-frecuencias"><span class="header-section-number">5.3</span> La distribución de frecuencias</h2>
 <p>Si agrupamos nuestros valores por intervalos, y contamos el número de observaciones que aparecen en cada intervalo, obtenemos una <em>distribución de frecuencias</em>, que puede expresarse de forma <em>absoluta</em> o <em>relativa</em>.</p>
 <ul>
 <li>La <strong>frecuencia absoluta</strong> es un <em>recuento simple</em> de cuántas veces aparece cada valor en un conjunto de datos.</li>
@@ -384,11 +449,11 @@ window.Quarto = {
 <p><img src="01-imagenes/aula1-td-frec.png" class="img-fluid"></p>
 <p>También podemos calcular las frecuencias absolutas y relativas en R; en este caso, dado que los intervalos se han calulado de forma ligeramente diferente, las frecuencias calculadas son también ligeramente diferentes de las que hemos obtenido en Excel.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span> (<span class="at">grupo =</span> <span class="fu">cut_interval</span>(altura_cm, <span class="dv">4</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grupo) <span class="sc">|&gt;</span></span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span> (<span class="at">frec_abs =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">frec_rel =</span> frec_abs <span class="sc">/</span> <span class="fu">sum</span>(frec_abs))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span> (<span class="at">grupo =</span> <span class="fu">cut_interval</span>(altura_cm, <span class="dv">4</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grupo) <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span> (<span class="at">frec_abs =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">frec_rel =</span> frec_abs <span class="sc">/</span> <span class="fu">sum</span>(frec_abs))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 4 × 3
   grupo     frec_abs frec_rel
@@ -409,13 +474,13 @@ window.Quarto = {
 </ul></li>
 </ul>
 </section>
-<section id="diagramas-de-barra" class="level2" data-number="4.4">
-<h2 data-number="4.4" class="anchored" data-anchor-id="diagramas-de-barra"><span class="header-section-number">4.4</span> Diagramas de barra</h2>
+<section id="diagramas-de-barra" class="level2" data-number="5.4">
+<h2 data-number="5.4" class="anchored" data-anchor-id="diagramas-de-barra"><span class="header-section-number">5.4</span> Diagramas de barra</h2>
 <p>Cuando nuestra variable es <em>discreta</em>, podemos representar las frecuencias de cada valor de forma gráfica utilizando un diagrama de barras. Este diagrama utiliza barras rectangulares para representar la frecuencia de cada categoría.</p>
 <p>Incluir ejemplo de tabla discreta: por ejemplo, utilización de fermentos o votaciones</p>
 </section>
-<section id="histograma" class="level2" data-number="4.5">
-<h2 data-number="4.5" class="anchored" data-anchor-id="histograma"><span class="header-section-number">4.5</span> Histograma</h2>
+<section id="histograma" class="level2" data-number="5.5">
+<h2 data-number="5.5" class="anchored" data-anchor-id="histograma"><span class="header-section-number">5.5</span> Histograma</h2>
 <p>Un histograma es un diagrama que utiliza las barras rectangulares para hacer un gráfico de la distribución de valores continuos, agrupados en clases. La anchura de esos grupos o clases (en inglés, <em>bins</em>), puede variarse, lo que cambia el perfil del gráfico obtenido.</p>
 <p>En Excel, si representamos las frecuencias absolutas de nuestra tabla dinámica anterior, el diagrama resultante sería éste:</p>
 <p><img src="01-imagenes/aula1-diag-barras.png" class="img-fluid"></p>
@@ -443,9 +508,9 @@ window.Quarto = {
 <p>En este caso, vemos que la mayoría de los casos tienen valor cero. Es el caso de los recuentos de bacterias contaminantes, en el que la mayoría de los análisis tienen recuentos cero o muy bajos, y sólo en pocos casos tienen valores altos. Veremos con más detalle cómo tratar estas distribuciones cuando hablemos de las distribuciones de probabilidad, en capítulos posteriores.</p>
 <p>Podemos repetir la tabla de frecuencias y el histograma en R.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
-<span id="cb8-2"><a href="#cb8-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"excel-R/camembert.csv"</span>)</span>
-<span id="cb8-3"><a href="#cb8-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(tidyverse)</span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"excel-R/camembert.csv"</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(df)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code>       fecha fabricacion   est   mg   ph cloruros coliformes
 1 11/01/2020           1 46.68 24.0 4.85     1.50         80
@@ -457,11 +522,11 @@ window.Quarto = {
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span> (<span class="at">grupo =</span> <span class="fu">cut_width</span>(est, <span class="at">width=</span><span class="dv">1</span>, <span class="at">boundary=</span><span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grupo) <span class="sc">|&gt;</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span> (<span class="at">frec_abs =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
-<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">frec_rel =</span> frec_abs <span class="sc">/</span> <span class="fu">sum</span>(frec_abs))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span> (<span class="at">grupo =</span> <span class="fu">cut_width</span>(est, <span class="at">width=</span><span class="dv">1</span>, <span class="at">boundary=</span><span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grupo) <span class="sc">|&gt;</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span> (<span class="at">frec_abs =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">frec_rel =</span> frec_abs <span class="sc">/</span> <span class="fu">sum</span>(frec_abs))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output cell-output-stdout">
 <pre><code># A tibble: 10 × 3
    grupo   frec_abs frec_rel
@@ -479,17 +544,17 @@ window.Quarto = {
 </div>
 </div>
 <p>R tiene una función básica, la función <code>hist()</code>, que construye el histograma directamente sin necesidad de hacer previamente ua tabla de frecuencias (en realidad, la tabla de frecuencias se calcula internamente).</p>
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df<span class="sc">$</span>est)</span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>est)) <span class="sc">+</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df<span class="sc">$</span>est)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>est)) <span class="sc">+</span></span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-histo1" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-histo1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-histo1" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-histo1-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-histo1-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-histo1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="040-exploracion_files/figure-html/fig-histo1-1.png" class="img-fluid figure-img" data-ref-parent="fig-histo1" width="672">
@@ -501,7 +566,7 @@ window.Quarto = {
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-histo1" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-histo1-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-histo1-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-histo1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="040-exploracion_files/figure-html/fig-histo1-2.png" class="img-fluid figure-img" data-ref-parent="fig-histo1" width="672">
@@ -515,23 +580,23 @@ window.Quarto = {
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histo1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.1: Ejemplos de histogramas
+Figura&nbsp;5.1: Ejemplos de histogramas
 </figcaption>
 </figure>
 </div>
 <p>En general, son más útiles las opciones de la función <code>ggplot()</code>, en la biblioteca <code>tidyverse</code>.</p>
 <p>En los histogramas de los recuentos bacterianos,utilizamos una opción para aumentar el número de barras que queremos en el histograma: <code>breaks=</code> en la función base, <code>bins=</code> en <code>ggplot()</code>:</p>
-<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df<span class="sc">$</span>coliformes, <span class="at">breaks=</span><span class="dv">50</span>)</span>
-<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>coliformes)) <span class="sc">+</span></span>
-<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">50</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df<span class="sc">$</span>coliformes, <span class="at">breaks=</span><span class="dv">50</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>coliformes)) <span class="sc">+</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">50</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-histo2" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-histo2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-histo2" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-histo2-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-histo2-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-histo2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="040-exploracion_files/figure-html/fig-histo2-1.png" class="img-fluid figure-img" data-ref-parent="fig-histo2" width="672">
@@ -543,7 +608,7 @@ Figura&nbsp;4.1: Ejemplos de histogramas
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-histo2" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-histo2-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-histo2-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-histo2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="040-exploracion_files/figure-html/fig-histo2-2.png" class="img-fluid figure-img" data-ref-parent="fig-histo2" width="672">
@@ -557,15 +622,15 @@ Figura&nbsp;4.1: Ejemplos de histogramas
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histo2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.2: Ejemplos de histogramas
+Figura&nbsp;5.2: Ejemplos de histogramas
 </figcaption>
 </figure>
 </div>
 <p>En casos de distribuciones muy asimétricas, a veces es conveniente aplicar una transformación a los datos, tal como el logaritmo decimal, mediante la función <code>log10()</code>; esto facilita la interpretación del gráfico:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb14-2"><a href="#cb14-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log10</span>(coliformes<span class="sc">+</span><span class="dv">1</span>))) <span class="sc">+</span></span>
-<span id="cb14-3"><a href="#cb14-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">50</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log10</span>(coliformes<span class="sc">+</span><span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">50</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -575,23 +640,23 @@ Figura&nbsp;4.2: Ejemplos de histogramas
 </div>
 </div>
 </section>
-<section id="gráficos-de-densidad" class="level2" data-number="4.6">
-<h2 data-number="4.6" class="anchored" data-anchor-id="gráficos-de-densidad"><span class="header-section-number">4.6</span> Gráficos de densidad</h2>
+<section id="gráficos-de-densidad" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="gráficos-de-densidad"><span class="header-section-number">5.6</span> Gráficos de densidad</h2>
 <p>Un gráfico de densidad en R es una representación visual suavizada de la distribución de un conjunto de datos. A diferencia de los histogramas, que dividen los datos en intervalos y cuentan las frecuencias, los gráficos de densidad utilizan técnicas estadísticas no paramétricas para estimar la función de densidad de probabilidad.</p>
 <p>Excel no permite la representación de los gráficos de densidad; en R pueden hacerse con la función <code>ggplot()</code>simplemente añadiendo la geometría <code>geom_density()</code></p>
-<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>est)) <span class="sc">+</span></span>
-<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>()</span>
-<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log</span>(coliformes<span class="sc">+</span><span class="dv">1</span>))) <span class="sc">+</span></span>
-<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>est)) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>()</span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb18-6"><a href="#cb18-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log</span>(coliformes<span class="sc">+</span><span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb18-7"><a href="#cb18-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-charts" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-charts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-charts" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-charts-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-charts-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-charts-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="040-exploracion_files/figure-html/fig-charts-1.png" class="img-fluid figure-img" data-ref-parent="fig-charts" width="672">
@@ -603,7 +668,7 @@ Figura&nbsp;4.2: Ejemplos de histogramas
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-charts" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-charts-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-charts-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-charts-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="040-exploracion_files/figure-html/fig-charts-2.png" class="img-fluid figure-img" data-ref-parent="fig-charts" width="672">
@@ -617,17 +682,17 @@ Figura&nbsp;4.2: Ejemplos de histogramas
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-charts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.3: Ejemplos de diagramas de densidad
+Figura&nbsp;5.3: Ejemplos de diagramas de densidad
 </figcaption>
 </figure>
 </div>
 <p>Podemos representar simultáneamente el histograma y la función de densidad:</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>est)) <span class="sc">+</span></span>
-<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..), <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma y densidad"</span>, <span class="at">x =</span> <span class="st">"Valores"</span>, <span class="at">y =</span> <span class="st">"Densidad"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>est)) <span class="sc">+</span></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..), <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma y densidad"</span>, <span class="at">x =</span> <span class="st">"Valores"</span>, <span class="at">y =</span> <span class="st">"Densidad"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -638,8 +703,8 @@ Figura&nbsp;4.3: Ejemplos de diagramas de densidad
 </div>
 <p>La ventaja de los gráficos de densidad es que como no tenemos que fraccionar los datos en intervalos arbitrarios, no estamos afectados por el efecto visual de la anchura de estos intervalos. También hay otras ventajas desde el punto de vista estadístico, que veremos al hablar de las distribuciones de probabilidad.</p>
 </section>
-<section id="diagramas-de-caja-boxplot" class="level2" data-number="4.7">
-<h2 data-number="4.7" class="anchored" data-anchor-id="diagramas-de-caja-boxplot"><span class="header-section-number">4.7</span> Diagramas de caja (<em>boxplot</em>)</h2>
+<section id="diagramas-de-caja-boxplot" class="level2" data-number="5.7">
+<h2 data-number="5.7" class="anchored" data-anchor-id="diagramas-de-caja-boxplot"><span class="header-section-number">5.7</span> Diagramas de caja (<em>boxplot</em>)</h2>
 <p>Este gráfico fue creado por el estadístico John Tukey en 1977, y es una herramienta fundamental en la exploración de datos. Se basa en un grupo de medidas que se utiliza ampliamente en la descripción de conjuntos de datos, el conjunto de <strong>cuartiles</strong>. Si dividimos un grupo de datos en cuatro partes iguales, mediante <strong>tres</strong> puntos de corte, llamamos <strong>primer cuartil</strong> o <span class="math inline">\(Q1\)</span> al valor que se situa en el 25%; <strong>segundo cuartil</strong>, o <span class="math inline">\(Q2\)</span>, al valor que se sitúa en el centro (50%), y <strong>tercer cuartil</strong>, o <span class="math inline">\(Q3\)</span>, al punto que se situa en el 75% de los datos. A estos tres valores añadimos el mínimo y el máximo, y tenemos un conjunto de <strong>cinco números</strong> que nos permiten describir la forma de la distribución de datos con precisión. El segundo cuartil (<span class="math inline">\(Q2\)</span>), que corresponde al 50% de los datos, se conoce habitualmente como <strong>mediana</strong>. El valor resultante de restar <span class="math inline">\(Q3-Q1\)</span> es lo que se conoce como <strong>rango intercuartil</strong> o <span class="math inline">\(IQR\)</span>, y es una medida de la dispersión de la distribución de datos (mide la amplitud de la distribución).</p>
 <p>El <strong>diagrama de caja</strong>, también conocido como <em>boxplot</em>, es un gráfico que permite resumir las características principales de un conjunto de datos utilizando estos cinco números, tal como se explica a continuación. Sus ventajas son:</p>
 <ul>
@@ -651,17 +716,17 @@ Figura&nbsp;4.3: Ejemplos de diagramas de densidad
 <p><img src="01-imagenes/boxplot.svg" class="img-fluid"></p>
 <p>Microsoft Excel no dispone de un diseño de gráficos de caja utilizable, por lo que recurriremos siempre a R para realizarlos.</p>
 <p>Como casi siempre, hay una función de base que dibuja un <em>boxplot</em> y también una geometría de <code>ggplot()</code>que lo hace: <code>geom_boxplot()</code>, con muchas más opciones de diseño y formato que la opción de base.</p>
-<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df<span class="sc">$</span>est)</span>
-<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y=</span>est)) <span class="sc">+</span></span>
-<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df<span class="sc">$</span>est)</span>
+<span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb20-4"><a href="#cb20-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">y=</span>est)) <span class="sc">+</span></span>
+<span id="cb20-5"><a href="#cb20-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-boxplot" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row">
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-boxplot" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-boxplot-1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-boxplot-1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-boxplot-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="040-exploracion_files/figure-html/fig-boxplot-1.png" class="img-fluid figure-img" data-ref-parent="fig-boxplot" width="672">
@@ -673,7 +738,7 @@ Figura&nbsp;4.3: Ejemplos de diagramas de densidad
 </div>
 </div>
 <div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-boxplot" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-boxplot-2" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-boxplot-2" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-boxplot-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="040-exploracion_files/figure-html/fig-boxplot-2.png" class="img-fluid figure-img" data-ref-parent="fig-boxplot" width="672">
@@ -687,17 +752,17 @@ Figura&nbsp;4.3: Ejemplos de diagramas de densidad
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.4: Boxplot
+Figura&nbsp;5.4: Boxplot
 </figcaption>
 </figure>
 </div>
 <p>Resulta muy útil comprender la relación entre el <em>boxplot</em> y el histograma para entender la distribución de los datos. En la gráfica siguiente se representan ambos simultáneamente</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> est)) <span class="sc">+</span></span>
-<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">"darkgrey"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">y =</span> <span class="sc">-</span><span class="dv">2</span>)) <span class="sc">+</span></span>
-<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma y Boxplot"</span>, <span class="at">y =</span> <span class="st">"Frecuencias"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb21-2"><a href="#cb21-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> est)) <span class="sc">+</span></span>
+<span id="cb21-3"><a href="#cb21-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb21-4"><a href="#cb21-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">"darkgrey"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">y =</span> <span class="sc">-</span><span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb21-5"><a href="#cb21-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma y Boxplot"</span>, <span class="at">y =</span> <span class="st">"Frecuencias"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -707,11 +772,11 @@ Figura&nbsp;4.4: Boxplot
 </div>
 </div>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
-<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(coliformes<span class="sc">+</span><span class="dv">1</span>))) <span class="sc">+</span></span>
-<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
-<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="dv">4</span>, <span class="at">fill =</span> <span class="st">"darkgrey"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">y =</span> <span class="sc">-</span><span class="dv">4</span>)) <span class="sc">+</span></span>
-<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma y Boxplot"</span>, <span class="at">y =</span> <span class="st">"Frecuencias"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb22"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb22-1"><a href="#cb22-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb22-2"><a href="#cb22-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(coliformes<span class="sc">+</span><span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb22-3"><a href="#cb22-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb22-4"><a href="#cb22-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="dv">4</span>, <span class="at">fill =</span> <span class="st">"darkgrey"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">y =</span> <span class="sc">-</span><span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb22-5"><a href="#cb22-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma y Boxplot"</span>, <span class="at">y =</span> <span class="st">"Frecuencias"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div>
 <figure class="figure">
@@ -721,15 +786,16 @@ Figura&nbsp;4.4: Boxplot
 </div>
 </div>
 </section>
-<section id="gráficos-de-series" class="level2" data-number="4.8">
-<h2 data-number="4.8" class="anchored" data-anchor-id="gráficos-de-series"><span class="header-section-number">4.8</span> Gráficos de series</h2>
+<section id="gráficos-de-series" class="level2" data-number="5.8">
+<h2 data-number="5.8" class="anchored" data-anchor-id="gráficos-de-series"><span class="header-section-number">5.8</span> Gráficos de series</h2>
 <p>Series en el tiempo: líneas Diferencia de uso entre gráfico de líneas y de barras</p>
 </section>
-<section id="otros-gráficos" class="level2" data-number="4.9">
-<h2 data-number="4.9" class="anchored" data-anchor-id="otros-gráficos"><span class="header-section-number">4.9</span> Otros gráficos</h2>
+<section id="otros-gráficos" class="level2" data-number="5.9">
+<h2 data-number="5.9" class="anchored" data-anchor-id="otros-gráficos"><span class="header-section-number">5.9</span> Otros gráficos</h2>
 <p>Datos de futbol: distribución asimétrica ver también en distribuciones de probabilidad –&gt; modelos</p>
 
 
+</section>
 </section>
 
 </main> <!-- /main -->
@@ -768,18 +834,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -811,7 +866,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -819,7 +896,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {

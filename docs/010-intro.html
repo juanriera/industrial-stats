@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 1&nbsp; La estadística en el entorno industrial.</title>
+<title>1&nbsp; La estadística en el entorno industrial. – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -92,7 +92,7 @@ div.csl-indent {
 <script src="site_libs/quarto-diagram/mermaid-init.js"></script>
 <link href="site_libs/quarto-diagram/mermaid.css" rel="stylesheet">
 
-  <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
   <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
 
 <script type="text/javascript">
@@ -124,19 +124,19 @@ window.Quarto = {
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./010-intro.html"><span class="chapter-number">1</span>&nbsp; <span class="chapter-title">La estadística en el entorno industrial.</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -173,7 +173,7 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./020-herramientas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -327,7 +327,7 @@ Importante
 </div>
 </div>
 <div class="callout-body-container callout-body">
-<p>El objetivo principal de la mejora industrial es la <strong>reducción de la variabilidad</strong>.</p>
+<p>El objetivo principal de la <strong>mejora industrial</strong> es la <strong>reducción de la variabilidad</strong>.</p>
 </div>
 </div>
 <p>En este libro aprenderemos a utilizar herramientas diversas, tanto estadísticas como de la ciencia de datos, para realizar nuestro análisis. Para aprender de los datos necesitamos más que los simples números; para interpretarlos necesitaremos siempre el conocimiento del proceso industrial que estamos analizando.En un análisis de la producción de un producto lácteo, por ejemplo, los números significan poco sin un conocimiento del proceso; los valores de pH, temperatura o concentración de lactosa influyen en el resultado del proceso de forma diferente. Los datos son números dentro de un contexto, y necesitamos conocer este contexto para dar sentido a los números.</p>
@@ -375,7 +375,7 @@ Importante
 <li>Estudio observacional</li>
 <li>Experimento diseñado</li>
 </ul>
-<p>Un buen sistema de recogida de datos facilitará el estudio posterior. Si ponemos poco cuidado en la toma de datos y en la forma de guardarlos, nos encontraremos después con problemas complicados de resolver en la fase de análisis o en la de interpretación , y, en algunos casos, estos problemas serán imposibles de resolver.</p>
+<p>Un buen sistema de recogida de datos facilitará el estudio posterior. Si ponemos poco cuidado en la toma de datos y en la forma de guardarlos, nos encontraremos después con dificultades en la fase de análisis o en la de interpretación; en algunos casos, estas dificultades se convertirán en problemas imposibles de resolver.</p>
 </section>
 <section id="estudios-retrospectivos-o-históricos" class="level3" data-number="1.3.2">
 <h3 data-number="1.3.2" class="anchored" data-anchor-id="estudios-retrospectivos-o-históricos"><span class="header-section-number">1.3.2</span> Estudios retrospectivos o históricos</h3>
@@ -396,12 +396,13 @@ Importante
 </section>
 <section id="estudios-observacionales" class="level3" data-number="1.3.3">
 <h3 data-number="1.3.3" class="anchored" data-anchor-id="estudios-observacionales"><span class="header-section-number">1.3.3</span> Estudios observacionales</h3>
-<p>Como su nombre indica, un <strong>estudio observacional</strong> simplemente observa un proceso durante un tiempo de operación en rutina. Normalmente, el ingeniero o técnico interfiere lo mínimo posible en el proceso, sólo lo suficiente para recoger la información que necesita, que en muchas ocasiones no forma parte de los controles de rutina, si piensa que esa información puede ser relevante. Si se planifican adecuadamente, los estudios observacionales proporcionan datos fiables, precisos y completos para documentar un proceso. Por otra parte, estos estudios proporcionan una información limitada sobre las relaciones entre las variables del proceso, porque es posible que durante el tiempo limitado de observación, el rango de variación de las variables no recoja todas las situaciones posibles; por ejemplo, las situaciones extraordinarias.</p>
+<p>Como su nombre indica, un <strong>estudio observacional</strong> simplemente observa un proceso durante un tiempo de operación en rutina. Normalmente, el ingeniero o técnico interfiere lo mínimo posible en el proceso; sólo lo suficiente para recoger la información que necesita, si piensa que esa información puede ser relevante. En muchas ocasiones, el estudio no forma parte de los controles de rutina, y representa un trabajo adicional.</p>
+<p>Si se planifican adecuadamente, los estudios observacionales proporcionan datos fiables, precisos y completos para documentar un proceso. Por otra parte, estos estudios proporcionan una información limitada sobre las relaciones entre las variables del proceso, porque es posible que durante el tiempo limitado de observación, el rango de variación de las variables no recoja todas las situaciones posibles; por ejemplo, las situaciones extraordinarias.</p>
 </section>
 <section id="experimentos-diseñados" class="level3" data-number="1.3.4">
 <h3 data-number="1.3.4" class="anchored" data-anchor-id="experimentos-diseñados"><span class="header-section-number">1.3.4</span> Experimentos diseñados</h3>
 <p>La tercera forma de recoger información de un proceso son los <strong>experimentos diseñados</strong>. En un experimento de este tipo, el ingeniero o técnico hace un cambio deliberado en las variables que controla (llamadas <strong>factores</strong>), observa el resultado, y toma una decisión respecto a qué variable o variables son responsables de los cambios que observa en el proceso.</p>
-<p>Una diferencia importante respecto a los estudios históricos y los observacionales es que las diferentes combinaciones de factores se aplican al azar sobre un conjunto de unidades experimentales. Esto permite establecer con precisión las relaciones causa-efecto, cosa que no suele ser posible en los estudios históricos ni en los observacionales.</p>
+<p>Una diferencia importante respecto a los estudios históricos y los observacionales es que las diferentes combinaciones de factores se aplican al azar sobre un conjunto de unidades experimentales. Esto permite establecer con precisión las relaciones causa-efecto, cosa que no suele ser posible ni en los estudios históricos ni en los observacionales.</p>
 <div class="content-visible callout callout-style-default callout-important callout-titled" data-when-format="html">
 <div class="callout-header d-flex align-content-center">
 <div class="callout-icon-container">
@@ -417,7 +418,7 @@ Experimentos diseñados
 </div>
 </section>
 </section>
-<section id="algunas-definiciones-importantes" class="level2" data-number="1.4">
+<section id="algunas-definiciones-importantes" class="level2 page-columns page-full" data-number="1.4">
 <h2 data-number="1.4" class="anchored" data-anchor-id="algunas-definiciones-importantes"><span class="header-section-number">1.4</span> Algunas definiciones importantes</h2>
 <section id="población-y-muestra" class="level3" data-number="1.4.1">
 <h3 data-number="1.4.1" class="anchored" data-anchor-id="población-y-muestra"><span class="header-section-number">1.4.1</span> Población y muestra</h3>
@@ -578,11 +579,11 @@ Respuestas: Para resolver
 </div>
 </div>
 </section>
-<section id="reglas-básicas-para-establecer-los-nombres-de-las-variables." class="level3" data-number="1.4.5">
+<section id="reglas-básicas-para-establecer-los-nombres-de-las-variables." class="level3 page-columns page-full" data-number="1.4.5">
 <h3 data-number="1.4.5" class="anchored" data-anchor-id="reglas-básicas-para-establecer-los-nombres-de-las-variables."><span class="header-section-number">1.4.5</span> Reglas básicas para establecer los nombres de las variables.</h3>
-<p>Según hemos visto, existen diferentes tipos de variables, <strong>cualitativas</strong> (<em>categóricas</em>) y <strong>cuantitativas</strong> (<em>métricas</em>). Normalmente, los valores de las variables categóricas se describen mediante textos del tipo “color blanco”, “hombre”, “mujer”, “alto”, “bajo”, etc. <span class="margin-aside">A partir de aquí utilizaremos una nomenclatura compatible con las hojas de cálculo en formato europeo para escribir los números; usaremos la <strong>coma</strong> para la separación decimal y el <strong>punto y coma</strong> para la separación de los números cuando los escribamos de forma seriada.</span> Suelen corresponder con características descriptivas, y por lo tanto, no puede hacerse cálculos directamente con ellos, a menos que se hayan resumido, por ejemplo, mediante un conteo. Las variables métricas consisten en valores numéricos, que pueden ser <strong>enteros</strong> (<span class="math inline">\(1\)</span>;<span class="math inline">\(24\)</span>;<span class="math inline">\(350\)</span>) o <strong>continuos</strong> (<span class="math inline">\(1,456\)</span>;<span class="math inline">\(0,35\)</span>) y que sí pueden utilizarse directamente para hacer cálculos tales como sumas, etc.</p>
+<div class="page-columns page-full"><p>Según hemos visto, existen diferentes tipos de variables, <strong>cualitativas</strong> (<em>categóricas</em>) y <strong>cuantitativas</strong> (<em>métricas</em>). Normalmente, los valores de las variables categóricas se describen mediante textos del tipo “color blanco”, “hombre”, “mujer”, “alto”, “bajo”, etc.  Suelen corresponder con características descriptivas, y por lo tanto, no puede hacerse cálculos directamente con ellos, a menos que se hayan resumido, por ejemplo, mediante un conteo. Las variables métricas consisten en valores numéricos, que pueden ser <strong>enteros</strong> (<span class="math inline">\(1\)</span>;<span class="math inline">\(24\)</span>;<span class="math inline">\(350\)</span>) o <strong>continuos</strong> (<span class="math inline">\(1,456\)</span>;<span class="math inline">\(0,35\)</span>) y que sí pueden utilizarse directamente para hacer cálculos tales como sumas, etc.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">A partir de aquí utilizaremos una nomenclatura compatible con las hojas de cálculo en formato europeo para escribir los números; usaremos la <strong>coma</strong> para la separación decimal y el <strong>punto y coma</strong> para la separación de los números cuando los escribamos de forma seriada.</span></div></div>
 <p>Una <strong>variable</strong> está descrita siempre por <strong>un nombre</strong>, que designa la variable, y <strong>un valor o conjunto de valores</strong>, que corresponden a los casos. Este conjunto de valores, como acabamos de ver, pueden ser textos o números.</p>
-<p><span class="margin-aside">Existen también otros tipos de variables que veremos más tarde, como variables lógicas o fechas, según el tipo de dato que almacenemos en esa variable.</span></p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Existen también otros tipos de variables que veremos más tarde, como variables lógicas o fechas, según el tipo de dato que almacenemos en esa variable.</span></div></div>
 <p>Ejemplos de valores de texto: “Carlos”, “fruta”, “Lluvia fuerte”, “muy ácido”, “sabor a fresa”</p>
 <p>Ejemplos de valores numéricos: <span class="math inline">\(1\)</span>; <span class="math inline">\(7\)</span>; <span class="math inline">\(10,65\)</span></p>
 <p>Siempre que sea posible, utilizaremos el nombre del atributo o característica que estamos midiendo o analizando, o su abreviatura, para designar una variable; por ejemplo, si estamos recogiendo la altura de una serie de personas, llamaremos <code>altura</code> a la variable; si estamos recogiendo el peso, usaremos el nombre <code>peso</code>, etc.</p>
@@ -662,18 +663,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -705,7 +695,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -713,7 +725,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -1043,8 +1055,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./020-herramientas.html" class="pagination-link" aria-label="Herramientas para el análisis. La reproducibilidad">
-        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./020-herramientas.html" class="pagination-link" aria-label="Herramientas para el análisis. La reproducibilidad.">
+        <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -1,0 +1,832 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.1.189">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+<meta name="author" content="Juan Riera">
+<meta name="dcterms.date" content="2021-06-11">
+
+<title>Industria 4.0 y ciencia de datos: una introduccion a R para el análisis de datos de producción</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1.6em;
+  vertical-align: middle;
+}
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+
+<script src="intro-r_files/libs/clipboard/clipboard.min.js"></script>
+<script src="intro-r_files/libs/quarto-html/quarto.js"></script>
+<script src="intro-r_files/libs/quarto-html/popper.min.js"></script>
+<script src="intro-r_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="intro-r_files/libs/quarto-html/anchor.min.js"></script>
+<link href="intro-r_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="intro-r_files/libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="intro-r_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="intro-r_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="intro-r_files/libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+</head>
+
+<body class="fullcontent">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">Industria 4.0 y ciencia de datos: una introduccion a R para el análisis de datos de producción</h1>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    <div>
+    <div class="quarto-title-meta-heading">Author</div>
+    <div class="quarto-title-meta-contents">
+             <p>Juan Riera </p>
+          </div>
+  </div>
+    
+    <div>
+    <div class="quarto-title-meta-heading">Published</div>
+    <div class="quarto-title-meta-contents">
+      <p class="date">June 11, 2021</p>
+    </div>
+  </div>
+    
+  </div>
+  
+
+</header>
+
+<section id="introducción" class="level2">
+<h2 class="anchored" data-anchor-id="introducción">Introducción</h2>
+<p>Muchos de nosotros hemos oído hablar de <em>Industria 4.0</em> Es un concepto que está o ha estado de moda en los últimos años, y describe lo que se considera una evolución del entorno industrial, una nueva etapa en la forma de trabajar. Es una evolución de los sistemas industriales anteriores:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes/que_es_la_industria_4_0.jpg" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Industria 4.0</figcaption><p></p>
+</figure>
+</div>
+<p>¿En qué consiste este concepto? Brevemente, lo que pretenden los proyectos de Industria 4.0 es crear procesos industriales complejos donde todos los equipos que intervienen estén conectados entre sí, tengan la capacidad de optimizar tiempos y recursos e incluso tomar decisiones de manera autónoma. Esto implica a muchas de las actividades empresariales, como se indica en el siguiente gráfico:</p>
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes/Industry4.0.png" class="img-fluid figure-img"></p>
+<p></p><figcaption class="figure-caption">Industria 4.0</figcaption><p></p>
+</figure>
+</div>
+<p>Una forma de conseguir esta integración es digitalizar el sistema de producción, haciendo que los equipos y maquinarias dispongan de sensores y que el sistema completo sea capaz de almacenar los datos generados, procesarlos e interpretarlos.</p>
+<p>En esta charla vamos a ver ejemplos en los que se generan gran cantidad de datos, veremos la dificultad de analizarlos con métodos manuales o incluso con hojas de cálculo, e introduciremos el uso de una herramienta estadística y gráfica como R para facilitarnos este análisis.</p>
+</section>
+<section id="qué-es-r-y-para-qué-se-usa" class="level2">
+<h2 class="anchored" data-anchor-id="qué-es-r-y-para-qué-se-usa">Qué es R y para qué se usa</h2>
+<p>R es un <a href="https://en.wikipedia.org/wiki/Programming_language">lenguaje de programación</a>, cuyo uso está orientado al análisis estadístico y de grandes cantidades de datos.</p>
+<p>R es también un <em>entorno de trabajo</em> para la realización de este análisis estadístico y gráfico, Es un proyecto GNU, y por lo tanto es un software libre que puede ser utilizado sin coste, en el que colaboran miles de personas de todo el mundo.</p>
+<p>El <a href="https://en.wikipedia.org/wiki/R_(programming_language)">proyecto R</a> apareció en 1993 como implementación de un lenguaje estadístico llamado S. Su primera versión se lanzó en 1995, y actualmente cuenta con miles de usuarios y desarrolladores en centros de investigación, universidades y empresas de todo tipo, siendo además uno de los lenguajes de programación con mayor crecimiento. Esta <a href="https://www.tiobe.com/tiobe-index/">clasificado entre los 15 primeros lenguajes</a>, lo que es realmente notable teniendo en cuenta que su uso es muy especializado.</p>
+<p>Desde su origen, existe una fundación que coordina todas las actividades en torno a R, con un <a href="https://www.r-project.org/">sitio web</a> en donde se publican periódicamente las nuevas versiones y de las bibliotecas de funciones existentes.</p>
+<section id="informaciones-complementarias-sobre-r" class="level3">
+<h3 class="anchored" data-anchor-id="informaciones-complementarias-sobre-r">Informaciones complementarias sobre R</h3>
+<p><a href="https://www.datacamp.com/">Datacamp</a> tiene <a href="https://www.datacamp.com/courses/free-introduction-to-r">cursos gratuitos de introducción a <span class="math inline">\(R\)</span></a> muy asequibles, y también hay material disponible en otras plataformas web como <a href="https://www.udemy.com/course/curso-de-introduccion-a-r/">Udemy</a> y <a href="https://es.coursera.org/courses?query=r">Coursera</a>. <a href="https://www.rstudio.com/">RStudio</a>, la compañía que ha desarrollado el IDE más utilizado en R, tiene <a href="https://education.rstudio.com/learn/beginner/">un recurso para principiantes</a>. El Gobierno de España, dentro de una de sus iniciativas de transformación digital, la <a href="https://datos.gob.es/es">iniciativa de datos abiertos</a>, incluye también una amplia referencia a <a href="https://datos.gob.es/es/noticia/cursos-para-aprender-mas-sobre-r">cursos de formación sobre R</a></p>
+</section>
+</section>
+<section id="analizando-los-datos-de-producción" class="level1">
+<h1>Analizando los datos de producción</h1>
+<section id="preparación-de-los-datos-datos-ordenados-tidy-data" class="level2">
+<h2 class="anchored" data-anchor-id="preparación-de-los-datos-datos-ordenados-tidy-data">Preparación de los datos: datos ordenados (<em>tidy data</em>)</h2>
+<p>En este documento utilizaremos como conjunto de datos de prueba una base de datos reales con los análisis de producto terminado de un fabricante de queso camembert. que incluye los análisis de extracto seco total, materia grasa, cloruros y coliformes.</p>
+<p>Es muy frecuente que el almacenamiento de los datos de proceso se haga en papel (cada vez menos) o en hojas de cálculo, como <a href="https://www.microsoft.com/es-es/microsoft-365/excel">Microsoft Excel</a> o <a href="https://www.google.es/intl/es/sheets/about/">Google Sheets</a>, o incluso en bases de datos como <a href="https://www.microsoft.com/es-es/microsoft-365/access">Microsoft Access</a> o <a href="https://www.sqlite.org/index.html">SQLite</a>. Nuestro ejemplo parte de Microsoft Excel, pero es aplicable a otros casos.</p>
+<p>En muchos casos, el diseño de la captura de datos sigue aproximadamente el modelo manual en papel. Se introducen los datos en la hoja de cálculo y una vez completados, se imprime el documento para su archivo.</p>
+<p>En otros casos, los datos se guardan en hojas de cálculo que se componen de diferentes pestañas para cada semana, cada mes o cada año, como el ejemplo a continuación:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes/2021-09-1_excel_1.png" class="img-fluid figure-img" style="width:100.0%"></p>
+<p></p><figcaption class="figure-caption">Captura de datos en Excel: datos sin limpiar</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Este tipo de almacenamiento de datos, si bien es fácil de manejar de forma manual, dificulta enormemente la consolidación de la información de períodos diferentes, fundamental para el análisis de tendencias, evaluación de la mejora, etc, como se comenta <a href="https://datacarpentry.org/2015-05-03-NDIC/excel-ecology/01-format-data.html">aquí</a>.</p>
+<p>Además, como sólo se dispone de una casilla por día y parámetro, impide el almacenamiento de datos repetidos, por ejemplo, si hemos hecho dos fabricaciones en el mismo día. Para solucionar este inconveniente, en muchas ocasiones se opta por guardar por ejemplo el valor medio del día (más tarde hablaremos de la media aritmética); sin embargo, esta decisón implica una pérdida de información no deseable.</p>
+<p>Supongamos que hemos hecho dos fabricaciones diarias de queso en tres días diferentes; el parámetro que hemos analizado es el <strong>extracto seco total</strong>, que designaremos como <span class="math inline">\(est\)</span>. Los resultados son los siguientes:</p>
+<table class="table">
+<thead>
+<tr class="header">
+<th></th>
+<th style="text-align: center;">Día 1</th>
+<th style="text-align: center;">Día 2</th>
+<th style="text-align: center;">Día 3</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>Fabricación 1</td>
+<td style="text-align: center;">46,50</td>
+<td style="text-align: center;">43,30</td>
+<td style="text-align: center;">47,35</td>
+</tr>
+<tr class="even">
+<td>Fabricación 2</td>
+<td style="text-align: center;">48,20</td>
+<td style="text-align: center;">51,40</td>
+<td style="text-align: center;">47,35</td>
+</tr>
+<tr class="odd">
+<td>Valor promedio del día</td>
+<td style="text-align: center;">47,35</td>
+<td style="text-align: center;">47,35</td>
+<td style="text-align: center;">47,35</td>
+</tr>
+</tbody>
+</table>
+<p>Como vemos, en los tres días el resultado promedio ha sido el mismo, 47,35%. Sin embargo, lo sucedido en los tres días es muy diferente: el primer día hemois tenido casi dos puntos de diferencia entre las dos fabricaciones, el segundo casi ocho puntos, mientras que en el tercero, las dos fabricaciones han tenido el mismo resultado.</p>
+<p>Si nuestro sistema de información sólo recoge el valor medio del día, no seremos capaces de explicar la variación que sucede en el día (más adelante veremos algunos análisis de variabilidad), simplemente porque no la tendremos recogida en nuestros datos. Para que nuestro análisis sea completo, necesitamos recoger toda la información posible, y ordenarla de la forma que sea más fácilmente explotable.</p>
+<p>La forma más correcta de almacenar los datos para el análisis es lo que actualmente se conoce como <a href="https://es.wikipedia.org/wiki/Tidy_data">datos ordenados (<em>tidy data</em>)</a> (referencias importantes <a href="https://r4ds.had.co.nz/tidy-data.html">aquí</a> y <a href="https://garrettgman.github.io/tidying/">aquí</a>) La definición formal de los datos ordenados fue presentada por <a href="http://hadley.nz/">Hadley Wickam</a> en <a href="https://vita.had.co.nz/papers/tidy-data.html">The Journal of Statistical Software,(2014)</a>; allí indicaba que los puntos principales para conseguir ordenar y limpiar nuestros datos son los siguientes</p>
+<ul>
+<li>Cada variable que mides tiene que estar en una columna.</li>
+<li>Cada observación diferente de esa variable tiene que ser en una fila diferente.</li>
+<li>Debe haber una tabla distinta para cada “clase” de variable.</li>
+<li>Si tienes múltiples tablas, debe existir una columna en cada tabla que permita enlazarlas.</li>
+</ul>
+<p>A estos puntos hay que añadir no utilizar ningún formato “ornamental” como líneas, cursivas, negritas, diferentes fuentes, etc. La tabla de datos debe ser sólo eso, una tabla de datos.</p>
+<p>En nuestro caso, las variables que vamos a almacenar son: extracto seco total (<span class="math inline">\(est\)</span>), materia grasa (<span class="math inline">\(mg\)</span>), cloruros(<span class="math inline">\(cloruros\)</span>) y coliformes totales (<span class="math inline">\(coliformes\)</span>)</p>
+<p>Usaremos una fila para cada fabricación, y para diferenciar los días añadiremos una columna con la fecha de fabricación en el formato estándar de Microsoft Excel ( o del programa que estemos utilizando). La ventaja de usar un formato de fecha estándar es que nuestro programa de análisis <span class="math inline">\(R\)</span> es capaz de leer y reconocer las fechas directamente de una hoja Excel, y las funciones incluidas en R nos permitirán agrupar los resultados por semanas, meses o años, en cualquier combinación. Añadiremos también una columna que nos permita indicar si la fabricación en cuestión es la primera o la segunda, o fabricaciones adicionales. De esta manera evitamos hacer promedios diarios y conservamos toda la información disponible.</p>
+<p>El aspecto de una tabla de datos ordenados es éste:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes/2021-09-1_excel_2.png" class="img-fluid figure-img" style="width:80.0%"></p>
+<p></p><figcaption class="figure-caption">Captura de datos en Excel: datos limpios</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>En la captura de pantalla se puede ver cómo la columna <span class="math inline">\(fabricación\)</span> indica las dos fabricaciones realizadas en algunos días.</p>
+<p>Este formato de tabla ordenada se conoce también de forma coloquial como formato de base de datos, es el formato habitual de almacenamiento en las tablas de las bases de datos relacionales.</p>
+<p>Ahora que tenemos nuestros datos en forma ordenada, podemos leer los datos en <span class="math inline">\(R\)</span> y empezar el análisis. Podemos hacerlo leyendo directamente de Microsoft Excel, como en este caso, o bien, previa exportación de Excel a formato <span class="math inline">\(CSV\)</span>, leer la tabla de datos con este formato. El formato <span class="math inline">\(CSV\)</span>, al ser un formato de texto plano, nos evita algunos problemas de formato que a veces pueden presentarse en Excel. En ambos casos utilizamos las funciones de la biblioteca <em>tidyverse</em></p>
+<div class="cell">
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 6 × 7
+  fecha               fabricacion   est    mg    ph cloruros coliformes
+  &lt;dttm&gt;                    &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt; &lt;dbl&gt;    &lt;dbl&gt;      &lt;dbl&gt;
+1 2020-01-11 00:00:00           1  46.7  24    4.85     1.5          80
+2 2020-01-12 00:00:00           1  48.1  25    4.67     1.61          0
+3 2020-01-13 00:00:00           1  46.0  24    4.71     1.48       9200
+4 2020-01-14 00:00:00           1  46.2  23.5  4.78     1.69         20
+5 2020-01-15 00:00:00           1  45.8  23    4.77     1.56        150
+6 2020-01-18 00:00:00           1  46    24    4.67     1.56         60</code></pre>
+</div>
+</div>
+<p>No vamos a hablar aqui de otras operaciones de limpieza de datos que también es necesario realizar con mucha frecuencia: Excel es muy tolerante en la introducción de datos y a veces no vemos el error hasta que <span class="math inline">\(R\)</span> nos presenta un resultado anormal (punto decimal mal situado, valores no adecuados: cambio del valor de <span class="math inline">\(est\)</span> por el de <span class="math inline">\(grasa\)</span>, fechas en formato erróneo, etc) La limpieza de datos es una de las etapas más importantes y a la que muchas veces se destina menos tiempo. Existen muchos cursos y formaciones abiertas en la web que pueden ayudarnos a desarrollar las habilidades necesarias para realizar con éxito esta parte del proceso de análisis.</p>
+</section>
+<section id="exploración-de-los-datos" class="level2">
+<h2 class="anchored" data-anchor-id="exploración-de-los-datos">Exploración de los datos</h2>
+<p>Antes de hacer ningún análisis estadístico complejo, usaremos estadística descriptiva y algunos gráficos para examinar la distribución de nuestros datos. A continuación, veremos:</p>
+<ul>
+<li>Una visión de la estadística descriptiva</li>
+<li>Tendencia central</li>
+<li>Dispersión</li>
+<li>Visualizando los datos</li>
+</ul>
+</section>
+<section id="una-visión-general-de-la-estadística-descriptiva-y-la-exploración-de-datos" class="level2">
+<h2 class="anchored" data-anchor-id="una-visión-general-de-la-estadística-descriptiva-y-la-exploración-de-datos">Una visión general de la estadística descriptiva y la exploración de datos</h2>
+<p>Lo primero que haremos será ver el aspecto general de la distribución de datos, y calcularemos una medida central que sirva como descriptor del conjunto.</p>
+<p>Un diagrama muy sencillo, utilizado de forma manual antes de la era de los ordenadores y la existencia del sofware libre, es el <a href="https://es.wikipedia.org/wiki/Diagrama_de_tallos_y_hojas">diagrama de tallo y hojas</a> (<em>stem leaf</em>). Esta fue una de las primeras herramientas utilizadas en el campo del análisis exploratorio de datos y todavía sigue siendo útil para pequeños conjuntos de datos, que queremos analizar rápidamente de forma manual.</p>
+<p>En nuestro caso, dejaremos a <span class="math inline">\(R\)</span> la presentación del ejemplo mediante la aplicación de la función <code>stem()</code> :</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(df<span class="sc">$</span>est)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>
+  The decimal point is at the |
+
+  42 | 9
+  43 | 
+  43 | 688
+  44 | 0113344
+  44 | 55667777888888899
+  45 | 112233334444
+  45 | 55555666666666777777788888899999
+  46 | 0000112222223333334444444
+  46 | 5555666666777777788888899999
+  47 | 000000000111111112223333333344444
+  47 | 56666777888889999999
+  48 | 000111244
+  48 | 55555678888
+  49 | 11123
+  49 | 66899
+  50 | 34
+  50 | 
+  51 | 
+  51 | 
+  52 | 
+  52 | 6</code></pre>
+</div>
+</div>
+<p>Como vemos, para hacer el esquema, colocamos a la izquierda los valores enteros de nuestra variable, y a la derecha, separados por una pequeña raya, vamos colocando de forma ordenada la última cifra significativa. El conjunto nos proporciona una sencilla y rápida distribución de frecuencias.</p>
+<p>Una forma más estándar de hacer una distribución de frecuencias es el <a href="https://es.wikipedia.org/wiki/Histograma">histograma.</a>. Un histograma ayuda a visualizar las frecuencias de valores en el conjunto de datos.</p>
+<p>Para construir un histograma trabajamos de forma parecida al <em>diagrama de tallo y hojas</em>:</p>
+<ul>
+<li>construimos los intervalos de frecuencia</li>
+<li>contamos el número de valores que corresponden a cada intervalo, construyendo una <em>tabla de frecuencias</em></li>
+<li>representamos gráficamente las frecuencias mediante un <a href="https://es.wikipedia.org/wiki/Diagrama_de_barras">diagrama de barras</a></li>
+</ul>
+<p>Utilizando algunas funciones básicas de R resulta fácil hacer este proceso de forma manual, aunque los pasos son ligeramente diferentes.</p>
+<p>Intentaremos en primer lugar hacer clases de 2 en 2 unidades de extracto seco total utilizando la <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/seq">función de secuencia</a> <code>seq()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a>clases <span class="ot">&lt;-</span> <span class="fu">seq</span>(<span class="at">from =</span> <span class="dv">42</span>, <span class="at">to =</span> <span class="dv">54</span>, <span class="at">by =</span> <span class="dv">2</span>)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>clases</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 42 44 46 48 50 52 54</code></pre>
+</div>
+</div>
+<p>Ahora <em>cortamos</em> nuestros datos de acuerdo con las clases que hemos definido mediante la <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/cut">función de corte</a> <code>cut()</code></p>
+<p>Llamaremos a los límites de corte <em>bins</em> para utilizar el mismo término que R utiliza en la funcion <code>hist()</code> que veremos a continuación (utilizamos la función <code>head()</code> para mostrar sólo los 10 primeros)</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>bins <span class="ot">&lt;-</span> <span class="fu">cut</span>(df<span class="sc">$</span>est, clases)</span>
+<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(bins, <span class="dv">10</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code> [1] (46,48] (48,50] (44,46] (46,48] (44,46] (44,46] (44,46] (44,46] (46,48]
+[10] (44,46]
+Levels: (42,44] (44,46] (46,48] (48,50] (50,52] (52,54]</code></pre>
+</div>
+</div>
+<p>La nueva variable <span class="math inline">\(bins\)</span> tiene la misma longitud que la variable <span class="math inline">\(est\)</span> en nuestro dataframe <span class="math inline">\(df\)</span>, y cada elemento de esta variable es el intervalo al cual corresponde el valor individual de <span class="math inline">\(est\)</span>.</p>
+<p>No tenemos más que contar el número de veces que aparece cada intervalo en nuestra lista, mediante la <a href="https://www.rdocumentation.org/packages/base/versions/3.6.2/topics/table">función de tabulación</a> <code>table()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb8"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb8-1"><a href="#cb8-1" aria-hidden="true" tabindex="-1"></a><span class="fu">table</span>(bins)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>bins
+(42,44] (44,46] (46,48] (48,50] (50,52] (52,54] 
+      5      71     105      27       2       1 </code></pre>
+</div>
+</div>
+<p>Finalmente, construimos el diagrama de barras con los valores de frecuencia que acabamos de calcular para cada intervalo con la función ´barplot()´:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">barplot</span>(<span class="fu">table</span>(bins))</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-8-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>La <a href="https://www.rdocumentation.org/packages/graphics/versions/3.6.2/topics/hist">función de histograma</a> <code>hist()</code>, que pertenece al conjunto de funciones básicas de <span class="math inline">\(R\)</span> hace lo mismo en una sola instrucción:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df<span class="sc">$</span>est)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid" width="384"></p>
+</div>
+</div>
+<p>Si quisiéramos hacer exactamente el mismo histograma que habíamos hecho previamente, agrupando los valores de 2 en 2, la función nos permite modificar el intervalo; en este caso modificamos el número de <em>bins</em> utilizando la opción <code>breaks</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df<span class="sc">$</span>est, <span class="at">breaks =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-10-1.png" class="img-fluid" width="384"></p>
+</div>
+</div>
+<p>Puedes leer más sobre la creación de histogramas simples <a href="https://www.datamentor.io/r-programming/histogram/">aquí</a>, y practicar la función <code>hist()</code> para crear histogramas <a href="https://www.datacamp.com/community/tutorials/make-histogram-basic-r">en esta página de Datacamp</a></p>
+<p>En este ejemplo detallado hemos visto cómo las funciones de R permiten automatizar los pasos que haríamos en un proceso manual para dar el resultado de forma sencilla y directa. A partir de ahora utilizaremos las funciones sin explicar sus pasos intermedios, aunque incluiremos siempre un enlace con la descripción de la función.</p>
+</section>
+<section id="la-distribución-de-los-datos." class="level2">
+<h2 class="anchored" data-anchor-id="la-distribución-de-los-datos.">La distribución de los datos.</h2>
+<p>Antes de calcular las medidas de tendencia central y dispersión, veamos lo que queremos decir con <em>distribución</em></p>
+<p>Las distribuciones de frecuencias que encontramos en el mundo real pueden representarse mediante <em>modelos matemáticos</em> que se construyen mediante funciones estadísticas. Según el tipo de proceso, la distribución de frecuencias que observamos puede ser descrita con un modelo u otro, modelo que podemos escoger de la forma que más nos interese.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) </span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df<span class="sc">$</span>est, <span class="at">breaks =</span> <span class="dv">5</span>)</span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df<span class="sc">$</span>coliformes, <span class="at">breaks =</span> <span class="dv">5</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-11-1.png" class="img-fluid" width="960"></p>
+</div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>En nuestro caso, vemos que el extracto seco total se distribuye de manera más o menos simétrica alrededor de un valor central, mientras que la distribución de los recuentos de coliformes es totalmete asimétrica: la gran mayoría de casos el valor es cero, y sólo algunos casos tienen valores positivos, que en ocasiones son muy altos.</p>
+<p>La distribución de frecuencias más común que es simétrica alrededor de un valor central se suele representar mediante un modelo estadístico que conocemos como <a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal">distribución normal</a> o <em>curva de Gauss</em> (el matemático que la describió), modelo al que se ajustan muchos procesos naturales. La frecuencia de positivos en un análisis microbiológico en cambio no puede ajustarse a este modelo, sino a otro que se conoce como <a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_de_Poisson">distribución de Poisson</a>.</p>
+<p>Cada tipo de distribución de probabilidad está caracterizada por un parámetro o parámetros propios. La distribución normal está caracterizada por dos parámetros, la media <span class="math inline">\(\mu\)</span> y la varianza <span class="math inline">\(\sigma^{2}\)</span>. La distribución de Poisson está caracterizada por el parámetro <span class="math inline">\(lambda \text{ }\lambda\)</span></p>
+<p>Esto quiere decir que no podemos utilizar para describir una distribución los parámetros de otra distribución distinta. Por eso no tiene sentido estadístico, y constituye un error, hablar de la media de los recuentos bacterianos de un periodo, ya que la distribución de los recuentos bacterianos no se ajusta a una distribución normal. Hablaremos de este punto importante más adelante.</p>
+<p>Muchas de las distribuciones de probabilidad pueden aproximarse a la distribución normal cuando el tamaño muestral es igual o superior a 30, según indica el <a href="https://es.wikipedia.org/wiki/Teorema_del_l%C3%ADmite_central">teorema del límite central</a>.No obstante, dado que esto no siempre se cumple, es necesario ser cuidadoso con el uso de los estadísticos descriptivos de una distribución. En muchas ocasiones, una transformación de los datos ayuda a <em>normalizar</em> una distribución; en la mayoría de las ocasiones, es más sencillo y menos propenso a error utilizar <em>métodos no paramétricos</em> que no están basados en la suposición de normalidad de los datos.</p>
+</section>
+<section id="tendencia-central" class="level2">
+<h2 class="anchored" data-anchor-id="tendencia-central">Tendencia central</h2>
+<p>Habitualmente explicamos “tendencia central” como “lo que ocurre más usualmente” Por ejemplo, en el caso de la distribución de frecuencias del extracto seco, hemos visto con el diagrama de tallo y hojas que los valores que ocurren más frecuentemente están entre 45 y 49.</p>
+<p>Si pudiésemos disponer de una medida única, un sólo valor, que refleje “lo que ocurre normalmente”, este valor nos permitiría compararlo con otros datos observados y de alguna manera comparar los conjuntos de datos entre sí.</p>
+<p>Las medidas de tendencia central más utilizadas son la <em>media</em> y la <em>mediana</em>.</p>
+<ul>
+<li><p>La <strong>media</strong> es la suma de los datos observados dividida entre el número de datos. Como hemos visto, es uno de los dos parámetros que describen la distribución normal.</p></li>
+<li><p>La <strong>mediana</strong> es el punto medio (o la media de los dos puntos centrales cuando el número de datos es par) cuando todos los datos están ordenados de mayor a menor.</p></li>
+<li><p>La <strong>moda</strong> es el valor más frecuente (que ocurre más veces) en el conjunto de datos. No es un estadístico muy utilizado en los entornos de producción industrial, por lo que simplemente lo citamos y no le daremos más uso.</p></li>
+</ul>
+<section id="ejemplo-de-cálculo-de-la-media-y-la-mediana" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-de-cálculo-de-la-media-y-la-mediana">Ejemplo de cálculo de la media y la mediana</h3>
+<p>Seleccionamos los 5 primeros valores de <span class="math inline">\(est\)</span> de nuestro conjunto de datos, con los que haremos manualmente los cálculos de manera sencilla:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>x<span class="ot">&lt;-</span> df<span class="sc">$</span>est[<span class="dv">1</span><span class="sc">:</span><span class="dv">5</span>]</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>x</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 46.68 48.09 45.97 46.24 45.81</code></pre>
+</div>
+</div>
+<p>La media de una población (completa) se designa mediante la letra griega <em>mu</em>: <span class="math inline">\(\mu\)</span> y se conoce como <em>media poblacional</em>. En el caso de la media de una muestra, la media se designa mediante una <span class="math inline">\(x\)</span> con una barra encima: <span class="math inline">\(\overline{x}\)</span></p>
+<p>El cálculo de la media de un conjunto de números consiste simplemente en sumar los valores y dividirlos entre el número de los mismos: <span class="math display">\[
+\overline{x} = \frac{\sum_1^{n}x}{n}
+\]</span> El signo <span class="math inline">\(\sum_1^{n}\)</span> significa que sumamos todo lo que sigue desde el primer valor hasta el último. En nuestro caso, <span class="math inline">\(\sum_1^{n}x=\)</span> 232.79 y <span class="math inline">\(n=\)</span> 5, por lo que la media de nuestros 5 valores es <span class="math inline">\(\overline{x}=\)</span> 46.56</p>
+<p>De la misma forma, calculamos la <a href="https://es.wikipedia.org/wiki/Mediana_(estad%C3%ADstica)">mediana</a> como el valor de la variable con posición central en un conjunto de datos ordenados; para nuestros 5 valores, <span class="math inline">\(Mediana=\)</span> 46.24.</p>
+<p><span class="math inline">\(R\)</span> nos permite hallar estos valores con facilidad para una columna de nuestro <em>data frame</em>, en este caso 211 valores, mediante las funciones estándar <code>mean()</code> y <code>median()</code>:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a><span class="fu">mean</span>(df<span class="sc">$</span>est)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 46.6372</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">median</span>(df<span class="sc">$</span>est)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 46.6</code></pre>
+</div>
+</div>
+</section>
+</section>
+<section id="distribución" class="level2">
+<h2 class="anchored" data-anchor-id="distribución">Distribución</h2>
+<p>Ya tenemos una medida de tendencia central de nuestro conjunto de datos (usemos la <strong>media</strong> por el momento). En nuestro conjunto de datos de extracto seco total, <span class="math inline">\(est\)</span>, la media es 46.64</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid" width="384"></p>
+</div>
+</div>
+<p>¿Cómo describimos de qué forma el resto de datos se agrupan alrededor de este valor central? A continuación hemos representado diferentes distribuciones de frecuencia que tienen diferente aspecto frente a su valor central. ¿Cómo podemos describir estos datos?</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-15-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+<p>Existen diferentes estadísticos que describen si una distribución se <em>inclina</em> a la derecha o a la izquierda, si es estrecha y alta o ancha y baja, etc. Las medidas que nos ayudan a explicar la <em>amplitud</em> de la distribución se conocen como <strong>medidas de dispersión</strong></p>
+</section>
+<section id="dispersión" class="level2">
+<h2 class="anchored" data-anchor-id="dispersión">Dispersión</h2>
+<p>Los siguientes estadísticos son utilizados para cuantificar la <strong>dispersión de los datos</strong> respecto al centro de los mismos. Utiizaremos principalmente tres:</p>
+<ul>
+<li><a href="https://es.wikipedia.org/wiki/Rango_(estad%C3%ADstica)">Rango</a> o recorrido: la diferencia entre el mayor y el menor valor de la muestra</li>
+<li><a href="https://es.wikipedia.org/wiki/Varianza">Varianza</a>: una medida acumulada de la distancia de cada punto individual a la media. Es una medida <em>paramétrica</em></li>
+<li><a href="https://es.wikipedia.org/wiki/Rango_intercuart%C3%ADlico#:~:text=En%20estad%C3%ADstica%20descriptiva%2C%20se%20le,trata%20de%20un%20estad%C3%ADstico%20robusto.">Rango intercuartil</a>, que veremos más tarde al hablar de los diagramas de caja. Es una medida <em>no paramétrica</em>.</li>
+</ul>
+<p>Cuando analizamos el total de una población, cuya distribución <em>suponemos</em> que se corresponde con una <em>distribucón normal</em>, la varianza se calcula con la fórmula siguiente:</p>
+<p><span class="math display">\[
+\sigma^{2} = \frac{1}{n} \sum_1^{n} (x - \mu)^{2}
+\]</span> donde:</p>
+<p><span class="math inline">\(\sigma^{2}=\)</span> varianza</p>
+<p><span class="math inline">\(x=\)</span> los valores individuales de la muestra</p>
+<p><span class="math inline">\(n=\)</span> el número de valores en la muestra</p>
+<p><span class="math inline">\(\mu=\)</span> media</p>
+<p>y <span class="math inline">\(\sum\)</span> significa que sumamos todo lo que sigue, prestando atención a los paréntesis</p>
+<p>Cuando calculamos la varianza de una muestra, mucho más pequeña que el total de la población, se usa <span class="math inline">\((n-1)\)</span> como divisor en vez de <span class="math inline">\(n\)</span>, por razones estadísticas que están fuera del alcance de este documento, y que pueden consultarse <a href="https://es.wikipedia.org/wiki/Varianza">aquí</a>. En este caso, no usamos <span class="math inline">\(\sigma^{2}\)</span> para representar la varianza, sino <span class="math inline">\(s^{2}\)</span>, que es demonimada <em>varianza muestral</em></p>
+<p><span class="math display">\[
+s^{2} = \frac{1}{n-1} \sum_1^{n} (x - \mu)^{2}
+\]</span></p>
+<p>La <a href="https://es.wikipedia.org/wiki/Desviaci%C3%B3n_t%C3%ADpica">desviación estándar o desviación típica</a> es en cierta manera un valor medio de desviación respecto a la media. La desviación típica se calcula como la raíz cuadrada de la varianza:</p>
+<p><span class="math display">\[
+\sigma = \sqrt{\frac{1}{n} \sum_1^{n} (x - \mu)^{2}}
+\]</span></p>
+<p>donde:</p>
+<p><span class="math inline">\(\sigma=\)</span> desviación típica</p>
+<p><span class="math inline">\(x=\)</span> los valores individuales de la muestra</p>
+<p><span class="math inline">\(n=\)</span> el número de valores en la muestra</p>
+<p><span class="math inline">\(\mu=\)</span> media</p>
+<p>y <span class="math inline">\(\sum\)</span> significa que sumamos todo lo que sigue, prestando atención a los paréntesis</p>
+<p>Dado que la desviación típica se calcula como la raíz cuadrada de la varianza, cuando calculamos la desviación típica de una muestra mucho más pequeña que el total de la población, heredamos de la varianza el divisor por <span class="math inline">\((n-1)\)</span> en vez de <span class="math inline">\(n\)</span>, por las razones indicadas anteriormente. La desviación típica muestral se representa como <span class="math inline">\(s\)</span></p>
+<p><span class="math display">\[
+s = \sqrt{\frac{1}{n-1} \sum_1^{n} (x - \mu)^{2}}
+\]</span></p>
+<p>Gracias a <span class="math inline">\(R\)</span> podemos olvidarnos de la complejidad de estas fórmulas, ya que incluye funciones para los cálculos de estos estadísticos: <code>var()</code> para el cálculo de la varianza, y <code>sd()</code> para el cálculo de la desviación típica:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb21"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb21-1"><a href="#cb21-1" aria-hidden="true" tabindex="-1"></a><span class="fu">var</span>(df<span class="sc">$</span>est)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 2.109695</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb23"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb23-1"><a href="#cb23-1" aria-hidden="true" tabindex="-1"></a><span class="fu">sd</span>(df<span class="sc">$</span>est)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 1.452479</code></pre>
+</div>
+</div>
+<p>La media <span class="math inline">\(\mu\)</span> y la varianza <span class="math inline">\(\sigma^{2}\)</span> definen la <em>distribución normal</em> correspondiente. Esto se indica en estadística mediante la expresión <span class="math inline">\(X \sim N(\mu, \sigma^{2})\)</span>, lo que quiere decir, simplemente, que nuestros valores pertenecen a una distribución normal definida por esos dos parámetros.</p>
+<p>No vamos a indicar aquí la fórmula de la <em>función de distribución</em> de la <a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal">distribución normal</a> ni el cálculo de probabilidades, que pueden consultarse <a href="https://es.wikipedia.org/wiki/Distribuci%C3%B3n_normal">aquí</a>. Sólo indicaremos que el área que delimita la curva nos indica la probabilidad de un determinado valor en esa distribución <span class="math inline">\(X \sim N(\mu, \sigma^{2})\)</span>, o, igualmente, de que un valor sea igual, mayor o menor que un valor dado. Tanto las hojas de cálculo actuales como <span class="math inline">\(R\)</span> tienen fórmulas para calcular estas probabilidades, y puede resultar útil su aprendizaje.</p>
+<p>En todo caso, aquí nos quedaremos con saber que la curva normal nos permite calcular la probabilidad de ocurrencia de los valores que podemos encontrarnos en nuestra distribución. Dicho de otra manera, la probabiildad de que un valor al azar proveniente de una distribución <span class="math inline">\(X \sim N(\mu, \sigma^{2})\)</span> esté dentro del intervalo <span class="math inline">\(\mu\pm\ \sigma\)</span> es de <span class="math inline">\(0,682\)</span>, o lo que es lo mismo desde un punto de vista práctico, del <span class="math inline">\(68,2\%\)</span>, así sucesivamente para todos los intervalos de 2 o 3 <span class="math inline">\(\sigma\)</span>. Resumiendo,</p>
+<ul>
+<li>en el intervalo <span class="math inline">\(\mu\pm1\text{ }\sigma\)</span> encontraremos el <span class="math inline">\(68,2\%\)</span> de los datos</li>
+<li>en el intervalo <span class="math inline">\(\mu\pm2\text{ }\sigma\)</span> encontraremos el <span class="math inline">\(95,4\%\)</span> de los datos</li>
+<li>en el intervalo <span class="math inline">\(\mu\pm3\text{ }\sigma\)</span> encontraremos el <span class="math inline">\(99,6\%\)</span> de los datos</li>
+</ul>
+<p>lo se indica de forma gráfica en la siguiente figura:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes/Standard_deviation_diagram_micro.svg" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Distribución normal (Fuente: Wikipedia)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Estos valores son la base de la construcción de los gráficos de <a href="https://en.wikipedia.org/wiki/Statistical_process_control">control estadístico de procesos</a>, y de la metodología <a href="https://es.wikipedia.org/wiki/Seis_Sigma">Seis Sigma</a>. Otro ejemplo es la ley de contenido efectivo <a href="https://www.boe.es/buscar/pdf/2008/BOE-A-2008-17629-consolidado.pdf">RD 1801/2008</a>, que hace uso del cálculo de probabilidades basado en la distribución normal.</p>
+</section>
+<section id="el-diagrama-de-caja-o-boxplot" class="level2">
+<h2 class="anchored" data-anchor-id="el-diagrama-de-caja-o-boxplot">El diagrama de caja o <em>boxplot</em></h2>
+<p>Hemos visto que la utilización de la media y la desviación típica como <em>descriptores</em> de una distribución normal supone que la distribución de nuestros datos puede ajustarse a una distribución normal. Hemos visto también que algunas distribuciones de valores, como los análisis microbiológicos de coliformes, no siguen esta distribución sino que son fuertemente asimétricos, por lo que en este caso no podemos utilizar la media y la desviación típica para describir nuestros resultados analíticos.</p>
+<p>Existen otros métodos muy útiles para analizar estas distribuciones de datos, que por extensión pueden aplicarse a todas las distribuciones de datos, uno de los más usados es el <a href="https://es.wikipedia.org/wiki/Diagrama_de_caja">diagrama de caja o <em>boxplot</em></a>. Consiste en un gráfico que se construye a partir de los llamados <em>cuartiles</em>:</p>
+<ul>
+<li>el primer cuartil, o <span class="math inline">\(Q_{1}\)</span> se calcula como la mediana de los <span class="math inline">\(\frac{n}{2}\)</span> números más bajos de nuestro conjunto ordenado de datos</li>
+<li>el segundo cuartil,o <span class="math inline">\(Q_{2}\)</span> se calcula como la mediana del conjunto de datos</li>
+<li>el tercer cuartil, o <span class="math inline">\(Q_{3}\)</span> se calcula como la mediana de los <span class="math inline">\(\frac{n}{2}\)</span> números más altos de nuestro conjunto ordenado de datos</li>
+</ul>
+<p>La anchura de la caja se calcula como la distancia entre los cuartiles 1 y 3. Representa el 50% de la distribución y se conoce como <a href="https://en.wikipedia.org/wiki/Interquartile_range"><strong>rango intercuartil</strong></a>,</p>
+<p><span class="math display">\[
+IQR=Q_{3}-Q_{1}
+\]</span> El rango intercuartil es una medida de dispersión no paramétrica, muy útil en muchas ocasiones cuando no conocemos la distribución de los datos o sabemos que no se ajustan a una distribución normal y por lo tanto no podemos utilizar la desviación típica como medida de dispersión.</p>
+<p>La mediana se representa casi siempre con una línea horizontal en su posición correspondiente dentro de la caja, entre los cuartiles <span class="math inline">\(Q_{1}\)</span> y <span class="math inline">\(Q_{3}\)</span>. Hay diferentes modelos de representación gráfica de diagramas de caja, algunos de ellos utilizan puntos u otros símbolos para la pòsición de la mediana.</p>
+<p>Finalmente, los extremos del diagrama de caja se calculan como <span class="math inline">\(Q_{3}+IQR*1,5\)</span> para la “rama” alta, y <span class="math inline">\(Q_{1}-IQR*1,5\)</span> para la “rama” baja. En caso de que no haya ningún valor en nuestros datos tan alto o bajo como resulta del cálculo, simplemente se toma como extremo de la “rama” el máximo o el mínimo de los datos, respectivamente. Esto quiere decir que es posible que las ramas sean asimétricas (de diferente longitud), lo cual es relativamente habitual en distribuciones no simétricas.</p>
+<p>Si hay algún valor que esté más lejos que los límites que hemos calculado para las “ramas”, se representan como puntos aislados, para indicar que son valores extremos que pueden ser anómalos.</p>
+<p>A continuación vemos el diagrama de caja comparando sus elementos con los de la distribución normal:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="01-imagenes/Boxplot_vs_PDF.svg" class="img-fluid figure-img" style="width:50.0%"></p>
+<p></p><figcaption class="figure-caption">Boxplot (Fuente:Wikipedia)</figcaption><p></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Como vemos, la anchura de la caja es el rango intercuartil <span class="math inline">\(IQR\)</span>, de forma que en un solo gráfico tenemos una descripción de la distribución bien detallada y que podemos evaluar visualmente: un valor central (mediana), un valor de dispersión (<span class="math inline">\(IQR\)</span>), los límites extremos de los datos y, como veremos, los posibles valores anómalos (<em>outliers</em>)</p>
+<p>El conjunto de los tres cuartiles más el mínimo y máximo de los datos se conoce como <a href="https://en.wikipedia.org/wiki/Five-number_summary"><strong>resumen de cinco números</strong></a>. <span class="math inline">\(R\)</span> tiene dos funciones que nos muestran estos números: <code>fivenum()</code> y <code>summary()</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb25"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb25-1"><a href="#cb25-1" aria-hidden="true" tabindex="-1"></a><span class="fu">fivenum</span>(df<span class="sc">$</span>est)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>[1] 42.920 45.615 46.600 47.470 52.610</code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb27"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb27-1"><a href="#cb27-1" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(df<span class="sc">$</span>est)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   Min. 1st Qu.  Median    Mean 3rd Qu.    Max. 
+  42.92   45.62   46.60   46.64   47.47   52.61 </code></pre>
+</div>
+</div>
+<section id="utilidad-del-diagrama-de-caja" class="level3">
+<h3 class="anchored" data-anchor-id="utilidad-del-diagrama-de-caja">Utilidad del diagrama de caja</h3>
+<p>Una de las grandes ventajas del diagrama de caja es que puede ser fácilmente utilizado para comparar distribuciones. Antes hemos visto el aspecto que pueden tomar diferentes distribuciones, recordemos los histogramas:</p>
+<div class="cell">
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-20-1.png" class="img-fluid" width="960"></p>
+</div>
+</div>
+<p>Los diagramas de caja para estas distribuciones nos permiten una visualización <em>lado a lado</em> de todas ellas de forma mucho más clara, incluyendo valores centrales y dispersión:</p>
+<div class="cell" data-layout-align="center">
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-21-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>El diagrama de caja es una herramienta fundamental en el análisis descriptivo de datos. Puede utilizarse para describir un conjunto de datos, o para subdividir un conjunto de datos en función de otra variable, como el tiempo o cualquier otro factor que forme parte de nuestra tabla de datos y podamos usar para clasificarlos.</p>
+<p>Veamos el uso del boxplot para representar nuestros valores mensuales de extracto seco total <span class="math inline">\(est\)</span>, clasificados por meses:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb29"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb29-1"><a href="#cb29-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb29-2"><a href="#cb29-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(df, <span class="fu">aes</span>(<span class="at">x=</span><span class="fu">factor</span>(<span class="fu">month</span>(fecha)), <span class="at">y =</span> est)) <span class="sc">+</span></span>
+<span id="cb29-3"><a href="#cb29-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb29-4"><a href="#cb29-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">xlab</span>(<span class="st">"Mes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-22-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>El <em>diagrama de caja</em> nos permite ver nuestro conjunto de datos con detalle adicional. Añade, además, una información muy útil: los puntos aislados que aparecen fuera del diagrama de caja son posibles valores anormales.</p>
+<ul>
+<li>En febrero y marzo la mediana del <span class="math inline">\(est\)</span> ha sido la más baja del año. ¿Se ha debido a una decisión voluntaria o ha habido una deriva de fabricación?</li>
+<li>Parece que en julio, agosto y noviembre, la variabilidad de nuestros resultados ha sido mayor que en otros meses. ¿Quizás hemos sustituido personal experto por personal menos formado, debido a las vacaciones?</li>
+<li>En abril y mayo parece que ha habido algunas fabricaciones que han tenido valores que se han apartado anormalmente de lo que ha sucedido en el conjunto del mes. Debemos indagar para saber si ha habido algún accidente de fabricación o cualquier otra cosa que explique estos valores anormales.</li>
+</ul>
+<p>De esta manera, una representación gráfica sencilla nos ayuda a entender nuestros datos, y esto nos facilita el enfocarnos en la búsqueda de las causas de dispersión en estos casos concretos. Veremos este aspecto con más detalle al hablar de los gráficos de control y las causas de variación.</p>
+<div class="cell">
+
+</div>
+</section>
+</section>
+<section id="representación-de-los-valores-en-el-tiempo" class="level2">
+<h2 class="anchored" data-anchor-id="representación-de-los-valores-en-el-tiempo">Representación de los valores en el tiempo</h2>
+<p>Hasta ahora hemos analizado un conjunto de datos de forma estática, examinando su distribución y definiendo el conjunto en base a determinadas medidas centrales y de dispersión. Hemos visto medidas que llamamos <em>paramétricas</em>, porque constituyen los parámetros de una distribución, en este caso la <strong>distribución normal</strong> o <strong>campana o curva de Gauss</strong>. Hemos visto también medidas no paramétricas, como la <strong>mediana</strong>. que no presuponen ningún modelo de distribución de los datos. Nuestra última gráfica de diagramas de caja a lo largo de los meses nos ayuda a introducir una dimensión adicional en nuestra tabla de datos, muy importante en el seguimiento de los procesos productivos: el tiempo.</p>
+<p>La función <code>plot()</code>nos permite representar un solo valor <code>plot(x)</code> o un valor <span class="math inline">\(y\)</span> frente a un valor <span class="math inline">\(x\)</span> mediante <code>plot(x,y)</code>. Si en el valor <span class="math inline">\(x\)</span> utilizamos nuestra columna de <span class="math inline">\(fecha\)</span>, podemos ver cómo ha evolucionado el <span class="math inline">\(est\)</span> a lo largo del tiempo. Como otras funciones <span class="math inline">\(R\)</span>, podemos representar nuestra gráfica de diferentes formas; la opción por defecto representa sólo los puntos, pero podemos representar también líneas o puntos unidos por líneas (para representar lado a lado las dos opciones, dividimos la pantalla en dos y luego recuperamos el formato único con la función <code>par()</code>):</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb30"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb30-1"><a href="#cb30-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">2</span>)) </span>
+<span id="cb30-2"><a href="#cb30-2" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>fecha, df<span class="sc">$</span>est)</span>
+<span id="cb30-3"><a href="#cb30-3" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df<span class="sc">$</span>fecha, df<span class="sc">$</span>est, <span class="at">type =</span> <span class="st">"l"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-24-1.png" class="img-fluid figure-img" width="960"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb31"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb31-1"><a href="#cb31-1" aria-hidden="true" tabindex="-1"></a><span class="fu">par</span>(<span class="at">mfrow=</span><span class="fu">c</span>(<span class="dv">1</span>,<span class="dv">1</span>)) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</div>
+<p>Como alternativa, podemos usar la funcion <code>ggplot()</code> de la biblioteca <em>tidyverse</em> <code>ggplot2</code>Esta biblioteca, una de las más usadas en R y una referencia en el lenguaje de construcción de gráficos, nos da una gran versatilidad en la construcción de nuestros gráficos. En este caso, como ejemplo, añadimos una línea de tendencia a la línea original:</p>
+<div class="cell" data-layout-align="center">
+<div class="sourceCode cell-code" id="cb32"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb32-1"><a href="#cb32-1" aria-hidden="true" tabindex="-1"></a>df <span class="sc">|&gt;</span></span>
+<span id="cb32-2"><a href="#cb32-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> fecha, <span class="at">y =</span> est)) <span class="sc">+</span></span>
+<span id="cb32-3"><a href="#cb32-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb32-4"><a href="#cb32-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>() <span class="sc">+</span></span>
+<span id="cb32-5"><a href="#cb32-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">stat_smooth</span>(<span class="at">se =</span> <span class="cn">FALSE</span>, <span class="at">span =</span> <span class="fl">0.2</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div class="quarto-figure quarto-figure-center">
+<figure class="figure">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-25-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>Dejamos a la práctica posterior la comprensión detallada de esta funcíón y sus opciones, especialmente de la opción <code>span</code>dentro de la curva suavizada de tendencia.</p>
+</section>
+<section id="de-los-gráficos-de-series-temporales-a-los-gráficos-de-control" class="level2">
+<h2 class="anchored" data-anchor-id="de-los-gráficos-de-series-temporales-a-los-gráficos-de-control">De los gráficos de series temporales a los gráficos de control</h2>
+<p>Las gráficas temporales anteriores nos muestran que nuestros valores de <span class="math inline">\(est\)</span> no han sido constantes a lo largo del año, sino que ha habido variaciones mensuales. Hemos tenido una primera visualización al examinar los diagramas de caja por meses, y el gráfico temporal de líneas nos ha dado más precisión en la observación de las variaciones diarias y estacionales.</p>
+<p>Ahora sabemos que si nuestros datos se ajustan <em>aproximadamente</em> a una distribución normal, lo <em>normal</em> sería que, tal como hemos visto, el <span class="math inline">\(99,6\%\)</span> de los datos estuviese dentro de los limites de <span class="math inline">\(\overline{x}\pm3 s\)</span>, y que el %95,4%$ de los datos deben estar en el intervalo de <span class="math inline">\(\overline{x}\pm2 s\)</span>.</p>
+<p>Esta es la base de la construcción de los <a href="https://en.wikipedia.org/wiki/Control_chart">gráficos de contro</a>l, que son una herramienta fundamental en el control de los procesos industriales, y también de cualquier proceso que tenga lugar en el tiempo y esté sometido a variación.</p>
+<p><span class="math inline">\(R\)</span> tiene algunas bibliotecas muy potentes para construir gráficos de control, las más usadas son <code>qcc</code>, cuyo contenido y uso puede verse <a href="https://cran.r-project.org/web/packages/qcc/vignettes/qcc_a_quick_tour.html">aquí</a> y <code>qicharts2</code>, cuyo contenido y uso puede verse <a href="https://cran.r-project.org/web/packages/qicharts2/vignettes/qicharts2.html">aquí</a>. A modo de ejemplo, veamos dos gráficos de control con cada una de las librerías.</p>
+<p>Para construir nuestro gráfico de control con qcc necesitamos proporcionar grupos de valores que representen periodos homogéneos. Para ello, agruparemos las fechas por semanas, y haremos nuestro gráfico de control en base a los promedios y variabilidad semanal.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb33"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb33-1"><a href="#cb33-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(qcc)</span>
+<span id="cb33-2"><a href="#cb33-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(lubridate)</span>
+<span id="cb33-3"><a href="#cb33-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb33-4"><a href="#cb33-4" aria-hidden="true" tabindex="-1"></a>est.semanal <span class="ot">&lt;-</span> <span class="fu">qcc.groups</span>(df<span class="sc">$</span>est, <span class="fu">week</span>(df<span class="sc">$</span>fecha))</span>
+<span id="cb33-5"><a href="#cb33-5" aria-hidden="true" tabindex="-1"></a><span class="fu">qcc</span>(est.semanal, <span class="at">type =</span> <span class="st">"xbar"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-26-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb34"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb34-1"><a href="#cb34-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qcc</span>(est.semanal, <span class="at">type =</span> <span class="st">"S"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-26-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Hemos generado dos salidas, un gráfico de valores medios semanales y un gráfico de desviaciones típicas. Teniendo en cuenta que algunas semanas hemos fabricado sólo dos días, el número resulta demasiado bajo para que las desviaciones típicas sean significativas, pero dado que estamos trabajando a modo de ejemplo, podemos aceptarlo. Una alternativa en casos como éste sería utilizar como gráfico de variabilidad el de rangos <code>type = "R"</code></p>
+<p>La funcín <code>qcc()</code>nos marca en rojo en el gráfico de medias los valores que se escapan del límite de control de <span class="math inline">\(\pm3\text{ }s\)</span>, lo que nos alerta de cambios en el proceso en estos valores. Hay que indicar, no obstante, que las gráficas de control sólo son aplicables en el caso de procesos estables, es decir, que no muestran tendencias subyacentes; en nuestro caso vamos a suponer un proceso estable, ya que, aunque ha habido una variación en algunos meses, el proceso ha vuelto a sus valores medios. No parece tanto un problema de deriva o tendencia sino de falta de control del proceso en algunos meses, o bien alguna otra explicación que podamos encontrar.</p>
+<p>Sin embargo la variabilidad semanal ha estado dentro de los límites de control aceptables; a pesar de que nuestros diagramas de caja detectaban un aumento de la variabilidad en algunos meses de verano, el gráfico de control no considera este aumento como suficiente para decir que el proceso esté fuera de control.</p>
+<p>La librería <code>qcc</code>tiene otras funciones muy útiles, como la función <code>process.capability()</code> que calcula la capacidad del proceso; aquí no entraremos en más detalles, pero puede resultar muy interesante revisar el manual de la función <a href="https://cran.r-project.org/web/packages/qcc/vignettes/qcc_a_quick_tour.html">aquí</a></p>
+<p>Otra biblioteca muy potente y quizás más sencilla de usar es <code>qicharts2</code> Esta biblioteca utiliza como única funcion <code>qic()</code>, y está basada en <code>ggplot2</code>, por lo que es muy extensible con opciones estándar de esta biblioteca.</p>
+<p>Veamos dos opciones sencillas, una con los valores individuales, y la segunda agrupando los valores semanlmente, tal como hemos hecho en <code>qcc</code></p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb35"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb35-1"><a href="#cb35-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(qicharts2)</span>
+<span id="cb35-2"><a href="#cb35-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb35-3"><a href="#cb35-3" aria-hidden="true" tabindex="-1"></a><span class="fu">qic</span>(fecha,est, <span class="at">data =</span> df)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-27-1.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>Aquí utilizaremos la función <code>cut()</code> para lograr la agrupación por semanas, ya que se adapta mejor a la función y presenta las fechas correctamente.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb36"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb36-1"><a href="#cb36-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qic</span>(<span class="fu">as.Date</span>(<span class="fu">cut</span>(fecha, <span class="at">breaks =</span> <span class="st">"week"</span>)),</span>
+<span id="cb36-2"><a href="#cb36-2" aria-hidden="true" tabindex="-1"></a>    est, </span>
+<span id="cb36-3"><a href="#cb36-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df, </span>
+<span id="cb36-4"><a href="#cb36-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">chart =</span> <span class="st">"xbar"</span>, </span>
+<span id="cb36-5"><a href="#cb36-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab=</span> <span class="st">"Mes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-28-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb37"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb37-1"><a href="#cb37-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qic</span>(<span class="fu">as.Date</span>(<span class="fu">cut</span>(fecha, <span class="at">breaks =</span> <span class="st">"week"</span>)),</span>
+<span id="cb37-2"><a href="#cb37-2" aria-hidden="true" tabindex="-1"></a>    est, </span>
+<span id="cb37-3"><a href="#cb37-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df, </span>
+<span id="cb37-4"><a href="#cb37-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">chart =</span> <span class="st">"s"</span>, </span>
+<span id="cb37-5"><a href="#cb37-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab=</span> <span class="st">"Mes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-28-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>De forma similar a <code>qcc()</code>, la gráfica nos presenta en rojo las fechas en las que los valores se han salido de los límites de control, indicando que el proceso no ha sido estable.</p>
+<p>Podemos hacer fácilmente una gráfica basada en los valores mensuales, sólo con cambiar el criterio de agrupación de semanas a meses. Esta es la gran ventaja de usar una columna de fechas estándar.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb38"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb38-1"><a href="#cb38-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qic</span>(<span class="fu">as.Date</span>(<span class="fu">cut</span>(fecha, <span class="at">breaks =</span> <span class="st">"month"</span>)),</span>
+<span id="cb38-2"><a href="#cb38-2" aria-hidden="true" tabindex="-1"></a>    est, </span>
+<span id="cb38-3"><a href="#cb38-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df, </span>
+<span id="cb38-4"><a href="#cb38-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">chart =</span> <span class="st">"xbar"</span>, </span>
+<span id="cb38-5"><a href="#cb38-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab=</span> <span class="st">"Mes"</span>)</span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-29-1.png" class="img-fluid" width="672"></p>
+</div>
+<div class="sourceCode cell-code" id="cb39"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb39-1"><a href="#cb39-1" aria-hidden="true" tabindex="-1"></a><span class="fu">qic</span>(<span class="fu">as.Date</span>(<span class="fu">cut</span>(fecha, <span class="at">breaks =</span> <span class="st">"month"</span>)),</span>
+<span id="cb39-2"><a href="#cb39-2" aria-hidden="true" tabindex="-1"></a>    est, </span>
+<span id="cb39-3"><a href="#cb39-3" aria-hidden="true" tabindex="-1"></a>    <span class="at">data =</span> df, </span>
+<span id="cb39-4"><a href="#cb39-4" aria-hidden="true" tabindex="-1"></a>    <span class="at">chart =</span> <span class="st">"s"</span>, </span>
+<span id="cb39-5"><a href="#cb39-5" aria-hidden="true" tabindex="-1"></a>    <span class="at">xlab=</span> <span class="st">"Mes"</span>) </span></code><button title="Copy to Clipboard" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<p><img src="intro-r_files/figure-html/unnamed-chunk-29-2.png" class="img-fluid" width="672"></p>
+</div>
+</div>
+<p>El análisis de la variación mediante gráficos de control es una herramienta clave en la reducción de la variabilidad industrial y la mejora de procesos. Recomendamos profundizar tanto en la teoría como en la práctica, utilizando las funciones indicadas de <span class="math inline">\(R\)</span> que proporcionan herramientas potentes y suficientes para emplear estas herramientsa con éxito.</p>
+</section>
+<section id="resumen" class="level2">
+<h2 class="anchored" data-anchor-id="resumen">Resumen</h2>
+<p>En este documento se han presentado algunas técnicas básicas para almacenar datos de producción y para su análisis visual y detallado, análisis que debe llevar a un mejor conocimiento del proceso productivo y a la mejora de las decisiones para reducir su variabiidad, lo que es siempre (o debe ser) una prioridad en el pilotaje de un proceso productivo. Pero el conocimiento y dominio de las técnicas expuestas sólo se logra mediante la práctica. Por lo tanto, animamos a implantar estas herramientas en los grupos de mejora y a procurar la formación necesaria para cu comprensión y dominio.</p>
+<p>Herramientas básicas estudiadas:</p>
+<ul>
+<li>Histogramas</li>
+<li>Distribución normal, media, varianza y desviación típica</li>
+<li>Otras distribuciones</li>
+<li>Diagramas de caja</li>
+<li>Gráficos de series temporales</li>
+<li>Gráficos de control</li>
+</ul>
+<p>Bibliotecas R utilizadas:</p>
+<ul>
+<li><code>tidyverse</code> para el análisis general</li>
+<li><code>readxl</code> para leer la tabla de datos directamente de Excel (dentro de <code>tidyverse</code>)</li>
+<li><code>ggplot2</code>para realizar gráficos (dentro de <code>tidyverse</code>)</li>
+<li><code>scales</code> para escalar las distribuciones</li>
+<li><code>lubridate</code> para calcular funciones de tiempo sobre la columna fecha, tales como <code>month()</code> (dentro de <code>tidyverse</code>)</li>
+<li><code>qcc</code>para los gráficos de control</li>
+<li><code>qicharts2</code> para los gráficos de control</li>
+</ul>
+</section>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+window.document.addEventListener("DOMContentLoaded", function (event) {
+  const toggleBodyColorMode = (bsSheetEl) => {
+    const mode = bsSheetEl.getAttribute("data-mode");
+    const bodyEl = window.document.querySelector("body");
+    if (mode === "dark") {
+      bodyEl.classList.add("quarto-dark");
+      bodyEl.classList.remove("quarto-light");
+    } else {
+      bodyEl.classList.add("quarto-light");
+      bodyEl.classList.remove("quarto-dark");
+    }
+  }
+  const toggleBodyColorPrimary = () => {
+    const bsSheetEl = window.document.querySelector("link#quarto-bootstrap");
+    if (bsSheetEl) {
+      toggleBodyColorMode(bsSheetEl);
+    }
+  }
+  toggleBodyColorPrimary();  
+  const icon = "";
+  const anchorJS = new window.AnchorJS();
+  anchorJS.options = {
+    placement: 'right',
+    icon: icon
+  };
+  anchorJS.add('.anchored');
+  const clipboard = new window.ClipboardJS('.code-copy-button', {
+    target: function(trigger) {
+      return trigger.previousElementSibling;
+    }
+  });
+  clipboard.on('success', function(e) {
+    // button target
+    const button = e.trigger;
+    // don't keep focus
+    button.blur();
+    // flash "checked"
+    button.classList.add('code-copy-button-checked');
+    var currentTitle = button.getAttribute("title");
+    button.setAttribute("title", "Copied!");
+    setTimeout(function() {
+      button.setAttribute("title", currentTitle);
+      button.classList.remove('code-copy-button-checked');
+    }, 1000);
+    // clear code selection
+    e.clearSelection();
+  });
+  function tippyHover(el, contentFn) {
+    const config = {
+      allowHTML: true,
+      content: contentFn,
+      maxWidth: 500,
+      delay: 100,
+      arrow: false,
+      appendTo: function(el) {
+          return el.parentElement;
+      },
+      interactive: true,
+      interactiveBorder: 10,
+      theme: 'quarto',
+      placement: 'bottom-start'
+    };
+    window.tippy(el, config); 
+  }
+  const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+  for (var i=0; i<noterefs.length; i++) {
+    const ref = noterefs[i];
+    tippyHover(ref, function() {
+      // use id or data attribute instead here
+      let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+      try { href = new URL(href).hash; } catch {}
+      const id = href.replace(/^#\/?/, "");
+      const note = window.document.getElementById(id);
+      return note.innerHTML;
+    });
+  }
+  var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+  for (var i=0; i<bibliorefs.length; i++) {
+    const ref = bibliorefs[i];
+    const cites = ref.parentNode.getAttribute('data-cites').split(' ');
+    tippyHover(ref, function() {
+      var popup = window.document.createElement('div');
+      cites.forEach(function(cite) {
+        var citeDiv = window.document.createElement('div');
+        citeDiv.classList.add('hanging-indent');
+        citeDiv.classList.add('csl-entry');
+        var biblioDiv = window.document.getElementById('ref-' + cite);
+        if (biblioDiv) {
+          citeDiv.innerHTML = biblioDiv.innerHTML;
+        }
+        popup.appendChild(citeDiv);
+      });
+      return popup.innerHTML;
+    });
+  }
+});
+</script>
+</div> <!-- /content -->
+
+
+
+</body></html>

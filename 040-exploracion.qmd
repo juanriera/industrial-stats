@@ -13,6 +13,74 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, fig.showtext = T)
 
 En este capítulo veremos cómo describir un conjunto de datos de forma visual, utilizando diversas herramientas gráficas.
 
+Explorar datos en R siguiendo los principios de **Hadley Wickham** implica estructurar los datos de una manera ordenada y fácil de analizar, utilizando herramientas y técnicas específicas. Aquí tienes una guía con ejemplos de cómo seguir este proceso:
+
+### 1. Recolección y carga de datos
+
+Primero, necesitas importar tus datos a R. Esto puede hacerse desde archivos CSV, bases de datos, o incluso APIs.
+
+```r
+# Instalar y cargar tidyverse, que incluye readr y dplyr
+install.packages("tidyverse")
+library(tidyverse)
+
+# Importar datos desde un archivo CSV
+data <- read_csv2("ruta/al/archivo.csv")
+
+# Ver las primeras filas del dataframe
+head(data)
+```
+
+### 2. Inspección de datos
+
+Una vez cargados los datos, el siguiente paso es inspeccionarlos para comprender su estructura y contenido.
+
+```r
+# Ver un resumen de los datos
+summary(data)
+
+# Ver la estructura de los datos
+str(data)
+```
+
+### 3. Limpieza de datos
+
+La limpieza de datos es crucial para asegurar que la información sea precisa y esté en el formato adecuado. Esto incluye manejar valores faltantes, duplicados y datos inconsistentes.
+
+En Excel, utilizaremos a menudo la opción de ´filtro´para inspeccionar los datos.
+
+### 4. Transformación de datos
+
+Hadley Wickham promueve la transformación de datos para que estén en formato "tidy". Esto implica que cada variable debe estar en una columna, cada observación en una fila, y cada valor debe tener su propia celda.
+
+
+### 5. Análisis exploratorio de datos (EDA)
+
+El análisis exploratorio de datos (EDA) es fundamental para entender las relaciones y patrones dentro del conjunto de datos. Esto se hace mediante estadísticas descriptivas y visualizaciones.
+
+### 6. Modelado de datos
+
+Dependiendo del objetivo del análisis, se pueden aplicar diversos modelos estadísticos para extraer información y hacer predicciones.
+
+```r
+# Regresión lineal simple
+modelo <- lm(variable2 ~ variable1, data = data_long)
+summary(modelo)
+```
+
+### 7. Comunicación de resultados
+
+Finalmente, es importante comunicar los resultados de manera clara y efectiva, utilizando tablas, gráficos y resúmenes interpretativos.
+
+Ver ejemplo de pinguinos en Excel, insertar gráficos
+
+### Resumen
+
+Siguiendo los principios de Hadley Wickham y utilizando las herramientas del tidyverse, puedes realizar un análisis de datos sistemático y efectivo en R. Este proceso incluye la recolección y carga de datos, inspección, limpieza, transformación, análisis exploratorio, modelado y comunicación de resultados.
+
+
+# Explorando los datos con Excel y R: un ejemplo.
+
 Supongamos que queremos medir la altura de un grupo de alumnos de nuestra clase. Éste es nuestro grupo:
 
 ![](01-imagenes/grupo1.jpg)

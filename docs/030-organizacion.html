@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R - 3&nbsp; El flujo de trabajo en el análisis de datos</title>
+<title>3&nbsp; El flujo de trabajo en el análisis de datos – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -19,6 +19,40 @@ ul.task-list li input[type="checkbox"] {
   width: 0.8em;
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
+}
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
 }
 /* CSS for citations */
 div.csl-bib-body { }
@@ -98,13 +132,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./030-organizacion.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El flujo de trabajo en el análisis de datos</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -141,7 +175,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./020-herramientas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -232,14 +266,25 @@ div.csl-indent {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#la-organización-y-preparación-de-los-datos." id="toc-la-organización-y-preparación-de-los-datos." class="nav-link active" data-scroll-target="#la-organización-y-preparación-de-los-datos."><span class="header-section-number">3.1</span> La organización y preparación de los datos.</a></li>
-  <li><a href="#los-datos-ordenados-o-arreglados-tidy-data" id="toc-los-datos-ordenados-o-arreglados-tidy-data" class="nav-link" data-scroll-target="#los-datos-ordenados-o-arreglados-tidy-data"><span class="header-section-number">3.2</span> Los datos ordenados o arreglados (<em>tidy data</em>)</a></li>
-  <li><a href="#exportar-los-datos-de-excel-a-r" id="toc-exportar-los-datos-de-excel-a-r" class="nav-link" data-scroll-target="#exportar-los-datos-de-excel-a-r"><span class="header-section-number">3.3</span> Exportar los datos de Excel a R</a>
+  <li><a href="#razones-para-seguir-un-flujo-de-trabajo" id="toc-razones-para-seguir-un-flujo-de-trabajo" class="nav-link active" data-scroll-target="#razones-para-seguir-un-flujo-de-trabajo"><span class="header-section-number">3.1</span> Razones para seguir un flujo de trabajo</a></li>
+  <li><a href="#problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" id="toc-problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" class="nav-link" data-scroll-target="#problemas-de-no-seguir-un-flujo-de-trabajo-estructurado"><span class="header-section-number">3.2</span> Problemas de no seguir un flujo de trabajo estructurado</a>
   <ul class="collapse">
-  <li><a href="#qué-es-un-fichero-plano-y-un-fichero-csv" id="toc-qué-es-un-fichero-plano-y-un-fichero-csv" class="nav-link" data-scroll-target="#qué-es-un-fichero-plano-y-un-fichero-csv"><span class="header-section-number">3.3.1</span> Qué es un fichero plano y un fichero CSV</a></li>
-  <li><a href="#cómo-exportar-los-datos-a-un-fichero-csv-desde-excel." id="toc-cómo-exportar-los-datos-a-un-fichero-csv-desde-excel." class="nav-link" data-scroll-target="#cómo-exportar-los-datos-a-un-fichero-csv-desde-excel."><span class="header-section-number">3.3.2</span> Cómo exportar los datos a un fichero CSV desde Excel.</a></li>
+  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="header-section-number">3.2.1</span> Ejemplo</a></li>
   </ul></li>
-  <li><a href="#para-resolver" id="toc-para-resolver" class="nav-link" data-scroll-target="#para-resolver"><span class="header-section-number">3.4</span> Para resolver</a></li>
+  <li><a href="#etapas-en-un-flujo-de-trabajo-estructurado." id="toc-etapas-en-un-flujo-de-trabajo-estructurado." class="nav-link" data-scroll-target="#etapas-en-un-flujo-de-trabajo-estructurado."><span class="header-section-number">3.3</span> Etapas en un flujo de trabajo estructurado.</a>
+  <ul class="collapse">
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">3.3.1</span> Resumen</a></li>
+  </ul></li>
+  <li><a href="#la-organización-y-preparación-de-los-datos." id="toc-la-organización-y-preparación-de-los-datos." class="nav-link" data-scroll-target="#la-organización-y-preparación-de-los-datos."><span class="header-section-number">3.4</span> La organización y preparación de los datos.</a></li>
+  <li><a href="#los-datos-ordenados-o-arreglados-tidy-data" id="toc-los-datos-ordenados-o-arreglados-tidy-data" class="nav-link" data-scroll-target="#los-datos-ordenados-o-arreglados-tidy-data"><span class="header-section-number">3.5</span> Los datos ordenados o arreglados (<em>tidy data</em>)</a></li>
+  <li><a href="#qué-es-un-fichero-plano-y-un-fichero-csv" id="toc-qué-es-un-fichero-plano-y-un-fichero-csv" class="nav-link" data-scroll-target="#qué-es-un-fichero-plano-y-un-fichero-csv"><span class="header-section-number">3.6</span> Qué es un fichero plano y un fichero CSV</a>
+  <ul class="collapse">
+  <li><a href="#cómo-exportar-un-fichero-csv-desde-excel-a-r" id="toc-cómo-exportar-un-fichero-csv-desde-excel-a-r" class="nav-link" data-scroll-target="#cómo-exportar-un-fichero-csv-desde-excel-a-r"><span class="header-section-number">3.6.1</span> Cómo exportar un fichero CSV desde Excel a R</a></li>
+  <li><a href="#explicación-del-código" id="toc-explicación-del-código" class="nav-link" data-scroll-target="#explicación-del-código"><span class="header-section-number">3.6.2</span> Explicación del Código:</a></li>
+  <li><a href="#qué-es-un-dataframe-en-r" id="toc-qué-es-un-dataframe-en-r" class="nav-link" data-scroll-target="#qué-es-un-dataframe-en-r"><span class="header-section-number">3.6.3</span> Qué es un DataFrame en R</a></li>
+  <li><a href="#ejemplo-real-de-análisis" id="toc-ejemplo-real-de-análisis" class="nav-link" data-scroll-target="#ejemplo-real-de-análisis"><span class="header-section-number">3.6.4</span> Ejemplo Real de Análisis</a></li>
+  </ul></li>
+  <li><a href="#para-resolver" id="toc-para-resolver" class="nav-link" data-scroll-target="#para-resolver"><span class="header-section-number">3.7</span> Para resolver</a></li>
   </ul>
 </nav>
     </div>
@@ -265,19 +310,100 @@ div.csl-indent {
 </header>
 
 
-<p>Lo que veremos en el capítulo</p>
+<pre><code>Gráfico de R4DS
+
+![](01-imagenes/data-science.png)</code></pre>
+<p>Un <strong>flujo de trabajo en análisis de datos</strong> es un proceso sistemático y estructurado que guía la manipulación, exploración y análisis de datos desde su recolección hasta la obtención de resultados finales y su comunicación. Es una hoja de ruta que asegura que cada paso se realice de manera ordenada, eficiente y reproducible, facilitando la comprensión y utilización de los datos.</p>
+<p>Este flujo de trabajo abarca diversas actividades como la importación de datos, su limpieza y transformación, el análisis exploratorio, y el modelado, culminando en la interpretación y presentación de los resultados. Todo esto se hace siguiendo metodologías específicas para asegurar la calidad y precisión del análisis.</p>
+<p>La importancia de seguir un flujo de trabajo bien definido radica en la capacidad de replicar estudios, minimizar errores y fomentar la transparencia, permitiendo que cualquier persona pueda entender y validar las decisiones tomadas durante el análisis. Además, mejora la eficiencia al estandarizar procedimientos y facilita la colaboración entre diferentes analistas o equipos de trabajo.</p>
+<section id="razones-para-seguir-un-flujo-de-trabajo" class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="razones-para-seguir-un-flujo-de-trabajo"><span class="header-section-number">3.1</span> Razones para seguir un flujo de trabajo</h2>
+<ol type="1">
+<li><p><strong>Reproducibilidad</strong>: Un flujo de trabajo organizado permite que los análisis sean reproducibles. Otros pueden seguir los mismos pasos para obtener resultados similares, lo que es crucial en la investigación y en la toma de decisiones basadas en datos.</p></li>
+<li><p><strong>Consistencia</strong>: Ayuda a asegurar que los pasos se realizan de manera consistente cada vez que se ejecuta el análisis, reduciendo la posibilidad de errores humanos.</p></li>
+<li><p><strong>Transparencia</strong>: Proporciona un registro claro de los pasos tomados durante el análisis, facilitando la revisión y validación de los resultados.</p></li>
+<li><p><strong>Eficiencia</strong>: Mejora la eficiencia al estandarizar el proceso, permitiendo a los analistas concentrarse en el análisis y la interpretación de los datos en lugar de tareas repetitivas.</p></li>
+<li><p><strong>Colaboración</strong>: Facilita la colaboración entre equipos, ya que los flujos de trabajo bien documentados permiten que otros comprendan fácilmente los métodos y pasos utilizados.</p></li>
+<li><p><strong>Adaptabilidad</strong>: Permite adaptar y ajustar el análisis de manera más fácil cuando se presentan nuevos datos o cuando cambian los objetivos del análisis.</p></li>
+</ol>
+</section>
+<section id="problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="problemas-de-no-seguir-un-flujo-de-trabajo-estructurado"><span class="header-section-number">3.2</span> Problemas de no seguir un flujo de trabajo estructurado</h2>
+<ol type="1">
+<li><p><strong>Errores y Sesgos</strong>: La falta de un enfoque estructurado puede resultar en errores y sesgos inadvertidos en el análisis, lo que puede llevar a conclusiones incorrectas.</p></li>
+<li><p><strong>Dificultad para Replicar Resultados</strong>: Sin un flujo de trabajo claro, replicar resultados se vuelve complicado, lo que puede afectar la credibilidad del análisis y la capacidad de validación por otros.</p></li>
+<li><p><strong>Falta de Documentación</strong>: La ausencia de una documentación adecuada dificulta entender los pasos y las decisiones tomadas durante el análisis, lo que puede ser un obstáculo en auditorías y revisiones.</p></li>
+<li><p><strong>Ineficiencia</strong>: Sin una estructura clara, los analistas pueden gastar tiempo valioso realizando tareas repetitivas y resolviendo problemas que podrían haberse evitado con un enfoque más organizado.</p></li>
+<li><p><strong>Problemas de Colaboración</strong>: La colaboración se vuelve más difícil si los miembros del equipo no pueden seguir o entender los pasos tomados por otros, lo que puede llevar a malentendidos y duplicación de esfuerzos.</p></li>
+<li><p><strong>Dificultad para Adaptarse a Cambios</strong>: Sin un flujo de trabajo definido, adaptar el análisis a nuevos datos o cambios en los objetivos puede ser más complejo y propenso a errores.</p></li>
+</ol>
+<section id="ejemplo" class="level3" data-number="3.2.1">
+<h3 data-number="3.2.1" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">3.2.1</span> Ejemplo</h3>
+<p>Supongamos que estás analizando los datos de producción de una empresa. Sin un flujo de trabajo claro, podrías realizar la limpieza de datos de manera inconsistente, lo que podría resultar en diferentes conjuntos de datos para el mismo análisis. Esto llevaría a conclusiones poco fiables y a la dificultad de justificar tus hallazgos si otra persona intenta replicar tu trabajo. Además, podría ser ineficiente, ya que podrías estar repitiendo tareas o dejando de optimizar ciertos pasos.</p>
+<p>En resumen, seguir un flujo de trabajo estructurado es esencial para garantizar la precisión, eficiencia, y reproducibilidad del análisis de datos, evitando problemas que puedan comprometer la integridad y utilidad de los resultados.</p>
+</section>
+</section>
+<section id="etapas-en-un-flujo-de-trabajo-estructurado." class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="etapas-en-un-flujo-de-trabajo-estructurado."><span class="header-section-number">3.3</span> Etapas en un flujo de trabajo estructurado.</h2>
+<ol type="1">
+<li>Recolección de Datos</li>
+</ol>
+<p>La primera etapa es la <strong>recolección de datos</strong>. Esto implica obtener datos desde diversas fuentes como archivos CSV, bases de datos, APIs, etc. La recolección de datos es fundamental porque la calidad del análisis depende de la calidad de los datos recolectados.</p>
+<ol start="2" type="1">
+<li>Inspección de Datos</li>
+</ol>
+<p>Una vez recolectados, se procede a <strong>inspeccionar los datos</strong> para entender su estructura y contenido. Esto incluye examinar los tipos de datos, la presencia de valores faltantes, duplicados y la distribución de las variables.</p>
+<ol start="3" type="1">
+<li>Limpieza de Datos</li>
+</ol>
+<p>La <strong>limpieza de datos</strong> es crucial para asegurar que la información sea precisa y esté en el formato adecuado. Esta etapa incluye:</p>
 <ul>
-<li><p>En qué consiste un flujo de trabajo en el análisis de datos</p>
-<p>Gráfico de R4DS</p>
-<p><img src="01-imagenes/data-science.png" class="img-fluid"></p></li>
-<li><p>Cómo estructurar un flujo de trabajo para el análisis de datos industriales</p></li>
+<li>Manejo de valores faltantes.</li>
+<li>Eliminación de duplicados.</li>
+<li>Corrección de inconsistencias.</li>
+<li>Transformación de datos a un formato adecuado para el análisis.</li>
 </ul>
-<section id="la-organización-y-preparación-de-los-datos." class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="la-organización-y-preparación-de-los-datos."><span class="header-section-number">3.1</span> La organización y preparación de los datos.</h2>
+<ol start="4" type="1">
+<li>Transformación de Datos</li>
+</ol>
+<p>Transformar los datos a un formato “tidy” es esencial. Según Wickham, los datos “tidy” tienen una estructura clara: cada variable es una columna, cada observación es una fila, y cada valor tiene su propia celda. Este formato facilita el análisis y la visualización de datos.</p>
+<ol start="5" type="1">
+<li>Análisis Exploratorio de Datos (EDA)</li>
+</ol>
+<p>El <strong>Análisis Exploratorio de Datos (EDA)</strong> busca entender los patrones y relaciones en los datos mediante estadísticas descriptivas y visualizaciones. Durante esta etapa se realizan:</p>
+<ul>
+<li>Estadísticas básicas (media, mediana, desviación estándar).</li>
+<li>Gráficos y diagramas para visualizar la distribución de los datos y las relaciones entre variables.</li>
+</ul>
+<ol start="6" type="1">
+<li>Modelado de Datos</li>
+</ol>
+<p>Dependiendo del objetivo del análisis, se pueden aplicar diversos modelos estadísticos para extraer información y hacer predicciones. Esto puede incluir:</p>
+<ul>
+<li>Modelos de regresión.</li>
+<li>Análisis de clasificación.</li>
+<li>Modelos de series temporales, entre otros.</li>
+</ul>
+<ol start="7" type="1">
+<li>Comunicación de Resultados</li>
+</ol>
+<p>Finalmente, es fundamental <strong>comunicar los resultados</strong> de manera clara y efectiva. Esto se hace a través de:</p>
+<ul>
+<li>Tablas y resúmenes interpretativos.</li>
+<li>Gráficos y visualizaciones.</li>
+<li>Informes y presentaciones que expliquen los hallazgos y sus implicaciones.</li>
+</ul>
+<section id="resumen" class="level3" data-number="3.3.1">
+<h3 data-number="3.3.1" class="anchored" data-anchor-id="resumen"><span class="header-section-number">3.3.1</span> Resumen</h3>
+<p>Siguiendo estos pasos, puedes manejar y analizar datos de manera organizada y reproducible, facilitando la colaboración y la toma de decisiones informadas. Este flujo de trabajo asegura que los datos se traten de manera sistemática, desde su recolección hasta la comunicación de los resultados.</p>
+</section>
+</section>
+<section id="la-organización-y-preparación-de-los-datos." class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="la-organización-y-preparación-de-los-datos."><span class="header-section-number">3.4</span> La organización y preparación de los datos.</h2>
 <p>Cuando nos incorporamos a un equipo de trabajo existente, lo más seguro es que el equipo disponga ya de un sistema de archivo de los datos, de acuerdo con sus prácticas habituales. A veces el diseño de la captura de datos sigue aproximadamente el modelo manual en papel. Se introducen los datos en la hoja de cálculo y una vez completados, se imprime el documento para su archivo.</p>
 <p>El error más común que cometemos es tratar la hoja de cálculo como un bloc de notas, es decir, hacer anotaciones de forma libre, colocar los datos y el resultado de los análisis al lado y en cualquier parte de la hoja, y apoyarnos en el contexto para interpretar lo que hemos guardado. Pero para que el ordenador sea capaz de analizar nuestros datos de manera eficiente, debemos estructurarlos de tal forma que el programa use la información tal como nosotros queremos.</p>
 <p>Es común utilizar una hoja para guardar múltiples tablas de datos, tal como vemos en la <a href="#fig-excel_mess" class="quarto-xref">Figura&nbsp;<span>3.1</span></a>. Esta estructura, sin embargo, resulta enormemente confusa para su análisis, o lo imposibilita completamente.</p>
-<div id="fig-excel_mess" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-excel_mess" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-excel_mess-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-imagenes/excel_mess.png" class="img-fluid figure-img">
@@ -288,7 +414,7 @@ Figura&nbsp;3.1: Hoja Excel desordenada: ¡No hagas esto!
 </figure>
 </div>
 <p>En otros casos, los datos se guardan en hojas de cálculo que se componen de diferentes pestañas para cada semana, cada mes o cada año, como vemos en la <a href="#fig-2021-09-1_excel_1" class="quarto-xref">Figura&nbsp;<span>3.2</span></a>. Sin embargo, esta forma de almacenar los datos tampoco es la óptima para su análisis.</p>
-<div id="fig-2021-09-1_excel_1" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-2021-09-1_excel_1" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-2021-09-1_excel_1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-imagenes/2021-09-1_excel_1.png" class="img-fluid figure-img">
@@ -301,8 +427,8 @@ Figura&nbsp;3.2: Hoja Excel con una estructura no ordenada
 <p>¿Y utilizar diferentes pestañas para cada tabla? En este caso, la respuesta es sí y no. Si las diferentes tablas presentan situaciones diferentes, o datos que no son coincidentes, podemos utilizar diferentes pestañas. Pero si los datos están vinculados, por ejemplo, se corresponden con medidas hechas en fechas diferentes (meses, años), la respuesta adecuada es que las pestañas no son la forma correcta de almacenarlos datos; la forma recomendad es añadir una variable que nos permita diferenciar los datos por fecha; nuestro programa de análisis nos permitirá <em>filtrar</em> los datos según la fecha que deseemos, y todos estarán en una única tabla, facilitando la coherencia del conjunto.</p>
 <p>Hay muchas formas de almacenar la información en una hoja de cálculo, pero sólo la estructura de <strong>datos ordenados o arreglados</strong> facilita la utilización de los datos tanto por la hoja de cálculo como por otros programas de análisis.</p>
 </section>
-<section id="los-datos-ordenados-o-arreglados-tidy-data" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="los-datos-ordenados-o-arreglados-tidy-data"><span class="header-section-number">3.2</span> Los datos ordenados o arreglados (<em>tidy data</em>)</h2>
+<section id="los-datos-ordenados-o-arreglados-tidy-data" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="los-datos-ordenados-o-arreglados-tidy-data"><span class="header-section-number">3.5</span> Los datos ordenados o arreglados (<em>tidy data</em>)</h2>
 <p>De la misma manera que la gramática permite ordenar y estructurar un escrito de acuerdo a reglas comunes, hay reglas para que el almacenamiento de los datos sea lo más homogéneo posible y se reduzcan los errores al mínimo.</p>
 <p>Las reglas principales al almacenar nuestros datos en una hoja de cálculo son tres:</p>
 <ul>
@@ -313,7 +439,7 @@ Figura&nbsp;3.2: Hoja Excel con una estructura no ordenada
 <p>Cada variable debe tener su propia columna, cada observación debe tener su propia fila, y cada valor debe tener su propia celda o casilla .</p>
 <p>Estas tres reglas básicas son las que hacen que nuestro conjunto de datos sea <strong>ordenado (o arreglado)</strong><span class="citation" data-cites="wickham2023">(<a href="150-bibliografia.html#ref-wickham2023" role="doc-biblioref">Garret Grolemund Hadley Wickham Mine Çetinkaya-Rundel 2023</a>)</span> (hay edición <em>online</em> en español: <span class="citation" data-cites="wickham-es2023">(<a href="150-bibliografia.html#ref-wickham-es2023" role="doc-biblioref">Garret Grolemund Hadley Wickham 2023</a>)</span>:</p>
 <p>La <a href="#fig-tidy" class="quarto-xref">Figura&nbsp;<span>3.3</span></a> muestra estas reglas de forma visual.</p>
-<div id="fig-tidy" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-tidy" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-tidy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-imagenes/tidy-1.png" class="img-fluid figure-img">
@@ -325,7 +451,7 @@ Figura&nbsp;3.3: Sigue estas tres reglas para tener un conjunto de datos ordenad
 </div>
 <p>Estas tres reglas están interrelacionadas porque es imposible satisfacer sólo dos de tres.</p>
 <p>En una hoja de cálculo, una tabla de datos arreglada tendría este aspecto:</p>
-<div id="fig-excel-camembert" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-excel-camembert" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-excel-camembert-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-imagenes/2023-11-17.png" class="img-fluid figure-img">
@@ -337,11 +463,8 @@ Figura&nbsp;3.4: Hoja Excel con estructura rectangular de datos ordenados
 </div>
 <p>Datos rectangulares: formato tabla</p>
 </section>
-<section id="exportar-los-datos-de-excel-a-r" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="exportar-los-datos-de-excel-a-r"><span class="header-section-number">3.3</span> Exportar los datos de Excel a R</h2>
-<p>Una vez que tenemos nuestros datos en Excel, hay dos formas en las que podemos poner los datos a disposición de R para su análisis: exportarlos a un archivo de texto con <strong><em>formato CSV</em></strong>, o leer directamente los datos de Excel desde R utilizando las funciones de la librería <code>tidyverse</code>. En ambos casos, el resultado en R es un <strong><em>dataframe</em></strong> o <em>cuadro de datos</em>, que es una estructura equivalente a la de nuestra tabla de datos en Excel.</p>
-<section id="qué-es-un-fichero-plano-y-un-fichero-csv" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="qué-es-un-fichero-plano-y-un-fichero-csv"><span class="header-section-number">3.3.1</span> Qué es un fichero plano y un fichero CSV</h3>
+<section id="qué-es-un-fichero-plano-y-un-fichero-csv" class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="qué-es-un-fichero-plano-y-un-fichero-csv"><span class="header-section-number">3.6</span> Qué es un fichero plano y un fichero CSV</h2>
 <p>Se suele llamar <strong>fichero plano</strong> a un fichero de datos de texto sin ningún tipo de formato, donde los datos están separados por espacios o tabulaciones. Muchos equipos automáticos, como balanzas de laboratorio o básculas de proceso, producen ficheros planos de texto, que se pueden importar a Excel o R. Un <a href="https://es.wikipedia.org/wiki/Valores_separados_por_comas">fichero CSV</a> es un fichero plano en el que los valores están separados por un carácter especial, llamado <strong>separador</strong>. Este separador puede ser una coma <code>,</code> (cuando los decimales se separan mediante un punto, como en EEUU) o un punto y coma <code>;</code> (cuando los decimales se separan mediante una coma, como en España)</p>
 <div id="fig-ficheros-texto" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -382,14 +505,109 @@ Figura&nbsp;3.5: Tres tipos de ficheros planos de texto.
 </div>
 <p>En un fichero plano o en un fichero CSV, la primera fila puede contener los nombres de las columnas. En algunos casos, los elementos de texto pueden estar entre comillas. En estos casos, los programas de importación se ocupan de la conversión de formatos.</p>
 <p>La importación de un fichero CSV en Excel en español es directa si se ha generado con puntos y comas como separador y comas para los decimales; si no es así, nos aparecerá como un fichero plano de texto sin formato, y tendremos que realizar una conversión.</p>
+<section id="cómo-exportar-un-fichero-csv-desde-excel-a-r" class="level3" data-number="3.6.1">
+<h3 data-number="3.6.1" class="anchored" data-anchor-id="cómo-exportar-un-fichero-csv-desde-excel-a-r"><span class="header-section-number">3.6.1</span> Cómo exportar un fichero CSV desde Excel a R</h3>
+<p>Una vez que tenemos nuestros datos en Excel, hay dos formas en las que podemos poner los datos a disposición de R para su análisis: exportarlos a un archivo de texto con <strong><em>formato CSV</em></strong>, o leer directamente los datos de Excel desde R utilizando las funciones de la librería <code>tidyverse</code>. En ambos casos, el resultado en R es un <strong><em>dataframe</em></strong> o <em>cuadro de datos</em>, que es una estructura equivalente a la de nuestra tabla de datos en Excel.</p>
+<p>En los sistemas operativos que usan por defecto para la numeración el formato europeo (donde el separador decimal es una coma <code>,</code> y el separador de campos es un punto y coma <code>;</code>), puedes seguir estos pasos en R.</p>
+<section id="paso-1-guardar-el-fichero-csv-desde-excel" class="level4" data-number="3.6.1.1">
+<h4 data-number="3.6.1.1" class="anchored" data-anchor-id="paso-1-guardar-el-fichero-csv-desde-excel"><span class="header-section-number">3.6.1.1</span> Paso 1: Guardar el Fichero CSV desde Excel</h4>
+<ol type="1">
+<li>Abre tu fichero en Excel.</li>
+<li>Selecciona <strong>Archivo</strong> &gt; <strong>Guardar como</strong>.</li>
+<li>Elige el formato **CSV (delimitado por comas) (*.csv)**.</li>
+<li>Guarda el archivo.</li>
+</ol>
 </section>
-<section id="cómo-exportar-los-datos-a-un-fichero-csv-desde-excel." class="level3" data-number="3.3.2">
-<h3 data-number="3.3.2" class="anchored" data-anchor-id="cómo-exportar-los-datos-a-un-fichero-csv-desde-excel."><span class="header-section-number">3.3.2</span> Cómo exportar los datos a un fichero CSV desde Excel.</h3>
+<section id="paso-2-importar-el-csv-en-r" class="level4" data-number="3.6.1.2">
+<h4 data-number="3.6.1.2" class="anchored" data-anchor-id="paso-2-importar-el-csv-en-r"><span class="header-section-number">3.6.1.2</span> Paso 2: Importar el CSV en R</h4>
+<p>Puedes usar la función <code>read.csv2</code> de base R o la función <code>read_csv2</code> del paquete <code>readr</code>, que está optimizado para leer archivos CSV más rápido y con más flexibilidad.</p>
+</section>
+<section id="usando-base-r" class="level4" data-number="3.6.1.3">
+<h4 data-number="3.6.1.3" class="anchored" data-anchor-id="usando-base-r"><span class="header-section-number">3.6.1.3</span> Usando Base R</h4>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer el CSV con separador de campos ";" y separador decimal ","</span></span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"ruta/al/archivo.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">dec =</span> <span class="st">","</span>)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver las primeras filas del dataframe</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="usando-readr" class="level4" data-number="3.6.1.4">
+<h4 data-number="3.6.1.4" class="anchored" data-anchor-id="usando-readr"><span class="header-section-number">3.6.1.4</span> Usando readr</h4>
+<p>Primero, instala y carga el paquete <code>readr</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer el CSV con separador de campos ";" y separador decimal ","</span></span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="st">"ruta/al/archivo.csv"</span>, <span class="at">col_names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver las primeras filas del dataframe</span></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
-<section id="para-resolver" class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="para-resolver"><span class="header-section-number">3.4</span> Para resolver</h2>
-<p>Poner aquí distintos ejemplos de nombres de variables para verii son válidos o no Describir medidas y preguntar cómo llamaríamos a esa variable (por ejemplo, temperatura de laleche que acabamos de descargar de una cisterna)</p>
+<section id="explicación-del-código" class="level3" data-number="3.6.2">
+<h3 data-number="3.6.2" class="anchored" data-anchor-id="explicación-del-código"><span class="header-section-number">3.6.2</span> Explicación del Código:</h3>
+<ul>
+<li><strong>read.csv2 / read_csv2</strong>: Funciones utilizadas para leer archivos CSV con formato europeo.</li>
+<li><strong>“ruta/al/archivo.csv”</strong>: La ruta al archivo CSV que deseas importar.</li>
+<li><strong>header = TRUE / col_names = TRUE</strong>: Indica que el primer fila del CSV contiene los nombres de las columnas.</li>
+<li><strong>sep = “;”</strong>: Define el separador de campos como punto y coma <code>;</code>.</li>
+<li><strong>dec = “,”</strong>: Define el separador decimal como coma <code>,</code>.</li>
+</ul>
+</section>
+<section id="qué-es-un-dataframe-en-r" class="level3" data-number="3.6.3">
+<h3 data-number="3.6.3" class="anchored" data-anchor-id="qué-es-un-dataframe-en-r"><span class="header-section-number">3.6.3</span> Qué es un DataFrame en R</h3>
+<p>Un <strong>dataframe</strong> es una estructura de datos en R que permite almacenar datos tabulares (similares a una hoja de cálculo o una tabla en una base de datos). Los dataframes son muy flexibles y poderosos para el análisis de datos.</p>
+<section id="características-de-un-dataframe" class="level4" data-number="3.6.3.1">
+<h4 data-number="3.6.3.1" class="anchored" data-anchor-id="características-de-un-dataframe"><span class="header-section-number">3.6.3.1</span> Características de un DataFrame:</h4>
+<ul>
+<li><strong>Columnas</strong>: Cada columna puede contener datos de un tipo diferente (numérico, carácter, factor, etc.).</li>
+<li><strong>Filas</strong>: Cada fila representa una observación o registro.</li>
+<li><strong>Atributos</strong>: Los dataframes tienen atributos como nombres de filas y columnas.</li>
+</ul>
+</section>
+<section id="ejemplo-de-creación-de-un-dataframe" class="level4" data-number="3.6.3.2">
+<h4 data-number="3.6.3.2" class="anchored" data-anchor-id="ejemplo-de-creación-de-un-dataframe"><span class="header-section-number">3.6.3.2</span> Ejemplo de Creación de un DataFrame</h4>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un dataframe simple</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Nombre =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Carol"</span>),</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Edad =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>),</span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Salario =</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">55000</span>, <span class="dv">60000</span>)</span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver el dataframe</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="explicación-del-código-1" class="level4" data-number="3.6.3.3">
+<h4 data-number="3.6.3.3" class="anchored" data-anchor-id="explicación-del-código-1"><span class="header-section-number">3.6.3.3</span> Explicación del Código:</h4>
+<ul>
+<li><strong>data.frame()</strong>: Función utilizada para crear un dataframe.</li>
+<li><strong>Nombre, Edad, Salario</strong>: Columnas del dataframe.</li>
+<li><strong>c()</strong>: Función para concatenar valores en un vector.</li>
+</ul>
+</section>
+</section>
+<section id="ejemplo-real-de-análisis" class="level3" data-number="3.6.4">
+<h3 data-number="3.6.4" class="anchored" data-anchor-id="ejemplo-real-de-análisis"><span class="header-section-number">3.6.4</span> Ejemplo Real de Análisis</h3>
+<p>Si ya tienes un archivo CSV que importaste, puedes comenzar a analizar los datos. Aquí hay un ejemplo básico de cómo podrías resumir y visualizar los datos:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar y cargar ggplot2 para la visualización</span></span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Resumen de los datos</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización simple: Histograma de una variable numérica</span></span>
+<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> variable_numerica)) <span class="sc">+</span></span>
+<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma de la Variable Numérica"</span>,</span>
+<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Valor"</span>,</span>
+<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frecuencia"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Este código proporciona un resumen y una visualización básica de tus datos importados.</p>
+<p>¿Te gustaría saber más sobre algún aspecto en particular?</p>
+</section>
+</section>
+<section id="para-resolver" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="para-resolver"><span class="header-section-number">3.7</span> Para resolver</h2>
+<p>Poner aquí distintos ejemplos de nombres de variables para ver si son válidos o no. Describir medidas y preguntar cómo llamaríamos a esa variable (por ejemplo, temperatura de la leche que acabamos de descargar de una cisterna)</p>
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
@@ -438,18 +656,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -481,7 +688,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -489,7 +718,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
@@ -814,8 +1043,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./020-herramientas.html" class="pagination-link" aria-label="Herramientas para el análisis. La reproducibilidad">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad</span></span>
+      <a href="./020-herramientas.html" class="pagination-link" aria-label="Herramientas para el análisis. La reproducibilidad.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">

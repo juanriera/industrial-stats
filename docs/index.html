@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.4.555">
+<meta name="generator" content="quarto-1.5.57">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
@@ -98,13 +98,13 @@ div.csl-indent {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
         <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./index.html">Prefacio</a></li></ol></nav>
-        <a class="flex-grow-1" role="button" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -141,7 +141,7 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./020-herramientas.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">2</span>&nbsp; <span class="chapter-title">Herramientas para el análisis. La reproducibilidad.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -238,7 +238,7 @@ div.csl-indent {
   <li><a href="#organización-del-libro" id="toc-organización-del-libro" class="nav-link" data-scroll-target="#organización-del-libro">Organización del libro</a></li>
   <li><a href="#cómo-usar-el-libro" id="toc-cómo-usar-el-libro" class="nav-link" data-scroll-target="#cómo-usar-el-libro">Cómo usar el libro</a></li>
   <li><a href="#uso-del-ordenador-y-el-software-estadístico" id="toc-uso-del-ordenador-y-el-software-estadístico" class="nav-link" data-scroll-target="#uso-del-ordenador-y-el-software-estadístico">Uso del ordenador y el <em>software</em> estadístico</a></li>
-  <li><a href="#recursos-adicionales-y-cómo-usarlos" id="toc-recursos-adicionales-y-cómo-usarlos" class="nav-link" data-scroll-target="#recursos-adicionales-y-cómo-usarlos">Recursos adicionales y cómo usarlos</a></li>
+  <li><a href="#sec-aprendizaje" id="toc-sec-aprendizaje" class="nav-link" data-scroll-target="#sec-aprendizaje">Recursos adicionales y cómo usarlos</a></li>
   <li><a href="#sobre-el-libro" id="toc-sobre-el-libro" class="nav-link" data-scroll-target="#sobre-el-libro">Sobre el libro</a></li>
   <li><a href="#agradecimientos" id="toc-agradecimientos" class="nav-link" data-scroll-target="#agradecimientos">Agradecimientos</a></li>
   </ul></li>
@@ -294,7 +294,7 @@ div.csl-indent {
 <div aria-describedby="fig-intro-media-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <div class="quarto-layout-row quarto-layout-valign-bottom">
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-intro-media" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-media" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-media" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-media-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-imagenes/media-balanza.svg" class="img-fluid figure-img" data-ref-parent="fig-intro-media">
@@ -306,7 +306,7 @@ div.csl-indent {
 </div>
 </div>
 <div class="quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-intro-media" style="flex-basis: 50.0%;justify-content: flex-start;">
-<div id="fig-palanca" class="quarto-figure quarto-figure-center quarto-float anchored">
+<div id="fig-palanca" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-subfloat-fig figure">
 <div aria-describedby="fig-palanca-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
 <img src="01-imagenes/palanca.png" class="img-fluid figure-img" data-ref-parent="fig-intro-media">
@@ -335,18 +335,20 @@ Figura&nbsp;1: Comparación gráfica del significado de la media en un diagrama 
 </section>
 <section id="organización-del-libro" class="level2">
 <h2 class="anchored" data-anchor-id="organización-del-libro">Organización del libro</h2>
-<p>El <strong>capítulo 1</strong> se explican algunos conceptos importantes en el análisis de datos, y proporciona una introducción general al <strong>pensamiento estadístico</strong> y su aplicación industrial. Introduce también algunos conceptos sobre la ética en análisis de datos y una reflexión sobre la honestidad del investigador o analista. Se introduce también el concepto actual de <strong>reproducibilidad</strong>.</p>
-<p>En el <strong>capítulo 2</strong> se hace una introducción al tipo de datos que encontraremos en el entorno industrial, cómo se obtienen y se almacenan. Se introduce el importante concepto de <em>datos ordenados</em> o <em><strong>tidy data</strong></em>, que resulta fundamental para las fases posteriores de análisis.</p>
-<p>El <strong>capítulo 3</strong> hace una introducción al uso de la hoja de cálculo, con el foco en algunas funciones específicas que serán de utilidad en el almacenamiento y análisis de los datos industriales.</p>
-<p>El <strong>capítulo 4</strong> presenta los aspectos básicos del software estadístico R y sus principales aplicaciones en la manipulación, limpieza y análisis de conjuntos de datos, tanto gráfico como estadístico.</p>
-<p>En el <strong>capítulo 5</strong> se introducen los métodos básicos para resumir tablas de datos y la <strong>presentación mediante el uso de gráficos</strong>, en lo que se conoce como <em>exploración de datos</em>, que suele ser un paso previo al análisis más detallado y a la formulación de hipótesis.</p>
-<p>El <strong>capítulo 6</strong> introduce el concepto de <strong>probabilidad</strong>, así como las distribuciones de probabilidad, necesarias para la construcción de los tests de hipótesis y, en general, de la estadística inferencial. Este es un contenido que se presenta de forma breve y sobre todo práctica.</p>
-<p>En el <strong>capítulo 7</strong> se presentan los métodos para detectar la <strong>relación entre dos variables</strong>, haciendo énfasis en los métodos gráficos, y se discute las diferencias entre correlación y causalidad.</p>
+<p>El <strong>capítulo 1</strong> hace una introducción general al <strong>pensamiento estadístico</strong> y su aplicación industrial, y presenta algunos conceptos básicos, tales como <strong>población</strong>, <strong>muestra</strong> y <strong>variable</strong>.</p>
+<p>El <strong>capítulo 2</strong> presenta las dos herramientas básicas que se usarán en el libro, la hoja de cálculo y el programa estadístico de código abierto R. Se describen los aspectos básicos del software estadístico R y sus principales aplicaciones en la manipulación, limpieza y análisis de conjuntos de datos. Se introduce también el concepto actual de <strong>reproducibilidad</strong>, y se explica su importancia y el impacto de utilizar una hoja de cálculo o un análisis basado en un script programado.</p>
+<p>En el <strong>capítulo 3</strong> se hace una introducción al concepto de flujo de trabajo y al concepto de <em>datos ordenados</em> o <em><strong>tidy data</strong></em>, que resulta fundamental para las fases posteriores de análisis. Se explica también cómo mover datos desde excel a R y viceversa.</p>
+<p>El <strong>capítulo 4</strong> habla de la exploración de los datos como primer paso en el análisis. Presenta los principales tipos de gráficos que se utilizan en esta fase del análisis, y explica cómo utilizar Excel y R en esta fase del análisis.</p>
+<p>En el <strong>capítulo 5</strong> se presentan los principales estadísticos que describen una población, mediante un valor central y una medida de dispersión, tanto paramétricos (<strong>media</strong> y <strong>varianza</strong>) como no paramétricos (<strong>mediana</strong> y <strong>rango intercuartil</strong>), de forma sencilla y sin recurrir a explicaciones matemáticas o estadísticas avanzadas.</p>
+<p>El <strong>capítulo 6</strong> introduce las <strong>distribuciones de frecuencia</strong>, y a continuación el concepto de <strong>probabilidad</strong>, así como las <strong>distribuciones de probabilidad</strong>, necesarias para la construcción de los tests de hipótesis y, en general, de la estadística inferencial. Este contenido se presenta de forma breve y, sobre todo, práctica.</p>
+<p>En el <strong>capítulo 7</strong> se presentan los métodos para detectar la relación entre dos variables (<strong>correlación</strong> y <strong>regresión lineal</strong>), haciendo énfasis en los métodos gráficos, y se discuten las diferencias entre correlación y causalidad.</p>
 <p>El <strong>capítulo 8</strong> introduce de manera sencilla el <strong>análisis de la varianza</strong>, necesario para métodos importantes en la industria como el control de la precisión analítica, que se trata en el capítulo siguiente.</p>
 <p>El <strong>capítulo 9</strong> trata del análisis del sistema de medición, la calidad de las medidas y la medida de la precisión analítica. Resulta sorprendente la cantidad de laboratorios que dan soporte analítico a procesos productivos de gran impacto económico en la vida de la empresa, sin realizar nunca un autocontrol sobre el nivel de precisión de sus análisis. En este capítulo se hace una presentación básica del tema con el objetivo de que resulte útil y práctica.</p>
 <p>El <strong>capítulo 10</strong> presenta una de las aplicaciones más importantes de la estadística en el entorno industrial, el <strong>control estadístico de procesos</strong>. Dada la importancia de este capítulo, se refuerza su contenido con numerosos ejemplos y casos prácticos, y se incluye un caso extenso para su análisis.</p>
 <p>En el <strong>capítulo 11</strong> se hace una introducción al <strong>diseño de experimentos</strong>. La utilidad de esta técnica es primordial para el industrial, sobre todo para el área de I+D y el diseño de productos. Dado que esta técnica puede ser muy compleja en su aplicación real, se facilitan enlaces a otros recursos, como cursos, que serán útiles a los que quieran profundizar más.</p>
-<p>Finalmente, en el <strong>capítulo 12</strong> se presenta el uso de los conceptos y técnicas estudiadas en los procesos de mejora de la calidad industrial, y se introducen algunas aplicaciones prácticas de la estadística en el entorno industrial, como <strong>Six Sigma</strong>.</p>
+<p>En el <strong>capítulo 12</strong> se presenta el uso de los conceptos y técnicas estudiadas en los procesos de mejora de la calidad industrial, y se introducen algunas aplicaciones prácticas de la estadística en el entorno industrial, como <strong>Six Sigma</strong>.</p>
+<p>El <strong>capítulo 13</strong> hace una breve introducción a las técnicas de comunicación, tanto a la presentación de datos como a la preparación de informes. Se hace hincapié en las nuevas herramientas como Quarto, que facilitan la elaboración de informes automatizados.</p>
+<p>Finalmente, se hace una introducción a R en anexo.</p>
 </section>
 <section id="cómo-usar-el-libro" class="level2">
 <h2 class="anchored" data-anchor-id="cómo-usar-el-libro">Cómo usar el libro</h2>
@@ -420,9 +422,9 @@ Importante
 <p>Respecto a la <strong>programación informática</strong>, en el libro no se hace énfasis en la programación R más que como sucesión de órdenes individuales en scripts sencillos. No se busca la eficiencia computacional ni la rapidez en el cálculo, sino la comprensión de la metodología de resolución de problemas y cómo ésta se apoya en las herramientas presentadas. De la misma manera, tampoco se hace ningún uso de la programación en Excel, ya sea con <strong>macros</strong> o con <strong>Visual Basic</strong>; estos temas quedan fuera del perímetro de este libro.</p>
 <p>Un paso en la dirección de la implantación de <strong>flujos de trabajo reproducibles</strong> es la elaboración de informes automatizados. Estos informes incluyen el código R, los comentarios del autor en forma de texto formateado en <a href="https://es.wikipedia.org/wiki/Markdown"><em>markdown</em></a>, y los resultados del código. Herramientas como <a href="https://quarto.org/">Quarto</a>, o <a href="https://colab.research.google.com/">Google Colaboratory</a>, que usa la interface Jupyter, son nuevas formas de elaborar y presentar los informes y resultados estadísticos. En el entorno docente, estas herramientas abren posibilidades muy interesantes en la presentación de un ejercicio o un exámen escrito, ya que el alumno puede detallar perfectamente todos los pasos hasta llegar al resultado final, y facilita la revisión por sus compañeros o por el profesor a cargo de la asignatura.</p>
 </section>
-<section id="recursos-adicionales-y-cómo-usarlos" class="level2">
-<h2 class="anchored" data-anchor-id="recursos-adicionales-y-cómo-usarlos">Recursos adicionales y cómo usarlos</h2>
-<p>En este libro se hace una introducción muy general a R y a Excel; se presupone que el alumno tiene un conocimiento básico de ambas herramientas. Si no tiene ninguna formación sobre el lenguaje R y el entorno RStudio recomiendo hacer alguna formación previa sencilla que introduzca los conceptos básicos. <a href="https://www.datacamp.com/">Datacamp</a> tiene <a href="https://www.datacamp.com/courses/free-introduction-to-r">cursos gratuitos de introducción a R</a>; también hay cursos de formación tanto de R como de Excel en otras plataformas web como <a href="https://www.edx.org/">edX</a>, <a href="https://www.udemy.com/course/curso-de-introduccion-a-r/">Udemy</a> y <a href="https://es.coursera.org/courses?query=r">Coursera</a>, muchos de ellos gratuitos. El Gobierno de España, dentro de una de sus iniciativas de transformación digital, la <a href="https://datos.gob.es/es">iniciativa de datos abiertos</a>, incluye también una amplia referencia a <a href="https://datos.gob.es/es/noticia/cursos-para-aprender-mas-sobre-r">cursos de formación sobre R</a>.</p>
+<section id="sec-aprendizaje" class="level2">
+<h2 class="anchored" data-anchor-id="sec-aprendizaje">Recursos adicionales y cómo usarlos</h2>
+<p>En este libro se hace una introducción muy general a R y a Excel; se presupone que el alumno tiene un conocimiento básico de ambas herramientas. Si no tiene ninguna formación sobre el lenguaje R y el entorno RStudio, recomiendo hacer alguna formación previa sencilla que introduzca los conceptos básicos. <a href="https://www.datacamp.com/">Datacamp</a> tiene <a href="https://www.datacamp.com/courses/free-introduction-to-r">cursos gratuitos de introducción a R</a>; también hay cursos de formación tanto de R como de Excel en otras plataformas web como <a href="https://www.edx.org/">edX</a>, <a href="https://www.udemy.com/course/curso-de-introduccion-a-r/">Udemy</a> y <a href="https://es.coursera.org/courses?query=r">Coursera</a>, muchos de ellos gratuitos. El Gobierno de España, dentro de una de sus iniciativas de transformación digital, la <a href="https://datos.gob.es/es">iniciativa de datos abiertos</a>, incluye también una amplia referencia a <a href="https://datos.gob.es/es/noticia/cursos-para-aprender-mas-sobre-r">cursos de formación sobre R</a>.</p>
 <p>Todos los datos presentados en los ejemplos se incluyen en hojas de cálculo que están disponibles en GitHub. También se incluyen fuentes de datos adicionales que pueden permitir plantear nuevos ejercicios.</p>
 <p>Al final del libro se incluye una bibliografía completa.</p>
 </section>
@@ -495,18 +497,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }
     return false;
   }
-  const clipboard = new window.ClipboardJS('.code-copy-button', {
-    text: function(trigger) {
-      const codeEl = trigger.previousElementSibling.cloneNode(true);
-      for (const childEl of codeEl.children) {
-        if (isCodeAnnotation(childEl)) {
-          childEl.remove();
-        }
-      }
-      return codeEl.innerText;
-    }
-  });
-  clipboard.on('success', function(e) {
+  const onCopySuccess = function(e) {
     // button target
     const button = e.trigger;
     // don't keep focus
@@ -538,7 +529,29 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     }, 1000);
     // clear code selection
     e.clearSelection();
+  }
+  const getTextToCopy = function(trigger) {
+      const codeEl = trigger.previousElementSibling.cloneNode(true);
+      for (const childEl of codeEl.children) {
+        if (isCodeAnnotation(childEl)) {
+          childEl.remove();
+        }
+      }
+      return codeEl.innerText;
+  }
+  const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+    text: getTextToCopy
   });
+  clipboard.on('success', onCopySuccess);
+  if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+    // For code content inside modals, clipBoardJS needs to be initialized with a container option
+    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
+    const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+      text: getTextToCopy,
+      container: window.document.getElementById('quarto-embedded-source-code-modal')
+    });
+    clipboardModal.on('success', onCopySuccess);
+  }
     var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
     var mailtoRegex = new RegExp(/^mailto:/);
       var filterRegex = new RegExp('/' + window.location.host + '/');
@@ -546,7 +559,7 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
         return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
     }
     // Inspect non-navigation links and adorn them if external
- 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool)');
+ 	var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
     for (var i=0; i<links.length; i++) {
       const link = links[i];
       if (!isInternal(link.href)) {
