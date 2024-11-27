@@ -19,7 +19,7 @@ Una de las mayores ventajas de la mediana y del rango intercuartil es que son es
 
 Existen otras estadísticos, llamados **paramétricos**, que, en determinadas condiciones, tienen ventajas frente a los no paramétricos. Los principales son la **media aritmética**, o simplemente, **media**, y la **varianza**.
 
-### La media aritmética: un ejemplo de cálculo.
+## La media aritmética: un ejemplo de cálculo.
 
 Cálculo de la media aritmética sin usar la estadística.
 
@@ -100,7 +100,7 @@ Aunque el valor medio de estos tres grupos de datos es idéntico, parece claro q
 
 La media como centro de gravedad: [Physics Simulation: Center of Mass (physicsclassroom.com)](https://www.physicsclassroom.com/Physics-Interactives/Balance-and-Rotation/COM-Builder/Center-Of-Mass-Interactive)
 
-### Las medidas de dispersión: la varianza y la desviación típica
+## Las medidas de dispersión: la varianza y la desviación típica
 
 Como hemos visto en el apartado anterior, diferentes conjuntos de datos pueden tener el mismo valor medio y sin embargo ser muy diferentes. En la última gráfica que hemos visto, el primer grupo se caracteriza por tener todos sus valores idénticos; el segundo tiene todos sus valores idénticos menos uno, que está muy apartado del resto, y el tercero tiene todos sus valores diferentes.
 
@@ -169,7 +169,7 @@ En el segundo grupo, todos los valores son idénticos, salvo uno, que se distanc
 
 En el tercer grupo todos los valores son diferentes, y no podemos decir nada especial sobre sus valores individuales. Hay un valor que se destaca del resto, pero ¿podemos afirmar que es anormal? Seguramente, no con seguridad. De nuevo la experiencia debe indicarnos cómo proceder, aunque en este caso no tendría sentido eliminar este valor. En la situación real, todos conocemos a niños que han *pegado el estirón* antes que sus compañeros, y en algunos casos, pueden llegar a ser mucho más altos (o más bajos, si han tenido un retraso en este *estirón*) La experiencia nos dice que no es seguro que este valor sea realmente anormal, y por lo tanto, deberíamos conservarlo.
 
-### Las limitaciones de la media y la desviación típica
+## Las limitaciones de la media y la desviación típica
 
 En ocasiones nos enfrentamos a conjuntos de datos con valores de media y desviación típica idénticos o muy parecidos, pero que en realidad son muy diferentes. Veamos un ejemplo, semejante a los que hemos visto hasta ahora.
 
