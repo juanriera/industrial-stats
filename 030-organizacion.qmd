@@ -2,13 +2,13 @@
 lang: es
 ---
 
-# La organización de los datos y el flujo de trabajo.Los datos _arreglados_ (_tidy data_)
+# La organización de los datos y el flujo de trabajo.Los datos ordenados o _arreglados_ (_tidy data_)
 
 Un **flujo de trabajo en análisis de datos** es un proceso sistemático y estructurado que guía la manipulación, exploración y análisis de datos desde su recolección hasta la obtención de resultados finales y su comunicación. Es una hoja de ruta que asegura que cada paso se realice de manera ordenada, eficiente y reproducible, facilitando la comprensión y utilización de los datos.
 
 Hadley Wickham [@wickham2023] ha propuesto un método de flujo de trabajo que se ha convertido en estándar en la ciencia de datos (hay versión en español: [@wickham2023es])
 
-![](01-imagenes/data-science.png)
+![](01-imagenes/data-science-explore.svg)
 
 Este flujo de trabajo abarca diversas actividades como la importación de datos, su limpieza y transformación, el análisis exploratorio, y el modelado, culminando en la interpretación y presentación de los resultados. Todo esto se hace siguiendo metodologías específicas para asegurar la calidad y precisión del análisis.
 
@@ -137,7 +137,7 @@ Las reglas principales al almacenar nuestros datos en una hoja de cálculo son t
 
 Cada variable debe tener su propia columna, cada observación debe tener su propia fila, y cada valor debe tener su propia celda o casilla .
 
-Estas tres reglas básicas son las que hacen que nuestro conjunto de datos sea **ordenado (o arreglado)**[@wickham2023] (hay edición *online* en español: [@wickham-es2023]:
+Estas tres reglas básicas son las que hacen que nuestro conjunto de datos sea **ordenado (o arreglado)**[@wickham2023] (hay edición *online* en español: [@wickham2023es]:
 
 La @fig-tidy muestra estas reglas de forma visual.
 

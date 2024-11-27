@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>10&nbsp; El análisis del sistema de medición – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
+<title>9&nbsp; El análisis del sistema de medición – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -50,8 +50,8 @@ div.csl-indent {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./110-control-proc.html" rel="next">
-<link href="./090-anova.html" rel="prev">
+<link href="./100-control-proc.html" rel="next">
+<link href="./080-anova.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -101,7 +101,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./100-sistema-medicion.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./090-sistema-medicion.html"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -147,84 +147,78 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./030-organizacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos <em>arreglados</em> (<em>tidy data</em>)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos ordenados o <em>arreglados</em> (<em>tidy data</em>)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./040-exploracion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos. <em>Stemplot</em> y diagrama de caja (<em>boxplot</em>)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos mediante gráficos.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./050-distr-frec.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias, histogramas y diagramas de barra</span></span></a>
+  <a href="./050-estad-simple.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Medidas centrales y medidas de dispersión: la media y la varianza.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./060-estad-simple.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Medidas centrales y medidas de dispersión: la media y la varianza.</span></span></a>
+  <a href="./060-distr-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./070-distr-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span></a>
+  <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./080-relacion-xy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+  <a href="./080-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./090-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+  <a href="./090-sistema-medicion.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100-sistema-medicion.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./110-control-proc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+  <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./120-disexp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+  <a href="./120-mejora-calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./130-mejora-calidad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
+  <a href="./130-comunicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./140-comunicacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./150-anexo-R.html" class="sidebar-item-text sidebar-link">
+  <a href="./140-anexo-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anexo: Instalación de R y conceptos básicos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./160-bibliografia.html" class="sidebar-item-text sidebar-link">
+  <a href="./150-bibliografia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
@@ -238,17 +232,17 @@ div.csl-indent {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#qué-es-una-medida" id="toc-qué-es-una-medida" class="nav-link active" data-scroll-target="#qué-es-una-medida"><span class="header-section-number">10.1</span> ¿Qué es una medida?</a></li>
-  <li><a href="#los-estándares-de-medida" id="toc-los-estándares-de-medida" class="nav-link" data-scroll-target="#los-estándares-de-medida"><span class="header-section-number">10.2</span> Los estándares de medida</a></li>
-  <li><a href="#la-precisión-analítica" id="toc-la-precisión-analítica" class="nav-link" data-scroll-target="#la-precisión-analítica"><span class="header-section-number">10.3</span> La precisión analítica</a></li>
-  <li><a href="#análisis-de-repetibilidad-y-reproducibilidad-grr-analysis" id="toc-análisis-de-repetibilidad-y-reproducibilidad-grr-analysis" class="nav-link" data-scroll-target="#análisis-de-repetibilidad-y-reproducibilidad-grr-analysis"><span class="header-section-number">10.4</span> Análisis de repetibilidad y reproducibilidad (<em>GR&amp;R analysis</em>)</a>
+  <li><a href="#qué-es-una-medida" id="toc-qué-es-una-medida" class="nav-link active" data-scroll-target="#qué-es-una-medida"><span class="header-section-number">9.1</span> ¿Qué es una medida?</a></li>
+  <li><a href="#los-estándares-de-medida" id="toc-los-estándares-de-medida" class="nav-link" data-scroll-target="#los-estándares-de-medida"><span class="header-section-number">9.2</span> Los estándares de medida</a></li>
+  <li><a href="#la-precisión-analítica" id="toc-la-precisión-analítica" class="nav-link" data-scroll-target="#la-precisión-analítica"><span class="header-section-number">9.3</span> La precisión analítica</a></li>
+  <li><a href="#análisis-de-repetibilidad-y-reproducibilidad-grr-analysis" id="toc-análisis-de-repetibilidad-y-reproducibilidad-grr-analysis" class="nav-link" data-scroll-target="#análisis-de-repetibilidad-y-reproducibilidad-grr-analysis"><span class="header-section-number">9.4</span> Análisis de repetibilidad y reproducibilidad (<em>GR&amp;R analysis</em>)</a>
   <ul class="collapse">
-  <li><a href="#round-only-on-the-final-calculation-resultedit" id="toc-round-only-on-the-final-calculation-resultedit" class="nav-link" data-scroll-target="#round-only-on-the-final-calculation-resultedit"><span class="header-section-number">10.4.1</span> Round only on the final calculation result[edit]</a></li>
+  <li><a href="#round-only-on-the-final-calculation-resultedit" id="toc-round-only-on-the-final-calculation-resultedit" class="nav-link" data-scroll-target="#round-only-on-the-final-calculation-resultedit"><span class="header-section-number">9.4.1</span> Round only on the final calculation result[edit]</a></li>
   </ul></li>
-  <li><a href="#precision-of-measuring-tools-and-significant-figures" id="toc-precision-of-measuring-tools-and-significant-figures" class="nav-link" data-scroll-target="#precision-of-measuring-tools-and-significant-figures"><span class="header-section-number">10.5</span> Precision of Measuring Tools and Significant Figures</a>
+  <li><a href="#precision-of-measuring-tools-and-significant-figures" id="toc-precision-of-measuring-tools-and-significant-figures" class="nav-link" data-scroll-target="#precision-of-measuring-tools-and-significant-figures"><span class="header-section-number">9.5</span> Precision of Measuring Tools and Significant Figures</a>
   <ul class="collapse">
-  <li><a href="#la-mano-del-quesero" id="toc-la-mano-del-quesero" class="nav-link" data-scroll-target="#la-mano-del-quesero"><span class="header-section-number">10.5.1</span> La “mano del quesero”</a></li>
-  <li><a href="#método-cientifico" id="toc-método-cientifico" class="nav-link" data-scroll-target="#método-cientifico"><span class="header-section-number">10.5.2</span> Método cientifico</a></li>
+  <li><a href="#la-mano-del-quesero" id="toc-la-mano-del-quesero" class="nav-link" data-scroll-target="#la-mano-del-quesero"><span class="header-section-number">9.5.1</span> La “mano del quesero”</a></li>
+  <li><a href="#método-cientifico" id="toc-método-cientifico" class="nav-link" data-scroll-target="#método-cientifico"><span class="header-section-number">9.5.2</span> Método cientifico</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -258,7 +252,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></h1>
+<h1 class="title"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></h1>
 </div>
 
 
@@ -275,8 +269,8 @@ div.csl-indent {
 </header>
 
 
-<section id="qué-es-una-medida" class="level2 page-columns page-full" data-number="10.1">
-<h2 data-number="10.1" class="anchored" data-anchor-id="qué-es-una-medida"><span class="header-section-number">10.1</span> ¿Qué es una medida?</h2>
+<section id="qué-es-una-medida" class="level2 page-columns page-full" data-number="9.1">
+<h2 data-number="9.1" class="anchored" data-anchor-id="qué-es-una-medida"><span class="header-section-number">9.1</span> ¿Qué es una medida?</h2>
 <p>Una medida es el resultado de la acción de <em>medir</em>. Normalmente, <em>medir</em> quiere decir comparar lo que va a ser medido con un patrón de referencia; esta comparación es realizada por una o varias personas que llamaremos <em>analistas</em>, los cuales utilizarán un <em>método analítico</em>, siguiendo un <em>procedimiento de medida</em>. Por ejemplo, en la imagen a continuación, la <em>analista</em> está midiendo la altura de un niño utilizando un <em>instrumento de medida</em>, una cinta métrica.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><img src="D:\Usuarios\Juan\OneDrive\Documentos\010%20Formación\001-Libro%20estadistica\01-imagenes\medida-altura.jpg" class="img-fluid"></div></div>
 <p>Hasta aquí parece que todo está suficientemente claro, por lo que el resultado de la medida debe ser un valor que no nos ofrecerá dudas sobre su veracidad. Sin embargo, si analizamos el proceso con atención, veremos que hay algunos elementos que pueden hacer que nuestro resultado no sea todo lo preciso que habíamos pensado. Por ejemplo, en la imagen no vemos si el niño está calzado o no. Es evidente que deberíamos decir al analista que el niño debe estar descalzo, ya que diferentes tipos de calzado podrían alterar el resultado de formas diferentes. EL niño podría estar ligeramente encorvado, o sus rodillas dobladas, y entonces la altura que estamos midiendo será menor de la altura real. Además de esto, la forma de realizar la evaluación de la altura se ve influenciada por la posición de los ojos del analista: si están demasiado bajos, no verá correctamente la parte superior de la cabeza y tenderá a sobreestimar el verdadero valor por un efecto de perspectiva. Por otra parte, no sabemos si el instrumento utilizado tiene una escala de medida construida de forma fiable o sólo aproximada. Si nuestro instrumento (la cinta métrica) no es fiable, o su escala difiere de la de otros instrumentos semejantes, es posible que el valor de la medida varíe.</p>
@@ -293,8 +287,8 @@ div.csl-indent {
 </figure>
 </div></div>
 </section>
-<section id="los-estándares-de-medida" class="level2 page-columns page-full" data-number="10.2">
-<h2 data-number="10.2" class="anchored" data-anchor-id="los-estándares-de-medida"><span class="header-section-number">10.2</span> Los estándares de medida</h2>
+<section id="los-estándares-de-medida" class="level2 page-columns page-full" data-number="9.2">
+<h2 data-number="9.2" class="anchored" data-anchor-id="los-estándares-de-medida"><span class="header-section-number">9.2</span> Los estándares de medida</h2>
 <p>Por lo que hemos visto, cuando hacemos una medida, debemos establecer un <em>procedimiento de medida</em>, que debe indicar al analista cual es la forma correcta de realizar los pasos para hacer que la medida sea veraz. Deberemos definir también el <em>instrumento de medida</em>, de manera que cuando se repita el procedimiento no se introduzca un factor de variación debido al uno de un instrumento inapropiado. LO mejor es que este instrumento disponga de una <em>homologación</em> por un servicio de homologación externo, que nos asegure, por ejemplo, que los intervalos de medida de que dispone se corresponden con valores de referencia, en este caso, centímetros y milímetros. El procedimiento debe establecer también con claridad las condiciones en que las debe estar el objeto a medir (la persona, en este caso): descalzo, perfectamente estirado, con sus rodillas rectas, etc. Seguramente, el procedimiento incluirá un dibujo para que el analista visualice con claridad los puntos claves que debe revisar para hacer una buena medida. En el dibujo a continuación, se indican algunos de estos puntos claves, incluyendo la necesidad de que el niño se apoye en un plano vertical (la pared) y que el analista se situe correctamente para que su vista sea perpendicular al plano, utilizando una guía para la valoración correcta de la altura medida.</p>
 <div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><img src="D:/Usuarios/Juan/OneDrive/Documentos/010%20Formación/001-Libro%20estadistica/01-imagenes/medida-altura-2.jpg" class="img-fluid"></div></div>
 <p>Pero ¿y si la niña tiene una altura tal que el analista no puede mantener una posición estable? El procedimiento real puede llegar a ser mucho más complejo, tal como vemos en el último gráfico, que proviene de un documento médico de la Organización Mundial de la Salud, en donde la correcta estimación del peso y altura de los niños es fundamental para determinar su estado de salud nutricional, y por lo tanto es necesario minimizar el riesgo de errores de medida, garantizando que todos los analistas realizan correctamente el mismo procedimiento aunque estén en diferentes ubicaciones y en momentos diferentes:</p>
@@ -303,13 +297,13 @@ div.csl-indent {
 <p>La descripción del procedimiento de análisis, junto con el detalle de los instrumentos necesarios y sus homologaciones requeridas, constituye lo que se conoce como <em>método analítico</em>. El analista o analistas deberán estudiar este <em>método analítico</em> para estar seguros de que son capaces de llevarlo a la práctica sin error.</p>
 <p>Veremos en un apartado posterior que cada uno de estos elementos dan lugar a un tipo de error concreto, que son principalmente dos: los debidos al analista y los debidos al procedimiento (incluyendo aquí los errores instrumentales) Veremos cómo evaluar la magnitud de cada uno de estos errores y la forma de establecer un plan de trabajo para reducirlos, mejorando así la calidad de nuestras medidas.</p>
 </section>
-<section id="la-precisión-analítica" class="level2" data-number="10.3">
-<h2 data-number="10.3" class="anchored" data-anchor-id="la-precisión-analítica"><span class="header-section-number">10.3</span> La precisión analítica</h2>
+<section id="la-precisión-analítica" class="level2" data-number="9.3">
+<h2 data-number="9.3" class="anchored" data-anchor-id="la-precisión-analítica"><span class="header-section-number">9.3</span> La precisión analítica</h2>
 </section>
-<section id="análisis-de-repetibilidad-y-reproducibilidad-grr-analysis" class="level2" data-number="10.4">
-<h2 data-number="10.4" class="anchored" data-anchor-id="análisis-de-repetibilidad-y-reproducibilidad-grr-analysis"><span class="header-section-number">10.4</span> Análisis de repetibilidad y reproducibilidad (<em>GR&amp;R analysis</em>)</h2>
-<section id="round-only-on-the-final-calculation-resultedit" class="level3" data-number="10.4.1">
-<h3 data-number="10.4.1" class="anchored" data-anchor-id="round-only-on-the-final-calculation-resultedit"><span class="header-section-number">10.4.1</span> Round only on the final calculation result[<a href="https://en.wikipedia.org/w/index.php?title=Significant_figures&amp;action=edit&amp;section=14">edit</a>]</h3>
+<section id="análisis-de-repetibilidad-y-reproducibilidad-grr-analysis" class="level2" data-number="9.4">
+<h2 data-number="9.4" class="anchored" data-anchor-id="análisis-de-repetibilidad-y-reproducibilidad-grr-analysis"><span class="header-section-number">9.4</span> Análisis de repetibilidad y reproducibilidad (<em>GR&amp;R analysis</em>)</h2>
+<section id="round-only-on-the-final-calculation-resultedit" class="level3" data-number="9.4.1">
+<h3 data-number="9.4.1" class="anchored" data-anchor-id="round-only-on-the-final-calculation-resultedit"><span class="header-section-number">9.4.1</span> Round only on the final calculation result[<a href="https://en.wikipedia.org/w/index.php?title=Significant_figures&amp;action=edit&amp;section=14">edit</a>]</h3>
 <p>When performing multiple stage calculations, do not round intermediate stage calculation results; keep as many digits as is practical (at least one more digit than the rounding rule allows per stage) until the end of all the calculations to avoid cumulative rounding errors while tracking or recording the significant figures in each intermediate result. Then, round the final result, for example, to the fewest number of significant figures (for multiplication or division) or leftmost last significant digit position (for addition or subtraction) among the inputs in the final calculation.[<a href="https://en.wikipedia.org/wiki/Significant_figures#cite_note-15">15]</a></p>
 <ul>
 <li>(2.3494 + 1.345) × 1.2 = 3.6944 × 1.2 = 4.43328 ≈ 4.4.</li>
@@ -317,29 +311,29 @@ div.csl-indent {
 </ul>
 </section>
 </section>
-<section id="precision-of-measuring-tools-and-significant-figures" class="level2" data-number="10.5">
-<h2 data-number="10.5" class="anchored" data-anchor-id="precision-of-measuring-tools-and-significant-figures"><span class="header-section-number">10.5</span> Precision of Measuring Tools and Significant Figures</h2>
+<section id="precision-of-measuring-tools-and-significant-figures" class="level2" data-number="9.5">
+<h2 data-number="9.5" class="anchored" data-anchor-id="precision-of-measuring-tools-and-significant-figures"><span class="header-section-number">9.5</span> Precision of Measuring Tools and Significant Figures</h2>
 <p><a href="https://courses.lumenlearning.com/atd-austincc-physics1/chapter/1-3-accuracy-precision-and-significant-figures/">Accuracy, Precision, and Significant Figures | Physics (lumenlearning.com)</a></p>
 <p>An important factor in the accuracy and precision of measurements involves the precision of the measuring tool. In general, a precise measuring tool is one that can measure values in very small increments. For example, a standard ruler can measure length to the nearest millimeter, while a caliper can measure length to the nearest 0.01 millimeter. The caliper is a more precise measuring tool because it can measure extremely small differences in length. The more precise the measuring tool, the more precise and accurate the measurements can be.</p>
 <p>When we express measured values, we can only list as many digits as we initially measured with our measuring tool. For example, if you use a standard ruler to measure the length of a stick, you may measure it to be 36.7 cm. You could not express this value as 36.71 cm because your measuring tool was not precise enough to measure a hundredth of a centimeter. It should be noted that the last digit in a measured value has been estimated in some way by the person performing the measurement. For example, the person measuring the length of a stick with a ruler notices that the stick length seems to be somewhere in between 36.6 cm and 36.7 cm, and he or she must estimate the value of the last digit. Using the method of significant figures, the rule is that <strong>the last digit written down in a measurement is the first digit with some uncertainty</strong>. In order to determine the number of significant digits in a value, start with the first measured value at the left and count the number of digits through the last digit written on the right. For example, the measured value 36.7cm has three digits, or significant figures. Significant figures indicate the precision of a measuring tool that was used to measure a value.</p>
-<section id="la-mano-del-quesero" class="level3" data-number="10.5.1">
-<h3 data-number="10.5.1" class="anchored" data-anchor-id="la-mano-del-quesero"><span class="header-section-number">10.5.1</span> La “mano del quesero”</h3>
+<section id="la-mano-del-quesero" class="level3" data-number="9.5.1">
+<h3 data-number="9.5.1" class="anchored" data-anchor-id="la-mano-del-quesero"><span class="header-section-number">9.5.1</span> La “mano del quesero”</h3>
 <p>Comparar pros y contras de la práctica basada en la experiencia con la práctica basada ne el método y la cuantificación</p>
 <ul>
 <li>subjetividad</li>
 <li>pérdida de conocimiento si el <em>experto</em> deja la empresa</li>
 </ul>
 </section>
-<section id="método-cientifico" class="level3" data-number="10.5.2">
-<h3 data-number="10.5.2" class="anchored" data-anchor-id="método-cientifico"><span class="header-section-number">10.5.2</span> Método cientifico</h3>
+<section id="método-cientifico" class="level3" data-number="9.5.2">
+<h3 data-number="9.5.2" class="anchored" data-anchor-id="método-cientifico"><span class="header-section-number">9.5.2</span> Método cientifico</h3>
 <p>Algoritmos - recetas cocina- DMAIC - método cientifico</p>
 <p>Montgomery 1.1</p>
 <p>La reproducibilidad de los análisis de datos</p>
 <p>Literate programming - Wikipedia</p>
 <p>Reproducible Research (hbiostat.org)</p>
 <p>rr (hbiostat.org)</p>
-<p>En el mundo científico y técnico cada vez cobra más importancia el concepto de reproducibilidad de los análisis, sobre todo cuando se trata de comunicar o publicar el resultado de un trabajo o de una investigación. Medios, como la prestigiosa revista Science, se han hecho eco de ello <span class="citation" data-cites="science2015">(<a href="160-bibliografia.html#ref-science2015" role="doc-biblioref">Buck 2015</a>)</span>. Por otra parte, la utilización de un flujo de trabajo basado en hojas de cálculo hace difícil garantizar esta reproducibilidad, y a veces puede llevar a cometer errores de consecuencias graves <span class="citation" data-cites="ferrero2018 ryssdal2013">(<a href="160-bibliografia.html#ref-ferrero2018" role="doc-biblioref">Ferrero 2018</a>; <a href="160-bibliografia.html#ref-ryssdal2013" role="doc-biblioref">Ryssdal 2013</a>)</span>.</p>
-<p>Jesse Sadler <span class="citation" data-cites="sadler2017">(<a href="160-bibliografia.html#ref-sadler2017" role="doc-biblioref">Sadler 2017</a>)</span> lo explica así:</p>
+<p>En el mundo científico y técnico cada vez cobra más importancia el concepto de reproducibilidad de los análisis, sobre todo cuando se trata de comunicar o publicar el resultado de un trabajo o de una investigación. Medios, como la prestigiosa revista Science, se han hecho eco de ello <span class="citation" data-cites="science2015">(<a href="150-bibliografia.html#ref-science2015" role="doc-biblioref">Buck 2015</a>)</span>. Por otra parte, la utilización de un flujo de trabajo basado en hojas de cálculo hace difícil garantizar esta reproducibilidad, y a veces puede llevar a cometer errores de consecuencias graves <span class="citation" data-cites="ferrero2018 ryssdal2013">(<a href="150-bibliografia.html#ref-ferrero2018" role="doc-biblioref">Ferrero 2018</a>; <a href="150-bibliografia.html#ref-ryssdal2013" role="doc-biblioref">Ryssdal 2013</a>)</span>.</p>
+<p>Jesse Sadler <span class="citation" data-cites="sadler2017">(<a href="150-bibliografia.html#ref-sadler2017" role="doc-biblioref">Sadler 2017</a>)</span> lo explica así:</p>
 <p>El peligro de la hoja de cálculo deriva de su propia estructura. La mezcla de entrada de datos, análisis y visualización hace que sea fácil confundir las celdas que contienen datos sin procesar con las que son el resultado del análisis. La forma de definir la lógica programática, tal como la selección de qué celdas se van a sumar, mediante clics del mouse, significa que una acción errónea de clic o arrastre puede provocar errores o la sobreescritura de datos. Solo hace falta pensar en el pavor del momento en el que vas a cerrar una hoja de cálculo y el programa te pregunta si te gustaría guardar los cambios. Te hace preguntarte. ¿Quiero guardar? ¿Qué cambios hice? Debido a que la lógica en una hoja de cálculo se realiza a través de clics del mouse, no hay forma de rastrear de manera efectiva qué cambios se han realizado en una sesión o en la producción de un gráfico. Los errores cometidos con Excel pueden tener consecuencias graves, como se puso de manifiesto tras la controversia alrededor del artículo de Carmen Reinhart y Kenneth Rogoff sobre la deuda nacional de los EEUU.</p>
 <p>Ciertamente hay razones legítimas por las que las personas usan por defecto hojas de cálculo para el análisis de datos en lugar de usar un lenguaje de programación como R. Las hojas de cálculo son mucho más atractivas y confortables de lo que cualquier lenguaje de programación podría ser para un recién llegado. Aprender a programar es intimidante y no es algo que se pueda hacer rápida o fácilmente. Las aplicaciones de interfaz gráfica de usuario (GUI) son mucho menos desalentadoras que una interfaz de línea de comandos. En segundo lugar, las hojas de cálculo son una buena herramienta para la entrada de datos, y es tentador pasar directamente al análisis de datos, manteniendo todo en el mismo documento. Finalmente, la naturaleza interactiva de las hojas de cálculo y la capacidad de crear gráficos que cambian en función de las entradas es muy atractiva, incluso si desbloquear completamente este potencial implica un conocimiento bastante complejo sobre cómo funciona el programa. La primera ventaja de las hojas de cálculo sobre la programación no se supera fácilmente, pero las dos últimas se basan en lo que creo que es un flujo de trabajo problemático. En lugar de usar un par de aplicaciones monolíticas, a menudo un conjunto de aplicaciones de oficina, para hacer todo, creo que es mejor dividir el flujo de trabajo entre varias aplicaciones que hacen una cosa bien.</p>
 <p>Crear una división clara entre la entrada y el análisis de datos es una de las principales razones por las que el análisis de datos en un lenguaje de programación es preferible al software de hoja de cálculo. Todavía uso hojas de cálculo, pero su limito su uso estrictamente a la entrada de datos. En un programa de hoja de cálculo, el análisis manipula directamente la única copia de los datos sin procesar. Por el contrario, con R se importan los datos, creando un objeto que es una copia de los datos sin procesar. Todas las manipulaciones de los datos se realizan en esta copia, y los datos originales nunca se alteran de ninguna manera. Esto significa que no hay forma de estropear los datos sin procesar. La manipulación de una copia de los datos le permite experimentar más libremente. Los errores son intrascendentes, incluso aunque a veces puedan llegar a ser frustrantes. Una línea de código que devuelve un error se puede ajustar y volver a ejecutar, repitiendo el proceso las veces necesarias hasta que se devuelva el resultado esperado.</p>
@@ -784,13 +778,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./090-anova.html" class="pagination-link" aria-label="El análisis de la varianza">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span>
+      <a href="./080-anova.html" class="pagination-link" aria-label="El análisis de la varianza">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./110-control-proc.html" class="pagination-link" aria-label="El control estadístico de procesos">
-        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./100-control-proc.html" class="pagination-link" aria-label="El control estadístico de procesos">
+        <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

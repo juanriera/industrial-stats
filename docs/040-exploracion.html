@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>4&nbsp; La exploración de los datos. Stemplot y diagrama de caja (boxplot) – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
+<title>4&nbsp; La exploración de los datos mediante gráficos. – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -64,7 +64,7 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./050-distr-frec.html" rel="next">
+<link href="./050-estad-simple.html" rel="next">
 <link href="./030-organizacion.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -144,7 +144,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./040-exploracion.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos. <em>Stemplot</em> y diagrama de caja (<em>boxplot</em>)</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./040-exploracion.html"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos mediante gráficos.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -190,84 +190,78 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./030-organizacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos <em>arreglados</em> (<em>tidy data</em>)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos ordenados o <em>arreglados</em> (<em>tidy data</em>)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./040-exploracion.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos. <em>Stemplot</em> y diagrama de caja (<em>boxplot</em>)</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos mediante gráficos.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./050-distr-frec.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias, histogramas y diagramas de barra</span></span></a>
+  <a href="./050-estad-simple.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Medidas centrales y medidas de dispersión: la media y la varianza.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./060-estad-simple.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Medidas centrales y medidas de dispersión: la media y la varianza.</span></span></a>
+  <a href="./060-distr-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./070-distr-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span></a>
+  <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./080-relacion-xy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+  <a href="./080-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./090-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+  <a href="./090-sistema-medicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100-sistema-medicion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./110-control-proc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+  <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./120-disexp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+  <a href="./120-mejora-calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./130-mejora-calidad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
+  <a href="./130-comunicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./140-comunicacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
-  </div>
-</li>
-        <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./150-anexo-R.html" class="sidebar-item-text sidebar-link">
+  <a href="./140-anexo-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anexo: Instalación de R y conceptos básicos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./160-bibliografia.html" class="sidebar-item-text sidebar-link">
+  <a href="./150-bibliografia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
@@ -283,7 +277,13 @@ window.Quarto = {
   <ul>
   <li><a href="#explorando-los-datos-con-excel-y-r-un-ejemplo." id="toc-explorando-los-datos-con-excel-y-r-un-ejemplo." class="nav-link active" data-scroll-target="#explorando-los-datos-con-excel-y-r-un-ejemplo."><span class="header-section-number">4.1</span> Explorando los datos con Excel y R: un ejemplo.</a></li>
   <li><a href="#el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" id="toc-el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" class="nav-link" data-scroll-target="#el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot"><span class="header-section-number">4.2</span> El diagrama de tallo y hojas (<em>stem and leaf plot</em> o <em>stemplot</em>)</a></li>
-  <li><a href="#diagramas-de-caja-boxplot-y-resumen-de-cinco-números." id="toc-diagramas-de-caja-boxplot-y-resumen-de-cinco-números." class="nav-link" data-scroll-target="#diagramas-de-caja-boxplot-y-resumen-de-cinco-números."><span class="header-section-number">4.3</span> Diagramas de caja (<em>boxplot</em>) y resumen de cinco números.</a></li>
+  <li><a href="#distribuciones-de-frecuencias" id="toc-distribuciones-de-frecuencias" class="nav-link" data-scroll-target="#distribuciones-de-frecuencias"><span class="header-section-number">4.3</span> Distribuciones de frecuencias</a></li>
+  <li><a href="#diagramas-de-barra-e-histogramas" id="toc-diagramas-de-barra-e-histogramas" class="nav-link" data-scroll-target="#diagramas-de-barra-e-histogramas"><span class="header-section-number">4.4</span> Diagramas de barra e histogramas</a></li>
+  <li><a href="#histogramas-en-excel" id="toc-histogramas-en-excel" class="nav-link" data-scroll-target="#histogramas-en-excel"><span class="header-section-number">4.5</span> Histogramas en Excel</a></li>
+  <li><a href="#gráficos-de-densidad" id="toc-gráficos-de-densidad" class="nav-link" data-scroll-target="#gráficos-de-densidad"><span class="header-section-number">4.6</span> Gráficos de densidad</a></li>
+  <li><a href="#diagramas-de-caja-boxplot-y-resumen-de-cinco-números." id="toc-diagramas-de-caja-boxplot-y-resumen-de-cinco-números." class="nav-link" data-scroll-target="#diagramas-de-caja-boxplot-y-resumen-de-cinco-números."><span class="header-section-number">4.7</span> Diagramas de caja (<em>boxplot</em>) y resumen de cinco números.</a></li>
+  <li><a href="#histogramas-y-diagramas-de-caja" id="toc-histogramas-y-diagramas-de-caja" class="nav-link" data-scroll-target="#histogramas-y-diagramas-de-caja"><span class="header-section-number">4.8</span> Histogramas y diagramas de caja</a></li>
+  <li><a href="#gráficos-de-series-temporales" id="toc-gráficos-de-series-temporales" class="nav-link" data-scroll-target="#gráficos-de-series-temporales"><span class="header-section-number">4.9</span> Gráficos de series temporales</a></li>
   </ul>
 </nav>
     </div>
@@ -292,7 +292,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos. <em>Stemplot</em> y diagrama de caja (<em>boxplot</em>)</span></h1>
+<h1 class="title"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos mediante gráficos.</span></h1>
 </div>
 
 
@@ -309,7 +309,13 @@ window.Quarto = {
 </header>
 
 
-<p>En este capítulo veremos cómo describir un conjunto de datos de forma visual. Seguiremos el flujo de trabajo que hemos visto en el capítulo anterior, de una manera ordenada, utilizando herramientas y técnicas específicas.</p>
+<p>En este capítulo esyudiaremos cómo describir un conjunto de datos de forma visual, utilizando varios tipos de gráficos distintos:</p>
+<ul>
+<li><em>Stemplot</em></li>
+<li>Histograma</li>
+<li>Diagrama de caja o <em>boxplot</em></li>
+</ul>
+<p>Veremos la relación visual entre un histograma y un diagrama de caja, y aprenderemos también a construir tablas de frecuencias en Excel y en R. Finalmente, veremos algunos otros tipos de gráficos que son útiles para aplicaciones concretas, como los gráficos de series temporales.</p>
 <section id="explorando-los-datos-con-excel-y-r-un-ejemplo." class="level2" data-number="4.1">
 <h2 data-number="4.1" class="anchored" data-anchor-id="explorando-los-datos-con-excel-y-r-un-ejemplo."><span class="header-section-number">4.1</span> Explorando los datos con Excel y R: un ejemplo.</h2>
 <p>Supongamos que queremos medir la altura de un grupo de alumnos de nuestra clase. Éste es nuestro grupo:</p>
@@ -339,7 +345,7 @@ window.Quarto = {
 </section>
 <section id="el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot"><span class="header-section-number">4.2</span> El diagrama de tallo y hojas (<em>stem and leaf plot</em> o <em>stemplot</em>)</h2>
-<p>El <em>stemplot</em> recibe este nombre porque el dibujo que resulta se asemeja a un tallo el que le salen las hojas que son los datos individuales. Para construirlo, quitamos el último dígito a la derecha de nuestros valores y colocamos verticalmente los valores resultantes ordenándolos de menor a mayor, y evitando las repeticiones. Paraevitar errores en la escala, debemos incluir los valores intermedios aunque no haya ninguno en nuestros datos (en el ejemplo, el valor 16 que correspondería a los 160). Esto forma el “tallo” de nuestro diagrama:</p>
+<p>El <em>stemplot</em> recibe este nombre porque el dibujo que resulta se asemeja a un tallo el que le salen las hojas que son los datos individuales. Para construirlo, quitamos el último dígito a la derecha de nuestros valores y colocamos verticalmente los valores resultantes ordenándolos de menor a mayor, y evitando las repeticiones. Para evitar errores en la escala, debemos incluir los valores intermedios aunque no haya ninguno en nuestros datos (en el ejemplo, el valor 16 que correspondería a los 160). Esto forma el “tallo” de nuestro diagrama:</p>
 <p><img src="01-imagenes/aula1-stemplot-paso1.png" class="img-fluid"></p>
 <p>A continuación añadimos las hojas en la celda a la derecha, que consisten en los valores que hemos “cortado” de nuestro árbol, uno al lado de otro, incluyendo esta vez los valores repetidos, en orden de menor a mayor. Por ejemplo, para el valor 135, descartamos 13 y utlizamos 5; para el valor 138, descartamos 13 y utilizamos 8, y así sucesivamente para todos los valores.</p>
 <p><img src="01-imagenes/aula1-stemplot-paso2.png" class="img-fluid"></p>
@@ -361,8 +367,259 @@ window.Quarto = {
 <p>El <em>stemplot</em> es muy sencillo de hacer y nos da una visión rápida de la <em>distribución</em> de nuestros valores, así como de la posible existencia de valores que se separan del conjunto. Estos valores alejados, que se conocen en inglés como <em>outliers</em>, tienen mucha importancia en el analisis e interpretación de los datos, como veremos más adelante.</p>
 <p>La ventaja principal del <em>stemplot</em> es que mantiene los valores originales de las observaciones, y puede hacerse fácilmente con bolígrafo y papel, sin necesidad de más herramientas.</p>
 </section>
-<section id="diagramas-de-caja-boxplot-y-resumen-de-cinco-números." class="level2" data-number="4.3">
-<h2 data-number="4.3" class="anchored" data-anchor-id="diagramas-de-caja-boxplot-y-resumen-de-cinco-números."><span class="header-section-number">4.3</span> Diagramas de caja (<em>boxplot</em>) y resumen de cinco números.</h2>
+<section id="distribuciones-de-frecuencias" class="level2" data-number="4.3">
+<h2 data-number="4.3" class="anchored" data-anchor-id="distribuciones-de-frecuencias"><span class="header-section-number">4.3</span> Distribuciones de frecuencias</h2>
+<p>El <em>stemplot</em> agrupa nuestros valores y nos ayuda a visualizar la frecuencia de cada valor, o, mejor, la frecuencia de valores en el intervalo entre cada valor. Si agrupamos nuestros valores por intervalos, y contamos el número de observaciones que aparecen en cada intervalo, obtenemos una <em>distribución de frecuencias</em>, que puede expresarse de forma <em>absoluta</em> o <em>relativa</em>.</p>
+<ul>
+<li>La <strong>frecuencia absoluta</strong> es un <em>recuento simple</em> de cuántas veces aparece cada valor en un conjunto de datos.</li>
+<li>La <strong>frecuencia relativa</strong> nos muestra la <em>proporción</em> de cada valor frente al total. Puede expresarse como fracción (entre 0 y 1) o como porcentaje (respecto a 100)</li>
+</ul>
+<p>La tabla a continuación muestra una distribución de frecuencias, calculada mediante una tabla dinámica de Excel.</p>
+<p><img src="01-imagenes/aula1-td-frec.png" class="img-fluid"></p>
+<p>También podemos calcular las frecuencias absolutas y relativas en R; en este caso, dado que los intervalos se han calulado de forma ligeramente diferente, las frecuencias calculadas son también ligeramente diferentes de las que hemos obtenido en Excel.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span> (tidyverse)</span>
+<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"excel-R/camembert.csv"</span>,<span class="at">fileEncoding=</span><span class="st">'latin1'</span>)</span>
+<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span> (<span class="at">grupo =</span> <span class="fu">cut_interval</span>(est, <span class="dv">4</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grupo) <span class="sc">|&gt;</span></span>
+<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span> (<span class="at">frec_abs =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">frec_rel =</span> frec_abs <span class="sc">/</span> <span class="fu">sum</span>(frec_abs))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 4 × 3
+  grupo       frec_abs frec_rel
+  &lt;fct&gt;          &lt;int&gt;    &lt;dbl&gt;
+1 [42.9,45.3]       36   0.171 
+2 (45.3,47.8]      131   0.621 
+3 (47.8,50.2]       41   0.194 
+4 (50.2,52.6]        3   0.0142</code></pre>
+</div>
+</div>
+<p>R utiliza los símbolos <code>(</code> y <code>[</code> para definir los intervalos, tal como se hace en matemáticas.</p>
+<ul>
+<li>Intervalo <strong>abierto</strong>: El símbolo <code>(</code> se utiliza para denotar un intervalo abierto. Por ejemplo,el intervalo <span class="math inline">\((a, b)\)</span> representa todos los números reales mayores que <span class="math inline">\(a\)</span> y menores que <span class="math inline">\(b\)</span> (excluye los valores <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>).</li>
+<li>Intervalo <strong>cerrado o semiabierto</strong>:El símbolo <code>[</code> se utiliza para denotar un intervalo cerrado o semiabierto. Por ejemplo:
+<ul>
+<li><span class="math inline">\([a, b]\)</span> representa todos los números reales mayores o iguales que <span class="math inline">\(a\)</span> y menores o iguales que <span class="math inline">\(b\)</span> (incluye <span class="math inline">\(a\)</span> y <span class="math inline">\(b\)</span>).</li>
+<li><span class="math inline">\([a, b)\)</span> representa todos los números reales mayores o iguales que <span class="math inline">\(a\)</span> y menores que <span class="math inline">\(b\)</span> (incluye <span class="math inline">\(a\)</span>, pero excluye <span class="math inline">\(b\)</span>).</li>
+</ul></li>
+</ul>
+</section>
+<section id="diagramas-de-barra-e-histogramas" class="level2" data-number="4.4">
+<h2 data-number="4.4" class="anchored" data-anchor-id="diagramas-de-barra-e-histogramas"><span class="header-section-number">4.4</span> Diagramas de barra e histogramas</h2>
+<p>Cuando nuestra variable es <em>discreta</em>, podemos representar las frecuencias de cada valor de forma gráfica utilizando un diagrama de barras. Este diagrama utiliza barras rectangulares para representar la frecuencia de cada categoría.</p>
+<p>Un histograma es un diagrama que utiliza las barras rectangulares para hacer un gráfico de la distribución de valores continuos, agrupados en clases. La anchura de esos grupos o clases (en inglés, <em>bins</em>), puede variarse, lo que cambia el perfil del gráfico obtenido.</p>
+</section>
+<section id="histogramas-en-excel" class="level2" data-number="4.5">
+<h2 data-number="4.5" class="anchored" data-anchor-id="histogramas-en-excel"><span class="header-section-number">4.5</span> Histogramas en Excel</h2>
+<p>La tabla dinámica que hemos construido en Excel ha transformado nuestra variable continua, <code>altura_cm</code>, en una variable discreta, al agrupar los valores en intervalos. Si representamos las frecuencias absolutas de nuestra tabla dinámica anterior, el diagrama resultante sería éste:</p>
+<p><img src="01-imagenes/aula1-diag-barras.png" class="img-fluid"></p>
+<p>En el caso de la tabla dinámica, Excel no construye el diagrama de barras a partir de la tabla de los valores originales, sino de las categorías de la tabla dinámica. Dado que estas categorías (los grupos que ha formado la tabla dinámica) son discretas, Excel utiliza el resultado de la tabla dinámica para hacer el gráfico con un diagrama de barras.</p>
+<p>Este diagrama muestra su utilidad cuando representamos la distribución de un conjunto de valores más grande que nuestros once alumnos. Veamos su aplicación a los datos diarios de una fabricación de queso camembert a lo largo de un año.</p>
+<p>La tabla de datos tiene esta estructura:</p>
+<p><img src="01-imagenes/camembert-tabla-datos.png" class="img-fluid"></p>
+<p>Aunque no se muestran en la figura, la tabla está formada por 211 casos. Analicemos los datos con Excel. Los pasos son:</p>
+<ol type="1">
+<li>Construir la tabla dinámica</li>
+<li>Agrupar los datos</li>
+<li>Insertar el gráfico a partir de la tabla</li>
+</ol>
+<p>Con una agrupación de datos en intervalos de 1, esta es nuestra tabla dinámica:</p>
+<p><img src="01-imagenes/camembert-td.png" class="img-fluid"></p>
+<p><img src="01-imagenes/camembert-histo1.png" class="img-fluid"></p>
+<p>Si nuestro intervalo de clase fuese de 2 puntos de extracto seco en vez de 1, el histograma tendría este aspecto:</p>
+<p><img src="01-imagenes/camembert-histo2.png" class="img-fluid"></p>
+<p>Si por el contrario hubiésemos agrupado en intervalos de 0,5 puntos, el histograma sería este:</p>
+<p><img src="01-imagenes/camembert-histo3.png" class="img-fluid"></p>
+<p>La decisión de agrupar las variables continuas en intervalos de diferentes anchuras tiene efectos sobre el aspecto del gráfico; no obstante, debemos ser capaces de interpretar que la distribución de los valores es la misma en los tres casos: hay una mayoría de casos con valores entre 46 y 48, y muy pocos casos con valores muy bajos o muy altos. En este caso, la distribución de los valores es aproximadamente simétrica, y se reparten alrededor de una mayoría de valores centrales.</p>
+<p>En otras ocasiones, nos encontramos con datos que son asimétricos: hay una mayoría de valores bajos o bien de valores altos. Veamos un caso: los recuentos bacterianos de bacterias coliformes, que tenemos en la última columna a la derecha de nuestra tabla, en la variable ´coliformes´.</p>
+<p><img src="01-imagenes/camembert-graf-colis.png" class="img-fluid"></p>
+<p>En este caso, vemos que la mayoría de los casos tienen valor cero. Es el caso de los recuentos de bacterias contaminantes, en el que la mayoría de los análisis tienen recuentos cero o muy bajos, y sólo en pocos casos tienen valores altos. Veremos con más detalle cómo tratar estas distribuciones cuando hablemos de las distribuciones de probabilidad, en capítulos posteriores.</p>
+<p>Como vemos, aunque Excel utiliza el diagrama de barras para construir el gráfico, en realidad estamos construyendo un histograma, en dos etapas: agrupación de los datos y creación del gráfico. Al construir un histograma en R, el programa realiza automáticamente ambos pasos. Para verlo por partes, vamos a construir la tabla de frecuencias y el histograma en R.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span> (<span class="at">grupo =</span> <span class="fu">cut_width</span>(est, <span class="at">width=</span><span class="dv">1</span>, <span class="at">boundary=</span><span class="dv">1</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">group_by</span>(grupo) <span class="sc">|&gt;</span></span>
+<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">summarise</span> (<span class="at">frec_abs =</span> <span class="fu">n</span>()) <span class="sc">|&gt;</span></span>
+<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span>(<span class="at">frec_rel =</span> frec_abs <span class="sc">/</span> <span class="fu">sum</span>(frec_abs))</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code># A tibble: 10 × 3
+   grupo   frec_abs frec_rel
+   &lt;fct&gt;      &lt;int&gt;    &lt;dbl&gt;
+ 1 [42,43]        1  0.00474
+ 2 (43,44]        4  0.0190 
+ 3 (44,45]       23  0.109  
+ 4 (45,46]       48  0.227  
+ 5 (46,47]       56  0.265  
+ 6 (47,48]       49  0.232  
+ 7 (48,49]       17  0.0806 
+ 8 (49,50]       10  0.0474 
+ 9 (50,51]        2  0.00948
+10 (52,53]        1  0.00474</code></pre>
+</div>
+</div>
+<p>R tiene una función básica, la función <code>hist()</code>, que construye el histograma directamente sin necesidad de hacer previamente una tabla de frecuencias (en realidad, la tabla de frecuencias se calcula internamente).</p>
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df_camembert<span class="sc">$</span>est)</span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>est)) <span class="sc">+</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-histo1" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-histo1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-histo1" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-histo1-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-histo1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="040-exploracion_files/figure-html/fig-histo1-1.png" class="img-fluid figure-img" data-ref-parent="fig-histo1" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-histo1-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Función básica de R
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-histo1" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-histo1-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-histo1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="040-exploracion_files/figure-html/fig-histo1-2.png" class="img-fluid figure-img" data-ref-parent="fig-histo1" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-histo1-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Función ggplot()
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histo1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.1: Ejemplos de histogramas
+</figcaption>
+</figure>
+</div>
+<p>En general, son más útiles las opciones de la función <code>ggplot()</code>, en la biblioteca <code>tidyverse</code>.</p>
+<p>En los histogramas de los recuentos bacterianos,utilizamos una opción para aumentar el número de barras que queremos en el histograma: <code>breaks=</code> en la función base, <code>bins=</code> en <code>ggplot()</code>:</p>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(df_camembert<span class="sc">$</span>coliformes, <span class="at">breaks=</span><span class="dv">50</span>)</span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>coliformes)) <span class="sc">+</span></span>
+<span id="cb10-5"><a href="#cb10-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">50</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-histo2" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-histo2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-histo2" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-histo2-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-histo2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="040-exploracion_files/figure-html/fig-histo2-1.png" class="img-fluid figure-img" data-ref-parent="fig-histo2" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-histo2-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Función básica de R
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-histo2" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-histo2-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-histo2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="040-exploracion_files/figure-html/fig-histo2-2.png" class="img-fluid figure-img" data-ref-parent="fig-histo2" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-histo2-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Función ggplot()
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-histo2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.2: Ejemplos de histogramas
+</figcaption>
+</figure>
+</div>
+<p>En casos de distribuciones muy asimétricas, a veces es conveniente aplicar una transformación a los datos, tal como el logaritmo decimal, mediante la función <code>log10()</code>; esto facilita la interpretación del gráfico:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log10</span>(coliformes<span class="sc">+</span><span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="at">bins=</span><span class="dv">50</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="040-exploracion_files/figure-html/unnamed-chunk-7-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gráficos-de-densidad" class="level2" data-number="4.6">
+<h2 data-number="4.6" class="anchored" data-anchor-id="gráficos-de-densidad"><span class="header-section-number">4.6</span> Gráficos de densidad</h2>
+<p>Un gráfico de densidad en R es una representación visual suavizada de la distribución de un conjunto de datos. A diferencia de los histogramas, que dividen los datos en intervalos y cuentan las frecuencias, los gráficos de densidad utilizan técnicas estadísticas no paramétricas para estimar la función de densidad de probabilidad.</p>
+<p>Excel no permite la representación de los gráficos de densidad; en R pueden hacerse con la función <code>ggplot()</code>simplemente añadiendo la geometría <code>geom_density()</code></p>
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>est)) <span class="sc">+</span></span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>()</span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb12-6"><a href="#cb12-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="fu">log</span>(coliformes<span class="sc">+</span><span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb12-7"><a href="#cb12-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-charts" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-charts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-charts" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-charts-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-charts-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="040-exploracion_files/figure-html/fig-charts-1.png" class="img-fluid figure-img" data-ref-parent="fig-charts" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-charts-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) EST
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-charts" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-charts-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-charts-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="040-exploracion_files/figure-html/fig-charts-2.png" class="img-fluid figure-img" data-ref-parent="fig-charts" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-charts-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) coliformes
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-charts-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.3: Ejemplos de diagramas de densidad
+</figcaption>
+</figure>
+</div>
+<p>Podemos representar simultáneamente el histograma y la función de densidad:</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb13"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb13-1"><a href="#cb13-1" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb13-2"><a href="#cb13-2" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>est)) <span class="sc">+</span></span>
+<span id="cb13-3"><a href="#cb13-3" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_histogram</span>(<span class="fu">aes</span>(<span class="at">y =</span> ..density..), <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb13-4"><a href="#cb13-4" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_density</span>(<span class="at">color =</span> <span class="st">"red"</span>, <span class="at">size =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb13-5"><a href="#cb13-5" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma y densidad"</span>, <span class="at">x =</span> <span class="st">"Valores"</span>, <span class="at">y =</span> <span class="st">"Densidad"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="040-exploracion_files/figure-html/unnamed-chunk-9-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<p>La ventaja de los gráficos de densidad es que como no tenemos que fraccionar los datos en intervalos arbitrarios, no estamos afectados por el efecto visual de la anchura de estos intervalos. También hay otras ventajas desde el punto de vista estadístico, que veremos al hablar de las distribuciones de probabilidad.</p>
+</section>
+<section id="diagramas-de-caja-boxplot-y-resumen-de-cinco-números." class="level2" data-number="4.7">
+<h2 data-number="4.7" class="anchored" data-anchor-id="diagramas-de-caja-boxplot-y-resumen-de-cinco-números."><span class="header-section-number">4.7</span> Diagramas de caja (<em>boxplot</em>) y resumen de cinco números.</h2>
 <p>Este gráfico fue creado por el estadístico John Tukey en 1977, y es una herramienta fundamental en la exploración de datos. Se basa en un grupo de medidas que se utiliza ampliamente en la descripción de conjuntos de datos, el conjunto de <strong>cuartiles</strong>. Si dividimos un grupo de datos <strong>ordenados</strong> en cuatro partes iguales, mediante <strong>tres</strong> puntos de corte, llamamos <strong>primer cuartil</strong> o <span class="math inline">\(Q1\)</span> al valor que se situa en el 25%; <strong>segundo cuartil</strong>, o <span class="math inline">\(Q2\)</span>, al valor que se sitúa en el centro (50%), y <strong>tercer cuartil</strong>, o <span class="math inline">\(Q3\)</span>, al punto que se situa en el 75% de los datos. A estos tres valores añadimos el <strong>mínimo</strong> y el <strong>máximo</strong>, y tenemos un conjunto de <strong>cinco números</strong> que nos permiten describir la forma de la distribución de datos con cierta precisión. El segundo cuartil (<span class="math inline">\(Q2\)</span>), que corresponde al 50% de los datos, se conoce habitualmente como <strong>mediana</strong>. El valor resultante de restar <span class="math inline">\(Q3-Q1\)</span> es lo que se conoce como <strong>rango intercuartil</strong> o <span class="math inline">\(IQR\)</span>, y es una medida de la dispersión de la distribución de datos (mide la amplitud de la distribución).</p>
 <p>El <strong>diagrama de caja</strong>, también conocido como <em>boxplot</em>, es un gráfico que permite resumir las características principales de un conjunto de datos utilizando estos cinco números, tal como se explica a continuación. Sus ventajas son:</p>
 <ul>
@@ -375,7 +632,7 @@ window.Quarto = {
 <p>Microsoft Excel no dispone de un diseño de gráficos de caja que sea práctico, por lo que recurriremos siempre a R para realizarlos.</p>
 <p>Como casi siempre, hay una función de base que dibuja un <em>boxplot</em> y también una geometría de <code>ggplot()</code>que lo hace: <code>geom_boxplot()</code>, con muchas más opciones de diseño y formato que la opción de base.</p>
 <div class="cell">
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df_aula<span class="sc">$</span>altura_cm)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb14"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb14-1"><a href="#cb14-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df_aula<span class="sc">$</span>altura_cm)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div class="cell-output-display">
 <div id="fig-boxplot" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -383,23 +640,24 @@ window.Quarto = {
 <img src="040-exploracion_files/figure-html/fig-boxplot-1.png" class="img-fluid figure-img" width="672">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.1: Boxplot con los gráficos básicos de R
+Figura&nbsp;4.4: Boxplot con los gráficos básicos de R
 </figcaption>
 </figure>
 </div>
 </div>
 </div>
 <p>Vamos a repetir el gráfico para los datos de producción de queso camembert, usando ahora los gráficos básicos y los de <code>ggplot()</code>:</p>
-<div class="sourceCode cell-code" id="cb6"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb6-1"><a href="#cb6-1" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"excel-R/camembert.csv"</span>,<span class="at">fileEncoding=</span><span class="st">'latin1'</span>)</span>
-<span id="cb6-2"><a href="#cb6-2" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-3"><a href="#cb6-3" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df_camembert<span class="sc">$</span>est)</span>
-<span id="cb6-4"><a href="#cb6-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb6-5"><a href="#cb6-5" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
-<span id="cb6-6"><a href="#cb6-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="st">""</span>, <span class="at">y=</span>est))<span class="sc">+</span></span>
-<span id="cb6-7"><a href="#cb6-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb6-8"><a href="#cb6-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
-<span id="cb6-9"><a href="#cb6-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),  <span class="co"># Oculta las etiquetas del eje x</span></span>
-<span id="cb6-10"><a href="#cb6-10" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()) <span class="co"># Oculta las marcas del eje x</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb15"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb15-1"><a href="#cb15-1" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"excel-R/camembert.csv"</span>,<span class="at">fileEncoding=</span><span class="st">'latin1'</span>)</span>
+<span id="cb15-2"><a href="#cb15-2" aria-hidden="true" tabindex="-1"></a>df_camembert<span class="sc">$</span>fecha <span class="ot">&lt;-</span> <span class="fu">as.Date</span>(df_camembert<span class="sc">$</span>fecha, <span class="fu">format</span>(<span class="st">"%d/%m/%Y"</span>))</span>
+<span id="cb15-3"><a href="#cb15-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-4"><a href="#cb15-4" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(df_camembert<span class="sc">$</span>est)</span>
+<span id="cb15-5"><a href="#cb15-5" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb15-6"><a href="#cb15-6" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb15-7"><a href="#cb15-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span><span class="st">""</span>, <span class="at">y=</span>est))<span class="sc">+</span></span>
+<span id="cb15-8"><a href="#cb15-8" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb15-9"><a href="#cb15-9" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>() <span class="sc">+</span></span>
+<span id="cb15-10"><a href="#cb15-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme</span>(<span class="at">axis.text.x =</span> <span class="fu">element_blank</span>(),  <span class="co"># Oculta las etiquetas del eje x</span></span>
+<span id="cb15-11"><a href="#cb15-11" aria-hidden="true" tabindex="-1"></a>        <span class="at">axis.ticks.x =</span> <span class="fu">element_blank</span>()) <span class="co"># Oculta las marcas del eje x</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-boxplot2" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-boxplot2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -431,22 +689,22 @@ Figura&nbsp;4.1: Boxplot con los gráficos básicos de R
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.2: Ejemplos de boxplot
+Figura&nbsp;4.5: Ejemplos de boxplot
 </figcaption>
 </figure>
 </div>
 <p>Un uso muy interesante del boxplot en R consiste en agrupar los boxplot de una variable en funcion de otra. En este caso, agrupamos el extracto seco por meses previa agrupación de la fecha. Esta agrupación puede hacerse tanto en los gráficos básicos de R como en <code>ggplot()</code>:</p>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a>df_camembert<span class="sc">$</span>mes <span class="ot">&lt;-</span> <span class="fu">format</span>(<span class="fu">as.Date</span>(df_camembert<span class="sc">$</span>fecha), <span class="st">"%m"</span>)</span>
-<span id="cb7-2"><a href="#cb7-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span> (df_camembert<span class="sc">$</span>est<span class="sc">~</span>df_camembert<span class="sc">$</span>mes)</span>
-<span id="cb7-3"><a href="#cb7-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb7-4"><a href="#cb7-4" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
-<span id="cb7-5"><a href="#cb7-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span> (<span class="at">mes =</span> <span class="fu">format</span>(<span class="fu">as.Date</span>(fecha), <span class="st">"%m"</span>)) <span class="sc">|&gt;</span></span>
-<span id="cb7-6"><a href="#cb7-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mes, <span class="at">y =</span> est)) <span class="sc">+</span></span>
-<span id="cb7-7"><a href="#cb7-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
-<span id="cb7-8"><a href="#cb7-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot de 'est' por Meses"</span>,</span>
-<span id="cb7-9"><a href="#cb7-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Mes"</span>,</span>
-<span id="cb7-10"><a href="#cb7-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Valor de est"</span>) <span class="sc">+</span></span>
-<span id="cb7-11"><a href="#cb7-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode cell-code" id="cb16"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb16-1"><a href="#cb16-1" aria-hidden="true" tabindex="-1"></a>df_camembert<span class="sc">$</span>mes <span class="ot">&lt;-</span> <span class="fu">format</span>(df_camembert<span class="sc">$</span>fecha, <span class="st">"%m"</span>)</span>
+<span id="cb16-2"><a href="#cb16-2" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span> (df_camembert<span class="sc">$</span>est<span class="sc">~</span>df_camembert<span class="sc">$</span>mes)</span>
+<span id="cb16-3"><a href="#cb16-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb16-4"><a href="#cb16-4" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb16-5"><a href="#cb16-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">mutate</span> (<span class="at">mes =</span> <span class="fu">format</span>(fecha, <span class="st">"%m"</span>)) <span class="sc">|&gt;</span></span>
+<span id="cb16-6"><a href="#cb16-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> mes, <span class="at">y =</span> est)) <span class="sc">+</span></span>
+<span id="cb16-7"><a href="#cb16-7" aria-hidden="true" tabindex="-1"></a>    <span class="fu">geom_boxplot</span>() <span class="sc">+</span></span>
+<span id="cb16-8"><a href="#cb16-8" aria-hidden="true" tabindex="-1"></a>    <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Boxplot de 'est' por Meses"</span>,</span>
+<span id="cb16-9"><a href="#cb16-9" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Mes"</span>,</span>
+<span id="cb16-10"><a href="#cb16-10" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Valor de est"</span>) <span class="sc">+</span></span>
+<span id="cb16-11"><a href="#cb16-11" aria-hidden="true" tabindex="-1"></a>    <span class="fu">theme_minimal</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <div id="fig-boxplot3" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
 <div aria-describedby="fig-boxplot3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
@@ -478,7 +736,86 @@ Figura&nbsp;4.2: Ejemplos de boxplot
 </div>
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-boxplot3-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;4.3: Ejemplos de boxplot
+Figura&nbsp;4.6: Ejemplos de boxplot
+</figcaption>
+</figure>
+</div>
+</section>
+<section id="histogramas-y-diagramas-de-caja" class="level2" data-number="4.8">
+<h2 data-number="4.8" class="anchored" data-anchor-id="histogramas-y-diagramas-de-caja"><span class="header-section-number">4.8</span> Histogramas y diagramas de caja</h2>
+<p>Resulta muy útil comprender visualmente la relación entre el <em>boxplot</em> y el histograma para entender la distribución de los datos. En la gráfica siguiente se representan ambos simultáneamente</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb17"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb17-1"><a href="#cb17-1" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb17-2"><a href="#cb17-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> est)) <span class="sc">+</span></span>
+<span id="cb17-3"><a href="#cb17-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb17-4"><a href="#cb17-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="dv">2</span>, <span class="at">fill =</span> <span class="st">"darkgrey"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">y =</span> <span class="sc">-</span><span class="dv">2</span>)) <span class="sc">+</span></span>
+<span id="cb17-5"><a href="#cb17-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma y Boxplot"</span>, <span class="at">y =</span> <span class="st">"Frecuencias"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="040-exploracion_files/figure-html/unnamed-chunk-13-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb18"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb18-1"><a href="#cb18-1" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb18-2"><a href="#cb18-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x =</span> <span class="fu">log10</span>(coliformes<span class="sc">+</span><span class="dv">1</span>))) <span class="sc">+</span></span>
+<span id="cb18-3"><a href="#cb18-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">fill =</span> <span class="st">"lightblue"</span>, <span class="at">color =</span> <span class="st">"black"</span>, <span class="at">bins =</span> <span class="dv">20</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>) <span class="sc">+</span></span>
+<span id="cb18-4"><a href="#cb18-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">width =</span> <span class="dv">4</span>, <span class="at">fill =</span> <span class="st">"darkgrey"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">position =</span> <span class="fu">position_nudge</span>(<span class="at">y =</span> <span class="sc">-</span><span class="dv">4</span>)) <span class="sc">+</span></span>
+<span id="cb18-5"><a href="#cb18-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma y Boxplot"</span>, <span class="at">y =</span> <span class="st">"Frecuencias"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="040-exploracion_files/figure-html/unnamed-chunk-14-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
+</section>
+<section id="gráficos-de-series-temporales" class="level2" data-number="4.9">
+<h2 data-number="4.9" class="anchored" data-anchor-id="gráficos-de-series-temporales"><span class="header-section-number">4.9</span> Gráficos de series temporales</h2>
+<p>Hasta ahora hemos utilizado gráficos y tablas que describen la estructura de un conjunto de datos. Existen otros gráficos que tienen en cuenta la forma en la que esos datos se han producido en el tiempo. En este caso, será necesario que hayamos recogido precisamente los intervalos de tiempo en los que se han producido nuestros valores, y que hayamos recogido estos intervalos temporales en una variable de nuestra tabla.</p>
+<p>En nuestro conjunto de datos de fabricación de queso camembert, la primera columna de la tabla recoge precisamente la variable <code>fecha</code>, lo que nos permite ordenar nuestros valores en el tiempo.</p>
+<p>Cuando representamos los valores en el tiempo, nunca usaremos el diagrama de barras, sino el gráfico de líneas.</p>
+<div class="sourceCode cell-code" id="cb19"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb19-1"><a href="#cb19-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df_camembert<span class="sc">$</span>fecha, df_camembert<span class="sc">$</span>est, <span class="at">type=</span><span class="st">"l"</span>)</span>
+<span id="cb19-2"><a href="#cb19-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb19-3"><a href="#cb19-3" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>
+<span id="cb19-4"><a href="#cb19-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">ggplot</span>(<span class="fu">aes</span>(<span class="at">x=</span>fecha, <span class="at">y=</span>est))<span class="sc">+</span></span>
+<span id="cb19-5"><a href="#cb19-5" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_line</span>() <span class="sc">+</span></span>
+<span id="cb19-6"><a href="#cb19-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">theme_bw</span>()</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div id="fig-graftemp" class="quarto-layout-panel">
+<figure class="quarto-float quarto-float-fig figure">
+<div aria-describedby="fig-graftemp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<div class="quarto-layout-row">
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-graftemp" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-graftemp-1" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-graftemp-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="040-exploracion_files/figure-html/fig-graftemp-1.png" class="img-fluid figure-img" data-ref-parent="fig-graftemp" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-graftemp-1-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(a) Gráfico de series temporales básico de R
+</figcaption>
+</figure>
+</div>
+</div>
+<div class="cell-output-display quarto-layout-cell-subref quarto-layout-cell" data-ref-parent="fig-graftemp" style="flex-basis: 50.0%;justify-content: flex-start;">
+<div id="fig-graftemp-2" class="quarto-float quarto-figure quarto-figure-center anchored">
+<figure class="quarto-float quarto-subfloat-fig figure">
+<div aria-describedby="fig-graftemp-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+<img src="040-exploracion_files/figure-html/fig-graftemp-2.png" class="img-fluid figure-img" data-ref-parent="fig-graftemp" width="672">
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-subfloat-caption quarto-subfloat-fig" id="fig-graftemp-2-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+(b) Gráfico de series temporales utilizando <code>ggplot()</code>
+</figcaption>
+</figure>
+</div>
+</div>
+</div>
+</div>
+<figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-graftemp-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
+Figura&nbsp;4.7: Ejemplos de gráfico de series temporales
 </figcaption>
 </figure>
 </div>
@@ -906,13 +1243,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./030-organizacion.html" class="pagination-link" aria-label="La organización de los datos y el flujo de trabajo.Los datos _arreglados_ (_tidy data_)">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos <em>arreglados</em> (<em>tidy data</em>)</span></span>
+      <a href="./030-organizacion.html" class="pagination-link" aria-label="La organización de los datos y el flujo de trabajo.Los datos ordenados o _arreglados_ (_tidy data_)">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos ordenados o <em>arreglados</em> (<em>tidy data</em>)</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./050-distr-frec.html" class="pagination-link" aria-label="Distribuciones de frecuencias, histogramas y diagramas de barra">
-        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias, histogramas y diagramas de barra</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./050-estad-simple.html" class="pagination-link" aria-label="Medidas centrales y medidas de dispersión: la media y la varianza.">
+        <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Medidas centrales y medidas de dispersión: la media y la varianza.</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>
