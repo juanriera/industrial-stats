@@ -2,24 +2,65 @@
 lang: es
 ---
 
-# El flujo de trabajo en el análisis de datos
-
-
-
-
-    Gráfico de R4DS
-
-    ![](01-imagenes/data-science.png)
-
-
+# La organización de los datos y el flujo de trabajo.Los datos _arreglados_ (_tidy data_)
 
 Un **flujo de trabajo en análisis de datos** es un proceso sistemático y estructurado que guía la manipulación, exploración y análisis de datos desde su recolección hasta la obtención de resultados finales y su comunicación. Es una hoja de ruta que asegura que cada paso se realice de manera ordenada, eficiente y reproducible, facilitando la comprensión y utilización de los datos.
+
+Hadley Wickham [@wickham2023] ha propuesto un método de flujo de trabajo que se ha convertido en estándar en la ciencia de datos (hay versión en español: [@wickham2023es])
+
+![](01-imagenes/data-science.png)
 
 Este flujo de trabajo abarca diversas actividades como la importación de datos, su limpieza y transformación, el análisis exploratorio, y el modelado, culminando en la interpretación y presentación de los resultados. Todo esto se hace siguiendo metodologías específicas para asegurar la calidad y precisión del análisis.
 
 La importancia de seguir un flujo de trabajo bien definido radica en la capacidad de replicar estudios, minimizar errores y fomentar la transparencia, permitiendo que cualquier persona pueda entender y validar las decisiones tomadas durante el análisis. Además, mejora la eficiencia al estandarizar procedimientos y facilita la colaboración entre diferentes analistas o equipos de trabajo.
 
+## Etapas en un flujo de trabajo estructurado.
 
+### Recolección de datos
+
+La primera etapa es la **recolección de datos**. Esto implica obtener datos desde diversas fuentes como archivos CSV, bases de datos, APIs, etc. La recolección de datos es fundamental porque la calidad del análisis depende de la calidad de los datos recolectados.
+
+### Inspección de los datos
+
+Una vez recolectados, se procede a **inspeccionar los datos** para entender su estructura y contenido. Esto incluye examinar los tipos de datos, la presencia de valores faltantes, duplicados y la distribución de las variables.
+
+### Limpieza de los datos
+
+La **limpieza de datos** es crucial para asegurar que la información sea precisa y esté en el formato adecuado. Esta etapa incluye:
+
+- Manejo de valores faltantes.
+- Eliminación de duplicados.
+- Corrección de inconsistencias.
+- Transformación de datos a un formato adecuado para el análisis.
+
+### Transformación de los datos
+
+Transformar los datos a un formato **ordenado o arreglado** (_tidy_) es esencial. Según Wickham, los datos **arreglados** tienen una estructura clara: cada variable es una columna, cada observación es una fila, y cada valor tiene su propia celda. Este formato facilita el análisis y la visualización de datos.
+
+### Análisis exploratorio de datos (EDA)
+
+El **Análisis Exploratorio de Datos (EDA)** busca entender los patrones y relaciones en los datos mediante estadísticas descriptivas y visualizaciones. Durante esta etapa se realizan:
+
+- Estadísticas básicas (media, mediana, desviación estándar).
+- Gráficos y diagramas para visualizar la distribución de los datos y las relaciones entre variables.
+
+### Modelado de datos
+
+Dependiendo del objetivo del análisis, se pueden aplicar diversos modelos estadísticos para extraer información y hacer predicciones. Esto puede incluir:
+
+- Modelos de regresión.
+- Análisis de clasificación.
+- Modelos de series temporales, entre otros.
+
+### Comunicación de resultados
+
+Finalmente, es fundamental **comunicar los resultados** de manera clara y efectiva. Esto se hace a través de:
+
+- Tablas y resúmenes interpretativos.
+- Gráficos y visualizaciones.
+- Informes y presentaciones que expliquen los hallazgos y sus implicaciones.
+
+Siguiendo estos pasos, puedes manejar y analizar datos de manera organizada y reproducible, facilitando la colaboración y la toma de decisiones informadas. Este flujo de trabajo asegura que los datos se traten de manera sistemática, desde su recolección hasta la comunicación de los resultados.
 
 ## Razones para seguir un flujo de trabajo
 
@@ -61,68 +102,14 @@ La importancia de seguir un flujo de trabajo bien definido radica en la capacida
 6. **Dificultad para Adaptarse a Cambios**:
    Sin un flujo de trabajo definido, adaptar el análisis a nuevos datos o cambios en los objetivos puede ser más complejo y propenso a errores.
 
-### Ejemplo
 
-Supongamos que estás analizando los datos de producción de una empresa. Sin un flujo de trabajo claro, podrías realizar la limpieza de datos de manera inconsistente, lo que podría resultar en diferentes conjuntos de datos para el mismo análisis. Esto llevaría a conclusiones poco fiables y a la dificultad de justificar tus hallazgos si otra persona intenta replicar tu trabajo. Además, podría ser ineficiente, ya que podrías estar repitiendo tareas o dejando de optimizar ciertos pasos.
+En resumen, seguir un flujo de trabajo estructurado es esencial para garantizar la precisión, eficiencia, y reproducibilidad del análisis de datos, evitando problemas que puedan comprometer la integridad y utilidad de los resultados. .
 
-En resumen, seguir un flujo de trabajo estructurado es esencial para garantizar la precisión, eficiencia, y reproducibilidad del análisis de datos, evitando problemas que puedan comprometer la integridad y utilidad de los resultados.
+## Un ejemplo: revisando los datos existentes.
 
-## Etapas en un flujo de trabajo estructurado.
+Cuando nos incorporamos a un equipo de trabajo existente, lo más seguro es que ya se disponga de un sistema de archivo de los datos, de acuerdo con los métodos habituales del equipo. En muchos casos, el diseño de la captura de datos sigue aproximadamente el modelo manual en papel; se introducen los datos en la hoja de cálculo y una vez completados, se imprime el documento para su archivo.
 
-1. Recolección de Datos
-
-La primera etapa es la **recolección de datos**. Esto implica obtener datos desde diversas fuentes como archivos CSV, bases de datos, APIs, etc. La recolección de datos es fundamental porque la calidad del análisis depende de la calidad de los datos recolectados.
-
-2. Inspección de Datos
-
-Una vez recolectados, se procede a **inspeccionar los datos** para entender su estructura y contenido. Esto incluye examinar los tipos de datos, la presencia de valores faltantes, duplicados y la distribución de las variables.
-
-3. Limpieza de Datos
-
-La **limpieza de datos** es crucial para asegurar que la información sea precisa y esté en el formato adecuado. Esta etapa incluye:
-
-- Manejo de valores faltantes.
-- Eliminación de duplicados.
-- Corrección de inconsistencias.
-- Transformación de datos a un formato adecuado para el análisis.
-
-4. Transformación de Datos
-
-Transformar los datos a un formato "tidy" es esencial. Según Wickham, los datos "tidy" tienen una estructura clara: cada variable es una columna, cada observación es una fila, y cada valor tiene su propia celda. Este formato facilita el análisis y la visualización de datos.
-
-5. Análisis Exploratorio de Datos (EDA)
-
-El **Análisis Exploratorio de Datos (EDA)** busca entender los patrones y relaciones en los datos mediante estadísticas descriptivas y visualizaciones. Durante esta etapa se realizan:
-
-- Estadísticas básicas (media, mediana, desviación estándar).
-- Gráficos y diagramas para visualizar la distribución de los datos y las relaciones entre variables.
-
-6. Modelado de Datos
-
-Dependiendo del objetivo del análisis, se pueden aplicar diversos modelos estadísticos para extraer información y hacer predicciones. Esto puede incluir:
-
-- Modelos de regresión.
-- Análisis de clasificación.
-- Modelos de series temporales, entre otros.
-
-7. Comunicación de Resultados
-
-Finalmente, es fundamental **comunicar los resultados** de manera clara y efectiva. Esto se hace a través de:
-
-- Tablas y resúmenes interpretativos.
-- Gráficos y visualizaciones.
-- Informes y presentaciones que expliquen los hallazgos y sus implicaciones.
-
-### Resumen
-
-Siguiendo estos pasos, puedes manejar y analizar datos de manera organizada y reproducible, facilitando la colaboración y la toma de decisiones informadas. Este flujo de trabajo asegura que los datos se traten de manera sistemática, desde su recolección hasta la comunicación de los resultados.
-
-
-## La organización y preparación de los datos.
-
-Cuando nos incorporamos a un equipo de trabajo existente, lo más seguro es que el equipo disponga ya de un sistema de archivo de los datos, de acuerdo con sus prácticas habituales. A veces el diseño de la captura de datos sigue aproximadamente el modelo manual en papel. Se introducen los datos en la hoja de cálculo y una vez completados, se imprime el documento para su archivo.
-
-El error más común que cometemos es tratar la hoja de cálculo como un bloc de notas, es decir, hacer anotaciones de forma libre, colocar los datos y el resultado de los análisis al lado y en cualquier parte de la hoja, y apoyarnos en el contexto para interpretar lo que hemos guardado. Pero para que el ordenador sea capaz de analizar nuestros datos de manera eficiente, debemos estructurarlos de tal forma que el programa use la información tal como nosotros queremos.
+El error más común que se suele cometer es, precisamente, tratar la hoja de cálculo como un bloc de notas, es decir, hacer anotaciones de forma libre, colocar los datos y el resultado de los análisis al lado y en cualquier parte de la hoja, y apoyarnos en el contexto para interpretar lo que hemos guardado. Pero para que el ordenador sea capaz de analizar nuestros datos de manera eficiente, debemos estructurarlos de tal forma que el programa use la información tal como nosotros queremos.
 
 Es común utilizar una hoja para guardar múltiples tablas de datos, tal como vemos en la [@fig-excel_mess]. Esta estructura, sin embargo, resulta enormemente confusa para su análisis, o lo imposibilita completamente.
 
@@ -132,7 +119,7 @@ En otros casos, los datos se guardan en hojas de cálculo que se componen de dif
 
 ![Hoja Excel con una estructura no ordenada](01-imagenes/2021-09-1_excel_1.png){#fig-2021-09-1_excel_1}
 
-¿Y utilizar diferentes pestañas para cada tabla? En este caso, la respuesta es sí y no. Si las diferentes tablas presentan situaciones diferentes, o datos que no son coincidentes, podemos utilizar diferentes pestañas. Pero si los datos están vinculados, por ejemplo, se corresponden con medidas hechas en fechas diferentes (meses, años), la respuesta adecuada es que las pestañas no son la forma correcta de almacenarlos datos; la forma recomendad es añadir una variable que nos permita diferenciar los datos por fecha; nuestro programa de análisis nos permitirá *filtrar* los datos según la fecha que deseemos, y todos estarán en una única tabla, facilitando la coherencia del conjunto.
+Si las diferentes tablas presentan situaciones diferentes, o datos que no están relacionados, podemos utilizar diferentes pestañas. Pero si los datos están vinculados, por ejemplo, se corresponden con las mismas medidas, hechas en fechas diferentes (meses, años), la respuesta es que las pestañas no son la forma correcta de almacenarlos datos; lo mejor es añadir una variable que nos permita diferenciar los datos por fecha; nuestro programa de análisis nos permitirá *filtrar* los datos según la fecha que deseemos, y todos estarán en una única tabla, facilitando la coherencia y el análisis posterior.
 
 Hay muchas formas de almacenar la información en una hoja de cálculo, pero sólo la estructura de **datos ordenados o arreglados** facilita la utilización de los datos tanto por la hoja de cálculo como por otros programas de análisis.
 
@@ -284,9 +271,10 @@ ggplot(data, aes(x = variable_numerica)) +
 
 Este código proporciona un resumen y una visualización básica de tus datos importados.
 
-¿Te gustaría saber más sobre algún aspecto en particular?
 
 ::: {.content-visible .callout-tip icon="false"}
+
+
 ## Para resolver
 
 Poner aquí distintos ejemplos de nombres de variables para ver si son válidos o no. Describir medidas y preguntar cómo llamaríamos a esa variable (por ejemplo, temperatura de la leche que acabamos de descargar de una cisterna)

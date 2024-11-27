@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>5&nbsp; Resumir los datos – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
+<title>6&nbsp; Medidas centrales y medidas de dispersión: la media y la varianza. – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,17 +30,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./060-distr-prob.html" rel="next">
-<link href="./040-exploracion.html" rel="prev">
+<link href="./070-distr-prob.html" rel="next">
+<link href="./050-distr-frec.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-273e46d7b3848a679358d7b360117b95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./050-descripcion.html"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resumir los datos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./060-estad-simple.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Medidas centrales y medidas de dispersión: la media y la varianza.</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -156,78 +156,84 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./030-organizacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El flujo de trabajo en el análisis de datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos <em>arreglados</em> (<em>tidy data</em>)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./040-exploracion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos. <em>Stemplot</em> y diagrama de caja (<em>boxplot</em>)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./050-descripcion.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resumir los datos</span></span></a>
+  <a href="./050-distr-frec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias, histogramas y diagramas de barra</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./060-distr-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias y de probabilidad</span></span></a>
+  <a href="./060-estad-simple.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Medidas centrales y medidas de dispersión: la media y la varianza.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+  <a href="./070-distr-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./080-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+  <a href="./080-relacion-xy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./090-sistema-medicion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+  <a href="./090-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+  <a href="./100-sistema-medicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+  <a href="./110-control-proc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./120-mejora-calidad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
+  <a href="./120-disexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./130-comunicacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
+  <a href="./130-mejora-calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./140-anexo-R.html" class="sidebar-item-text sidebar-link">
+  <a href="./140-comunicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./150-anexo-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anexo: Instalación de R y conceptos básicos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./150-bibliografia.html" class="sidebar-item-text sidebar-link">
+  <a href="./160-bibliografia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
@@ -241,11 +247,13 @@ window.Quarto = {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#la-media-o-promedio-una-medida-central" id="toc-la-media-o-promedio-una-medida-central" class="nav-link active" data-scroll-target="#la-media-o-promedio-una-medida-central"><span class="header-section-number">5.0.1</span> La media o promedio: una medida central</a></li>
-  <li><a href="#los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil" id="toc-los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil" class="nav-link" data-scroll-target="#los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil"><span class="header-section-number">5.1</span> Los valores de dispersión: varianza y desviación típica, rango intercuartil</a>
+  <li><a href="#la-media-aritmética-un-ejemplo-de-cálculo." id="toc-la-media-aritmética-un-ejemplo-de-cálculo." class="nav-link active" data-scroll-target="#la-media-aritmética-un-ejemplo-de-cálculo."><span class="header-section-number">6.0.1</span> La media aritmética: un ejemplo de cálculo.</a></li>
+  <li><a href="#las-medidas-de-dispersión-la-varianza-y-la-desviación-típica" id="toc-las-medidas-de-dispersión-la-varianza-y-la-desviación-típica" class="nav-link" data-scroll-target="#las-medidas-de-dispersión-la-varianza-y-la-desviación-típica"><span class="header-section-number">6.0.2</span> Las medidas de dispersión: la varianza y la desviación típica</a></li>
+  <li><a href="#las-limitaciones-de-la-media-y-la-desviación-típica" id="toc-las-limitaciones-de-la-media-y-la-desviación-típica" class="nav-link" data-scroll-target="#las-limitaciones-de-la-media-y-la-desviación-típica"><span class="header-section-number">6.0.3</span> Las limitaciones de la media y la desviación típica</a></li>
+  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">6.1</span> Resumen</a>
   <ul class="collapse">
-  <li><a href="#las-medidas-de-dispersión-la-desviación-típica" id="toc-las-medidas-de-dispersión-la-desviación-típica" class="nav-link" data-scroll-target="#las-medidas-de-dispersión-la-desviación-típica"><span class="header-section-number">5.1.1</span> Las medidas de dispersión: la desviación típica</a></li>
-  <li><a href="#las-limitaciones-de-la-media-y-la-desviación-típica" id="toc-las-limitaciones-de-la-media-y-la-desviación-típica" class="nav-link" data-scroll-target="#las-limitaciones-de-la-media-y-la-desviación-típica"><span class="header-section-number">5.1.2</span> Las limitaciones de la media y la desviación típica</a></li>
+  <li><a href="#ventajas-e-inconvenientes-de-las-medidas-paramétricas" id="toc-ventajas-e-inconvenientes-de-las-medidas-paramétricas" class="nav-link" data-scroll-target="#ventajas-e-inconvenientes-de-las-medidas-paramétricas"><span class="header-section-number">6.1.1</span> Ventajas e inconvenientes de las medidas paramétricas</a></li>
+  <li><a href="#ventajas-e-inconvenientes-de-las-medidas-no-paramétricas" id="toc-ventajas-e-inconvenientes-de-las-medidas-no-paramétricas" class="nav-link" data-scroll-target="#ventajas-e-inconvenientes-de-las-medidas-no-paramétricas"><span class="header-section-number">6.1.2</span> Ventajas e inconvenientes de las medidas no paramétricas</a></li>
   </ul></li>
   </ul>
 </nav>
@@ -255,7 +263,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resumir los datos</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Medidas centrales y medidas de dispersión: la media y la varianza.</span></h1>
 </div>
 
 
@@ -272,24 +280,28 @@ window.Quarto = {
 </header>
 
 
-<section id="la-media-o-promedio-una-medida-central" class="level3 page-columns page-full" data-number="5.0.1">
-<h3 data-number="5.0.1" class="anchored" data-anchor-id="la-media-o-promedio-una-medida-central"><span class="header-section-number">5.0.1</span> La media o promedio: una medida central</h3>
-<p>Una primera posibilidad es suponer que en nuestro grupo de once personas no hubiese variación: que todos ellos tuviesen la misma altura. Si fuese así, podemos encontrar un valor <span class="math inline">\(x\)</span> de altura que, repetido once veces, sea equivalente a la suma de las alturas de todos ellos. Si representamos cada alumno con una letra, la suma de sus alturas sería: <span class="math display">\[
-a+ b + c + d + e + f + g + h + i + j + k
-\]</span> y el valor que buscamos sería un valor tal que, sumado once veces, el valor obtenido fuese igual a la suma de la alturas medidas: <span class="math display">\[
-a+b+c+d+e+f+g+h+i+j+k = x+x+x+x+x+x+x+x+x+x+x
-\]</span> Pero sabemos que la suma de valores repetidos es igual al valor multiplicado por el número de repeticiones: <span class="math display">\[
-a+b+c+d+e+f+g+h+i+j+k = 11 x
-\]</span> Sólo tenemos que despejar la <span class="math inline">\(x\)</span> para hallar este valor: <span class="math display">\[
-x = \frac{a+b+c+d+e+f+g+h+i+j+k}{11}
-\]</span> Este valor que hemos obtenido es lo que se conoce como <span class="math inline">\(media\ aritmética\)</span>, <span class="math inline">\(valor{\ }medio\)</span> o <span class="math inline">\(promedio\)</span>, y, como hemos visto, <strong>es aquel valor tal que repetido tantas veces como individuos tenemos, es equivalente a la suma de los valores que hemos obtenido</strong>. La media de una muestra se representa habitualmente mediante el símbolo <span class="math display">\[\bar{x}\]</span> y, de una manera más formal, su valor se obtiene mediante la fórmula siguiente: <span class="math display">\[
-{\bar{x}={\frac {1}{n}}\sum _{i=1}^{n}x_{i}}
-\]</span> El signo <span class="math inline">\(\sum\)</span> se conoce como <em>sumatorio</em>, e indica que ese término consiste en la suma de los <span class="math inline">\(x\)</span> valores desde el primero hasta el valor <span class="math inline">\(n\)</span>. Expresado mediante una formulación matemática,</p>
-<p><span class="math display">\[
-{\bar{x}={\frac {1}{n}}\sum _{i=1}^{n}x_{i}={\frac {x_{1}+x_{2}+\cdots +x_{n}}{n}}}
-\]</span> lo quiere quiere decir: <em>“la suma de todos los valores observados dividido entre el número de estos valores”</em>.</p>
+<p>Al estudiar el diagrama de caja (<em>boxplot</em>) hemos visto que este gráfico se describe mediante los <strong>cinco números</strong>, que son:</p>
+<ul>
+<li>mínimo y máximo,<br>
+</li>
+<li>primer y tercer cuartil (25% y 75%), y</li>
+<li>segundo cuartil (50%).</li>
+</ul>
+<p>De estos valores, el segundo cuartil, que se corresponde con la mitad de los valores, representa una estimación del centro de la distribución, y por eso lo llamamos <strong>mediana</strong>. La distancia entre el primer y tercer cuartil es lo que se conoce como <strong>rango intercuartil</strong> (se suele representar por sus siglas en inglés, <strong>IQR</strong>), y nos da una indicación de la <strong>dispersión</strong>: cuanto mayor mayor es la dispersión de nuestros valores, más alejados estarán del centro, y por lo tanto habrá mayor distancia entre el primer y el tercer cuartil.</p>
+<p>Una de las mayores ventajas de la mediana y del rango intercuartil es que son estadísticos robustos, es decir, tiene una alta robustez a los valores atípicos. Como en el cálculo del rango intercuartil no se tienen en cuenta los valores extremos, su valor variará muy poco si aparecen nuevas observaciones atípicas (outliers). Como sus valores no dependen de la distribución de los datos, a estos estadísticos se los conoce como <strong>no paramétricos</strong>.</p>
+<p>Existen otras estadísticos, llamados <strong>paramétricos</strong>, que, en determinadas condiciones, tienen ventajas frente a los no paramétricos. Los principales son la <strong>media aritmética</strong>, o simplemente, <strong>media</strong>, y la <strong>varianza</strong>.</p>
+<section id="la-media-aritmética-un-ejemplo-de-cálculo." class="level3 page-columns page-full" data-number="6.0.1">
+<h3 data-number="6.0.1" class="anchored" data-anchor-id="la-media-aritmética-un-ejemplo-de-cálculo."><span class="header-section-number">6.0.1</span> La media aritmética: un ejemplo de cálculo.</h3>
+<p>Cálculo de la media aritmética sin usar la estadística.</p>
+<p>Centro de gravedad, propiedades de la media, distancia a los valores. diferencias entre media y mediana: influencia de los valores en la media, posición en la mediana.</p>
+<p>ver si poner distribuciones de frecuencia antes de explicar los cinco numeros</p>
+<p>Volviendo a nuestro ejemplo de las alturas de los alumnos, supongamos que en nuestro grupo de once personas no hubiese variación: que todos ellos tuviesen la misma altura. Si fuese así, podemos encontrar un valor <span class="math inline">\(x\)</span> de altura que, repetido once veces, sea equivalente a la suma de las alturas de todos ellos. Si representamos cada alumno con una letra, la suma de sus alturas sería: <span class="math display">\[a+ b + c + d + e + f + g + h + i + j + k\]</span> y el valor que buscamos sería un valor tal que, sumado once veces, el valor obtenido fuese igual a la suma de la alturas medidas: <span class="math display">\[a+b+c+d+e+f+g+h+i+j+k = x+x+x+x+x+x+x+x+x+x+x\]</span> Pero sabemos que la suma de valores repetidos es igual al valor multiplicado por el número de repeticiones: <span class="math display">\[a+b+c+d+e+f+g+h+i+j+k = 11 x\]</span> Sólo tenemos que despejar la <span class="math inline">\(x\)</span> para hallar este valor: <span class="math display">\[x = \frac{a+b+c+d+e+f+g+h+i+j+k}{11}\]</span> Este valor que hemos obtenido es lo que se conoce como <span class="math inline">\(media\ aritmética\)</span>, <span class="math inline">\(valor{\ }medio\)</span> o <span class="math inline">\(promedio\)</span>, y, como hemos visto, <strong>es aquel valor tal que repetido tantas veces como individuos tenemos, es equivalente a la suma de los valores que hemos obtenido</strong>. La media de una muestra se representa habitualmente mediante el símbolo</p>
+<p><span class="math display">\[\bar{x}\]</span> y, de una manera más formal, su valor se obtiene mediante la fórmula siguiente:</p>
+<p><span class="math display">\[{\bar{x}={\frac {1}{n}}\sum _{i=1}^{n}x_{i}}\]</span> El signo <span class="math inline">\(\sum\)</span> se conoce como <em>sumatorio</em>, e indica que ese término consiste en la suma de los <span class="math inline">\(x\)</span> valores desde el primero hasta el valor <span class="math inline">\(n\)</span>. Expresado mediante una formulación matemática,</p>
+<p><span class="math display">\[{\bar{x}={\frac {1}{n}}\sum _{i=1}^{n}x_{i}={\frac {x_{1}+x_{2}+\cdots +x_{n}}{n}}}\]</span> lo quiere quiere decir: <em>“la suma de todos los valores observados dividido entre el número de estos valores”</em>.</p>
 <p>La <strong>media</strong> es lo que conocemos como un <em>valor central</em>, ya que representa el centro de nuestro conjunto de números. Como es el centro de nuestro conjunto de datos, <em>equidista</em> de todos los valores, o lo que es lo mismo, la suma de las distancias de todos los valores a este valor central es <span class="math inline">\(cero\)</span>. Más adelante veremos la importancia de este hecho, al hablar de la dispersión y las formas de cálculo de la misma. La <em>media</em>, junto con otras medidas como la <em>mediana</em> y la <em>moda</em> se conocen en estadística como <strong>medidas de tendencia central</strong>. Como hemos dicho, la media de una <strong>muestra</strong> se representa como <span class="math inline">\(\bar{x}\)</span>, mientras que la media de una <strong>población</strong> se representa con la letra griega <em>mu</em>: <span class="math inline">\(\mu\)</span>. En ambos casos, el cálculo se realiza de forma idéntica.</p>
-<p>Volvamos a nuestro ejemplo para realizar los cálculos según el modelo que hemos descrito. En nuestro caso, la <em>altura media</em> de nuestros alumnos (la <em>media</em> de nuestro conjunto de números) se calcula como: <span class="math display">\[
+<p>Volvamos a nuestro ejemplo para realizar los cálculos según el modelo que hemos descrito. En nuestro caso, la <em>altura media</em> de nuestros alumnos (la <em>media</em> de nuestro conjunto de números) se calcula como:</p>
+<p><span class="math display">\[
 \bar{x} = \frac{153+135+140+140+175+138+145+154+152+159+154}{11} = 149,54
 \]</span> Utilicemos una hoja de cálculo para guardar nuestros valores.</p>
 <p>La fórmula para obtener la media en la hoja de cálculo, por ejemplo en la versión en español de <em>Microsoft Excel</em>, es <code>=PROMEDIO(...)</code>, donde los puntos suspensivos deben sustituirse por el rango a calcular. En nuestro ejemplo, introduciríamos la fórmula en la celda <code>B13</code>como <code>=PROMEDIO(B2..B12)</code> (Para más detalles, verificar la hoja Excel adjunta).</p>
@@ -308,8 +320,7 @@ x = \frac{a+b+c+d+e+f+g+h+i+j+k}{11}
 <figcaption>Hoja de cálculo con los valores y el gráfico de puntos</figcaption>
 </figure>
 </div>
-<p>Esta línea azul de puntos representa la <em>distancia</em> de cada valor a la media. Usaremos esta distancia para calcular una <em>distancia media</em>, que será una medida de la dispersión de nuestros valores.</p>
-<p>Recordemos que estamos intentando encontrar la forma de describir nuestro conjunto de números con un valor, con el fin de que nuestros analistas de la OMS puedan comparar la información de diferentes grupos de niños y ayudara determinar su situación nutricional.</p>
+<p>Esta línea azul de puntos representa la <em>distancia</em> de cada valor a la media. Usaremos esta distancia para calcular una <strong>distancia media</strong>, que será una medida de la dispersión de nuestros valores.</p>
 <p>Hemos visto que para describir un conjunto de números, en nuestro ejemplo, las medidas de la altura de un grupo de estudiantes, existe un valor, la <em>media</em> de este conjunto, que nos describe el centro de los valores. En nuestro ejemplo, si nuestro grupo tuviese un solo niño, éste tendría <span class="math inline">\(149,55{\ }cm\)</span> de altura.</p>
 <p>¿Es suficiente con este valor para describir el conjunto de valores? Vamos a ver que no: diferentes conjuntos de valores pueden proporcionar el mismo <em>valor medio</em>, y sin embargo los grupos pueden ser muy diferentes.</p>
 <p>Veamos un caso extremo. Comparemos dos grupos, uno formado por individuos iguales y otro formado por diez individuos iguales y uno distinto. Para ello usaremos nuestra hoja de cálculo:</p>
@@ -333,13 +344,11 @@ x = \frac{a+b+c+d+e+f+g+h+i+j+k}{11}
 <figcaption>Gráfico de tres grupos de valores</figcaption>
 </figure>
 </div>
-<p>Aunque el valor medio de estos tres grupos de datos es idéntico, parece claro que los tres grupos son muy distintos en su composición, y por lo tanto la <em>media</em> no es suficiente para describir con suficiente precisión cada uno de los grupos. Necesitamos un valor adicional, que nos indique de qué forma los valores se alejan del valor medio. Para ello, vamos a introducir un concepto nuevo: la <em>medida de la dispersión</em>, que nos indica precisamente la distancia de los valores al valor medio, e introduciremos también la <em>distribución de frecuencias</em>, que nos permite representar <em>la forma</em> en la que se distribuyen nuestros valores.</p>
+<p>Aunque el valor medio de estos tres grupos de datos es idéntico, parece claro que los tres grupos son muy distintos en su composición, y por lo tanto la <em>media</em> no es suficiente para describir con suficiente precisión cada uno de los grupos. Necesitamos un valor adicional, que nos indique de qué forma los valores se alejan del valor medio. Para ello, vamos a introducir un concepto nuevo: la <em>medida de la dispersión</em>.</p>
 <p>La media como centro de gravedad: <a href="https://www.physicsclassroom.com/Physics-Interactives/Balance-and-Rotation/COM-Builder/Center-Of-Mass-Interactive">Physics Simulation: Center of Mass (physicsclassroom.com)</a></p>
 </section>
-<section id="los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil" class="level2 page-columns page-full" data-number="5.1">
-<h2 data-number="5.1" class="anchored" data-anchor-id="los-valores-de-dispersión-varianza-y-desviación-típica-rango-intercuartil"><span class="header-section-number">5.1</span> Los valores de dispersión: varianza y desviación típica, rango intercuartil</h2>
-<section id="las-medidas-de-dispersión-la-desviación-típica" class="level3 page-columns page-full" data-number="5.1.1">
-<h3 data-number="5.1.1" class="anchored" data-anchor-id="las-medidas-de-dispersión-la-desviación-típica"><span class="header-section-number">5.1.1</span> Las medidas de dispersión: la desviación típica</h3>
+<section id="las-medidas-de-dispersión-la-varianza-y-la-desviación-típica" class="level3 page-columns page-full" data-number="6.0.2">
+<h3 data-number="6.0.2" class="anchored" data-anchor-id="las-medidas-de-dispersión-la-varianza-y-la-desviación-típica"><span class="header-section-number">6.0.2</span> Las medidas de dispersión: la varianza y la desviación típica</h3>
 <p>Como hemos visto en el apartado anterior, diferentes conjuntos de datos pueden tener el mismo valor medio y sin embargo ser muy diferentes. En la última gráfica que hemos visto, el primer grupo se caracteriza por tener todos sus valores idénticos; el segundo tiene todos sus valores idénticos menos uno, que está muy apartado del resto, y el tercero tiene todos sus valores diferentes.</p>
 <p>Ahora que conocemos cómo calcular un valor resumen de un conjunto de datos, podríamos utilizar una medida semejante para describir de qué forma en cada caso los valores se separan de la media. Podríamos utilizar una <em>distancia media</em>: calculamos las diferencias entre cada valor y la media, y hacemos su promedio: esto debería darnos una indicación de la magnitud de la separación de los valores en cada uno de los tres grupos.</p>
 <p>Usemos la hoja de cálculo para ello:</p>
@@ -361,15 +370,17 @@ h^2= a^2+b^2
 </figure>
 </div></div><p><span class="math display">\[
 d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
-\]</span> ¿Podemos adaptar esta fórmula para el cálculo de nuestra distancia media? La respuesta es <strong>sí</strong>. En nuestro caso, sólo necesitamos la coordenada <span class="math inline">\(X\)</span>, ya que sólo estamos calculando la distancia en una dimensión. Si tenemos en cuenta un solo punto, esta distancia <span class="math inline">\(d\)</span> sería: <span class="math display">\[
+\]</span> Podemos adaptar esta fórmula al cálculo de nuestra distancia media. Como estamos calculando la distancia en una dimensión, sólo necesitamos la coordenada <span class="math inline">\(X\)</span>. Si tenemos en cuenta un solo punto, esta distancia <span class="math inline">\(d\)</span> sería: <span class="math display">\[
 (d{\ }del{\ }valor{\ }1{\ }a{\ }la{\ }media)^2=(x_1-\bar{x})^2
 \]</span> ¡El hecho de elevar al cuadrado las diferencias nos da la solución! Las diferencias negativas ya no son un problema porque sabemos que al elevar un numero negativo al cuadrado, el resultado es positivo; de esta manera conseguimos que las diferencias no se anulen. Ahora sí podemos calcular una distancia media <span class="math inline">\(\bar{d}\)</span> entre el conjunto de puntos y su media, calculando el promedio de las diferencias elevadas al cuadrado: <span class="math display">\[
 (\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2=\frac{(x_1-\bar{x})^2 + (x_2-\bar{x})^2+\cdots+(x_n-\bar{x})^2}{n}
-\]</span> y utilizando la notación que hemos aprendido antes, <span class="math display">\[
+\]</span></p>
+<p>y utilizando la notación que hemos aprendido antes,</p>
+<p><span class="math display">\[
 (\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2={\frac {1}{n}}\sum _{i=1}^{n}(x_{i}-\bar{x})^2
 \]</span></p>
 <p>Al igual que en el cálculo de la distancia entre dos puntos, sólo tenemos que extraer la raíz cuadrada de este valor para obtener la distancia media, que es el parámetro que estábamos buscando.</p>
-<p>La <span class="math display">\[(\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2\]</span> se conoce en estadística como <strong>varianza</strong>, y su raíz cuadrada es lo que se conoce como <strong>desviación típica</strong>. La varianza de una población se representa en estadística con el signo de la letra griega <em>sigma</em> minúscula elevada al cuadrado, <span class="math inline">\(\sigma^2\)</span>, y la desviación típica, mediante la letra <span class="math inline">\(\sigma\)</span>. En el caso de una muestra, la varianza se representa como <span class="math inline">\(s_x^2\)</span>, y la desviación típica, como <span class="math inline">\(s_x\)</span>. En nuestro caso, utilizaremos la primera notación; más adelante veremos los conceptos de <strong>población</strong> y <strong>muestra</strong> y explicaremos el concepto de <strong>grados de libertad</strong>. Veremos también que la fórmula para el cálculo de la desviación típica muestral es ligeramente diferente de la de su equivalente poblacional, y explicaremos por qué.</p>
+<p>La distancia media <span class="math display">\[(\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2\]</span> se conoce en estadística como <strong>varianza</strong>, y su raíz cuadrada es lo que se conoce como <strong>desviación típica</strong>. La varianza de una población se representa en estadística con el signo de la letra griega <em>sigma</em> minúscula elevada al cuadrado, <span class="math inline">\(\sigma^2\)</span>, y la desviación típica, mediante la letra <span class="math inline">\(\sigma\)</span>. En el caso de una muestra, la varianza se representa como <span class="math inline">\(s_x^2\)</span>, y la desviación típica, como <span class="math inline">\(s_x\)</span>. En nuestro caso, utilizaremos la primera notación; más adelante veremos los conceptos de <strong>población</strong> y <strong>muestra</strong> y explicaremos el concepto de <strong>grados de libertad</strong>. Veremos también que la fórmula para el cálculo de la desviación típica muestral es ligeramente diferente de la de su equivalente poblacional, y explicaremos por qué.</p>
 <p>Es importante resaltar que la desviación típica <em>es una medida de la distancia media de los valores de una población a su media</em>, y por lo tanto tiene dimensión, la misma que las medidas originales. La varianza, al estar elevada al cuadrado, no tiene una dimensión, o, mejor dicho, tiene la de la medida al cuadrado.</p>
 <p>Con estos nuevos hallazgos, recalculamos nuestra hoja de cálculo:</p>
 <div class="quarto-figure quarto-figure-center">
@@ -395,8 +406,8 @@ d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
 <p>En el segundo grupo, todos los valores son idénticos, salvo uno, que se distancia mucho. ¿Debemos aceptar esto como bueno? En realidad, ¿es cierto que el valor medio de este grupo sea el mismo que el del primero? Para responder a esta pregunta debemos recurrir a nuestra experiencia, la estadística no nos da <em>fórmulas mágicas</em>. Pero, con un poco de sentido común, parece que el caso extremo que aparece en este grupo no es coherente con el resto de valores. Es lo que se llama un <em>valor anormal</em> o <em>extraño</em> (en inglés, <em>outlier</em>), y debe hacernos reflexionar sobre si el valor es correcto y realmente pertenece a esta población, o es un error de medida. O, simplemente, un valor que corresponde a otro grupo y que por error hemos situado en éste. La decisión de eliminar o no un valor anormal es una de las decisiones más complejas en estadística, que pueden tener una influencia enorme en la interpretación de los datos, y por lo tanto, hay que hacer con sumo cuidado. En este caso, extremo y artificial, el valor anormal debería ser eliminado, ya que, en realidad, todos los valores restantes son idénticos y más bajos que los del grupo 1. No tiene sentido lógico decir que sus medias son idénticas.</p>
 <p>En el tercer grupo todos los valores son diferentes, y no podemos decir nada especial sobre sus valores individuales. Hay un valor que se destaca del resto, pero ¿podemos afirmar que es anormal? Seguramente, no con seguridad. De nuevo la experiencia debe indicarnos cómo proceder, aunque en este caso no tendría sentido eliminar este valor. En la situación real, todos conocemos a niños que han <em>pegado el estirón</em> antes que sus compañeros, y en algunos casos, pueden llegar a ser mucho más altos (o más bajos, si han tenido un retraso en este <em>estirón</em>) La experiencia nos dice que no es seguro que este valor sea realmente anormal, y por lo tanto, deberíamos conservarlo.</p>
 </section>
-<section id="las-limitaciones-de-la-media-y-la-desviación-típica" class="level3 page-columns page-full" data-number="5.1.2">
-<h3 data-number="5.1.2" class="anchored" data-anchor-id="las-limitaciones-de-la-media-y-la-desviación-típica"><span class="header-section-number">5.1.2</span> Las limitaciones de la media y la desviación típica</h3>
+<section id="las-limitaciones-de-la-media-y-la-desviación-típica" class="level3 page-columns page-full" data-number="6.0.3">
+<h3 data-number="6.0.3" class="anchored" data-anchor-id="las-limitaciones-de-la-media-y-la-desviación-típica"><span class="header-section-number">6.0.3</span> Las limitaciones de la media y la desviación típica</h3>
 <p>En ocasiones nos enfrentamos a conjuntos de datos con valores de media y desviación típica idénticos o muy parecidos, pero que en realidad son muy diferentes. Veamos un ejemplo, semejante a los que hemos visto hasta ahora.</p>
 
 <div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
@@ -425,11 +436,51 @@ d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
 </figure>
 </div>
 <p>La existencia de valores anormales o extremos muestra una de las debilidades de la media y la desviación típicas como <em>descriptores</em> de una población: ambos parámetros son muy sensibles a los casos extremos. En realidad, sólo deberíamos utilizar la media y la desviación típica para describir un conjunto de datos cuando estamos seguros de que <em>la distribución de estos datos</em> tienen una <em>forma</em> determinada, la de la <strong>campana de Gauss</strong>. Lo cual nos lleva al siguiente capítulo: las <strong>distribuciones de frecuencias</strong>.</p>
+</section>
+<section id="resumen" class="level2" data-number="6.1">
+<h2 data-number="6.1" class="anchored" data-anchor-id="resumen"><span class="header-section-number">6.1</span> Resumen</h2>
+<p>Las medidas paramétricas, como la media y la varianza, y las no paramétricas, como la mediana y el rango intercuartil, tienen diferentes ventajas e inconvenientes según el contexto y los datos con los que se trabaja.</p>
+<section id="ventajas-e-inconvenientes-de-las-medidas-paramétricas" class="level3" data-number="6.1.1">
+<h3 data-number="6.1.1" class="anchored" data-anchor-id="ventajas-e-inconvenientes-de-las-medidas-paramétricas"><span class="header-section-number">6.1.1</span> Ventajas e inconvenientes de las medidas paramétricas</h3>
+<section id="ventajas" class="level4" data-number="6.1.1.1">
+<h4 data-number="6.1.1.1" class="anchored" data-anchor-id="ventajas"><span class="header-section-number">6.1.1.1</span> Ventajas</h4>
+<ol type="1">
+<li>Precisión y Sensibilidad: La media y la varianza son muy precisas y sensibles a todos los valores del conjunto de datos.</li>
+<li>Propiedades Matemáticas: La media y la varianza tienen propiedades matemáticas deseables, como la facilidad para realizar operaciones algebraicas.</li>
+<li>Distribución Normal: Son especialmente útiles si los datos siguen una distribución normal, ya que permiten aprovechar las propiedades de esta distribución.</li>
+</ol>
+</section>
+<section id="inconvenientes" class="level4" data-number="6.1.1.2">
+<h4 data-number="6.1.1.2" class="anchored" data-anchor-id="inconvenientes"><span class="header-section-number">6.1.1.2</span> Inconvenientes</h4>
+<ol type="1">
+<li>Sensibilidad a Valores Atípicos: La media y la varianza pueden ser distorsionadas significativamente por valores atípicos.</li>
+<li>Requieren Suposiciones: Su uso eficaz a menudo requiere que los datos sigan ciertas suposiciones, como la normalidad y la homogeneidad de la varianza.</li>
+</ol>
+</section>
+</section>
+<section id="ventajas-e-inconvenientes-de-las-medidas-no-paramétricas" class="level3" data-number="6.1.2">
+<h3 data-number="6.1.2" class="anchored" data-anchor-id="ventajas-e-inconvenientes-de-las-medidas-no-paramétricas"><span class="header-section-number">6.1.2</span> Ventajas e inconvenientes de las medidas no paramétricas</h3>
+<section id="ventajas-1" class="level4" data-number="6.1.2.1">
+<h4 data-number="6.1.2.1" class="anchored" data-anchor-id="ventajas-1"><span class="header-section-number">6.1.2.1</span> Ventajas</h4>
+<ol type="1">
+<li>Robustez: La mediana y el rango intercuartil son menos sensibles a valores atípicos y distribuciones asimétricas.</li>
+<li>Flexibilidad: No requieren suposiciones fuertes sobre la distribución de los datos, lo que las hace útiles para una amplia variedad de distribuciones.</li>
+<li>Resumir Datos: Son excelentes para resumir datos en situaciones en las que los valores extremos podrían distorsionar la interpretación.</li>
+</ol>
+</section>
+<section id="inconvenientes-1" class="level4" data-number="6.1.2.2">
+<h4 data-number="6.1.2.2" class="anchored" data-anchor-id="inconvenientes-1"><span class="header-section-number">6.1.2.2</span> Inconvenientes</h4>
+<ol type="1">
+<li>Menor Sensibilidad: La mediana y el rango intercuartil no utilizan toda la información de los datos y pueden ser menos sensibles a cambios en los datos.</li>
+<li>Menor Precisión en Ciertos Contextos: En situaciones donde los datos siguen una distribución normal, las medidas no paramétricas pueden ser menos precisas.</li>
+</ol>
+<p>Las medidas paramétricas son útiles para datos que siguen suposiciones específicas, como la normalidad, y son precisas y sensibles, pero pueden ser distorsionadas por valores atípicos. Las medidas no paramétricas son robustas y flexibles, ideales para distribuciones no normales y resistentes a valores atípicos, aunque pueden perder sensibilidad y precisión en ciertos contextos.</p>
 <p>Modelo: práctica de puntos con un dado, dos dados, tres dados, etc hasta 30</p>
 <p>suma &lt;- rowSums(replicate(30, sample(6, 10^6, replace=T))) length(suma) hist(suma)</p>
 <p><a href="http://sqljason.com/2018/12/financial-times-visual-vocabulary-power-bi-edition.html">Financial Times Visual Vocabulary: Power BI Edition – Some Random Thoughts (sqljason.com)</a></p>
 
 
+</section>
 </section>
 </section>
 
@@ -516,8 +567,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -628,7 +677,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -856,13 +904,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./040-exploracion.html" class="pagination-link" aria-label="La exploración de los datos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></span>
+      <a href="./050-distr-frec.html" class="pagination-link" aria-label="Distribuciones de frecuencias, histogramas y diagramas de barra">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias, histogramas y diagramas de barra</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./060-distr-prob.html" class="pagination-link" aria-label="Distribuciones de frecuencias y de probabilidad">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias y de probabilidad</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./070-distr-prob.html" class="pagination-link" aria-label="Probabilidad y distribuciones de probabilidad">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

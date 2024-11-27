@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; La relación entre las variables – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
+<title>8&nbsp; La relación entre las variables – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,17 +30,17 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./080-anova.html" rel="next">
-<link href="./060-distr-prob.html" rel="prev">
+<link href="./090-anova.html" rel="next">
+<link href="./070-distr-prob.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-273e46d7b3848a679358d7b360117b95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -110,7 +110,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./070-relacion-xy.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./080-relacion-xy.html"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -156,78 +156,84 @@ window.Quarto = {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./030-organizacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El flujo de trabajo en el análisis de datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos <em>arreglados</em> (<em>tidy data</em>)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./040-exploracion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos. <em>Stemplot</em> y diagrama de caja (<em>boxplot</em>)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./050-descripcion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resumir los datos</span></span></a>
+  <a href="./050-distr-frec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias, histogramas y diagramas de barra</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./060-distr-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias y de probabilidad</span></span></a>
+  <a href="./060-estad-simple.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Medidas centrales y medidas de dispersión: la media y la varianza.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+  <a href="./070-distr-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./080-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+  <a href="./080-relacion-xy.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./090-sistema-medicion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+  <a href="./090-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+  <a href="./100-sistema-medicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+  <a href="./110-control-proc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./120-mejora-calidad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
+  <a href="./120-disexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./130-comunicacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
+  <a href="./130-mejora-calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./140-anexo-R.html" class="sidebar-item-text sidebar-link">
+  <a href="./140-comunicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./150-anexo-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anexo: Instalación de R y conceptos básicos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./150-bibliografia.html" class="sidebar-item-text sidebar-link">
+  <a href="./160-bibliografia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
@@ -241,12 +247,12 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#diagramas-de-puntos-xy" id="toc-diagramas-de-puntos-xy" class="nav-link active" data-scroll-target="#diagramas-de-puntos-xy"><span class="header-section-number">7.1</span> Diagramas de puntos <span class="math inline">\((x,y\)</span>)</a></li>
-  <li><a href="#correlación" id="toc-correlación" class="nav-link" data-scroll-target="#correlación"><span class="header-section-number">7.2</span> Correlación</a>
+  <li><a href="#diagramas-de-puntos-xy" id="toc-diagramas-de-puntos-xy" class="nav-link active" data-scroll-target="#diagramas-de-puntos-xy"><span class="header-section-number">8.1</span> Diagramas de puntos <span class="math inline">\((x,y\)</span>)</a></li>
+  <li><a href="#correlación" id="toc-correlación" class="nav-link" data-scroll-target="#correlación"><span class="header-section-number">8.2</span> Correlación</a>
   <ul class="collapse">
-  <li><a href="#correlación-y-causalidad" id="toc-correlación-y-causalidad" class="nav-link" data-scroll-target="#correlación-y-causalidad"><span class="header-section-number">7.2.1</span> Correlación y causalidad</a></li>
+  <li><a href="#correlación-y-causalidad" id="toc-correlación-y-causalidad" class="nav-link" data-scroll-target="#correlación-y-causalidad"><span class="header-section-number">8.2.1</span> Correlación y causalidad</a></li>
   </ul></li>
-  <li><a href="#tablas-de-asociación" id="toc-tablas-de-asociación" class="nav-link" data-scroll-target="#tablas-de-asociación"><span class="header-section-number">7.3</span> Tablas de asociación</a></li>
+  <li><a href="#tablas-de-asociación" id="toc-tablas-de-asociación" class="nav-link" data-scroll-target="#tablas-de-asociación"><span class="header-section-number">8.3</span> Tablas de asociación</a></li>
   </ul>
 </nav>
     </div>
@@ -255,7 +261,7 @@ window.Quarto = {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></h1>
+<h1 class="title"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></h1>
 </div>
 
 
@@ -272,18 +278,18 @@ window.Quarto = {
 </header>
 
 
-<section id="diagramas-de-puntos-xy" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="diagramas-de-puntos-xy"><span class="header-section-number">7.1</span> Diagramas de puntos <span class="math inline">\((x,y\)</span>)</h2>
+<section id="diagramas-de-puntos-xy" class="level2" data-number="8.1">
+<h2 data-number="8.1" class="anchored" data-anchor-id="diagramas-de-puntos-xy"><span class="header-section-number">8.1</span> Diagramas de puntos <span class="math inline">\((x,y\)</span>)</h2>
 </section>
-<section id="correlación" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="correlación"><span class="header-section-number">7.2</span> Correlación</h2>
-<section id="correlación-y-causalidad" class="level3" data-number="7.2.1">
-<h3 data-number="7.2.1" class="anchored" data-anchor-id="correlación-y-causalidad"><span class="header-section-number">7.2.1</span> Correlación y causalidad</h3>
+<section id="correlación" class="level2" data-number="8.2">
+<h2 data-number="8.2" class="anchored" data-anchor-id="correlación"><span class="header-section-number">8.2</span> Correlación</h2>
+<section id="correlación-y-causalidad" class="level3" data-number="8.2.1">
+<h3 data-number="8.2.1" class="anchored" data-anchor-id="correlación-y-causalidad"><span class="header-section-number">8.2.1</span> Correlación y causalidad</h3>
 <p>Anscombe</p>
 </section>
 </section>
-<section id="tablas-de-asociación" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="tablas-de-asociación"><span class="header-section-number">7.3</span> Tablas de asociación</h2>
+<section id="tablas-de-asociación" class="level2" data-number="8.3">
+<h2 data-number="8.3" class="anchored" data-anchor-id="tablas-de-asociación"><span class="header-section-number">8.3</span> Tablas de asociación</h2>
 
 
 </section>
@@ -371,8 +377,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -483,7 +487,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -711,13 +714,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./060-distr-prob.html" class="pagination-link" aria-label="Distribuciones de frecuencias y de probabilidad">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias y de probabilidad</span></span>
+      <a href="./070-distr-prob.html" class="pagination-link" aria-label="Probabilidad y distribuciones de probabilidad">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./080-anova.html" class="pagination-link" aria-label="El análisis de la varianza">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./090-anova.html" class="pagination-link" aria-label="El análisis de la varianza">
+        <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

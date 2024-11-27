@@ -1,4 +1,4 @@
-# Distribuciones de frecuencias y de probabilidad 
+# Probabilidad y distribuciones de probabilidad 
 
 ## Introducción al concepto de probabilidad
 

@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>6&nbsp; Distribuciones de frecuencias y de probabilidad – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
+<title>Bibliografía – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,7 +20,26 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
-</style>
+/* CSS for citations */
+div.csl-bib-body { }
+div.csl-entry {
+  clear: both;
+}
+.hanging-indent div.csl-entry {
+  margin-left:2em;
+  text-indent:-2em;
+}
+div.csl-left-margin {
+  min-width:2em;
+  float:left;
+}
+div.csl-right-inline {
+  margin-left:2em;
+  padding-left:1em;
+}
+div.csl-indent {
+  margin-left: 2em;
+}</style>
 
 
 <script src="site_libs/quarto-nav/quarto-nav.js"></script>
@@ -30,17 +49,16 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./070-relacion-xy.html" rel="next">
-<link href="./050-descripcion.html" rel="prev">
+<link href="./150-anexo-R.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-273e46d7b3848a679358d7b360117b95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -81,7 +99,7 @@ ul.task-list li input[type="checkbox"] {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./060-distr-prob.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias y de probabilidad</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./160-bibliografia.html">Bibliografía</a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -127,78 +145,84 @@ ul.task-list li input[type="checkbox"] {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./030-organizacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El flujo de trabajo en el análisis de datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos <em>arreglados</em> (<em>tidy data</em>)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./040-exploracion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos. <em>Stemplot</em> y diagrama de caja (<em>boxplot</em>)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./050-descripcion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resumir los datos</span></span></a>
+  <a href="./050-distr-frec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias, histogramas y diagramas de barra</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./060-distr-prob.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias y de probabilidad</span></span></a>
+  <a href="./060-estad-simple.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Medidas centrales y medidas de dispersión: la media y la varianza.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+  <a href="./070-distr-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./080-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+  <a href="./080-relacion-xy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./090-sistema-medicion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+  <a href="./090-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+  <a href="./100-sistema-medicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+  <a href="./110-control-proc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./120-mejora-calidad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
+  <a href="./120-disexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./130-comunicacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
+  <a href="./130-mejora-calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./140-anexo-R.html" class="sidebar-item-text sidebar-link">
+  <a href="./140-comunicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./150-anexo-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anexo: Instalación de R y conceptos básicos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./150-bibliografia.html" class="sidebar-item-text sidebar-link">
+  <a href="./160-bibliografia.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
@@ -207,30 +231,15 @@ ul.task-list li input[type="checkbox"] {
 </nav>
 <div id="quarto-sidebar-glass" class="quarto-sidebar-collapse-item" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item"></div>
 <!-- margin-sidebar -->
-    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
-        <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
-   
-  <ul>
-  <li><a href="#introducción-al-concepto-de-probabilidad" id="toc-introducción-al-concepto-de-probabilidad" class="nav-link active" data-scroll-target="#introducción-al-concepto-de-probabilidad"><span class="header-section-number">6.1</span> Introducción al concepto de probabilidad</a></li>
-  <li><a href="#distribuciones-de-probabilidad" id="toc-distribuciones-de-probabilidad" class="nav-link" data-scroll-target="#distribuciones-de-probabilidad"><span class="header-section-number">6.2</span> Distribuciones de probabilidad</a>
-  <ul class="collapse">
-  <li><a href="#distribución-normal" id="toc-distribución-normal" class="nav-link" data-scroll-target="#distribución-normal"><span class="header-section-number">6.2.1</span> Distribución normal</a></li>
-  <li><a href="#otras-distribuciones" id="toc-otras-distribuciones" class="nav-link" data-scroll-target="#otras-distribuciones"><span class="header-section-number">6.2.2</span> Otras distribuciones</a></li>
-  <li><a href="#gráficos-de-probabilidad" id="toc-gráficos-de-probabilidad" class="nav-link" data-scroll-target="#gráficos-de-probabilidad"><span class="header-section-number">6.2.3</span> Gráficos de probabilidad</a></li>
-  </ul></li>
-  <li><a href="#fútbol" id="toc-fútbol" class="nav-link" data-scroll-target="#fútbol"><span class="header-section-number">6.3</span> Fútbol</a></li>
-  <li><a href="#proceso-de-dosificación-de-líquidos" id="toc-proceso-de-dosificación-de-líquidos" class="nav-link" data-scroll-target="#proceso-de-dosificación-de-líquidos"><span class="header-section-number">6.4</span> Proceso de dosificación de líquidos</a></li>
-  <li><a href="#ley-de-contenido-efectivo" id="toc-ley-de-contenido-efectivo" class="nav-link" data-scroll-target="#ley-de-contenido-efectivo"><span class="header-section-number">6.5</span> Ley de contenido efectivo</a></li>
-  </ul>
-</nav>
+    <div id="quarto-margin-sidebar" class="sidebar margin-sidebar zindex-bottom">
+        
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias y de probabilidad</span></h1>
+<h1 class="title">Bibliografía</h1>
 </div>
 
 
@@ -247,47 +256,45 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="introducción-al-concepto-de-probabilidad" class="level2" data-number="6.1">
-<h2 data-number="6.1" class="anchored" data-anchor-id="introducción-al-concepto-de-probabilidad"><span class="header-section-number">6.1</span> Introducción al concepto de probabilidad</h2>
-</section>
-<section id="distribuciones-de-probabilidad" class="level2" data-number="6.2">
-<h2 data-number="6.2" class="anchored" data-anchor-id="distribuciones-de-probabilidad"><span class="header-section-number">6.2</span> Distribuciones de probabilidad</h2>
-<section id="distribución-normal" class="level3" data-number="6.2.1">
-<h3 data-number="6.2.1" class="anchored" data-anchor-id="distribución-normal"><span class="header-section-number">6.2.1</span> Distribución normal</h3>
-<p>dirtib de frecuencia y distr normal: área bajo la curva</p>
-<p><a href="https://www.economist.com/science-and-technology/2023/02/08/extreme-weather-events-are-getting-more-frequent">How to predict record-shattering weather events | The Economist</a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes\media-y-varianza.png" class="img-fluid figure-img"></p>
-<figcaption>media-y-varianza</figcaption>
-</figure>
+<div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list">
+<div id="ref-science2015" class="csl-entry" role="listitem">
+Buck, Stuart. 2015. <span>“Solving Reproducibility.”</span>
+<em>Science</em> 348 (6242): 1403. <a href="https://www.science.org/doi/full/10.1126/science.aac8041">https://www.science.org/doi/full/10.1126/science.aac8041</a>.
 </div>
-<p><a href="https://news.mit.edu/2012/explained-sigma-0209">Explained: Sigma | MIT News | Massachusetts Institute of Technology</a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes\curva-normal.jpg" class="img-fluid figure-img"></p>
-<figcaption>img</figcaption>
-</figure>
+<div id="ref-montgomery2011" class="csl-entry" role="listitem">
+Douglas C Montgomery, Norma Faris Hubele, George C Runger. 2011.
+<em>Engineering Statistics</em>. 111 River Street, Hoboken, NJ
+07030-5774: John Wiley &amp; Sons, Inc.
 </div>
-</section>
-<section id="otras-distribuciones" class="level3" data-number="6.2.2">
-<h3 data-number="6.2.2" class="anchored" data-anchor-id="otras-distribuciones"><span class="header-section-number">6.2.2</span> Otras distribuciones</h3>
-</section>
-<section id="gráficos-de-probabilidad" class="level3" data-number="6.2.3">
-<h3 data-number="6.2.3" class="anchored" data-anchor-id="gráficos-de-probabilidad"><span class="header-section-number">6.2.3</span> Gráficos de probabilidad</h3>
-</section>
-</section>
-<section id="fútbol" class="level2" data-number="6.3">
-<h2 data-number="6.3" class="anchored" data-anchor-id="fútbol"><span class="header-section-number">6.3</span> Fútbol</h2>
-</section>
-<section id="proceso-de-dosificación-de-líquidos" class="level2" data-number="6.4">
-<h2 data-number="6.4" class="anchored" data-anchor-id="proceso-de-dosificación-de-líquidos"><span class="header-section-number">6.4</span> Proceso de dosificación de líquidos</h2>
-</section>
-<section id="ley-de-contenido-efectivo" class="level2" data-number="6.5">
-<h2 data-number="6.5" class="anchored" data-anchor-id="ley-de-contenido-efectivo"><span class="header-section-number">6.5</span> Ley de contenido efectivo</h2>
+<div id="ref-ferrero2018" class="csl-entry" role="listitem">
+Ferrero, Rosana. 2018. <span>“Los Errores de Reinhart &amp; Rogoff: R y
+La Reproducibilidad.”</span> 2018. <a href="https://www.maximaformacion.es/blog-dat/los-errores-de-reinhart-rogo/">https://www.maximaformacion.es/blog-dat/los-errores-de-reinhart-rogo/</a>.
+</div>
+<div id="ref-wickham2023es" class="csl-entry" role="listitem">
+Hadley Wickham, Garret Grolemund. 2023. <span>“R Para Ciencia de
+Datos.”</span> 2023. <a href="https://es.r4ds.hadley.nz/">https://es.r4ds.hadley.nz/</a>.
+</div>
+<div id="ref-wickham2023" class="csl-entry" role="listitem">
+Hadley Wickham, Garret Grolemund, Mine Çetinkaya-Rundel. 2023. <em>R for
+Data Science, 2nd Ed.</em> 1005 Gravenstein Highway North, Sebastopol,
+CA95472: O’Reilly Media Inc. <a href="https://r4ds.hadley.nz/">https://r4ds.hadley.nz/</a>.
+</div>
+<div id="ref-ryssdal2013" class="csl-entry" role="listitem">
+Ryssdal, Karl. 2013. <span>“The Excel Mistake Heard Round the
+World.”</span> 2013. <a href="https://www.marketplace.org/2013/04/17/economy/excel-mistake-heard-round-world/">https://www.marketplace.org/2013/04/17/economy/excel-mistake-heard-round-world/</a>.
+</div>
+<div id="ref-sadler2017" class="csl-entry" role="listitem">
+Sadler, Jesse. 2017. <span>“Excel Vs r: A Brief Introduction to
+r.”</span> 2017. <a href="https://www.jessesadler.com/post/excel-vs-r/">https://www.jessesadler.com/post/excel-vs-r/</a>.
+</div>
+<div id="ref-wef2023" class="csl-entry" role="listitem">
+World Economic Forum. 2023. <span>“Future of Jobs Report, 2023.”</span>
+91-93 route de la Capite,CH-1223 Cologny/Geneva, Switzerland: World
+Economic Forum. <a href="https://www.weforum.org/publications/the-future-of-jobs-report-2023/">https://www.weforum.org/publications/the-future-of-jobs-report-2023/</a>.
+</div>
+</div>
 
 
-</section>
 
 </main> <!-- /main -->
 <script id="quarto-html-after-body" type="application/javascript">
@@ -372,8 +379,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -484,7 +489,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -712,14 +716,11 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./050-descripcion.html" class="pagination-link" aria-label="Resumir los datos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resumir los datos</span></span>
+      <a href="./150-anexo-R.html" class="pagination-link" aria-label="Anexo: Instalación de R y conceptos básicos">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text">Anexo: Instalación de R y conceptos básicos</span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./070-relacion-xy.html" class="pagination-link" aria-label="La relación entre las variables">
-        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span> <i class="bi bi-arrow-right-short"></i>
-      </a>
   </div>
 </nav>
 </div> <!-- /content -->

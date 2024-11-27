@@ -2,12 +2,12 @@
 <html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
-<meta name="generator" content="quarto-1.5.57">
+<meta name="generator" content="quarto-1.6.37">
 
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>3&nbsp; El flujo de trabajo en el análisis de datos – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
+<title>3&nbsp; La organización de los datos y el flujo de trabajo.Los datos arreglados (tidy data) – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -91,10 +91,10 @@ div.csl-indent {
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
 <script src="site_libs/quarto-html/anchor.min.js"></script>
 <link href="site_libs/quarto-html/tippy.css" rel="stylesheet">
-<link href="site_libs/quarto-html/quarto-syntax-highlighting.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<link href="site_libs/quarto-html/quarto-syntax-highlighting-29e2c20b02301cfff04dc8050bf30c7e.css" rel="stylesheet" id="quarto-text-highlighting-styles">
 <script src="site_libs/bootstrap/bootstrap.min.js"></script>
 <link href="site_libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
-<link href="site_libs/bootstrap/bootstrap.min.css" rel="stylesheet" id="quarto-bootstrap" data-mode="light">
+<link href="site_libs/bootstrap/bootstrap-273e46d7b3848a679358d7b360117b95.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
 <script id="quarto-search-options" type="application/json">{
   "location": "sidebar",
   "copy-button": false,
@@ -135,7 +135,7 @@ div.csl-indent {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./030-organizacion.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El flujo de trabajo en el análisis de datos</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./030-organizacion.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos <em>arreglados</em> (<em>tidy data</em>)</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
@@ -181,78 +181,84 @@ div.csl-indent {
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./030-organizacion.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El flujo de trabajo en el análisis de datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos <em>arreglados</em> (<em>tidy data</em>)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./040-exploracion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos. <em>Stemplot</em> y diagrama de caja (<em>boxplot</em>)</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./050-descripcion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Resumir los datos</span></span></a>
+  <a href="./050-distr-frec.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias, histogramas y diagramas de barra</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./060-distr-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Distribuciones de frecuencias y de probabilidad</span></span></a>
+  <a href="./060-estad-simple.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Medidas centrales y medidas de dispersión: la media y la varianza.</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+  <a href="./070-distr-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./080-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+  <a href="./080-relacion-xy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./090-sistema-medicion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+  <a href="./090-anova.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+  <a href="./100-sistema-medicion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+  <a href="./110-control-proc.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./120-mejora-calidad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
+  <a href="./120-disexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./130-comunicacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
+  <a href="./130-mejora-calidad.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./140-anexo-R.html" class="sidebar-item-text sidebar-link">
+  <a href="./140-comunicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./150-anexo-R.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Anexo: Instalación de R y conceptos básicos</span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./150-bibliografia.html" class="sidebar-item-text sidebar-link">
+  <a href="./160-bibliografia.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text">Bibliografía</span></a>
   </div>
 </li>
@@ -266,16 +272,19 @@ div.csl-indent {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#razones-para-seguir-un-flujo-de-trabajo" id="toc-razones-para-seguir-un-flujo-de-trabajo" class="nav-link active" data-scroll-target="#razones-para-seguir-un-flujo-de-trabajo"><span class="header-section-number">3.1</span> Razones para seguir un flujo de trabajo</a></li>
-  <li><a href="#problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" id="toc-problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" class="nav-link" data-scroll-target="#problemas-de-no-seguir-un-flujo-de-trabajo-estructurado"><span class="header-section-number">3.2</span> Problemas de no seguir un flujo de trabajo estructurado</a>
+  <li><a href="#etapas-en-un-flujo-de-trabajo-estructurado." id="toc-etapas-en-un-flujo-de-trabajo-estructurado." class="nav-link active" data-scroll-target="#etapas-en-un-flujo-de-trabajo-estructurado."><span class="header-section-number">3.1</span> Etapas en un flujo de trabajo estructurado.</a>
   <ul class="collapse">
-  <li><a href="#ejemplo" id="toc-ejemplo" class="nav-link" data-scroll-target="#ejemplo"><span class="header-section-number">3.2.1</span> Ejemplo</a></li>
+  <li><a href="#recolección-de-datos" id="toc-recolección-de-datos" class="nav-link" data-scroll-target="#recolección-de-datos"><span class="header-section-number">3.1.1</span> Recolección de datos</a></li>
+  <li><a href="#inspección-de-los-datos" id="toc-inspección-de-los-datos" class="nav-link" data-scroll-target="#inspección-de-los-datos"><span class="header-section-number">3.1.2</span> Inspección de los datos</a></li>
+  <li><a href="#limpieza-de-los-datos" id="toc-limpieza-de-los-datos" class="nav-link" data-scroll-target="#limpieza-de-los-datos"><span class="header-section-number">3.1.3</span> Limpieza de los datos</a></li>
+  <li><a href="#transformación-de-los-datos" id="toc-transformación-de-los-datos" class="nav-link" data-scroll-target="#transformación-de-los-datos"><span class="header-section-number">3.1.4</span> Transformación de los datos</a></li>
+  <li><a href="#análisis-exploratorio-de-datos-eda" id="toc-análisis-exploratorio-de-datos-eda" class="nav-link" data-scroll-target="#análisis-exploratorio-de-datos-eda"><span class="header-section-number">3.1.5</span> Análisis exploratorio de datos (EDA)</a></li>
+  <li><a href="#modelado-de-datos" id="toc-modelado-de-datos" class="nav-link" data-scroll-target="#modelado-de-datos"><span class="header-section-number">3.1.6</span> Modelado de datos</a></li>
+  <li><a href="#comunicación-de-resultados" id="toc-comunicación-de-resultados" class="nav-link" data-scroll-target="#comunicación-de-resultados"><span class="header-section-number">3.1.7</span> Comunicación de resultados</a></li>
   </ul></li>
-  <li><a href="#etapas-en-un-flujo-de-trabajo-estructurado." id="toc-etapas-en-un-flujo-de-trabajo-estructurado." class="nav-link" data-scroll-target="#etapas-en-un-flujo-de-trabajo-estructurado."><span class="header-section-number">3.3</span> Etapas en un flujo de trabajo estructurado.</a>
-  <ul class="collapse">
-  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">3.3.1</span> Resumen</a></li>
-  </ul></li>
-  <li><a href="#la-organización-y-preparación-de-los-datos." id="toc-la-organización-y-preparación-de-los-datos." class="nav-link" data-scroll-target="#la-organización-y-preparación-de-los-datos."><span class="header-section-number">3.4</span> La organización y preparación de los datos.</a></li>
+  <li><a href="#razones-para-seguir-un-flujo-de-trabajo" id="toc-razones-para-seguir-un-flujo-de-trabajo" class="nav-link" data-scroll-target="#razones-para-seguir-un-flujo-de-trabajo"><span class="header-section-number">3.2</span> Razones para seguir un flujo de trabajo</a></li>
+  <li><a href="#problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" id="toc-problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" class="nav-link" data-scroll-target="#problemas-de-no-seguir-un-flujo-de-trabajo-estructurado"><span class="header-section-number">3.3</span> Problemas de no seguir un flujo de trabajo estructurado</a></li>
+  <li><a href="#un-ejemplo-revisando-los-datos-existentes." id="toc-un-ejemplo-revisando-los-datos-existentes." class="nav-link" data-scroll-target="#un-ejemplo-revisando-los-datos-existentes."><span class="header-section-number">3.4</span> Un ejemplo: revisando los datos existentes.</a></li>
   <li><a href="#los-datos-ordenados-o-arreglados-tidy-data" id="toc-los-datos-ordenados-o-arreglados-tidy-data" class="nav-link" data-scroll-target="#los-datos-ordenados-o-arreglados-tidy-data"><span class="header-section-number">3.5</span> Los datos ordenados o arreglados (<em>tidy data</em>)</a></li>
   <li><a href="#qué-es-un-fichero-plano-y-un-fichero-csv" id="toc-qué-es-un-fichero-plano-y-un-fichero-csv" class="nav-link" data-scroll-target="#qué-es-un-fichero-plano-y-un-fichero-csv"><span class="header-section-number">3.6</span> Qué es un fichero plano y un fichero CSV</a>
   <ul class="collapse">
@@ -293,7 +302,7 @@ div.csl-indent {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">El flujo de trabajo en el análisis de datos</span></h1>
+<h1 class="title"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos <em>arreglados</em> (<em>tidy data</em>)</span></h1>
 </div>
 
 
@@ -310,14 +319,65 @@ div.csl-indent {
 </header>
 
 
-<pre><code>Gráfico de R4DS
-
-![](01-imagenes/data-science.png)</code></pre>
 <p>Un <strong>flujo de trabajo en análisis de datos</strong> es un proceso sistemático y estructurado que guía la manipulación, exploración y análisis de datos desde su recolección hasta la obtención de resultados finales y su comunicación. Es una hoja de ruta que asegura que cada paso se realice de manera ordenada, eficiente y reproducible, facilitando la comprensión y utilización de los datos.</p>
+<p>Hadley Wickham <span class="citation" data-cites="wickham2023">(<a href="160-bibliografia.html#ref-wickham2023" role="doc-biblioref">Garret Grolemund Hadley Wickham Mine Çetinkaya-Rundel 2023</a>)</span> ha propuesto un método de flujo de trabajo que se ha convertido en estándar en la ciencia de datos (hay versión en español: <span class="citation" data-cites="wickham2023es">(<a href="160-bibliografia.html#ref-wickham2023es" role="doc-biblioref">Garret Grolemund Hadley Wickham 2023</a>)</span>)</p>
+<p><img src="01-imagenes/data-science.png" class="img-fluid"></p>
 <p>Este flujo de trabajo abarca diversas actividades como la importación de datos, su limpieza y transformación, el análisis exploratorio, y el modelado, culminando en la interpretación y presentación de los resultados. Todo esto se hace siguiendo metodologías específicas para asegurar la calidad y precisión del análisis.</p>
 <p>La importancia de seguir un flujo de trabajo bien definido radica en la capacidad de replicar estudios, minimizar errores y fomentar la transparencia, permitiendo que cualquier persona pueda entender y validar las decisiones tomadas durante el análisis. Además, mejora la eficiencia al estandarizar procedimientos y facilita la colaboración entre diferentes analistas o equipos de trabajo.</p>
-<section id="razones-para-seguir-un-flujo-de-trabajo" class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="razones-para-seguir-un-flujo-de-trabajo"><span class="header-section-number">3.1</span> Razones para seguir un flujo de trabajo</h2>
+<section id="etapas-en-un-flujo-de-trabajo-estructurado." class="level2" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="etapas-en-un-flujo-de-trabajo-estructurado."><span class="header-section-number">3.1</span> Etapas en un flujo de trabajo estructurado.</h2>
+<section id="recolección-de-datos" class="level3" data-number="3.1.1">
+<h3 data-number="3.1.1" class="anchored" data-anchor-id="recolección-de-datos"><span class="header-section-number">3.1.1</span> Recolección de datos</h3>
+<p>La primera etapa es la <strong>recolección de datos</strong>. Esto implica obtener datos desde diversas fuentes como archivos CSV, bases de datos, APIs, etc. La recolección de datos es fundamental porque la calidad del análisis depende de la calidad de los datos recolectados.</p>
+</section>
+<section id="inspección-de-los-datos" class="level3" data-number="3.1.2">
+<h3 data-number="3.1.2" class="anchored" data-anchor-id="inspección-de-los-datos"><span class="header-section-number">3.1.2</span> Inspección de los datos</h3>
+<p>Una vez recolectados, se procede a <strong>inspeccionar los datos</strong> para entender su estructura y contenido. Esto incluye examinar los tipos de datos, la presencia de valores faltantes, duplicados y la distribución de las variables.</p>
+</section>
+<section id="limpieza-de-los-datos" class="level3" data-number="3.1.3">
+<h3 data-number="3.1.3" class="anchored" data-anchor-id="limpieza-de-los-datos"><span class="header-section-number">3.1.3</span> Limpieza de los datos</h3>
+<p>La <strong>limpieza de datos</strong> es crucial para asegurar que la información sea precisa y esté en el formato adecuado. Esta etapa incluye:</p>
+<ul>
+<li>Manejo de valores faltantes.</li>
+<li>Eliminación de duplicados.</li>
+<li>Corrección de inconsistencias.</li>
+<li>Transformación de datos a un formato adecuado para el análisis.</li>
+</ul>
+</section>
+<section id="transformación-de-los-datos" class="level3" data-number="3.1.4">
+<h3 data-number="3.1.4" class="anchored" data-anchor-id="transformación-de-los-datos"><span class="header-section-number">3.1.4</span> Transformación de los datos</h3>
+<p>Transformar los datos a un formato <strong>ordenado o arreglado</strong> (<em>tidy</em>) es esencial. Según Wickham, los datos <strong>arreglados</strong> tienen una estructura clara: cada variable es una columna, cada observación es una fila, y cada valor tiene su propia celda. Este formato facilita el análisis y la visualización de datos.</p>
+</section>
+<section id="análisis-exploratorio-de-datos-eda" class="level3" data-number="3.1.5">
+<h3 data-number="3.1.5" class="anchored" data-anchor-id="análisis-exploratorio-de-datos-eda"><span class="header-section-number">3.1.5</span> Análisis exploratorio de datos (EDA)</h3>
+<p>El <strong>Análisis Exploratorio de Datos (EDA)</strong> busca entender los patrones y relaciones en los datos mediante estadísticas descriptivas y visualizaciones. Durante esta etapa se realizan:</p>
+<ul>
+<li>Estadísticas básicas (media, mediana, desviación estándar).</li>
+<li>Gráficos y diagramas para visualizar la distribución de los datos y las relaciones entre variables.</li>
+</ul>
+</section>
+<section id="modelado-de-datos" class="level3" data-number="3.1.6">
+<h3 data-number="3.1.6" class="anchored" data-anchor-id="modelado-de-datos"><span class="header-section-number">3.1.6</span> Modelado de datos</h3>
+<p>Dependiendo del objetivo del análisis, se pueden aplicar diversos modelos estadísticos para extraer información y hacer predicciones. Esto puede incluir:</p>
+<ul>
+<li>Modelos de regresión.</li>
+<li>Análisis de clasificación.</li>
+<li>Modelos de series temporales, entre otros.</li>
+</ul>
+</section>
+<section id="comunicación-de-resultados" class="level3" data-number="3.1.7">
+<h3 data-number="3.1.7" class="anchored" data-anchor-id="comunicación-de-resultados"><span class="header-section-number">3.1.7</span> Comunicación de resultados</h3>
+<p>Finalmente, es fundamental <strong>comunicar los resultados</strong> de manera clara y efectiva. Esto se hace a través de:</p>
+<ul>
+<li>Tablas y resúmenes interpretativos.</li>
+<li>Gráficos y visualizaciones.</li>
+<li>Informes y presentaciones que expliquen los hallazgos y sus implicaciones.</li>
+</ul>
+<p>Siguiendo estos pasos, puedes manejar y analizar datos de manera organizada y reproducible, facilitando la colaboración y la toma de decisiones informadas. Este flujo de trabajo asegura que los datos se traten de manera sistemática, desde su recolección hasta la comunicación de los resultados.</p>
+</section>
+</section>
+<section id="razones-para-seguir-un-flujo-de-trabajo" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="razones-para-seguir-un-flujo-de-trabajo"><span class="header-section-number">3.2</span> Razones para seguir un flujo de trabajo</h2>
 <ol type="1">
 <li><p><strong>Reproducibilidad</strong>: Un flujo de trabajo organizado permite que los análisis sean reproducibles. Otros pueden seguir los mismos pasos para obtener resultados similares, lo que es crucial en la investigación y en la toma de decisiones basadas en datos.</p></li>
 <li><p><strong>Consistencia</strong>: Ayuda a asegurar que los pasos se realizan de manera consistente cada vez que se ejecuta el análisis, reduciendo la posibilidad de errores humanos.</p></li>
@@ -327,8 +387,8 @@ div.csl-indent {
 <li><p><strong>Adaptabilidad</strong>: Permite adaptar y ajustar el análisis de manera más fácil cuando se presentan nuevos datos o cuando cambian los objetivos del análisis.</p></li>
 </ol>
 </section>
-<section id="problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="problemas-de-no-seguir-un-flujo-de-trabajo-estructurado"><span class="header-section-number">3.2</span> Problemas de no seguir un flujo de trabajo estructurado</h2>
+<section id="problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="problemas-de-no-seguir-un-flujo-de-trabajo-estructurado"><span class="header-section-number">3.3</span> Problemas de no seguir un flujo de trabajo estructurado</h2>
 <ol type="1">
 <li><p><strong>Errores y Sesgos</strong>: La falta de un enfoque estructurado puede resultar en errores y sesgos inadvertidos en el análisis, lo que puede llevar a conclusiones incorrectas.</p></li>
 <li><p><strong>Dificultad para Replicar Resultados</strong>: Sin un flujo de trabajo claro, replicar resultados se vuelve complicado, lo que puede afectar la credibilidad del análisis y la capacidad de validación por otros.</p></li>
@@ -337,71 +397,12 @@ div.csl-indent {
 <li><p><strong>Problemas de Colaboración</strong>: La colaboración se vuelve más difícil si los miembros del equipo no pueden seguir o entender los pasos tomados por otros, lo que puede llevar a malentendidos y duplicación de esfuerzos.</p></li>
 <li><p><strong>Dificultad para Adaptarse a Cambios</strong>: Sin un flujo de trabajo definido, adaptar el análisis a nuevos datos o cambios en los objetivos puede ser más complejo y propenso a errores.</p></li>
 </ol>
-<section id="ejemplo" class="level3" data-number="3.2.1">
-<h3 data-number="3.2.1" class="anchored" data-anchor-id="ejemplo"><span class="header-section-number">3.2.1</span> Ejemplo</h3>
-<p>Supongamos que estás analizando los datos de producción de una empresa. Sin un flujo de trabajo claro, podrías realizar la limpieza de datos de manera inconsistente, lo que podría resultar en diferentes conjuntos de datos para el mismo análisis. Esto llevaría a conclusiones poco fiables y a la dificultad de justificar tus hallazgos si otra persona intenta replicar tu trabajo. Además, podría ser ineficiente, ya que podrías estar repitiendo tareas o dejando de optimizar ciertos pasos.</p>
-<p>En resumen, seguir un flujo de trabajo estructurado es esencial para garantizar la precisión, eficiencia, y reproducibilidad del análisis de datos, evitando problemas que puedan comprometer la integridad y utilidad de los resultados.</p>
+<p>En resumen, seguir un flujo de trabajo estructurado es esencial para garantizar la precisión, eficiencia, y reproducibilidad del análisis de datos, evitando problemas que puedan comprometer la integridad y utilidad de los resultados. .</p>
 </section>
-</section>
-<section id="etapas-en-un-flujo-de-trabajo-estructurado." class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="etapas-en-un-flujo-de-trabajo-estructurado."><span class="header-section-number">3.3</span> Etapas en un flujo de trabajo estructurado.</h2>
-<ol type="1">
-<li>Recolección de Datos</li>
-</ol>
-<p>La primera etapa es la <strong>recolección de datos</strong>. Esto implica obtener datos desde diversas fuentes como archivos CSV, bases de datos, APIs, etc. La recolección de datos es fundamental porque la calidad del análisis depende de la calidad de los datos recolectados.</p>
-<ol start="2" type="1">
-<li>Inspección de Datos</li>
-</ol>
-<p>Una vez recolectados, se procede a <strong>inspeccionar los datos</strong> para entender su estructura y contenido. Esto incluye examinar los tipos de datos, la presencia de valores faltantes, duplicados y la distribución de las variables.</p>
-<ol start="3" type="1">
-<li>Limpieza de Datos</li>
-</ol>
-<p>La <strong>limpieza de datos</strong> es crucial para asegurar que la información sea precisa y esté en el formato adecuado. Esta etapa incluye:</p>
-<ul>
-<li>Manejo de valores faltantes.</li>
-<li>Eliminación de duplicados.</li>
-<li>Corrección de inconsistencias.</li>
-<li>Transformación de datos a un formato adecuado para el análisis.</li>
-</ul>
-<ol start="4" type="1">
-<li>Transformación de Datos</li>
-</ol>
-<p>Transformar los datos a un formato “tidy” es esencial. Según Wickham, los datos “tidy” tienen una estructura clara: cada variable es una columna, cada observación es una fila, y cada valor tiene su propia celda. Este formato facilita el análisis y la visualización de datos.</p>
-<ol start="5" type="1">
-<li>Análisis Exploratorio de Datos (EDA)</li>
-</ol>
-<p>El <strong>Análisis Exploratorio de Datos (EDA)</strong> busca entender los patrones y relaciones en los datos mediante estadísticas descriptivas y visualizaciones. Durante esta etapa se realizan:</p>
-<ul>
-<li>Estadísticas básicas (media, mediana, desviación estándar).</li>
-<li>Gráficos y diagramas para visualizar la distribución de los datos y las relaciones entre variables.</li>
-</ul>
-<ol start="6" type="1">
-<li>Modelado de Datos</li>
-</ol>
-<p>Dependiendo del objetivo del análisis, se pueden aplicar diversos modelos estadísticos para extraer información y hacer predicciones. Esto puede incluir:</p>
-<ul>
-<li>Modelos de regresión.</li>
-<li>Análisis de clasificación.</li>
-<li>Modelos de series temporales, entre otros.</li>
-</ul>
-<ol start="7" type="1">
-<li>Comunicación de Resultados</li>
-</ol>
-<p>Finalmente, es fundamental <strong>comunicar los resultados</strong> de manera clara y efectiva. Esto se hace a través de:</p>
-<ul>
-<li>Tablas y resúmenes interpretativos.</li>
-<li>Gráficos y visualizaciones.</li>
-<li>Informes y presentaciones que expliquen los hallazgos y sus implicaciones.</li>
-</ul>
-<section id="resumen" class="level3" data-number="3.3.1">
-<h3 data-number="3.3.1" class="anchored" data-anchor-id="resumen"><span class="header-section-number">3.3.1</span> Resumen</h3>
-<p>Siguiendo estos pasos, puedes manejar y analizar datos de manera organizada y reproducible, facilitando la colaboración y la toma de decisiones informadas. Este flujo de trabajo asegura que los datos se traten de manera sistemática, desde su recolección hasta la comunicación de los resultados.</p>
-</section>
-</section>
-<section id="la-organización-y-preparación-de-los-datos." class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="la-organización-y-preparación-de-los-datos."><span class="header-section-number">3.4</span> La organización y preparación de los datos.</h2>
-<p>Cuando nos incorporamos a un equipo de trabajo existente, lo más seguro es que el equipo disponga ya de un sistema de archivo de los datos, de acuerdo con sus prácticas habituales. A veces el diseño de la captura de datos sigue aproximadamente el modelo manual en papel. Se introducen los datos en la hoja de cálculo y una vez completados, se imprime el documento para su archivo.</p>
-<p>El error más común que cometemos es tratar la hoja de cálculo como un bloc de notas, es decir, hacer anotaciones de forma libre, colocar los datos y el resultado de los análisis al lado y en cualquier parte de la hoja, y apoyarnos en el contexto para interpretar lo que hemos guardado. Pero para que el ordenador sea capaz de analizar nuestros datos de manera eficiente, debemos estructurarlos de tal forma que el programa use la información tal como nosotros queremos.</p>
+<section id="un-ejemplo-revisando-los-datos-existentes." class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="un-ejemplo-revisando-los-datos-existentes."><span class="header-section-number">3.4</span> Un ejemplo: revisando los datos existentes.</h2>
+<p>Cuando nos incorporamos a un equipo de trabajo existente, lo más seguro es que ya se disponga de un sistema de archivo de los datos, de acuerdo con los métodos habituales del equipo. En muchos casos, el diseño de la captura de datos sigue aproximadamente el modelo manual en papel; se introducen los datos en la hoja de cálculo y una vez completados, se imprime el documento para su archivo.</p>
+<p>El error más común que se suele cometer es, precisamente, tratar la hoja de cálculo como un bloc de notas, es decir, hacer anotaciones de forma libre, colocar los datos y el resultado de los análisis al lado y en cualquier parte de la hoja, y apoyarnos en el contexto para interpretar lo que hemos guardado. Pero para que el ordenador sea capaz de analizar nuestros datos de manera eficiente, debemos estructurarlos de tal forma que el programa use la información tal como nosotros queremos.</p>
 <p>Es común utilizar una hoja para guardar múltiples tablas de datos, tal como vemos en la <a href="#fig-excel_mess" class="quarto-xref">Figura&nbsp;<span>3.1</span></a>. Esta estructura, sin embargo, resulta enormemente confusa para su análisis, o lo imposibilita completamente.</p>
 <div id="fig-excel_mess" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -424,7 +425,7 @@ Figura&nbsp;3.2: Hoja Excel con una estructura no ordenada
 </figcaption>
 </figure>
 </div>
-<p>¿Y utilizar diferentes pestañas para cada tabla? En este caso, la respuesta es sí y no. Si las diferentes tablas presentan situaciones diferentes, o datos que no son coincidentes, podemos utilizar diferentes pestañas. Pero si los datos están vinculados, por ejemplo, se corresponden con medidas hechas en fechas diferentes (meses, años), la respuesta adecuada es que las pestañas no son la forma correcta de almacenarlos datos; la forma recomendad es añadir una variable que nos permita diferenciar los datos por fecha; nuestro programa de análisis nos permitirá <em>filtrar</em> los datos según la fecha que deseemos, y todos estarán en una única tabla, facilitando la coherencia del conjunto.</p>
+<p>Si las diferentes tablas presentan situaciones diferentes, o datos que no están relacionados, podemos utilizar diferentes pestañas. Pero si los datos están vinculados, por ejemplo, se corresponden con las mismas medidas, hechas en fechas diferentes (meses, años), la respuesta es que las pestañas no son la forma correcta de almacenarlos datos; lo mejor es añadir una variable que nos permita diferenciar los datos por fecha; nuestro programa de análisis nos permitirá <em>filtrar</em> los datos según la fecha que deseemos, y todos estarán en una única tabla, facilitando la coherencia y el análisis posterior.</p>
 <p>Hay muchas formas de almacenar la información en una hoja de cálculo, pero sólo la estructura de <strong>datos ordenados o arreglados</strong> facilita la utilización de los datos tanto por la hoja de cálculo como por otros programas de análisis.</p>
 </section>
 <section id="los-datos-ordenados-o-arreglados-tidy-data" class="level2" data-number="3.5">
@@ -437,7 +438,7 @@ Figura&nbsp;3.2: Hoja Excel con una estructura no ordenada
 <li><p>celdas=valores.</p></li>
 </ul>
 <p>Cada variable debe tener su propia columna, cada observación debe tener su propia fila, y cada valor debe tener su propia celda o casilla .</p>
-<p>Estas tres reglas básicas son las que hacen que nuestro conjunto de datos sea <strong>ordenado (o arreglado)</strong><span class="citation" data-cites="wickham2023">(<a href="150-bibliografia.html#ref-wickham2023" role="doc-biblioref">Garret Grolemund Hadley Wickham Mine Çetinkaya-Rundel 2023</a>)</span> (hay edición <em>online</em> en español: <span class="citation" data-cites="wickham-es2023">(<a href="150-bibliografia.html#ref-wickham-es2023" role="doc-biblioref">Garret Grolemund Hadley Wickham 2023</a>)</span>:</p>
+<p>Estas tres reglas básicas son las que hacen que nuestro conjunto de datos sea <strong>ordenado (o arreglado)</strong><span class="citation" data-cites="wickham2023">(<a href="160-bibliografia.html#ref-wickham2023" role="doc-biblioref">Garret Grolemund Hadley Wickham Mine Çetinkaya-Rundel 2023</a>)</span> (hay edición <em>online</em> en español: <span class="citation" data-cites="wickham-es2023">(<a href="160-bibliografia.html#ref-wickham-es2023" role="doc-biblioref"><strong>wickham-es2023?</strong></a>)</span>:</p>
 <p>La <a href="#fig-tidy" class="quarto-xref">Figura&nbsp;<span>3.3</span></a> muestra estas reglas de forma visual.</p>
 <div id="fig-tidy" class="quarto-float quarto-figure quarto-figure-center anchored">
 <figure class="quarto-float quarto-float-fig figure">
@@ -445,7 +446,7 @@ Figura&nbsp;3.2: Hoja Excel con una estructura no ordenada
 <img src="01-imagenes/tidy-1.png" class="img-fluid figure-img">
 </div>
 <figcaption class="quarto-float-caption-bottom quarto-float-caption quarto-float-fig" id="fig-tidy-caption-0ceaefa1-69ba-4598-a22c-09a6ac19f8ca">
-Figura&nbsp;3.3: Sigue estas tres reglas para tener un conjunto de datos ordenado: las variables están en columnas, las observaciones están en filas, y los valores están en celdas. Fuente de la imagen: <span class="citation" data-cites="wickham2023">Garret Grolemund Hadley Wickham Mine Çetinkaya-Rundel (<a href="150-bibliografia.html#ref-wickham2023" role="doc-biblioref">2023</a>)</span>
+Figura&nbsp;3.3: Sigue estas tres reglas para tener un conjunto de datos ordenado: las variables están en columnas, las observaciones están en filas, y los valores están en celdas. Fuente de la imagen: <span class="citation" data-cites="wickham2023">Garret Grolemund Hadley Wickham Mine Çetinkaya-Rundel (<a href="160-bibliografia.html#ref-wickham2023" role="doc-biblioref">2023</a>)</span>
 </figcaption>
 </figure>
 </div>
@@ -524,23 +525,23 @@ Figura&nbsp;3.5: Tres tipos de ficheros planos de texto.
 </section>
 <section id="usando-base-r" class="level4" data-number="3.6.1.3">
 <h4 data-number="3.6.1.3" class="anchored" data-anchor-id="usando-base-r"><span class="header-section-number">3.6.1.3</span> Usando Base R</h4>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer el CSV con separador de campos ";" y separador decimal ","</span></span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"ruta/al/archivo.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">dec =</span> <span class="st">","</span>)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver las primeras filas del dataframe</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer el CSV con separador de campos ";" y separador decimal ","</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"ruta/al/archivo.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">dec =</span> <span class="st">","</span>)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver las primeras filas del dataframe</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="usando-readr" class="level4" data-number="3.6.1.4">
 <h4 data-number="3.6.1.4" class="anchored" data-anchor-id="usando-readr"><span class="header-section-number">3.6.1.4</span> Usando readr</h4>
 <p>Primero, instala y carga el paquete <code>readr</code>:</p>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>)</span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer el CSV con separador de campos ";" y separador decimal ","</span></span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="st">"ruta/al/archivo.csv"</span>, <span class="at">col_names =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver las primeras filas del dataframe</span></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>)</span>
+<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
+<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer el CSV con separador de campos ";" y separador decimal ","</span></span>
+<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="st">"ruta/al/archivo.csv"</span>, <span class="at">col_names =</span> <span class="cn">TRUE</span>)</span>
+<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver las primeras filas del dataframe</span></span>
+<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 </section>
 <section id="explicación-del-código" class="level3" data-number="3.6.2">
@@ -566,15 +567,15 @@ Figura&nbsp;3.5: Tres tipos de ficheros planos de texto.
 </section>
 <section id="ejemplo-de-creación-de-un-dataframe" class="level4" data-number="3.6.3.2">
 <h4 data-number="3.6.3.2" class="anchored" data-anchor-id="ejemplo-de-creación-de-un-dataframe"><span class="header-section-number">3.6.3.2</span> Ejemplo de Creación de un DataFrame</h4>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un dataframe simple</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Nombre =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Carol"</span>),</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Edad =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>),</span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Salario =</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">55000</span>, <span class="dv">60000</span>)</span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver el dataframe</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un dataframe simple</span></span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Nombre =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Carol"</span>),</span>
+<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Edad =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>),</span>
+<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Salario =</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">55000</span>, <span class="dv">60000</span>)</span>
+<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver el dataframe</span></span>
+<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 </section>
 <section id="explicación-del-código-1" class="level4" data-number="3.6.3.3">
 <h4 data-number="3.6.3.3" class="anchored" data-anchor-id="explicación-del-código-1"><span class="header-section-number">3.6.3.3</span> Explicación del Código:</h4>
@@ -588,21 +589,20 @@ Figura&nbsp;3.5: Tres tipos de ficheros planos de texto.
 <section id="ejemplo-real-de-análisis" class="level3" data-number="3.6.4">
 <h3 data-number="3.6.4" class="anchored" data-anchor-id="ejemplo-real-de-análisis"><span class="header-section-number">3.6.4</span> Ejemplo Real de Análisis</h3>
 <p>Si ya tienes un archivo CSV que importaste, puedes comenzar a analizar los datos. Aquí hay un ejemplo básico de cómo podrías resumir y visualizar los datos:</p>
-<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar y cargar ggplot2 para la visualización</span></span>
-<span id="cb5-2"><a href="#cb5-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb5-3"><a href="#cb5-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb5-4"><a href="#cb5-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-5"><a href="#cb5-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Resumen de los datos</span></span>
-<span id="cb5-6"><a href="#cb5-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span>
-<span id="cb5-7"><a href="#cb5-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb5-8"><a href="#cb5-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización simple: Histograma de una variable numérica</span></span>
-<span id="cb5-9"><a href="#cb5-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> variable_numerica)) <span class="sc">+</span></span>
-<span id="cb5-10"><a href="#cb5-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb5-11"><a href="#cb5-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma de la Variable Numérica"</span>,</span>
-<span id="cb5-12"><a href="#cb5-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Valor"</span>,</span>
-<span id="cb5-13"><a href="#cb5-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frecuencia"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar y cargar ggplot2 para la visualización</span></span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Resumen de los datos</span></span>
+<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span>
+<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización simple: Histograma de una variable numérica</span></span>
+<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> variable_numerica)) <span class="sc">+</span></span>
+<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
+<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma de la Variable Numérica"</span>,</span>
+<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Valor"</span>,</span>
+<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frecuencia"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <p>Este código proporciona un resumen y una visualización básica de tus datos importados.</p>
-<p>¿Te gustaría saber más sobre algún aspecto en particular?</p>
 </section>
 </section>
 <section id="para-resolver" class="level2" data-number="3.7">
@@ -611,7 +611,7 @@ Figura&nbsp;3.5: Tres tipos de ficheros planos de texto.
 
 
 <div id="refs" class="references csl-bib-body hanging-indent" data-entry-spacing="0" role="list" style="display: none">
-<div id="ref-wickham-es2023" class="csl-entry" role="listitem">
+<div id="ref-wickham2023es" class="csl-entry" role="listitem">
 Hadley Wickham, Garret Grolemund. 2023. <span>«R Para Ciencia de Datos»</span>. 2023. <a href="https://es.r4ds.hadley.nz/">https://es.r4ds.hadley.nz/</a>.
 </div>
 <div id="ref-wickham2023" class="csl-entry" role="listitem">
@@ -703,8 +703,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
   });
   clipboard.on('success', onCopySuccess);
   if (window.document.getElementById('quarto-embedded-source-code-modal')) {
-    // For code content inside modals, clipBoardJS needs to be initialized with a container option
-    // TODO: Check when it could be a function (https://github.com/zenorocha/clipboard.js/issues/860)
     const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
       text: getTextToCopy,
       container: window.document.getElementById('quarto-embedded-source-code-modal')
@@ -815,7 +813,6 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       if (window.Quarto?.typesetMath) {
         window.Quarto.typesetMath(note);
       }
-      // TODO in 1.5, we should make sure this works without a callout special case
       if (note.classList.contains("callout")) {
         return note.outerHTML;
       } else {
@@ -1048,8 +1045,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./040-exploracion.html" class="pagination-link" aria-label="La exploración de los datos">
-        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./040-exploracion.html" class="pagination-link" aria-label="La exploración de los datos. _Stemplot_ y diagrama de caja (_boxplot_)">
+        <span class="nav-page-text"><span class="chapter-number">4</span>&nbsp; <span class="chapter-title">La exploración de los datos. <em>Stemplot</em> y diagrama de caja (<em>boxplot</em>)</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

@@ -5,32 +5,56 @@ lang: es
 knitr::opts_chunk$set(echo = TRUE, warning = FALSE, fig.showtext = T)
 ```
 
-# Resumir los datos
+# Medidas centrales y medidas de dispersión: la media y la varianza.
 
+Al estudiar el diagrama de caja (_boxplot_) hemos visto que este gráfico se describe mediante los **cinco números**, que son:
 
-### La media o promedio: una medida central
+- mínimo y máximo,  
+- primer y tercer cuartil (25% y 75%), y 
+- segundo cuartil (50%). 
 
-Una primera posibilidad es suponer que en nuestro grupo de once personas no hubiese variación: que todos ellos tuviesen la misma altura. Si fuese así, podemos encontrar un valor $x$ de altura que, repetido once veces, sea equivalente a la suma de las alturas de todos ellos. Si representamos cada alumno con una letra, la suma de sus alturas sería: $$
-a+ b + c + d + e + f + g + h + i + j + k
-$$ y el valor que buscamos sería un valor tal que, sumado once veces, el valor obtenido fuese igual a la suma de la alturas medidas: $$
-a+b+c+d+e+f+g+h+i+j+k = x+x+x+x+x+x+x+x+x+x+x
-$$ Pero sabemos que la suma de valores repetidos es igual al valor multiplicado por el número de repeticiones: $$
-a+b+c+d+e+f+g+h+i+j+k = 11 x
-$$ Sólo tenemos que despejar la $x$ para hallar este valor: $$
-x = \frac{a+b+c+d+e+f+g+h+i+j+k}{11}
-$$ Este valor que hemos obtenido es lo que se conoce como $media\ aritmética$, $valor{\ }medio$ o $promedio$, y, como hemos visto, **es aquel valor tal que repetido tantas veces como individuos tenemos, es equivalente a la suma de los valores que hemos obtenido**. La media de una muestra se representa habitualmente mediante el símbolo $$\bar{x}$$ y, de una manera más formal, su valor se obtiene mediante la fórmula siguiente: $$
-{\bar{x}={\frac {1}{n}}\sum _{i=1}^{n}x_{i}}
-$$ El signo $\sum$ se conoce como *sumatorio*, e indica que ese término consiste en la suma de los $x$ valores desde el primero hasta el valor $n$. Expresado mediante una formulación matemática,
+De estos valores, el segundo cuartil, que se corresponde con la mitad de los valores, representa una estimación del centro de la distribución, y por eso lo llamamos **mediana**. La distancia entre el primer y tercer cuartil es lo que se conoce como **rango intercuartil** (se suele representar por sus siglas en inglés, **IQR**), y nos da una indicación de la **dispersión**: cuanto mayor mayor es la dispersión de nuestros valores, más alejados estarán del centro, y por lo tanto habrá mayor distancia entre el primer y el tercer cuartil. 
 
-$$
-{\bar{x}={\frac {1}{n}}\sum _{i=1}^{n}x_{i}={\frac {x_{1}+x_{2}+\cdots +x_{n}}{n}}}
-$$ lo quiere quiere decir: *"la suma de todos los valores observados dividido entre el número de estos valores"*.
+Una de las mayores ventajas de la mediana y del rango intercuartil es que son estadísticos robustos, es decir, tiene una alta robustez a los valores atípicos. Como en el cálculo del rango intercuartil no se tienen en cuenta los valores extremos, su valor variará muy poco si aparecen nuevas observaciones atípicas (outliers). Como sus valores no dependen de la distribución de los datos, a estos estadísticos se los conoce como **no paramétricos**.
+
+Existen otras estadísticos, llamados **paramétricos**, que, en determinadas condiciones, tienen ventajas frente a los no paramétricos. Los principales son la **media aritmética**, o simplemente, **media**, y la **varianza**.
+
+### La media aritmética: un ejemplo de cálculo.
+
+Cálculo de la media aritmética sin usar la estadística.
+
+Centro de gravedad, propiedades de la media, distancia a los valores.
+diferencias entre media y mediana: influencia de los valores en la media, posición en la mediana.
+
+ver si poner distribuciones de frecuencia antes de explicar los cinco numeros
+
+Volviendo a nuestro ejemplo de las alturas de los alumnos, supongamos que en nuestro grupo de once personas no hubiese variación: que todos ellos tuviesen la misma altura. Si fuese así, podemos encontrar un valor $x$ de altura que, repetido once veces, sea equivalente a la suma de las alturas de todos ellos. Si representamos cada alumno con una letra, la suma de sus alturas sería: 
+$$a+ b + c + d + e + f + g + h + i + j + k$$ 
+y el valor que buscamos sería un valor tal que, sumado once veces, el valor obtenido fuese igual a la suma de la alturas medidas: 
+$$a+b+c+d+e+f+g+h+i+j+k = x+x+x+x+x+x+x+x+x+x+x$$ 
+Pero sabemos que la suma de valores repetidos es igual al valor multiplicado por el número de repeticiones: 
+$$a+b+c+d+e+f+g+h+i+j+k = 11 x$$ 
+Sólo tenemos que despejar la $x$ para hallar este valor: 
+$$x = \frac{a+b+c+d+e+f+g+h+i+j+k}{11}$$ 
+Este valor que hemos obtenido es lo que se conoce como $media\ aritmética$, $valor{\ }medio$ o $promedio$, y, como hemos visto, **es aquel valor tal que repetido tantas veces como individuos tenemos, es equivalente a la suma de los valores que hemos obtenido**. La media de una muestra se representa habitualmente mediante el símbolo
+
+$$\bar{x}$$
+y, de una manera más formal, su valor se obtiene mediante la fórmula siguiente: 
+
+$${\bar{x}={\frac {1}{n}}\sum _{i=1}^{n}x_{i}}$$
+El signo $\sum$ se conoce como *sumatorio*, e indica que ese término consiste en la suma de los $x$ valores desde el primero hasta el valor $n$. Expresado mediante una formulación matemática,
+
+$${\bar{x}={\frac {1}{n}}\sum _{i=1}^{n}x_{i}={\frac {x_{1}+x_{2}+\cdots +x_{n}}{n}}}$$ 
+lo quiere quiere decir: *"la suma de todos los valores observados dividido entre el número de estos valores"*.
 
 La **media** es lo que conocemos como un *valor central*, ya que representa el centro de nuestro conjunto de números. Como es el centro de nuestro conjunto de datos, *equidista* de todos los valores, o lo que es lo mismo, la suma de las distancias de todos los valores a este valor central es $cero$. Más adelante veremos la importancia de este hecho, al hablar de la dispersión y las formas de cálculo de la misma. La *media*, junto con otras medidas como la *mediana* y la *moda* se conocen en estadística como **medidas de tendencia central**. Como hemos dicho, la media de una **muestra** se representa como $\bar{x}$, mientras que la media de una **población** se representa con la letra griega *mu*: $\mu$. En ambos casos, el cálculo se realiza de forma idéntica.
 
-Volvamos a nuestro ejemplo para realizar los cálculos según el modelo que hemos descrito. En nuestro caso, la *altura media* de nuestros alumnos (la *media* de nuestro conjunto de números) se calcula como: $$
+Volvamos a nuestro ejemplo para realizar los cálculos según el modelo que hemos descrito. En nuestro caso, la *altura media* de nuestros alumnos (la *media* de nuestro conjunto de números) se calcula como: 
+
+$$
 \bar{x} = \frac{153+135+140+140+175+138+145+154+152+159+154}{11} = 149,54
-$$ Utilicemos una hoja de cálculo para guardar nuestros valores.
+$$ 
+Utilicemos una hoja de cálculo para guardar nuestros valores.
 
 La fórmula para obtener la media en la hoja de cálculo, por ejemplo en la versión en español de *Microsoft Excel*, es `=PROMEDIO(...)`, donde los puntos suspensivos deben sustituirse por el rango a calcular. En nuestro ejemplo, introduciríamos la fórmula en la celda `B13`como `=PROMEDIO(B2..B12)` (Para más detalles, verificar la hoja Excel adjunta).
 
@@ -54,9 +78,7 @@ Representamos en azul nuestros valores, uniendo cada valor con la línea media m
 
 ![Hoja de cálculo con los valores y el gráfico de puntos](01-imagenes/image-20221115202048866.png)
 
-Esta línea azul de puntos representa la *distancia* de cada valor a la media. Usaremos esta distancia para calcular una *distancia media*, que será una medida de la dispersión de nuestros valores.
-
-Recordemos que estamos intentando encontrar la forma de describir nuestro conjunto de números con un valor, con el fin de que nuestros analistas de la OMS puedan comparar la información de diferentes grupos de niños y ayudara determinar su situación nutricional.
+Esta línea azul de puntos representa la *distancia* de cada valor a la media. Usaremos esta distancia para calcular una **distancia media**, que será una medida de la dispersión de nuestros valores.
 
 Hemos visto que para describir un conjunto de números, en nuestro ejemplo, las medidas de la altura de un grupo de estudiantes, existe un valor, la *media* de este conjunto, que nos describe el centro de los valores. En nuestro ejemplo, si nuestro grupo tuviese un solo niño, éste tendría $149,55{\ }cm$ de altura.
 
@@ -74,13 +96,11 @@ Si nos ayudamos de un gráfico equivalente al que hemos utilizado antes, vemos e
 
 ![Gráfico de tres grupos de valores](01-imagenes/image-20221116110925933.png)
 
-Aunque el valor medio de estos tres grupos de datos es idéntico, parece claro que los tres grupos son muy distintos en su composición, y por lo tanto la *media* no es suficiente para describir con suficiente precisión cada uno de los grupos. Necesitamos un valor adicional, que nos indique de qué forma los valores se alejan del valor medio. Para ello, vamos a introducir un concepto nuevo: la *medida de la dispersión*, que nos indica precisamente la distancia de los valores al valor medio, e introduciremos también la *distribución de frecuencias*, que nos permite representar *la forma* en la que se distribuyen nuestros valores.
+Aunque el valor medio de estos tres grupos de datos es idéntico, parece claro que los tres grupos son muy distintos en su composición, y por lo tanto la *media* no es suficiente para describir con suficiente precisión cada uno de los grupos. Necesitamos un valor adicional, que nos indique de qué forma los valores se alejan del valor medio. Para ello, vamos a introducir un concepto nuevo: la *medida de la dispersión*.
 
 La media como centro de gravedad: [Physics Simulation: Center of Mass (physicsclassroom.com)](https://www.physicsclassroom.com/Physics-Interactives/Balance-and-Rotation/COM-Builder/Center-Of-Mass-Interactive)
 
-## Los valores de dispersión: varianza y desviación típica, rango intercuartil
-
-### Las medidas de dispersión: la desviación típica
+### Las medidas de dispersión: la varianza y la desviación típica
 
 Como hemos visto en el apartado anterior, diferentes conjuntos de datos pueden tener el mismo valor medio y sin embargo ser muy diferentes. En la última gráfica que hemos visto, el primer grupo se caracteriza por tener todos sus valores idénticos; el segundo tiene todos sus valores idénticos menos uno, que está muy apartado del resto, y el tercero tiene todos sus valores diferentes.
 
@@ -100,17 +120,26 @@ $$ Esta fórmula es la base del cálculo de la distancia entre dos puntos:
 
 $$
 d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
-$$ ¿Podemos adaptar esta fórmula para el cálculo de nuestra distancia media? La respuesta es **sí**. En nuestro caso, sólo necesitamos la coordenada $X$, ya que sólo estamos calculando la distancia en una dimensión. Si tenemos en cuenta un solo punto, esta distancia $d$ sería: $$
+$$ 
+Podemos adaptar esta fórmula al cálculo de nuestra distancia media. Como estamos calculando la distancia en una dimensión, sólo necesitamos la coordenada $X$. Si tenemos en cuenta un solo punto, esta distancia $d$ sería: 
+$$
 (d{\ }del{\ }valor{\ }1{\ }a{\ }la{\ }media)^2=(x_1-\bar{x})^2
-$$ ¡El hecho de elevar al cuadrado las diferencias nos da la solución! Las diferencias negativas ya no son un problema porque sabemos que al elevar un numero negativo al cuadrado, el resultado es positivo; de esta manera conseguimos que las diferencias no se anulen. Ahora sí podemos calcular una distancia media $\bar{d}$ entre el conjunto de puntos y su media, calculando el promedio de las diferencias elevadas al cuadrado: $$
+$$
+¡El hecho de elevar al cuadrado las diferencias nos da la solución! Las diferencias negativas ya no son un problema porque sabemos que al elevar un numero negativo al cuadrado, el resultado es positivo; de esta manera conseguimos que las diferencias no se anulen. Ahora sí podemos calcular una distancia media $\bar{d}$ entre el conjunto de puntos y su media, calculando el promedio de las diferencias elevadas al cuadrado: $$
 (\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2=\frac{(x_1-\bar{x})^2 + (x_2-\bar{x})^2+\cdots+(x_n-\bar{x})^2}{n}
-$$ y utilizando la notación que hemos aprendido antes, $$
+$$
+
+y utilizando la notación que hemos aprendido antes, 
+
+$$
 (\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2={\frac {1}{n}}\sum _{i=1}^{n}(x_{i}-\bar{x})^2
 $$
 
 Al igual que en el cálculo de la distancia entre dos puntos, sólo tenemos que extraer la raíz cuadrada de este valor para obtener la distancia media, que es el parámetro que estábamos buscando.
 
-La $$(\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2$$ se conoce en estadística como **varianza**, y su raíz cuadrada es lo que se conoce como **desviación típica**. La varianza de una población se representa en estadística con el signo de la letra griega *sigma* minúscula elevada al cuadrado, $\sigma^2$, y la desviación típica, mediante la letra $\sigma$. En el caso de una muestra, la varianza se representa como $s_x^2$, y la desviación típica, como $s_x$. En nuestro caso, utilizaremos la primera notación; más adelante veremos los conceptos de **población** y **muestra** y explicaremos el concepto de **grados de libertad**. Veremos también que la fórmula para el cálculo de la desviación típica muestral es ligeramente diferente de la de su equivalente poblacional, y explicaremos por qué.
+La distancia media
+$$(\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2$$
+se conoce en estadística como **varianza**, y su raíz cuadrada es lo que se conoce como **desviación típica**. La varianza de una población se representa en estadística con el signo de la letra griega *sigma* minúscula elevada al cuadrado, $\sigma^2$, y la desviación típica, mediante la letra $\sigma$. En el caso de una muestra, la varianza se representa como $s_x^2$, y la desviación típica, como $s_x$. En nuestro caso, utilizaremos la primera notación; más adelante veremos los conceptos de **población** y **muestra** y explicaremos el concepto de **grados de libertad**. Veremos también que la fórmula para el cálculo de la desviación típica muestral es ligeramente diferente de la de su equivalente poblacional, y explicaremos por qué.
 
 Es importante resaltar que la desviación típica *es una medida de la distancia media de los valores de una población a su media*, y por lo tanto tiene dimensión, la misma que las medidas originales. La varianza, al estar elevada al cuadrado, no tiene una dimensión, o, mejor dicho, tiene la de la medida al cuadrado.
 
@@ -157,6 +186,38 @@ En este caso, vemos que tanto la media como la desviación típica son idéntico
 ![Gráfico con dos conjuntos de datos diferentes, con la misma media y desviación típica](01-imagenes/image-20221116164430210.png)
 
 La existencia de valores anormales o extremos muestra una de las debilidades de la media y la desviación típicas como *descriptores* de una población: ambos parámetros son muy sensibles a los casos extremos. En realidad, sólo deberíamos utilizar la media y la desviación típica para describir un conjunto de datos cuando estamos seguros de que *la distribución de estos datos* tienen una *forma* determinada, la de la **campana de Gauss**. Lo cual nos lleva al siguiente capítulo: las **distribuciones de frecuencias**.
+
+## Resumen
+
+Las medidas paramétricas, como la media y la varianza, y las no paramétricas, como la mediana y el rango intercuartil, tienen diferentes ventajas e inconvenientes según el contexto y los datos con los que se trabaja.
+
+### Ventajas e inconvenientes de las medidas paramétricas
+
+#### Ventajas
+1. Precisión y Sensibilidad: La media y la varianza son muy precisas y sensibles a todos los valores del conjunto de datos. 
+2. Propiedades Matemáticas: La media y la varianza tienen propiedades matemáticas deseables, como la facilidad para realizar operaciones algebraicas. 
+3. Distribución Normal: Son especialmente útiles si los datos siguen una distribución normal, ya que permiten aprovechar las propiedades de esta distribución.
+
+#### Inconvenientes 
+
+1. Sensibilidad a Valores Atípicos: La media y la varianza pueden ser distorsionadas significativamente por valores atípicos. 
+2. Requieren Suposiciones: Su uso eficaz a menudo requiere que los datos sigan ciertas suposiciones, como la normalidad y la homogeneidad de la varianza.
+
+### Ventajas e inconvenientes de las medidas no paramétricas
+
+#### Ventajas
+
+1. Robustez: La mediana y el rango intercuartil son menos sensibles a valores atípicos y distribuciones asimétricas. 
+2. Flexibilidad: No requieren suposiciones fuertes sobre la distribución de los datos, lo que las hace útiles para una amplia variedad de distribuciones. 
+3. Resumir Datos: Son excelentes para resumir datos en situaciones en las que los valores extremos podrían distorsionar la interpretación.
+
+#### Inconvenientes
+
+1. Menor Sensibilidad: La mediana y el rango intercuartil no utilizan toda la información de los datos y pueden ser menos sensibles a cambios en los datos.
+2. Menor Precisión en Ciertos Contextos: En situaciones donde los datos siguen una distribución normal, las medidas no paramétricas pueden ser menos precisas.
+
+Las medidas paramétricas son útiles para datos que siguen suposiciones específicas, como la normalidad, y son precisas y sensibles, pero pueden ser distorsionadas por valores atípicos. Las medidas no paramétricas son robustas y flexibles, ideales para distribuciones no normales y resistentes a valores atípicos, aunque pueden perder sensibilidad y precisión en ciertos contextos.
+
 
 Modelo: práctica de puntos con un dado, dos dados, tres dados, etc hasta 30
 
