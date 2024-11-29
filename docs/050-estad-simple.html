@@ -69,39 +69,10 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
-<body class="nav-sidebar floating slimcontent">
+<body class="nav-sidebar floating">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -242,18 +213,11 @@ window.Quarto = {
    
   <ul>
   <li><a href="#la-media-aritmética-un-ejemplo-de-cálculo." id="toc-la-media-aritmética-un-ejemplo-de-cálculo." class="nav-link active" data-scroll-target="#la-media-aritmética-un-ejemplo-de-cálculo."><span class="header-section-number">5.1</span> La media aritmética: un ejemplo de cálculo.</a></li>
-  <li><a href="#las-medidas-de-dispersión-la-varianza-y-la-desviación-típica" id="toc-las-medidas-de-dispersión-la-varianza-y-la-desviación-típica" class="nav-link" data-scroll-target="#las-medidas-de-dispersión-la-varianza-y-la-desviación-típica"><span class="header-section-number">5.2</span> Las medidas de dispersión: la varianza y la desviación típica</a></li>
-  <li><a href="#las-limitaciones-de-la-media-y-la-desviación-típica" id="toc-las-limitaciones-de-la-media-y-la-desviación-típica" class="nav-link" data-scroll-target="#las-limitaciones-de-la-media-y-la-desviación-típica"><span class="header-section-number">5.3</span> Las limitaciones de la media y la desviación típica</a></li>
-  <li><a href="#resumen" id="toc-resumen" class="nav-link" data-scroll-target="#resumen"><span class="header-section-number">5.4</span> Resumen</a>
-  <ul class="collapse">
-  <li><a href="#ventajas-e-inconvenientes-de-las-medidas-paramétricas" id="toc-ventajas-e-inconvenientes-de-las-medidas-paramétricas" class="nav-link" data-scroll-target="#ventajas-e-inconvenientes-de-las-medidas-paramétricas"><span class="header-section-number">5.4.1</span> Ventajas e inconvenientes de las medidas paramétricas</a></li>
-  <li><a href="#ventajas-e-inconvenientes-de-las-medidas-no-paramétricas" id="toc-ventajas-e-inconvenientes-de-las-medidas-no-paramétricas" class="nav-link" data-scroll-target="#ventajas-e-inconvenientes-de-las-medidas-no-paramétricas"><span class="header-section-number">5.4.2</span> Ventajas e inconvenientes de las medidas no paramétricas</a></li>
-  </ul></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content page-columns page-full" id="quarto-document-content">
+<main class="content" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
@@ -284,198 +248,10 @@ window.Quarto = {
 <p>De estos valores, el segundo cuartil, que se corresponde con la mitad de los valores, representa una estimación del centro de la distribución, y por eso lo llamamos <strong>mediana</strong>. La distancia entre el primer y tercer cuartil es lo que se conoce como <strong>rango intercuartil</strong> (se suele representar por sus siglas en inglés, <strong>IQR</strong>), y nos da una indicación de la <strong>dispersión</strong>: cuanto mayor mayor es la dispersión de nuestros valores, más alejados estarán del centro, y por lo tanto habrá mayor distancia entre el primer y el tercer cuartil.</p>
 <p>Una de las mayores ventajas de la mediana y del rango intercuartil es que son estadísticos robustos, es decir, tiene una alta robustez a los valores atípicos. Como en el cálculo del rango intercuartil no se tienen en cuenta los valores extremos, su valor variará muy poco si aparecen nuevas observaciones atípicas (outliers). Como sus valores no dependen de la distribución de los datos, a estos estadísticos se los conoce como <strong>no paramétricos</strong>.</p>
 <p>Existen otras estadísticos, llamados <strong>paramétricos</strong>, que, en determinadas condiciones, tienen ventajas frente a los no paramétricos. Los principales son la <strong>media aritmética</strong>, o simplemente, <strong>media</strong>, y la <strong>varianza</strong>.</p>
-<section id="la-media-aritmética-un-ejemplo-de-cálculo." class="level2 page-columns page-full" data-number="5.1">
+<section id="la-media-aritmética-un-ejemplo-de-cálculo." class="level2" data-number="5.1">
 <h2 data-number="5.1" class="anchored" data-anchor-id="la-media-aritmética-un-ejemplo-de-cálculo."><span class="header-section-number">5.1</span> La media aritmética: un ejemplo de cálculo.</h2>
-<p>Cálculo de la media aritmética sin usar la estadística.</p>
-<p>Centro de gravedad, propiedades de la media, distancia a los valores. diferencias entre media y mediana: influencia de los valores en la media, posición en la mediana.</p>
-<p>ver si poner distribuciones de frecuencia antes de explicar los cinco numeros</p>
-<p>Volviendo a nuestro ejemplo de las alturas de los alumnos, supongamos que en nuestro grupo de once personas no hubiese variación: que todos ellos tuviesen la misma altura. Si fuese así, podemos encontrar un valor <span class="math inline">\(x\)</span> de altura que, repetido once veces, sea equivalente a la suma de las alturas de todos ellos. Si representamos cada alumno con una letra, la suma de sus alturas sería: <span class="math display">\[a+ b + c + d + e + f + g + h + i + j + k\]</span> y el valor que buscamos sería un valor tal que, sumado once veces, el valor obtenido fuese igual a la suma de la alturas medidas: <span class="math display">\[a+b+c+d+e+f+g+h+i+j+k = x+x+x+x+x+x+x+x+x+x+x\]</span> Pero sabemos que la suma de valores repetidos es igual al valor multiplicado por el número de repeticiones: <span class="math display">\[a+b+c+d+e+f+g+h+i+j+k = 11 x\]</span> Sólo tenemos que despejar la <span class="math inline">\(x\)</span> para hallar este valor: <span class="math display">\[x = \frac{a+b+c+d+e+f+g+h+i+j+k}{11}\]</span> Este valor que hemos obtenido es lo que se conoce como <span class="math inline">\(media\ aritmética\)</span>, <span class="math inline">\(valor{\ }medio\)</span> o <span class="math inline">\(promedio\)</span>, y, como hemos visto, <strong>es aquel valor tal que repetido tantas veces como individuos tenemos, es equivalente a la suma de los valores que hemos obtenido</strong>. La media de una muestra se representa habitualmente mediante el símbolo</p>
-<p><span class="math display">\[\bar{x}\]</span> y, de una manera más formal, su valor se obtiene mediante la fórmula siguiente:</p>
-<p><span class="math display">\[{\bar{x}={\frac {1}{n}}\sum _{i=1}^{n}x_{i}}\]</span> El signo <span class="math inline">\(\sum\)</span> se conoce como <em>sumatorio</em>, e indica que ese término consiste en la suma de los <span class="math inline">\(x\)</span> valores desde el primero hasta el valor <span class="math inline">\(n\)</span>. Expresado mediante una formulación matemática,</p>
-<p><span class="math display">\[{\bar{x}={\frac {1}{n}}\sum _{i=1}^{n}x_{i}={\frac {x_{1}+x_{2}+\cdots +x_{n}}{n}}}\]</span> lo quiere quiere decir: <em>“la suma de todos los valores observados dividido entre el número de estos valores”</em>.</p>
-<p>La <strong>media</strong> es lo que conocemos como un <em>valor central</em>, ya que representa el centro de nuestro conjunto de números. Como es el centro de nuestro conjunto de datos, <em>equidista</em> de todos los valores, o lo que es lo mismo, la suma de las distancias de todos los valores a este valor central es <span class="math inline">\(cero\)</span>. Más adelante veremos la importancia de este hecho, al hablar de la dispersión y las formas de cálculo de la misma. La <em>media</em>, junto con otras medidas como la <em>mediana</em> y la <em>moda</em> se conocen en estadística como <strong>medidas de tendencia central</strong>. Como hemos dicho, la media de una <strong>muestra</strong> se representa como <span class="math inline">\(\bar{x}\)</span>, mientras que la media de una <strong>población</strong> se representa con la letra griega <em>mu</em>: <span class="math inline">\(\mu\)</span>. En ambos casos, el cálculo se realiza de forma idéntica.</p>
-<p>Volvamos a nuestro ejemplo para realizar los cálculos según el modelo que hemos descrito. En nuestro caso, la <em>altura media</em> de nuestros alumnos (la <em>media</em> de nuestro conjunto de números) se calcula como:</p>
-<p><span class="math display">\[
-\bar{x} = \frac{153+135+140+140+175+138+145+154+152+159+154}{11} = 149,54
-\]</span> Utilicemos una hoja de cálculo para guardar nuestros valores.</p>
-<p>La fórmula para obtener la media en la hoja de cálculo, por ejemplo en la versión en español de <em>Microsoft Excel</em>, es <code>=PROMEDIO(...)</code>, donde los puntos suspensivos deben sustituirse por el rango a calcular. En nuestro ejemplo, introduciríamos la fórmula en la celda <code>B13</code>como <code>=PROMEDIO(B2..B12)</code> (Para más detalles, verificar la hoja Excel adjunta).</p>
-<p>Para representar más cómodamente nuestros valores, dibujamos un punto a la altura de cada alumno,</p>
-<p><img src="01-imagenes/aula1_puntos-1.png" class="img-fluid"></p>
-<p>y eliminamos del gráfico los dibujos de nuestros alumnos; así hemos convertido nuestro dibujo en un <em>diagrama de puntos</em>:</p>
-<p><img src="01-imagenes/aula1_puntos.png" class="img-fluid"></p>
-<p>Para representar la media, aunque la media es un valor único, necesitamos añadir una columna a la derecha de nuestros datos, que rotulamos en la fila 1, celda C como <code>altura media</code>, e introducimos en cada una de las celdas desde <code>C2</code>hasta <code>C12</code>la fórmula del promedio, con el valor de nuestro rango de datos (Verificar hoja de cálculo). A continuación, designamos nuestro rango de datos para hacer un gráfico de puntos, y hacemos un <em>zoom</em> en los valores de manera que el eje Y se escale mejor entre los valores mínimo y máximo. Por último, hacemos unos ajustes en el formato para dibujar las líneas verticales que nos representan la distancia de cada valor a la media.</p>
-<p><img src="01-imagenes/image-20221115203450170.png" class="img-fluid"></p>
-<p>Si verificamos el eje <span class="math inline">\(Y\)</span> , veremos que en este gráfico hemos ajustado la escala respecto al gráfico anterior, situando el mínimo en <span class="math inline">\(130\)</span>. Esto permite visualizar las diferencias con mucha más claridad. Hemos representado la media <span class="math inline">\(\bar{x}\)</span> como una línea, y hemos dibujado unas líneas que unen cada valor individual con la media, que se sitúa en el valor <span class="math inline">\(149,55\)</span>, tal como calculamos más arriba.</p>
-<p>Hemos representado la media como una serie de puntos unidos por una línea amarilla. Tal como hemos visto cuando hacíamos la descripción de este parámetro, representamos un conjunto de valores idénticos, ya que según hemos visto, la media <strong>es aquel valor tal que repetido tantas veces como individuos tenemos, es equivalente a la suma de los valores reales que hemos obtenido</strong></p>
-<p>Representamos en azul nuestros valores, uniendo cada valor con la línea media mediante una línea de puntos vertical. A partir de ahora, por conveniencia, eliminaremos los puntos en la linea media, dejando sólo la línea.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/image-20221115202048866.png" class="img-fluid figure-img"></p>
-<figcaption>Hoja de cálculo con los valores y el gráfico de puntos</figcaption>
-</figure>
-</div>
-<p>Esta línea azul de puntos representa la <em>distancia</em> de cada valor a la media. Usaremos esta distancia para calcular una <strong>distancia media</strong>, que será una medida de la dispersión de nuestros valores.</p>
-<p>Hemos visto que para describir un conjunto de números, en nuestro ejemplo, las medidas de la altura de un grupo de estudiantes, existe un valor, la <em>media</em> de este conjunto, que nos describe el centro de los valores. En nuestro ejemplo, si nuestro grupo tuviese un solo niño, éste tendría <span class="math inline">\(149,55{\ }cm\)</span> de altura.</p>
-<p>¿Es suficiente con este valor para describir el conjunto de valores? Vamos a ver que no: diferentes conjuntos de valores pueden proporcionar el mismo <em>valor medio</em>, y sin embargo los grupos pueden ser muy diferentes.</p>
-<p>Veamos un caso extremo. Comparemos dos grupos, uno formado por individuos iguales y otro formado por diez individuos iguales y uno distinto. Para ello usaremos nuestra hoja de cálculo:</p>
-
-<div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/image-20221116105300331.png" class="img-fluid figure-img"></p>
-<figcaption>Dos grupos de valores con la misma media</figcaption>
-</figure>
-</div></div><p>¿Podemos describir adecuadamente los valores de la altura de cada uno de los grupos utilizando el valor medio? Parece evidente que no, ya que a partir de diferentes valores de altura estamos obteniendo el mismo valor medio. Sin embargo, uno de los grupos <em>es más alto</em> que el otro, si no fuera por un sólo individuo que aparentemente distorsiona el cálculo. Podríamos incluir nuestro grupo original, y veremos que los tres grupos son diferentes, aunque su valor medio es idéntico.</p>
-
-<div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/image-20221116110426263.png" class="img-fluid figure-img"></p>
-<figcaption>Tres grupos de valores con la misma media</figcaption>
-</figure>
-</div></div><p>Si nos ayudamos de un gráfico equivalente al que hemos utilizado antes, vemos estas diferencias con claridad:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/image-20221116110925933.png" class="img-fluid figure-img"></p>
-<figcaption>Gráfico de tres grupos de valores</figcaption>
-</figure>
-</div>
-<p>Aunque el valor medio de estos tres grupos de datos es idéntico, parece claro que los tres grupos son muy distintos en su composición, y por lo tanto la <em>media</em> no es suficiente para describir con suficiente precisión cada uno de los grupos. Necesitamos un valor adicional, que nos indique de qué forma los valores se alejan del valor medio. Para ello, vamos a introducir un concepto nuevo: la <em>medida de la dispersión</em>.</p>
-<p>La media como centro de gravedad: <a href="https://www.physicsclassroom.com/Physics-Interactives/Balance-and-Rotation/COM-Builder/Center-Of-Mass-Interactive">Physics Simulation: Center of Mass (physicsclassroom.com)</a></p>
-</section>
-<section id="las-medidas-de-dispersión-la-varianza-y-la-desviación-típica" class="level2 page-columns page-full" data-number="5.2">
-<h2 data-number="5.2" class="anchored" data-anchor-id="las-medidas-de-dispersión-la-varianza-y-la-desviación-típica"><span class="header-section-number">5.2</span> Las medidas de dispersión: la varianza y la desviación típica</h2>
-<p>Como hemos visto en el apartado anterior, diferentes conjuntos de datos pueden tener el mismo valor medio y sin embargo ser muy diferentes. En la última gráfica que hemos visto, el primer grupo se caracteriza por tener todos sus valores idénticos; el segundo tiene todos sus valores idénticos menos uno, que está muy apartado del resto, y el tercero tiene todos sus valores diferentes.</p>
-<p>Ahora que conocemos cómo calcular un valor resumen de un conjunto de datos, podríamos utilizar una medida semejante para describir de qué forma en cada caso los valores se separan de la media. Podríamos utilizar una <em>distancia media</em>: calculamos las diferencias entre cada valor y la media, y hacemos su promedio: esto debería darnos una indicación de la magnitud de la separación de los valores en cada uno de los tres grupos.</p>
-<p>Usemos la hoja de cálculo para ello:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/image-20221116113404185.png" class="img-fluid figure-img"></p>
-<figcaption>Tres grupos de valores en la hoja de cálculo</figcaption>
-</figure>
-</div>
-<p>Algo parece que no está funcionando aquí: el promedio de las diferencias es cero en los tres casos; no podemos usar este cálculo para calcular la dispersión. Pero esto es esperable: ya que la media es un valor central, como hemos visto antes, la suma de las diferencias de todos los valores respecto de su media debe ser forzosamente cero, y esto es lo que estamos obteniendo.</p>
-<p>Para encontrar una solución, vamos a recurrir al viejo teorema de Pitágoras, que si recuerdas, nos dice que, en un triángulo rectángulo, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos (una explicación gráfica muy divertida en el anexo …): <span class="math display">\[
-h^2= a^2+b^2
-\]</span> Esta fórmula es la base del cálculo de la distancia entre dos puntos:</p>
-
-<div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/image-20221116114659713.png" class="img-fluid figure-img"></p>
-<figcaption>Distancia entre dos puntos</figcaption>
-</figure>
-</div></div><p><span class="math display">\[
-d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
-\]</span> Podemos adaptar esta fórmula al cálculo de nuestra distancia media. Como estamos calculando la distancia en una dimensión, sólo necesitamos la coordenada <span class="math inline">\(X\)</span>. Si tenemos en cuenta un solo punto, esta distancia <span class="math inline">\(d\)</span> sería: <span class="math display">\[
-(d{\ }del{\ }valor{\ }1{\ }a{\ }la{\ }media)^2=(x_1-\bar{x})^2
-\]</span> ¡El hecho de elevar al cuadrado las diferencias nos da la solución! Las diferencias negativas ya no son un problema porque sabemos que al elevar un numero negativo al cuadrado, el resultado es positivo; de esta manera conseguimos que las diferencias no se anulen. Ahora sí podemos calcular una distancia media <span class="math inline">\(\bar{d}\)</span> entre el conjunto de puntos y su media, calculando el promedio de las diferencias elevadas al cuadrado: <span class="math display">\[
-(\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2=\frac{(x_1-\bar{x})^2 + (x_2-\bar{x})^2+\cdots+(x_n-\bar{x})^2}{n}
-\]</span></p>
-<p>y utilizando la notación que hemos aprendido antes,</p>
-<p><span class="math display">\[
-(\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2={\frac {1}{n}}\sum _{i=1}^{n}(x_{i}-\bar{x})^2
-\]</span></p>
-<p>Al igual que en el cálculo de la distancia entre dos puntos, sólo tenemos que extraer la raíz cuadrada de este valor para obtener la distancia media, que es el parámetro que estábamos buscando.</p>
-<p>La distancia media <span class="math display">\[(\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2\]</span> se conoce en estadística como <strong>varianza</strong>, y su raíz cuadrada es lo que se conoce como <strong>desviación típica</strong>. La varianza de una población se representa en estadística con el signo de la letra griega <em>sigma</em> minúscula elevada al cuadrado, <span class="math inline">\(\sigma^2\)</span>, y la desviación típica, mediante la letra <span class="math inline">\(\sigma\)</span>. En el caso de una muestra, la varianza se representa como <span class="math inline">\(s_x^2\)</span>, y la desviación típica, como <span class="math inline">\(s_x\)</span>. En nuestro caso, utilizaremos la primera notación; más adelante veremos los conceptos de <strong>población</strong> y <strong>muestra</strong> y explicaremos el concepto de <strong>grados de libertad</strong>. Veremos también que la fórmula para el cálculo de la desviación típica muestral es ligeramente diferente de la de su equivalente poblacional, y explicaremos por qué.</p>
-<p>Es importante resaltar que la desviación típica <em>es una medida de la distancia media de los valores de una población a su media</em>, y por lo tanto tiene dimensión, la misma que las medidas originales. La varianza, al estar elevada al cuadrado, no tiene una dimensión, o, mejor dicho, tiene la de la medida al cuadrado.</p>
-<p>Con estos nuevos hallazgos, recalculamos nuestra hoja de cálculo:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/image-20221116123915941.png" class="img-fluid figure-img"></p>
-<figcaption>Tres grupos de valores en la hoja de cálculo, con la misma media y distinta desviación típica</figcaption>
-</figure>
-</div>
-<p>Vamos a analizar con detalle esta tabla.</p>
-<p>En la columna <code>J</code> tenemos nuestra población original de 11 alumnos, con las alturas que hemos medido. En la columna <code>B</code> hemos supuesto que todos los alumnos fuesen iguales, con la misma altura del valor medio de los datos originales. En la columna <code>F</code> hemos simulado otro grupo, con todos los valores iguales excepto uno, y con la misma media que los otros dos grupos.</p>
-<p>A la derecha de cada columna de medias, tenemos la columna de diferencias (columnas <code>D</code>, <code>H</code> y <code>L</code>), y en la fila <code>13</code>, nuestro primer intento de calcular una dispersión media; intento fallido, puesto que obteníamos el valor <span class="math inline">\(0\)</span> para los tres grupos.</p>
-<p>En la siguiente columna a la derecha, para los tres grupos (columnas <code>E</code>, <code>I</code>y <code>M</code>), hemos elevado al cuadrado la distancia de cada valor a la media, siguiendo los hallazgos que nos ha proporcionado el teorema de Pitágoras y la fórmula de la distancia entre dos puntos. En la fila <code>13</code> de estas columnas, calculamos el promedio de la distancia a la media al cuadrado: esta vez el resultado ya no es cero, sino que obtenemos el valor de la <strong>varianza</strong>, de acuerdo con la fórmula que hemos deducido más arriba. En la fila <code>14</code> (columnas B, <code>F</code> y <code>J</code>)utilizamos la fórmula de la hoja de cálculo para la <strong>varianza poblacional</strong> (más detalles posteriormente), y vemos que coincide exactamente con el promedio de las diferencias al cuadrado, tal como debe ser, ya que en eso consiste la fórmula que hemos deducido.</p>
-<p>Por último, en la fila <code>15</code>calculamos la desviación típica de ambas formas, con la fórmula de la hoja de cálculo para la <strong>desviación típica poblacional</strong> (columnas <code>B</code>, <code>F</code>y <code>J</code>), que Excel llama <strong>desviación estándar</strong>, y como la raíz cuadrada del promedio calculado antes (columnas <code>E</code>, <code>I</code>y <code>M</code>). De nuevo, ambos valores coinciden exactamente, como esperamos.</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/image-20221116135458643.png" class="img-fluid figure-img"></p>
-<figcaption>Gráfico con tres conjuntos de datos con la misma media y diferente desviación típica</figcaption>
-</figure>
-</div>
-<p>Ahora sí tenemos una forma más completa de describir nuestro conjunto de valores. Aunque el valor medio es el mismo en los tres casos, la <em>dispersión</em> de los valores es muy distinta.</p>
-<p>¿Son suficientes estos dos parámetros que hemos calculado para describir un conjunto de datos? La respuesta a esta pregunta es sí y no. La explicación es que, más allá de los valores numéricos que hemos obtenido, la visualización gráfica de los valores nos debe hacer reflexionar.</p>
-<p>En el primer grupo, todos los valores son iguales a la media. La variación es cero. Son valores que hemos simulado en nuestra hoja de cálculo, pero difícilmente en el mundo real encontraremos una población en la que todos sus valores, en este caso, la altura de un grupo de alumnos, sean idénticos.</p>
-<p>En el segundo grupo, todos los valores son idénticos, salvo uno, que se distancia mucho. ¿Debemos aceptar esto como bueno? En realidad, ¿es cierto que el valor medio de este grupo sea el mismo que el del primero? Para responder a esta pregunta debemos recurrir a nuestra experiencia, la estadística no nos da <em>fórmulas mágicas</em>. Pero, con un poco de sentido común, parece que el caso extremo que aparece en este grupo no es coherente con el resto de valores. Es lo que se llama un <em>valor anormal</em> o <em>extraño</em> (en inglés, <em>outlier</em>), y debe hacernos reflexionar sobre si el valor es correcto y realmente pertenece a esta población, o es un error de medida. O, simplemente, un valor que corresponde a otro grupo y que por error hemos situado en éste. La decisión de eliminar o no un valor anormal es una de las decisiones más complejas en estadística, que pueden tener una influencia enorme en la interpretación de los datos, y por lo tanto, hay que hacer con sumo cuidado. En este caso, extremo y artificial, el valor anormal debería ser eliminado, ya que, en realidad, todos los valores restantes son idénticos y más bajos que los del grupo 1. No tiene sentido lógico decir que sus medias son idénticas.</p>
-<p>En el tercer grupo todos los valores son diferentes, y no podemos decir nada especial sobre sus valores individuales. Hay un valor que se destaca del resto, pero ¿podemos afirmar que es anormal? Seguramente, no con seguridad. De nuevo la experiencia debe indicarnos cómo proceder, aunque en este caso no tendría sentido eliminar este valor. En la situación real, todos conocemos a niños que han <em>pegado el estirón</em> antes que sus compañeros, y en algunos casos, pueden llegar a ser mucho más altos (o más bajos, si han tenido un retraso en este <em>estirón</em>) La experiencia nos dice que no es seguro que este valor sea realmente anormal, y por lo tanto, deberíamos conservarlo.</p>
-</section>
-<section id="las-limitaciones-de-la-media-y-la-desviación-típica" class="level2 page-columns page-full" data-number="5.3">
-<h2 data-number="5.3" class="anchored" data-anchor-id="las-limitaciones-de-la-media-y-la-desviación-típica"><span class="header-section-number">5.3</span> Las limitaciones de la media y la desviación típica</h2>
-<p>En ocasiones nos enfrentamos a conjuntos de datos con valores de media y desviación típica idénticos o muy parecidos, pero que en realidad son muy diferentes. Veamos un ejemplo, semejante a los que hemos visto hasta ahora.</p>
-
-<div class="no-row-height column-margin column-container"><div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/image-20221116164339577.png" class="img-fluid figure-img"></p>
-<figcaption>Hoja de cálculo con dos conjuntos de datos diferentes, con la misma media y desviación típica</figcaption>
-</figure>
-</div></div><p>(cambiar a caso 3)</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/media-balanza.svg" class="img-fluid figure-img"></p>
-<figcaption>Diagrama de puntos de las alturas de los alumnos, con indicación del valor medio</figcaption>
-</figure>
-</div>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/plot_varianzas.png" class="img-fluid figure-img"></p>
-<figcaption>Diagrama de puntos indicando la variabilidad</figcaption>
-</figure>
-</div>
-<p>En este caso, vemos que tanto la media como la desviación típica son idénticos, y sin embargo los datos son muy diferentes, tal como nos muestra el gráfico de dispersión que hemos estado utilizando:</p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes/image-20221116164430210.png" class="img-fluid figure-img"></p>
-<figcaption>Gráfico con dos conjuntos de datos diferentes, con la misma media y desviación típica</figcaption>
-</figure>
-</div>
-<p>La existencia de valores anormales o extremos muestra una de las debilidades de la media y la desviación típicas como <em>descriptores</em> de una población: ambos parámetros son muy sensibles a los casos extremos. En realidad, sólo deberíamos utilizar la media y la desviación típica para describir un conjunto de datos cuando estamos seguros de que <em>la distribución de estos datos</em> tienen una <em>forma</em> determinada, la de la <strong>campana de Gauss</strong>. Lo cual nos lleva al siguiente capítulo: las <strong>distribuciones de frecuencias</strong>.</p>
-</section>
-<section id="resumen" class="level2" data-number="5.4">
-<h2 data-number="5.4" class="anchored" data-anchor-id="resumen"><span class="header-section-number">5.4</span> Resumen</h2>
-<p>Las medidas paramétricas, como la media y la varianza, y las no paramétricas, como la mediana y el rango intercuartil, tienen diferentes ventajas e inconvenientes según el contexto y los datos con los que se trabaja.</p>
-<section id="ventajas-e-inconvenientes-de-las-medidas-paramétricas" class="level3" data-number="5.4.1">
-<h3 data-number="5.4.1" class="anchored" data-anchor-id="ventajas-e-inconvenientes-de-las-medidas-paramétricas"><span class="header-section-number">5.4.1</span> Ventajas e inconvenientes de las medidas paramétricas</h3>
-<section id="ventajas" class="level4" data-number="5.4.1.1">
-<h4 data-number="5.4.1.1" class="anchored" data-anchor-id="ventajas"><span class="header-section-number">5.4.1.1</span> Ventajas</h4>
-<ol type="1">
-<li>Precisión y Sensibilidad: La media y la varianza son muy precisas y sensibles a todos los valores del conjunto de datos.</li>
-<li>Propiedades Matemáticas: La media y la varianza tienen propiedades matemáticas deseables, como la facilidad para realizar operaciones algebraicas.</li>
-<li>Distribución Normal: Son especialmente útiles si los datos siguen una distribución normal, ya que permiten aprovechar las propiedades de esta distribución.</li>
-</ol>
-</section>
-<section id="inconvenientes" class="level4" data-number="5.4.1.2">
-<h4 data-number="5.4.1.2" class="anchored" data-anchor-id="inconvenientes"><span class="header-section-number">5.4.1.2</span> Inconvenientes</h4>
-<ol type="1">
-<li>Sensibilidad a Valores Atípicos: La media y la varianza pueden ser distorsionadas significativamente por valores atípicos.</li>
-<li>Requieren Suposiciones: Su uso eficaz a menudo requiere que los datos sigan ciertas suposiciones, como la normalidad y la homogeneidad de la varianza.</li>
-</ol>
-</section>
-</section>
-<section id="ventajas-e-inconvenientes-de-las-medidas-no-paramétricas" class="level3" data-number="5.4.2">
-<h3 data-number="5.4.2" class="anchored" data-anchor-id="ventajas-e-inconvenientes-de-las-medidas-no-paramétricas"><span class="header-section-number">5.4.2</span> Ventajas e inconvenientes de las medidas no paramétricas</h3>
-<section id="ventajas-1" class="level4" data-number="5.4.2.1">
-<h4 data-number="5.4.2.1" class="anchored" data-anchor-id="ventajas-1"><span class="header-section-number">5.4.2.1</span> Ventajas</h4>
-<ol type="1">
-<li>Robustez: La mediana y el rango intercuartil son menos sensibles a valores atípicos y distribuciones asimétricas.</li>
-<li>Flexibilidad: No requieren suposiciones fuertes sobre la distribución de los datos, lo que las hace útiles para una amplia variedad de distribuciones.</li>
-<li>Resumir Datos: Son excelentes para resumir datos en situaciones en las que los valores extremos podrían distorsionar la interpretación.</li>
-</ol>
-</section>
-<section id="inconvenientes-1" class="level4" data-number="5.4.2.2">
-<h4 data-number="5.4.2.2" class="anchored" data-anchor-id="inconvenientes-1"><span class="header-section-number">5.4.2.2</span> Inconvenientes</h4>
-<ol type="1">
-<li>Menor Sensibilidad: La mediana y el rango intercuartil no utilizan toda la información de los datos y pueden ser menos sensibles a cambios en los datos.</li>
-<li>Menor Precisión en Ciertos Contextos: En situaciones donde los datos siguen una distribución normal, las medidas no paramétricas pueden ser menos precisas.</li>
-</ol>
-<p>Las medidas paramétricas son útiles para datos que siguen suposiciones específicas, como la normalidad, y son precisas y sensibles, pero pueden ser distorsionadas por valores atípicos. Las medidas no paramétricas son robustas y flexibles, ideales para distribuciones no normales y resistentes a valores atípicos, aunque pueden perder sensibilidad y precisión en ciertos contextos.</p>
-<p>Modelo: práctica de puntos con un dado, dos dados, tres dados, etc hasta 30</p>
-<p>suma &lt;- rowSums(replicate(30, sample(6, 10^6, replace=T))) length(suma) hist(suma)</p>
-<p><a href="http://sqljason.com/2018/12/financial-times-visual-vocabulary-power-bi-edition.html">Financial Times Visual Vocabulary: Power BI Edition – Some Random Thoughts (sqljason.com)</a></p>
 
 
-</section>
-</section>
 </section>
 
 </main> <!-- /main -->
