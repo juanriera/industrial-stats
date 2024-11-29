@@ -21,3 +21,443 @@ Existen otras estadísticos, llamados **paramétricos**, que, en determinadas co
 
 ## La media aritmética: un ejemplo de cálculo.
 
+### Definición
+La media aritmética de un conjunto de valores es el valor central que se obtiene al dividir la suma de todos los valores por la cantidad de valores. Es una medida de tendencia central que proporciona un punto de referencia para el conjunto de datos.
+
+### Deducción de la Fórmula:
+
+Supongamos que tenemos un conjunto de $n$ valores numéricos: $x_1, x_2, x_3, \ldots, x_n$.
+
+1. **Suma de Todos los Valores**: 
+   Primero, sumamos todos los valores del conjunto. Matemáticamente, esto se expresa como:
+   
+   $$
+   S = x_1 + x_2 + x_3 + \cdots + x_n
+   $$
+
+2. **Cantidad de Valores**: 
+   Luego, contamos cuántos valores hay en el conjunto. Este número es $n$.
+
+3. **División de la Suma por la Cantidad de Valores**: 
+   Finalmente, dividimos la suma total $S$ por la cantidad de valores $n$ para obtener la media aritmética:
+   
+   $$
+   \text{Media Aritmética} = \frac{S}{n}
+   $$
+
+4. **Expresión General**: 
+   Sustituyendo la suma $S$ en la fórmula, tenemos:
+   
+   $$
+   \text{Media Aritmética} = \frac{x_1 + x_2 + x_3 + \cdots + x_n}{n}
+   $$
+
+### Ejemplo:
+Supongamos que tenemos los siguientes valores: $5, 7, 9$.
+
+1. **Suma de los Valores**:
+   $$
+   S = 5 + 7 + 9 = 21
+   $$
+
+2. **Cantidad de Valores**:
+   $$
+   n = 3
+   $$
+
+3. **Cálculo de la Media Aritmética**:
+   $$
+   \text{Media Aritmética} = \frac{21}{3} = 7
+   $$
+
+Entonces, la media aritmética de los valores $5, 7, 9$ es $7$.
+
+La media de una muestra se representa habitualmente mediante el símbolo
+
+$$\bar{x}$$
+y, de una manera más formal, su valor se obtiene mediante la fórmula siguiente: 
+
+$${\bar{x}={\frac {1}{n}}\sum _{i=1}^{n}x_{i}}$$
+El signo $\sum$ se conoce como *sumatorio*, e indica que ese término consiste en la suma de los $x$ valores desde el primero hasta el valor $n$. Expresado mediante una formulación matemática,
+
+$${\bar{x}={\frac {1}{n}}\sum _{i=1}^{n}x_{i}={\frac {x_{1}+x_{2}+\cdots +x_{n}}{n}}}$$ 
+lo quiere quiere decir: *"la suma de todos los valores observados dividido entre el número de estos valores"*.
+
+La **media** es lo que conocemos como un *valor central*, ya que representa el centro de nuestro conjunto de números. Como es el centro de nuestro conjunto de datos, la suma de las distancias de todos los valores a este valor central es $cero$. Más adelante veremos la importancia de este hecho, al hablar de la dispersión y las formas de cálculo de la misma. Como hemos visto, la media de una **muestra** se representa como $\bar{x}$, mientras que la media de una **población** se representa con la letra griega *mu*: $\mu$. En ambos casos, el cálculo se realiza de forma idéntica.
+
+Volvamos a nuestro ejemplo de la altura de un grupo de alumnos, para realizar los cálculos según el modelo que hemos descrito. En nuestro caso, la *altura media* de nuestros alumnos (la *media* de nuestro conjunto de números) se calcula como: 
+
+$$
+\bar{x} = \frac{153+135+140+140+175+138+145+154+152+159+154}{11} = 149,54
+$$ 
+Utilicemos una hoja de cálculo para guardar nuestros valores.
+
+![](01-imagenes/aula1.png)
+
+La fórmula para obtener la media en la hoja de cálculo, por ejemplo en la versión en español de *Microsoft Excel*, es `=PROMEDIO(...)`, donde los puntos suspensivos deben sustituirse por el rango a calcular. En nuestro ejemplo, introduciríamos la fórmula en la celda `B13`como `=PROMEDIO(B2..B12)` (Para más detalles, verificar la hoja Excel adjunta).
+
+Para representar más cómodamente nuestros valores, dibujamos un punto a la altura de cada alumno,
+
+![](01-imagenes/aula1_puntos-1.png)
+
+y eliminamos del gráfico los dibujos de nuestros alumnos; así hemos convertido nuestro dibujo en un *diagrama de puntos*:
+
+![](01-imagenes/aula1_puntos.png)
+
+Para representar la media, aunque la media es un valor único, necesitamos añadir una columna a la derecha de nuestros datos, que rotulamos en la fila 1, celda C como `altura media`, e introducimos en cada una de las celdas desde `C2`hasta `C12`la fórmula del promedio, con el valor de nuestro rango de datos (Verificar hoja de cálculo). A continuación, designamos nuestro rango de datos para hacer un gráfico de puntos, y hacemos un *zoom* en los valores de manera que el eje Y se escale mejor entre los valores mínimo y máximo. Por último, hacemos unos ajustes en el formato para dibujar las líneas verticales que nos representan la distancia de cada valor a la media.
+
+![](01-imagenes/image-20221115203450170.png)
+
+Si verificamos el eje $Y$ , veremos que en este gráfico hemos ajustado la escala respecto al gráfico anterior, situando el mínimo en $130$. Esto permite visualizar las diferencias con mucha más claridad. Hemos representado la media $\bar{x}$ como una línea, y hemos dibujado unas líneas que unen cada valor individual con la media, que se sitúa en el valor $149,55$, tal como calculamos más arriba.
+
+Hemos representado la media como una serie de puntos unidos por una línea amarilla. Representamos en azul nuestros valores, uniendo cada valor con la línea media mediante una línea de puntos vertical. A partir de ahora, por conveniencia, eliminaremos los puntos en la linea media, dejando sólo la línea.
+
+![Hoja de cálculo con los valores y el gráfico de puntos](01-imagenes/image-20221115202048866.png)
+
+Esta línea azul de puntos representa la *distancia* de cada valor a la media. Usaremos esta distancia para calcular una **distancia media**, que será una medida de la dispersión de nuestros valores.
+
+Hemos visto que para describir un conjunto de números, en nuestro ejemplo, las medidas de la altura de un grupo de estudiantes, existe un valor, la *media* de este conjunto, que nos describe el centro de los valores. En nuestro ejemplo, si nuestro grupo tuviese un solo niño, éste tendría $149,55{\ }cm$ de altura.
+
+¿Es suficiente con este valor para describir el conjunto de valores? Vamos a ver que no: diferentes conjuntos de valores pueden proporcionar el mismo *valor medio*, y sin embargo los grupos pueden ser muy diferentes.
+
+Veamos un caso extremo. Comparemos dos grupos, uno formado por individuos iguales y otro formado por diez individuos iguales y uno distinto. Para ello usaremos nuestra hoja de cálculo:
+
+![Dos grupos de valores con la misma media](01-imagenes/image-20221116105300331.png){.column-margin}
+
+¿Podemos describir adecuadamente los valores de la altura de cada uno de los grupos utilizando el valor medio? Parece evidente que no, ya que a partir de diferentes valores de altura estamos obteniendo el mismo valor medio. Sin embargo, uno de los grupos *es más alto* que el otro, si no fuera por un sólo individuo que aparentemente distorsiona el cálculo. Podríamos incluir nuestro grupo original, y veremos que los tres grupos son diferentes, aunque su valor medio es idéntico.
+
+![Tres grupos de valores con la misma media](01-imagenes/image-20221116110426263.png){.column-margin}
+
+Si nos ayudamos de un gráfico equivalente al que hemos utilizado antes, vemos estas diferencias con claridad:
+
+![Gráfico de tres grupos de valores](01-imagenes/image-20221116110925933.png)
+
+Aunque el valor medio de estos tres grupos de datos es idéntico, parece claro que los tres grupos son muy distintos en su composición, y por lo tanto la *media* no es suficiente para describir con suficiente precisión cada uno de los grupos. Necesitamos un valor adicional, que nos indique de qué forma los valores se alejan del valor medio. Para ello, vamos a introducir un concepto nuevo: la *medida de la dispersión*.
+
+## Las medidas de dispersión: la varianza y la desviación típica
+
+Como hemos visto en el apartado anterior, diferentes conjuntos de datos pueden tener el mismo valor medio y sin embargo ser muy diferentes. En la última gráfica que hemos visto, el primer grupo se caracteriza por tener todos sus valores idénticos; el segundo tiene todos sus valores idénticos menos uno, que está muy apartado del resto, y el tercero tiene todos sus valores diferentes.
+
+Ahora que conocemos cómo calcular un valor resumen de un conjunto de datos, podríamos utilizar una medida semejante para describir de qué forma en cada caso los valores se separan de la media. Podríamos utilizar una *distancia media*: calculamos las diferencias entre cada valor y la media, y hacemos su promedio: esto debería darnos una indicación de la magnitud de la separación de los valores en cada uno de los tres grupos.
+
+Usemos la hoja de cálculo para ello:
+
+![Tres grupos de valores en la hoja de cálculo](01-imagenes/image-20221116113404185.png)
+
+Algo parece que no está funcionando aquí: el promedio de las diferencias es cero en los tres casos; no podemos usar este cálculo para calcular la dispersión. Pero esto es esperable: ya que la media es un valor central, como hemos visto antes, la suma de las diferencias de todos los valores respecto de su media debe ser forzosamente cero, y esto es lo que estamos obteniendo.
+
+Para encontrar una solución, vamos a recurrir al viejo teorema de Pitágoras, que si recuerdas, nos dice que, en un triángulo rectángulo, el cuadrado de la hipotenusa es igual a la suma de los cuadrados de los catetos (una explicación gráfica muy divertida en el anexo ...): $$
+h^2= a^2+b^2
+$$ Esta fórmula es la base del cálculo de la distancia entre dos puntos:
+
+![Distancia entre dos puntos](01-imagenes/image-20221116114659713.png){.column-margin}
+
+$$
+d(A,B)=\sqrt{(x_2-x_1)^2+(y_2-y_1)^2}
+$$ 
+Podemos adaptar esta fórmula al cálculo de nuestra distancia media. Como estamos calculando la distancia en una dimensión, sólo necesitamos la coordenada $X$. Si tenemos en cuenta un solo punto, esta distancia $d$ sería: 
+$$
+(d{\ }del{\ }valor{\ }1{\ }a{\ }la{\ }media)^2=(x_1-\bar{x})^2
+$$
+¡El hecho de elevar al cuadrado las diferencias nos da la solución! Las diferencias negativas ya no son un problema porque sabemos que al elevar un numero negativo al cuadrado, el resultado es positivo; de esta manera conseguimos que las diferencias no se anulen. Ahora sí podemos calcular una distancia media $\bar{d}$ entre el conjunto de puntos y su media, calculando el promedio de las diferencias elevadas al cuadrado: $$
+(\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2=\frac{(x_1-\bar{x})^2 + (x_2-\bar{x})^2+\cdots+(x_n-\bar{x})^2}{n}
+$$
+
+y utilizando la notación que hemos aprendido antes, 
+
+$$
+(\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2={\frac {1}{n}}\sum _{i=1}^{n}(x_{i}-\bar{x})^2
+$$
+
+Al igual que en el cálculo de la distancia entre dos puntos, sólo tenemos que extraer la raíz cuadrada de este valor para obtener la distancia media, que es el parámetro que estábamos buscando.
+
+La distancia media
+$$(\bar{d}{\ }de{\ }los{\ }n{\ }valores{\ }a{\ }la{\ }media)^2$$
+se conoce en estadística como **varianza**, y su raíz cuadrada es lo que se conoce como **desviación típica**. La varianza de una población se representa en estadística con el signo de la letra griega *sigma* minúscula elevada al cuadrado, $\sigma^2$, y la desviación típica, mediante la letra $\sigma$. En el caso de una muestra, la varianza se representa como $s_x^2$, y la desviación típica, como $s_x$. 
+
+Es importante resaltar que la desviación típica *es una medida de la distancia media de los valores de una población a su media*, y por lo tanto tiene dimensión, la misma que las medidas originales. La varianza, al estar elevada al cuadrado, no tiene una dimensión, o, mejor dicho, tiene la de la medida al cuadrado.
+
+Con estos nuevos hallazgos, recalculamos nuestra hoja de cálculo:
+
+![Tres grupos de valores en la hoja de cálculo, con la misma media y distinta desviación típica](01-imagenes/image-20221116123915941.png)
+
+Vamos a analizar con detalle esta tabla.
+
+En la columna `J` tenemos nuestra población original de 11 alumnos, con las alturas que hemos medido. En la columna `B` hemos supuesto que todos los alumnos fuesen iguales, con la misma altura del valor medio de los datos originales. En la columna `F` hemos simulado otro grupo, con todos los valores iguales excepto uno, y con la misma media que los otros dos grupos.
+
+A la derecha de cada columna de medias, tenemos la columna de diferencias (columnas `D`, `H` y `L`), y en la fila `13`, nuestro primer intento de calcular una dispersión media; intento fallido, puesto que obteníamos el valor $0$ para los tres grupos.
+
+En la siguiente columna a la derecha, para los tres grupos (columnas `E`, `I`y `M`), hemos elevado al cuadrado la distancia de cada valor a la media, siguiendo los hallazgos que nos ha proporcionado el teorema de Pitágoras y la fórmula de la distancia entre dos puntos. En la fila `13` de estas columnas, calculamos el promedio de la distancia a la media al cuadrado: esta vez el resultado ya no es cero, sino que obtenemos el valor de la **varianza**, de acuerdo con la fórmula que hemos deducido más arriba. En la fila `14` (columnas B, `F` y `J`)utilizamos la fórmula de la hoja de cálculo para la **varianza poblacional** (más detalles posteriormente), y vemos que coincide exactamente con el promedio de las diferencias al cuadrado, tal como debe ser, ya que en eso consiste la fórmula que hemos deducido.
+
+Por último, en la fila `15`calculamos la desviación típica de ambas formas, con la fórmula de la hoja de cálculo para la **desviación típica poblacional** (columnas `B`, `F`y `J`), que Excel llama **desviación estándar**, y como la raíz cuadrada del promedio calculado antes (columnas `E`, `I`y `M`). De nuevo, ambos valores coinciden exactamente, como esperamos.
+
+![Gráfico con tres conjuntos de datos con la misma media y diferente desviación típica](01-imagenes/image-20221116135458643.png)
+
+Ahora sí tenemos una forma más completa de describir nuestro conjunto de valores. Aunque el valor medio es el mismo en los tres casos, la *dispersión* de los valores es muy distinta.
+
+¿Son suficientes estos dos parámetros que hemos calculado para describir un conjunto de datos? La respuesta a esta pregunta es sí y no. La explicación es que, más allá de los valores numéricos que hemos obtenido, la visualización gráfica de los valores nos debe hacer reflexionar.
+
+En el primer grupo, todos los valores son iguales a la media. La variación es cero. Son valores que hemos simulado en nuestra hoja de cálculo, pero difícilmente en el mundo real encontraremos una población en la que todos sus valores, en este caso, la altura de un grupo de alumnos, sean idénticos.
+
+En el segundo grupo, todos los valores son idénticos, salvo uno, que se distancia mucho. ¿Debemos aceptar esto como bueno? En realidad, ¿es cierto que el valor medio de este grupo sea el mismo que el del primero? Para responder a esta pregunta debemos recurrir a nuestra experiencia, la estadística no nos da *fórmulas mágicas*. Pero, con un poco de sentido común, parece que el caso extremo que aparece en este grupo no es coherente con el resto de valores. Es lo que se llama un *valor anormal* o *extraño* (en inglés, *outlier*), y debe hacernos reflexionar sobre si el valor es correcto y realmente pertenece a esta población, o es un error de medida. O, simplemente, un valor que corresponde a otro grupo y que por error hemos situado en éste. La decisión de eliminar o no un valor anormal es una de las decisiones más complejas en estadística, que pueden tener una influencia enorme en la interpretación de los datos, y por lo tanto, hay que hacer con sumo cuidado. En este caso, extremo y artificial, el valor anormal debería ser eliminado, ya que, en realidad, todos los valores restantes son idénticos y más bajos que los del grupo 1. No tiene sentido lógico decir que sus medias son idénticas.
+
+En el tercer grupo todos los valores son diferentes, y no podemos decir nada especial sobre sus valores individuales. Hay un valor que se destaca del resto, pero ¿podemos afirmar que es anormal? Seguramente, no con seguridad. De nuevo la experiencia debe indicarnos cómo proceder, aunque en este caso no tendría sentido eliminar este valor. En la situación real, todos conocemos a niños que han *pegado el estirón* antes que sus compañeros, y en algunos casos, pueden llegar a ser mucho más altos (o más bajos, si han tenido un retraso en este *estirón*) La experiencia nos dice que no es seguro que este valor sea realmente anormal, y por lo tanto, deberíamos conservarlo.
+
+## Las limitaciones de la media y la desviación típica
+
+En ocasiones nos enfrentamos a conjuntos de datos con valores de media y desviación típica idénticos o muy parecidos, pero que en realidad son muy diferentes. Veamos un ejemplo, semejante a los que hemos visto hasta ahora.
+
+![Hoja de cálculo con dos conjuntos de datos diferentes, con la misma media y desviación típica](01-imagenes/image-20221116164339577.png){.column-margin}
+
+(cambiar a caso 3)
+
+![Diagrama de puntos de las alturas de los alumnos, con indicación del valor medio](01-imagenes/media-balanza.svg)
+
+![Diagrama de puntos indicando la variabilidad](01-imagenes/plot_varianzas.png)
+
+En este caso, vemos que tanto la media como la desviación típica son idénticos, y sin embargo los datos son muy diferentes, tal como nos muestra el gráfico de dispersión que hemos estado utilizando:
+
+![Gráfico con dos conjuntos de datos diferentes, con la misma media y desviación típica](01-imagenes/image-20221116164430210.png)
+
+La existencia de valores anormales o extremos muestra una de las debilidades de la media y la desviación típicas como *descriptores* de una población: ambos parámetros son muy sensibles a los casos extremos. En realidad, sólo deberíamos utilizar la media y la desviación típica para describir un conjunto de datos cuando estamos seguros de que *la distribución de estos datos* tienen una *forma* determinada, la de la **campana de Gauss**. En otros casos, la mediana y el rango intercuartil son estadísticos más robustos, y por lo tanto más seguros.
+
+## Resumen
+
+Las medidas paramétricas, como la media y la varianza, y las no paramétricas, como la mediana y el rango intercuartil, tienen diferentes ventajas e inconvenientes según el contexto y los datos con los que se trabaja.
+
+### Ventajas e inconvenientes de las medidas paramétricas
+
+#### Ventajas
+1. Precisión y Sensibilidad: La media y la varianza son muy precisas y sensibles a todos los valores del conjunto de datos. 
+2. Propiedades Matemáticas: La media y la varianza tienen propiedades matemáticas deseables, como la facilidad para realizar operaciones algebraicas. 
+3. Distribución Normal: Son especialmente útiles si los datos siguen una distribución normal, ya que permiten aprovechar las propiedades de esta distribución.
+
+#### Inconvenientes 
+
+1. Sensibilidad a Valores Atípicos: La media y la varianza pueden ser distorsionadas significativamente por valores atípicos. 
+2. Requieren Suposiciones: Su uso eficaz a menudo requiere que los datos sigan ciertas suposiciones, como la normalidad y la homogeneidad de la varianza.
+
+### Ventajas e inconvenientes de las medidas no paramétricas
+
+#### Ventajas
+
+1. Robustez: La mediana y el rango intercuartil son menos sensibles a valores atípicos y distribuciones asimétricas. 
+2. Flexibilidad: No requieren suposiciones fuertes sobre la distribución de los datos, lo que las hace útiles para una amplia variedad de distribuciones. 
+3. Resumir Datos: Son excelentes para resumir datos en situaciones en las que los valores extremos podrían distorsionar la interpretación.
+
+#### Inconvenientes
+
+1. Menor Sensibilidad: La mediana y el rango intercuartil no utilizan toda la información de los datos y pueden ser menos sensibles a cambios en los datos.
+2. Menor Precisión en Ciertos Contextos: En situaciones donde los datos siguen una distribución normal, las medidas no paramétricas pueden ser menos precisas.
+
+Las medidas paramétricas son útiles para datos que siguen suposiciones específicas, como la normalidad, y son precisas y sensibles, pero pueden ser distorsionadas por valores atípicos. Las medidas no paramétricas son robustas y flexibles, ideales para distribuciones no normales y resistentes a valores atípicos, aunque pueden perder sensibilidad y precisión en ciertos contextos.
+
+
+Modelo: práctica de puntos con un dado, dos dados, tres dados, etc hasta 30
+
+suma \<- rowSums(replicate(30, sample(6, 10\^6, replace=T))) length(suma) hist(suma)
+
+[Financial Times Visual Vocabulary: Power BI Edition -- Some Random Thoughts (sqljason.com)](http://sqljason.com/2018/12/financial-times-visual-vocabulary-power-bi-edition.html)
+
+
+
+## La media aritmética como centro de gravedad de un grupo de datos
+
+Para ver cómo la media aritmética equivale al punto de equilibrio o centro de gravedad de un grupo de datos, imaginaremos que tenemos un conjunto de datos cuyos valores se distribuyen en un eje longitudinal X. Podemos hacer equivalentes estos valores a un conjunto de pesos que se distribuyen a lo largo de una barra, y vamos a suponer que existe un punto a una distancia $d_i$ del origen de la barra en el cual dicha barra está en equilibrio. Para encontrar ese valor, empezaremos considerando el principio o ley de la palanca.
+
+El **Principio de la Palanca** o la **Ley de la Palanca** fue formulada por el científico y matemático griego Arquímedes. Este principio dice que, en equilibrio, el producto de la fuerza aplicada (potencia) por su distancia al punto de apoyo (brazo de la potencia) es igual al producto de la resistencia por su distancia al punto de apoyo (brazo de la resistencia). Matemáticamente, se expresa como:
+$$
+P \cdot d_p = R \cdot d_r
+$$
+
+Donde:
+- $P$ es la potencia o fuerza aplicada.
+- $d_p$ es la distancia desde el punto de apoyo hasta el punto donde se aplica la potencia.
+- $R$ es la resistencia o carga.
+- $d_r$ es la distancia desde el punto de apoyo hasta el punto donde se aplica la resistencia.
+
+### Ejemplo:
+Si tienes una palanca con una longitud de 5 metros y aplicas una fuerza de 10 Newtons a 1 metro del punto de apoyo, para mantener el equilibrio, la fuerza de resistencia en el otro extremo a 4 metros del punto de apoyo debería ser:
+$$
+P \cdot d_p = R \cdot d_r
+$$
+$$
+10 \, \text{N} \cdot 1 \, \text{m} = R \cdot 4 \, \text{m}
+$$
+$$
+R = \frac{10 \cdot 1}{4} = 2,5 \text{N}
+$$
+
+Ahora vamos a considerar el punto de equilibrio de una barra de la que se cuelgan diferentes pesos a diferente distancias de su origen.
+
+Calcular el punto de equilibrio de una barra de la que se cuelgan diferentes pesos a diferentes distancias de su origen es un problema clásico de física que se puede resolver usando el principio de momentos.
+
+### Paso a Paso:
+
+1. **Identificar las fuerzas**: Supongamos que tienes varios pesos $W_1, W_2, W_3, \ldots, W_n$ colgados a distancias $d_1, d_2, d_3, \ldots, d_n$ del origen (punto de apoyo).
+
+2. **Calcular los momentos**: El momento ($M$) de un peso alrededor del punto de apoyo se calcula como el producto de la fuerza (peso) y la distancia al punto de apoyo:
+   $$
+   M_i = W_i \times d_i
+   $$
+
+3. **Sumar los momentos**: Calcula la suma de todos los momentos:
+   $$
+   M_{\text{total}} = W_1 \times d_1 + W_2 \times d_2 + W_3 \times d_3 + \ldots + W_n \times d_n
+   $$
+
+4. **Calcular el peso total**: Suma todos los pesos:
+   $$
+   W_{\text{total}} = W_1 + W_2 + W_3 + \ldots + W_n
+   $$
+
+5. **Determinar el punto de equilibrio ($x$)**: El punto de equilibrio se encuentra dividiendo la suma de los momentos por el peso total:
+   $$
+x = \frac{\sum (W_i \times d_i)}{\sum W_i}
+   $$
+
+### Ejemplo Práctico:
+Supongamos que tenemos tres pesos de 4, 9 y 1 kg, situados, respectivamente, a 2, 1 y 3 m respectivamente del origen de la barra.
+
+- $W_1 = 4 \, \text{kg}$ a $d_1 = 2 \, \text{m}$
+- $W_2 = 9 \, \text{kg}$ a $d_2 = 1 \, \text{m}$
+- $W_3 = 1 \, \text{kg}$ a $d_3 = 3 \, \text{m}$
+
+1. **Calcular los momentos**:
+   $$
+   M_1 = 4 \times 2 = 8 \, \text{kg·m}
+   $$
+   $$
+   M_2 = 9 \times 1 = 9 \, \text{kg·m}
+   $$
+   $$
+   M_3 = 1 \times 3 = 3 \, \text{kg·m}
+   $$
+
+2. **Sumar los momentos**:
+   $$
+   M_{\text{total}} = 8 + 9 + 3 = 20 \, \text{kg·m}
+   $$
+
+3. **Calcular el peso total**:
+   $$
+   W_{\text{total}} = 4 + 9 + 1 = 14 \, \text{kg}
+   $$
+
+4. **Determinar el punto de equilibrio**:
+
+   $$
+   x = \frac{20}{14} \approx 1.43 \, \text{m}
+   $$
+
+El punto de equilibrio se encuentra a aproximadamente 1.43 metros del origen.
+
+### Media Ponderada
+
+En muchas situaciones, el centro de gravedad de un sistema de masas puede interpretarse como una **media ponderada** de las posiciones de las masas. 
+
+#### Media Aritmética:
+Para un conjunto de números $x_1, x_2, \ldots, x_n$, la media aritmética es:
+$$
+\text{Media} = \frac{x_1 + x_2 + \cdots + x_n}{n}
+$$
+
+#### Media Ponderada:
+Para un conjunto de valores $x_1, x_2, \ldots, x_n$ con pesos asociados $w_1, w_2, \ldots, w_n$, la media ponderada es:
+$$
+\text{Media ponderada} = \frac{w_1 x_1 + w_2 x_2 + \cdots + w_n x_n}{w_1 + w_2 + \cdots + w_n}
+$$
+
+### Centro de Gravedad como Media Ponderada:
+
+Cuando calculamos el centro de gravedad ($x_{\text{cg}}$) de un sistema de masas, estamos esencialmente calculando una media ponderada de las posiciones ($x_i$) de esas masas ($m_i$):
+
+$$
+x_{\text{cg}} = \frac{\sum (m_i \cdot x_i)}{\sum m_i}
+$$
+
+Aquí, las posiciones $x_i$ son ponderadas por las masas $m_i$.
+
+### Ejemplo Numérico:
+
+En nuestro ejemplo anterior,
+
+- Masa 1: $m_1 = 4 \, \text{kg}$ en posición $x_1 = 2 \, \text{m}$
+- Masa 2: $m_2 = 9 \, \text{kg}$ en posición $x_2 = 1 \, \text{m}$
+- Masa 3: $m_3 = 1 \, \text{kg}$ en posición $x_3 = 3 \, \text{m}$
+
+La media aritmética de las posiciones sería:
+$$
+\text{Media} = \frac{2 + 1 + 3}{3} = 2 \, \text{m}
+$$
+
+El punto de equlibrio de la barra, o centro de gravedad, calculado como media ponderada, sería:
+
+$$
+x_{\text{cg}} = \frac{(4 \cdot 2) + (9 \cdot 1) + (1 \cdot 3)}{4 + 9 + 1} = \frac{8 + 9 + 3}{14} = \frac{20}{14} \approx 1,43 \, \text{m}
+$$
+que es el mismo resultado que obteníamos formulando el cálculo de los momentos; la fórmula resulta ser idéntica.
+
+### Media Aritmética y Centro de Gravedad con Masas Idénticas
+
+En los ejemplos anteriores, calculábamos el punto de equilibrio para diferentes pesos colocados a lo largo de una barra. Si en vez de eso suponemos que la distancia al origen de la barra equivale a nuestro eje $X$, que recoge los valores de los que queremos calcular nuestra media aritmética, podemos eliminar el efecto de la masa suponiendo que todas las masas son iguales.
+
+Si las masas de los diferentes objetos son idénticas, podemos decir que la media aritmética de las posiciones coincide con el centro de gravedad. Esto se debe a que, en este caso, cada masa tiene el mismo peso o influencia en el cálculo del centro de gravedad. Esta es la explicación detallada:
+
+
+#### Suposición:
+Cada objeto tiene la misma masa $m$.
+
+#### Media Aritmética:
+Para un conjunto de posiciones $x_1, x_2, \ldots, x_n$, la media aritmética es:
+$$
+\text{Media} = \frac{x_1 + x_2 + \cdots + x_n}{n}
+$$
+
+#### Centro de Gravedad:
+El centro de gravedad ($x_{\text{cg}}$) para un conjunto de masas idénticas en posiciones $x_1, x_2, \ldots, x_n$ es:
+$$
+x_{\text{cg}} = \frac{\sum (m \cdot x_i)}{\sum m}
+$$
+
+Dado que las masas $m$ son idénticas, el numerador se convierte en:
+$$
+\sum (m \cdot x_i) = m \cdot (x_1 + x_2 + \cdots + x_n)
+$$
+
+Y el denominador se convierte en:
+$$
+\sum m = n \cdot m
+$$
+
+Al sustituir estos en la fórmula del centro de gravedad, obtenemos:
+$$
+x_{\text{cg}} = \frac{m \cdot (x_1 + x_2 + \cdots + x_n)}{n \cdot m}
+$$
+
+Al simplificar, los términos $m$ se cancelan, y nos queda:
+$$
+x_{\text{cg}} = \frac{x_1 + x_2 + \cdots + x_n}{n}
+$$
+Si repetimos nuestro ejemplo anterior, suponiendo en este caso masas idénticas
+
+- Masa 1: $m_1 = 1 \, \text{kg}$ en posición $x_1 = 2 \, \text{m}$
+- Masa 2: $m_2 = 1 \, \text{kg}$ en posición $x_2 = 1 \, \text{m}$
+- Masa 3: $m_3 = 1 \, \text{kg}$ en posición $x_3 = 3 \, \text{m}$
+
+La media aritmética de las posiciones sería:
+$$
+\text{Media} = \frac{2 + 1 + 3}{3} = 2 \, \text{cm}
+$$
+
+El punto de equlibrio de la barra, o centro de gravedad, calculado como media ponderada, sería:
+
+$$
+x_{\text{cg}} = \frac{(1 \cdot 2) + (1 \cdot 1) + (1 \cdot 3)}{1 + 1 + 1} = \frac{2 + 1 + 3}{3} = \frac{6}{3} = 2 \, \text{m}
+$$
+que es el mismo resultado que obteníamos con la fórmula de la media aritmética de las distancias.
+
+
+### Conclusión:
+Cuando las masas son idénticas, la media aritmética de las posiciones coincide con el centro de gravedad. Esto nos permite afirmar que en el caso de una dimensión (por ejemplo, el peso) la media aritmética de un conjunto de valores coincide con el centro de gravedad o punto de equilibrio de ese conjunto de valores.Este es un resultado interesante que muestra la conexión entre conceptos estadísticos y físicos.
+
