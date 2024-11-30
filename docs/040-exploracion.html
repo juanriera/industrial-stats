@@ -282,8 +282,14 @@ window.Quarto = {
    
   <ul>
   <li><a href="#explorando-los-datos-con-excel-y-r-un-ejemplo." id="toc-explorando-los-datos-con-excel-y-r-un-ejemplo." class="nav-link active" data-scroll-target="#explorando-los-datos-con-excel-y-r-un-ejemplo."><span class="header-section-number">4.1</span> Explorando los datos con Excel y R: un ejemplo.</a></li>
-  <li><a href="#el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" id="toc-el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" class="nav-link" data-scroll-target="#el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot"><span class="header-section-number">4.2</span> El diagrama de tallo y hojas (<em>stem and leaf plot</em> o <em>stemplot</em>)</a></li>
-  <li><a href="#distribuciones-de-frecuencias" id="toc-distribuciones-de-frecuencias" class="nav-link" data-scroll-target="#distribuciones-de-frecuencias"><span class="header-section-number">4.3</span> Distribuciones de frecuencias</a></li>
+  <li><a href="#el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" id="toc-el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" class="nav-link" data-scroll-target="#el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot"><span class="header-section-number">4.2</span> El diagrama de tallo y hojas (<em>stem and leaf plot</em> o <em>stemplot</em>)</a>
+  <ul class="collapse">
+  <li><a href="#construcción-del-diagrama" id="toc-construcción-del-diagrama" class="nav-link" data-scroll-target="#construcción-del-diagrama"><span class="header-section-number">4.2.1</span> Construcción del diagrama</a></li>
+  </ul></li>
+  <li><a href="#distribuciones-de-frecuencias" id="toc-distribuciones-de-frecuencias" class="nav-link" data-scroll-target="#distribuciones-de-frecuencias"><span class="header-section-number">4.3</span> Distribuciones de frecuencias</a>
+  <ul class="collapse">
+  <li><a href="#construcción-en-excel-y-en-r" id="toc-construcción-en-excel-y-en-r" class="nav-link" data-scroll-target="#construcción-en-excel-y-en-r"><span class="header-section-number">4.3.1</span> Construcción en Excel y en R</a></li>
+  </ul></li>
   <li><a href="#diagramas-de-barra-e-histogramas" id="toc-diagramas-de-barra-e-histogramas" class="nav-link" data-scroll-target="#diagramas-de-barra-e-histogramas"><span class="header-section-number">4.4</span> Diagramas de barra e histogramas</a></li>
   <li><a href="#histogramas-en-excel" id="toc-histogramas-en-excel" class="nav-link" data-scroll-target="#histogramas-en-excel"><span class="header-section-number">4.5</span> Histogramas en Excel</a></li>
   <li><a href="#gráficos-de-densidad" id="toc-gráficos-de-densidad" class="nav-link" data-scroll-target="#gráficos-de-densidad"><span class="header-section-number">4.6</span> Gráficos de densidad</a></li>
@@ -352,11 +358,18 @@ window.Quarto = {
 </section>
 <section id="el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot" class="level2" data-number="4.2">
 <h2 data-number="4.2" class="anchored" data-anchor-id="el-diagrama-de-tallo-y-hojas-stem-and-leaf-plot-o-stemplot"><span class="header-section-number">4.2</span> El diagrama de tallo y hojas (<em>stem and leaf plot</em> o <em>stemplot</em>)</h2>
-<p>El <em>stemplot</em> recibe este nombre porque el dibujo que resulta se asemeja a un tallo el que le salen las hojas que son los datos individuales. Para construirlo, quitamos el último dígito a la derecha de nuestros valores y colocamos verticalmente los valores resultantes ordenándolos de menor a mayor, y evitando las repeticiones. Para evitar errores en la escala, debemos incluir los valores intermedios aunque no haya ninguno en nuestros datos (en el ejemplo, el valor 16 que correspondería a los 160). Esto forma el “tallo” de nuestro diagrama:</p>
+<p>El diagrama de tallo y hojas, también conocido como <em>stemplot</em>, es una herramienta gráfica utilizada en estadística para representar la distribución de un conjunto de datos. Es especialmente útil para conjuntos de datos pequeños y proporciona una forma rápida y efectiva de visualizar la forma de los datos y su dispersión. El <em>stemplot</em> recibe este nombre porque el dibujo que resulta se asemeja a un tallo el que le salen las hojas que son los datos individuales.</p>
+<p>Los componentes de un <em>stemplot</em> son:</p>
+<ul>
+<li><p><strong>Tallo</strong>: Representa el grupo principal de los valores de los datos. Generalmente, se usa la parte más significativa del número. Por ejemplo, en el número 43, el tallo podría ser 4.</p></li>
+<li><p><strong>Hojas</strong>: Representan los dígitos finales o menos significativos de los valores de los datos. Siguiendo el ejemplo anterior, la hoja sería 3.</p></li>
+</ul>
+<section id="construcción-del-diagrama" class="level3" data-number="4.2.1">
+<h3 data-number="4.2.1" class="anchored" data-anchor-id="construcción-del-diagrama"><span class="header-section-number">4.2.1</span> Construcción del diagrama</h3>
+<p>Vamos a utilizar los datos de medidas de altura de nuestro grupo de alumnos. Quitamos el último dígito a la derecha de nuestros valores y colocamos verticalmente los valores resultantes ordenándolos de menor a mayor, y evitando las repeticiones. Para evitar errores en la escala, debemos incluir los valores intermedios aunque no haya ninguno en nuestros datos (en el ejemplo, el valor 16 que correspondería a los 160). Esto forma el “tallo” de nuestro diagrama:</p>
 <p><img src="01-imagenes/aula1-stemplot-paso1.png" class="img-fluid"></p>
 <p>A continuación añadimos las hojas en la celda a la derecha, que consisten en los valores que hemos “cortado” de nuestro árbol, uno al lado de otro, incluyendo esta vez los valores repetidos, en orden de menor a mayor. Por ejemplo, para el valor 135, descartamos 13 y utlizamos 5; para el valor 138, descartamos 13 y utilizamos 8, y así sucesivamente para todos los valores.</p>
 <p><img src="01-imagenes/aula1-stemplot-paso2.png" class="img-fluid"></p>
-<p>El diagrama nos dice que nuestros valores son 135, 138, 140, 140, 145, … Podemos ver que los valores en torno a 150 cm son los más frecuentes, y que hay un valor alto (175) que se separa un poco del resto.</p>
 <p>R permite realizar el <em>stemplot</em> mediante la función <span class="math inline">\(stem()\)</span> de forma automática:</p>
 <div class="cell">
 <div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">stem</span>(df_aula<span class="sc">$</span>altura_cm)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -371,17 +384,27 @@ window.Quarto = {
   17 | 5</code></pre>
 </div>
 </div>
+<p>El análisis del diagrama nos dice que los valores en torno a 150 cm son los más frecuentes, y que hay un valor alto (175) que se separa un poco del resto.</p>
 <p>El <em>stemplot</em> es muy sencillo de hacer y nos da una visión rápida de la <em>distribución</em> de nuestros valores, así como de la posible existencia de valores que se separan del conjunto. Estos valores alejados, que se conocen en inglés como <em>outliers</em>, tienen mucha importancia en el analisis e interpretación de los datos, como veremos más adelante.</p>
 <p>La ventaja principal del <em>stemplot</em> es que mantiene los valores originales de las observaciones, y puede hacerse fácilmente con bolígrafo y papel, sin necesidad de más herramientas.</p>
 </section>
+</section>
 <section id="distribuciones-de-frecuencias" class="level2" data-number="4.3">
 <h2 data-number="4.3" class="anchored" data-anchor-id="distribuciones-de-frecuencias"><span class="header-section-number">4.3</span> Distribuciones de frecuencias</h2>
-<p>El <em>stemplot</em> agrupa nuestros valores y nos ayuda a visualizar la frecuencia de cada valor, o, mejor, la frecuencia de valores en el intervalo entre cada valor. Si agrupamos nuestros valores por intervalos, y contamos el número de observaciones que aparecen en cada intervalo, obtenemos una <em>distribución de frecuencias</em>, que puede expresarse de forma <em>absoluta</em> o <em>relativa</em>.</p>
+<p>Una <strong>distribución de frecuencias</strong> es una tabla o gráfico que muestra la frecuencia con la que ocurren los valores diferentes en un conjunto de datos. Esta herramienta es fundamental en la estadística descriptiva y permite resumir y visualizar cómo se distribuyen los datos de manera clara y comprensible.</p>
+<p>Para construir una distribución de frecuencias, agrupamos nuestros valores por intervalos, y contamos el número de observaciones que aparecen en cada intervalo. Los componentes de una distribución de frecuencias son:</p>
 <ul>
-<li>La <strong>frecuencia absoluta</strong> es un <em>recuento simple</em> de cuántas veces aparece cada valor en un conjunto de datos.</li>
-<li>La <strong>frecuencia relativa</strong> nos muestra la <em>proporción</em> de cada valor frente al total. Puede expresarse como fracción (entre 0 y 1) o como porcentaje (respecto a 100)</li>
+<li>las <strong>categorías o clases</strong> son los intervalos o valores específicos de los datos que se están analizando. Cada categoría representa un rango de valores en caso de datos continuos, o valores específicos en caso de datos discretos.</li>
+<li>la <strong>frecuencia absoluta</strong> es un <em>recuento simple</em> de cuántas veces aparece cada valor en un conjunto de datos.</li>
+<li>la <strong>frecuencia relativa</strong> nos muestra la <em>proporción</em> de cada valor frente al total. Puede expresarse como fracción (entre 0 y 1) o como porcentaje (respecto a 100), y se calcula como: <span class="math display">\[
+\text{Frecuencia Relativa} = \frac{\text{Frecuencia Absoluta}}{\text{Número Total de Observaciones}}
+\]</span></li>
+<li>la <strong>frecuencia acumulada</strong> nos dice cuántas observaciones están por debajo de un cierto valor.</li>
+<li>la <strong>frecuencia relativa acumulada</strong> es la proporción de valores que están por debajo de un cierto valor</li>
 </ul>
-<p>La tabla a continuación muestra una distribución de frecuencias, calculada mediante una tabla dinámica de Excel.</p>
+<section id="construcción-en-excel-y-en-r" class="level3" data-number="4.3.1">
+<h3 data-number="4.3.1" class="anchored" data-anchor-id="construcción-en-excel-y-en-r"><span class="header-section-number">4.3.1</span> Construcción en Excel y en R</h3>
+<p>La tabla a continuación muestra una distribución de frecuencias de las alturas de nuestro grupo de alumnos, calculada mediante una tabla dinámica de Excel.</p>
 <p><img src="01-imagenes/aula1-td-frec.png" class="img-fluid"></p>
 <p>También podemos calcular las frecuencias absolutas y relativas en R; en este caso, dado que los intervalos se han calulado de forma ligeramente diferente, las frecuencias calculadas son también ligeramente diferentes de las que hemos obtenido en Excel.</p>
 <div class="cell">
@@ -411,15 +434,18 @@ window.Quarto = {
 <li><span class="math inline">\([a, b)\)</span> representa todos los números reales mayores o iguales que <span class="math inline">\(a\)</span> y menores que <span class="math inline">\(b\)</span> (incluye <span class="math inline">\(a\)</span>, pero excluye <span class="math inline">\(b\)</span>).</li>
 </ul></li>
 </ul>
+<p>Las distribuciones de frecuencias se pueden visualizar mediante varios tipos de gráficos, como histogramas, gráficos de barras y polígonos de frecuencias.</p>
+<p>** ejercicio: calcular frecuencia acumulada y frecuencia relativa acumulada en Excel y en R</p>
+</section>
 </section>
 <section id="diagramas-de-barra-e-histogramas" class="level2" data-number="4.4">
 <h2 data-number="4.4" class="anchored" data-anchor-id="diagramas-de-barra-e-histogramas"><span class="header-section-number">4.4</span> Diagramas de barra e histogramas</h2>
 <p>Cuando nuestra variable es <em>discreta</em>, podemos representar las frecuencias de cada valor de forma gráfica utilizando un diagrama de barras. Este diagrama utiliza barras rectangulares para representar la frecuencia de cada categoría.</p>
-<p>Un histograma es un diagrama que utiliza las barras rectangulares para hacer un gráfico de la distribución de valores continuos, agrupados en clases. La anchura de esos grupos o clases (en inglés, <em>bins</em>), puede variarse, lo que cambia el perfil del gráfico obtenido.</p>
+<p>El diagrama de barras no es muy utilizado en el análisis de datos, dado que habitualmente la mayoría de las variables que analizamos son numéricas continuas. Es mucho más utilizado el <strong>histograma</strong>, que es un diagrama que utiliza las barras rectangulares para hacer un gráfico de la distribución de valores continuos, previamente agrupados en clases, tal como se ha hecho en la tabla de frecuencias.</p>
 </section>
 <section id="histogramas-en-excel" class="level2" data-number="4.5">
 <h2 data-number="4.5" class="anchored" data-anchor-id="histogramas-en-excel"><span class="header-section-number">4.5</span> Histogramas en Excel</h2>
-<p>La tabla dinámica que hemos construido en Excel ha transformado nuestra variable continua, <code>altura_cm</code>, en una variable discreta, al agrupar los valores en intervalos. Si representamos las frecuencias absolutas de nuestra tabla dinámica anterior, el diagrama resultante sería éste:</p>
+<p>La tabla dinámica que hemos construido en Excel ha convertido nuestra variable continua, <code>altura_cm</code>, en una tabla de valores discretos, al agrupar los valores en intervalos. En Excel podemos representar las frecuencias absolutas de nuestra tabla gráficamente, insertando un gráfico dinámico a partir de la tabla:</p>
 <p><img src="01-imagenes/aula1-diag-barras.png" class="img-fluid"></p>
 <p>En el caso de la tabla dinámica, Excel no construye el diagrama de barras a partir de la tabla de los valores originales, sino de las categorías de la tabla dinámica. Dado que estas categorías (los grupos que ha formado la tabla dinámica) son discretas, Excel utiliza el resultado de la tabla dinámica para hacer el gráfico con un diagrama de barras.</p>
 <p>Este diagrama muestra su utilidad cuando representamos la distribución de un conjunto de valores más grande que nuestros once alumnos. Veamos su aplicación a los datos diarios de una fabricación de queso camembert a lo largo de un año.</p>
@@ -852,6 +878,8 @@ Figura&nbsp;4.7: Ejemplos de gráfico de dispersión
 </ul>
 <p>En nuestro conjunto de datos de fabricación de queso camembert, la primera columna de la tabla recoge la variable <code>fecha</code>, lo que nos permite ordenar nuestros valores en el tiempo.</p>
 <p>Cuando representamos los valores en el tiempo, nunca usaremos el diagrama de barras, sino el gráfico de líneas.</p>
+<p>Ejemplo en Excel</p>
+<p>Ejemplo en R</p>
 <div class="sourceCode cell-code" id="cb20"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb20-1"><a href="#cb20-1" aria-hidden="true" tabindex="-1"></a><span class="fu">plot</span>(df_camembert<span class="sc">$</span>fecha, df_camembert<span class="sc">$</span>est, <span class="at">type=</span><span class="st">"l"</span>)</span>
 <span id="cb20-2"><a href="#cb20-2" aria-hidden="true" tabindex="-1"></a></span>
 <span id="cb20-3"><a href="#cb20-3" aria-hidden="true" tabindex="-1"></a>df_camembert <span class="sc">|&gt;</span></span>

@@ -39,7 +39,17 @@ df_aula
 
 ## El diagrama de tallo y hojas (*stem and leaf plot* o *stemplot*)
 
-El *stemplot* recibe este nombre porque el dibujo que resulta se asemeja a un tallo el que le salen las hojas que son los datos individuales. Para construirlo, quitamos el último dígito a la derecha de nuestros valores y colocamos verticalmente los valores resultantes ordenándolos de menor a mayor, y evitando las repeticiones. Para evitar errores en la escala, debemos incluir los valores intermedios aunque no haya ninguno en nuestros datos (en el ejemplo, el valor 16 que correspondería a los 160). Esto forma el "tallo" de nuestro diagrama:
+El  diagrama de tallo y hojas, también conocido como _stemplot_, es una herramienta gráfica utilizada en estadística para representar la distribución de un conjunto de datos. Es especialmente útil para conjuntos de datos pequeños y proporciona una forma rápida y efectiva de visualizar la forma de los datos y su dispersión. El _stemplot_ recibe este nombre porque el dibujo que resulta se asemeja a un tallo el que le salen las hojas que son los datos individuales. 
+
+Los componentes de un _stemplot_ son:
+
+- **Tallo**: Representa el grupo principal de los valores de los datos. Generalmente, se usa la parte más significativa del número. Por ejemplo, en el número 43, el tallo podría ser 4.
+
+- **Hojas**: Representan los dígitos finales o menos significativos de los valores de los datos. Siguiendo el ejemplo anterior, la hoja sería 3.
+
+### Construcción del diagrama
+
+Vamos a utilizar los datos de medidas de altura de nuestro grupo de alumnos. Quitamos el último dígito a la derecha de nuestros valores y colocamos verticalmente los valores resultantes ordenándolos de menor a mayor, y evitando las repeticiones. Para evitar errores en la escala, debemos incluir los valores intermedios aunque no haya ninguno en nuestros datos (en el ejemplo, el valor 16 que correspondería a los 160). Esto forma el "tallo" de nuestro diagrama:
 
 ![](01-imagenes/aula1-stemplot-paso1.png)
 
@@ -47,13 +57,13 @@ A continuación añadimos las hojas en la celda a la derecha, que consisten en l
 
 ![](01-imagenes/aula1-stemplot-paso2.png)
 
-El diagrama nos dice que nuestros valores son 135, 138, 140, 140, 145, ... Podemos ver que los valores en torno a 150 cm son los más frecuentes, y que hay un valor alto (175) que se separa un poco del resto.
-
-R permite realizar el *stemplot* mediante la función $stem()$ de forma automática:
+R permite realizar el _stemplot_ mediante la función $stem()$ de forma automática:
 
 ```{r message=FALSE, warning=FALSE}
 stem(df_aula$altura_cm)
 ```
+
+El análisis del diagrama nos dice que los valores en torno a 150 cm son los más frecuentes, y que hay un valor alto (175) que se separa un poco del resto.
 
 El *stemplot* es muy sencillo de hacer y nos da una visión rápida de la *distribución* de nuestros valores, así como de la posible existencia de valores que se separan del conjunto. Estos valores alejados, que se conocen en inglés como *outliers*, tienen mucha importancia en el analisis e interpretación de los datos, como veremos más adelante.
 
@@ -61,12 +71,22 @@ La ventaja principal del *stemplot* es que mantiene los valores originales de la
 
 ## Distribuciones de frecuencias
 
-El *stemplot* agrupa nuestros valores y nos ayuda a visualizar la frecuencia de cada valor, o, mejor, la frecuencia de valores en el intervalo entre cada valor. Si agrupamos nuestros valores por intervalos, y contamos el número de observaciones que aparecen en cada intervalo, obtenemos una *distribución de frecuencias*, que puede expresarse de forma *absoluta* o *relativa*.
+Una **distribución de frecuencias** es una tabla o gráfico que muestra la frecuencia con la que ocurren los valores diferentes en un conjunto de datos. Esta herramienta es fundamental en la estadística descriptiva y permite resumir y visualizar cómo se distribuyen los datos de manera clara y comprensible.
 
--   La **frecuencia absoluta** es un *recuento simple* de cuántas veces aparece cada valor en un conjunto de datos.
--   La **frecuencia relativa** nos muestra la *proporción* de cada valor frente al total. Puede expresarse como fracción (entre 0 y 1) o como porcentaje (respecto a 100)
+Para construir una distribución de frecuencias, agrupamos nuestros valores por intervalos, y contamos el número de observaciones que aparecen en cada intervalo. Los componentes de una distribución de frecuencias son:
 
-La tabla a continuación muestra una distribución de frecuencias, calculada mediante una tabla dinámica de Excel.
+- las **categorías o clases** son los intervalos o valores específicos de los datos que se están analizando. Cada categoría representa un rango de valores en caso de datos continuos, o valores específicos en caso de datos discretos.
+- la **frecuencia absoluta** es un *recuento simple* de cuántas veces aparece cada valor en un conjunto de datos.
+- la **frecuencia relativa** nos muestra la *proporción* de cada valor frente al total. Puede expresarse como fracción (entre 0 y 1) o como porcentaje (respecto a 100), y se calcula como:
+   $$
+   \text{Frecuencia Relativa} = \frac{\text{Frecuencia Absoluta}}{\text{Número Total de Observaciones}}
+   $$
+- la **frecuencia acumulada** nos dice cuántas observaciones están por debajo de un cierto valor.
+- la **frecuencia relativa acumulada** es la proporción de valores que están por debajo de un cierto valor
+
+### Construcción en Excel y en R
+
+La tabla a continuación muestra una distribución de frecuencias de las alturas de nuestro grupo de alumnos, calculada mediante una tabla dinámica de Excel.
 
 ![](01-imagenes/aula1-td-frec.png)
 
@@ -89,17 +109,22 @@ R utiliza los símbolos `(` y `[` para definir los intervalos, tal como se hace 
     -   $[a, b]$ representa todos los números reales mayores o iguales que $a$ y menores o iguales que $b$ (incluye $a$ y $b$).
     -   $[a, b)$ representa todos los números reales mayores o iguales que $a$ y menores que $b$ (incluye $a$, pero excluye $b$).
 
+Las distribuciones de frecuencias se pueden visualizar mediante varios tipos de gráficos, como histogramas, gráficos de barras y polígonos de frecuencias.
+
+** ejercicio: calcular frecuencia acumulada y frecuencia relativa acumulada en Excel y en R
+
 ## Diagramas de barra e histogramas
 
 Cuando nuestra variable es *discreta*, podemos representar las frecuencias de cada valor de forma gráfica utilizando un diagrama de barras. Este diagrama utiliza barras rectangulares para representar la frecuencia de cada categoría.
 
-Un histograma es un diagrama que utiliza las barras rectangulares para hacer un gráfico de la distribución de valores continuos, agrupados en clases. La anchura de esos grupos o clases (en inglés, *bins*), puede variarse, lo que cambia el perfil del gráfico obtenido.
+El diagrama de barras no es muy utilizado en el análisis de datos, dado que habitualmente la mayoría de las variables que analizamos son numéricas continuas. Es mucho más utilizado el **histograma**, que es un diagrama que utiliza las barras rectangulares para hacer un gráfico de la distribución de valores continuos, previamente agrupados en clases, tal como se ha hecho en la tabla de frecuencias.
 
 ## Histogramas en Excel
 
-La tabla dinámica que hemos construido en Excel ha transformado nuestra variable continua, `altura_cm`, en una variable discreta, al agrupar los valores en intervalos. Si representamos las frecuencias absolutas de nuestra tabla dinámica anterior, el diagrama resultante sería éste:
+La tabla dinámica que hemos construido en Excel ha convertido nuestra variable continua, `altura_cm`, en una tabla de valores discretos, al agrupar los valores en intervalos. En Excel podemos representar las frecuencias absolutas de nuestra tabla gráficamente, insertando un gráfico dinámico a partir de la tabla:
 
 ![](01-imagenes/aula1-diag-barras.png)
+
 
 En el caso de la tabla dinámica, Excel no construye el diagrama de barras a partir de la tabla de los valores originales, sino de las categorías de la tabla dinámica. Dado que estas categorías (los grupos que ha formado la tabla dinámica) son discretas, Excel utiliza el resultado de la tabla dinámica para hacer el gráfico con un diagrama de barras.
 
