@@ -19,7 +19,12 @@ En este capítulo esyudiaremos cómo describir un conjunto de datos de forma vis
 
 Veremos la relación visual entre un histograma y un diagrama de caja, y aprenderemos también a construir tablas de frecuencias en Excel y en R. Finalmente, veremos algunos otros tipos de gráficos que son útiles para aplicaciones concretas, como los gráficos de series temporales.
 
-## Explorando los datos con Excel y R: un ejemplo.
+Utilizaremos dos tablas de datos, 
+
+- las alturas de un grupo de alumnos y alumnas, recogidos en un fichero CSV denominado `aula1.csv`, 
+- los datos analíticos de una fabricación de camembert a lo largo de un año, recogidos en un fichero CSV denominado `camembert.csv`
+
+## Explorando los datos con Excel y R.
 
 Supongamos que queremos medir la altura de un grupo de alumnos de nuestra clase. Éste es nuestro grupo:
 
@@ -90,24 +95,32 @@ La tabla a continuación muestra una distribución de frecuencias de las alturas
 
 ![](01-imagenes/aula1-td-frec.png)
 
-También podemos calcular las frecuencias absolutas y relativas en R; en este caso, dado que los intervalos se han calulado de forma ligeramente diferente, las frecuencias calculadas son también ligeramente diferentes de las que hemos obtenido en Excel.
+También podemos calcular las frecuencias absolutas y relativas de nuestra tabla en R. La formulación en R es algo compleja y requiere una buena comprensión de las funciones de la libreria *tidyverse* utilizadas en la preparación de la tabla.
 
 ```{r message=FALSE, warning=FALSE}
 library (tidyverse)
-df_camembert <- read.csv2("excel-R/camembert.csv",fileEncoding='latin1')
-df_camembert |>
-  mutate (grupo = cut_interval(est, 4)) |>
+df_aula1 <- read.csv2("excel-R/aula1.csv",fileEncoding='latin1')
+df_aula1 |>
+  mutate (grupo = cut(altura_cm, breaks = seq(130, 175, by =5), include_lowest = TRUE)) |>
   group_by(grupo) |>
   summarise (frec_abs = n()) |>
   mutate(frec_rel = frec_abs / sum(frec_abs))
 ```
 
+::: {.callout-important .content-visible when-format="html"}
+## Importante: uso de los símbolos para designar los intervalos
 R utiliza los símbolos `(` y `[` para definir los intervalos, tal como se hace en matemáticas.
 
--   Intervalo **abierto**: El símbolo `(` se utiliza para denotar un intervalo abierto. Por ejemplo,el intervalo $(a, b)$ representa todos los números reales mayores que $a$ y menores que $b$ (excluye los valores $a$ y $b$).
--   Intervalo **cerrado o semiabierto**:El símbolo `[` se utiliza para denotar un intervalo cerrado o semiabierto. Por ejemplo:
-    -   $[a, b]$ representa todos los números reales mayores o iguales que $a$ y menores o iguales que $b$ (incluye $a$ y $b$).
-    -   $[a, b)$ representa todos los números reales mayores o iguales que $a$ y menores que $b$ (incluye $a$, pero excluye $b$).
+-   Intervalo **abierto**: El símbolo `(` se utiliza para denotar un intervalo abierto. 
+-   Intervalo **cerrado o semiabierto**:El símbolo `[` se utiliza para denotar un intervalo cerrado o semiabierto. 
+
+Ejemplos:
+
+- $(a, b)$ representa todos los números reales **mayores** que $a$ y **menores** que $b$ (excluye los valores $a$ y $b$).
+- $[a, b]$ representa todos los números reales **mayores o iguales** que $a$ y **menores o iguales** que $b$ (incluye $a$ y $b$).
+- $[a, b)$ representa todos los números reales **mayores o iguales** que $a$ y **menores** que $b$ (incluye $a$, pero excluye $b$)
+- $(a, b]$ representa todos los números reales **mayores** que $a$ y **menores o iguales** que $b$ (excluye $a$, pero incluye $b$).
+:::
 
 Las distribuciones de frecuencias se pueden visualizar mediante varios tipos de gráficos, como histogramas, gráficos de barras y polígonos de frecuencias.
 
@@ -156,17 +169,25 @@ Si por el contrario hubiésemos agrupado en intervalos de 0,5 puntos, el histogr
 
 La decisión de agrupar las variables continuas en intervalos de diferentes anchuras tiene efectos sobre el aspecto del gráfico; no obstante, debemos ser capaces de interpretar que la distribución de los valores es la misma en los tres casos: hay una mayoría de casos con valores entre 46 y 48, y muy pocos casos con valores muy bajos o muy altos. En este caso, la distribución de los valores es aproximadamente simétrica, y se reparten alrededor de una mayoría de valores centrales.
 
-En otras ocasiones, nos encontramos con datos que son asimétricos: hay una mayoría de valores bajos o bien de valores altos. Veamos un caso: los recuentos bacterianos de bacterias coliformes, que tenemos en la última columna a la derecha de nuestra tabla, en la variable ´coliformes´.
-
-![](01-imagenes/camembert-graf-colis.png)
-
-En este caso, vemos que la mayoría de los casos tienen valor cero. Es el caso de los recuentos de bacterias contaminantes, en el que la mayoría de los análisis tienen recuentos cero o muy bajos, y sólo en pocos casos tienen valores altos. Veremos con más detalle cómo tratar estas distribuciones cuando hablemos de las distribuciones de probabilidad, en capítulos posteriores.
-
-Como vemos, aunque Excel utiliza el diagrama de barras para construir el gráfico, en realidad estamos construyendo un histograma, en dos etapas: agrupación de los datos y creación del gráfico. Al construir un histograma en R, el programa realiza automáticamente ambos pasos. Para verlo por partes, vamos a construir la tabla de frecuencias y el histograma en R.
+Como vemos, aunque Excel utiliza el diagrama de barras para construir el gráfico, en realidad estamos construyendo un histograma, en dos etapas: agrupación de los datos y creación del gráfico. Al construir un histograma en R, el programa realiza automáticamente ambos pasos. Para verlo por partes, vamos a construir la tabla de frecuencias y el histograma de la variable `est`en R.
 
 ```{r message=FALSE, warning=FALSE}
+library (tidyverse)
+df_camembert <- read.csv2("excel-R/camembert.csv",fileEncoding='latin1')
 df_camembert |>
-  mutate (grupo = cut_width(est, width=1, boundary=1)) |>
+  mutate (grupo = cut(est, breaks = seq(40, 54, by =1), include_lowest = TRUE)) |>
+  group_by(grupo) |>
+  summarise (frec_abs = n()) |>
+  mutate(frec_rel = frec_abs / sum(frec_abs))
+```
+Modificando el criterio de la amplitud de clase para agrupar de dos en dos en vez de uno, podemos cambiar la tabla, igual que hemos hecho en Excel.
+
+
+```{r message=FALSE, warning=FALSE}
+library (tidyverse)
+df_camembert <- read.csv2("excel-R/camembert.csv",fileEncoding='latin1')
+df_camembert |>
+  mutate (grupo = cut(est, breaks = seq(40, 54, by =2), include_lowest = TRUE)) |>
   group_by(grupo) |>
   summarise (frec_abs = n()) |>
   mutate(frec_rel = frec_abs / sum(frec_abs))
@@ -190,6 +211,12 @@ df_camembert |>
 ```
 
 En general, son más útiles las opciones de la función `ggplot()`, en la biblioteca `tidyverse`.
+
+En ocasiones, nos encontramos con datos que son asimétricos: hay una mayoría de valores bajos o bien de valores altos. Veamos un caso: los recuentos bacterianos de bacterias coliformes, que tenemos en la última columna a la derecha de nuestra tabla, en la variable ´coliformes´.
+
+![](01-imagenes/camembert-graf-colis.png)
+
+En este caso, vemos que la mayoría de los casos tienen valor cero. Es el caso de los recuentos de bacterias contaminantes, en el que la mayoría de los análisis tienen recuentos cero o muy bajos, y sólo en pocos casos tienen valores altos. Veremos con más detalle cómo tratar estas distribuciones cuando hablemos de las distribuciones de probabilidad, en capítulos posteriores.
 
 En los histogramas de los recuentos bacterianos,utilizamos una opción para aumentar el número de barras que queremos en el histograma: `breaks=` en la función base, `bins=` en `ggplot()`:
 
