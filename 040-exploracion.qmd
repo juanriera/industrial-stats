@@ -111,8 +111,8 @@ df_aula1 |>
 ## Importante: uso de los símbolos para designar los intervalos
 R utiliza los símbolos `(` y `[` para definir los intervalos, tal como se hace en matemáticas.
 
--   Intervalo **abierto**: El símbolo `(` se utiliza para denotar un intervalo abierto. 
--   Intervalo **cerrado o semiabierto**:El símbolo `[` se utiliza para denotar un intervalo cerrado o semiabierto. 
+-   Intervalo **abierto**: El símbolo `(` se utiliza para denotar un intervalo abierto. El límite correspondiente **no** está incluuido en el intervalo. 
+-   Intervalo **cerrado o semiabierto**:El símbolo `[` se utiliza para denotar un intervalo cerrado o semiabierto. EL límite correspondiente **sí** está incluido en el intervalo.
 
 Ejemplos:
 
