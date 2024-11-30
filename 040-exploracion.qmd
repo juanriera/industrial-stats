@@ -11,13 +11,15 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, fig.showtext = T)
 
 # La exploración de los datos mediante gráficos.
 
-En este capítulo esyudiaremos cómo describir un conjunto de datos de forma visual, utilizando varios tipos de gráficos distintos:
+En este capítulo esyudiaremos cómo describir conjuntos de datos de forma visual, utilizando varios tipos de gráficos distintos:
 
 -   *Stemplot*
--   Histograma
+-   Histograma 
 -   Diagrama de caja o *boxplot*
+-   Gráfico de dispersión
+-   Gráfico de series temporales
 
-Veremos la relación visual entre un histograma y un diagrama de caja, y aprenderemos también a construir tablas de frecuencias en Excel y en R. Finalmente, veremos algunos otros tipos de gráficos que son útiles para aplicaciones concretas, como los gráficos de series temporales.
+Veremos la relación visual entre un histograma y un diagrama de caja, y aprenderemos también a construir tablas de frecuencias en Excel y en R. Finalmente, veremos algunos otros tipos de gráficos que son útiles para aplicaciones concretas, como los gráficos de densidad.
 
 Utilizaremos dos tablas de datos, 
 
@@ -97,9 +99,51 @@ La tabla a continuación muestra una distribución de frecuencias de las alturas
 
 También podemos calcular las frecuencias absolutas y relativas de nuestra tabla en R. La formulación en R requiere una buena comprensión de las funciones de la libreria *tidyverse* utilizadas en la preparación de la tabla.
 
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R
+
+1. **Cargar la librería `tidyverse`**:
+   ```r
+   library(tidyverse)
+   ```
+   - **`library(tidyverse)`**: Carga el paquete `tidyverse`, que es una colección de paquetes de R diseñados para el análisis de datos, como `ggplot2`, `dplyr`, `tidyr`, entre otros.
+
+2. **Leer el archivo CSV**:
+   ```r
+   df_aula1 <- read.csv2("excel-R/aula1.csv", fileEncoding = 'latin1')
+   ```
+   - **`df_aula1 <- read.csv2("excel-R/aula1.csv", fileEncoding = 'latin1')`**: Lee el archivo CSV denominado `aula1.csv` y lo almacena en el dataframe `df_aula1`. La opción `fileEncoding = 'latin1'` asegura que los caracteres especiales se manejen correctamente durante la lectura del archivo.
+
+3. **Crear y agrupar por intervalos**:
+   ```r
+   df_aula1 |>
+     mutate(grupo = cut(altura_cm, breaks = seq(130, 175, by = 5), include.lowest = TRUE)) |>
+     group_by(grupo)
+   ```
+   - **`df_aula1 |>`**: Utiliza el operador pipe (`|>`) para encadenar una serie de operaciones en el dataframe `df_aula1`.
+   - **`mutate(grupo = cut(altura_cm, breaks = seq(130, 175, by = 5), include.lowest = TRUE))`**: Crea una nueva columna `grupo` que contiene intervalos de la columna `altura_cm` con un rango desde 130 hasta 175 cm, con una amplitud de clase de 5 cm. La opción `include.lowest = TRUE` asegura que el valor más bajo esté incluido en el primer intervalo.
+   - **`group_by(grupo)`**: Agrupa los datos por los intervalos definidos en la columna `grupo`.
+
+4. **Calcular la frecuencia absoluta**:
+   ```r
+   summarise(frec_abs = n())
+   ```
+   - **`summarise(frec_abs = n())`**: Crea un nuevo dataframe resumido que contiene la frecuencia absoluta (`frec_abs`) de cada grupo. La función `n()` cuenta el número de observaciones en cada grupo.
+
+5. **Calcular la frecuencia relativa**:
+   ```r
+   mutate(frec_rel = frec_abs / sum(frec_abs))
+   ```
+   - **`mutate(frec_rel = frec_abs / sum(frec_abs))`**: Añade una nueva columna `frec_rel` al dataframe que contiene la frecuencia relativa. Esto se calcula dividiendo la frecuencia absoluta de cada grupo por la suma total de todas las frecuencias absolutas.
+
+El resultado es un dataframe que muestra los intervalos de `altura_cm` (columna `grupo`), junto con las frecuencias absolutas (`frec_abs`) y las frecuencias relativas (`frec_rel`) para cada intervalo. Este proceso facilita el análisis de la distribución de los datos en intervalos específicos.
+
+:::
+
 ```{r message=FALSE, warning=FALSE}
 library (tidyverse)
 df_aula1 <- read.csv2("excel-R/aula1.csv",fileEncoding='latin1')
+
 df_aula1 |>
   mutate (grupo = cut(altura_cm, breaks = seq(130, 175, by =5), include_lowest = TRUE)) |>
   group_by(grupo) |>
@@ -145,13 +189,13 @@ La tabla dinámica que hemos construido en Excel ha convertido nuestra variable 
 
 En el caso de la tabla dinámica, Excel no construye el diagrama de barras a partir de la tabla de los valores originales, sino de las categorías de la tabla dinámica. Dado que estas categorías (los grupos que ha formado la tabla dinámica) son discretas, Excel utiliza el resultado de la tabla dinámica para hacer el gráfico con un diagrama de barras.
 
-Este diagrama muestra su utilidad cuando representamos la distribución de un conjunto de valores más grande que nuestros once alumnos. Veamos su aplicación a los datos diarios de una fabricación de queso camembert a lo largo de un año.
+Este diagrama muestra su utilidad cuando representamos la distribución de un conjunto de valores más grande que nuestros once alumnos. Veamos su aplicación a los datos diarios de una fabricación de queso camembert a lo largo de un año.Los datos de esta fabricación están en el fichero `camembert.csv`.
 
 La tabla de datos tiene esta estructura:
 
 ![](01-imagenes/camembert-tabla-datos.png)
 
-Aunque no se muestran en la figura, la tabla está formada por 211 casos. Analicemos los datos con Excel. Los pasos son:
+Aunque no se muestran en la figura, la tabla está formada por 211 casos. Analicemos los datos con Excel. Los pasos a seguir son:
 
 1.  Construir la tabla dinámica
 2.  Agrupar los datos
@@ -176,6 +220,47 @@ La decisión de agrupar las variables continuas en intervalos de diferentes anch
 
 Como vemos, aunque Excel utiliza el diagrama de barras para construir el gráfico, en realidad estamos construyendo un histograma, en dos etapas: agrupación de los datos en una tabla de frecuencia (tabla dinámica) y creación del gráfico a partir de esta tabla. Al construir un histograma en R, el programa realiza automáticamente ambos pasos. Para verlo por partes, vamos a construir la tabla de frecuencias y el histograma de la variable `est`en R.
 
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R
+
+1. **Cargar la librería `tidyverse`**:
+   ```r
+   library(tidyverse)
+   ```
+   - **`library(tidyverse)`**: Carga el paquete `tidyverse`, que es una colección de paquetes de R diseñados para el análisis de datos, como `ggplot2`, `dplyr`, `tidyr`, entre otros.
+
+2. **Leer el archivo CSV**:
+   ```r
+   df_camembert <- read.csv2("excel-R/camembert.csv", fileEncoding = 'latin1')
+   ```
+   - **`df_camembert <- read.csv2("excel-R/camembert.csv", fileEncoding = 'latin1')`**: Lee el archivo CSV denominado `camembert.csv` y lo almacena en el dataframe `df_camembert`. La opción `fileEncoding = 'latin1'` asegura que los caracteres especiales se manejen correctamente durante la lectura del archivo.
+
+3. **Crear y agrupar por intervalos**:
+   ```r
+   df_camembert |>
+     mutate(grupo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE)) |>
+     group_by(grupo)
+   ```
+   - **`df_camembert |>`**: Utiliza el operador pipe (`|>`) para encadenar una serie de operaciones en el dataframe `df_camembert`.
+   - **`mutate(grupo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE))`**: Crea una nueva columna `grupo` que contiene intervalos de la columna `est` con un rango desde 40 hasta 54, con una amplitud de clase de 1. La opción `include.lowest = TRUE` asegura que el valor más bajo esté incluido en el primer intervalo.
+   - **`group_by(grupo)`**: Agrupa los datos por los intervalos definidos en la columna `grupo`.
+
+4. **Calcular la frecuencia absoluta**:
+   ```r
+   summarise(frec_abs = n())
+   ```
+   - **`summarise(frec_abs = n())`**: Crea un nuevo dataframe resumido que contiene la frecuencia absoluta (`frec_abs`) de cada grupo. La función `n()` cuenta el número de observaciones en cada grupo.
+
+5. **Calcular la frecuencia relativa**:
+   ```r
+   mutate(frec_rel = frec_abs / sum(frec_abs))
+   ```
+   - **`mutate(frec_rel = frec_abs / sum(frec_abs))`**: Añade una nueva columna `frec_rel` al dataframe que contiene la frecuencia relativa. Esto se calcula dividiendo la frecuencia absoluta de cada grupo por la suma total de todas las frecuencias absolutas.
+
+El resultado es un dataframe que muestra los intervalos de `est` (columna `grupo`), junto con las frecuencias absolutas (`frec_abs`) y las frecuencias relativas (`frec_rel`) para cada intervalo. Este proceso facilita el análisis de la distribución de los datos en intervalos específicos.
+
+:::
+
 ```{r message=FALSE, warning=FALSE}
 library (tidyverse)
 df_camembert <- read.csv2("excel-R/camembert.csv",fileEncoding='latin1')
@@ -186,7 +271,60 @@ df_camembert |>
   mutate(frec_rel = frec_abs / sum(frec_abs))
 ```
 
-ahora completamos el script para redirigir la tabla de frecuencias a `ggplot()` y hacer el diagrama de barras.
+Este script nos permite visualizar la tabla de frecuencias.Aahora completamos el script con el código necesario para redirigir la tabla de frecuencias a `ggplot()` y hacer el diagrama de barras.
+
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R adicional
+
+1. **Iniciar `ggplot` con las estéticas (aes)**:
+   ```r
+   ggplot(aes(x = grupo, y = frec_abs)) +
+   ```
+   - **`ggplot(aes(x = grupo, y = frec_abs))`**: Inicia el objeto `ggplot` y define las estéticas (aes), que son las variables mapeadas a los ejes del gráfico.
+     - **`x = grupo`**: Mapea la variable `grupo` al eje X.
+     - **`y = frec_abs`**: Mapea la variable `frec_abs` al eje Y.
+
+2. **Agregar las barras del gráfico**:
+   ```r
+   geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
+   ```
+   - **`geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black")`**: Añade una capa de barras al gráfico.
+     - **`stat = "identity"`**: Especifica que las alturas de las barras deben ser iguales a los valores de `frec_abs` (en lugar de contarse las observaciones en cada grupo).
+     - **`fill = "darkblue"`**: Rellena las barras con el color azul oscuro.
+     - **`alpha = 0.7`**: Establece la transparencia de las barras (valor entre 0 y 1, donde 0 es completamente transparente y 1 es opaco).
+     - **`color = "black"`**: Colorea los bordes de las barras en negro.
+
+3. **Agregar etiquetas y título**:
+   ```r
+   labs(title = "Diagrama de Barras de Frecuencia absoluta",
+        x = "Intervalos de 'est'",
+        y = "Frecuencia Absoluta") +
+   ```
+   - **`labs(title = "Diagrama de Barras de Frecuencia absoluta", x = "Intervalos de 'est'", y = "Frecuencia Absoluta")`**: Añade etiquetas y título al gráfico.
+     - **`title = "Diagrama de Barras de Frecuencia absoluta"`**: Establece el título del gráfico.
+     - **`x = "Intervalos de 'est'"`**: Etiqueta el eje X.
+     - **`y = "Frecuencia Absoluta"`**: Etiqueta el eje Y.
+
+4. **Aplicar un tema minimalista**:
+   ```r
+   theme_minimal()
+   ```
+   - **`theme_minimal()`**: Aplica un tema minimalista al gráfico, que proporciona un diseño limpio y simple, sin distracciones innecesarias.
+
+Este es el código completo de nuevo para referencia:
+
+```r
+ggplot(aes(x = grupo, y = frec_abs)) +
+  geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
+  labs(title = "Diagrama de Barras de Frecuencia absoluta",
+       x = "Intervalos de 'est'",
+       y = "Frecuencia Absoluta") +
+  theme_minimal()
+```
+
+Este código te permitirá generar un diagrama de barras que muestra la frecuencia absoluta de cada intervalo en el eje X (grupos) y la frecuencia en el eje Y (frecuencia absoluta), con las barras coloreadas en azul oscuro y bordes negros.
+
+:::
 
 ```{r}
 # Crear tabla de frecuencias y diagrama de barras
@@ -205,7 +343,6 @@ df_camembert |>
 
 Modificando el criterio de la amplitud de clase para agrupar de dos en dos en vez de uno, podemos cambiar la tabla, igual que hemos hecho en Excel.
 
-
 ```{r message=FALSE, warning=FALSE}
 library (tidyverse)
 df_camembert <- read.csv2("excel-R/camembert.csv",fileEncoding='latin1')
@@ -223,6 +360,72 @@ df_camembert |>
 ```
 
 R tiene una función básica, la función `hist()`, que construye el histograma directamente sin necesidad de hacer previamente una tabla de frecuencias (en realidad, la tabla de frecuencias se calcula internamente).Como siempre, presentamos esta opción básica junto con la opción de la función `ggplot()` de `tidyverse`.
+
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R
+
+**Primer Fragmento de Código:** `hist(df_camembert$est)`
+
+1. **Crear un Histograma Base**:
+   ```r
+   hist(df_camembert$est)
+   ```
+   - **`hist(df_camembert$est)`**: Esta línea de código crea un histograma básico de la variable `est` del dataframe `df_camembert` utilizando la función `hist()` de base R.
+     - **`df_camembert$est`**: Especifica la columna `est` del dataframe `df_camembert` para la cual se generará el histograma.
+   - La función `hist()` por defecto elige la cantidad y el ancho de las barras basándose en los datos proporcionados.
+
+**Segundo Fragmento de Código: `ggplot` y `geom_histogram()`**
+
+2. **Utilizar `ggplot2` para Crear un Histograma Personalizado**:
+   ```r
+   df_camembert |>
+     ggplot(aes(x = est)) +
+     geom_histogram(binwidth = 1, fill = "darkblue", alpha = 0.7, color = "black") +
+     theme_minimal()
+   ```
+   - **`df_camembert |>`**: Utiliza el operador pipe (`|>`) para encadenar operaciones sobre el dataframe `df_camembert`.
+
+3. **Iniciar `ggplot` con las Estéticas (aes)**:
+   ```r
+   ggplot(aes(x = est)) +
+   ```
+   - **`ggplot(aes(x = est))`**: Inicia un objeto `ggplot` y define las estéticas (aes), mapeando la variable `est` al eje X.
+
+4. **Agregar las Barras del Histograma**:
+   ```r
+   geom_histogram(binwidth = 1, fill = "darkblue", alpha = 0.7, color = "black") +
+   ```
+   - **`geom_histogram(binwidth = 1, fill = "darkblue", alpha = 0.7, color = "black")`**: Añade una capa de barras al histograma.
+     - **`binwidth = 1`**: Define la amplitud de clase en 1 unidad.
+     - **`fill = "darkblue"`**: Colorea las barras del histograma de azul oscuro.
+     - **`alpha = 0.7`**: Establece la transparencia de las barras (valor entre 0 y 1, donde 0 es completamente transparente y 1 es opaco).
+     - **`color = "black"`**: Colorea los bordes de las barras en negro.
+
+5. **Aplicar un Tema Minimalista**:
+   ```r
+   theme_minimal()
+   ```
+   - **`theme_minimal()`**: Aplica un tema minimalista al gráfico, proporcionando un diseño limpio y simple, sin distracciones innecesarias.
+
+**Resumen completo del código**
+
+- **Primer Fragmento**: 
+  ```r
+  hist(df_camembert$est)
+  ```
+  crea un histograma básico de la variable `est` usando la función base `hist()` de R.
+- **Segundo Fragmento**: 
+  ```r
+  df_camembert |>
+    ggplot(aes(x = est)) +
+    geom_histogram(binwidth = 1, fill = "darkblue", alpha = 0.7, color = "black") +
+    theme_minimal()
+  ```
+  Este conjunto de instrucciones crea un histograma más personalizable y estilizado usando `ggplot2`, con opciones para el ancho de las barras, color de relleno, transparencia y estilo del tema.
+
+
+
+:::
 
 ```{r message=FALSE, warning=FALSE}
 #| label: fig-histo1
@@ -335,6 +538,73 @@ boxplot(df_aula$altura_cm)
 
 Vamos a repetir el gráfico para los datos de producción de queso camembert, usando ahora los gráficos básicos y los de `ggplot()`:
 
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R
+
+1. **Leer el archivo CSV**:
+   ```r
+   df_camembert <- read.csv2("excel-R/camembert.csv", fileEncoding = 'latin1')
+   ```
+   - **`df_camembert <- read.csv2("excel-R/camembert.csv", fileEncoding = 'latin1')`**: Lee el archivo CSV denominado `camembert.csv` y lo almacena en el dataframe `df_camembert`. La opción `fileEncoding = 'latin1'` asegura que los caracteres especiales se manejen correctamente durante la lectura del archivo.
+
+2. **Convertir la columna `fecha` a tipo `Date`**:
+   ```r
+   df_camembert$fecha <- as.Date(df_camembert$fecha, format("%d/%m/%Y"))
+   ```
+   - **`df_camembert$fecha <- as.Date(df_camembert$fecha, format("%d/%m/%Y"))`**: Convierte la columna `fecha` en el dataframe `df_camembert` al tipo de dato `Date` usando el formato de fecha `"%d/%m/%Y"`, que corresponde a día/mes/año.
+
+3. **Crear un boxplot básico de la variable `est`**:
+   ```r
+   boxplot(df_camembert$est)
+   ```
+   - **`boxplot(df_camembert$est)`**: Crea un diagrama de caja y bigotes (boxplot) básico para la variable `est` del dataframe `df_camembert`. Este gráfico muestra la distribución de los datos, destacando la mediana, cuartiles y posibles valores atípicos.
+
+4. **Crear un boxplot personalizado utilizando `ggplot2`**:
+   ```r
+   df_camembert |>
+     ggplot(aes(x = "", y = est)) +
+     geom_boxplot() +
+     theme_bw() +
+     theme(axis.text.x = element_blank(),  # Oculta las etiquetas del eje x
+           axis.ticks.x = element_blank()) # Oculta las marcas del eje x
+   ```
+   - **`df_camembert |>`**: Utiliza el operador pipe (`|>`) para encadenar operaciones sobre el dataframe `df_camembert`.
+
+5. **Iniciar `ggplot` con las estéticas (aes)**:
+   ```r
+   ggplot(aes(x = "", y = est)) +
+   ```
+   - **`ggplot(aes(x = "", y = est))`**: Inicia un objeto `ggplot` y define las estéticas (aes). La variable `est` se mapea al eje Y. No se especifica una variable en el eje X, por lo que se deja como una cadena vacía `""`.
+
+6. **Agregar la capa del boxplot**:
+   ```r
+   geom_boxplot() +
+   ```
+   - **`geom_boxplot()`**: Añade una capa de boxplot al gráfico, que muestra la distribución de la variable `est`.
+
+7. **Aplicar un tema en blanco y negro**:
+   ```r
+   theme_bw() +
+   ```
+   - **`theme_bw()`**: Aplica un tema en blanco y negro al gráfico, proporcionando un diseño limpio y clásico.
+
+8. **Personalizar el tema**:
+   ```r
+   theme(axis.text.x = element_blank(),  # Oculta las etiquetas del eje x
+         axis.ticks.x = element_blank()) # Oculta las marcas del eje x
+   ```
+   - **`theme(axis.text.x = element_blank(), axis.ticks.x = element_blank())`**: Personaliza el tema para ocultar las etiquetas del eje X y las marcas del eje X, dejando un gráfico más claro y limpio.
+
+
+El código realiza las siguientes acciones:
+
+- Lee un archivo CSV y lo convierte en un dataframe.
+- Convierte la columna `fecha` a tipo `Date`.
+- Crea un boxplot básico de la variable `est`.
+- Utiliza `ggplot2` para crear un boxplot más personalizable de la variable `est`, aplicando un tema en blanco y negro y ocultando las etiquetas y marcas del eje X.
+
+:::
+
 ```{r}
 #| label: fig-boxplot2
 #| fig-cap: "Ejemplos de boxplot"
@@ -357,6 +627,79 @@ df_camembert |>
 ```
 
 Un uso muy interesante del boxplot en R consiste en agrupar los boxplot de una variable en funcion de otra. En este caso, agrupamos el extracto seco por meses previa agrupación de la fecha. Esta agrupación puede hacerse tanto en los gráficos básicos de R como en `ggplot()`:
+
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R
+
+1. **Crear una nueva columna `mes` a partir de `fecha`**:
+   ```r
+   df_camembert$mes <- format(df_camembert$fecha, "%m")
+   ```
+   - **`df_camembert$mes <- format(df_camembert$fecha, "%m")`**: Crea una nueva columna `mes` en el dataframe `df_camembert`. La función `format` se utiliza para convertir las fechas en la columna `fecha` al formato de mes (`%m`), extrayendo solo el mes de cada fecha.
+
+2. **Crear un boxplot básico de `est` por mes**:
+   ```r
+   boxplot(df_camembert$est ~ df_camembert$mes)
+   ```
+   - **`boxplot(df_camembert$est ~ df_camembert$mes)`**: Crea un diagrama de caja y bigotes (boxplot) básico que muestra la distribución de la variable `est` para cada mes, donde `df_camembert$est` se grafica en el eje Y y `df_camembert$mes` en el eje X.
+
+3. **Utilizar `ggplot2` para crear un boxplot más personalizado**:
+   ```r
+   df_camembert |>
+     mutate(mes = format(fecha, "%m")) |>
+     ggplot(aes(x = mes, y = est)) +
+     geom_boxplot() +
+     labs(title = "Boxplot de 'est' por Meses",
+          x = "Mes",
+          y = "Valor de est") +
+     theme_minimal()
+   ```
+   - **`df_camembert |>`**: Utiliza el operador pipe (`|>`) para encadenar operaciones sobre el dataframe `df_camembert`.
+
+4. **Crear y mutar la columna `mes` dentro del pipeline**:
+   ```r
+   mutate(mes = format(fecha, "%m")) |>
+   ```
+   - **`mutate(mes = format(fecha, "%m"))`**: Añade una nueva columna `mes` al dataframe utilizando la función `format` para extraer el mes de la columna `fecha`.
+
+5. **Iniciar `ggplot` con las estéticas (aes)**:
+   ```r
+   ggplot(aes(x = mes, y = est)) +
+   ```
+   - **`ggplot(aes(x = mes, y = est))`**: Inicia un objeto `ggplot` y define las estéticas (aes). La variable `mes` se mapea al eje X y la variable `est` al eje Y.
+
+6. **Agregar la capa del boxplot**:
+   ```r
+   geom_boxplot() +
+   ```
+   - **`geom_boxplot()`**: Añade una capa de boxplot al gráfico, mostrando la distribución de la variable `est` para cada mes.
+
+7. **Agregar etiquetas y título**:
+   ```r
+   labs(title = "Boxplot de 'est' por Meses",
+        x = "Mes",
+        y = "Valor de est") +
+   ```
+   - **`labs(title = "Boxplot de 'est' por Meses", x = "Mes", y = "Valor de est")`**: Añade etiquetas y título al gráfico.
+     - **`title = "Boxplot de 'est' por Meses"`**: Establece el título del gráfico.
+     - **`x = "Mes"`**: Etiqueta el eje X.
+     - **`y = "Valor de est"`**: Etiqueta el eje Y.
+
+8. **Aplicar un tema minimalista**:
+   ```r
+   theme_minimal()
+   ```
+   - **`theme_minimal()`**: Aplica un tema minimalista al gráfico, proporcionando un diseño limpio y simple, sin distracciones innecesarias.
+
+**Resumen**
+
+El código realiza las siguientes acciones:
+
+- Añade una columna `mes` al dataframe `df_camembert`, que contiene solo el mes extraído de la columna `fecha`.
+- Crea un boxplot básico que muestra la distribución de `est` por mes.
+- Utiliza `ggplot2` para crear un boxplot más personalizado de `est` por mes, con etiquetas y un tema minimalista para un diseño limpio.
+
+:::
 
 ```{r}
 #| label: fig-boxplot3
@@ -382,6 +725,61 @@ df_camembert |>
 ## Histogramas y diagramas de caja
 
 Resulta muy útil comprender visualmente la relación entre el *boxplot* y el histograma para entender la distribución de los datos. En la gráfica siguiente se representan ambos simultáneamente
+
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R
+
+1. **Iniciar el pipeline con `df_camembert`**:
+   ```r
+   df_camembert |>
+   ```
+   - Utiliza el operador pipe (`|>`) para encadenar operaciones sobre el dataframe `df_camembert`.
+
+2. **Iniciar `ggplot` con las estéticas (aes)**:
+   ```r
+   ggplot(aes(x = est)) +
+   ```
+   - **`ggplot(aes(x = est))`**: Inicia un objeto `ggplot` y define las estéticas (aes). La variable `est` se mapea al eje X.
+
+3. **Agregar la capa del histograma**:
+   ```r
+   geom_histogram(fill = "lightblue", color = "black", bins = 20, alpha = 0.7) +
+   ```
+   - **`geom_histogram(fill = "lightblue", color = "black", bins = 20, alpha = 0.7)`**: Añade una capa de histograma al gráfico.
+     - **`fill = "lightblue"`**: Colorea las barras del histograma de azul claro.
+     - **`color = "black"`**: Colorea los bordes de las barras en negro.
+     - **`bins = 20`**: Especifica el número de barras (bins) en el histograma.
+     - **`alpha = 0.7`**: Establece la transparencia de las barras (valor entre 0 y 1, donde 0 es completamente transparente y 1 es opaco).
+
+4. **Agregar la capa del boxplot**:
+   ```r
+   geom_boxplot(width = 2, fill = "darkgrey", alpha = 0.7, position = position_nudge(y = -2)) +
+   ```
+   - **`geom_boxplot(width = 2, fill = "darkgrey", alpha = 0.7, position = position_nudge(y = -2))`**: Añade una capa de boxplot al gráfico.
+     - **`width = 2`**: Especifica el ancho del boxplot.
+     - **`fill = "darkgrey"`**: Colorea el boxplot de gris oscuro.
+     - **`alpha = 0.7`**: Establece la transparencia del boxplot (valor entre 0 y 1).
+     - **`position = position_nudge(y = -2)`**: Ajusta la posición del boxplot, desplazándolo hacia abajo en el eje Y para que no se superponga con el histograma.
+
+5. **Agregar etiquetas y título**:
+   ```r
+   labs(title = "Histograma y Boxplot", y = "Frecuencias") +
+   ```
+   - **`labs(title = "Histograma y Boxplot", y = "Frecuencias")`**: Añade etiquetas y título al gráfico.
+     - **`title = "Histograma y Boxplot"`**: Establece el título del gráfico.
+     - **`y = "Frecuencias"`**: Etiqueta el eje Y como "Frecuencias".
+
+**Resumen Completo**
+
+El código realiza las siguientes acciones:
+
+- Inicia el pipeline con el dataframe `df_camembert`.
+- Define la estética (aes) para mapear la variable `est` al eje X.
+- Añade un histograma con barras azules claras, bordes negros, 20 bins y una transparencia del 70%.
+- Añade un boxplot con ancho de 2, relleno gris oscuro, transparencia del 70% y lo desplaza hacia abajo en el eje Y para evitar superposición con el histograma.
+- Añade un título y etiqueta el eje Y como "Frecuencias".
+
+:::
 
 ```{r}
 df_camembert |>
@@ -428,7 +826,72 @@ Como siempre, vemos el gráfico de dispersión en Excel y a continuación en R. 
 Gráfico de dispersión en Excel
 :::
 
+A continuación, el código R para realizar el gráfico de dispersión, con la función básica y con `ggplot()`.
 
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R
+
+**Primer Fragmento de Código:** `plot`
+
+1. **Crear un gráfico de dispersión básico**:
+   ```r
+   plot(df_camembert$est, df_camembert$mg)
+   ```
+   - **`plot(df_camembert$est, df_camembert$mg)`**: Crea un gráfico de dispersión usando la función base `plot`.
+     - **`df_camembert$est`**: Mapea la variable `est` al eje X.
+     - **`df_camembert$mg`**: Mapea la variable `mg` al eje Y.
+
+Este código genera un gráfico de dispersión que muestra la relación entre `est` y `mg`.
+
+**Segundo Fragmento de Código:** `ggplot2`
+
+2. **Utilizar `ggplot2` para crear un gráfico de dispersión más personalizable**:
+   ```r
+   df_camembert |>
+     ggplot(aes(x = mg, y = est)) +
+     geom_point() +
+     theme_bw()
+   ```
+   - **`df_camembert |>`**: Utiliza el operador pipe (`|>`) para encadenar operaciones sobre el dataframe `df_camembert`.
+
+3. **Iniciar `ggplot` con las estéticas (aes)**:
+   ```r
+   ggplot(aes(x = mg, y = est)) +
+   ```
+   - **`ggplot(aes(x = mg, y = est))`**: Inicia un objeto `ggplot` y define las estéticas (aes). La variable `mg` se mapea al eje X y la variable `est` al eje Y.
+
+4. **Agregar la capa de puntos**:
+   ```r
+   geom_point() +
+   ```
+   - **`geom_point()`**: Añade una capa de puntos al gráfico, mostrando cada observación en `mg` y `est`.
+
+5. **Aplicar un tema en blanco y negro**:
+   ```r
+   theme_bw()
+   ```
+   - **`theme_bw()`**: Aplica un tema en blanco y negro al gráfico, proporcionando un diseño limpio y clásico.
+
+**Resumen Completo**
+
+- **Primer Fragmento**:
+
+  ```r
+  plot(df_camembert$est, df_camembert$mg)
+  ```
+  Este código crea un gráfico de dispersión básico utilizando la función `plot` de base R, mapeando `est` al eje X y `mg` al eje Y.
+
+- **Segundo Fragmento**:
+
+  ```r
+  df_camembert |>
+    ggplot(aes(x = mg, y = est)) +
+    geom_point() +
+    theme_bw()
+  ```
+  Este conjunto de instrucciones utiliza `ggplot2` para crear un gráfico de dispersión más personalizable, mapeando `mg` al eje X y `est` al eje Y, añadiendo una capa de puntos y aplicando un tema en blanco y negro para un diseño limpio y claro.
+
+:::
 ```{r}
 #| label: fig-grafdisp
 #| fig-cap: "Ejemplos de gráfico de dispersión"
@@ -476,6 +939,70 @@ Para hacer el gráfico en Excel, seleccionamos la columna `est`e insertamos un g
 ![Tabla y gráfico de series](01-imagenes/camembert-excel-graf-series.png){#fig-tabladisp}
 
 A continuación, los gráficos en R, como siempre con la opción de gráficos base y con `ggplot()`. R formatea automáticamente el rango del eje Y y no tenemos que hacer ninguna corrección de formato.
+
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R
+
+**Primer Fragmento de Código:** `plot`
+
+1. **Crear un gráfico de líneas básico**:
+   ```r
+   plot(df_camembert$fecha, df_camembert$est, type = "l")
+   ```
+   - **`plot(df_camembert$fecha, df_camembert$est, type = "l")`**: Crea un gráfico de líneas usando la función base `plot`.
+     - **`df_camembert$fecha`**: Mapea la variable `fecha` al eje X.
+     - **`df_camembert$est`**: Mapea la variable `est` al eje Y.
+     - **`type = "l"`**: Especifica que el gráfico debe ser de líneas. La `"l"` indica que las observaciones deben conectarse con líneas.
+
+**Segundo Fragmento de Código:** `ggplot2`
+
+2. **Utilizar `ggplot2` para crear un gráfico de líneas**:
+   ```r
+   df_camembert |>
+     ggplot(aes(x = fecha, y = est)) +
+     geom_line() +
+     theme_bw()
+   ```
+   - **`df_camembert |>`**: Utiliza el operador pipe (`|>`) para encadenar operaciones sobre el dataframe `df_camembert`.
+
+3. **Iniciar `ggplot` con las estéticas (aes)**:
+   ```r
+   ggplot(aes(x = fecha, y = est)) +
+   ```
+   - **`ggplot(aes(x = fecha, y = est))`**: Inicia un objeto `ggplot` y define las estéticas (aes). La variable `fecha` se mapea al eje X y la variable `est` al eje Y.
+
+4. **Agregar la capa de línea**:
+   ```r
+   geom_line() +
+   ```
+   - **`geom_line()`**: Añade una capa de líneas al gráfico, conectando los puntos de datos en `fecha` y `est`.
+
+5. **Aplicar un tema en blanco y negro**:
+   ```r
+   theme_bw()
+   ```
+   - **`theme_bw()`**: Aplica un tema en blanco y negro al gráfico, proporcionando un diseño limpio y clásico.
+
+**Resumen Completo**
+
+- **Primer Fragmento**:
+
+   ```r
+   plot(df_camembert$fecha, df_camembert$est, type = "l")
+   ```
+   Este código crea un gráfico de líneas básico utilizando la función `plot` de base R, mapeando `fecha` al eje X y `est` al eje Y.
+
+- **Segundo Fragmento**:
+
+   ```r
+   df_camembert |>
+     ggplot(aes(x = fecha, y = est)) +
+     geom_line() +
+     theme_bw()
+   ```
+   Este conjunto de instrucciones utiliza `ggplot2` para crear un gráfico de líneas más personalizable, mapeando `fecha` al eje X y `est` al eje Y, añadiendo una capa de líneas y aplicando un tema en blanco y negro para un diseño limpio y claro.
+
+:::
 
 ```{r}
 #| label: fig-graftemp
