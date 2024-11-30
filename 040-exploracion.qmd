@@ -95,7 +95,7 @@ La tabla a continuación muestra una distribución de frecuencias de las alturas
 
 ![](01-imagenes/aula1-td-frec.png)
 
-También podemos calcular las frecuencias absolutas y relativas de nuestra tabla en R. La formulación en R es algo compleja y requiere una buena comprensión de las funciones de la libreria *tidyverse* utilizadas en la preparación de la tabla.
+También podemos calcular las frecuencias absolutas y relativas de nuestra tabla en R. La formulación en R requiere una buena comprensión de las funciones de la libreria *tidyverse* utilizadas en la preparación de la tabla.
 
 ```{r message=FALSE, warning=FALSE}
 library (tidyverse)
@@ -124,7 +124,11 @@ Ejemplos:
 
 Las distribuciones de frecuencias se pueden visualizar mediante varios tipos de gráficos, como histogramas, gráficos de barras y polígonos de frecuencias.
 
-** ejercicio: calcular frecuencia acumulada y frecuencia relativa acumulada en Excel y en R
+::: {.callout-note .content-visible when-format="html" icon="false"}
+## Ejercicio propuesto
+En la tabla de frecuencias anterior, calcular frecuencia acumulada y frecuencia relativa acumulada en Excel y en R, e incluirlas en la tabla como una columna más.
+
+:::
 
 ## Diagramas de barra e histogramas
 
@@ -157,19 +161,20 @@ Con una agrupación de datos en intervalos de 1, esta es nuestra tabla dinámica
 
 ![](01-imagenes/camembert-td.png)
 
-![](01-imagenes/camembert-histo1.png)
+En la figura siguiente vemos el histograma correspondiente a la tabla anterior, con un intervalo de clase de 1 punto de extracto seco total, y otras dos alternativas si el intervalo de clase fuese de 2 puntos o de de 0,5 puntos.
 
-Si nuestro intervalo de clase fuese de 2 puntos de extracto seco en vez de 1, el histograma tendría este aspecto:
+
+::: {layout="[[1], [1,1]]"}
+![](01-imagenes/camembert-histo1.png)
 
 ![](01-imagenes/camembert-histo2.png)
 
-Si por el contrario hubiésemos agrupado en intervalos de 0,5 puntos, el histograma sería este:
-
 ![](01-imagenes/camembert-histo3.png)
+:::
 
 La decisión de agrupar las variables continuas en intervalos de diferentes anchuras tiene efectos sobre el aspecto del gráfico; no obstante, debemos ser capaces de interpretar que la distribución de los valores es la misma en los tres casos: hay una mayoría de casos con valores entre 46 y 48, y muy pocos casos con valores muy bajos o muy altos. En este caso, la distribución de los valores es aproximadamente simétrica, y se reparten alrededor de una mayoría de valores centrales.
 
-Como vemos, aunque Excel utiliza el diagrama de barras para construir el gráfico, en realidad estamos construyendo un histograma, en dos etapas: agrupación de los datos y creación del gráfico. Al construir un histograma en R, el programa realiza automáticamente ambos pasos. Para verlo por partes, vamos a construir la tabla de frecuencias y el histograma de la variable `est`en R.
+Como vemos, aunque Excel utiliza el diagrama de barras para construir el gráfico, en realidad estamos construyendo un histograma, en dos etapas: agrupación de los datos en una tabla de frecuencia (tabla dinámica) y creación del gráfico a partir de esta tabla. Al construir un histograma en R, el programa realiza automáticamente ambos pasos. Para verlo por partes, vamos a construir la tabla de frecuencias y el histograma de la variable `est`en R.
 
 ```{r message=FALSE, warning=FALSE}
 library (tidyverse)
@@ -180,6 +185,24 @@ df_camembert |>
   summarise (frec_abs = n()) |>
   mutate(frec_rel = frec_abs / sum(frec_abs))
 ```
+
+ahora completamos el script para redirigir la tabla de frecuencias a `ggplot()` y hacer el diagrama de barras.
+
+```{r}
+# Crear tabla de frecuencias y diagrama de barras
+df_camembert |>
+  mutate(grupo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE)) |>
+  group_by(grupo) |>
+  summarise(frec_abs = n()) |>
+  mutate(frec_rel = frec_abs / sum(frec_abs)) |>
+  ggplot(aes(x = grupo, y = frec_abs)) +
+  geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
+  labs(title = "Diagrama de Barras de Frecuencia absoluta",
+       x = "Intervalos de 'est'",
+       y = "Frecuencia Absoluta") +
+  theme_minimal()
+```
+
 Modificando el criterio de la amplitud de clase para agrupar de dos en dos en vez de uno, podemos cambiar la tabla, igual que hemos hecho en Excel.
 
 
@@ -190,10 +213,16 @@ df_camembert |>
   mutate (grupo = cut(est, breaks = seq(40, 54, by =2), include_lowest = TRUE)) |>
   group_by(grupo) |>
   summarise (frec_abs = n()) |>
-  mutate(frec_rel = frec_abs / sum(frec_abs))
+  mutate(frec_rel = frec_abs / sum(frec_abs)) |>
+  ggplot(aes(x = grupo, y = frec_abs)) +
+  geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
+  labs(title = "Diagrama de Barras de Frecuencia absoluta",
+       x = "Intervalos de 'est'",
+       y = "Frecuencia absoluta (núm. de casos)") +
+  theme_minimal()
 ```
 
-R tiene una función básica, la función `hist()`, que construye el histograma directamente sin necesidad de hacer previamente una tabla de frecuencias (en realidad, la tabla de frecuencias se calcula internamente).
+R tiene una función básica, la función `hist()`, que construye el histograma directamente sin necesidad de hacer previamente una tabla de frecuencias (en realidad, la tabla de frecuencias se calcula internamente).Como siempre, presentamos esta opción básica junto con la opción de la función `ggplot()` de `tidyverse`.
 
 ```{r message=FALSE, warning=FALSE}
 #| label: fig-histo1
@@ -207,10 +236,11 @@ hist(df_camembert$est)
 
 df_camembert |>
   ggplot(aes(x=est)) +
-    geom_histogram()
+    geom_histogram(binwidth=1, fill = "darkblue", alpha = 0.7, color = "black") +
+    theme_minimal()
 ```
 
-En general, son más útiles las opciones de la función `ggplot()`, en la biblioteca `tidyverse`.
+En general, la función `ggplot()` es más útil que las funciones básicas, porque es mucho más configurable, gracias a sus múltiples opciones, y es la recomendada para preparar gráficos que vayan destinados a informes o presentaciones. La función básica `hist()`, por su parte, es más sencilla de usar al principio cuando no tenemos todavía experiencia con `ggplot()`, y también para una visualización rápida.
 
 En ocasiones, nos encontramos con datos que son asimétricos: hay una mayoría de valores bajos o bien de valores altos. Veamos un caso: los recuentos bacterianos de bacterias coliformes, que tenemos en la última columna a la derecha de nuestra tabla, en la variable ´coliformes´.
 
@@ -387,6 +417,17 @@ Los gráficos de dispersión son útiles para identificar varios aspectos de la 
 - Si los puntos forman una curva en lugar de una línea recta, esto sugiere una relación no lineal entre las variables.
 - La dispersión de los puntos puede indicar la variabilidad de los datos. Puntos que están muy lejos del patrón general pueden ser valores atípicos.
 
+Como siempre, vemos el gráfico de dispersión en Excel y a continuación en R. Utilizamos la tabla de datos `camembert.csv` y representamos las variables `est`y `mg`. 
+
+::: {#fig-grafdisp layout-ncol=2}
+
+![Tabla de origen mostrando una parte de los datos seleccionados](01-imagenes/camembert-tabla-dispersion-est-mg.png){#fig-tabladisp}
+
+![Gráfico de dispersión](01-imagenes/camembert-dispersion-est-mg.png){#fig-grafdisp}
+
+Gráfico de dispersión en Excel
+:::
+
 
 ```{r}
 #| label: fig-grafdisp
@@ -405,10 +446,12 @@ df_camembert |>
 
 ```
 
-Los gráficos de dispersión son una herramienta esencial en el análisis de datos exploratorio, ya que permiten visualizar relaciones y patrones en los datos, identificar correlaciones y detectar posibles anomalías. Esta información es crucial para realizar análisis estadísticos más profundos y tomar decisiones basadas en datos.
+Lo esperable en nuestros datos es que el valor de `est` y el de `mg` estén asociados, y a valores altos de la primera variable correspondan valores altos de la segunda (para el mismo producto y sin cambios de tecnología). Sin embargo, algunos valores parecen no encajar en este modelo; es el caso de un valor de `est`por encima de 52% con un valor de `mg`inferior a 23%, o el caso de un valor de `mg` en torno al 28% con un valor de `est` por debajo de 47%. Debemos revisar estos valores aparentemente anormales para verificar si ha habido un error en la toma de muestras o un error analítico. En fábricas con productos diferentes cuyos resultados analíticos se recogen en una tabla de datos común, a veces puede haber errores en la introducción de los códigos de producto, de forma que la toma de muestras y los análisis pueden ser correctos, pero estar mal asignados al guardar los datos.
 
-Excel no permite hacer gráficos de dispersión directamente, aunque sí podemos hacerlos de forma indirecta. 
-Ver articulo blog
+Como vemos, los gráficos de dispersión son una herramienta esencial en el análisis de datos exploratorio, ya que permiten visualizar relaciones y patrones en los datos, identificar correlaciones y detectar posibles anomalías. Esta información es crucial para realizar análisis estadísticos más profundos y tomar decisiones basadas en datos.
+
+Excel permite hacer gráficos de dispersión de dos variables que deben estar en diferentes columnas, pero no permite hacer gráficos de dispersión multiserie. En [mi blog](https://juanriera.github.io/blog/) he propuesto [una forma de hacer estos gráficos multiserie en Excel](https://juanriera.github.io/blog/posts/excel-xy/) de forma que se soslaye esta deficiencia. 
+
 
 ## Gráficos de series temporales
 
@@ -424,14 +467,15 @@ En un gráfico de series temporales,
 
 En nuestro conjunto de datos de fabricación de queso camembert, la primera columna de la tabla recoge la variable `fecha`, lo que nos permite ordenar nuestros valores en el tiempo.
 
-Cuando representamos los valores en el tiempo, nunca usaremos el diagrama de barras, sino el gráfico de líneas.
+Cuando representamos valores en el tiempo, nunca usaremos el diagrama de barras, sino el gráfico de líneas.
 
+### Cómo hacer los gráficos de series temporales en Excel y en R
 
-Ejemplo en Excel
+Para hacer el gráfico en Excel, seleccionamos la columna `est`e insertamos un gráfico de líneas. A continuación, con el cursor sobre el gráfico, pulsamos el boton derecho y seleccionamos la opción `Seleccionar datos`. Una vez abierto el cuadro de opciones, editamos las etiquetas del eje X y seleccionamos el rango de la variable `fecha` desde la fila 2 hasta la última.Aceptamos, y a continuación editamos el formato del eje Y para sustituir el valor mínimo de $0$ por $42$, que es el valor que queremos como mínimo para nuestro gráfico.
 
+![Tabla y gráfico de series](01-imagenes/camembert-excel-graf-series.png){#fig-tabladisp}
 
-
-Ejemplo en R
+A continuación, los gráficos en R, como siempre con la opción de gráficos base y con `ggplot()`. R formatea automáticamente el rango del eje Y y no tenemos que hacer ninguna corrección de formato.
 
 ```{r}
 #| label: fig-graftemp
@@ -450,6 +494,7 @@ df_camembert |>
 
 ```
 
+### Resumen
 
 Los gráficos de series temporales son útiles para:
 
