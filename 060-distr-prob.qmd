@@ -1,6 +1,78 @@
 # Probabilidad y distribuciones de probabilidad 
 
-## Introducción al concepto de probabilidad
+### ¿Qué es la Probabilidad?
+
+La **probabilidad** es una rama de las matemáticas que se ocupa del estudio de los fenómenos aleatorios y la incertidumbre. Nos ayuda a medir la posibilidad de que ocurran ciertos eventos y a tomar decisiones informadas en situaciones de incertidumbre.
+
+### Algunos ejemplos
+
+- **Lanzamiento de una moneda**: Imagina que lanzas una moneda. Hay dos posibles resultados: cara o cruz. La probabilidad de obtener cara es 1/2, y la probabilidad de obtener cruz también es 1/2.
+
+- **Baraja de cartas**: Si sacas una carta de una baraja estándar de 52 cartas, la probabilidad de sacar un as es 4/52 (ya que hay 4 ases en la baraja).
+
+- **Lotería**: En una lotería donde debes elegir 6 números de 49, la probabilidad de ganar es muy baja, ya que hay muchas combinaciones posibles.
+
+- **Deportes**: Calculamos la probabilidad de que tu equipo favorito gane un partido.
+- **Medicina**: Los médicos utilizan probabilidades para predecir la efectividad de un tratamiento.
+- **Negocios**: Las empresas utilizan probabilidades para tomar decisiones informadas sobre inversiones y estrategias de mercado.
+
+
+Entender la probabilidad es fundamental para tomar decisiones informadas en muchas áreas de la vida y nos ayuda a evaluar riesgos y oportunidades.
+
+## Frecuencia relativa y probabilidad
+
+### Frecuencia Relativa
+
+**Definición**:
+La frecuencia relativa se refiere a la proporción de veces que ocurre un evento en relación con el número total de ensayos o experimentos realizados.
+
+**Cálculo**:
+La frecuencia relativa se calcula como:
+$$
+\text{Frecuencia Relativa} = \frac{\text{Número de veces que ocurre el evento}}{\text{Número total de ensayos}}
+$$
+
+**Ejemplo**:
+Si lanzas una moneda 100 veces y obtienes 52 caras, la frecuencia relativa de obtener cara es:
+$$
+\text{Frecuencia Relativa} = \frac{52}{100} = 0.52
+$$
+
+**Aplicación**:
+La frecuencia relativa se utiliza principalmente en el análisis de datos experimentales y observacionales para estimar la probabilidad empírica de eventos basándose en la evidencia observada.
+
+### Probabilidad
+
+**Definición**
+La probabilidad es una medida teórica de la probabilidad de que ocurra un evento, basada en un modelo matemático o un conjunto de supuestos.
+
+**Cálculo**
+La probabilidad de un evento $A$, denotada como $P(A)$, se calcula como:
+
+$$
+P(A) = \frac{\text{Número de casos favorables}}{\text{Número total de casos posibles}}
+$$
+
+
+**Ejemplo**:
+Para una moneda justa, la probabilidad de obtener cara es:
+$$
+P(\text{Cara}) = \frac{1}{2} = 0.5
+$$
+**Aplicación**:
+La probabilidad se utiliza en teoría de la probabilidad y estadística para predecir la ocurrencia de eventos en base a modelos matemáticos y supuestos teóricos.
+
+### Comparación
+
+| Característica         | Frecuencia Relativa                                               | Probabilidad                                               |
+|------------------------|-------------------------------------------------------------------|------------------------------------------------------------|
+| **Definición**         | Proporción de veces que ocurre un evento en un número de ensayos  | Medida teórica de la probabilidad de que ocurra un evento  |
+| **Cálculo**            | $\frac{\text{Número de veces que ocurre el evento}}{\text{Número total de ensayos}}$ | $\frac{\text{Número de casos favorables}}{\text{Número total de casos posibles}}$ |
+| **Basado en**          | Datos experimentales u observacionales                            | Modelos matemáticos y supuestos teóricos                   |
+| **Ejemplo**            | Frecuencia relativa de obtener cara en 100 lanzamientos de moneda es $0.52$ | Probabilidad de obtener cara en una moneda justa es $0.5$ |
+| **Aplicación**         | Estimación empírica de probabilidades                             | Predicción de eventos basados en modelos teóricos          |
+
+En resumen, la frecuencia relativa se basa en datos observados y se utiliza para estimar probabilidades empíricas, mientras que la probabilidad es una medida teórica basada en modelos matemáticos. Ambas son herramientas útiles en el análisis de datos y la toma de decisiones informadas.
 
 ## Distribuciones de probabilidad
 

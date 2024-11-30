@@ -15,6 +15,7 @@ book:
     - 030-organizacion.qmd  
     - 040-exploracion.qmd
     - 050-estad-simple.qmd
+    - 055-forma-de-los-datos.qmd
     - 060-distr-prob.qmd
     - 070-relacion-xy.qmd
     - 080-anova.qmd

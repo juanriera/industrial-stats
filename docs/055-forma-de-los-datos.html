@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="es" xml:lang="es"><head>
 
 <meta charset="utf-8">
 <meta name="generator" content="quarto-1.6.37">
@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>11&nbsp; El control estadístico de procesos – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
+<title>6&nbsp; La forma de los datos – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -20,6 +20,40 @@ ul.task-list li input[type="checkbox"] {
   margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
   vertical-align: middle;
 }
+/* CSS for syntax highlighting */
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { display: inline-block; text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+  }
+pre.numberSource { margin-left: 3em;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
 </style>
 
 
@@ -30,8 +64,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./110-disexp.html" rel="next">
-<link href="./090-sistema-medicion.html" rel="prev">
+<link href="./060-distr-prob.html" rel="next">
+<link href="./050-estad-simple.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -55,17 +89,17 @@ ul.task-list li input[type="checkbox"] {
   ],
   "show-item-context": false,
   "language": {
-    "search-no-results-text": "No results",
-    "search-matching-documents-text": "matching documents",
-    "search-copy-link-title": "Copy link to search",
-    "search-hide-matches-text": "Hide additional matches",
-    "search-more-match-text": "more match in this document",
-    "search-more-matches-text": "more matches in this document",
-    "search-clear-button-title": "Clear",
+    "search-no-results-text": "Sin resultados",
+    "search-matching-documents-text": "documentos encontrados",
+    "search-copy-link-title": "Copiar el enlace en la búsqueda",
+    "search-hide-matches-text": "Ocultar resultados adicionales",
+    "search-more-match-text": "resultado adicional en este documento",
+    "search-more-matches-text": "resultados adicionales en este documento",
+    "search-clear-button-title": "Borrar",
     "search-text-placeholder": "",
-    "search-detached-cancel-button-title": "Cancel",
-    "search-submit-button-title": "Submit",
-    "search-label": "Search"
+    "search-detached-cancel-button-title": "Cancelar",
+    "search-submit-button-title": "Enviar",
+    "search-label": "Buscar"
   }
 }</script>
 
@@ -78,13 +112,13 @@ ul.task-list li input[type="checkbox"] {
   <header id="quarto-header" class="headroom fixed-top">
   <nav class="quarto-secondary-nav">
     <div class="container-fluid d-flex">
-      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
+      <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./100-control-proc.html"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></a></li></ol></nav>
-        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./055-forma-de-los-datos.html"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">La forma de los datos</span></a></li></ol></nav>
+        <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Alternar barra lateral" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
-      <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
+      <button type="button" class="btn quarto-search-button" aria-label="Buscar" onclick="window.quartoOpenSearch();">
         <i class="bi bi-search"></i>
       </button>
     </div>
@@ -101,7 +135,7 @@ ul.task-list li input[type="checkbox"] {
       </div>
         <div class="mt-2 flex-shrink-0 align-items-center">
         <div class="sidebar-search">
-        <div id="quarto-search" class="" title="Search"></div>
+        <div id="quarto-search" class="" title="Buscar"></div>
         </div>
         </div>
     <div class="sidebar-menu-container"> 
@@ -144,7 +178,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./055-forma-de-los-datos.html" class="sidebar-item-text sidebar-link">
+  <a href="./055-forma-de-los-datos.html" class="sidebar-item-text sidebar-link active">
  <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">La forma de los datos</span></span></a>
   </div>
 </li>
@@ -174,7 +208,7 @@ ul.task-list li input[type="checkbox"] {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link active">
+  <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
  <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
@@ -215,17 +249,15 @@ ul.task-list li input[type="checkbox"] {
 <!-- margin-sidebar -->
     <div id="quarto-margin-sidebar" class="sidebar margin-sidebar">
         <nav id="TOC" role="doc-toc" class="toc-active">
-    <h2 id="toc-title">Table of contents</h2>
+    <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#la-mejora-de-la-calidad-y-el-control-estadístico-de-procesos" id="toc-la-mejora-de-la-calidad-y-el-control-estadístico-de-procesos" class="nav-link active" data-scroll-target="#la-mejora-de-la-calidad-y-el-control-estadístico-de-procesos"><span class="header-section-number">11.1</span> La mejora de la calidad y el control estadístico de procesos</a></li>
-  <li><a href="#introducción-a-los-gráficos-de-control" id="toc-introducción-a-los-gráficos-de-control" class="nav-link" data-scroll-target="#introducción-a-los-gráficos-de-control"><span class="header-section-number">11.2</span> Introducción a los gráficos de control</a>
-  <ul class="collapse">
-  <li><a href="#causas-comunes-y-causas-especiales-de-variación" id="toc-causas-comunes-y-causas-especiales-de-variación" class="nav-link" data-scroll-target="#causas-comunes-y-causas-especiales-de-variación"><span class="header-section-number">11.2.1</span> Causas comunes y causas especiales de variación</a></li>
-  <li><a href="#variación-a-corto-plazo-y-variación-a-largo-plazo" id="toc-variación-a-corto-plazo-y-variación-a-largo-plazo" class="nav-link" data-scroll-target="#variación-a-corto-plazo-y-variación-a-largo-plazo"><span class="header-section-number">11.2.2</span> Variación a corto plazo y variación a largo plazo</a></li>
-  </ul></li>
-  <li><a href="#la-capacidad-de-un-proceso" id="toc-la-capacidad-de-un-proceso" class="nav-link" data-scroll-target="#la-capacidad-de-un-proceso"><span class="header-section-number">11.3</span> La capacidad de un proceso</a></li>
-  <li><a href="#ejemplo-establecer-las-especificaciones-de-un-producto" id="toc-ejemplo-establecer-las-especificaciones-de-un-producto" class="nav-link" data-scroll-target="#ejemplo-establecer-las-especificaciones-de-un-producto"><span class="header-section-number">11.4</span> Ejemplo: establecer las especificaciones de un producto</a></li>
+  <li><a href="#introducción-al-estudio-de-la-forma-de-los-datos" id="toc-introducción-al-estudio-de-la-forma-de-los-datos" class="nav-link active" data-scroll-target="#introducción-al-estudio-de-la-forma-de-los-datos"><span class="header-section-number">6.0.1</span> Introducción al Estudio de la Forma de los Datos</a></li>
+  <li><a href="#análisis-descriptivo" id="toc-análisis-descriptivo" class="nav-link" data-scroll-target="#análisis-descriptivo"><span class="header-section-number">6.0.2</span> Análisis Descriptivo</a></li>
+  <li><a href="#visualización-de-datos" id="toc-visualización-de-datos" class="nav-link" data-scroll-target="#visualización-de-datos"><span class="header-section-number">6.0.3</span> Visualización de Datos</a></li>
+  <li><a href="#análisis-exploratorio-de-datos-eda" id="toc-análisis-exploratorio-de-datos-eda" class="nav-link" data-scroll-target="#análisis-exploratorio-de-datos-eda"><span class="header-section-number">6.0.4</span> Análisis Exploratorio de Datos (EDA)</a></li>
+  <li><a href="#pruebas-estadísticas" id="toc-pruebas-estadísticas" class="nav-link" data-scroll-target="#pruebas-estadísticas"><span class="header-section-number">6.0.5</span> Pruebas Estadísticas</a></li>
+  <li><a href="#importancia-del-estudio-de-la-forma-de-los-datos" id="toc-importancia-del-estudio-de-la-forma-de-los-datos" class="nav-link" data-scroll-target="#importancia-del-estudio-de-la-forma-de-los-datos"><span class="header-section-number">6.0.6</span> Importancia del Estudio de la Forma de los Datos</a></li>
   </ul>
 </nav>
     </div>
@@ -234,7 +266,7 @@ ul.task-list li input[type="checkbox"] {
 
 <header id="title-block-header" class="quarto-title-block default">
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></h1>
+<h1 class="title"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">La forma de los datos</span></h1>
 </div>
 
 
@@ -251,23 +283,118 @@ ul.task-list li input[type="checkbox"] {
 </header>
 
 
-<section id="la-mejora-de-la-calidad-y-el-control-estadístico-de-procesos" class="level2" data-number="11.1">
-<h2 data-number="11.1" class="anchored" data-anchor-id="la-mejora-de-la-calidad-y-el-control-estadístico-de-procesos"><span class="header-section-number">11.1</span> La mejora de la calidad y el control estadístico de procesos</h2>
+<section id="introducción-al-estudio-de-la-forma-de-los-datos" class="level3" data-number="6.0.1">
+<h3 data-number="6.0.1" class="anchored" data-anchor-id="introducción-al-estudio-de-la-forma-de-los-datos"><span class="header-section-number">6.0.1</span> Introducción al Estudio de la Forma de los Datos</h3>
+<p>El estudio de la forma de los datos es fundamental en el análisis de datos y la estadística. Nos permite entender la distribución, tendencias, patrones y anomalías presentes en los datos, lo cual es esencial para tomar decisiones informadas y realizar análisis precisos. En esta introducción, exploraremos varios métodos y herramientas para examinar la forma de los datos, utilizando ejemplos en R, un lenguaje de programación muy utilizado en análisis de datos.</p>
 </section>
-<section id="introducción-a-los-gráficos-de-control" class="level2" data-number="11.2">
-<h2 data-number="11.2" class="anchored" data-anchor-id="introducción-a-los-gráficos-de-control"><span class="header-section-number">11.2</span> Introducción a los gráficos de control</h2>
-<section id="causas-comunes-y-causas-especiales-de-variación" class="level3" data-number="11.2.1">
-<h3 data-number="11.2.1" class="anchored" data-anchor-id="causas-comunes-y-causas-especiales-de-variación"><span class="header-section-number">11.2.1</span> Causas comunes y causas especiales de variación</h3>
+<section id="análisis-descriptivo" class="level3" data-number="6.0.2">
+<h3 data-number="6.0.2" class="anchored" data-anchor-id="análisis-descriptivo"><span class="header-section-number">6.0.2</span> Análisis Descriptivo</h3>
+<p>El primer paso para entender la forma de los datos es realizar un análisis descriptivo. Este análisis incluye el cálculo de medidas como la media, mediana, moda, desviación estándar y percentiles, que resumen las características principales de los datos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar librería</span></span>
+<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
+<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un conjunto de datos</span></span>
+<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">19</span>, <span class="dv">23</span>, <span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">21</span>, <span class="dv">20</span>, <span class="dv">23</span>, <span class="dv">22</span>, <span class="dv">19</span>)</span>
+<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular medidas descriptivas</span></span>
+<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(datos)</span>
+<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>mediana <span class="ot">&lt;-</span> <span class="fu">median</span>(datos)</span>
+<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>moda <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(datos), <span class="at">decreasing=</span><span class="cn">TRUE</span>)[<span class="dv">1</span>]))</span>
+<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>desviacion_estandar <span class="ot">&lt;-</span> <span class="fu">sd</span>(datos)</span>
+<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar resultados</span></span>
+<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Media:"</span>, media, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Media: 21.3 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Mediana:"</span>, mediana, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Mediana: 21.5 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Moda:"</span>, moda, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Moda: 23 </code></pre>
+</div>
+<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Desviación Estándar:"</span>, desviacion_estandar, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Desviación Estándar: 1.567021 </code></pre>
+</div>
+</div>
 </section>
-<section id="variación-a-corto-plazo-y-variación-a-largo-plazo" class="level3" data-number="11.2.2">
-<h3 data-number="11.2.2" class="anchored" data-anchor-id="variación-a-corto-plazo-y-variación-a-largo-plazo"><span class="header-section-number">11.2.2</span> Variación a corto plazo y variación a largo plazo</h3>
+<section id="visualización-de-datos" class="level3" data-number="6.0.3">
+<h3 data-number="6.0.3" class="anchored" data-anchor-id="visualización-de-datos"><span class="header-section-number">6.0.3</span> Visualización de Datos</h3>
+<p>La visualización de datos es una herramienta poderosa para estudiar la forma de los datos. Gráficos como histogramas, diagramas de cajas y gráficos de dispersión permiten visualizar la distribución y las relaciones en los datos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar librería</span></span>
+<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
+<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un histograma</span></span>
+<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(datos), <span class="fu">aes</span>(<span class="at">x =</span> datos)) <span class="sc">+</span></span>
+<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma de Datos"</span>, <span class="at">x =</span> <span class="st">"Valores"</span>, <span class="at">y =</span> <span class="st">"Frecuencia"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="055-forma-de-los-datos_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un diagrama de cajas</span></span>
+<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(datos), <span class="fu">aes</span>(<span class="at">y =</span> datos)) <span class="sc">+</span></span>
+<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"cyan"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
+<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Diagrama de Cajas de Datos"</span>, <span class="at">y =</span> <span class="st">"Valores"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="055-forma-de-los-datos_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
+<section id="análisis-exploratorio-de-datos-eda" class="level3" data-number="6.0.4">
+<h3 data-number="6.0.4" class="anchored" data-anchor-id="análisis-exploratorio-de-datos-eda"><span class="header-section-number">6.0.4</span> Análisis Exploratorio de Datos (EDA)</h3>
+<p>El Análisis Exploratorio de Datos (EDA) implica técnicas gráficas y cuantitativas para descubrir patrones, detectar anomalías y verificar hipótesis. EDA es una fase preliminar clave en el análisis de datos.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un conjunto de datos de ejemplo</span></span>
+<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
+<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>datos_eda <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
+<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>),</span>
+<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
+<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>)</span>
+<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un gráfico de dispersión</span></span>
+<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos_eda, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
+<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
+<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Gráfico de Dispersión"</span>, <span class="at">x =</span> <span class="st">"Variable X"</span>, <span class="at">y =</span> <span class="st">"Variable Y"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output-display">
+<div>
+<figure class="figure">
+<p><img src="055-forma-de-los-datos_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
+</figure>
+</div>
+</div>
+</div>
 </section>
-<section id="la-capacidad-de-un-proceso" class="level2" data-number="11.3">
-<h2 data-number="11.3" class="anchored" data-anchor-id="la-capacidad-de-un-proceso"><span class="header-section-number">11.3</span> La capacidad de un proceso</h2>
+<section id="pruebas-estadísticas" class="level3" data-number="6.0.5">
+<h3 data-number="6.0.5" class="anchored" data-anchor-id="pruebas-estadísticas"><span class="header-section-number">6.0.5</span> Pruebas Estadísticas</h3>
+<p>Las pruebas estadísticas, como la prueba de normalidad (Kolmogorov-Smirnov, Shapiro-Wilk), ayudan a determinar si los datos siguen una distribución específica.</p>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba de normalidad Shapiro-Wilk</span></span>
+<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>shapiro_test <span class="ot">&lt;-</span> <span class="fu">shapiro.test</span>(datos)</span>
+<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar resultado</span></span>
+<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Prueba de Shapiro-Wilk: p-value ="</span>, shapiro_test<span class="sc">$</span>p.value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>Prueba de Shapiro-Wilk: p-value = 0.1400044 </code></pre>
+</div>
+</div>
 </section>
-<section id="ejemplo-establecer-las-especificaciones-de-un-producto" class="level2" data-number="11.4">
-<h2 data-number="11.4" class="anchored" data-anchor-id="ejemplo-establecer-las-especificaciones-de-un-producto"><span class="header-section-number">11.4</span> Ejemplo: establecer las especificaciones de un producto</h2>
+<section id="importancia-del-estudio-de-la-forma-de-los-datos" class="level3" data-number="6.0.6">
+<h3 data-number="6.0.6" class="anchored" data-anchor-id="importancia-del-estudio-de-la-forma-de-los-datos"><span class="header-section-number">6.0.6</span> Importancia del Estudio de la Forma de los Datos</h3>
+<p>Comprender la forma de los datos es crucial para identificar patrones, detectar anomalías, seleccionar modelos apropiados y visualizar datos de manera efectiva. Un buen entendimiento de la forma de los datos permite tomar decisiones más informadas y basadas en evidencia, mejorando la calidad del análisis y la interpretación de los resultados.</p>
+<p>En resumen, el estudio de la forma de los datos a través del análisis descriptivo, visualización de datos, EDA y pruebas estadísticas, nos proporciona una comprensión profunda de los datos y nos guía en el proceso de análisis. Utilizar herramientas como R facilita este estudio y nos permite trabajar con datos de manera más eficiente y precisa.</p>
 
 
 </section>
@@ -316,12 +443,12 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
     // flash "checked"
     button.classList.add('code-copy-button-checked');
     var currentTitle = button.getAttribute("title");
-    button.setAttribute("title", "Copied!");
+    button.setAttribute("title", "Copiado");
     let tooltip;
     if (window.bootstrap) {
       button.setAttribute("data-bs-toggle", "tooltip");
       button.setAttribute("data-bs-placement", "left");
-      button.setAttribute("data-bs-title", "Copied!");
+      button.setAttribute("data-bs-title", "Copiado");
       tooltip = new bootstrap.Tooltip(button, 
         { trigger: "manual", 
           customClass: "code-copy-button-tooltip",
@@ -692,13 +819,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./090-sistema-medicion.html" class="pagination-link" aria-label="El análisis del sistema de medición">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span>
+      <a href="./050-estad-simple.html" class="pagination-link" aria-label="Medidas centrales y medidas de dispersión: la media y la varianza.">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">5</span>&nbsp; <span class="chapter-title">Medidas centrales y medidas de dispersión: la media y la varianza.</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./110-disexp.html" class="pagination-link" aria-label="Diseño de experimentos">
-        <span class="nav-page-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./060-distr-prob.html" class="pagination-link" aria-label="Probabilidad y distribuciones de probabilidad">
+        <span class="nav-page-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

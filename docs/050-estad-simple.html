@@ -30,7 +30,7 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./060-distr-prob.html" rel="next">
+<link href="./055-forma-de-los-datos.html" rel="next">
 <link href="./040-exploracion.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
@@ -173,50 +173,56 @@ window.Quarto = {
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
+  <a href="./055-forma-de-los-datos.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">La forma de los datos</span></span></a>
+  </div>
+</li>
+        <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
   <a href="./060-distr-prob.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./080-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./090-sistema-medicion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis del sistema de medición</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./100-control-proc.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">El control estadístico de procesos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+ <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./120-mejora-calidad.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">12</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
+ <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La calidad y la mejora de la calidad</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./130-comunicacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">13</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
+ <span class="menu-text"><span class="chapter-number">14</span>&nbsp; <span class="chapter-title">La comunicación</span></span></a>
   </div>
 </li>
         <li class="sidebar-item">
@@ -256,15 +262,16 @@ window.Quarto = {
   </ul></li>
   <li><a href="#la-media-aritmética-como-centro-de-gravedad-de-un-grupo-de-datos" id="toc-la-media-aritmética-como-centro-de-gravedad-de-un-grupo-de-datos" class="nav-link" data-scroll-target="#la-media-aritmética-como-centro-de-gravedad-de-un-grupo-de-datos"><span class="header-section-number">5.5</span> La media aritmética como centro de gravedad de un grupo de datos</a>
   <ul class="collapse">
-  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1"><span class="header-section-number">5.5.1</span> Ejemplo:</a></li>
-  <li><a href="#paso-a-paso" id="toc-paso-a-paso" class="nav-link" data-scroll-target="#paso-a-paso"><span class="header-section-number">5.5.2</span> Paso a Paso:</a></li>
-  <li><a href="#ejemplo-práctico" id="toc-ejemplo-práctico" class="nav-link" data-scroll-target="#ejemplo-práctico"><span class="header-section-number">5.5.3</span> Ejemplo Práctico:</a></li>
+  <li><a href="#ejemplo-1" id="toc-ejemplo-1" class="nav-link" data-scroll-target="#ejemplo-1"><span class="header-section-number">5.5.1</span> Ejemplo</a></li>
+  <li><a href="#paso-a-paso" id="toc-paso-a-paso" class="nav-link" data-scroll-target="#paso-a-paso"><span class="header-section-number">5.5.2</span> Paso a Paso</a></li>
+  <li><a href="#ejemplo-práctico" id="toc-ejemplo-práctico" class="nav-link" data-scroll-target="#ejemplo-práctico"><span class="header-section-number">5.5.3</span> Ejemplo Práctico</a></li>
   <li><a href="#media-ponderada" id="toc-media-ponderada" class="nav-link" data-scroll-target="#media-ponderada"><span class="header-section-number">5.5.4</span> Media Ponderada</a></li>
-  <li><a href="#centro-de-gravedad-como-media-ponderada" id="toc-centro-de-gravedad-como-media-ponderada" class="nav-link" data-scroll-target="#centro-de-gravedad-como-media-ponderada"><span class="header-section-number">5.5.5</span> Centro de Gravedad como Media Ponderada:</a></li>
-  <li><a href="#ejemplo-numérico" id="toc-ejemplo-numérico" class="nav-link" data-scroll-target="#ejemplo-numérico"><span class="header-section-number">5.5.6</span> Ejemplo Numérico:</a></li>
+  <li><a href="#centro-de-gravedad-como-media-ponderada" id="toc-centro-de-gravedad-como-media-ponderada" class="nav-link" data-scroll-target="#centro-de-gravedad-como-media-ponderada"><span class="header-section-number">5.5.5</span> Centro de Gravedad como Media Ponderada</a></li>
+  <li><a href="#ejemplo-numérico" id="toc-ejemplo-numérico" class="nav-link" data-scroll-target="#ejemplo-numérico"><span class="header-section-number">5.5.6</span> Ejemplo Numérico</a></li>
   <li><a href="#media-aritmética-y-centro-de-gravedad-con-masas-idénticas" id="toc-media-aritmética-y-centro-de-gravedad-con-masas-idénticas" class="nav-link" data-scroll-target="#media-aritmética-y-centro-de-gravedad-con-masas-idénticas"><span class="header-section-number">5.5.7</span> Media Aritmética y Centro de Gravedad con Masas Idénticas</a></li>
-  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión"><span class="header-section-number">5.5.8</span> Conclusión:</a></li>
+  <li><a href="#conclusión" id="toc-conclusión" class="nav-link" data-scroll-target="#conclusión"><span class="header-section-number">5.5.8</span> Conclusión</a></li>
   </ul></li>
+  <li><a href="#importancia-del-concepto-de-la-media-como-centro-de-gravedad-o-punto-de-equilibrio-de-un-conjunto-de-datos" id="toc-importancia-del-concepto-de-la-media-como-centro-de-gravedad-o-punto-de-equilibrio-de-un-conjunto-de-datos" class="nav-link" data-scroll-target="#importancia-del-concepto-de-la-media-como-centro-de-gravedad-o-punto-de-equilibrio-de-un-conjunto-de-datos"><span class="header-section-number">5.6</span> Importancia del concepto de la media como centro de gravedad o punto de equilibrio de un conjunto de datos</a></li>
   </ul>
 </nav>
     </div>
@@ -534,7 +541,7 @@ P \cdot d_p = R \cdot d_r
 \]</span></p>
 <p>Donde: - <span class="math inline">\(P\)</span> es la potencia o fuerza aplicada. - <span class="math inline">\(d_p\)</span> es la distancia desde el punto de apoyo hasta el punto donde se aplica la potencia. - <span class="math inline">\(R\)</span> es la resistencia o carga. - <span class="math inline">\(d_r\)</span> es la distancia desde el punto de apoyo hasta el punto donde se aplica la resistencia.</p>
 <section id="ejemplo-1" class="level3" data-number="5.5.1">
-<h3 data-number="5.5.1" class="anchored" data-anchor-id="ejemplo-1"><span class="header-section-number">5.5.1</span> Ejemplo:</h3>
+<h3 data-number="5.5.1" class="anchored" data-anchor-id="ejemplo-1"><span class="header-section-number">5.5.1</span> Ejemplo</h3>
 <p>Si tienes una palanca con una longitud de 5 metros y aplicas una fuerza de 10 Newtons a 1 metro del punto de apoyo, para mantener el equilibrio, la fuerza de resistencia en el otro extremo a 4 metros del punto de apoyo debería ser: <span class="math display">\[
 P \cdot d_p = R \cdot d_r
 \]</span> <span class="math display">\[
@@ -546,7 +553,7 @@ R = \frac{10 \cdot 1}{4} = 2,5 \text{N}
 <p>Calcular el punto de equilibrio de una barra de la que se cuelgan diferentes pesos a diferentes distancias de su origen es un problema clásico de física que se puede resolver usando el principio de momentos.</p>
 </section>
 <section id="paso-a-paso" class="level3" data-number="5.5.2">
-<h3 data-number="5.5.2" class="anchored" data-anchor-id="paso-a-paso"><span class="header-section-number">5.5.2</span> Paso a Paso:</h3>
+<h3 data-number="5.5.2" class="anchored" data-anchor-id="paso-a-paso"><span class="header-section-number">5.5.2</span> Paso a Paso</h3>
 <ol type="1">
 <li><p><strong>Identificar las fuerzas</strong>: Supongamos que tienes varios pesos <span class="math inline">\(W_1, W_2, W_3, \ldots, W_n\)</span> colgados a distancias <span class="math inline">\(d_1, d_2, d_3, \ldots, d_n\)</span> del origen (punto de apoyo).</p></li>
 <li><p><strong>Calcular los momentos</strong>: El momento (<span class="math inline">\(M\)</span>) de un peso alrededor del punto de apoyo se calcula como el producto de la fuerza (peso) y la distancia al punto de apoyo: <span class="math display">\[
@@ -564,7 +571,7 @@ x = \frac{\sum (W_i \times d_i)}{\sum W_i}
 </ol>
 </section>
 <section id="ejemplo-práctico" class="level3" data-number="5.5.3">
-<h3 data-number="5.5.3" class="anchored" data-anchor-id="ejemplo-práctico"><span class="header-section-number">5.5.3</span> Ejemplo Práctico:</h3>
+<h3 data-number="5.5.3" class="anchored" data-anchor-id="ejemplo-práctico"><span class="header-section-number">5.5.3</span> Ejemplo Práctico</h3>
 <p>Supongamos que tenemos tres pesos de 4, 9 y 1 kg, situados, respectivamente, a 2, 1 y 3 m respectivamente del origen de la barra.</p>
 <ul>
 <li><span class="math inline">\(W_1 = 4 \, \text{kg}\)</span> a <span class="math inline">\(d_1 = 2 \, \text{m}\)</span></li>
@@ -596,20 +603,20 @@ x = \frac{20}{14} \approx 1.43 \, \text{m}
 <h3 data-number="5.5.4" class="anchored" data-anchor-id="media-ponderada"><span class="header-section-number">5.5.4</span> Media Ponderada</h3>
 <p>En muchas situaciones, el centro de gravedad de un sistema de masas puede interpretarse como una <strong>media ponderada</strong> de las posiciones de las masas.</p>
 <section id="media-aritmética" class="level4" data-number="5.5.4.1">
-<h4 data-number="5.5.4.1" class="anchored" data-anchor-id="media-aritmética"><span class="header-section-number">5.5.4.1</span> Media Aritmética:</h4>
+<h4 data-number="5.5.4.1" class="anchored" data-anchor-id="media-aritmética"><span class="header-section-number">5.5.4.1</span> Media Aritmética</h4>
 <p>Para un conjunto de números <span class="math inline">\(x_1, x_2, \ldots, x_n\)</span>, la media aritmética es: <span class="math display">\[
 \text{Media} = \frac{x_1 + x_2 + \cdots + x_n}{n}
 \]</span></p>
 </section>
 <section id="media-ponderada-1" class="level4" data-number="5.5.4.2">
-<h4 data-number="5.5.4.2" class="anchored" data-anchor-id="media-ponderada-1"><span class="header-section-number">5.5.4.2</span> Media Ponderada:</h4>
+<h4 data-number="5.5.4.2" class="anchored" data-anchor-id="media-ponderada-1"><span class="header-section-number">5.5.4.2</span> Media Ponderada</h4>
 <p>Para un conjunto de valores <span class="math inline">\(x_1, x_2, \ldots, x_n\)</span> con pesos asociados <span class="math inline">\(w_1, w_2, \ldots, w_n\)</span>, la media ponderada es: <span class="math display">\[
 \text{Media ponderada} = \frac{w_1 x_1 + w_2 x_2 + \cdots + w_n x_n}{w_1 + w_2 + \cdots + w_n}
 \]</span></p>
 </section>
 </section>
 <section id="centro-de-gravedad-como-media-ponderada" class="level3" data-number="5.5.5">
-<h3 data-number="5.5.5" class="anchored" data-anchor-id="centro-de-gravedad-como-media-ponderada"><span class="header-section-number">5.5.5</span> Centro de Gravedad como Media Ponderada:</h3>
+<h3 data-number="5.5.5" class="anchored" data-anchor-id="centro-de-gravedad-como-media-ponderada"><span class="header-section-number">5.5.5</span> Centro de Gravedad como Media Ponderada</h3>
 <p>Cuando calculamos el centro de gravedad (<span class="math inline">\(x_{\text{cg}}\)</span>) de un sistema de masas, estamos esencialmente calculando una media ponderada de las posiciones (<span class="math inline">\(x_i\)</span>) de esas masas (<span class="math inline">\(m_i\)</span>):</p>
 <p><span class="math display">\[
 x_{\text{cg}} = \frac{\sum (m_i \cdot x_i)}{\sum m_i}
@@ -617,7 +624,7 @@ x_{\text{cg}} = \frac{\sum (m_i \cdot x_i)}{\sum m_i}
 <p>Aquí, las posiciones <span class="math inline">\(x_i\)</span> son ponderadas por las masas <span class="math inline">\(m_i\)</span>.</p>
 </section>
 <section id="ejemplo-numérico" class="level3" data-number="5.5.6">
-<h3 data-number="5.5.6" class="anchored" data-anchor-id="ejemplo-numérico"><span class="header-section-number">5.5.6</span> Ejemplo Numérico:</h3>
+<h3 data-number="5.5.6" class="anchored" data-anchor-id="ejemplo-numérico"><span class="header-section-number">5.5.6</span> Ejemplo Numérico</h3>
 <p>En nuestro ejemplo anterior,</p>
 <ul>
 <li>Masa 1: <span class="math inline">\(m_1 = 4 \, \text{kg}\)</span> en posición <span class="math inline">\(x_1 = 2 \, \text{m}\)</span></li>
@@ -637,17 +644,17 @@ x_{\text{cg}} = \frac{(4 \cdot 2) + (9 \cdot 1) + (1 \cdot 3)}{4 + 9 + 1} = \fra
 <p>En los ejemplos anteriores, calculábamos el punto de equilibrio para diferentes pesos colocados a lo largo de una barra. Si en vez de eso suponemos que la distancia al origen de la barra equivale a nuestro eje <span class="math inline">\(X\)</span>, que recoge los valores de los que queremos calcular nuestra media aritmética, podemos eliminar el efecto de la masa suponiendo que todas las masas son iguales.</p>
 <p>Si las masas de los diferentes objetos son idénticas, podemos decir que la media aritmética de las posiciones coincide con el centro de gravedad. Esto se debe a que, en este caso, cada masa tiene el mismo peso o influencia en el cálculo del centro de gravedad. Esta es la explicación detallada:</p>
 <section id="suposición" class="level4" data-number="5.5.7.1">
-<h4 data-number="5.5.7.1" class="anchored" data-anchor-id="suposición"><span class="header-section-number">5.5.7.1</span> Suposición:</h4>
+<h4 data-number="5.5.7.1" class="anchored" data-anchor-id="suposición"><span class="header-section-number">5.5.7.1</span> Suposición</h4>
 <p>Cada objeto tiene la misma masa <span class="math inline">\(m\)</span>.</p>
 </section>
 <section id="media-aritmética-1" class="level4" data-number="5.5.7.2">
-<h4 data-number="5.5.7.2" class="anchored" data-anchor-id="media-aritmética-1"><span class="header-section-number">5.5.7.2</span> Media Aritmética:</h4>
+<h4 data-number="5.5.7.2" class="anchored" data-anchor-id="media-aritmética-1"><span class="header-section-number">5.5.7.2</span> Media Aritmética</h4>
 <p>Para un conjunto de posiciones <span class="math inline">\(x_1, x_2, \ldots, x_n\)</span>, la media aritmética es: <span class="math display">\[
 \text{Media} = \frac{x_1 + x_2 + \cdots + x_n}{n}
 \]</span></p>
 </section>
 <section id="centro-de-gravedad" class="level4" data-number="5.5.7.3">
-<h4 data-number="5.5.7.3" class="anchored" data-anchor-id="centro-de-gravedad"><span class="header-section-number">5.5.7.3</span> Centro de Gravedad:</h4>
+<h4 data-number="5.5.7.3" class="anchored" data-anchor-id="centro-de-gravedad"><span class="header-section-number">5.5.7.3</span> Centro de Gravedad</h4>
 <p>El centro de gravedad (<span class="math inline">\(x_{\text{cg}}\)</span>) para un conjunto de masas idénticas en posiciones <span class="math inline">\(x_1, x_2, \ldots, x_n\)</span> es: <span class="math display">\[
 x_{\text{cg}} = \frac{\sum (m \cdot x_i)}{\sum m}
 \]</span></p>
@@ -662,7 +669,8 @@ x_{\text{cg}} = \frac{m \cdot (x_1 + x_2 + \cdots + x_n)}{n \cdot m}
 \]</span></p>
 <p>Al simplificar, los términos <span class="math inline">\(m\)</span> se cancelan, y nos queda: <span class="math display">\[
 x_{\text{cg}} = \frac{x_1 + x_2 + \cdots + x_n}{n}
-\]</span> Si repetimos nuestro ejemplo anterior, suponiendo en este caso masas idénticas</p>
+\]</span> que es exactamente la fórmula de la media aritmética.</p>
+<p>Si repetimos nuestro ejemplo anterior, suponiendo en este caso masas idénticas</p>
 <ul>
 <li>Masa 1: <span class="math inline">\(m_1 = 1 \, \text{kg}\)</span> en posición <span class="math inline">\(x_1 = 2 \, \text{m}\)</span></li>
 <li>Masa 2: <span class="math inline">\(m_2 = 1 \, \text{kg}\)</span> en posición <span class="math inline">\(x_2 = 1 \, \text{m}\)</span></li>
@@ -678,11 +686,15 @@ x_{\text{cg}} = \frac{(1 \cdot 2) + (1 \cdot 1) + (1 \cdot 3)}{1 + 1 + 1} = \fra
 </section>
 </section>
 <section id="conclusión" class="level3" data-number="5.5.8">
-<h3 data-number="5.5.8" class="anchored" data-anchor-id="conclusión"><span class="header-section-number">5.5.8</span> Conclusión:</h3>
+<h3 data-number="5.5.8" class="anchored" data-anchor-id="conclusión"><span class="header-section-number">5.5.8</span> Conclusión</h3>
 <p>Cuando las masas son idénticas, la media aritmética de las posiciones coincide con el centro de gravedad. Esto nos permite afirmar que en el caso de una dimensión (por ejemplo, el peso) la media aritmética de un conjunto de valores coincide con el centro de gravedad o punto de equilibrio de ese conjunto de valores.Este es un resultado interesante que muestra la conexión entre conceptos estadísticos y físicos.</p>
-
-
 </section>
+</section>
+<section id="importancia-del-concepto-de-la-media-como-centro-de-gravedad-o-punto-de-equilibrio-de-un-conjunto-de-datos" class="level2" data-number="5.6">
+<h2 data-number="5.6" class="anchored" data-anchor-id="importancia-del-concepto-de-la-media-como-centro-de-gravedad-o-punto-de-equilibrio-de-un-conjunto-de-datos"><span class="header-section-number">5.6</span> Importancia del concepto de la media como centro de gravedad o punto de equilibrio de un conjunto de datos</h2>
+<p>Efecto de los <em>outliers</em>: desequilibrio, desplazamiento de la media, incremento de la varianza (gan diferencia), mientras que la mediana y el rango intercuartil no se ven afectados</p>
+
+
 </section>
 
 </main> <!-- /main -->
@@ -1110,8 +1122,8 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./060-distr-prob.html" class="pagination-link" aria-label="Probabilidad y distribuciones de probabilidad">
-        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./055-forma-de-los-datos.html" class="pagination-link" aria-label="La forma de los datos">
+        <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">La forma de los datos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

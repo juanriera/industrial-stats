@@ -13,13 +13,11 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, fig.showtext = T)
 
 En este capítulo esyudiaremos cómo describir un conjunto de datos de forma visual, utilizando varios tipos de gráficos distintos:
 
-- _Stemplot_
-- Histograma
-- Diagrama de caja o _boxplot_
+-   *Stemplot*
+-   Histograma
+-   Diagrama de caja o *boxplot*
 
-Veremos la relación visual entre un histograma y un diagrama de caja, y aprenderemos también a construir tablas de frecuencias en Excel y en R.
-Finalmente, veremos algunos otros tipos de gráficos que son útiles para aplicaciones concretas, como los gráficos de series temporales.
-
+Veremos la relación visual entre un histograma y un diagrama de caja, y aprenderemos también a construir tablas de frecuencias en Excel y en R. Finalmente, veremos algunos otros tipos de gráficos que son útiles para aplicaciones concretas, como los gráficos de series temporales.
 
 ## Explorando los datos con Excel y R: un ejemplo.
 
@@ -61,13 +59,12 @@ El *stemplot* es muy sencillo de hacer y nos da una visión rápida de la *distr
 
 La ventaja principal del *stemplot* es que mantiene los valores originales de las observaciones, y puede hacerse fácilmente con bolígrafo y papel, sin necesidad de más herramientas.
 
-
 ## Distribuciones de frecuencias
 
-El _stemplot_ agrupa nuestros valores y nos ayuda a visualizar la frecuencia de cada valor, o, mejor, la frecuencia de valores en el intervalo entre cada valor. Si agrupamos nuestros valores por intervalos, y contamos el número de observaciones que aparecen en cada intervalo, obtenemos una *distribución de frecuencias*, que puede expresarse de forma *absoluta* o *relativa*. 
+El *stemplot* agrupa nuestros valores y nos ayuda a visualizar la frecuencia de cada valor, o, mejor, la frecuencia de valores en el intervalo entre cada valor. Si agrupamos nuestros valores por intervalos, y contamos el número de observaciones que aparecen en cada intervalo, obtenemos una *distribución de frecuencias*, que puede expresarse de forma *absoluta* o *relativa*.
 
-- La **frecuencia absoluta** es un *recuento simple* de cuántas veces aparece cada valor en un conjunto de datos. 
-- La **frecuencia relativa** nos muestra la *proporción* de cada valor frente al total. Puede expresarse como fracción (entre 0 y 1) o como porcentaje (respecto a 100)
+-   La **frecuencia absoluta** es un *recuento simple* de cuántas veces aparece cada valor en un conjunto de datos.
+-   La **frecuencia relativa** nos muestra la *proporción* de cada valor frente al total. Puede expresarse como fracción (entre 0 y 1) o como porcentaje (respecto a 100)
 
 La tabla a continuación muestra una distribución de frecuencias, calculada mediante una tabla dinámica de Excel.
 
@@ -93,7 +90,8 @@ R utiliza los símbolos `(` y `[` para definir los intervalos, tal como se hace 
     -   $[a, b)$ representa todos los números reales mayores o iguales que $a$ y menores que $b$ (incluye $a$, pero excluye $b$).
 
 ## Diagramas de barra e histogramas
-Cuando nuestra variable es *discreta*, podemos representar las frecuencias de cada valor de forma gráfica utilizando un diagrama de barras. Este diagrama utiliza barras rectangulares para representar la frecuencia de cada categoría. 
+
+Cuando nuestra variable es *discreta*, podemos representar las frecuencias de cada valor de forma gráfica utilizando un diagrama de barras. Este diagrama utiliza barras rectangulares para representar la frecuencia de cada categoría.
 
 Un histograma es un diagrama que utiliza las barras rectangulares para hacer un gráfico de la distribución de valores continuos, agrupados en clases. La anchura de esos grupos o clases (en inglés, *bins*), puede variarse, lo que cambia el perfil del gráfico obtenido.
 
@@ -113,9 +111,9 @@ La tabla de datos tiene esta estructura:
 
 Aunque no se muestran en la figura, la tabla está formada por 211 casos. Analicemos los datos con Excel. Los pasos son:
 
-1. Construir la tabla dinámica
-2. Agrupar los datos
-3. Insertar el gráfico a partir de la tabla
+1.  Construir la tabla dinámica
+2.  Agrupar los datos
+3.  Insertar el gráfico a partir de la tabla
 
 Con una agrupación de datos en intervalos de 1, esta es nuestra tabla dinámica:
 
@@ -149,7 +147,7 @@ df_camembert |>
   mutate(frec_rel = frec_abs / sum(frec_abs))
 ```
 
-R tiene una función básica, la función `hist()`, que construye el histograma directamente sin necesidad de hacer previamente una tabla de frecuencias (en realidad, la tabla de frecuencias se calcula internamente). 
+R tiene una función básica, la función `hist()`, que construye el histograma directamente sin necesidad de hacer previamente una tabla de frecuencias (en realidad, la tabla de frecuencias se calcula internamente).
 
 ```{r message=FALSE, warning=FALSE}
 #| label: fig-histo1
@@ -169,7 +167,6 @@ df_camembert |>
 En general, son más útiles las opciones de la función `ggplot()`, en la biblioteca `tidyverse`.
 
 En los histogramas de los recuentos bacterianos,utilizamos una opción para aumentar el número de barras que queremos en el histograma: `breaks=` en la función base, `bins=` en `ggplot()`:
-
 
 ```{r}
 #| label: fig-histo2
@@ -226,6 +223,7 @@ df_camembert |>
     geom_density(color = "red", size = 1) +
     labs(title = "Histograma y densidad", x = "Valores", y = "Densidad")
 ```
+
 La ventaja de los gráficos de densidad es que como no tenemos que fraccionar los datos en intervalos arbitrarios, no estamos afectados por el efecto visual de la anchura de estos intervalos. También hay otras ventajas desde el punto de vista estadístico, que veremos al hablar de las distribuciones de probabilidad.
 
 ## Diagramas de caja (*boxplot*) y resumen de cinco números.
@@ -234,9 +232,9 @@ Este gráfico fue creado por el estadístico John Tukey en 1977, y es una herram
 
 El **diagrama de caja**, también conocido como *boxplot*, es un gráfico que permite resumir las características principales de un conjunto de datos utilizando estos cinco números, tal como se explica a continuación. Sus ventajas son:
 
-- Muestra la mediana y los cuartiles (Q1 y Q3) de los datos.
-- Permite identificar la simetría de la distribución: si la mediana no está en el centro, la distribución no es simétrica.
-- Permite detectar posibles valores atípicos, representando los valores atípicos (*outliers*) que están lejos del resto de los datos (un valor es atípico si está más allá de \(Q3 + 1.5 \cdot IQR\) o \(Q1 - 1.5 \cdot IQR\).
+-   Muestra la mediana y los cuartiles (Q1 y Q3) de los datos.
+-   Permite identificar la simetría de la distribución: si la mediana no está en el centro, la distribución no es simétrica.
+-   Permite detectar posibles valores atípicos, representando los valores atípicos (*outliers*) que están lejos del resto de los datos (un valor es atípico si está más allá de (Q3 + 1.5 \cdot IQR) o (Q1 - 1.5 \cdot IQR).
 
 La construcción de un diagrama de caja es como sigue:
 
@@ -252,6 +250,7 @@ Como casi siempre, hay una función de base que dibuja un *boxplot* y también u
 
 boxplot(df_aula$altura_cm)
 ```
+
 Vamos a repetir el gráfico para los datos de producción de queso camembert, usando ahora los gráficos básicos y los de `ggplot()`:
 
 ```{r}
@@ -298,7 +297,7 @@ df_camembert |>
     theme_minimal()
 ```
 
-## Histogramas y diagramas de caja 
+## Histogramas y diagramas de caja
 
 Resulta muy útil comprender visualmente la relación entre el *boxplot* y el histograma para entender la distribución de los datos. En la gráfica siguiente se representan ambos simultáneamente
 
@@ -320,14 +319,67 @@ ggplot(aes(x = log10(coliformes+1))) +
 
 ```
 
+## Gráficos de dispersión
+
+Un gráfico de dispersión, también conocido como diagrama de dispersión o _scatter plot_, es una representación gráfica que utiliza puntos para mostrar la relación entre dos variables numéricas. Cada punto en el gráfico representa una observación del conjunto de datos y se coloca en el plano cartesiano de acuerdo con sus valores en las dos variables que se están comparando.
+
+Un gráfico de dispersión se compone mediante puntos:
+
+- Cada punto en el gráfico representa una observación.
+- La posición del punto en el gráfico está determinada por los valores de las dos variables para esa observación.
+
+Los gráficos de dispersión son útiles para identificar varios aspectos de la relación entre las dos variables:
+
+- Si los puntos tienden a agruparse a lo largo de una línea recta ascendente, esto indica una correlación positiva (a medida que una variable aumenta, la otra también lo hace).
+- Si los puntos se agrupan a lo largo de una línea descendente, esto indica una correlación negativa (a medida que una variable aumenta, la otra disminuye).
+- Si los puntos forman una curva en lugar de una línea recta, esto sugiere una relación no lineal entre las variables.
+- La dispersión de los puntos puede indicar la variabilidad de los datos. Puntos que están muy lejos del patrón general pueden ser valores atípicos.
+
+
+```{r}
+#| label: fig-grafdisp
+#| fig-cap: "Ejemplos de gráfico de dispersión"
+#| fig-subcap: 
+#|   - "Gráfico de dispersion básico de R"
+#|   - "Gráfico de dispersion utilizando `ggplot()`"
+#| layout-ncol: 2
+#| 
+plot(df_camembert$est, df_camembert$mg)
+
+df_camembert |>
+  ggplot(aes(x=mg,y=est))+
+  geom_point() +
+  theme_bw()
+
+```
+
+Los gráficos de dispersión son una herramienta esencial en el análisis de datos exploratorio, ya que permiten visualizar relaciones y patrones en los datos, identificar correlaciones y detectar posibles anomalías. Esta información es crucial para realizar análisis estadísticos más profundos y tomar decisiones basadas en datos.
+
+Excel no permite hacer gráficos de dispersión directamente, aunque sí podemos hacerlos de forma indirecta. 
+Ver articulo blog
 
 ## Gráficos de series temporales
 
-Hasta ahora hemos utilizado gráficos y tablas que describen la estructura de un conjunto de datos. Existen otros gráficos que tienen en cuenta la forma en la que esos datos se han producido en el tiempo. En este caso, será necesario que hayamos recogido precisamente los intervalos de tiempo en los que se han producido nuestros valores, y que hayamos recogido estos intervalos temporales en una variable de nuestra tabla.
+Hasta ahora hemos utilizado gráficos y tablas que describen la estructura y forma de una variable, o las relaciones entre dos variables. Hay otros gráficos que tienen en cuenta la forma en la que esos datos cambian con el tiempo. En este caso, será necesario que hayamos recogido los intervalos de tiempo en los que se han producido nuestros valores en una variable de nuestra tabla.
 
-En nuestro conjunto de datos de fabricación de queso camembert, la primera columna de la tabla recoge precisamente la variable `fecha`, lo que nos permite ordenar nuestros valores en el tiempo. 
+En un gráfico de series temporales, 
+
+- el eje horizontal (X) representa el tiempo. Los puntos de tiempo pueden ser minutos, horas, días, meses, años, etc.
+- el eje vertical (Y) representa los valores de la variable que se está estudiando. Estos valores pueden ser medidas como temperatura, ventas, precios, etc.
+- cada valor individual corresponde a un punto
+- los valores se conectan mediante una línea que conecta los puntos de datos, mostrando cómo cambian los valores de la variable a lo largo del tiempo.
+- normalmente, en un gráfico de series temporales no suelen representarse los puntos individuales para facilitar la legibilidad del gráfico.
+
+En nuestro conjunto de datos de fabricación de queso camembert, la primera columna de la tabla recoge la variable `fecha`, lo que nos permite ordenar nuestros valores en el tiempo.
 
 Cuando representamos los valores en el tiempo, nunca usaremos el diagrama de barras, sino el gráfico de líneas.
+
+
+Ejemplo en Excel
+
+
+
+Ejemplo en R
 
 ```{r}
 #| label: fig-graftemp
@@ -347,3 +399,30 @@ df_camembert |>
 ```
 
 
+Los gráficos de series temporales son útiles para:
+
+1. **Identificar Tendencias**:
+   - Una tendencia es una dirección general en la que los datos se mueven a lo largo del tiempo. Puede ser creciente, decreciente o constante.
+
+2. **Detección de Estacionalidad**:
+   - La estacionalidad se refiere a patrones que se repiten en intervalos regulares de tiempo, como las ventas de productos estacionales.
+
+3. **Identificar Ciclos**:
+   - Los ciclos son fluctuaciones que ocurren en intervalos no regulares y pueden deberse a factores económicos o de otra índole.
+
+4. **Detección de Anomalías**:
+   - Los picos y caídas repentinas pueden indicar eventos inusuales o errores en los datos.
+
+
+Los gráficos de series temporales son cruciales en diversas áreas:
+
+1. **Economía y Finanzas**:
+   - Seguimiento de precios de acciones, tasas de interés y otros indicadores económicos.
+
+2. **Ciencia y Tecnología**:
+   - Monitoreo de variables ambientales, datos meteorológicos y medidas científicas.
+
+3. **Negocios**:
+   - Análisis de ventas, demanda de productos y desempeño empresarial a lo largo del tiempo.
+
+Los gráficos de series temporales proporcionan una visión clara y concisa de cómo cambian los datos a lo largo del tiempo. Esta visualización es fundamental para el análisis predictivo, la toma de decisiones y la identificación de patrones y anomalías en los datos. 

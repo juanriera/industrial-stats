@@ -276,7 +276,7 @@ Donde:
 - $R$ es la resistencia o carga.
 - $d_r$ es la distancia desde el punto de apoyo hasta el punto donde se aplica la resistencia.
 
-### Ejemplo:
+### Ejemplo
 Si tienes una palanca con una longitud de 5 metros y aplicas una fuerza de 10 Newtons a 1 metro del punto de apoyo, para mantener el equilibrio, la fuerza de resistencia en el otro extremo a 4 metros del punto de apoyo debería ser:
 $$
 P \cdot d_p = R \cdot d_r
@@ -292,7 +292,7 @@ Ahora vamos a considerar el punto de equilibrio de una barra de la que se cuelga
 
 Calcular el punto de equilibrio de una barra de la que se cuelgan diferentes pesos a diferentes distancias de su origen es un problema clásico de física que se puede resolver usando el principio de momentos.
 
-### Paso a Paso:
+### Paso a Paso
 
 1. **Identificar las fuerzas**: Supongamos que tienes varios pesos $W_1, W_2, W_3, \ldots, W_n$ colgados a distancias $d_1, d_2, d_3, \ldots, d_n$ del origen (punto de apoyo).
 
@@ -316,7 +316,7 @@ Calcular el punto de equilibrio de una barra de la que se cuelgan diferentes pes
 x = \frac{\sum (W_i \times d_i)}{\sum W_i}
    $$
 
-### Ejemplo Práctico:
+### Ejemplo Práctico
 Supongamos que tenemos tres pesos de 4, 9 y 1 kg, situados, respectivamente, a 2, 1 y 3 m respectivamente del origen de la barra.
 
 - $W_1 = 4 \, \text{kg}$ a $d_1 = 2 \, \text{m}$
@@ -356,19 +356,19 @@ El punto de equilibrio se encuentra a aproximadamente 1.43 metros del origen.
 
 En muchas situaciones, el centro de gravedad de un sistema de masas puede interpretarse como una **media ponderada** de las posiciones de las masas. 
 
-#### Media Aritmética:
+#### Media Aritmética
 Para un conjunto de números $x_1, x_2, \ldots, x_n$, la media aritmética es:
 $$
 \text{Media} = \frac{x_1 + x_2 + \cdots + x_n}{n}
 $$
 
-#### Media Ponderada:
+#### Media Ponderada
 Para un conjunto de valores $x_1, x_2, \ldots, x_n$ con pesos asociados $w_1, w_2, \ldots, w_n$, la media ponderada es:
 $$
 \text{Media ponderada} = \frac{w_1 x_1 + w_2 x_2 + \cdots + w_n x_n}{w_1 + w_2 + \cdots + w_n}
 $$
 
-### Centro de Gravedad como Media Ponderada:
+### Centro de Gravedad como Media Ponderada
 
 Cuando calculamos el centro de gravedad ($x_{\text{cg}}$) de un sistema de masas, estamos esencialmente calculando una media ponderada de las posiciones ($x_i$) de esas masas ($m_i$):
 
@@ -378,7 +378,7 @@ $$
 
 Aquí, las posiciones $x_i$ son ponderadas por las masas $m_i$.
 
-### Ejemplo Numérico:
+### Ejemplo Numérico
 
 En nuestro ejemplo anterior,
 
@@ -405,16 +405,16 @@ En los ejemplos anteriores, calculábamos el punto de equilibrio para diferentes
 Si las masas de los diferentes objetos son idénticas, podemos decir que la media aritmética de las posiciones coincide con el centro de gravedad. Esto se debe a que, en este caso, cada masa tiene el mismo peso o influencia en el cálculo del centro de gravedad. Esta es la explicación detallada:
 
 
-#### Suposición:
+#### Suposición
 Cada objeto tiene la misma masa $m$.
 
-#### Media Aritmética:
+#### Media Aritmética
 Para un conjunto de posiciones $x_1, x_2, \ldots, x_n$, la media aritmética es:
 $$
 \text{Media} = \frac{x_1 + x_2 + \cdots + x_n}{n}
 $$
 
-#### Centro de Gravedad:
+#### Centro de Gravedad
 El centro de gravedad ($x_{\text{cg}}$) para un conjunto de masas idénticas en posiciones $x_1, x_2, \ldots, x_n$ es:
 $$
 x_{\text{cg}} = \frac{\sum (m \cdot x_i)}{\sum m}
@@ -439,6 +439,8 @@ Al simplificar, los términos $m$ se cancelan, y nos queda:
 $$
 x_{\text{cg}} = \frac{x_1 + x_2 + \cdots + x_n}{n}
 $$
+que es exactamente la fórmula de la media aritmética.
+
 Si repetimos nuestro ejemplo anterior, suponiendo en este caso masas idénticas
 
 - Masa 1: $m_1 = 1 \, \text{kg}$ en posición $x_1 = 2 \, \text{m}$
@@ -458,6 +460,8 @@ $$
 que es el mismo resultado que obteníamos con la fórmula de la media aritmética de las distancias.
 
 
-### Conclusión:
+### Conclusión
 Cuando las masas son idénticas, la media aritmética de las posiciones coincide con el centro de gravedad. Esto nos permite afirmar que en el caso de una dimensión (por ejemplo, el peso) la media aritmética de un conjunto de valores coincide con el centro de gravedad o punto de equilibrio de ese conjunto de valores.Este es un resultado interesante que muestra la conexión entre conceptos estadísticos y físicos.
 
+## Importancia del concepto de la media como centro de gravedad o punto de equilibrio de un conjunto de datos
+Efecto de los _outliers_: desequilibrio, desplazamiento de la media, incremento de la varianza (gan diferencia), mientras que la mediana y el rango intercuartil no se ven afectados
