@@ -499,7 +499,63 @@ df_camembert |>
     geom_density()
 ```
 
-Podemos representar simultáneamente el histograma y la función de densidad:
+Podemos representar simultáneamente el histograma y la función de densidad; hay que tener en cuenta que para representar la densidad y el histograma superpuestos, nos vemos obligados a cambiar la escala del eje Y a los valores de densidad en vez de a las frecuencias, de manera que los dos gráficos puedan solaparse sin problemas.
+
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R
+
+1. **Iniciar el pipeline con `df_camembert`**:
+   ```r
+   df_camembert |>
+   ```
+   - Utiliza el operador pipe (`|>`) para encadenar operaciones sobre el dataframe `df_camembert`.
+
+2. **Iniciar `ggplot` con las estéticas (aes)**:
+   ```r
+   ggplot(aes(x = est)) +
+   ```
+   - **`ggplot(aes(x = est))`**: Inicia un objeto `ggplot` y define las estéticas (aes). La variable `est` se mapea al eje X.
+
+3. **Agregar la capa del histograma**:
+   ```r
+   geom_histogram(aes(y = ..density..), bins = 20, fill = "lightblue", color = "black") +
+   ```
+   - **`geom_histogram(aes(y = ..density..), bins = 20, fill = "lightblue", color = "black")`**:
+     - **`aes(y = ..density..)`**: Ajusta el eje Y para que muestre la densidad en lugar de la frecuencia absoluta.
+     - **`bins = 20`**: Especifica el número de barras (bins) en el histograma.
+     - **`fill = "lightblue"`**: Colorea las barras del histograma de azul claro.
+     - **`color = "black"`**: Colorea los bordes de las barras en negro.
+
+4. **Agregar la capa de densidad**:
+   ```r
+   geom_density(color = "red", size = 1) +
+   ```
+   - **`geom_density(color = "red", size = 1)`**: Añade una capa de densidad al gráfico.
+     - **`color = "red"`**: Colorea la línea de densidad en rojo.
+     - **`size = 1`**: Establece el grosor de la línea de densidad.
+
+5. **Agregar etiquetas y título**:
+   ```r
+   labs(title = "Histograma y densidad", x = "Valores", y = "Densidad")
+   ```
+   - **`labs(title = "Histograma y densidad", x = "Valores", y = "Densidad")`**: Añade etiquetas y título al gráfico.
+     - **`title = "Histograma y densidad"`**: Establece el título del gráfico.
+     - **`x = "Valores"`**: Etiqueta el eje X como "Valores".
+     - **`y = "Densidad"`**: Etiqueta el eje Y como "Densidad".
+
+**Resumen Completo**
+
+El código realiza las siguientes acciones:
+
+- Inicia el pipeline con el dataframe `df_camembert`.
+- Define la estética (aes) para mapear la variable `est` al eje X.
+- Añade un histograma con barras azules claras, bordes negros, 20 bins y ajusta el eje Y para mostrar la densidad.
+- Añade una capa de densidad con una línea roja y grosor de 1.
+- Añade un título y etiquetas a los ejes X y Y.
+
+Este enfoque combinado permite visualizar tanto la distribución de los datos (histograma) como la densidad estimada (línea de densidad) en un solo gráfico.
+
+:::
 
 ```{r}
 df_camembert |>
