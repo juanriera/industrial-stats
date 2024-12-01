@@ -1066,7 +1066,7 @@ Este código genera un gráfico de dispersión que muestra la relación entre `e
 2. **Utilizar `ggplot2` para crear un gráfico de dispersión más personalizable**:
    ```r
    df_camembert |>
-     ggplot(aes(x = mg, y = est)) +
+     ggplot(aes(x = est, y = mg)) +
      geom_point() +
      theme_bw()
    ```
@@ -1074,15 +1074,15 @@ Este código genera un gráfico de dispersión que muestra la relación entre `e
 
 3. **Iniciar `ggplot` con las estéticas (aes)**:
    ```r
-   ggplot(aes(x = mg, y = est)) +
+   ggplot(aes(x = est, y = mg)) +
    ```
-   - **`ggplot(aes(x = mg, y = est))`**: Inicia un objeto `ggplot` y define las estéticas (aes). La variable `mg` se mapea al eje X y la variable `est` al eje Y.
+   - **`ggplot(aes(x = est, y = mg))`**: Inicia un objeto `ggplot` y define las estéticas (aes). La variable `est` se mapea al eje X y la variable `mg` al eje Y.
 
 4. **Agregar la capa de puntos**:
    ```r
    geom_point() +
    ```
-   - **`geom_point()`**: Añade una capa de puntos al gráfico, mostrando cada observación en `mg` y `est`.
+   - **`geom_point()`**: Añade una capa de puntos al gráfico, mostrando cada observación en `est` y `mg`.
 
 5. **Aplicar un tema en blanco y negro**:
    ```r
@@ -1103,11 +1103,11 @@ Este código genera un gráfico de dispersión que muestra la relación entre `e
 
   ```r
   df_camembert |>
-    ggplot(aes(x = mg, y = est)) +
+    ggplot(aes(x = est, y = mg)) +
     geom_point() +
     theme_bw()
   ```
-  Este conjunto de instrucciones utiliza `ggplot2` para crear un gráfico de dispersión más personalizable, mapeando `mg` al eje X y `est` al eje Y, añadiendo una capa de puntos y aplicando un tema en blanco y negro para un diseño limpio y claro.
+  Este conjunto de instrucciones utiliza `ggplot2` para crear un gráfico de dispersión más personalizable, mapeando `est` al eje X y `mg` al eje Y, añadiendo una capa de puntos y aplicando un tema en blanco y negro para un diseño limpio y claro.
 
 :::
 ```{r}
@@ -1121,7 +1121,7 @@ Este código genera un gráfico de dispersión que muestra la relación entre `e
 plot(df_camembert$est, df_camembert$mg)
 
 df_camembert |>
-  ggplot(aes(x=mg,y=est))+
+  ggplot(aes(x=est,y=mg))+
   geom_point() +
   theme_bw()
 
