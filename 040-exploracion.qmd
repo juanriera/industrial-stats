@@ -938,6 +938,8 @@ df_camembert |>
     theme_minimal()
 ```
 
+La agrupación de los _boxplots_ por meses nos pone claramente de manifiesto las diferencias en el extracto seco `est`que ya habíamos visto con los gráficos de densidad. Estas diferencias son más claras en el mes de julio.
+
 ## Histogramas y diagramas de caja
 
 Resulta muy útil comprender visualmente la relación entre el *boxplot* y el histograma para entender la distribución de los datos. En la gráfica siguiente se representan ambos simultáneamente
