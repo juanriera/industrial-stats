@@ -156,12 +156,15 @@ Datos rectangulares: formato tabla
 
 Se suele llamar **fichero plano** a un fichero de datos de texto sin ningún tipo de formato, donde los datos están separados por espacios o tabulaciones. Muchos equipos automáticos, como balanzas de laboratorio o básculas de proceso, producen ficheros planos de texto, que se pueden importar a Excel o R. Un [fichero CSV](https://es.wikipedia.org/wiki/Valores_separados_por_comas) es un fichero plano en el que los valores están separados por un carácter especial, llamado **separador**. Este separador puede ser una coma `,` (cuando los decimales se separan mediante un punto, como en EEUU) o un punto y coma `;` (cuando los decimales se separan mediante una coma, como en España)
 
-::: {#fig-ficheros-texto layout="[[1,1], [1]]" layout-valign="bottom"}
-![Fichero plano](01-imagenes/fichero-plano.png)
+::: {#fig-ficheros-texto layout="[[1,1], [1]]"}
 
-![Fichero CSV separado por puntos y comas](01-imagenes/fichero-csv-europeo.png)
+![Fichero plano separado por espacios](01-imagenes/fichero_txt.png)
 
-![Fichero CSV separado por comas](01-imagenes/fichero-csv-comas.png)
+![Fichero CSV separado por comas (USA, GB)](01-imagenes/fichero-csv-comas.png)
+
+![Fichero CSV separado por puntos y comas (Europa, España)](01-imagenes/fichero-csv-europeo.png)
+
+
 
 Tres tipos de ficheros planos de texto.
 :::
