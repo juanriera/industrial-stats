@@ -85,10 +85,17 @@ El recuadro azul se utilizará para proponer problemas sencillos cuya respuesta 
 :::
 
 ::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
-## Respuesta al problema o cuestión a resolver
+## Respuesta al problema o explicación del código R
 
-El recuadro verde se utilizará para proponer una respuesta al problema planteado; respuesta que no tiene por qué ser la única posible. Normalmente se presentará de forma oculta.
+El recuadro verde se utilizará para dos cosas
+
+- proponer una respuesta al problema planteado; respuesta que no tiene por qué ser la única posible, o bien
+- para explicar las líneas de código R que se mostrarán a continuación
+
+Normalmente se presentará de forma desplegable para no entorpecer la lectura del texto.
 :::
+
+
 
 Además se incluyen diferentes tipos de avisos cada vez que se introduce algún concepto que es necesario resaltar.
 
