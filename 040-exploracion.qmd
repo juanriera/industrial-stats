@@ -228,13 +228,55 @@ La tabla dinámica que hemos construido en Excel ha convertido nuestra variable 
 
 En el caso de la tabla dinámica, Excel no construye el diagrama de barras a partir de la tabla de los valores originales, sino de las categorías de la tabla dinámica. Dado que estas categorías (los grupos que ha formado la tabla dinámica) son discretas, Excel utiliza el resultado de la tabla dinámica para hacer el gráfico con un diagrama de barras.
 
-Este diagrama muestra su utilidad cuando representamos la distribución de un conjunto de valores más grande que nuestros once alumnos. Veamos su aplicación a los datos diarios de una fabricación de queso camembert a lo largo de un año.Los datos de esta fabricación están en el fichero `camembert.csv`.
+El histograma muestra su utilidad cuando representamos la distribución de un conjunto de valores más grande que nuestros once alumnos. Veamos su aplicación a los datos diarios de una fabricación de queso camembert a lo largo de un año.Los datos de esta fabricación están en el fichero `camembert.csv`.
 
 La tabla de datos tiene esta estructura:
 
 ![](01-imagenes/camembert-tabla-datos.png)
 
-Aunque no se muestran en la figura, la tabla está formada por 211 casos. Analicemos los datos con Excel. Los pasos a seguir son:
+La tabla está formada por 211 casos. 
+
+Visualicemos la tabla con R:
+
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R
+
+1. **Cargar las librerías necesarias**:
+   ```r
+   library(DT)
+   ```
+   - **`library(DT)`**: Carga el paquete `DT` para crear tablas interactivas.
+
+2. **Leer el archivo CSV**:
+   ```r
+   df_camembert <- read.csv2("excel-R/camembert.csv", fileEncoding = 'latin1')
+
+   ```
+
+3. **Mostrar la tabla interactiva**:
+   ```r
+   datatable(df_camembert, options = list(pageLength = 5), caption = 'Tabla de Datos de Camembert')
+   ```
+   - **`datatable(df_camembert, options = list(pageLength = 5), caption = 'Tabla de Datos de Camembert')`**: Crea una tabla interactiva con `df_camembert`, mostrando cinco registros por página (`pageLength = 5`). La tabla tiene una opción para desplazarse por el resto de los datos, buscar, y ordenar.
+
+**Resultado**
+
+Este código en R Markdown generará una tabla interactiva donde podrás visualizar cinco registros a la vez y desplazarte por el resto de los datos de manera intuitiva. La función `datatable()` es excelente para manejar grandes conjuntos de datos y ofrecer una experiencia de usuario dinámica.
+
+:::
+
+```{r message=FALSE, warning=FALSE}
+library (DT)
+
+df_camembert <- read.csv2("excel-R/camembert.csv",fileEncoding='latin1')
+
+# Mostrar la tabla interactiva con datatable 
+datatable(df_camembert, options = list(pageLength = 5), caption = 'Tabla de Datos de Camembert')
+
+```
+
+
+Analicemos los datos con Excel. Los pasos a seguir son:
 
 1.  Construir la tabla dinámica
 2.  Agrupar los datos
@@ -310,7 +352,7 @@ df_camembert |>
   mutate(frec_rel = frec_abs / sum(frec_abs))
 ```
 
-Este script nos permite visualizar la tabla de frecuencias.Aahora completamos el script con el código necesario para redirigir la tabla de frecuencias a `ggplot()` y hacer el diagrama de barras.
+Este script nos permite visualizar la tabla de frecuencias.Ahora completamos el script con el código necesario para redirigir la tabla de frecuencias a `ggplot()` y hacer el diagrama de barras.
 
 ::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
 ## Explicación del código R adicional
@@ -520,6 +562,8 @@ df_camembert |>
 
 Un gráfico de densidad en R es una representación visual suavizada de la distribución de un conjunto de datos. A diferencia de los histogramas, que dividen los datos en intervalos y cuentan las frecuencias, los gráficos de densidad utilizan técnicas estadísticas no paramétricas para estimar la función de densidad de probabilidad.
 
+Un gráfico de densidad, también conocido como *density plot*, es una representación visual suavizada de la distribución de un conjunto de datos.A diferencia de los histogramas, que dividen los datos en intervalos y cuentan las frecuencias, los gráficos de densidad utilizan técnicas estadísticas no paramétricas para estimar la función de densidad de probabilidad de una variable continua. El gráfico de densidad utiliza suavizamiento para proporcionar una estimación más continua de la distribución de los datos.
+
 Excel no permite la representación de los gráficos de densidad; en R pueden hacerse con la función `ggplot()`simplemente añadiendo la geometría `geom_density()`
 
 ```{r}
@@ -606,6 +650,82 @@ df_camembert |>
 ```
 
 La ventaja de los gráficos de densidad es que como no tenemos que fraccionar los datos en intervalos arbitrarios, no estamos afectados por el efecto visual de la anchura de estos intervalos. También hay otras ventajas desde el punto de vista estadístico, que veremos al hablar de las distribuciones de probabilidad.
+
+La flexibilidad de configuración de los gráficos de `qqplot()`permite la personalización de los gráficos hasta el último detalle. A continuación vemos un gráfico de densidad agrupado por meses, que nos muestra aparentes diferencias en el extracto seco `est` según los meses.
+
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R
+
+**1. Leer el archivo CSV**
+
+```r
+df_camembert <- read.csv2("excel-R/camembert.csv", fileEncoding = 'latin1')
+```
+- **`df_camembert <- read.csv2("excel-R/camembert.csv", fileEncoding = 'latin1')`**: Esta línea lee el archivo CSV llamado `camembert.csv` desde la carpeta `excel-R` y lo almacena en el dataframe `df_camembert`. La opción `fileEncoding = 'latin1'` asegura que los caracteres especiales sean manejados correctamente durante la lectura del archivo.
+
+**2. Iniciar el pipeline con el dataframe `df_camembert` y realizar transformaciones**
+
+```r
+df_camembert |> 
+  mutate(fecha = as.Date(fecha, format = "%d/%m/%Y"), # Convertir a tipo Date 
+  mes = format(fecha, "%m")) |> # Extraer el mes
+```
+
+- **`df_camembert |>`**: Utiliza el operador pipe (`|>`) para encadenar operaciones sobre el dataframe `df_camembert`.
+- **`mutate(fecha = as.Date(fecha, format = "%d/%m/%Y"), mes = format(fecha, "%m"))`**:
+  - **`fecha = as.Date(fecha, format = "%d/%m/%Y")`**: Convierte la columna `fecha` a tipo Date usando el formato `día/mes/año`.
+  - **`mes = format(fecha, "%m")`**: Extrae el mes de la columna `fecha` y lo almacena en una nueva columna `mes`.
+
+**3. Crear el gráfico de densidad**
+
+```r
+ggplot(aes(x = est, color = mes, fill = mes)) + # Crear el gráfico de densidad
+  geom_density(alpha = 0.5) + # Añadir capa de densidad con transparencia
+  labs(title = "Curvas de Densidad de 'est' por Mes", 
+       x = "Valor de 'est'", 
+       y = "Densidad", 
+       color = "Mes", 
+       fill = "Mes") + 
+  theme_minimal()
+```
+
+- **`ggplot(aes(x = est, color = mes, fill = mes))`**: Inicia un objeto `ggplot` y define las estéticas (aes):
+  - **`x = est`**: Mapea la variable `est` al eje X.
+  - **`color = mes, fill = mes`**: Usa la variable `mes` para colorear y rellenar las curvas de densidad, permitiendo diferenciar los meses.
+
+- **`geom_density(alpha = 0.5)`**: Añade una capa de densidad al gráfico:
+  - **`alpha = 0.5`**: Establece la transparencia de las curvas de densidad al 50%, lo que permite ver superposiciones.
+
+- **`labs(title = "Curvas de Densidad de 'est' por Mes", x = "Valor de 'est'", y = "Densidad", color = "Mes", fill = "Mes")`**: Añade etiquetas y título al gráfico:
+  - **`title = "Curvas de Densidad de 'est' por Mes"`**: Título del gráfico.
+  - **`x = "Valor de 'est'"`**: Etiqueta del eje X.
+  - **`y = "Densidad"`**: Etiqueta del eje Y.
+  - **`color = "Mes", fill = "Mes"`**: Etiquetas para la leyenda de colores y rellenos.
+
+- **`theme_minimal()`**: Aplica un tema minimalista al gráfico para un diseño limpio y simple.
+
+**Resumen**
+
+Este código realiza las siguientes acciones:
+1. Lee un archivo CSV y lo almacena en un dataframe.
+2. Convierte la columna `fecha` a tipo Date y extrae el mes de la fecha.
+3. Crea un gráfico de densidad de la variable `est` diferenciada por mes con transparencia para facilitar la visualización de superposiciones y aplica un diseño minimalista al gráfico.
+
+:::
+
+
+
+```{r}
+df_camembert <- read.csv2("excel-R/camembert.csv", fileEncoding = 'latin1') 
+df_camembert |> 
+  mutate(fecha = as.Date(fecha, format = "%d/%m/%Y"), # Convertir a tipo Date 
+  mes = format(fecha, "%m")) |> # Extraer el mes 
+  ggplot(aes(x = est, color = mes, fill = mes)) + # Crear el gráfico de densidad 
+    geom_density(alpha = 0.5) + # Añadir capa de densidad con transparencia 
+    labs(title = "Curvas de Densidad de 'est' por Mes", x = "Valor de 'est'", y = "Densidad", color = "Mes", fill = "Mes")+    
+    theme_minimal()
+
+```
 
 ## Diagramas de caja (*boxplot*) y resumen de cinco números.
 
