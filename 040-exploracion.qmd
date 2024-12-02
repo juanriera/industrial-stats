@@ -117,7 +117,7 @@ La ventaja principal del *stemplot* es que mantiene los valores originales de la
 
 ## Distribuciones de frecuencias
 
-Una **distribución de frecuencias** es una tabla o gráfico que muestra la frecuencia con la que ocurren los valores diferentes en un conjunto de datos. Esta herramienta es fundamental en la estadística descriptiva y permite resumir y visualizar cómo se distribuyen los datos de manera clara y comprensible.
+Una **distribución de frecuencias** es una tabla que muestra la frecuencia con la que ocurren los valores diferentes en un conjunto de datos. Esta herramienta es fundamental en la estadística descriptiva y permite resumir y visualizar cómo se distribuyen los datos de manera clara y comprensible. A partir de una tabla de frecuencias se pueden construir diagramas de barra o histogramas para visualizar la tabla de forma gráfica.
 
 Para construir una distribución de frecuencias, agrupamos nuestros valores por intervalos, y contamos el número de observaciones que aparecen en cada intervalo. Los componentes de una distribución de frecuencias son:
 
@@ -133,6 +133,56 @@ Para construir una distribución de frecuencias, agrupamos nuestros valores por 
 ### Construcción en Excel y en R
 
 La tabla a continuación muestra una distribución de frecuencias de las alturas de nuestro grupo de alumnos, calculada mediante una tabla dinámica de Excel.
+
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Instrucciones paso a paso en Excel
+
+Para crear una tabla de frecuencias de la variable `altura_cm` mediante tablas dinámicas en Excel, sigue estos pasos:
+
+**1. Selecciona los Datos**
+
+1. Abre tu archivo de Excel y selecciona toda la tabla que incluye los encabezados (`nombre` y `altura_cm`).
+
+**2. Inserta una tabla dinámica**
+
+1. Ve a la pestaña **Insertar** en la barra de herramientas de Excel.
+2. Haz clic en **Tabla Dinámica**.
+3. En el cuadro de diálogo que aparece, asegúrate de que el rango de datos seleccionado es correcto y elige dónde deseas colocar la tabla dinámica (en una nueva hoja de cálculo o en la hoja actual).
+
+**3. Añade la frecuencia absoluta**
+
+1. En el panel de campos de la tabla dinámica, arrastra el campo `altura_cm` a la sección **Filas**.
+2. Arrastra nuevamente el campo `altura_cm` a la sección **Valores**.
+
+**4. Ajusta la configuración de valores**
+
+1. Haz clic en el campo `altura_cm` en la sección **Valores**.
+2. Selecciona **Configuración de campo de valor**.
+3. En el cuadro de diálogo que aparece, asegúrate de que esté seleccionada la opción **Recuento**
+4. Acepta todo hasta volver a Excel.
+
+**5. Añade la frecuencia relativa**
+
+1. En el panel de campos de la tabla dinámica, arrastra de nuevo el campo `altura_cm` a la sección **Valores**. Ahora la variable aparecerá como `altura_cm2`.
+
+**6. Ajusta de nuevo la configuración de valores**
+
+1. Haz clic en el campo `altura_cm2` en la sección **Valores**.
+2. Selecciona **Configuración de campo de valor**.
+3. En el cuadro de diálogo que aparece, asegúrate de que esté seleccionada la opción **Recuento**.
+4.  En ese mismo cuadro, haz click en el botón **Formato de número**, selecciona **Número** y **2 decimales**, y acepta.
+5. En ese mismo cuadro, selecciona la pestaña que dice **Mostrar valores como**
+6. En el menú desplegable, escoge la opción **% del total de columnas**.
+7. Acepta todo hasta volver a Excel.
+
+**7. Ordena y formatea**
+
+1. Puedes ordenar las alturas en orden ascendente o descendente haciendo clic en la flecha junto a `altura_cm` en la tabla dinámica.
+2. También puedes cambiar el formato de la tabla dinámica para que sea más fácil de leer.
+3. Puedes renombrar los encabezados de la tabla para que sea más fácil de leer, rotulando las columnas, por ejemplo, como `frec_abs`y `frec_rel`, o cualquier otro encabezado que te resulte claro y útil.
+
+:::
+
 
 ![](01-imagenes/aula1-td-frec.png)
 
@@ -205,7 +255,18 @@ Ejemplos:
 - $(a, b]$ representa todos los números reales **mayores** que $a$ y **menores o iguales** que $b$ (excluye $a$, pero incluye $b$).
 :::
 
-Las distribuciones de frecuencias se pueden visualizar mediante varios tipos de gráficos, como histogramas, gráficos de barras y polígonos de frecuencias.
+Si comparamos los dos métodos que hemos utilizado para construir la tabla de frecuencias, vemos que:
+
+- en Excel los pasos que hemos dado no están registrados y a la vista, y, por lo tanto, no son fácilmente revisables
+- en R, todos los pasos y opciones que hemos utilizado están a la vista en el código del script
+
+Si otra persona quisiera modificar la tabla, le sería fácil editar el código R y relanzar el script, mientras que en Excel no sería fácil asegurarse de todos y cada uno de los pasos y clicks de ratón que hemos dado para construir y formatear la tabla. 
+
+Es el caso, por ejemplo, de que enviásemos la tabla a otra persona y ésta tuviese que editarla en nuestra ausencia. En Excel, tendríamos que enviar a esa persona una explicación con las instrucciones oportunas; en cambio, en R, una vez que se comprende el código, no hacen falta más explicaciones adicionales. Incluso sin una comprensión total del código, se podría duplicar exactamente la tabla copiando y ejecutando el código.
+
+
+Esta es una de las principales razones de la conveniencia del aprendizaje de R incluso para las actividades más sencillas.
+
 
 ::: {.callout-note .content-visible when-format="html" icon="false"}
 ## Ejercicio propuesto
@@ -214,6 +275,8 @@ En la tabla de frecuencias anterior, calcular frecuencia acumulada y frecuencia 
 :::
 
 ## Diagramas de barra e histogramas
+
+Las distribuciones de frecuencias se pueden visualizar mediante varios tipos de gráficos, como histogramas, gráficos de barras y polígonos de frecuencias.
 
 Cuando nuestra variable es *discreta*, podemos representar las frecuencias de cada valor de forma gráfica utilizando un diagrama de barras. Este diagrama utiliza barras rectangulares para representar la frecuencia de cada categoría.
 
@@ -1131,12 +1194,29 @@ Lo esperable en nuestros datos es que el valor de `est` y el de `mg` estén asoc
 
 Como vemos, los gráficos de dispersión son una herramienta esencial en el análisis de datos exploratorio, ya que permiten visualizar relaciones y patrones en los datos, identificar correlaciones y detectar posibles anomalías. Esta información es crucial para realizar análisis estadísticos más profundos y tomar decisiones basadas en datos.
 
-Excel permite hacer gráficos de dispersión de dos variables que deben estar en diferentes columnas, pero no permite hacer gráficos de dispersión multiserie. En [mi blog](https://juanriera.github.io/blog/) he propuesto [una forma de hacer estos gráficos multiserie en Excel](https://juanriera.github.io/blog/posts/excel-xy/) de forma que se soslaye esta deficiencia. 
-
 
 ## Gráficos de series temporales
 
-Hasta ahora hemos utilizado gráficos y tablas que describen la estructura y forma de una variable, o las relaciones entre dos variables. Hay otros gráficos que tienen en cuenta la forma en la que esos datos cambian con el tiempo. En este caso, será necesario que hayamos recogido los intervalos de tiempo en los que se han producido nuestros valores en una variable de nuestra tabla.
+Hasta ahora hemos utilizado gráficos y tablas que describen la estructura y forma de una variable, o las relaciones entre dos variables. Hay otros gráficos que tienen en cuenta la forma en la que esos datos cambian con el tiempo. En este caso, será necesario que hayamos recogido en una variable de nuestra tabla los intervalos de tiempo en los que se han producido nuestros valores.
+
+::: {.callout-note .content-visible when-format="html" icon="false"}
+## Ejemplos de series temporales
+
+¿Se te ocurren algunos ejemplos de series temporales?
+
+:::
+
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Algunos ejemplos
+
+- proceso de llenado de envases de queso crema: se llena una tarrina cada 15 segundos. Nuestros datos deben recoger el tiempo y el peso.
+
+- nuestro fichero de fabricación de queso camembert recoge los valores analíticos medios diarios del producto fabricado.
+
+- Una fábrica recoge leche diariamente y analiza cada día la composición de la leche que entra en la fábrica.
+
+:::
+
 
 En un gráfico de series temporales, 
 

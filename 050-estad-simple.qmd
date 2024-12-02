@@ -257,10 +257,6 @@ Modelo: práctica de puntos con un dado, dos dados, tres dados, etc hasta 30
 
 suma \<- rowSums(replicate(30, sample(6, 10\^6, replace=T))) length(suma) hist(suma)
 
-[Financial Times Visual Vocabulary: Power BI Edition -- Some Random Thoughts (sqljason.com)](http://sqljason.com/2018/12/financial-times-visual-vocabulary-power-bi-edition.html)
-
-
-
 ## La media aritmética como centro de gravedad de un grupo de datos
 
 Para ver cómo la media aritmética equivale al punto de equilibrio o centro de gravedad de un grupo de datos, imaginaremos que tenemos un conjunto de datos cuyos valores se distribuyen en un eje longitudinal X. Podemos hacer equivalentes estos valores a un conjunto de pesos que se distribuyen a lo largo de una barra, y vamos a suponer que existe un punto a una distancia $d_i$ del origen de la barra en el cual dicha barra está en equilibrio. Para encontrar ese valor, empezaremos considerando el principio o ley de la palanca.

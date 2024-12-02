@@ -76,8 +76,8 @@ X.mean <- X %>%
 X %>%
   ggplot(aes(x = x, y = y, color = grp)) +
   geom_point(shape = 19) +
-  geom_hline(data = X.mean, aes(group = grp, yintercept = y, color = grp))+
-  background_grid() ### 
+  geom_hline(data = X.mean, aes(group = grp, yintercept = y, color = grp)) +
+  theme_minimal()
 
 #########################################################################################
 
