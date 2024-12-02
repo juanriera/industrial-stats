@@ -289,11 +289,9 @@ div.csl-indent {
   <li><a href="#qué-es-un-fichero-plano-y-un-fichero-csv" id="toc-qué-es-un-fichero-plano-y-un-fichero-csv" class="nav-link" data-scroll-target="#qué-es-un-fichero-plano-y-un-fichero-csv"><span class="header-section-number">3.6</span> Qué es un fichero plano y un fichero CSV</a>
   <ul class="collapse">
   <li><a href="#cómo-exportar-un-fichero-csv-desde-excel-a-r" id="toc-cómo-exportar-un-fichero-csv-desde-excel-a-r" class="nav-link" data-scroll-target="#cómo-exportar-un-fichero-csv-desde-excel-a-r"><span class="header-section-number">3.6.1</span> Cómo exportar un fichero CSV desde Excel a R</a></li>
-  <li><a href="#explicación-del-código" id="toc-explicación-del-código" class="nav-link" data-scroll-target="#explicación-del-código"><span class="header-section-number">3.6.2</span> Explicación del Código:</a></li>
-  <li><a href="#qué-es-un-dataframe-en-r" id="toc-qué-es-un-dataframe-en-r" class="nav-link" data-scroll-target="#qué-es-un-dataframe-en-r"><span class="header-section-number">3.6.3</span> Qué es un DataFrame en R</a></li>
-  <li><a href="#ejemplo-real-de-análisis" id="toc-ejemplo-real-de-análisis" class="nav-link" data-scroll-target="#ejemplo-real-de-análisis"><span class="header-section-number">3.6.4</span> Ejemplo Real de Análisis</a></li>
   </ul></li>
-  <li><a href="#para-resolver" id="toc-para-resolver" class="nav-link" data-scroll-target="#para-resolver"><span class="header-section-number">3.7</span> Para resolver</a></li>
+  <li><a href="#uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos" id="toc-uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos" class="nav-link" data-scroll-target="#uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos"><span class="header-section-number">3.7</span> Uso de los filtros de Excel para revisar y editar los datos</a></li>
+  <li><a href="#para-resolver" id="toc-para-resolver" class="nav-link" data-scroll-target="#para-resolver"><span class="header-section-number">3.8</span> Para resolver</a></li>
   </ul>
 </nav>
     </div>
@@ -508,105 +506,76 @@ Figura&nbsp;3.5: Tres tipos de ficheros planos de texto.
 <p>La importación de un fichero CSV en Excel en español es directa si se ha generado con puntos y comas como separador y comas para los decimales; si no es así, nos aparecerá como un fichero plano de texto sin formato, y tendremos que realizar una conversión.</p>
 <section id="cómo-exportar-un-fichero-csv-desde-excel-a-r" class="level3" data-number="3.6.1">
 <h3 data-number="3.6.1" class="anchored" data-anchor-id="cómo-exportar-un-fichero-csv-desde-excel-a-r"><span class="header-section-number">3.6.1</span> Cómo exportar un fichero CSV desde Excel a R</h3>
-<p>Una vez que tenemos nuestros datos en Excel, hay dos formas en las que podemos poner los datos a disposición de R para su análisis: exportarlos a un archivo de texto con <strong><em>formato CSV</em></strong>, o leer directamente los datos de Excel desde R utilizando las funciones de la librería <code>tidyverse</code>. En ambos casos, el resultado en R es un <strong><em>dataframe</em></strong> o <em>cuadro de datos</em>, que es una estructura equivalente a la de nuestra tabla de datos en Excel.</p>
-<p>En los sistemas operativos que usan por defecto para la numeración el formato europeo (donde el separador decimal es una coma <code>,</code> y el separador de campos es un punto y coma <code>;</code>), puedes seguir estos pasos en R.</p>
+<p>Una vez que tenemos nuestros datos en Excel, hay dos formas en las que podemos poner los datos a disposición de R para su análisis: exportarlos a un archivo de texto con <strong>formato CSV</strong>, o leer directamente los datos de Excel desde R utilizando la función <code>read_excel()</code> de la librería <code>tidyverse</code>. En ambos casos, el resultado en R es un <strong>dataframe</strong> o <strong>cuadro de datos</strong>, que es una estructura equivalente a la de nuestra tabla de datos en Excel.</p>
+<p>En el ejemplo, utilizaremos un fichero CSV y lo leeremos utilizando una función de base R.</p>
 <section id="paso-1-guardar-el-fichero-csv-desde-excel" class="level4" data-number="3.6.1.1">
 <h4 data-number="3.6.1.1" class="anchored" data-anchor-id="paso-1-guardar-el-fichero-csv-desde-excel"><span class="header-section-number">3.6.1.1</span> Paso 1: Guardar el Fichero CSV desde Excel</h4>
 <ol type="1">
 <li>Abre tu fichero en Excel.</li>
 <li>Selecciona <strong>Archivo</strong> &gt; <strong>Guardar como</strong>.</li>
-<li>Elige el formato **CSV (delimitado por comas) (*.csv)**.</li>
+<li>Elige el formato <strong>CSV (delimitado por comas) (*.csv)</strong>.</li>
 <li>Guarda el archivo.</li>
 </ol>
 </section>
-<section id="paso-2-importar-el-csv-en-r" class="level4" data-number="3.6.1.2">
-<h4 data-number="3.6.1.2" class="anchored" data-anchor-id="paso-2-importar-el-csv-en-r"><span class="header-section-number">3.6.1.2</span> Paso 2: Importar el CSV en R</h4>
-<p>Puedes usar la función <code>read.csv2</code> de base R o la función <code>read_csv2</code> del paquete <code>readr</code>, que está optimizado para leer archivos CSV más rápido y con más flexibilidad.</p>
-</section>
-<section id="usando-base-r" class="level4" data-number="3.6.1.3">
-<h4 data-number="3.6.1.3" class="anchored" data-anchor-id="usando-base-r"><span class="header-section-number">3.6.1.3</span> Usando Base R</h4>
-<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer el CSV con separador de campos ";" y separador decimal ","</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"ruta/al/archivo.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">dec =</span> <span class="st">","</span>)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver las primeras filas del dataframe</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="usando-readr" class="level4" data-number="3.6.1.4">
-<h4 data-number="3.6.1.4" class="anchored" data-anchor-id="usando-readr"><span class="header-section-number">3.6.1.4</span> Usando readr</h4>
-<p>Primero, instala y carga el paquete <code>readr</code>:</p>
-<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"readr"</span>)</span>
-<span id="cb2-2"><a href="#cb2-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(readr)</span>
-<span id="cb2-3"><a href="#cb2-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-4"><a href="#cb2-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Leer el CSV con separador de campos ";" y separador decimal ","</span></span>
-<span id="cb2-5"><a href="#cb2-5" aria-hidden="true" tabindex="-1"></a>data <span class="ot">&lt;-</span> <span class="fu">read_csv2</span>(<span class="st">"ruta/al/archivo.csv"</span>, <span class="at">col_names =</span> <span class="cn">TRUE</span>)</span>
-<span id="cb2-6"><a href="#cb2-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb2-7"><a href="#cb2-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver las primeras filas del dataframe</span></span>
-<span id="cb2-8"><a href="#cb2-8" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-</section>
-<section id="explicación-del-código" class="level3" data-number="3.6.2">
-<h3 data-number="3.6.2" class="anchored" data-anchor-id="explicación-del-código"><span class="header-section-number">3.6.2</span> Explicación del Código:</h3>
+<section id="paso-2-importar-el-csv-en-r-usando-base-r" class="level4" data-number="3.6.1.2">
+<h4 data-number="3.6.1.2" class="anchored" data-anchor-id="paso-2-importar-el-csv-en-r-usando-base-r"><span class="header-section-number">3.6.1.2</span> Paso 2: Importar el CSV en R usando Base R</h4>
+<div class="content-visible callout callout-style-default callout-tip no-icon callout-titled" data-when-format="html">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Explicación del código R
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Línea 1: Lectura del archivo CSV</strong></p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"ruta/al/archivo.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">dec =</span> <span class="st">","</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<ol type="1">
+<li><p><strong><code>datos &lt;-</code></strong>: Este símbolo <code>&lt;-</code> se utiliza para asignar el resultado de la función a un objeto llamado <code>data</code>. En este caso, <code>data</code> contendrá los datos leídos desde el archivo CSV.</p></li>
+<li><p><strong><code>read.csv2(...)</code></strong>: Esta es una función en R que se utiliza para leer archivos CSV. La versión <code>read.csv2</code> se usa comúnmente en Europa y otros lugares donde el separador de campo estándar es el punto y coma (<code>;</code>) y el separador decimal es la coma (<code>,</code>).</p></li>
+<li><p><strong>Parámetros de <code>read.csv2</code></strong>:</p>
 <ul>
-<li><strong>read.csv2 / read_csv2</strong>: Funciones utilizadas para leer archivos CSV con formato europeo.</li>
-<li><strong>“ruta/al/archivo.csv”</strong>: La ruta al archivo CSV que deseas importar.</li>
-<li><strong>header = TRUE / col_names = TRUE</strong>: Indica que el primer fila del CSV contiene los nombres de las columnas.</li>
-<li><strong>sep = “;”</strong>: Define el separador de campos como punto y coma <code>;</code>.</li>
-<li><strong>dec = “,”</strong>: Define el separador decimal como coma <code>,</code>.</li>
-</ul>
-</section>
-<section id="qué-es-un-dataframe-en-r" class="level3" data-number="3.6.3">
-<h3 data-number="3.6.3" class="anchored" data-anchor-id="qué-es-un-dataframe-en-r"><span class="header-section-number">3.6.3</span> Qué es un DataFrame en R</h3>
-<p>Un <strong>dataframe</strong> es una estructura de datos en R que permite almacenar datos tabulares (similares a una hoja de cálculo o una tabla en una base de datos). Los dataframes son muy flexibles y poderosos para el análisis de datos.</p>
-<section id="características-de-un-dataframe" class="level4" data-number="3.6.3.1">
-<h4 data-number="3.6.3.1" class="anchored" data-anchor-id="características-de-un-dataframe"><span class="header-section-number">3.6.3.1</span> Características de un DataFrame:</h4>
+<li><strong><code>"ruta/al/archivo.csv"</code></strong>: Especifica la ruta y el nombre del archivo CSV que deseas leer.</li>
+<li><strong><code>header = TRUE</code></strong>: Indica que el archivo CSV tiene una fila de encabezado que contiene los nombres de las columnas.</li>
+<li><strong><code>sep = ";"</code></strong>: Especifica que el separador de campos en el archivo CSV es el punto y coma (<code>;</code>).</li>
+<li><strong><code>dec = ","</code></strong>: Indica que el separador decimal en el archivo CSV es la coma (<code>,</code>).</li>
+</ul></li>
+</ol>
+<p><strong>Línea 2: Mostrar las primeras filas del dataframe</strong></p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(data)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
 <ul>
-<li><strong>Columnas</strong>: Cada columna puede contener datos de un tipo diferente (numérico, carácter, factor, etc.).</li>
-<li><strong>Filas</strong>: Cada fila representa una observación o registro.</li>
-<li><strong>Atributos</strong>: Los dataframes tienen atributos como nombres de filas y columnas.</li>
+<li><strong><code>head(datos)</code></strong>: Esta función muestra las primeras 6 filas del dataframe <code>data</code> (puedes cambiar el número de filas que muestra añadiendo un número como argumento: <code>head(data, 10)</code> mostrará las primeras 10 filas). Esta es una forma útil de inspeccionar rápidamente los datos que has cargado en R.</li>
 </ul>
-</section>
-<section id="ejemplo-de-creación-de-un-dataframe" class="level4" data-number="3.6.3.2">
-<h4 data-number="3.6.3.2" class="anchored" data-anchor-id="ejemplo-de-creación-de-un-dataframe"><span class="header-section-number">3.6.3.2</span> Ejemplo de Creación de un DataFrame</h4>
-<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un dataframe simple</span></span>
-<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a>df <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a>  <span class="at">Nombre =</span> <span class="fu">c</span>(<span class="st">"Alice"</span>, <span class="st">"Bob"</span>, <span class="st">"Carol"</span>),</span>
-<span id="cb3-4"><a href="#cb3-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">Edad =</span> <span class="fu">c</span>(<span class="dv">25</span>, <span class="dv">30</span>, <span class="dv">35</span>),</span>
-<span id="cb3-5"><a href="#cb3-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">Salario =</span> <span class="fu">c</span>(<span class="dv">50000</span>, <span class="dv">55000</span>, <span class="dv">60000</span>)</span>
-<span id="cb3-6"><a href="#cb3-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb3-7"><a href="#cb3-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb3-8"><a href="#cb3-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Ver el dataframe</span></span>
-<span id="cb3-9"><a href="#cb3-9" aria-hidden="true" tabindex="-1"></a><span class="fu">print</span>(df)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-</section>
-<section id="explicación-del-código-1" class="level4" data-number="3.6.3.3">
-<h4 data-number="3.6.3.3" class="anchored" data-anchor-id="explicación-del-código-1"><span class="header-section-number">3.6.3.3</span> Explicación del Código:</h4>
-<ul>
-<li><strong>data.frame()</strong>: Función utilizada para crear un dataframe.</li>
-<li><strong>Nombre, Edad, Salario</strong>: Columnas del dataframe.</li>
-<li><strong>c()</strong>: Función para concatenar valores en un vector.</li>
-</ul>
-</section>
-</section>
-<section id="ejemplo-real-de-análisis" class="level3" data-number="3.6.4">
-<h3 data-number="3.6.4" class="anchored" data-anchor-id="ejemplo-real-de-análisis"><span class="header-section-number">3.6.4</span> Ejemplo Real de Análisis</h3>
-<p>Si ya tienes un archivo CSV que importaste, puedes comenzar a analizar los datos. Aquí hay un ejemplo básico de cómo podrías resumir y visualizar los datos:</p>
-<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Instalar y cargar ggplot2 para la visualización</span></span>
-<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">install.packages</span>(<span class="st">"ggplot2"</span>)</span>
-<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb4-4"><a href="#cb4-4" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-5"><a href="#cb4-5" aria-hidden="true" tabindex="-1"></a><span class="co"># Resumen de los datos</span></span>
-<span id="cb4-6"><a href="#cb4-6" aria-hidden="true" tabindex="-1"></a><span class="fu">summary</span>(data)</span>
-<span id="cb4-7"><a href="#cb4-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb4-8"><a href="#cb4-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Visualización simple: Histograma de una variable numérica</span></span>
-<span id="cb4-9"><a href="#cb4-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(data, <span class="fu">aes</span>(<span class="at">x =</span> variable_numerica)) <span class="sc">+</span></span>
-<span id="cb4-10"><a href="#cb4-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>) <span class="sc">+</span></span>
-<span id="cb4-11"><a href="#cb4-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma de la Variable Numérica"</span>,</span>
-<span id="cb4-12"><a href="#cb4-12" aria-hidden="true" tabindex="-1"></a>       <span class="at">x =</span> <span class="st">"Valor"</span>,</span>
-<span id="cb4-13"><a href="#cb4-13" aria-hidden="true" tabindex="-1"></a>       <span class="at">y =</span> <span class="st">"Frecuencia"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<p>Este código proporciona un resumen y una visualización básica de tus datos importados.</p>
+<p><strong>Resumen</strong></p>
+<p>Este código lee un archivo CSV con datos delimitados por punto y coma y con comas como separadores decimales, y almacena los datos en un dataframe llamado <code>datos</code>. Luego, utiliza la función <code>head()</code> para mostrar las primeras 6 filas del dataframe, permitiéndote inspeccionar los datos rápidamente.</p>
+</div>
+</div>
+</div>
+<div class="cell">
+<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"excel-R/aula1.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">dec =</span> <span class="st">","</span>, <span class="at">fileEncoding =</span> <span class="st">"latin1"</span>)</span>
+<span id="cb3-2"><a href="#cb3-2" aria-hidden="true" tabindex="-1"></a></span>
+<span id="cb3-3"><a href="#cb3-3" aria-hidden="true" tabindex="-1"></a><span class="fu">head</span>(datos)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<div class="cell-output cell-output-stdout">
+<pre><code>   nombre altura_cm
+1    Luis       153
+2     Ana       135
+3    Iván       140
+4   Lucía       140
+5 Jessica       175
+6 Antonio       138</code></pre>
+</div>
+</div>
 </section>
 </section>
-<section id="para-resolver" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="para-resolver"><span class="header-section-number">3.7</span> Para resolver</h2>
+</section>
+<section id="uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos"><span class="header-section-number">3.7</span> Uso de los filtros de Excel para revisar y editar los datos</h2>
+</section>
+<section id="para-resolver" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="para-resolver"><span class="header-section-number">3.8</span> Para resolver</h2>
 <p>Poner aquí distintos ejemplos de nombres de variables para ver si son válidos o no. Describir medidas y preguntar cómo llamaríamos a esa variable (por ejemplo, temperatura de la leche que acabamos de descargar de una cisterna)</p>
 
 
