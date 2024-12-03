@@ -196,7 +196,7 @@ En el ejemplo, utilizaremos un fichero CSV y lo leeremos utilizando una función
 datos <- read.csv2("ruta/al/archivo.csv", header = TRUE, sep = ";", dec = ",")
 ```
 
-1. **`datos <-`**: Este símbolo `<-` se utiliza para asignar el resultado de la función a un objeto llamado `data`. En este caso, `data` contendrá los datos leídos desde el archivo CSV.
+1. **`datos <-`**: Este símbolo `<-` se utiliza para asignar el resultado de la función a un objeto llamado `datos`. En este caso, `datos` contendrá los datos leídos desde el archivo CSV.
 
 2. **`read.csv2(...)`**: Esta es una función en R que se utiliza para leer archivos CSV. La versión `read.csv2` se usa comúnmente en Europa y otros lugares donde el separador de campo estándar es el punto y coma (`;`) y el separador decimal es la coma (`,`).
 
@@ -206,13 +206,13 @@ datos <- read.csv2("ruta/al/archivo.csv", header = TRUE, sep = ";", dec = ",")
    - **`sep = ";"`**: Especifica que el separador de campos en el archivo CSV es el punto y coma (`;`).
    - **`dec = ","`**: Indica que el separador decimal en el archivo CSV es la coma (`,`).
 
-**Línea 2: Mostrar las primeras filas del dataframe**
+**Línea 2: Mostrar las primeras filas del datosframe**
 
 ```r
-head(data)
+head(datos)
 ```
 
-- **`head(datos)`**: Esta función muestra las primeras 6 filas del dataframe `data` (puedes cambiar el número de filas que muestra añadiendo un número como argumento: `head(data, 10)` mostrará las primeras 10 filas). Esta es una forma útil de inspeccionar rápidamente los datos que has cargado en R.
+- **`head(datos)`**: Esta función muestra las primeras 6 filas del dataframe `datos` (puedes cambiar el número de filas que muestra añadiendo un número como argumento: `head(data, 10)` mostrará las primeras 10 filas). Esta es una forma útil de inspeccionar rápidamente los datos que has cargado en R.
 
 **Resumen**
 
@@ -226,6 +226,12 @@ datos <- read.csv2("excel-R/aula1.csv", header = TRUE, sep = ";", dec = ",", fil
 
 head(datos)
 ```
+::: {.callout-note .content-visible when-format="html" icon="false"}
+## Practica con el CSV
+
+Prueba a guardar y recuperar tus datos en formato CSV
+
+:::
 
 ## Uso de los filtros de Excel para revisar y editar los datos
 

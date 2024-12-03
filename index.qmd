@@ -84,6 +84,7 @@ Algunos recuadros utilizan códigos de color para indicar el objetivo de la info
 El recuadro azul se utilizará para proponer problemas sencillos cuya respuesta se encuentra más adelante en el texto. El objetivo de estos problemas es estimular la reflexión, aunque puede ser necesario recurrir a cálculos sencillos ayudados por las herramientas disponibles.
 :::
 
+
 ::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
 ## Respuesta al problema o explicación del código R
 

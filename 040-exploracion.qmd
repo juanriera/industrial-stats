@@ -36,7 +36,7 @@ Realizamos la medida de altura de cada persona y registramos los valores en una 
 
 ![](01-imagenes/aula1.png)
 
-Guardaremos esta tabla en un archivo CSV y lo importamos a un dataframe de R para su uso a lo largo del capítulo. Utilizamos la opción `fileEncoding='latin1'` para importar correctamente los caracteres acentuados.
+Guardamos esta tabla en el archivo CSV `aula1.csv`, y lo importamos a un dataframe de R para su uso a lo largo del capítulo.
 
 ::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
 ## Explicación del código R
@@ -55,23 +55,14 @@ Guardaremos esta tabla en un archivo CSV y lo importamos a un dataframe de R par
 
 3. **Mostrar el contenido del dataframe `df_aula`**:
    ```r
-   df_aula
+   head(df_aula)
    ```
-   - **`df_aula`**: Muestra el contenido del dataframe `df_aula`. Al escribir simplemente el nombre del dataframe en la consola, R imprimirá las primeras filas del dataframe para que puedas visualizar los datos que has cargado.
-
-**Ejemplo Completo**
-
-Este es el código completo de nuevo, para referencia:
-
-```r
-library(tidyverse)
-df_aula <- read.csv2("excel-R/aula1.csv", fileEncoding = 'latin1')
-df_aula
-```
+   - **`head(df_aula)`**: Muestra las primeras líneas del contenido del dataframe `df_aula`, para que puedas visualizar los datos que has cargado.. Si simplemente escribimos el nombre del dataframe en la consola, sin usar la función `head()`, R imprimirá todo el dataframe. 
 
 **Resumen**
 
 Este código:
+
 - Carga la colección de paquetes `tidyverse` para facilitar el análisis y manipulación de datos.
 - Lee un archivo CSV y lo almacena en un dataframe.
 - Muestra el contenido del dataframe para que puedas ver los datos que se han cargado.
@@ -80,7 +71,7 @@ Este código:
 ```{r message=FALSE, warning=FALSE}
 library(tidyverse)
 df_aula <- read.csv2("excel-R/aula1.csv",fileEncoding='latin1')
-df_aula
+head(df_aula)
 ```
 
 ## El diagrama de tallo y hojas (*stem and leaf plot* o *stemplot*)
@@ -105,13 +96,32 @@ A continuación añadimos las hojas en la celda a la derecha, que consisten en l
 
 R permite realizar el _stemplot_ mediante la función $stem()$ de forma automática:
 
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Explicación del código R
+
+1. **`df_aula$altura_cm`**:
+   - **`df_aula`**: Este es el nombre del dataframe que contiene tus datos.
+   - **`$altura_cm`**: Este símbolo `$` se utiliza para acceder a la columna `altura_cm` dentro del dataframe `df_aula`. Así que `df_aula$altura_cm` se refiere a los datos de la columna `altura_cm`.
+
+2. **`stem(...)`**:
+   - La función `stem()` en R genera un diagrama de tallo y hojas para los datos proporcionados. Este gráfico muestra la distribución de los datos de una manera similar a un histograma, pero utilizando valores numéricos en lugar de barras.
+
+:::
+
 ```{r message=FALSE, warning=FALSE}
 stem(df_aula$altura_cm)
 ```
 
-El análisis del diagrama nos dice que los valores en torno a 150 cm son los más frecuentes, y que hay un valor alto (175) que se separa un poco del resto.
+### Interpretación del diagrama de tallo y hojas
 
-El *stemplot* es muy sencillo de hacer y nos da una visión rápida de la *distribución* de nuestros valores, así como de la posible existencia de valores que se separan del conjunto. Estos valores alejados, que se conocen en inglés como *outliers*, tienen mucha importancia en el analisis e interpretación de los datos, como veremos más adelante.
+- **Tallo**: Los números a la izquierda del símbolo `|` representan los valores base (o tallos), en este caso, las decenas de las alturas.
+- **Hojas**: Los números a la derecha del símbolo `|` representan los dígitos adicionales (o hojas). Por ejemplo, en la línea `13 | 58`, el tallo es `13` (130), y las hojas son `5` y `8`, que corresponden a los datos `135` y `138`.
+
+El diagrama nos dice que los valores en torno a 150 cm son los más frecuentes, y que hay un valor alto (175) que se separa un poco del resto.
+
+### Resumen
+
+El *stemplot* es muy sencillo de hacer y nos da una visión rápida y compacta de la *distribución* de nuestros valores, así como de la posible existencia de valores que se separan del conjunto. Estos valores alejados, que se conocen en inglés como *outliers*, tienen mucha importancia en el analisis e interpretación de los datos, como veremos más adelante.
 
 La ventaja principal del *stemplot* es que mantiene los valores originales de las observaciones, y puede hacerse fácilmente con bolígrafo y papel, sin necesidad de más herramientas.
 
@@ -206,26 +216,26 @@ También podemos calcular las frecuencias absolutas y relativas de nuestra tabla
 3. **Crear y agrupar por intervalos**:
    ```r
    df_aula1 |>
-     mutate(grupo = cut(altura_cm, breaks = seq(130, 175, by = 5), include.lowest = TRUE)) |>
-     group_by(grupo)
+     mutate(intervalo = cut(altura_cm, breaks = seq(130, 175, by = 5), include.lowest = TRUE)) |>
+     group_by(intervalo)
    ```
    - **`df_aula1 |>`**: Utiliza el operador pipe (`|>`) para encadenar una serie de operaciones en el dataframe `df_aula1`.
-   - **`mutate(grupo = cut(altura_cm, breaks = seq(130, 175, by = 5), include.lowest = TRUE))`**: Crea una nueva columna `grupo` que contiene intervalos de la columna `altura_cm` con un rango desde 130 hasta 175 cm, con una amplitud de clase de 5 cm. La opción `include.lowest = TRUE` asegura que el valor más bajo esté incluido en el primer intervalo.
-   - **`group_by(grupo)`**: Agrupa los datos por los intervalos definidos en la columna `grupo`.
+   - **`mutate(intervalo = cut(altura_cm, breaks = seq(130, 175, by = 5), include.lowest = TRUE))`**: Crea una nueva columna `intervalo` que contiene intervalos de la columna `altura_cm` con un rango desde 130 hasta 175 cm, con una amplitud de clase de 5 cm. La opción `include.lowest = TRUE` asegura que el valor más bajo esté incluido en el primer intervalo.
+   - **`group_by(intervalo)`**: Agrupa los datos por los intervalos definidos en la columna `intervalo`.
 
 4. **Calcular la frecuencia absoluta**:
    ```r
    summarise(frec_abs = n())
    ```
-   - **`summarise(frec_abs = n())`**: Crea un nuevo dataframe resumido que contiene la frecuencia absoluta (`frec_abs`) de cada grupo. La función `n()` cuenta el número de observaciones en cada grupo.
+   - **`summarise(frec_abs = n())`**: Crea un nuevo dataframe resumido que contiene la frecuencia absoluta (`frec_abs`) de cada intervalo. La función `n()` cuenta el número de observaciones en cada intervalo.
 
 5. **Calcular la frecuencia relativa**:
    ```r
    mutate(frec_rel = frec_abs / sum(frec_abs))
    ```
-   - **`mutate(frec_rel = frec_abs / sum(frec_abs))`**: Añade una nueva columna `frec_rel` al dataframe que contiene la frecuencia relativa. Esto se calcula dividiendo la frecuencia absoluta de cada grupo por la suma total de todas las frecuencias absolutas.
+   - **`mutate(frec_rel = frec_abs / sum(frec_abs))`**: Añade una nueva columna `frec_rel` al dataframe que contiene la frecuencia relativa. Esto se calcula dividiendo la frecuencia absoluta de cada intervalo por la suma total de todas las frecuencias absolutas.
 
-El resultado es un dataframe que muestra los intervalos de `altura_cm` (columna `grupo`), junto con las frecuencias absolutas (`frec_abs`) y las frecuencias relativas (`frec_rel`) para cada intervalo. Este proceso facilita el análisis de la distribución de los datos en intervalos específicos.
+El resultado es un dataframe que muestra los intervalos de `altura_cm` (columna `intervalo`), junto con las frecuencias absolutas (`frec_abs`) y las frecuencias relativas (`frec_rel`) para cada intervalo. Este proceso facilita el análisis de la distribución de los datos en intervalos específicos.
 
 :::
 
@@ -234,8 +244,8 @@ library (tidyverse)
 df_aula1 <- read.csv2("excel-R/aula1.csv",fileEncoding='latin1')
 
 df_aula1 |>
-  mutate (grupo = cut(altura_cm, breaks = seq(130, 175, by =5), include_lowest = TRUE)) |>
-  group_by(grupo) |>
+  mutate (intervalo = cut(altura_cm, breaks = seq(130, 175, by =5), include_lowest = TRUE)) |>
+  group_by(intervalo) |>
   summarise (frec_abs = n()) |>
   mutate(frec_rel = frec_abs / sum(frec_abs))
 ```
@@ -274,6 +284,73 @@ En la tabla de frecuencias anterior, calcular frecuencia acumulada y frecuencia 
 
 :::
 
+
+::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
+## Respuesta al ejercicio propuesto
+
+Para añadir las columnas de frecuencias absolutas acumuladas (`frec_abs_acum`) y frecuencias relativas acumuladas (`frec_rel_acum`) a tu dataframe `df_aula1`, puedes usar las funciones `cumsum()` y algunas mutaciones adicionales. Aquí tienes el código actualizado:
+
+### Código R actualizado
+
+```r
+# Cargar las librerías necesarias
+library(tidyverse)
+
+# Crear el dataframe con las nuevas columnas de frecuencias acumuladas
+df_aula1 |>
+  mutate(intervalo = cut(altura_cm, breaks = seq(130, 175, by = 5), include_lowest = TRUE)) |>
+  group_by(intervalo) |>
+  summarise(frec_abs = n()) |>
+  mutate(frec_rel = frec_abs / sum(frec_abs),
+         frec_abs_acum = cumsum(frec_abs),
+         frec_rel_acum = cumsum(frec_rel)) |>
+
+```
+**Detalle del código**
+
+1. **Crear intervalos**:
+   ```r
+   mutate(intervalo = cut(altura_cm, breaks = seq(130, 175, by = 5), include_lowest = TRUE))
+   ```
+   - Agrupa los valores de `altura_cm` en intervalos definidos por `seq(130, 175, by = 5)`.
+
+2. **Agrupar por intervalo y calcular frecuencia absoluta**:
+   ```r
+   group_by(intervalo) |>
+   summarise(frec_abs = n())
+   ```
+   - Agrupa por `intervalo` y calcula la frecuencia absoluta (`frec_abs`) de cada intervalo.
+
+3. **Calcular frecuencia relativa**:
+   ```r
+   mutate(frec_rel = frec_abs / sum(frec_abs))
+   ```
+   - Calcula la frecuencia relativa (`frec_rel`) dividiendo la frecuencia absoluta de cada intervalo por la suma total de frecuencias absolutas.
+
+4. **Calcular Frecuencia Absoluta Acumulada**:
+   ```r
+   mutate(frec_abs_acum = cumsum(frec_abs))
+   ```
+   - Usa `cumsum()` para calcular la frecuencia absoluta acumulada (`frec_abs_acum`).
+
+5. **Calcular Frecuencia Relativa Acumulada**:
+   ```r
+   mutate(frec_rel_acum = cumsum(frec_rel))
+   ```
+   - Usa `cumsum()` para calcular la frecuencia relativa acumulada (`frec_rel_acum`).
+
+**Resultado:**
+
+El dataframe resultante tendrá las siguientes columnas:
+
+- `intervalo`: Intervalos definidos de `altura_cm`.
+- `frec_abs`: Frecuencia absoluta de cada intervalo.
+- `frec_rel`: Frecuencia relativa de cada intervalo.
+- `frec_abs_acum`: Frecuencia absoluta acumulada.
+- `frec_rel_acum`: Frecuencia relativa acumulada.
+
+:::
+
 ## Diagramas de barra e histogramas
 
 Las distribuciones de frecuencias se pueden visualizar mediante varios tipos de gráficos, como histogramas, gráficos de barras y polígonos de frecuencias.
@@ -289,7 +366,7 @@ La tabla dinámica que hemos construido en Excel ha convertido nuestra variable 
 ![](01-imagenes/aula1-diag-barras.png)
 
 
-En el caso de la tabla dinámica, Excel no construye el diagrama de barras a partir de la tabla de los valores originales, sino de las categorías de la tabla dinámica. Dado que estas categorías (los grupos que ha formado la tabla dinámica) son discretas, Excel utiliza el resultado de la tabla dinámica para hacer el gráfico con un diagrama de barras.
+En el caso de la tabla dinámica, Excel no construye el diagrama de barras a partir de la tabla de los valores originales, sino de las categorías de la tabla dinámica. Dado que estas categorías (los intervalos que ha formado la tabla dinámica) son discretas, Excel utiliza el resultado de la tabla dinámica para hacer el gráfico con un diagrama de barras.
 
 El histograma muestra su utilidad cuando representamos la distribución de un conjunto de valores más grande que nuestros once alumnos. Veamos su aplicación a los datos diarios de una fabricación de queso camembert a lo largo de un año.Los datos de esta fabricación están en el fichero `camembert.csv`.
 
@@ -382,35 +459,37 @@ Aunque Excel utiliza el diagrama de barras para construir el gráfico, en realid
 3. **Crear y agrupar por intervalos**:
    ```r
    df_camembert |>
-     mutate(grupo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE)) |>
-     group_by(grupo)
+     mutate(intervalo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE)) |>
+     group_by(intervalo)
    ```
    - **`df_camembert |>`**: Utiliza el operador pipe (`|>`) para encadenar una serie de operaciones en el dataframe `df_camembert`.
-   - **`mutate(grupo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE))`**: Crea una nueva columna `grupo` que contiene intervalos de la columna `est` con un rango desde 40 hasta 54, con una amplitud de clase de 1. La opción `include.lowest = TRUE` asegura que el valor más bajo esté incluido en el primer intervalo.
-   - **`group_by(grupo)`**: Agrupa los datos por los intervalos definidos en la columna `grupo`.
+   - **`mutate(intervalo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE))`**: Crea una nueva columna `intervalo` que contiene intervalos de la columna `est` con un rango desde 40 hasta 54, con una amplitud de clase de 1. La opción `include.lowest = TRUE` asegura que el valor más bajo esté incluido en el primer intervalo.
+   - **`group_by(intervalo)`**: Agrupa los datos por los intervalos definidos en la columna `intervalo`.
 
 4. **Calcular la frecuencia absoluta**:
    ```r
    summarise(frec_abs = n())
    ```
-   - **`summarise(frec_abs = n())`**: Crea un nuevo dataframe resumido que contiene la frecuencia absoluta (`frec_abs`) de cada grupo. La función `n()` cuenta el número de observaciones en cada grupo.
+   - **`summarise(frec_abs = n())`**: Crea un nuevo dataframe resumido que contiene la frecuencia absoluta (`frec_abs`) de cada intervalo. La función `n()` cuenta el número de observaciones en cada intervalo.
 
 5. **Calcular la frecuencia relativa**:
    ```r
    mutate(frec_rel = frec_abs / sum(frec_abs))
    ```
-   - **`mutate(frec_rel = frec_abs / sum(frec_abs))`**: Añade una nueva columna `frec_rel` al dataframe que contiene la frecuencia relativa. Esto se calcula dividiendo la frecuencia absoluta de cada grupo por la suma total de todas las frecuencias absolutas.
+   - **`mutate(frec_rel = frec_abs / sum(frec_abs))`**: Añade una nueva columna `frec_rel` al dataframe que contiene la frecuencia relativa. Esto se calcula dividiendo la frecuencia absoluta de cada intervalo por la suma total de todas las frecuencias absolutas.
 
-El resultado es un dataframe que muestra los intervalos de `est` (columna `grupo`), junto con las frecuencias absolutas (`frec_abs`) y las frecuencias relativas (`frec_rel`) para cada intervalo. Este proceso facilita el análisis de la distribución de los datos en intervalos específicos.
+El resultado es un dataframe que muestra los intervalos de `est` (columna `intervalo`), junto con las frecuencias absolutas (`frec_abs`) y las frecuencias relativas (`frec_rel`) para cada intervalo. Este proceso facilita el análisis de la distribución de los datos en intervalos específicos.
 
 :::
 
 ```{r message=FALSE, warning=FALSE}
 library (tidyverse)
 df_camembert <- read.csv2("excel-R/camembert.csv",fileEncoding='latin1')
+
+# Crear tabla de frecuencias
 df_camembert |>
-  mutate (grupo = cut(est, breaks = seq(40, 54, by =1), include_lowest = TRUE)) |>
-  group_by(grupo) |>
+  mutate (intervalo = cut(est, breaks = seq(40, 54, by =1), include_lowest = TRUE)) |>
+  group_by(intervalo) |>
   summarise (frec_abs = n()) |>
   mutate(frec_rel = frec_abs / sum(frec_abs))
 ```
@@ -422,10 +501,10 @@ Este script nos permite visualizar la tabla de frecuencias.Ahora completamos el 
 
 1. **Iniciar `ggplot` con las estéticas (aes)**:
    ```r
-   ggplot(aes(x = grupo, y = frec_abs)) +
+   ggplot(aes(x = intervalo, y = frec_abs)) +
    ```
-   - **`ggplot(aes(x = grupo, y = frec_abs))`**: Inicia el objeto `ggplot` y define las estéticas (aes), que son las variables mapeadas a los ejes del gráfico.
-     - **`x = grupo`**: Mapea la variable `grupo` al eje X.
+   - **`ggplot(aes(x = intervalo, y = frec_abs))`**: Inicia el objeto `ggplot` y define las estéticas (aes), que son las variables mapeadas a los ejes del gráfico.
+     - **`x = intervalo`**: Mapea la variable `intervalo` al eje X.
      - **`y = frec_abs`**: Mapea la variable `frec_abs` al eje Y.
 
 2. **Agregar las barras del gráfico**:
@@ -433,7 +512,7 @@ Este script nos permite visualizar la tabla de frecuencias.Ahora completamos el 
    geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
    ```
    - **`geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black")`**: Añade una capa de barras al gráfico.
-     - **`stat = "identity"`**: Especifica que las alturas de las barras deben ser iguales a los valores de `frec_abs` (en lugar de contarse las observaciones en cada grupo).
+     - **`stat = "identity"`**: Especifica que las alturas de las barras deben ser iguales a los valores de `frec_abs` (en lugar de contarse las observaciones en cada intervalo).
      - **`fill = "darkblue"`**: Rellena las barras con el color azul oscuro.
      - **`alpha = 0.7`**: Establece la transparencia de las barras (valor entre 0 y 1, donde 0 es completamente transparente y 1 es opaco).
      - **`color = "black"`**: Colorea los bordes de las barras en negro.
@@ -458,7 +537,7 @@ Este script nos permite visualizar la tabla de frecuencias.Ahora completamos el 
 Este es el código completo de nuevo para referencia:
 
 ```r
-ggplot(aes(x = grupo, y = frec_abs)) +
+ggplot(aes(x = intervalo, y = frec_abs)) +
   geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
   labs(title = "Diagrama de Barras de Frecuencia absoluta",
        x = "Intervalos de 'est'",
@@ -466,23 +545,25 @@ ggplot(aes(x = grupo, y = frec_abs)) +
   theme_minimal()
 ```
 
-Este código te permitirá generar un diagrama de barras que muestra la frecuencia absoluta de cada intervalo en el eje X (grupos) y la frecuencia en el eje Y (frecuencia absoluta), con las barras coloreadas en azul oscuro y bordes negros.
+Este código te permitirá generar un diagrama de barras que muestra la frecuencia absoluta de cada intervalo en el eje X (intervalos) y la frecuencia en el eje Y (frecuencia absoluta), con las barras coloreadas en azul oscuro y bordes negros.
 
 :::
 
 ```{r}
-# Crear tabla de frecuencias y diagrama de barras
+# Crear tabla de frecuencias
 df_camembert |>
-  mutate(grupo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE)) |>
-  group_by(grupo) |>
+  mutate(intervalo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE)) |>
+  group_by(intervalo) |>
   summarise(frec_abs = n()) |>
   mutate(frec_rel = frec_abs / sum(frec_abs)) |>
-  ggplot(aes(x = grupo, y = frec_abs)) +
-  geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
-  labs(title = "Diagrama de Barras de Frecuencia absoluta",
+  
+# Este es el código adicional para hacer el gráfico  
+  ggplot(aes(x = intervalo, y = frec_abs)) +
+   geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
+   labs(title = "Diagrama de Barras de Frecuencia absoluta",
        x = "Intervalos de 'est'",
        y = "Frecuencia Absoluta") +
-  theme_minimal()
+   theme_minimal()
 ```
 
 Modificando el criterio de la amplitud de clase para agrupar de dos en dos en vez de uno, podemos cambiar la tabla, igual que hemos hecho en Excel.
@@ -491,11 +572,11 @@ Modificando el criterio de la amplitud de clase para agrupar de dos en dos en ve
 library (tidyverse)
 df_camembert <- read.csv2("excel-R/camembert.csv",fileEncoding='latin1')
 df_camembert |>
-  mutate (grupo = cut(est, breaks = seq(40, 54, by =2), include_lowest = TRUE)) |>
-  group_by(grupo) |>
+  mutate (intervalo = cut(est, breaks = seq(40, 54, by =2), include_lowest = TRUE)) |>
+  group_by(intervalo) |>
   summarise (frec_abs = n()) |>
   mutate(frec_rel = frec_abs / sum(frec_abs)) |>
-  ggplot(aes(x = grupo, y = frec_abs)) +
+  ggplot(aes(x = intervalo, y = frec_abs)) +
   geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
   labs(title = "Diagrama de Barras de Frecuencia absoluta",
        x = "Intervalos de 'est'",
