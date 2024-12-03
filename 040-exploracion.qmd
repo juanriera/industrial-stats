@@ -64,7 +64,7 @@ Guardamos esta tabla en el archivo CSV `aula1.csv`, y lo importamos a un datafra
 Este código:
 
 - Carga la colección de paquetes `tidyverse` para facilitar el análisis y manipulación de datos.
-- Lee un archivo CSV y lo almacena en un dataframe.
+- Lee un archivo CSV y lo almacena en un *dataframe*.
 - Muestra el contenido del dataframe para que puedas ver los datos que se han cargado.
 
 :::
@@ -280,23 +280,23 @@ Esta es una de las principales razones de la conveniencia del aprendizaje de R i
 
 ::: {.callout-note .content-visible when-format="html" icon="false"}
 ## Ejercicio propuesto
-En la tabla de frecuencias anterior, calcular frecuencia acumulada y frecuencia relativa acumulada en Excel y en R, e incluirlas en la tabla como una columna más.
+En la tabla de frecuencias anterior, calcular **frecuencia absoluta acumulada** y **frecuencia relativa acumulada** en Excel y en R, e incluirlas en la tabla como dos columnas adicionales.
 
 :::
 
 
 ::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
-## Respuesta al ejercicio propuesto
+## Respuesta al ejercicio propuesto (en R)
 
 Para añadir las columnas de frecuencias absolutas acumuladas (`frec_abs_acum`) y frecuencias relativas acumuladas (`frec_rel_acum`) a tu dataframe `df_aula1`, puedes usar las funciones `cumsum()` y algunas mutaciones adicionales. Aquí tienes el código actualizado:
 
-### Código R actualizado
+**Código R actualizado**
 
 ```r
-# Cargar las librerías necesarias
+## Cargar las librerías necesarias
 library(tidyverse)
 
-# Crear el dataframe con las nuevas columnas de frecuencias acumuladas
+## Crear el dataframe con las nuevas columnas de frecuencias acumuladas
 df_aula1 |>
   mutate(intervalo = cut(altura_cm, breaks = seq(130, 175, by = 5), include_lowest = TRUE)) |>
   group_by(intervalo) |>
@@ -327,13 +327,13 @@ df_aula1 |>
    ```
    - Calcula la frecuencia relativa (`frec_rel`) dividiendo la frecuencia absoluta de cada intervalo por la suma total de frecuencias absolutas.
 
-4. **Calcular Frecuencia Absoluta Acumulada**:
+4. **Calcular frecuencia absoluta acumulada**:
    ```r
    mutate(frec_abs_acum = cumsum(frec_abs))
    ```
    - Usa `cumsum()` para calcular la frecuencia absoluta acumulada (`frec_abs_acum`).
 
-5. **Calcular Frecuencia Relativa Acumulada**:
+5. **Calcular frecuencia relativa acumulada**:
    ```r
    mutate(frec_rel_acum = cumsum(frec_rel))
    ```
