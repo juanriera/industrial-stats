@@ -216,20 +216,28 @@ También podemos calcular las frecuencias absolutas y relativas de nuestra tabla
 3. **Crear y agrupar por intervalos**:
    ```r
    df_aula1 |>
-     mutate(intervalo = cut(altura_cm, breaks = seq(130, 175, by = 5), include.lowest = TRUE)) |>
+     mutate(intervalo = cut(altura_cm, breaks = seq(130, 180, by = 10), include.lowest = TRUE)) |>
      group_by(intervalo)
    ```
    - **`df_aula1 |>`**: Utiliza el operador pipe (`|>`) para encadenar una serie de operaciones en el dataframe `df_aula1`.
-   - **`mutate(intervalo = cut(altura_cm, breaks = seq(130, 175, by = 5), include.lowest = TRUE))`**: Crea una nueva columna `intervalo` que contiene intervalos de la columna `altura_cm` con un rango desde 130 hasta 175 cm, con una amplitud de clase de 5 cm. La opción `include.lowest = TRUE` asegura que el valor más bajo esté incluido en el primer intervalo.
+   - **`mutate(intervalo = cut(altura_cm, breaks = seq(130, 180, by = 10), include.lowest = TRUE))`**: Crea una nueva columna `intervalo` que contiene intervalos de la columna `altura_cm` con un rango desde 130 hasta 180 cm, con una amplitud de clase de 10 cm. La opción `include.lowest = TRUE` asegura que el valor más bajo esté incluido en el primer intervalo.
    - **`group_by(intervalo)`**: Agrupa los datos por los intervalos definidos en la columna `intervalo`.
 
-4. **Calcular la frecuencia absoluta**:
+4. **Completar los intervalos faltantes**
+
+    ```r
+     complete(intervalo, fill = list(frec_abs = 0))
+    ```
+    - Usa la función `complete()` para asegurarse de que todos los intervalos aparezcan en la tabla, incluso si su frecuencia es cero.
+    - El argumento `fill = list(frec_abs = 0)` asegura que los intervalos faltantes tengan una frecuencia absoluta de cero.
+
+5. **Calcular la frecuencia absoluta**:
    ```r
    summarise(frec_abs = n())
    ```
    - **`summarise(frec_abs = n())`**: Crea un nuevo dataframe resumido que contiene la frecuencia absoluta (`frec_abs`) de cada intervalo. La función `n()` cuenta el número de observaciones en cada intervalo.
 
-5. **Calcular la frecuencia relativa**:
+6. **Calcular la frecuencia relativa**:
    ```r
    mutate(frec_rel = frec_abs / sum(frec_abs))
    ```
@@ -244,9 +252,10 @@ library (tidyverse)
 df_aula1 <- read.csv2("excel-R/aula1.csv",fileEncoding='latin1')
 
 df_aula1 |>
-  mutate (intervalo = cut(altura_cm, breaks = seq(130, 175, by =5), include_lowest = TRUE)) |>
+  mutate (intervalo = cut(altura_cm, breaks = seq(130, 180, by = 10), include_lowest = TRUE)) |>
   group_by(intervalo) |>
   summarise (frec_abs = n()) |>
+  complete(intervalo, fill = list(frec_abs = 0)) |>
   mutate(frec_rel = frec_abs / sum(frec_abs))
 ```
 
@@ -298,9 +307,10 @@ library(tidyverse)
 
 ## Crear el dataframe con las nuevas columnas de frecuencias acumuladas
 df_aula1 |>
-  mutate(intervalo = cut(altura_cm, breaks = seq(130, 175, by = 5), include_lowest = TRUE)) |>
+  mutate(intervalo = cut(altura_cm, breaks = seq(130, 180, by = 10), include_lowest = TRUE)) |>
   group_by(intervalo) |>
   summarise(frec_abs = n()) |>
+  complete(intervalo, fill = list(frec_abs = 0)) |>
   mutate(frec_rel = frec_abs / sum(frec_abs),
          frec_abs_acum = cumsum(frec_abs),
          frec_rel_acum = cumsum(frec_rel)) |>
@@ -310,9 +320,9 @@ df_aula1 |>
 
 1. **Crear intervalos**:
    ```r
-   mutate(intervalo = cut(altura_cm, breaks = seq(130, 175, by = 5), include_lowest = TRUE))
+   mutate(intervalo = cut(altura_cm, breaks = seq(130, 180, by = 10), include_lowest = TRUE))
    ```
-   - Agrupa los valores de `altura_cm` en intervalos definidos por `seq(130, 175, by = 5)`.
+   - Agrupa los valores de `altura_cm` en intervalos definidos por `seq(130, 180, by = 10)`.
 
 2. **Agrupar por intervalo y calcular frecuencia absoluta**:
    ```r
@@ -326,14 +336,23 @@ df_aula1 |>
    mutate(frec_rel = frec_abs / sum(frec_abs))
    ```
    - Calcula la frecuencia relativa (`frec_rel`) dividiendo la frecuencia absoluta de cada intervalo por la suma total de frecuencias absolutas.
+   
+4. **Completar los intervalos faltantes**:
 
-4. **Calcular frecuencia absoluta acumulada**:
+    ```r
+     complete(intervalo, fill = list(frec_abs = 0))
+    ```
+   - Usa la función `complete()` para asegurarse de que todos los intervalos aparezcan en la tabla, incluso si su frecuencia es cero.
+
+   - El argumento `fill = list(frec_abs = 0)` asegura que los intervalos faltantes tengan una frecuencia absoluta de cero.
+   
+5. **Calcular frecuencia absoluta acumulada**:
    ```r
    mutate(frec_abs_acum = cumsum(frec_abs))
    ```
    - Usa `cumsum()` para calcular la frecuencia absoluta acumulada (`frec_abs_acum`).
 
-5. **Calcular frecuencia relativa acumulada**:
+6. **Calcular frecuencia relativa acumulada**:
    ```r
    mutate(frec_rel_acum = cumsum(frec_rel))
    ```
