@@ -519,14 +519,14 @@ Este script nos permite visualizar la tabla de frecuencias.Ahora completamos el 
 
 3. **Agregar etiquetas y título**:
    ```r
-   labs(title = "Diagrama de Barras de Frecuencia absoluta",
+   labs(title = "Diagrama de barras de frecuencia absoluta",
         x = "Intervalos de 'est'",
         y = "Frecuencia Absoluta") +
    ```
-   - **`labs(title = "Diagrama de Barras de Frecuencia absoluta", x = "Intervalos de 'est'", y = "Frecuencia Absoluta")`**: Añade etiquetas y título al gráfico.
-     - **`title = "Diagrama de Barras de Frecuencia absoluta"`**: Establece el título del gráfico.
+   - **`labs(title = "Diagrama de barras de frecuencia absoluta", x = "Intervalos de 'est'", y = "Frecuencia Absoluta")`**: Añade etiquetas y título al gráfico.
+     - **`title = "Diagrama de barras de frecuencia absoluta"`**: Establece el título del gráfico.
      - **`x = "Intervalos de 'est'"`**: Etiqueta el eje X.
-     - **`y = "Frecuencia Absoluta"`**: Etiqueta el eje Y.
+     - **`y = "Frecuencia absoluta"`**: Etiqueta el eje Y.
 
 4. **Aplicar un tema minimalista**:
    ```r
@@ -539,9 +539,9 @@ Este es el código completo de nuevo para referencia:
 ```r
 ggplot(aes(x = intervalo, y = frec_abs)) +
   geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
-  labs(title = "Diagrama de Barras de Frecuencia absoluta",
+  labs(title = "Diagrama de barras de frecuencia absoluta",
        x = "Intervalos de 'est'",
-       y = "Frecuencia Absoluta") +
+       y = "Frecuencia absoluta") +
   theme_minimal()
 ```
 
@@ -577,11 +577,11 @@ df_camembert |>
   summarise (frec_abs = n()) |>
   mutate(frec_rel = frec_abs / sum(frec_abs)) |>
   ggplot(aes(x = intervalo, y = frec_abs)) +
-  geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
-  labs(title = "Diagrama de Barras de Frecuencia absoluta",
+   geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
+   labs(title = "Diagrama de Barras de Frecuencia absoluta",
        x = "Intervalos de 'est'",
        y = "Frecuencia absoluta (núm. de casos)") +
-  theme_minimal()
+   theme_minimal()
 ```
 
 R tiene una función básica, la función `hist()`, que construye el histograma directamente sin necesidad de hacer previamente una tabla de frecuencias (en realidad, la tabla de frecuencias se calcula internamente). Como siempre, presentamos esta opción básica junto con la opción de la función `ggplot()` de `tidyverse`, y utilizamos las opciones de personalización de `ggplot()`para trazar un histograma de aspecto semejante al gráfico básico; en esta ocasión, utilizamos el color de relleno gris.
