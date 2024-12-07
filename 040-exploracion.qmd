@@ -376,14 +376,16 @@ Cuando nuestra variable es *discreta*, podemos representar las frecuencias de ca
 
 Este gráfico es muy utilizado para representar, por ejemplo, resultados de encuestas, como el número de votos que han obtenido los diferentes partidos políticos en unas elecciones,  o tablas discretas, como los kilos fabricados por meses en una fábrica.
 
-::: {#fig-elephants layout-ncol=2}
+::: {layout="[[40,-20,40],[45,-10,45]]"}
+![](01-imagenes/2024-12-07-excel-tabla-frec-1.png)
+
+![](01-imagenes/2024-12-07-excel-tabla-frec-2.png)
 
 ![](01-imagenes/barras1.png)
 
 ![](01-imagenes/barras2.png)
 
 Ejemplos de diagramas de barras
-
 :::
 
 ## Histograma
@@ -400,22 +402,42 @@ Para visualizar las variables continuas se utiliza el **histograma**, que es un 
 - Un histograma puede ayudar a identificar patrones, como si los datos están distribuidos de manera simétrica, sesgada, o si hay picos y valles significativos.
 
 ### Construcción de un histograma en Excel
-Usaremos el ejemplo de la altura en cm. de un  grupo de alumnos.
+Usaremos el ejemplo de la altura en cm. de un  grupo de alumnos, cuyos datos hemos guardado en el fichero csv `aula1.csv`.
+
 
 Podemos utilizar dos métodos para hacer un histograma en Excel
 
 #### Método 1: histograma directo
-Simplemente, seleccionar el rango de datos e insertar el gráfico, seleccionando `Histograma`en el icono `Seleccionar gráficos de estadística`
 
-![](01-imagenes/excel-histo-aula1.png){fig-align="center" width=50%}
+- Seleccionamos el rango de datos. Podemos hacerlo mediante un click en el encabezado de la columna de la variable `altura_cm`, en este caso, la columna `B`.
+- En la opción de menú `Insertar`, seleccionamos el icono `Seleccionar gráficos de estadística`
+- Seleccionamos `Histograma`
 
-Excel calcula automáticamente la amplitud de los intervalos y el número de columnas; estas opciones pueden modificarse seleccionando el eje X del gráfico con el botón derecho del ratón, y después seleccionando `Dar formato al eje`. La descripción de los intervalos utiliz los mismos símbolos que hemos visto en las tablas de frecuencias de R.
+![](01-imagenes/excel-histo-aula1.png){fig-align="center" width=75%}
+
+Excel calcula automáticamente la amplitud de los intervalos y el número de columnas; estas opciones pueden modificarse seleccionando con el botón derecho del ratón el elemento a modificar. En este caso, utilizamos estas opciones:
+
+- Eliminamos título del gráfico
+- Modificamos anchura de las barras seleccionando `Dar formato a serie de datos`, `Opciones de serie`, `Ancho del rango`= 50% 
+- Modificamos los intervalos seleccionando el eje X: `Dar formato al eje`, `Opciones de eje`, `Ancho del rango` = 10
+
+
+La descripción de los intervalos utiliza los mismos símbolos que hemos visto en las tablas de frecuencias de R.
 
 En el momento de escribir este manual, Excel no permite hacer histogramas múltiples ni agrupados por otra variable, por lo que para diseños más complejos, no hay más remedio que recurrir a otras opciones como las tablas dinámicas de Excel o, mejor aún, R.
 
 #### Método 2: utilizar una tabla dinámica
 
-La tabla dinámica que hemos construido en Excel ha convertido nuestra variable continua, `altura_cm`, en una tabla de valores discretos, al agrupar los valores en intervalos. En Excel podemos representar las frecuencias absolutas de nuestra tabla gráficamente, insertando un gráfico dinámico a partir de la tabla:
+La tabla dinámica que hemos construido en Excel ha convertido nuestra variable continua, `altura_cm`, en una tabla de valores discretos, al agrupar los valores en intervalos. En Excel podemos representar las frecuencias absolutas de nuestra tabla gráficamente, insertando un gráfico de barras a partir de la tabla:
+
+- Con el cursor dentro de la tabla, seleccionamos la opción de menú `Insertar`
+- Insertamos un gráfico de barras
+
+Opcionalmente, aplicamos las siguientes opciones de formato:
+
+- Hacemos click sobre uno de los botones del gráfico dinámico con el boton derecho del ratón, y seleccionamos la opción ocultar todos los botones del gráfico. 
+- Eliminamos el título del gráfico
+- Abrimos el formato de la serie de datos, e introducimos en la opción `Ancho del rango` el valor $50\%$ para ensanchar las barras.
 
 ![](01-imagenes/aula1-diag-barras.png){fig-align="center" width=75%}
 
