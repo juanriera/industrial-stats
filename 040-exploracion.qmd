@@ -293,7 +293,6 @@ En la tabla de frecuencias anterior, calcular **frecuencia absoluta acumulada** 
 
 :::
 
-
 ::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
 ## Respuesta al ejercicio propuesto (en R)
 
@@ -370,22 +369,58 @@ El dataframe resultante tendrá las siguientes columnas:
 
 :::
 
-## Diagramas de barra e histogramas
-
 Las distribuciones de frecuencias se pueden visualizar mediante varios tipos de gráficos, como histogramas, gráficos de barras y polígonos de frecuencias.
 
+## Diagrama de barras
 Cuando nuestra variable es *discreta*, podemos representar las frecuencias de cada valor de forma gráfica utilizando un diagrama de barras. Este diagrama utiliza barras rectangulares para representar la frecuencia de cada categoría.
 
-El diagrama de barras no es muy utilizado en el análisis de datos, dado que habitualmente la mayoría de las variables que analizamos son numéricas continuas. Es mucho más utilizado el **histograma**, que es un diagrama que utiliza las barras rectangulares para hacer un gráfico de la distribución de valores continuos, previamente agrupados en clases, tal como se ha hecho en la tabla de frecuencias.
+Este gráfico es muy utilizado para representar, por ejemplo, resultados de encuestas, como el número de votos que han obtenido los diferentes partidos políticos en unas elecciones,  o tablas discretas, como los kilos fabricados por meses en una fábrica.
 
-## Histogramas en Excel
+::: {#fig-elephants layout-ncol=2}
+
+![](01-imagenes/barras1.png)
+
+![](01-imagenes/barras2.png)
+
+Ejemplos de diagramas de barras
+
+:::
+
+## Histograma
+
+Para visualizar las variables continuas se utiliza el **histograma**, que es un diagrama que utiliza las barras rectangulares para hacer un gráfico de la distribución de valores continuos, previamente agrupados en intervalos (_bins_ en inglés), tal como se ha hecho en la tabla de frecuencias.
+
+### Componentes de un histograma:
+1. **Eje horizontal (X)**: Representa los intervalos de valores de la variable. Cada intervalo abarca un rango específico de valores.
+2. **Eje vertical (Y)**: Muestra la frecuencia o el número de veces que los valores caen dentro de cada intervalo.
+3. **Barras**: Cada barra en el histograma representa un intervalo. La altura de la barra indica la frecuencia de los valores dentro de ese intervalo.
+
+### Cómo interpretar un histograma:
+- Si las barras son altas en un intervalo específico, significa que muchos valores del conjunto de datos caen dentro de ese rango.
+- Un histograma puede ayudar a identificar patrones, como si los datos están distribuidos de manera simétrica, sesgada, o si hay picos y valles significativos.
+
+### Construcción de un histograma en Excel (ejemplo de la altura en cm. de un  grupo de alumnos)
+
+Podemos utilizar dos métodos para hacer un histograma en Excel
+
+#### Método 1: histograma directo
+Simplemente, seleccionar el rango de datos e insertar el gráfico, seleccionando `Histograma`en el icono `Seleccionar gráficos de estadística`
+
+![](01-imagenes/excel-histo-aula1.png){fig-align="center" width=50%}
+
+Excel calcula automáticamente la amplitud de los intervalos y el número de columnas; estas opciones pueden modificarse seleccionando el eje X del gráfico con el botón derecho del ratón, y después seleccionando `Dar formato al eje`. La descripción de los intervalos utiliz los mismos símbolos que hemos visto en las tablas de frecuencias de R.
+
+En el momento de escribir este manual, Excel no permite hacer histogramas múltiples ni agrupados por otra variable, por lo que para diseños más complejos, no hay más remedio que recurrir a otras opciones como las tablas dinámicas de Excel o, mejor aún, R.
+
+#### Método2: utilizar una tabla dinámica
 
 La tabla dinámica que hemos construido en Excel ha convertido nuestra variable continua, `altura_cm`, en una tabla de valores discretos, al agrupar los valores en intervalos. En Excel podemos representar las frecuencias absolutas de nuestra tabla gráficamente, insertando un gráfico dinámico a partir de la tabla:
 
 ![](01-imagenes/aula1-diag-barras.png)
 
+Al utiizar la tabla dinámica para construir el gráfico, Excel utiliza las categorías de la tabla dinámica. Dado que estas categorías (los intervalos que ha formado la tabla dinámica) son discretas, Excel utiliza el resultado de la tabla dinámica para hacer el gráfico con un diagrama de barras. No es posible insertar un histograma a partir de una tabla dinámica.
 
-En el caso de la tabla dinámica, Excel no construye el diagrama de barras a partir de la tabla de los valores originales, sino de las categorías de la tabla dinámica. Dado que estas categorías (los intervalos que ha formado la tabla dinámica) son discretas, Excel utiliza el resultado de la tabla dinámica para hacer el gráfico con un diagrama de barras.
+### Análisis de un caso real
 
 El histograma muestra su utilidad cuando representamos la distribución de un conjunto de valores más grande que nuestros once alumnos. Veamos su aplicación a los datos diarios de una fabricación de queso camembert a lo largo de un año.Los datos de esta fabricación están en el fichero `camembert.csv`.
 
@@ -435,7 +470,15 @@ datatable(df_camembert, options = list(pageLength = 5), caption = 'Tabla de Dato
 ```
 
 
-Analicemos los datos con Excel. Los pasos a seguir son:
+### Construcción del histograma con Excel
+
+#### Método directo
+Seleccionamos el rango del extracto seco (columna `est`) e insertamos el histograma, ajustando el ancho de intervalo a  $1$ en las opciones de gráfico:
+
+![](01-imagenes/excel-histo.png)
+
+### Método 2: mediante una tabla dinámica
+Los pasos a seguir son:
 
 1.  Construir la tabla dinámica
 2.  Agrupar los datos
@@ -568,7 +611,7 @@ Este código te permitirá generar un diagrama de barras que muestra la frecuenc
 
 :::
 
-```{r}
+```{r fig.align='center', out.width='75%'}
 # Crear tabla de frecuencias
 df_camembert |>
   mutate(intervalo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE)) |>
@@ -578,7 +621,7 @@ df_camembert |>
   
 # Este es el código adicional para hacer el gráfico  
   ggplot(aes(x = intervalo, y = frec_abs)) +
-   geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
+   geom_bar(stat = "identity", fill = "lightblue", alpha = 0.7, color = "black") +
    labs(title = "Diagrama de Barras de Frecuencia absoluta",
        x = "Intervalos de 'est'",
        y = "Frecuencia Absoluta") +
@@ -587,7 +630,7 @@ df_camembert |>
 
 Modificando el criterio de la amplitud de clase para agrupar de dos en dos en vez de uno, podemos cambiar la tabla, igual que hemos hecho en Excel.
 
-```{r message=FALSE, warning=FALSE}
+```{r message=FALSE, warning=FALSE, fig.align='center', out.width='75%'}
 library (tidyverse)
 df_camembert <- read.csv2("excel-R/camembert.csv",fileEncoding='latin1')
 df_camembert |>
@@ -596,7 +639,7 @@ df_camembert |>
   summarise (frec_abs = n()) |>
   mutate(frec_rel = frec_abs / sum(frec_abs)) |>
   ggplot(aes(x = intervalo, y = frec_abs)) +
-   geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
+   geom_bar(stat = "identity", fill = "lightblue", alpha = 0.7, color = "black") +
    labs(title = "Diagrama de Barras de Frecuencia absoluta",
        x = "Intervalos de 'est'",
        y = "Frecuencia absoluta (núm. de casos)") +
@@ -710,15 +753,17 @@ hist(df_camembert$coliformes, breaks=50)
 
 df_camembert |>
   ggplot(aes(x=coliformes)) +
-    geom_histogram(bins=50)
+    geom_histogram(bins=50, fill = "lightblue", colour="black")+
+    theme_bw()
 ```
 
 En casos de distribuciones muy asimétricas, a veces es conveniente aplicar una transformación a los datos, tal como el logaritmo decimal, mediante la función `log10()`; esto facilita la interpretación del gráfico:
 
-```{r}
+```{r fig.align='center', out.width='75%'}
 df_camembert |>
   ggplot(aes(x=log10(coliformes+1))) +
-    geom_histogram(bins=50)
+    geom_histogram(bins=50, fill = "lightblue", colour="black")+
+    theme_bw()
 ```
 
 ## Gráficos de densidad
