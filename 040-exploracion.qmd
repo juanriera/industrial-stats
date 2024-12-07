@@ -399,7 +399,8 @@ Para visualizar las variables continuas se utiliza el **histograma**, que es un 
 - Si las barras son altas en un intervalo específico, significa que muchos valores del conjunto de datos caen dentro de ese rango.
 - Un histograma puede ayudar a identificar patrones, como si los datos están distribuidos de manera simétrica, sesgada, o si hay picos y valles significativos.
 
-### Construcción de un histograma en Excel (ejemplo de la altura en cm. de un  grupo de alumnos)
+### Construcción de un histograma en Excel
+Usaremos el ejemplo de la altura en cm. de un  grupo de alumnos.
 
 Podemos utilizar dos métodos para hacer un histograma en Excel
 
@@ -412,7 +413,7 @@ Excel calcula automáticamente la amplitud de los intervalos y el número de col
 
 En el momento de escribir este manual, Excel no permite hacer histogramas múltiples ni agrupados por otra variable, por lo que para diseños más complejos, no hay más remedio que recurrir a otras opciones como las tablas dinámicas de Excel o, mejor aún, R.
 
-#### Método2: utilizar una tabla dinámica
+#### Método 2: utilizar una tabla dinámica
 
 La tabla dinámica que hemos construido en Excel ha convertido nuestra variable continua, `altura_cm`, en una tabla de valores discretos, al agrupar los valores en intervalos. En Excel podemos representar las frecuencias absolutas de nuestra tabla gráficamente, insertando un gráfico dinámico a partir de la tabla:
 
