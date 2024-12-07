@@ -493,14 +493,14 @@ datatable(df_camembert, options = list(pageLength = 5), caption = 'Tabla de Dato
 ```
 
 
-### Construcción del histograma con Excel
+#### Construcción del histograma con Excel
 
-#### Método directo
+##### Método directo
 Seleccionamos el rango del extracto seco (columna `est`) e insertamos el histograma, ajustando el ancho de intervalo a  $1$ en las opciones de gráfico:
 
 ![](01-imagenes/excel-histo.png){fig-align="center" width=75%}
 
-### Método 2: mediante una tabla dinámica
+##### Método 2: mediante una tabla dinámica
 Los pasos a seguir son:
 
 1.  Construir la tabla dinámica
@@ -523,6 +523,8 @@ En la figura siguiente vemos el histograma correspondiente a la tabla anterior, 
 :::
 
 La decisión de cambiar la amplitud del intervalo en un histograma influye en el aspecto del gráfico y es una opción personal; lo mejor es utilizar la que en nuestra opinión refleje mejor el aspecto de la distribución de datos, ni demasiado grande ni demasiado pequeña. En todo caso, debemos ser capaces de interpretar que la distribución de los valores es la misma en los tres casos: hay una mayoría de casos con valores entre 46 y 48, y muy pocos casos con valores muy bajos o muy altos. En este caso, la distribución de los valores es aproximadamente simétrica, y se reparten alrededor de una mayoría de valores centrales.
+
+#### Histograma en R en dos etapas: tabla de frecuencias y diagrama de barras
 
 Aunque Excel utiliza el diagrama de barras para construir el gráfico, en realidad estamos construyendo un histograma, en dos etapas: agrupación de los datos en una tabla de frecuencia (tabla dinámica) y creación del gráfico a partir de esta tabla. Al construir un histograma en R, el programa realiza automáticamente ambos pasos. Para verlo por partes, vamos a construir la tabla de frecuencias y el histograma de la variable `est`en R.
 
@@ -669,6 +671,8 @@ df_camembert |>
    theme_minimal()
 ```
 
+#### Creación del histograma en R directamente
+
 R tiene una función básica, la función `hist()`, que construye el histograma directamente sin necesidad de hacer previamente una tabla de frecuencias (en realidad, la tabla de frecuencias se calcula internamente). Como siempre, presentamos esta opción básica junto con la opción de la función `ggplot()` de `tidyverse`, y utilizamos las opciones de personalización de `ggplot()`para trazar un histograma de aspecto semejante al gráfico básico; en esta ocasión, utilizamos el color de relleno gris.
 
 ::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
@@ -755,6 +759,8 @@ df_camembert |>
 Vemos que los dos gráficos no son idénticos a pesar de provenir de los mismos datos, porque la construcción de los intervalos subyacente es ligeramente diferente. Esto no debe preocuparnos, porque el aspecto general de la distribución de los datos es el mismo.
 
 En la fase de exploración nos importa más entender estas propiedades de los datos (aspecto, forma de la distribución) que la precisión en la construcción del gráfico. En todo caso, en `qqplot()`podemos usar infinidad de opciones que nos permiten configurar el gráfico hasta los más mínimos detalles, por lo que esta función es mucho más útil que las funciones básicas para preparar gráficos que vayan destinados a informes o presentaciones. La función básica `hist()`, por su parte, es más sencilla de usar al principio cuando no tenemos todavía experiencia con `ggplot()`, y también para una visualización rápida.
+
+### Otros ejemplos
 
 En ocasiones, nos encontramos con datos que son asimétricos: hay una mayoría de valores bajos o bien de valores altos. Veamos un caso: los recuentos bacterianos de bacterias coliformes, que tenemos en la última columna a la derecha de nuestra tabla, en la variable ´coliformes´.
 
@@ -1171,7 +1177,7 @@ df_camembert |>
 
 La agrupación de los _boxplots_ por meses nos pone claramente de manifiesto las diferencias en el extracto seco `est`que ya habíamos visto con los gráficos de densidad. Estas diferencias son más claras en el mes de julio.
 
-## Histogramas y diagramas de caja
+## Relación entre el histograma y el _boxplot_
 
 Resulta muy útil comprender visualmente la relación entre el *boxplot* y el histograma para entender la distribución de los datos. En la gráfica siguiente se representan ambos simultáneamente
 
