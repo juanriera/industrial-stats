@@ -416,7 +416,7 @@ En el momento de escribir este manual, Excel no permite hacer histogramas múlti
 
 La tabla dinámica que hemos construido en Excel ha convertido nuestra variable continua, `altura_cm`, en una tabla de valores discretos, al agrupar los valores en intervalos. En Excel podemos representar las frecuencias absolutas de nuestra tabla gráficamente, insertando un gráfico dinámico a partir de la tabla:
 
-![](01-imagenes/aula1-diag-barras.png)
+![](01-imagenes/aula1-diag-barras.png){fig-align="center" width=75%}
 
 Al utiizar la tabla dinámica para construir el gráfico, Excel utiliza las categorías de la tabla dinámica. Dado que estas categorías (los intervalos que ha formado la tabla dinámica) son discretas, Excel utiliza el resultado de la tabla dinámica para hacer el gráfico con un diagrama de barras. No es posible insertar un histograma a partir de una tabla dinámica.
 
@@ -426,7 +426,7 @@ El histograma muestra su utilidad cuando representamos la distribución de un co
 
 La tabla de datos tiene esta estructura:
 
-![](01-imagenes/camembert-tabla-datos.png)
+![](01-imagenes/camembert-tabla-datos.png){fig-align="center" width=75%}
 
 La tabla está formada por 211 casos. 
 
@@ -475,7 +475,7 @@ datatable(df_camembert, options = list(pageLength = 5), caption = 'Tabla de Dato
 #### Método directo
 Seleccionamos el rango del extracto seco (columna `est`) e insertamos el histograma, ajustando el ancho de intervalo a  $1$ en las opciones de gráfico:
 
-![](01-imagenes/excel-histo.png)
+![](01-imagenes/excel-histo.png){fig-align="center" width=75%}
 
 ### Método 2: mediante una tabla dinámica
 Los pasos a seguir son:
@@ -492,7 +492,7 @@ En la figura siguiente vemos el histograma correspondiente a la tabla anterior, 
 
 
 ::: {layout="[[1], [1,1]]"}
-![](01-imagenes/camembert-histo1.png)
+![](01-imagenes/camembert-histo1.png){fig-align="center" width=75%}
 
 ![](01-imagenes/camembert-histo2.png)
 
