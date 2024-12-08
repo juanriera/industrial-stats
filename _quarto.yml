@@ -21,12 +21,12 @@ book:
         - 070-distr-prob.qmd
         - 080-relacion-xy.qmd
         - 090-anova.qmd
-        - 100-comunicacion.qmd
+        - 100-disexp.qmd
+        - 110-comunicacion.qmd
     - part: "Aplicaciones prácticas"
       chapters:
-        - 110-sistema-medicion.qmd
         - 120-control-proc.qmd
-        - 130-disexp.qmd
+        - 130-sistema-medicion.qmd
         - 140-mejora-procesos.qmd
   appendices: 
     - 150-anexo-R.qmd
