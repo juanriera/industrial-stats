@@ -42,7 +42,7 @@ En todos los casos, el aprendizaje requerirá de un esfuerzo que quizás será m
 
 ## Organización del libro
 
-El libro se estructura en tres partes:
+El libro se estructura en varias partes:
 
 Una **introducción**, con dos capítulos:
 
