@@ -50,7 +50,7 @@ Una **introducción**, con dos capítulos:
 
 - El **capítulo 2** presenta las dos herramientas básicas que se usarán en el libro, la hoja de cálculo y el programa estadístico de código abierto R. Se describen los aspectos básicos del software estadístico R y sus principales aplicaciones en la manipulación, limpieza y análisis de conjuntos de datos. Se introduce también el concepto actual de **reproducibilidad**, y se explica su importancia y el impacto de utilizar una hoja de cálculo o un análisis basado en un script programado.
 
-Una parte de **técnicas básicas**:
+La primera parte introduce las **técnicas básicas**:
 
 -   En el **capítulo 3** se hace una introducción al concepto de flujo de trabajo y al concepto de _datos ordenados_ o _**tidy data**_, que resulta fundamental para las fases posteriores de análisis. Se explica también cómo mover datos desde excel a R y viceversa.
 
