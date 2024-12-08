@@ -3,15 +3,19 @@ project:
   output-dir: docs
 
 book:
-  title: "Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R"
+  title: "Introducción al análisis de datos industriales utilizando Microsoft Excel y R"
   subtitle: "Manual para la Formación Profesional"
   author: "Juan Riera"
   date: 2024-05
   date-format: short
+  sidebar:
+    collapse-level: 1
   chapters:
     - index.qmd
-    - 010-intro.qmd
-    - 020-herramientas.qmd   
+    - part: "Introducción"
+      chapters:
+        - 010-intro.qmd
+        - 020-herramientas.qmd   
     - part: "Técnicas básicas"
       chapters:
         - 030-organizacion.qmd  
