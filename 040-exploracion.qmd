@@ -11,7 +11,7 @@ knitr::opts_chunk$set(echo = TRUE, warning = FALSE, fig.showtext = T)
 
 # La exploración de los datos mediante gráficos.
 
-En este capítulo esyudiaremos cómo describir conjuntos de datos de forma visual, utilizando varios tipos de gráficos distintos:
+En este capítulo estudiaremos cómo describir conjuntos de datos de forma visual, utilizando varios tipos de gráficos distintos:
 
 -   *Stemplot*
 -   Histograma 
