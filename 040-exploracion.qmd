@@ -392,18 +392,17 @@ Ejemplos de diagramas de barras
 
 Para visualizar las variables continuas se utiliza el **histograma**, que es un diagrama que utiliza las barras rectangulares para hacer un gráfico de la distribución de valores continuos, previamente agrupados en intervalos (_bins_ en inglés), tal como se ha hecho en la tabla de frecuencias.
 
-### Componentes de un histograma:
+#### Componentes de un histograma
 1. **Eje horizontal (X)**: Representa los intervalos de valores de la variable. Cada intervalo abarca un rango específico de valores.
 2. **Eje vertical (Y)**: Muestra la frecuencia o el número de veces que los valores caen dentro de cada intervalo.
 3. **Barras**: Cada barra en el histograma representa un intervalo. La altura de la barra indica la frecuencia de los valores dentro de ese intervalo.
 
-### Cómo interpretar un histograma:
+#### Cómo interpretar un histograma
 - Si las barras son altas en un intervalo específico, significa que muchos valores del conjunto de datos caen dentro de ese rango.
 - Un histograma puede ayudar a identificar patrones, como si los datos están distribuidos de manera simétrica, sesgada, o si hay picos y valles significativos.
 
 ### Construcción de un histograma en Excel
 Usaremos el ejemplo de la altura en cm. de un  grupo de alumnos, cuyos datos hemos guardado en el fichero csv `aula1.csv`.
-
 
 Podemos utilizar dos métodos para hacer un histograma en Excel
 
@@ -478,7 +477,7 @@ Visualicemos la tabla con R:
 
 **Resultado**
 
-Este código en R Markdown generará una tabla interactiva donde podrás visualizar cinco registros a la vez y desplazarte por el resto de los datos de manera intuitiva. La función `datatable()` es excelente para manejar grandes conjuntos de datos y ofrecer una experiencia de usuario dinámica.
+Este código generará una tabla interactiva donde podrás visualizar cinco registros a la vez y desplazarte por el resto de los datos de manera intuitiva. La función `datatable()` es excelente para manejar grandes conjuntos de datos y ofrecer una experiencia de usuario dinámica.
 
 :::
 
@@ -524,48 +523,150 @@ En la figura siguiente vemos el histograma correspondiente a la tabla anterior, 
 
 La decisión de cambiar la amplitud del intervalo en un histograma influye en el aspecto del gráfico y es una opción personal; lo mejor es utilizar la que en nuestra opinión refleje mejor el aspecto de la distribución de datos, ni demasiado grande ni demasiado pequeña. En todo caso, debemos ser capaces de interpretar que la distribución de los valores es la misma en los tres casos: hay una mayoría de casos con valores entre 46 y 48, y muy pocos casos con valores muy bajos o muy altos. En este caso, la distribución de los valores es aproximadamente simétrica, y se reparten alrededor de una mayoría de valores centrales.
 
-#### Histograma en R en dos etapas: tabla de frecuencias y diagrama de barras
+#### Histograma en R en dos etapas
 
-Aunque Excel utiliza el diagrama de barras para construir el gráfico, en realidad estamos construyendo un histograma, en dos etapas: agrupación de los datos en una tabla de frecuencia (tabla dinámica) y creación del gráfico a partir de esta tabla. Al construir un histograma en R, el programa realiza automáticamente ambos pasos. Para verlo por partes, vamos a construir la tabla de frecuencias y el histograma de la variable `est`en R.
+Como hemos visto en Excel, la construcción de un histograma implica siempre dos etapas:
+
+- agrupación de los datos en una tabla de frecuencia (tabla dinámica), y 
+- creación del gráfico a partir de esta tabla. 
+
+Aunque R dispone de funciones que realizan automáticamente estas etapas, y que veremos más tarde, de forma didáctica vamos a construir por separado la tabla de frecuencias y el histograma de la variable `est`en R, siguiendo los pasos básicos que hemos dado en Excel. Nuestro script nos mostrará la tabla de frecuencias y, a continuación, el histograma.
 
 ::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
 ## Explicación del código R
 
-1. **Cargar la librería `tidyverse`**:
-   ```r
-   library(tidyverse)
-   ```
-   - **`library(tidyverse)`**: Carga el paquete `tidyverse`, que es una colección de paquetes de R diseñados para el análisis de datos, como `ggplot2`, `dplyr`, `tidyr`, entre otros.
+**Cargar la biblioteca `tidyverse`**
 
-2. **Leer el archivo CSV**:
-   ```r
-   df_camembert <- read.csv2("excel-R/camembert.csv", fileEncoding = 'latin1')
-   ```
-   - **`df_camembert <- read.csv2("excel-R/camembert.csv", fileEncoding = 'latin1')`**: Lee el archivo CSV denominado `camembert.csv` y lo almacena en el dataframe `df_camembert`. La opción `fileEncoding = 'latin1'` asegura que los caracteres especiales se manejen correctamente durante la lectura del archivo.
+```r
+library(tidyverse)
+```
+- **Descripción**: Carga el paquete **tidyverse**, que es una colección de paquetes R diseñada para la manipulación y visualización de datos.
+  - **Paquetes incluidos**: Entre otros, incluye `ggplot2` (para visualización), `dplyr` (para manipulación de datos), `tidyr` (para ordenar datos) y `readr` (para leer datos).
 
-3. **Crear y agrupar por intervalos**:
-   ```r
-   df_camembert |>
-     mutate(intervalo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE)) |>
-     group_by(intervalo)
-   ```
-   - **`df_camembert |>`**: Utiliza el operador pipe (`|>`) para encadenar una serie de operaciones en el dataframe `df_camembert`.
-   - **`mutate(intervalo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE))`**: Crea una nueva columna `intervalo` que contiene intervalos de la columna `est` con un rango desde 40 hasta 54, con una amplitud de clase de 1. La opción `include.lowest = TRUE` asegura que el valor más bajo esté incluido en el primer intervalo.
-   - **`group_by(intervalo)`**: Agrupa los datos por los intervalos definidos en la columna `intervalo`.
+---
 
-4. **Calcular la frecuencia absoluta**:
-   ```r
-   summarise(frec_abs = n())
-   ```
-   - **`summarise(frec_abs = n())`**: Crea un nuevo dataframe resumido que contiene la frecuencia absoluta (`frec_abs`) de cada intervalo. La función `n()` cuenta el número de observaciones en cada intervalo.
+**Leer el archivo CSV**
 
-5. **Calcular la frecuencia relativa**:
-   ```r
-   mutate(frec_rel = frec_abs / sum(frec_abs))
-   ```
-   - **`mutate(frec_rel = frec_abs / sum(frec_abs))`**: Añade una nueva columna `frec_rel` al dataframe que contiene la frecuencia relativa. Esto se calcula dividiendo la frecuencia absoluta de cada intervalo por la suma total de todas las frecuencias absolutas.
+```r
+df_camembert <- read.csv2("excel-R/camembert.csv", fileEncoding = 'latin1')
+```
+- **Descripción**: Lee un archivo CSV (`camembert.csv`) y lo almacena en el dataframe `df_camembert`.
+- **Opciones**:
+  - `fileEncoding = 'latin1'`: Especifica la codificación del archivo para asegurar que los caracteres se lean correctamente. **latin1** es adecuado para idiomas europeos occidentales.
 
-El resultado es un dataframe que muestra los intervalos de `est` (columna `intervalo`), junto con las frecuencias absolutas (`frec_abs`) y las frecuencias relativas (`frec_rel`) para cada intervalo. Este proceso facilita el análisis de la distribución de los datos en intervalos específicos.
+---
+
+**Crear la tabla de frecuencias**
+
+```r
+df_camembert |>
+  mutate(intervalo = cut(est, breaks = seq(40, 54, by = 1), include_lowest = TRUE)) |>
+  group_by(intervalo) |>
+  summarise(frec_abs = n()) |>
+  mutate(frec_rel = frec_abs / sum(frec_abs)) |>
+  print() |>
+  ggplot(aes(x = intervalo, y = frec_abs)) +
+  geom_bar(stat = "identity", fill = "lightblue", alpha = 0.7, color = "black") +
+  labs(title = "Diagrama de Barras de Frecuencia absoluta",
+       x = "Intervalos de 'est'",
+       y = "Frecuencia Absoluta") +
+  theme_minimal()
+```
+
+**1. `mutate()`**
+
+```r
+mutate(intervalo = cut(est, breaks = seq(40, 54, by = 1), include_lowest = TRUE))
+```
+- **Descripción**: Añade una nueva columna `intervalo` al dataframe.
+- **`cut`**: Corta la variable `est` en intervalos especificados.
+  - **`breaks = seq(40, 54, by = 1)`**: Define los puntos de corte desde 40 hasta 54, incrementando de 1 en 1.
+  - **`include_lowest = TRUE`**: Incluye el valor más bajo en el primer intervalo.
+
+**2. `group_by()`**
+
+```r
+group_by(intervalo)
+```
+- **Descripción**: Agrupa los datos por los intervalos creados en el paso anterior.
+
+**3. `summarise()`**
+
+```r
+summarise(frec_abs = n())
+```
+- **Descripción**: Calcula la frecuencia absoluta (`frec_abs`) de cada intervalo.
+- **`n()`**: Cuenta el número de elementos en cada grupo.
+
+**4. `mutate()`**
+
+```r
+mutate(frec_rel = frec_abs / sum(frec_abs))
+```
+- **Descripción**: Añade una nueva columna `frec_rel` al dataframe.
+  - **`frec_rel = frec_abs / sum(frec_abs)`**: Calcula la frecuencia relativa dividiendo cada frecuencia absoluta por la suma total de frecuencias absolutas.
+
+**5. `print()`**
+
+```r
+print()
+```
+- **Descripción**: Imprime el dataframe resultante que contiene las frecuencias absolutas y relativas.
+
+---
+
+**Crear el diagrama de barras**
+
+```r
+ggplot(aes(x = intervalo, y = frec_abs)) +
+  geom_bar(stat = "identity", fill = "lightblue", alpha = 0.7, color = "black") +
+  labs(title = "Diagrama de Barras de Frecuencia absoluta",
+       x = "Intervalos de 'est'",
+       y = "Frecuencia Absoluta") +
+  theme_minimal()
+```
+
+**1. `ggplot()`**
+
+```r
+ggplot(aes(x = intervalo, y = frec_abs))
+```
+- **Descripción**: Configura `ggplot2` para usar `intervalo` en el eje X y `frec_abs` en el eje Y.
+- **`aes`**: Define las estéticas del gráfico, es decir, qué variables van en qué ejes.
+
+**2. `geom_bar()`**
+
+```r
+geom_bar(stat = "identity", fill = "lightblue", alpha = 0.7, color = "black")
+```
+- **Descripción**: Crea un diagrama de barras utilizando los valores proporcionados.
+- **Opciones**:
+  - **`stat = "identity"`**: Usa los valores proporcionados para la altura de las barras, en lugar de calcularlos automáticamente.
+  - **`fill = "lightblue"`**: Establece el color de relleno de las barras a azul claro.
+  - **`alpha = 0.7`**: Define la transparencia de las barras (0.7 significa 70% opaco).
+  - **`color = "black"`**: Establece el color del borde de las barras a negro.
+
+**3. `labs()`**
+
+```r
+labs(title = "Diagrama de Barras de Frecuencia absoluta",
+     x = "Intervalos de 'est'",
+     y = "Frecuencia Absoluta")
+```
+- **Descripción**: Añade títulos y etiquetas a los ejes del gráfico.
+- **Opciones**:
+  - **`title`**: Título del gráfico.
+  - **`x`**: Etiqueta del eje X.
+  - **`y`**: Etiqueta del eje Y.
+
+**4. `theme_minimal()`**
+
+```r
+theme_minimal()
+```
+- **Descripción**: Aplica un tema minimalista al gráfico, eliminando elementos innecesarios y enfocándose en la claridad del gráfico.
+
+---
 
 :::
 
@@ -578,73 +679,8 @@ df_camembert |>
   mutate (intervalo = cut(est, breaks = seq(40, 54, by =1), include_lowest = TRUE)) |>
   group_by(intervalo) |>
   summarise (frec_abs = n()) |>
-  mutate(frec_rel = frec_abs / sum(frec_abs))
-```
-
-Este script nos permite visualizar la tabla de frecuencias.Ahora completamos el script con el código necesario para redirigir la tabla de frecuencias a `ggplot()` y hacer el diagrama de barras.
-
-::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
-## Explicación del código R adicional
-
-1. **Iniciar `ggplot` con las estéticas (aes)**:
-   ```r
-   ggplot(aes(x = intervalo, y = frec_abs)) +
-   ```
-   - **`ggplot(aes(x = intervalo, y = frec_abs))`**: Inicia el objeto `ggplot` y define las estéticas (aes), que son las variables mapeadas a los ejes del gráfico.
-     - **`x = intervalo`**: Mapea la variable `intervalo` al eje X.
-     - **`y = frec_abs`**: Mapea la variable `frec_abs` al eje Y.
-
-2. **Agregar las barras del gráfico**:
-   ```r
-   geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
-   ```
-   - **`geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black")`**: Añade una capa de barras al gráfico.
-     - **`stat = "identity"`**: Especifica que las alturas de las barras deben ser iguales a los valores de `frec_abs` (en lugar de contarse las observaciones en cada intervalo).
-     - **`fill = "darkblue"`**: Rellena las barras con el color azul oscuro.
-     - **`alpha = 0.7`**: Establece la transparencia de las barras (valor entre 0 y 1, donde 0 es completamente transparente y 1 es opaco).
-     - **`color = "black"`**: Colorea los bordes de las barras en negro.
-
-3. **Agregar etiquetas y título**:
-   ```r
-   labs(title = "Diagrama de barras de frecuencia absoluta",
-        x = "Intervalos de 'est'",
-        y = "Frecuencia Absoluta") +
-   ```
-   - **`labs(title = "Diagrama de barras de frecuencia absoluta", x = "Intervalos de 'est'", y = "Frecuencia Absoluta")`**: Añade etiquetas y título al gráfico.
-     - **`title = "Diagrama de barras de frecuencia absoluta"`**: Establece el título del gráfico.
-     - **`x = "Intervalos de 'est'"`**: Etiqueta el eje X.
-     - **`y = "Frecuencia absoluta"`**: Etiqueta el eje Y.
-
-4. **Aplicar un tema minimalista**:
-   ```r
-   theme_minimal()
-   ```
-   - **`theme_minimal()`**: Aplica un tema minimalista al gráfico, que proporciona un diseño limpio y simple, sin distracciones innecesarias.
-
-Este es el código completo de nuevo para referencia:
-
-```r
-ggplot(aes(x = intervalo, y = frec_abs)) +
-  geom_bar(stat = "identity", fill = "darkblue", alpha = 0.7, color = "black") +
-  labs(title = "Diagrama de barras de frecuencia absoluta",
-       x = "Intervalos de 'est'",
-       y = "Frecuencia absoluta") +
-  theme_minimal()
-```
-
-Este código te permitirá generar un diagrama de barras que muestra la frecuencia absoluta de cada intervalo en el eje X (intervalos) y la frecuencia en el eje Y (frecuencia absoluta), con las barras coloreadas en azul oscuro y bordes negros.
-
-:::
-
-```{r fig.align='center', out.width='75%'}
-# Crear tabla de frecuencias
-df_camembert |>
-  mutate(intervalo = cut(est, breaks = seq(40, 54, by = 1), include.lowest = TRUE)) |>
-  group_by(intervalo) |>
-  summarise(frec_abs = n()) |>
   mutate(frec_rel = frec_abs / sum(frec_abs)) |>
-  
-# Este es el código adicional para hacer el gráfico  
+  print() |>
   ggplot(aes(x = intervalo, y = frec_abs)) +
    geom_bar(stat = "identity", fill = "lightblue", alpha = 0.7, color = "black") +
    labs(title = "Diagrama de Barras de Frecuencia absoluta",
@@ -673,7 +709,9 @@ df_camembert |>
 
 #### Creación del histograma en R directamente
 
-R tiene una función básica, la función `hist()`, que construye el histograma directamente sin necesidad de hacer previamente una tabla de frecuencias (en realidad, la tabla de frecuencias se calcula internamente). Como siempre, presentamos esta opción básica junto con la opción de la función `ggplot()` de `tidyverse`, y utilizamos las opciones de personalización de `ggplot()`para trazar un histograma de aspecto semejante al gráfico básico; en esta ocasión, utilizamos el color de relleno gris.
+Las funciones de histograma de R permiten construir el histograma directamente sin necesidad de hacer previamente una tabla de frecuencias (en realidad, la tabla de frecuencias se calcula internamente). Es mucho más sencillo utilizar estas funciones, ya que el código se simplifica mucho.
+
+Como siempre, presentamos la opción básica de R junto con la opción de la función `ggplot()` de `tidyverse`, y utilizamos las opciones de personalización de `ggplot()`para trazar un histograma de aspecto semejante al gráfico básico; en esta ocasión, utilizamos el color de relleno gris.
 
 ::: { .callout-tip collapse="true" .content-visible when-format="html" icon="false" }
 ## Explicación del código R
@@ -964,7 +1002,7 @@ df_camembert |>
 
 ```
 
-## Diagramas de caja (*boxplot*) y resumen de cinco números.
+## Diagrama de caja o *boxplot*
 
 Este gráfico fue creado por el estadístico John Tukey en 1977, y es una herramienta fundamental en la exploración de datos. Se basa en un grupo de medidas que se utiliza ampliamente en la descripción de conjuntos de datos, el conjunto de **cuartiles**. Si dividimos un grupo de datos **ordenados** en cuatro partes iguales, mediante **tres** puntos de corte, llamamos **primer cuartil** o $Q1$ al valor que se situa en el 25%; **segundo cuartil**, o $Q2$, al valor que se sitúa en el centro (50%), y **tercer cuartil**, o $Q3$, al punto que se situa en el 75% de los datos. A estos tres valores añadimos el **mínimo** y el **máximo**, y tenemos un conjunto de **cinco números** que nos permiten describir la forma de la distribución de datos con cierta precisión. El segundo cuartil ($Q2$), que corresponde al 50% de los datos, se conoce habitualmente como **mediana**. El valor resultante de restar $Q3-Q1$ es lo que se conoce como **rango intercuartil** o $IQR$, y es una medida de la dispersión de la distribución de datos (mide la amplitud de la distribución).
 
@@ -1177,7 +1215,7 @@ df_camembert |>
 
 La agrupación de los _boxplots_ por meses nos pone claramente de manifiesto las diferencias en el extracto seco `est`que ya habíamos visto con los gráficos de densidad. Estas diferencias son más claras en el mes de julio.
 
-## Relación entre el histograma y el _boxplot_
+### Relación entre el  *boxplot* y el histograma 
 
 Resulta muy útil comprender visualmente la relación entre el *boxplot* y el histograma para entender la distribución de los datos. En la gráfica siguiente se representan ambos simultáneamente
 

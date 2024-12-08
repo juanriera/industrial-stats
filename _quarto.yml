@@ -12,20 +12,31 @@ book:
     - index.qmd
     - 010-intro.qmd
     - 020-herramientas.qmd   
-    - 030-organizacion.qmd  
-    - 040-exploracion.qmd
-    - 050-estad-simple.qmd
-    - 060-forma-de-los-datos.qmd
-    - 070-distr-prob.qmd
-    - 080-relacion-xy.qmd
-    - 090-anova.qmd
-    - 100-sistema-medicion.qmd
-    - 110-control-proc.qmd
-    - 120-disexp.qmd
-    - 130-comunicacion.qmd
-    - 140-mejora-calidad.qmd
+    - part: "Técnicas básicas"
+      chapters:
+        - 030-organizacion.qmd  
+        - 040-exploracion.qmd
+        - 050-estad-simple.qmd
+        - 060-forma-de-los-datos.qmd
+        - 070-distr-prob.qmd
+        - 080-relacion-xy.qmd
+        - 090-anova.qmd
+        - 100-comunicacion.qmd
+    - part: "Aplicaciones prácticas"
+      chapters:
+        - 110-sistema-medicion.qmd
+        - 120-control-proc.qmd
+        - 130-disexp.qmd
+        - 140-mejora-procesos.qmd
+  appendices: 
     - 150-anexo-R.qmd
     - 160-bibliografia.qmd
+
+language:
+  section-title-appendices: "Anexos"
+  section-title-bibliography: "Bibliografía"
+
+number-depth: 2
 
 bibliography: bibliografia.bib
 

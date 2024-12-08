@@ -1,4 +1,4 @@
-# Anexo: Instalación de R y conceptos básicos {.unnumbered}
+# Instalación de R y conceptos básicos {.unnumbered}
 
 ## Instalación de R en Windows
 1. Accede al sitio oficial de **CRAN** (Comprehensive R Archive Network), que es el repositorio central de software de R⁴.

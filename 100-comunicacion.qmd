@@ -1,4 +1,4 @@
-# La comunicación
+# La comunicación de los resultados
 
 quarto markdown 
 PowerPoint
