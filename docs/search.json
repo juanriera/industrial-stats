@@ -24,7 +24,7 @@
     "href": "index.html#organización-del-libro",
     "title": "Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R",
     "section": "Organización del libro",
-    "text": "Organización del libro\nEl capítulo 1 hace una introducción general al pensamiento estadístico y su aplicación industrial, y presenta algunos conceptos básicos, tales como población, muestra y variable.\nEl capítulo 2 presenta las dos herramientas básicas que se usarán en el libro, la hoja de cálculo y el programa estadístico de código abierto R. Se describen los aspectos básicos del software estadístico R y sus principales aplicaciones en la manipulación, limpieza y análisis de conjuntos de datos. Se introduce también el concepto actual de reproducibilidad, y se explica su importancia y el impacto de utilizar una hoja de cálculo o un análisis basado en un script programado.\nEn el capítulo 3 se hace una introducción al concepto de flujo de trabajo y al concepto de datos ordenados o tidy data, que resulta fundamental para las fases posteriores de análisis. Se explica también cómo mover datos desde excel a R y viceversa.\nEl capítulo 4 habla de la exploración de los datos como primer paso en el análisis. Se introducen las distribuciones de frecuencia y los principales gráficos que se utilizarán, y se explica cómo hacerlos con Excel y con R.\nEn el capítulo 5 se presentan los principales estadísticos que describen una población, mediante un valor central y una medida de dispersión, tanto paramétricos (media y varianza) como no paramétricos (mediana y rango intercuartil), de forma sencilla y sin recurrir a explicaciones matemáticas o estadísticas avanzadas.\nEl capítulo 6 explica la importancia de comprender la forma de los datos, es decir, su distribución. Se ponen en práctica las herramientas estudiadas en los dos capítulos anteriores para estudiar algunos casos prácticos.\nEl capítulo 7 introduce el concepto de probabilidad, así como las distribuciones de probabilidad, necesarias para la construcción de los tests de hipótesis y, en general, de la estadística inferencial. Este contenido se presenta de forma breve y, sobre todo, práctica.\nEn el capítulo 8 se presentan los métodos para detectar la relación entre dos variables (correlación y regresión lineal), haciendo énfasis en los métodos gráficos, y se discuten las diferencias entre correlación y causalidad.\nEl capítulo 9 introduce de manera sencilla el análisis de la varianza, necesario para métodos importantes en la industria como el control de la precisión analítica, que se trata en el capítulo siguiente.\nEl capítulo 10 trata del análisis del sistema de medición, la calidad de las medidas y la medida de la precisión analítica. Resulta sorprendente la cantidad de laboratorios que dan soporte analítico a procesos productivos de gran impacto económico en la vida de la empresa, sin realizar nunca un autocontrol sobre el nivel de precisión de sus análisis. En este capítulo se hace una presentación básica del tema con el objetivo de que resulte útil y práctica.\nEl capítulo 11 presenta una de las aplicaciones más importantes de la estadística en el entorno industrial, el control estadístico de procesos. Dada la importancia de este capítulo, se refuerza su contenido con numerosos ejemplos y casos prácticos, y se incluye un caso extenso para su análisis.\nEn el capítulo 12 se hace una introducción al diseño de experimentos. La utilidad de esta técnica es primordial para el industrial, sobre todo para el área de I+D y el diseño de productos. Dado que esta técnica puede ser muy compleja en su aplicación real, se facilitan enlaces a otros recursos, como cursos, que serán útiles a los que quieran profundizar más.\nEn el capítulo 13 se presenta el uso de los conceptos y técnicas estudiadas en los procesos de mejora de la calidad industrial, y se introducen algunas aplicaciones prácticas de la estadística en el entorno industrial, como Six Sigma.\nEl capítulo 14 hace una breve introducción a las técnicas de comunicación, tanto a la presentación de datos como a la preparación de informes. Se hace hincapié en las nuevas herramientas como Quarto, que facilitan la elaboración de informes automatizados.\nFinalmente, se hace una breve introducción a R en anexo.",
+    "text": "Organización del libro\nEl capítulo 1 hace una introducción general al pensamiento estadístico y su aplicación industrial, y presenta algunos conceptos básicos, tales como población, muestra y variable.\nEl capítulo 2 presenta las dos herramientas básicas que se usarán en el libro, la hoja de cálculo y el programa estadístico de código abierto R. Se describen los aspectos básicos del software estadístico R y sus principales aplicaciones en la manipulación, limpieza y análisis de conjuntos de datos. Se introduce también el concepto actual de reproducibilidad, y se explica su importancia y el impacto de utilizar una hoja de cálculo o un análisis basado en un script programado.\nEn el capítulo 3 se hace una introducción al concepto de flujo de trabajo y al concepto de datos ordenados o tidy data, que resulta fundamental para las fases posteriores de análisis. Se explica también cómo mover datos desde excel a R y viceversa.\nEl capítulo 4 habla de la exploración de los datos como primer paso en el análisis. Se introducen las distribuciones de frecuencia y los principales gráficos que se utilizarán, y se explica cómo hacerlos con Excel y con R.\nEn el capítulo 5 se presentan los principales estadísticos que describen una población, mediante un valor central y una medida de dispersión, tanto paramétricos (media y varianza) como no paramétricos (mediana y rango intercuartil), de forma sencilla y sin recurrir a explicaciones matemáticas o estadísticas avanzadas.\nEl capítulo 6 explica la importancia de comprender la forma de los datos, es decir, su distribución. Se ponen en práctica las herramientas estudiadas en los dos capítulos anteriores para estudiar algunos casos prácticos.\nEl capítulo 7 introduce el concepto de probabilidad, así como las distribuciones de probabilidad, necesarias para la construcción de los tests de hipótesis y, en general, de la estadística inferencial. Este contenido se presenta de forma breve y, sobre todo, práctica.\nEn el capítulo 8 se presentan los métodos para detectar la relación entre dos variables (correlación y regresión lineal), haciendo énfasis en los métodos gráficos, y se discuten las diferencias entre correlación y causalidad.\nEl capítulo 9 introduce de manera sencilla el análisis de la varianza, necesario para métodos importantes en la industria como el control de la precisión analítica, que se trata en el capítulo siguiente.\nEl capítulo 10 trata del análisis del sistema de medición, la calidad de las medidas y la medida de la precisión analítica. Resulta sorprendente la cantidad de laboratorios que dan soporte analítico a procesos productivos de gran impacto económico en la vida de la empresa, sin realizar nunca un autocontrol sobre el nivel de precisión de sus análisis. En este capítulo se hace una presentación básica del tema con el objetivo de que resulte útil y práctica.\nEl capítulo 11 presenta una de las aplicaciones más importantes de la estadística en el entorno industrial, el control estadístico de procesos. Dada la importancia de este capítulo, se refuerza su contenido con numerosos ejemplos y casos prácticos, y se incluye un caso extenso para su análisis.\nEn el capítulo 12 se hace una introducción al diseño de experimentos. La utilidad de esta técnica es primordial para el industrial, sobre todo para el área de I+D y el diseño de productos. Dado que esta técnica puede ser muy compleja en su aplicación real, se facilitan enlaces a otros recursos, como cursos, que serán útiles a los que quieran profundizar más.\nEl capítulo 13 hace una breve introducción a las técnicas de comunicación, tanto a la presentación de datos como a la preparación de informes. Se hace hincapié en las nuevas herramientas como Quarto, que facilitan la elaboración de informes automatizados.\nFinalmente, el capítulo 14 explica la aplicación estructurada de los conceptos y técnicas estudiadas en el libro a la mejora de la calidad industrial mediante el método Six Sigma.",
     "crumbs": [
       "Prefacio"
     ]
@@ -470,8 +470,8 @@
     ]
   },
   {
-    "objectID": "055-forma-de-los-datos.html",
-    "href": "055-forma-de-los-datos.html",
+    "objectID": "060-forma-de-los-datos.html",
+    "href": "060-forma-de-los-datos.html",
     "title": "6  La forma de los datos",
     "section": "",
     "text": "6.0.1 Introducción al Estudio de la Forma de los Datos\nEl estudio de la forma de los datos es fundamental en el análisis de datos y la estadística. Nos permite entender la distribución, tendencias, patrones y anomalías presentes en los datos, lo cual es esencial para tomar decisiones informadas y realizar análisis precisos. En esta introducción, exploraremos varios métodos y herramientas para examinar la forma de los datos, utilizando ejemplos en R, un lenguaje de programación muy utilizado en análisis de datos.\n\n\n6.0.2 Análisis Descriptivo\nEl primer paso para entender la forma de los datos es realizar un análisis descriptivo. Este análisis incluye el cálculo de medidas como la media, mediana, moda, desviación estándar y percentiles, que resumen las características principales de los datos.\n\n# Cargar librería\nlibrary(dplyr)\n\n# Crear un conjunto de datos\ndatos &lt;- c(23, 19, 23, 21, 22, 21, 20, 23, 22, 19)\n\n# Calcular medidas descriptivas\nmedia &lt;- mean(datos)\nmediana &lt;- median(datos)\nmoda &lt;- as.numeric(names(sort(table(datos), decreasing=TRUE)[1]))\ndesviacion_estandar &lt;- sd(datos)\n\n# Mostrar resultados\ncat(\"Media:\", media, \"\\n\")\n\nMedia: 21.3 \n\ncat(\"Mediana:\", mediana, \"\\n\")\n\nMediana: 21.5 \n\ncat(\"Moda:\", moda, \"\\n\")\n\nModa: 23 \n\ncat(\"Desviación Estándar:\", desviacion_estandar, \"\\n\")\n\nDesviación Estándar: 1.567021 \n\n\n\n\n6.0.3 Visualización de Datos\nLa visualización de datos es una herramienta poderosa para estudiar la forma de los datos. Gráficos como histogramas, diagramas de cajas y gráficos de dispersión permiten visualizar la distribución y las relaciones en los datos.\n\n# Cargar librería\nlibrary(ggplot2)\n\n# Crear un histograma\nggplot(data.frame(datos), aes(x = datos)) +\n  geom_histogram(binwidth = 1, fill = \"blue\", alpha = 0.7, color = \"black\") +\n  labs(title = \"Histograma de Datos\", x = \"Valores\", y = \"Frecuencia\")\n\n\n\n\n\n\n\n# Crear un diagrama de cajas\nggplot(data.frame(datos), aes(y = datos)) +\n  geom_boxplot(fill = \"cyan\", color = \"black\") +\n  labs(title = \"Diagrama de Cajas de Datos\", y = \"Valores\")\n\n\n\n\n\n\n\n\n\n\n6.0.4 Análisis Exploratorio de Datos (EDA)\nEl Análisis Exploratorio de Datos (EDA) implica técnicas gráficas y cuantitativas para descubrir patrones, detectar anomalías y verificar hipótesis. EDA es una fase preliminar clave en el análisis de datos.\n\n# Crear un conjunto de datos de ejemplo\nset.seed(123)\ndatos_eda &lt;- data.frame(\n  x = rnorm(100),\n  y = rnorm(100)\n)\n\n# Crear un gráfico de dispersión\nggplot(datos_eda, aes(x = x, y = y)) +\n  geom_point(color = \"blue\") +\n  labs(title = \"Gráfico de Dispersión\", x = \"Variable X\", y = \"Variable Y\")\n\n\n\n\n\n\n\n\n\n\n6.0.5 Pruebas Estadísticas\nLas pruebas estadísticas, como la prueba de normalidad (Kolmogorov-Smirnov, Shapiro-Wilk), ayudan a determinar si los datos siguen una distribución específica.\n\n# Prueba de normalidad Shapiro-Wilk\nshapiro_test &lt;- shapiro.test(datos)\n\n# Mostrar resultado\ncat(\"Prueba de Shapiro-Wilk: p-value =\", shapiro_test$p.value, \"\\n\")\n\nPrueba de Shapiro-Wilk: p-value = 0.1400044 \n\n\n\n\n6.0.6 Importancia del Estudio de la Forma de los Datos\nComprender la forma de los datos es crucial para identificar patrones, detectar anomalías, seleccionar modelos apropiados y visualizar datos de manera efectiva. Un buen entendimiento de la forma de los datos permite tomar decisiones más informadas y basadas en evidencia, mejorando la calidad del análisis y la interpretación de los resultados.\nEn resumen, el estudio de la forma de los datos a través del análisis descriptivo, visualización de datos, EDA y pruebas estadísticas, nos proporciona una comprensión profunda de los datos y nos guía en el proceso de análisis. Utilizar herramientas como R facilita este estudio y nos permite trabajar con datos de manera más eficiente y precisa.",
@@ -480,8 +480,8 @@
     ]
   },
   {
-    "objectID": "060-distr-prob.html",
-    "href": "060-distr-prob.html",
+    "objectID": "070-distr-prob.html",
+    "href": "070-distr-prob.html",
     "title": "7  Probabilidad y distribuciones de probabilidad",
     "section": "",
     "text": "7.0.1 ¿Qué es la Probabilidad?\nLa probabilidad es una rama de las matemáticas que se ocupa del estudio de los fenómenos aleatorios y la incertidumbre. Nos ayuda a medir la posibilidad de que ocurran ciertos eventos y a tomar decisiones informadas en situaciones de incertidumbre.",
@@ -490,8 +490,8 @@
     ]
   },
   {
-    "objectID": "060-distr-prob.html#frecuencia-relativa-y-probabilidad",
-    "href": "060-distr-prob.html#frecuencia-relativa-y-probabilidad",
+    "objectID": "070-distr-prob.html#frecuencia-relativa-y-probabilidad",
+    "href": "070-distr-prob.html#frecuencia-relativa-y-probabilidad",
     "title": "7  Probabilidad y distribuciones de probabilidad",
     "section": "7.1 Frecuencia relativa y probabilidad",
     "text": "7.1 Frecuencia relativa y probabilidad\n\n7.1.1 Frecuencia Relativa\nDefinición: La frecuencia relativa se refiere a la proporción de veces que ocurre un evento en relación con el número total de ensayos o experimentos realizados.\nCálculo: La frecuencia relativa se calcula como: \\[\n\\text{Frecuencia Relativa} = \\frac{\\text{Número de veces que ocurre el evento}}{\\text{Número total de ensayos}}\n\\]\nEjemplo: Si lanzas una moneda 100 veces y obtienes 52 caras, la frecuencia relativa de obtener cara es: \\[\n\\text{Frecuencia Relativa} = \\frac{52}{100} = 0.52\n\\]\nAplicación: La frecuencia relativa se utiliza principalmente en el análisis de datos experimentales y observacionales para estimar la probabilidad empírica de eventos basándose en la evidencia observada.\n\n\n7.1.2 Probabilidad\nDefinición La probabilidad es una medida teórica de la probabilidad de que ocurra un evento, basada en un modelo matemático o un conjunto de supuestos.\nCálculo La probabilidad de un evento \\(A\\), denotada como \\(P(A)\\), se calcula como:\n\\[\nP(A) = \\frac{\\text{Número de casos favorables}}{\\text{Número total de casos posibles}}\n\\]\nEjemplo: Para una moneda justa, la probabilidad de obtener cara es: \\[\nP(\\text{Cara}) = \\frac{1}{2} = 0.5\n\\] Aplicación: La probabilidad se utiliza en teoría de la probabilidad y estadística para predecir la ocurrencia de eventos en base a modelos matemáticos y supuestos teóricos.\n\n\n7.1.3 Comparación\n\n\n\n\n\n\n\n\nCaracterística\nFrecuencia Relativa\nProbabilidad\n\n\n\n\nDefinición\nProporción de veces que ocurre un evento en un número de ensayos\nMedida teórica de la probabilidad de que ocurra un evento\n\n\nCálculo\n\\(\\frac{\\text{Número de veces que ocurre el evento}}{\\text{Número total de ensayos}}\\)\n\\(\\frac{\\text{Número de casos favorables}}{\\text{Número total de casos posibles}}\\)\n\n\nBasado en\nDatos experimentales u observacionales\nModelos matemáticos y supuestos teóricos\n\n\nEjemplo\nFrecuencia relativa de obtener cara en 100 lanzamientos de moneda es \\(0.52\\)\nProbabilidad de obtener cara en una moneda justa es \\(0.5\\)\n\n\nAplicación\nEstimación empírica de probabilidades\nPredicción de eventos basados en modelos teóricos\n\n\n\nEn resumen, la frecuencia relativa se basa en datos observados y se utiliza para estimar probabilidades empíricas, mientras que la probabilidad es una medida teórica basada en modelos matemáticos. Ambas son herramientas útiles en el análisis de datos y la toma de decisiones informadas.",
@@ -500,8 +500,8 @@
     ]
   },
   {
-    "objectID": "060-distr-prob.html#distribuciones-de-probabilidad",
-    "href": "060-distr-prob.html#distribuciones-de-probabilidad",
+    "objectID": "070-distr-prob.html#distribuciones-de-probabilidad",
+    "href": "070-distr-prob.html#distribuciones-de-probabilidad",
     "title": "7  Probabilidad y distribuciones de probabilidad",
     "section": "7.2 Distribuciones de probabilidad",
     "text": "7.2 Distribuciones de probabilidad\n\n7.2.1 Distribución normal\ndirtib de frecuencia y distr normal: área bajo la curva\nHow to predict record-shattering weather events | The Economist\n\n\n\nmedia-y-varianza\n\n\nExplained: Sigma | MIT News | Massachusetts Institute of Technology\n\n\n\nimg\n\n\n\n\n7.2.2 Otras distribuciones\n\n\n7.2.3 Gráficos de probabilidad",
@@ -510,8 +510,8 @@
     ]
   },
   {
-    "objectID": "060-distr-prob.html#fútbol",
-    "href": "060-distr-prob.html#fútbol",
+    "objectID": "070-distr-prob.html#fútbol",
+    "href": "070-distr-prob.html#fútbol",
     "title": "7  Probabilidad y distribuciones de probabilidad",
     "section": "7.3 Fútbol",
     "text": "7.3 Fútbol",
@@ -520,8 +520,8 @@
     ]
   },
   {
-    "objectID": "060-distr-prob.html#proceso-de-dosificación-de-líquidos",
-    "href": "060-distr-prob.html#proceso-de-dosificación-de-líquidos",
+    "objectID": "070-distr-prob.html#proceso-de-dosificación-de-líquidos",
+    "href": "070-distr-prob.html#proceso-de-dosificación-de-líquidos",
     "title": "7  Probabilidad y distribuciones de probabilidad",
     "section": "7.4 Proceso de dosificación de líquidos",
     "text": "7.4 Proceso de dosificación de líquidos",
@@ -530,8 +530,8 @@
     ]
   },
   {
-    "objectID": "060-distr-prob.html#ley-de-contenido-efectivo",
-    "href": "060-distr-prob.html#ley-de-contenido-efectivo",
+    "objectID": "070-distr-prob.html#ley-de-contenido-efectivo",
+    "href": "070-distr-prob.html#ley-de-contenido-efectivo",
     "title": "7  Probabilidad y distribuciones de probabilidad",
     "section": "7.5 Ley de contenido efectivo",
     "text": "7.5 Ley de contenido efectivo",
@@ -540,8 +540,8 @@
     ]
   },
   {
-    "objectID": "070-relacion-xy.html",
-    "href": "070-relacion-xy.html",
+    "objectID": "080-relacion-xy.html",
+    "href": "080-relacion-xy.html",
     "title": "8  La relación entre las variables",
     "section": "",
     "text": "8.1 Diagramas de puntos \\((x,y\\))",
@@ -550,8 +550,8 @@
     ]
   },
   {
-    "objectID": "070-relacion-xy.html#correlación",
-    "href": "070-relacion-xy.html#correlación",
+    "objectID": "080-relacion-xy.html#correlación",
+    "href": "080-relacion-xy.html#correlación",
     "title": "8  La relación entre las variables",
     "section": "8.2 Correlación",
     "text": "8.2 Correlación\n\n8.2.1 Correlación y causalidad\nAnscombe",
@@ -560,8 +560,8 @@
     ]
   },
   {
-    "objectID": "070-relacion-xy.html#tablas-de-asociación",
-    "href": "070-relacion-xy.html#tablas-de-asociación",
+    "objectID": "080-relacion-xy.html#tablas-de-asociación",
+    "href": "080-relacion-xy.html#tablas-de-asociación",
     "title": "8  La relación entre las variables",
     "section": "8.3 Tablas de asociación",
     "text": "8.3 Tablas de asociación",
@@ -570,8 +570,8 @@
     ]
   },
   {
-    "objectID": "080-anova.html",
-    "href": "080-anova.html",
+    "objectID": "090-anova.html",
+    "href": "090-anova.html",
     "title": "9  El análisis de la varianza",
     "section": "",
     "text": "9.1 Introducción\nSupongamos que un analista de la OMS ha realizado la medida de la altura de un grupo de niños y niñas niña siguiendo rigurosamente el método establecido, y, por lo tanto, que está razonablemente seguro de su resultado.\nAl cabo de varias jornadas de trabajo, habrá realizado varias medidas, que representarán al conjunto de niños de la población en la que ha estado trabajando. Otros investigadores pueden haber estado trabajando a la vez en otras poblaciones, y al final de sus jornadas de trabajo, quieren comparar sus resultados: ¿Hay alguna de estas poblaciones en las que los niños sean significativamente más altos (o más bajos) que en las otras? ¿Cómo describir la altura de un conjunto de individuos de manera que se puedan hacer comparaciones con otros conjuntos?\nPara responder a estas preguntas, vamos a cambiar el entorno de trabajo a un grupo de niños imaginario, que vamos a llamar aula1: son nuestros compañeros y compañeras, a los cuales realizaremos una medida de altura siguiendo el procedimiento especificado en nuestro método. ## Análisis de la varianza de un factor",
@@ -580,8 +580,8 @@
     ]
   },
   {
-    "objectID": "080-anova.html#análisis-de-la-varianza-de-dos-factores",
-    "href": "080-anova.html#análisis-de-la-varianza-de-dos-factores",
+    "objectID": "090-anova.html#análisis-de-la-varianza-de-dos-factores",
+    "href": "090-anova.html#análisis-de-la-varianza-de-dos-factores",
     "title": "9  El análisis de la varianza",
     "section": "9.2 Análisis de la varianza de dos factores",
     "text": "9.2 Análisis de la varianza de dos factores",
@@ -590,8 +590,8 @@
     ]
   },
   {
-    "objectID": "080-anova.html#section",
-    "href": "080-anova.html#section",
+    "objectID": "090-anova.html#section",
+    "href": "090-anova.html#section",
     "title": "9  El análisis de la varianza",
     "section": "9.3 ",
     "text": "9.3",
@@ -600,8 +600,8 @@
     ]
   },
   {
-    "objectID": "090-sistema-medicion.html",
-    "href": "090-sistema-medicion.html",
+    "objectID": "100-sistema-medicion.html",
+    "href": "100-sistema-medicion.html",
     "title": "10  El análisis del sistema de medición",
     "section": "",
     "text": "10.1 ¿Qué es una medida?\nUna medida es el resultado de la acción de medir. Normalmente, medir quiere decir comparar lo que va a ser medido con un patrón de referencia; esta comparación es realizada por una o varias personas que llamaremos analistas, los cuales utilizarán un método analítico, siguiendo un procedimiento de medida. Por ejemplo, en la imagen a continuación, la analista está midiendo la altura de un niño utilizando un instrumento de medida, una cinta métrica.\nHasta aquí parece que todo está suficientemente claro, por lo que el resultado de la medida debe ser un valor que no nos ofrecerá dudas sobre su veracidad. Sin embargo, si analizamos el proceso con atención, veremos que hay algunos elementos que pueden hacer que nuestro resultado no sea todo lo preciso que habíamos pensado. Por ejemplo, en la imagen no vemos si el niño está calzado o no. Es evidente que deberíamos decir al analista que el niño debe estar descalzo, ya que diferentes tipos de calzado podrían alterar el resultado de formas diferentes. EL niño podría estar ligeramente encorvado, o sus rodillas dobladas, y entonces la altura que estamos midiendo será menor de la altura real. Además de esto, la forma de realizar la evaluación de la altura se ve influenciada por la posición de los ojos del analista: si están demasiado bajos, no verá correctamente la parte superior de la cabeza y tenderá a sobreestimar el verdadero valor por un efecto de perspectiva. Por otra parte, no sabemos si el instrumento utilizado tiene una escala de medida construida de forma fiable o sólo aproximada. Si nuestro instrumento (la cinta métrica) no es fiable, o su escala difiere de la de otros instrumentos semejantes, es posible que el valor de la medida varíe.",
@@ -610,8 +610,8 @@
     ]
   },
   {
-    "objectID": "090-sistema-medicion.html#qué-es-una-medida",
-    "href": "090-sistema-medicion.html#qué-es-una-medida",
+    "objectID": "100-sistema-medicion.html#qué-es-una-medida",
+    "href": "100-sistema-medicion.html#qué-es-una-medida",
     "title": "10  El análisis del sistema de medición",
     "section": "",
     "text": "Cinta métrica de sastre\n\n\n\n\nMetro de albañilería",
@@ -620,8 +620,8 @@
     ]
   },
   {
-    "objectID": "090-sistema-medicion.html#los-estándares-de-medida",
-    "href": "090-sistema-medicion.html#los-estándares-de-medida",
+    "objectID": "100-sistema-medicion.html#los-estándares-de-medida",
+    "href": "100-sistema-medicion.html#los-estándares-de-medida",
     "title": "10  El análisis del sistema de medición",
     "section": "10.2 Los estándares de medida",
     "text": "10.2 Los estándares de medida\nPor lo que hemos visto, cuando hacemos una medida, debemos establecer un procedimiento de medida, que debe indicar al analista cual es la forma correcta de realizar los pasos para hacer que la medida sea veraz. Deberemos definir también el instrumento de medida, de manera que cuando se repita el procedimiento no se introduzca un factor de variación debido al uno de un instrumento inapropiado. LO mejor es que este instrumento disponga de una homologación por un servicio de homologación externo, que nos asegure, por ejemplo, que los intervalos de medida de que dispone se corresponden con valores de referencia, en este caso, centímetros y milímetros. El procedimiento debe establecer también con claridad las condiciones en que las debe estar el objeto a medir (la persona, en este caso): descalzo, perfectamente estirado, con sus rodillas rectas, etc. Seguramente, el procedimiento incluirá un dibujo para que el analista visualice con claridad los puntos claves que debe revisar para hacer una buena medida. En el dibujo a continuación, se indican algunos de estos puntos claves, incluyendo la necesidad de que el niño se apoye en un plano vertical (la pared) y que el analista se situe correctamente para que su vista sea perpendicular al plano, utilizando una guía para la valoración correcta de la altura medida.\n\nPero ¿y si la niña tiene una altura tal que el analista no puede mantener una posición estable? El procedimiento real puede llegar a ser mucho más complejo, tal como vemos en el último gráfico, que proviene de un documento médico de la Organización Mundial de la Salud, en donde la correcta estimación del peso y altura de los niños es fundamental para determinar su estado de salud nutricional, y por lo tanto es necesario minimizar el riesgo de errores de medida, garantizando que todos los analistas realizan correctamente el mismo procedimiento aunque estén en diferentes ubicaciones y en momentos diferentes:\n\nEL procedimiento de la OMS ha estimado que es necesario que sean dos los analistas que realizan la medida, utilizando un aparato especialmente diseñado para ello, y que utiliza una pieza para ajustar a la cabeza de manera que la posición de lectura no esté sometida al error de la posición del analista que realiza la medida.\nLa descripción del procedimiento de análisis, junto con el detalle de los instrumentos necesarios y sus homologaciones requeridas, constituye lo que se conoce como método analítico. El analista o analistas deberán estudiar este método analítico para estar seguros de que son capaces de llevarlo a la práctica sin error.\nVeremos en un apartado posterior que cada uno de estos elementos dan lugar a un tipo de error concreto, que son principalmente dos: los debidos al analista y los debidos al procedimiento (incluyendo aquí los errores instrumentales) Veremos cómo evaluar la magnitud de cada uno de estos errores y la forma de establecer un plan de trabajo para reducirlos, mejorando así la calidad de nuestras medidas.",
@@ -630,8 +630,8 @@
     ]
   },
   {
-    "objectID": "090-sistema-medicion.html#la-precisión-analítica",
-    "href": "090-sistema-medicion.html#la-precisión-analítica",
+    "objectID": "100-sistema-medicion.html#la-precisión-analítica",
+    "href": "100-sistema-medicion.html#la-precisión-analítica",
     "title": "10  El análisis del sistema de medición",
     "section": "10.3 La precisión analítica",
     "text": "10.3 La precisión analítica",
@@ -640,8 +640,8 @@
     ]
   },
   {
-    "objectID": "090-sistema-medicion.html#análisis-de-repetibilidad-y-reproducibilidad-grr-analysis",
-    "href": "090-sistema-medicion.html#análisis-de-repetibilidad-y-reproducibilidad-grr-analysis",
+    "objectID": "100-sistema-medicion.html#análisis-de-repetibilidad-y-reproducibilidad-grr-analysis",
+    "href": "100-sistema-medicion.html#análisis-de-repetibilidad-y-reproducibilidad-grr-analysis",
     "title": "10  El análisis del sistema de medición",
     "section": "10.4 Análisis de repetibilidad y reproducibilidad (GR&R analysis)",
     "text": "10.4 Análisis de repetibilidad y reproducibilidad (GR&R analysis)\n\n10.4.1 Round only on the final calculation result[edit]\nWhen performing multiple stage calculations, do not round intermediate stage calculation results; keep as many digits as is practical (at least one more digit than the rounding rule allows per stage) until the end of all the calculations to avoid cumulative rounding errors while tracking or recording the significant figures in each intermediate result. Then, round the final result, for example, to the fewest number of significant figures (for multiplication or division) or leftmost last significant digit position (for addition or subtraction) among the inputs in the final calculation.[15]\n\n(2.3494 + 1.345) × 1.2 = 3.6944 × 1.2 = 4.43328 ≈ 4.4.\n(2.3494 × 1.345) + 1.2 = 3.159943 + 1.2 = 4.359943 ≈ 4.4.",
@@ -650,8 +650,8 @@
     ]
   },
   {
-    "objectID": "090-sistema-medicion.html#precision-of-measuring-tools-and-significant-figures",
-    "href": "090-sistema-medicion.html#precision-of-measuring-tools-and-significant-figures",
+    "objectID": "100-sistema-medicion.html#precision-of-measuring-tools-and-significant-figures",
+    "href": "100-sistema-medicion.html#precision-of-measuring-tools-and-significant-figures",
     "title": "10  El análisis del sistema de medición",
     "section": "10.5 Precision of Measuring Tools and Significant Figures",
     "text": "10.5 Precision of Measuring Tools and Significant Figures\nAccuracy, Precision, and Significant Figures | Physics (lumenlearning.com)\nAn important factor in the accuracy and precision of measurements involves the precision of the measuring tool. In general, a precise measuring tool is one that can measure values in very small increments. For example, a standard ruler can measure length to the nearest millimeter, while a caliper can measure length to the nearest 0.01 millimeter. The caliper is a more precise measuring tool because it can measure extremely small differences in length. The more precise the measuring tool, the more precise and accurate the measurements can be.\nWhen we express measured values, we can only list as many digits as we initially measured with our measuring tool. For example, if you use a standard ruler to measure the length of a stick, you may measure it to be 36.7 cm. You could not express this value as 36.71 cm because your measuring tool was not precise enough to measure a hundredth of a centimeter. It should be noted that the last digit in a measured value has been estimated in some way by the person performing the measurement. For example, the person measuring the length of a stick with a ruler notices that the stick length seems to be somewhere in between 36.6 cm and 36.7 cm, and he or she must estimate the value of the last digit. Using the method of significant figures, the rule is that the last digit written down in a measurement is the first digit with some uncertainty. In order to determine the number of significant digits in a value, start with the first measured value at the left and count the number of digits through the last digit written on the right. For example, the measured value 36.7cm has three digits, or significant figures. Significant figures indicate the precision of a measuring tool that was used to measure a value.\n\n10.5.1 La “mano del quesero”\nComparar pros y contras de la práctica basada en la experiencia con la práctica basada ne el método y la cuantificación\n\nsubjetividad\npérdida de conocimiento si el experto deja la empresa\n\n\n\n10.5.2 Método cientifico\nAlgoritmos - recetas cocina- DMAIC - método cientifico\nMontgomery 1.1\nLa reproducibilidad de los análisis de datos\nLiterate programming - Wikipedia\nReproducible Research (hbiostat.org)\nrr (hbiostat.org)\nEn el mundo científico y técnico cada vez cobra más importancia el concepto de reproducibilidad de los análisis, sobre todo cuando se trata de comunicar o publicar el resultado de un trabajo o de una investigación. Medios, como la prestigiosa revista Science, se han hecho eco de ello (Buck 2015). Por otra parte, la utilización de un flujo de trabajo basado en hojas de cálculo hace difícil garantizar esta reproducibilidad, y a veces puede llevar a cometer errores de consecuencias graves (Ferrero 2018; Ryssdal 2013).\nJesse Sadler (Sadler 2017) lo explica así:\nEl peligro de la hoja de cálculo deriva de su propia estructura. La mezcla de entrada de datos, análisis y visualización hace que sea fácil confundir las celdas que contienen datos sin procesar con las que son el resultado del análisis. La forma de definir la lógica programática, tal como la selección de qué celdas se van a sumar, mediante clics del mouse, significa que una acción errónea de clic o arrastre puede provocar errores o la sobreescritura de datos. Solo hace falta pensar en el pavor del momento en el que vas a cerrar una hoja de cálculo y el programa te pregunta si te gustaría guardar los cambios. Te hace preguntarte. ¿Quiero guardar? ¿Qué cambios hice? Debido a que la lógica en una hoja de cálculo se realiza a través de clics del mouse, no hay forma de rastrear de manera efectiva qué cambios se han realizado en una sesión o en la producción de un gráfico. Los errores cometidos con Excel pueden tener consecuencias graves, como se puso de manifiesto tras la controversia alrededor del artículo de Carmen Reinhart y Kenneth Rogoff sobre la deuda nacional de los EEUU.\nCiertamente hay razones legítimas por las que las personas usan por defecto hojas de cálculo para el análisis de datos en lugar de usar un lenguaje de programación como R. Las hojas de cálculo son mucho más atractivas y confortables de lo que cualquier lenguaje de programación podría ser para un recién llegado. Aprender a programar es intimidante y no es algo que se pueda hacer rápida o fácilmente. Las aplicaciones de interfaz gráfica de usuario (GUI) son mucho menos desalentadoras que una interfaz de línea de comandos. En segundo lugar, las hojas de cálculo son una buena herramienta para la entrada de datos, y es tentador pasar directamente al análisis de datos, manteniendo todo en el mismo documento. Finalmente, la naturaleza interactiva de las hojas de cálculo y la capacidad de crear gráficos que cambian en función de las entradas es muy atractiva, incluso si desbloquear completamente este potencial implica un conocimiento bastante complejo sobre cómo funciona el programa. La primera ventaja de las hojas de cálculo sobre la programación no se supera fácilmente, pero las dos últimas se basan en lo que creo que es un flujo de trabajo problemático. En lugar de usar un par de aplicaciones monolíticas, a menudo un conjunto de aplicaciones de oficina, para hacer todo, creo que es mejor dividir el flujo de trabajo entre varias aplicaciones que hacen una cosa bien.\nCrear una división clara entre la entrada y el análisis de datos es una de las principales razones por las que el análisis de datos en un lenguaje de programación es preferible al software de hoja de cálculo. Todavía uso hojas de cálculo, pero su limito su uso estrictamente a la entrada de datos. En un programa de hoja de cálculo, el análisis manipula directamente la única copia de los datos sin procesar. Por el contrario, con R se importan los datos, creando un objeto que es una copia de los datos sin procesar. Todas las manipulaciones de los datos se realizan en esta copia, y los datos originales nunca se alteran de ninguna manera. Esto significa que no hay forma de estropear los datos sin procesar. La manipulación de una copia de los datos le permite experimentar más libremente. Los errores son intrascendentes, incluso aunque a veces puedan llegar a ser frustrantes. Una línea de código que devuelve un error se puede ajustar y volver a ejecutar, repitiendo el proceso las veces necesarias hasta que se devuelva el resultado esperado.\nTrabajar en una copia de los datos sin procesar puede incluso simplificar el proceso de entrada de datos. El análisis de datos tabulares en R da como resultado la creación de múltiples objetos, que se conocen como data frames y pueden considerarse equivalentes a tablas en una hoja de cálculo. La capacidad de dividir, muestrear y transformar el conjunto de datos original en muchos data frames diferentes tiene la ventaja de reducir drásticamente la complejidad de la entrada de datos. En lugar de necesitar hojas de cálculo a medida con múltiples hojas y tablas interrelacionadas, cada pieza de datos solo debe ingresarse una vez y todas las manipulaciones se pueden realizar en el código. Los diferentes data frames que se crean en el proceso de análisis ni siquiera tienen que ser guardados, porque son muy fácilmente reproducidos por el script de código.\nLa separación de la entrada y el análisis de los datos reduce en gran manera el potencial de errores, pero tal vez aún más significativamente, el uso de código para el análisis de datos permite la creación de investigaciones reproducibles que no son posibles en hojas de cálculo. […] Con un lenguaje de programación, los pasos del análisis se pueden establecer claramente en el código […] Guardar el análisis en código tiene el beneficio inmediato de que se puede volver a ejecutar fácilmente en cualquier momento que se agreguen nuevos datos. El código también se puede aplicar a un conjunto de datos completamente nuevo de una manera mucho más transparente que con las hojas de cálculo. El beneficio a largo plazo es que con el código todo el análisis se documenta en lugar de ocultarse detrás de los clics del mouse. Esto hace que sea más fácil revisar los propios análisis mucho después de haber terminado con ellos, así como que otros entiendan lo que se ha hecho y comprueben si hay errores.\n\n\n\n\nBuck, Stuart. 2015. “Solving Reproducibility.” Science 348 (6242): 1403. https://www.science.org/doi/full/10.1126/science.aac8041.\n\n\nFerrero, Rosana. 2018. “Los Errores de Reinhart & Rogoff: R y La Reproducibilidad.” 2018. https://www.maximaformacion.es/blog-dat/los-errores-de-reinhart-rogo/.\n\n\nRyssdal, Karl. 2013. “The Excel Mistake Heard Round the World.” 2013. https://www.marketplace.org/2013/04/17/economy/excel-mistake-heard-round-world/.\n\n\nSadler, Jesse. 2017. “Excel Vs r: A Brief Introduction to r.” 2017. https://www.jessesadler.com/post/excel-vs-r/.",
@@ -660,8 +660,8 @@
     ]
   },
   {
-    "objectID": "100-control-proc.html",
-    "href": "100-control-proc.html",
+    "objectID": "110-control-proc.html",
+    "href": "110-control-proc.html",
     "title": "11  El control estadístico de procesos",
     "section": "",
     "text": "11.1 La mejora de la calidad y el control estadístico de procesos",
@@ -670,8 +670,8 @@
     ]
   },
   {
-    "objectID": "100-control-proc.html#introducción-a-los-gráficos-de-control",
-    "href": "100-control-proc.html#introducción-a-los-gráficos-de-control",
+    "objectID": "110-control-proc.html#introducción-a-los-gráficos-de-control",
+    "href": "110-control-proc.html#introducción-a-los-gráficos-de-control",
     "title": "11  El control estadístico de procesos",
     "section": "11.2 Introducción a los gráficos de control",
     "text": "11.2 Introducción a los gráficos de control\n\n11.2.1 Causas comunes y causas especiales de variación\n\n\n11.2.2 Variación a corto plazo y variación a largo plazo",
@@ -680,8 +680,8 @@
     ]
   },
   {
-    "objectID": "100-control-proc.html#la-capacidad-de-un-proceso",
-    "href": "100-control-proc.html#la-capacidad-de-un-proceso",
+    "objectID": "110-control-proc.html#la-capacidad-de-un-proceso",
+    "href": "110-control-proc.html#la-capacidad-de-un-proceso",
     "title": "11  El control estadístico de procesos",
     "section": "11.3 La capacidad de un proceso",
     "text": "11.3 La capacidad de un proceso",
@@ -690,8 +690,8 @@
     ]
   },
   {
-    "objectID": "100-control-proc.html#ejemplo-establecer-las-especificaciones-de-un-producto",
-    "href": "100-control-proc.html#ejemplo-establecer-las-especificaciones-de-un-producto",
+    "objectID": "110-control-proc.html#ejemplo-establecer-las-especificaciones-de-un-producto",
+    "href": "110-control-proc.html#ejemplo-establecer-las-especificaciones-de-un-producto",
     "title": "11  El control estadístico de procesos",
     "section": "11.4 Ejemplo: establecer las especificaciones de un producto",
     "text": "11.4 Ejemplo: establecer las especificaciones de un producto",
@@ -700,8 +700,8 @@
     ]
   },
   {
-    "objectID": "110-disexp.html",
-    "href": "110-disexp.html",
+    "objectID": "120-disexp.html",
+    "href": "120-disexp.html",
     "title": "12  Diseño de experimentos",
     "section": "",
     "text": "12.1 Experimentos factoriales\n¿La aspirina reduce el riesgo de infarto? ¿Una marca de abono es más eficaz para el cultivo de rosas que otra? ¿El cansancio es tan peligroso para un conductor como la influencia del alcohol? Este tipo de preguntas se responden con experimentos aleatorios.\nEl propósito de un experimento es investigar la relación entre dos o más variables. Cuando una variable provoca un cambio en otra, llamamos a la primera variable la variable independiente o explicativa. La variable afectada se llama variable dependiente o variable de respuesta: estímulo, respuesta. En un experimento aleatorio, el investigador manipula los valores de la variable explicativa y mide los cambios resultantes en la variable de respuesta. Los diferentes valores de la variable explicativa se denominan tratamientos. Una unidad experimental es un único objeto o persona que se va a medir.\nSupongamos que usted quiere investigar la eficacia de la vitamina E en la prevención de enfermedades. Usted recluta a un grupo de sujetos y les pregunta si toman regularmente vitamina E. Observa que los sujetos que toman vitamina E, en promedio, presentan una salud mejor que quienes no la toman. ¿Esto prueba que la vitamina E es eficaz en la prevención de enfermedades? No es así. Hay muchas diferencias entre los dos grupos comparados, además del consumo de vitamina E. Las personas que toman vitamina E con regularidad suelen tomar otras medidas para mejorar su salud: ejercicio, dieta, otros suplementos vitamínicos, elección de no fumar, etc. Cualquiera de estos factores podría estar influyendo en la salud. Como se ha descrito, este estudio no demuestra que la vitamina E sea la clave para la prevención de enfermedades.\nLas variables adicionales que pueden enturbiar un estudio se denominan variables ocultas. Para demostrar que la variable explicativa provoca un cambio en la variable de respuesta, es necesario aislar la variable explicativa. La investigadora debe diseñar su experimento de forma que solo haya una diferencia entre los grupos que se comparan: los tratamientos previstos. Esto se consigue mediante la asignación aleatoria de unidades experimentales a grupos de tratamiento. Cuando los sujetos se asignan a los tratamientos de forma aleatoria, todas las variables ocultas potenciales se reparten por igual entre los grupos. En este punto, la única diferencia entre los grupos es la impuesta por el investigador. Los diferentes resultados medidos en la variable de respuesta, por tanto, deben ser una consecuencia directa de los diferentes tratamientos. De este modo, un experimento puede demostrar una conexión causa-efecto entre las variables explicativas y las de respuesta.\nEl poder de la sugestión puede tener una importante influencia en el resultado de un experimento. Los estudios han demostrado que la expectativa del participante en el estudio puede ser tan importante como el medicamento real. En un estudio sobre fármacos que mejoran el desempeño, los investigadores señalaron:\nCuando la participación en un estudio provoca una respuesta física del participante, es difícil aislar los efectos de la variable explicativa. Para contrarrestar el poder de la sugestión, los investigadores reservaron un grupo de tratamiento como grupo de control . Este grupo recibe un tratamiento placebo, es decir, un tratamiento que no puede influir en la variable de respuesta. El grupo de control ayuda a los investigadores a equilibrar los efectos de estar en un experimento con los efectos de los tratamientos activos. Por supuesto, si usted participa en un estudio y sabe que está recibiendo una píldora que no contiene ningún medicamento real, entonces el poder de la sugestión ya no es un factor. Que un experimento aleatorio sea ciego preserva el poder de la sugestión. Cuando una persona participa en un estudio de investigación ciego, no sabe quién recibe el tratamiento activo y quién el placebo. Un experimento doble ciego es aquel en el que tanto los sujetos como los investigadores que participan en él no conocen la información del fármaco.\nNo un factyor de cada vez - explciar interaccion",
@@ -710,68 +710,68 @@
     ]
   },
   {
-    "objectID": "120-mejora-calidad.html",
-    "href": "120-mejora-calidad.html",
-    "title": "13  La calidad y la mejora de la calidad",
-    "section": "",
-    "text": "13.1 Six Sigma y mejora de la calidad",
-    "crumbs": [
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>La calidad y la mejora de la calidad</span>"
-    ]
-  },
-  {
-    "objectID": "120-mejora-calidad.html#definir-un-problema-opex-lean-sixsigma-16",
-    "href": "120-mejora-calidad.html#definir-un-problema-opex-lean-sixsigma-16",
-    "title": "13  La calidad y la mejora de la calidad",
-    "section": "13.2 Definir un problema [OPEX Lean SixSigma #16]",
-    "text": "13.2 Definir un problema [OPEX Lean SixSigma #16]\n\n13.2.1 ¿Cómo es una buena definición de un problema?\n\nBreve\nEvitar lenguaje técnico: debes ser capaz de explicarlo a cualquier persona de la organización usando términos sencillos\nCuantificar el problema, usando los datos disponibles\nIntegra y explica el coste real del problema, para justificar la necesidad del análisis. Puedes relacionarlo con los costes de no calidad\nDefine el ámbito del problema: usa los términos que sean necesarios para delimitarlo con precisión.\nLa definición de un problema debe conseguir formularlo de forma que sea específico, medible, realizable, relevante y acotado en el tiempo (plazo)",
-    "crumbs": [
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>La calidad y la mejora de la calidad</span>"
-    ]
-  },
-  {
-    "objectID": "120-mejora-calidad.html#estrategia-de-resolucion-de-problemas",
-    "href": "120-mejora-calidad.html#estrategia-de-resolucion-de-problemas",
-    "title": "13  La calidad y la mejora de la calidad",
-    "section": "13.3 Estrategia de resolucion de problemas",
-    "text": "13.3 Estrategia de resolucion de problemas",
-    "crumbs": [
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>La calidad y la mejora de la calidad</span>"
-    ]
-  },
-  {
-    "objectID": "120-mejora-calidad.html#dmaic---sixsigma",
-    "href": "120-mejora-calidad.html#dmaic---sixsigma",
-    "title": "13  La calidad y la mejora de la calidad",
-    "section": "13.4 DMAIC - SixSigma",
-    "text": "13.4 DMAIC - SixSigma",
-    "crumbs": [
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>La calidad y la mejora de la calidad</span>"
-    ]
-  },
-  {
-    "objectID": "120-mejora-calidad.html#el-papel-de-los-métodos-estadísticos-en-la-mejora-six-sigma",
-    "href": "120-mejora-calidad.html#el-papel-de-los-métodos-estadísticos-en-la-mejora-six-sigma",
-    "title": "13  La calidad y la mejora de la calidad",
-    "section": "13.5 El papel de los métodos estadísticos en la mejora Six Sigma",
-    "text": "13.5 El papel de los métodos estadísticos en la mejora Six Sigma",
-    "crumbs": [
-      "<span class='chapter-number'>13</span>  <span class='chapter-title'>La calidad y la mejora de la calidad</span>"
-    ]
-  },
-  {
     "objectID": "130-comunicacion.html",
     "href": "130-comunicacion.html",
-    "title": "14  La comunicación",
+    "title": "13  La comunicación",
     "section": "",
     "text": "quarto markdown PowerPoint Gráficos",
     "crumbs": [
-      "<span class='chapter-number'>14</span>  <span class='chapter-title'>La comunicación</span>"
+      "<span class='chapter-number'>13</span>  <span class='chapter-title'>La comunicación</span>"
     ]
   },
   {
-    "objectID": "140-anexo-R.html",
-    "href": "140-anexo-R.html",
+    "objectID": "140-mejora-calidad.html",
+    "href": "140-mejora-calidad.html",
+    "title": "14  La calidad y la mejora de la calidad",
+    "section": "",
+    "text": "14.1 Six Sigma y mejora de la calidad",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>La calidad y la mejora de la calidad</span>"
+    ]
+  },
+  {
+    "objectID": "140-mejora-calidad.html#definir-un-problema-opex-lean-sixsigma-16",
+    "href": "140-mejora-calidad.html#definir-un-problema-opex-lean-sixsigma-16",
+    "title": "14  La calidad y la mejora de la calidad",
+    "section": "14.2 Definir un problema [OPEX Lean SixSigma #16]",
+    "text": "14.2 Definir un problema [OPEX Lean SixSigma #16]\n\n14.2.1 ¿Cómo es una buena definición de un problema?\n\nBreve\nEvitar lenguaje técnico: debes ser capaz de explicarlo a cualquier persona de la organización usando términos sencillos\nCuantificar el problema, usando los datos disponibles\nIntegra y explica el coste real del problema, para justificar la necesidad del análisis. Puedes relacionarlo con los costes de no calidad\nDefine el ámbito del problema: usa los términos que sean necesarios para delimitarlo con precisión.\nLa definición de un problema debe conseguir formularlo de forma que sea específico, medible, realizable, relevante y acotado en el tiempo (plazo)",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>La calidad y la mejora de la calidad</span>"
+    ]
+  },
+  {
+    "objectID": "140-mejora-calidad.html#estrategia-de-resolucion-de-problemas",
+    "href": "140-mejora-calidad.html#estrategia-de-resolucion-de-problemas",
+    "title": "14  La calidad y la mejora de la calidad",
+    "section": "14.3 Estrategia de resolucion de problemas",
+    "text": "14.3 Estrategia de resolucion de problemas",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>La calidad y la mejora de la calidad</span>"
+    ]
+  },
+  {
+    "objectID": "140-mejora-calidad.html#dmaic---sixsigma",
+    "href": "140-mejora-calidad.html#dmaic---sixsigma",
+    "title": "14  La calidad y la mejora de la calidad",
+    "section": "14.4 DMAIC - SixSigma",
+    "text": "14.4 DMAIC - SixSigma",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>La calidad y la mejora de la calidad</span>"
+    ]
+  },
+  {
+    "objectID": "140-mejora-calidad.html#el-papel-de-los-métodos-estadísticos-en-la-mejora-six-sigma",
+    "href": "140-mejora-calidad.html#el-papel-de-los-métodos-estadísticos-en-la-mejora-six-sigma",
+    "title": "14  La calidad y la mejora de la calidad",
+    "section": "14.5 El papel de los métodos estadísticos en la mejora Six Sigma",
+    "text": "14.5 El papel de los métodos estadísticos en la mejora Six Sigma",
+    "crumbs": [
+      "<span class='chapter-number'>14</span>  <span class='chapter-title'>La calidad y la mejora de la calidad</span>"
+    ]
+  },
+  {
+    "objectID": "150-anexo-R.html",
+    "href": "150-anexo-R.html",
     "title": "Anexo: Instalación de R y conceptos básicos",
     "section": "",
     "text": "Instalación de R en Windows",
@@ -780,8 +780,8 @@
     ]
   },
   {
-    "objectID": "140-anexo-R.html#instalación-de-r-en-windows",
-    "href": "140-anexo-R.html#instalación-de-r-en-windows",
+    "objectID": "150-anexo-R.html#instalación-de-r-en-windows",
+    "href": "150-anexo-R.html#instalación-de-r-en-windows",
     "title": "Anexo: Instalación de R y conceptos básicos",
     "section": "",
     "text": "Accede al sitio oficial de CRAN (Comprehensive R Archive Network), que es el repositorio central de software de R⁴.\nHaz clic en el enlace “Download R for Windows”.\nSelecciona “install R for the first time” en la parte superior de la página.\nElige la versión de R que deseas instalar (por ejemplo, R 4.0.3).\nGuarda el archivo ejecutable en tu computadora (puedes guardarlo en el escritorio).\nHaz doble clic en el archivo descargado para ejecutarlo.\nAcepta los permisos para que la aplicación realice cambios en tu dispositivo.\nSelecciona el idioma de tu preferencia y sigue las opciones de instalación (puedes aceptar las opciones preestablecidas).",
@@ -790,8 +790,8 @@
     ]
   },
   {
-    "objectID": "140-anexo-R.html#instalación-de-rstudio-en-windows",
-    "href": "140-anexo-R.html#instalación-de-rstudio-en-windows",
+    "objectID": "150-anexo-R.html#instalación-de-rstudio-en-windows",
+    "href": "150-anexo-R.html#instalación-de-rstudio-en-windows",
     "title": "Anexo: Instalación de R y conceptos básicos",
     "section": "Instalación de RStudio en Windows",
     "text": "Instalación de RStudio en Windows\n\nAbre tu navegador y dirígete al sitio oficial de RStudio.\nHaz clic en “DOWNLOAD”.\nBusca la opción “RStudio Desktop” y selecciona “DOWNLOAD”.\nHaz clic en “DOWNLOAD RSTUDIO FOR WINDOWS”.\nGuarda el archivo ejecutable.\nEjecuta el archivo descargado y sigue las instrucciones de instalación.",
@@ -800,8 +800,8 @@
     ]
   },
   {
-    "objectID": "140-anexo-R.html#introducción-a-r",
-    "href": "140-anexo-R.html#introducción-a-r",
+    "objectID": "150-anexo-R.html#introducción-a-r",
+    "href": "150-anexo-R.html#introducción-a-r",
     "title": "Anexo: Instalación de R y conceptos básicos",
     "section": "Introducción a R",
     "text": "Introducción a R\n\nTipos de datos en R\n\nNumérico (numeric):\n\nRepresenta valores decimales, tanto enteros como de punto flotante (double).\nEjemplo: 3.14, 42, 0.5.\n\nEntero (integer):\n\nRepresenta números enteros.\nEjemplo: 5, -10, 100.\n\nLógico (logical):\n\nRepresenta valores booleanos: TRUE o FALSE.\nEjemplo: TRUE, FALSE.\n\nCarácter (character):\n\nRepresenta cadenas de texto.\nEjemplo: \"Hola, mundo\", \"R es genial\".\n\nComplejo (complex):\n\nRepresenta números complejos con parte real e imaginaria.\nEjemplo: 1 + 2i, 3 - 4i.\n\nRaw:\n\nRepresenta datos en formato binario sin procesar.\nEjemplo: as.raw(0:5) (crea un vector de bytes).\n\n\n\n\nVectores\nEn R, un vector es una estructura de datos fundamental que almacena elementos del mismo tipo, ya sean números, caracteres o lógicos². Aquí tienes una breve explicación:\n\n¿Qué es un vector en R?\n\nUn vector es una secuencia de elementos de datos del mismo tipo básico.\nLos miembros de un vector se llaman oficialmente componentes.\nPueden ser de dos tipos: vectores atómicos y listas².\n\n\nLos vectores atómicos son los más comunes y se utilizan para almacenar datos homogéneos. Algunos ejemplos de vectores atómicos incluyen:\n\nNuméricos (numeric):\n\nRepresentan valores decimales, tanto enteros como de punto flotante.\nEjemplo: c(3.14, 42, 0.5).\n\nCaracteres (character):\n\nAlmacenan cadenas de texto.\nEjemplo: c(\"Hola\", \"Mundo\").\n\nLógicos (logical):\n\nContienen valores booleanos: TRUE o FALSE.\nEjemplo: c(TRUE, FALSE, TRUE).\n\nEnteros (integer):\n\nRepresentan números enteros.\nEjemplo: c(5, -10, 100).\n\n\nLos vectores son fundamentales para realizar operaciones matemáticas, análisis de datos y manipulación de información en R.\n\nEjemplos de creación de vectores en R\nLos vectores en R pueden contener datos del mismo tipo y se crean utilizando la función c().\n\nVectores numéricos:\n\nPuedes crear un vector numérico utilizando la función c():\nnumeros &lt;- c(1, 2, 3, 4, 5)\nEsto crea un vector con los números del 1 al 5.\n\nVectores de caracteres:\n\nPara crear un vector de caracteres, simplemente proporciona las cadenas de texto entre comillas:\nfrutas &lt;- c(\"manzana\", \"banana\", \"cereza\")\nEsto crea un vector con los nombres de algunas frutas.\n\nVectores lógicos:\n\nLos vectores lógicos contienen valores TRUE o FALSE. Puedes crear uno así:\nlogico &lt;- c(TRUE, FALSE, TRUE)\nEsto crea un vector con tres valores lógicos.\n\nVectores con nombres:\n\nPuedes asignar nombres a los elementos de un vector:\nmi_vector &lt;- c(naranja = 4, manzana = 6)\nEsto crea un vector con dos elementos nombrados: “naranja” y “manzana”.\n\nData frames:\n\nIntroduce los data frames como tablas de datos con filas y columnas.\nExplica cómo crear, acceder y modificar data frames.\nDestaca la importancia de los data frames para el análisis de datos.\n\n\nUn data frame en R es una estructura de datos bidimensional que se utiliza para almacenar información tabular. Es similar a una tabla o una hoja de cálculo, donde cada columna puede contener diferentes tipos de datos (números, cadenas de texto, etc.). Los data frames son muy útiles para trabajar con datos estructurados en R. Puedes acceder a las columnas y realizar análisis estadísticos sobre ellos.\nAquí tienes una descripción más detallada y algunos ejemplos:\n\nConcepto de Data Frame:\n\nUn data frame es una estructura especializada de tipo lista en R.\nCada componente del data frame tiene la misma longitud y forma una columna.\nLos componentes individuales forman las filas del data frame.\nPuedes pensar en un data frame como una matriz donde cada columna puede contener diferentes tipos de datos¹.\n\nEjemplo de Creación de Data Frame desde Vectores:\n\nPuedes crear un data frame utilizando la función data.frame().\nPor ejemplo, consideremos los siguientes datos:\nName &lt;- c(\"Jon\", \"Bill\", \"Maria\", \"Ben\", \"Tina\")\nAge &lt;- c(23, 41, 32, 58, 26)\ndf &lt;- data.frame(Name, Age)\nprint(df)\nEsto creará un data frame con dos columnas: “Name” y “Age”. Los valores coincidirán con los datos proporcionados.\n\nEjemplo de Creación de Data Frame desde una Matriz:\n\nTambién puedes crear un data frame a partir de una matriz existente.\nSupongamos que tenemos una matriz llamada my_matrix:\nmy_matrix &lt;- matrix(c(1, 2, 3, 4, 5, 6), ncol = 2)\ndf_from_matrix &lt;- data.frame(my_matrix)\nprint(df_from_matrix)\nEsto convertirá la matriz en un data frame con dos columnas.\n\nEjemplo de Creación de Data Frame desde Valores Iniciales:\n\nSi deseas crear un data frame con valores específicos, puedes hacerlo directamente:\ndf_custom &lt;- data.frame(\n  Name = c(\"Alice\", \"Bob\", \"Carol\"),\n  Age = c(30, 25, 28)\n)\nprint(df_custom)\nEsto creará un data frame personalizado con los valores proporcionados.\n\nEjemplo de Creación de Data Frame Vacío con Nombres de Columna:\n\nSi necesitas un data frame vacío con nombres de columna, puedes hacerlo así:\nempty_df &lt;- data.frame(Name = character(0), Age = numeric(0))\nprint(empty_df)\nEsto crea un data frame sin filas pero con las columnas “Name” y “Age”.\n\n\n\n\n\nCreación de un dataframe a partir de un fichero CSV\ncrear un data frame en R a partir de la lectura de un archivo CSV es una tarea común. Aquí tienes los pasos para hacerlo:\n\nLeer el archivo CSV:\n\nPrimero, necesitas tener un archivo CSV con los datos que deseas cargar en un data frame.\nUtiliza la función read.csv() para leer el archivo CSV y convertirlo en un data frame. Por ejemplo:\nmi_data_frame &lt;- read.csv(\"ruta/al/archivo.csv\")\nReemplaza \"ruta/al/archivo.csv\" con la ubicación real de tu archivo CSV.\n\nExplorar el data frame:\n\nUna vez que hayas leído el archivo, puedes explorar el contenido del data frame utilizando funciones como head(mi_data_frame) para ver las primeras filas o summary(mi_data_frame) para obtener estadísticas resumidas.\n\nAcceder a los datos:\n\nPuedes acceder a las columnas del data frame utilizando el operador $. Por ejemplo:\nprimera_columna &lt;- mi_data_frame$NombreColumna\n\nManipular los datos:\n\nPuedes realizar operaciones, filtrar filas y modificar los valores en el data frame según tus necesidades.\n\nGuardar cambios:\n\nSi realizas modificaciones en el data frame, puedes guardar los cambios en un nuevo archivo CSV utilizando la función write.csv():\nwrite.csv(mi_data_frame, \"ruta/nuevo_archivo.csv\", row.names = FALSE)\nEsto creará un nuevo archivo CSV con los datos actualizados.\n\n\nRecuerda adaptar los nombres de las columnas y las rutas de los archivos según tu caso específico.\n\nVisualización de datos:\n\nMenciona la importancia de la visualización en el análisis estadístico.\nSi hay tiempo, muestra cómo crear gráficos básicos con R (histogramas, scatter plots, etc.).\n\n\n¡Por supuesto! La visualización de datos es fundamental en el análisis de datos, y R ofrece varias opciones para crear gráficos. Aquí te presento una breve descripción y ejemplos de cómo utilizar tanto el programa base como la biblioteca ggplot2 del paquete tidyverse:\n\nPrograma Base de R:\n\nEl programa base de R proporciona funciones para crear gráficos básicos directamente desde los datos.\nAlgunos ejemplos de gráficos básicos son:\n\nGráfico de dispersión:\n# Crear un gráfico de dispersión\nplot(mpg$displ, mpg$hwy, main = \"Consumo de combustible\", xlab = \"Desplazamiento\", ylab = \"Millas por galón\")\nHistograma:\n# Crear un histograma\nhist(mpg$hwy, main = \"Distribución de millas por galón\", xlab = \"Millas por galón\")\nGráfico de barras:\n# Crear un gráfico de barras\nbarplot(table(mpg$class), main = \"Distribución de clases de vehículos\", xlab = \"Clase\", ylab = \"Frecuencia\")\n\n\nBiblioteca ggplot2:\n\nggplot2 es una poderosa biblioteca para crear gráficos basada en la “Gramática de Gráficos”.\nAquí tienes un ejemplo de cómo crear un gráfico de dispersión utilizando ggplot2:\nlibrary(ggplot2)\nggplot(mpg, aes(x = displ, y = hwy, color = class)) +\n  geom_point() +\n  labs(title = \"Consumo de combustible\", x = \"Desplazamiento\", y = \"Millas por galón\")\nEn este ejemplo, aes() define las variables estéticas (mapeo de datos a elementos visuales), geom_point() agrega los puntos al gráfico y labs() establece etiquetas para el título y los ejes.\n\nVentajas de ggplot2:\n\nDeclarativo: Describe lo que deseas visualizar y ggplot2 se encarga de los detalles.\nCapas: Puedes agregar capas (geometrías, escalas, facetas) para personalizar tus gráficos.\nEcosistema rico: ggplot2 tiene muchas extensiones y opciones para gráficos más avanzados¹.\n\n\nRecuerda que ggplot2 es especialmente útil para crear gráficos más complejos y personalizados. Si tienes más preguntas, no dudes en preguntar. 😊\nLa visualización de datos es una faceta esencial en el campo de la estadística industrial. Permite convertir conjuntos de datos complejos en representaciones visuales accesibles y fáciles de interpretar. Aquí te explico por qué es tan relevante:\n\nComunicación efectiva:\n\nLa visualización gráfica permite comunicar hallazgos y resultados de manera más clara y efectiva.\nLos gráficos y diagramas facilitan la comprensión de patrones, tendencias y relaciones entre variables.\n\nIdentificación de patrones:\n\nAl visualizar datos, es más sencillo detectar patrones ocultos o anómalos.\nLos gráficos pueden revelar información valiosa sobre procesos industriales, como fluctuaciones en la producción o tendencias en la calidad del producto.\n\nToma de decisiones informada:\n\nLos líderes y analistas industriales pueden tomar decisiones basadas en evidencia visual.\nLa visualización ayuda a evaluar el rendimiento de la producción, identificar áreas de mejora y optimizar procesos.\n\n\nEn la estadística industrial, la visualización de datos es crucial para comprender patrones, tendencias y relaciones en los procesos de producción. R, como lenguaje estadístico, ofrece varias herramientas poderosas para crear gráficos y representaciones visuales. A continuación, menciono algunas de las más útiles:\n\nggplot2:\n\nggplot2 es una biblioteca ampliamente utilizada para la visualización de datos en R.\nSe basa en la “Gramática de Gráficos”, lo que permite crear gráficos personalizados y versátiles.\nEjemplo de uso:\nlibrary(ggplot2)\nggplot(datos, aes(x = variable1, y = variable2)) +\n  geom_point() +\n  labs(title = \"Relación entre dos variables\")\nEn este ejemplo, aes() define las variables estéticas, geom_point() agrega puntos al gráfico y labs() establece etiquetas para el título y los ejes².\n\nPaquete base de R:\n\nR tiene funciones básicas para gráficos, como plot, hist, boxplot, entre otras.\nEstas funciones son parte del paquete base y son útiles para gráficos simples.\nEjemplo de uso:\nplot(datos$variable1, datos$variable2, main = \"Gráfico de dispersión\")\nEsto crea un gráfico de dispersión entre dos variables¹.\n\nGalería de gráficos de R:\n\nLa Galería de gráficos de R es una colección de ejemplos reproducibles creados en R.\nMuestra cientos de gráficos con su código disponible para aprender y adaptar.\nPuedes explorar diferentes tipos de gráficos y encontrar inspiración para tus propios análisis¹.\n\n\n\n\nLas funciones en R\nLas funciones en R son bloques de código que realizan tareas específicas y se pueden reutilizar en diferentes partes de un programa. Aquí tienes una breve descripción y algunos ejemplos:\n\nSintaxis Básica de una Función en R:\n\nPara crear una función en R, utilizamos la siguiente sintaxis:\nnombre_funcion &lt;- function(arg1, arg2, ...) {\n  # Código\n}\n\nnombre_funcion: El nombre que le das a tu función.\narg1, arg2, …: Los argumentos de entrada que la función acepta.\n# Código: El bloque de código que realiza la tarea deseada.\n\n\nEjemplo de Función en R:\n\nSupongamos que queremos calcular el término general de una progresión geométrica.\nCreamos la función an que calcula el término general:\nan &lt;- function(a1, r, n) {\n  a1 * r^(n - 1)\n}\n\na1: Primer término.\nr: Razón o ratio.\nn: Número de términos.\n\nEjemplos de uso:\nan(a1 = 1, r = 2, n = 5)  # Resultado: 16\nan(a1 = 4, r = -2, n = 6)  # Resultado: -128\n\nFunciones Integradas en R:\n\nR tiene muchas funciones incorporadas, como print(), min(), max(), sum(), etc.\nPor ejemplo:\nprint(\"¡Hola, mundo!\")\nmin(1, 2, 3)  # Resultado: 1\nsum(1:5)  # Resultado: 15\nLas funciones en R te permiten modularizar tu código y reutilizarlo.",
@@ -810,8 +810,8 @@
     ]
   },
   {
-    "objectID": "150-bibliografia.html",
-    "href": "150-bibliografia.html",
+    "objectID": "160-bibliografia.html",
+    "href": "160-bibliografia.html",
     "title": "Bibliografía",
     "section": "",
     "text": "Buck, Stuart. 2015. “Solving Reproducibility.”\nScience 348 (6242): 1403. https://www.science.org/doi/full/10.1126/science.aac8041.\n\n\nDouglas C Montgomery, Norma Faris Hubele, George C Runger. 2011.\nEngineering Statistics. 111 River Street, Hoboken, NJ\n07030-5774: John Wiley & Sons, Inc.\n\n\nFerrero, Rosana. 2018. “Los Errores de Reinhart & Rogoff: R y\nLa Reproducibilidad.” 2018. https://www.maximaformacion.es/blog-dat/los-errores-de-reinhart-rogo/.\n\n\nHadley Wickham, Garret Grolemund. 2023. “R Para Ciencia de\nDatos.” 2023. https://es.r4ds.hadley.nz/.\n\n\nHadley Wickham, Garret Grolemund, Mine Çetinkaya-Rundel. 2023. R for\nData Science, 2nd Ed. 1005 Gravenstein Highway North, Sebastopol,\nCA95472: O’Reilly Media Inc. https://r4ds.hadley.nz/.\n\n\nRyssdal, Karl. 2013. “The Excel Mistake Heard Round the\nWorld.” 2013. https://www.marketplace.org/2013/04/17/economy/excel-mistake-heard-round-world/.\n\n\nSadler, Jesse. 2017. “Excel Vs r: A Brief Introduction to\nr.” 2017. https://www.jessesadler.com/post/excel-vs-r/.\n\n\nWorld Economic Forum. 2023. “Future of Jobs Report, 2023.”\n91-93 route de la Capite,CH-1223 Cologny/Geneva, Switzerland: World\nEconomic Forum. https://www.weforum.org/publications/the-future-of-jobs-report-2023/.",

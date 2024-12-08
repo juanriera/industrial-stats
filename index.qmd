@@ -66,11 +66,9 @@ El **capítulo 11** presenta una de las aplicaciones más importantes de la esta
 
 En el **capítulo 12** se hace una introducción al **diseño de experimentos**. La utilidad de esta técnica es primordial para el industrial, sobre todo para el área de I+D y el diseño de productos. Dado que esta técnica puede ser muy compleja en su aplicación real, se facilitan enlaces a otros recursos, como cursos, que serán útiles a los que quieran profundizar más.
 
-En el **capítulo 13** se presenta el uso de los conceptos y técnicas estudiadas en los procesos de mejora de la calidad industrial, y se introducen algunas aplicaciones prácticas de la estadística en el entorno industrial, como **Six Sigma**.
+El **capítulo 13** hace una breve introducción a las técnicas de comunicación, tanto a la presentación de datos como a la preparación de informes. Se hace hincapié en las nuevas herramientas como Quarto, que facilitan la elaboración de informes automatizados.
 
-El **capítulo 14** hace una breve introducción a las técnicas de comunicación, tanto a la presentación de datos como a la preparación de informes. Se hace hincapié en las nuevas herramientas como Quarto, que facilitan la elaboración de informes automatizados.
-
-Finalmente, se hace una breve introducción a R en anexo.
+Finalmente, el **capítulo 14** explica la aplicación estructurada de los conceptos y técnicas estudiadas en el libro a la mejora de la calidad industrial mediante el método **Six Sigma**.
 
 ## Cómo usar el libro
 

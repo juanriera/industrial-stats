@@ -15,17 +15,17 @@ book:
     - 030-organizacion.qmd  
     - 040-exploracion.qmd
     - 050-estad-simple.qmd
-    - 055-forma-de-los-datos.qmd
-    - 060-distr-prob.qmd
-    - 070-relacion-xy.qmd
-    - 080-anova.qmd
-    - 090-sistema-medicion.qmd
-    - 100-control-proc.qmd
-    - 110-disexp.qmd
-    - 120-mejora-calidad.qmd
+    - 060-forma-de-los-datos.qmd
+    - 070-distr-prob.qmd
+    - 080-relacion-xy.qmd
+    - 090-anova.qmd
+    - 100-sistema-medicion.qmd
+    - 110-control-proc.qmd
+    - 120-disexp.qmd
     - 130-comunicacion.qmd
-    - 140-anexo-R.qmd
-    - 150-bibliografia.qmd
+    - 140-mejora-calidad.qmd
+    - 150-anexo-R.qmd
+    - 160-bibliografia.qmd
 
 bibliography: bibliografia.bib
 
