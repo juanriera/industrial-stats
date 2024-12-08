@@ -7,7 +7,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
 
 
-<title>7&nbsp; Probabilidad y distribuciones de probabilidad – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
+<title>10&nbsp; El análisis de la varianza – Introducción a la estadística industrial y la ciencia de datos utilizando Microsoft Excel y R</title>
 <style>
 code{white-space: pre-wrap;}
 span.smallcaps{font-variant: small-caps;}
@@ -30,8 +30,8 @@ ul.task-list li input[type="checkbox"] {
 <script src="site_libs/quarto-search/fuse.min.js"></script>
 <script src="site_libs/quarto-search/quarto-search.js"></script>
 <meta name="quarto:offset" content="./">
-<link href="./080-relacion-xy.html" rel="next">
-<link href="./060-forma-de-los-datos.html" rel="prev">
+<link href="./110-disexp.html" rel="next">
+<link href="./090-distr-prob.html" rel="prev">
 <script src="site_libs/quarto-html/quarto.js"></script>
 <script src="site_libs/quarto-html/popper.min.js"></script>
 <script src="site_libs/quarto-html/tippy.umd.min.js"></script>
@@ -69,35 +69,6 @@ ul.task-list li input[type="checkbox"] {
   }
 }</script>
 
-  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
-  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
-
-<script type="text/javascript">
-const typesetMath = (el) => {
-  if (window.MathJax) {
-    // MathJax Typeset
-    window.MathJax.typeset([el]);
-  } else if (window.katex) {
-    // KaTeX Render
-    var mathElements = el.getElementsByClassName("math");
-    var macros = [];
-    for (var i = 0; i < mathElements.length; i++) {
-      var texText = mathElements[i].firstChild;
-      if (mathElements[i].tagName == "SPAN") {
-        window.katex.render(texText.data, mathElements[i], {
-          displayMode: mathElements[i].classList.contains('display'),
-          throwOnError: false,
-          macros: macros,
-          fleqn: false
-        });
-      }
-    }
-  }
-}
-window.Quarto = {
-  typesetMath
-};
-</script>
 
 </head>
 
@@ -110,7 +81,7 @@ window.Quarto = {
       <button type="button" class="quarto-btn-toggle btn" data-bs-toggle="collapse" role="button" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">
         <i class="bi bi-layout-text-sidebar-reverse"></i>
       </button>
-        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./030-organizacion.html">Técnicas básicas</a></li><li class="breadcrumb-item"><a href="./070-distr-prob.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></a></li></ol></nav>
+        <nav class="quarto-page-breadcrumbs" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./090-distr-prob.html">Conceptos avanzados</a></li><li class="breadcrumb-item"><a href="./100-anova.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></a></li></ol></nav>
         <a class="flex-grow-1" role="navigation" data-bs-toggle="collapse" data-bs-target=".quarto-sidebar-collapse-item" aria-controls="quarto-sidebar" aria-expanded="false" aria-label="Toggle sidebar navigation" onclick="if (window.quartoToggleHeadroom) { window.quartoToggleHeadroom(); }">      
         </a>
       <button type="button" class="btn quarto-search-button" aria-label="Search" onclick="window.quartoOpenSearch();">
@@ -188,32 +159,14 @@ window.Quarto = {
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./070-distr-prob.html" class="sidebar-item-text sidebar-link active">
- <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span></a>
+  <a href="./070-relacion-xy.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
   </div>
 </li>
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
-  <a href="./080-relacion-xy.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./090-anova.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./100-disexp.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
-  </div>
-</li>
-          <li class="sidebar-item">
-  <div class="sidebar-item-container"> 
-  <a href="./110-comunicacion.html" class="sidebar-item-text sidebar-link">
- <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">La comunicación de los resultados</span></span></a>
+  <a href="./080-comunicacion.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">La comunicación de los resultados</span></span></a>
   </div>
 </li>
       </ul>
@@ -221,12 +174,41 @@ window.Quarto = {
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
             <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true">
- <span class="menu-text">Aplicaciones prácticas</span></a>
+ <span class="menu-text">Conceptos avanzados</span></a>
           <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-2" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
       <ul id="quarto-sidebar-section-2" class="collapse list-unstyled sidebar-section depth1 show">  
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./090-distr-prob.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./100-anova.html" class="sidebar-item-text sidebar-link active">
+ <span class="menu-text"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></span></a>
+  </div>
+</li>
+          <li class="sidebar-item">
+  <div class="sidebar-item-container"> 
+  <a href="./110-disexp.html" class="sidebar-item-text sidebar-link">
+ <span class="menu-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span></a>
+  </div>
+</li>
+      </ul>
+  </li>
+        <li class="sidebar-item sidebar-item-section">
+      <div class="sidebar-item-container"> 
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+ <span class="menu-text">Aplicaciones prácticas</span></a>
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+            <i class="bi bi-chevron-right ms-2"></i>
+          </a> 
+      </div>
+      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./120-control-proc.html" class="sidebar-item-text sidebar-link">
@@ -249,13 +231,13 @@ window.Quarto = {
   </li>
         <li class="sidebar-item sidebar-item-section">
       <div class="sidebar-item-container"> 
-            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true">
+            <a class="sidebar-item-text sidebar-link text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true">
  <span class="menu-text">Anexos</span></a>
-          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-3" role="navigation" aria-expanded="true" aria-label="Toggle section">
+          <a class="sidebar-item-toggle text-start" data-bs-toggle="collapse" data-bs-target="#quarto-sidebar-section-4" role="navigation" aria-expanded="true" aria-label="Toggle section">
             <i class="bi bi-chevron-right ms-2"></i>
           </a> 
       </div>
-      <ul id="quarto-sidebar-section-3" class="collapse list-unstyled sidebar-section depth1 show">  
+      <ul id="quarto-sidebar-section-4" class="collapse list-unstyled sidebar-section depth1 show">  
           <li class="sidebar-item">
   <div class="sidebar-item-container"> 
   <a href="./150-anexo-R.html" class="sidebar-item-text sidebar-link">
@@ -280,32 +262,18 @@ window.Quarto = {
     <h2 id="toc-title">Table of contents</h2>
    
   <ul>
-  <li><a href="#qué-es-la-probabilidad" id="toc-qué-es-la-probabilidad" class="nav-link active" data-scroll-target="#qué-es-la-probabilidad">¿Qué es la Probabilidad?</a></li>
-  <li><a href="#algunos-ejemplos" id="toc-algunos-ejemplos" class="nav-link" data-scroll-target="#algunos-ejemplos">Algunos ejemplos</a></li>
-  <li><a href="#frecuencia-relativa-y-probabilidad" id="toc-frecuencia-relativa-y-probabilidad" class="nav-link" data-scroll-target="#frecuencia-relativa-y-probabilidad"><span class="header-section-number">7.1</span> Frecuencia relativa y probabilidad</a>
-  <ul class="collapse">
-  <li><a href="#frecuencia-relativa" id="toc-frecuencia-relativa" class="nav-link" data-scroll-target="#frecuencia-relativa">Frecuencia Relativa</a></li>
-  <li><a href="#probabilidad" id="toc-probabilidad" class="nav-link" data-scroll-target="#probabilidad">Probabilidad</a></li>
-  <li><a href="#comparación" id="toc-comparación" class="nav-link" data-scroll-target="#comparación">Comparación</a></li>
-  </ul></li>
-  <li><a href="#distribuciones-de-probabilidad" id="toc-distribuciones-de-probabilidad" class="nav-link" data-scroll-target="#distribuciones-de-probabilidad"><span class="header-section-number">7.2</span> Distribuciones de probabilidad</a>
-  <ul class="collapse">
-  <li><a href="#distribución-normal" id="toc-distribución-normal" class="nav-link" data-scroll-target="#distribución-normal">Distribución normal</a></li>
-  <li><a href="#otras-distribuciones" id="toc-otras-distribuciones" class="nav-link" data-scroll-target="#otras-distribuciones">Otras distribuciones</a></li>
-  <li><a href="#gráficos-de-probabilidad" id="toc-gráficos-de-probabilidad" class="nav-link" data-scroll-target="#gráficos-de-probabilidad">Gráficos de probabilidad</a></li>
-  </ul></li>
-  <li><a href="#fútbol" id="toc-fútbol" class="nav-link" data-scroll-target="#fútbol"><span class="header-section-number">7.3</span> Fútbol</a></li>
-  <li><a href="#proceso-de-dosificación-de-líquidos" id="toc-proceso-de-dosificación-de-líquidos" class="nav-link" data-scroll-target="#proceso-de-dosificación-de-líquidos"><span class="header-section-number">7.4</span> Proceso de dosificación de líquidos</a></li>
-  <li><a href="#ley-de-contenido-efectivo" id="toc-ley-de-contenido-efectivo" class="nav-link" data-scroll-target="#ley-de-contenido-efectivo"><span class="header-section-number">7.5</span> Ley de contenido efectivo</a></li>
+  <li><a href="#introducción" id="toc-introducción" class="nav-link active" data-scroll-target="#introducción"><span class="header-section-number">10.1</span> Introducción</a></li>
+  <li><a href="#análisis-de-la-varianza-de-dos-factores" id="toc-análisis-de-la-varianza-de-dos-factores" class="nav-link" data-scroll-target="#análisis-de-la-varianza-de-dos-factores"><span class="header-section-number">10.2</span> Análisis de la varianza de dos factores</a></li>
+  <li><a href="#section" id="toc-section" class="nav-link" data-scroll-target="#section"><span class="header-section-number">10.3</span> </a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
 <main class="content" id="quarto-document-content">
 
-<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./030-organizacion.html">Técnicas básicas</a></li><li class="breadcrumb-item"><a href="./070-distr-prob.html"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></a></li></ol></nav>
+<header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./090-distr-prob.html">Conceptos avanzados</a></li><li class="breadcrumb-item"><a href="./100-anova.html"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></a></li></ol></nav>
 <div class="quarto-title">
-<h1 class="title"><span class="chapter-number">7</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></h1>
+<h1 class="title"><span class="chapter-number">10</span>&nbsp; <span class="chapter-title">El análisis de la varianza</span></h1>
 </div>
 
 
@@ -322,127 +290,17 @@ window.Quarto = {
 </header>
 
 
-<section id="qué-es-la-probabilidad" class="level3">
-<h3 class="anchored" data-anchor-id="qué-es-la-probabilidad">¿Qué es la Probabilidad?</h3>
-<p>La <strong>probabilidad</strong> es una rama de las matemáticas que se ocupa del estudio de los fenómenos aleatorios y la incertidumbre. Nos ayuda a medir la posibilidad de que ocurran ciertos eventos y a tomar decisiones informadas en situaciones de incertidumbre.</p>
+<section id="introducción" class="level2" data-number="10.1">
+<h2 data-number="10.1" class="anchored" data-anchor-id="introducción"><span class="header-section-number">10.1</span> Introducción</h2>
+<p>Supongamos que un analista de la OMS ha realizado la medida de la altura de un grupo de niños y niñas niña siguiendo rigurosamente el método establecido, y, por lo tanto, que está razonablemente seguro de su resultado.</p>
+<p>Al cabo de varias jornadas de trabajo, habrá realizado varias medidas, que representarán al conjunto de niños de la población en la que ha estado trabajando. Otros investigadores pueden haber estado trabajando a la vez en otras poblaciones, y al final de sus jornadas de trabajo, quieren comparar sus resultados: ¿Hay alguna de estas poblaciones en las que los niños sean significativamente más altos (o más bajos) que en las otras? ¿Cómo describir la altura de un conjunto de individuos de manera que se puedan hacer comparaciones con otros conjuntos?</p>
+<p>Para responder a estas preguntas, vamos a cambiar el entorno de trabajo a un grupo de niños imaginario, que vamos a llamar <em>aula1</em>: son nuestros compañeros y compañeras, a los cuales realizaremos una medida de altura siguiendo el <em>procedimiento</em> especificado en nuestro <em>método</em>. ## Análisis de la varianza de un factor</p>
 </section>
-<section id="algunos-ejemplos" class="level3">
-<h3 class="anchored" data-anchor-id="algunos-ejemplos">Algunos ejemplos</h3>
-<ul>
-<li><p><strong>Lanzamiento de una moneda</strong>: Imagina que lanzas una moneda. Hay dos posibles resultados: cara o cruz. La probabilidad de obtener cara es 1/2, y la probabilidad de obtener cruz también es 1/2.</p></li>
-<li><p><strong>Baraja de cartas</strong>: Si sacas una carta de una baraja estándar de 52 cartas, la probabilidad de sacar un as es 4/52 (ya que hay 4 ases en la baraja).</p></li>
-<li><p><strong>Lotería</strong>: En una lotería donde debes elegir 6 números de 49, la probabilidad de ganar es muy baja, ya que hay muchas combinaciones posibles.</p></li>
-<li><p><strong>Deportes</strong>: Calculamos la probabilidad de que tu equipo favorito gane un partido.</p></li>
-<li><p><strong>Medicina</strong>: Los médicos utilizan probabilidades para predecir la efectividad de un tratamiento.</p></li>
-<li><p><strong>Negocios</strong>: Las empresas utilizan probabilidades para tomar decisiones informadas sobre inversiones y estrategias de mercado.</p></li>
-</ul>
-<p>Entender la probabilidad es fundamental para tomar decisiones informadas en muchas áreas de la vida y nos ayuda a evaluar riesgos y oportunidades.</p>
+<section id="análisis-de-la-varianza-de-dos-factores" class="level2" data-number="10.2">
+<h2 data-number="10.2" class="anchored" data-anchor-id="análisis-de-la-varianza-de-dos-factores"><span class="header-section-number">10.2</span> Análisis de la varianza de dos factores</h2>
 </section>
-<section id="frecuencia-relativa-y-probabilidad" class="level2" data-number="7.1">
-<h2 data-number="7.1" class="anchored" data-anchor-id="frecuencia-relativa-y-probabilidad"><span class="header-section-number">7.1</span> Frecuencia relativa y probabilidad</h2>
-<section id="frecuencia-relativa" class="level3">
-<h3 class="anchored" data-anchor-id="frecuencia-relativa">Frecuencia Relativa</h3>
-<p><strong>Definición</strong>: La frecuencia relativa se refiere a la proporción de veces que ocurre un evento en relación con el número total de ensayos o experimentos realizados.</p>
-<p><strong>Cálculo</strong>: La frecuencia relativa se calcula como: <span class="math display">\[
-\text{Frecuencia Relativa} = \frac{\text{Número de veces que ocurre el evento}}{\text{Número total de ensayos}}
-\]</span></p>
-<p><strong>Ejemplo</strong>: Si lanzas una moneda 100 veces y obtienes 52 caras, la frecuencia relativa de obtener cara es: <span class="math display">\[
-\text{Frecuencia Relativa} = \frac{52}{100} = 0.52
-\]</span></p>
-<p><strong>Aplicación</strong>: La frecuencia relativa se utiliza principalmente en el análisis de datos experimentales y observacionales para estimar la probabilidad empírica de eventos basándose en la evidencia observada.</p>
-</section>
-<section id="probabilidad" class="level3">
-<h3 class="anchored" data-anchor-id="probabilidad">Probabilidad</h3>
-<p><strong>Definición</strong> La probabilidad es una medida teórica de la probabilidad de que ocurra un evento, basada en un modelo matemático o un conjunto de supuestos.</p>
-<p><strong>Cálculo</strong> La probabilidad de un evento <span class="math inline">\(A\)</span>, denotada como <span class="math inline">\(P(A)\)</span>, se calcula como:</p>
-<p><span class="math display">\[
-P(A) = \frac{\text{Número de casos favorables}}{\text{Número total de casos posibles}}
-\]</span></p>
-<p><strong>Ejemplo</strong>: Para una moneda justa, la probabilidad de obtener cara es: <span class="math display">\[
-P(\text{Cara}) = \frac{1}{2} = 0.5
-\]</span> <strong>Aplicación</strong>: La probabilidad se utiliza en teoría de la probabilidad y estadística para predecir la ocurrencia de eventos en base a modelos matemáticos y supuestos teóricos.</p>
-</section>
-<section id="comparación" class="level3">
-<h3 class="anchored" data-anchor-id="comparación">Comparación</h3>
-<table class="caption-top table">
-<colgroup>
-<col style="width: 15%">
-<col style="width: 44%">
-<col style="width: 39%">
-</colgroup>
-<thead>
-<tr class="header">
-<th>Característica</th>
-<th>Frecuencia Relativa</th>
-<th>Probabilidad</th>
-</tr>
-</thead>
-<tbody>
-<tr class="odd">
-<td><strong>Definición</strong></td>
-<td>Proporción de veces que ocurre un evento en un número de ensayos</td>
-<td>Medida teórica de la probabilidad de que ocurra un evento</td>
-</tr>
-<tr class="even">
-<td><strong>Cálculo</strong></td>
-<td><span class="math inline">\(\frac{\text{Número de veces que ocurre el evento}}{\text{Número total de ensayos}}\)</span></td>
-<td><span class="math inline">\(\frac{\text{Número de casos favorables}}{\text{Número total de casos posibles}}\)</span></td>
-</tr>
-<tr class="odd">
-<td><strong>Basado en</strong></td>
-<td>Datos experimentales u observacionales</td>
-<td>Modelos matemáticos y supuestos teóricos</td>
-</tr>
-<tr class="even">
-<td><strong>Ejemplo</strong></td>
-<td>Frecuencia relativa de obtener cara en 100 lanzamientos de moneda es <span class="math inline">\(0.52\)</span></td>
-<td>Probabilidad de obtener cara en una moneda justa es <span class="math inline">\(0.5\)</span></td>
-</tr>
-<tr class="odd">
-<td><strong>Aplicación</strong></td>
-<td>Estimación empírica de probabilidades</td>
-<td>Predicción de eventos basados en modelos teóricos</td>
-</tr>
-</tbody>
-</table>
-<p>En resumen, la frecuencia relativa se basa en datos observados y se utiliza para estimar probabilidades empíricas, mientras que la probabilidad es una medida teórica basada en modelos matemáticos. Ambas son herramientas útiles en el análisis de datos y la toma de decisiones informadas.</p>
-</section>
-</section>
-<section id="distribuciones-de-probabilidad" class="level2" data-number="7.2">
-<h2 data-number="7.2" class="anchored" data-anchor-id="distribuciones-de-probabilidad"><span class="header-section-number">7.2</span> Distribuciones de probabilidad</h2>
-<section id="distribución-normal" class="level3">
-<h3 class="anchored" data-anchor-id="distribución-normal">Distribución normal</h3>
-<p>dirtib de frecuencia y distr normal: área bajo la curva</p>
-<p><a href="https://www.economist.com/science-and-technology/2023/02/08/extreme-weather-events-are-getting-more-frequent">How to predict record-shattering weather events | The Economist</a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes\media-y-varianza.png" class="img-fluid figure-img"></p>
-<figcaption>media-y-varianza</figcaption>
-</figure>
-</div>
-<p><a href="https://news.mit.edu/2012/explained-sigma-0209">Explained: Sigma | MIT News | Massachusetts Institute of Technology</a></p>
-<div class="quarto-figure quarto-figure-center">
-<figure class="figure">
-<p><img src="01-imagenes\curva-normal.jpg" class="img-fluid figure-img"></p>
-<figcaption>img</figcaption>
-</figure>
-</div>
-</section>
-<section id="otras-distribuciones" class="level3">
-<h3 class="anchored" data-anchor-id="otras-distribuciones">Otras distribuciones</h3>
-</section>
-<section id="gráficos-de-probabilidad" class="level3">
-<h3 class="anchored" data-anchor-id="gráficos-de-probabilidad">Gráficos de probabilidad</h3>
-</section>
-</section>
-<section id="fútbol" class="level2" data-number="7.3">
-<h2 data-number="7.3" class="anchored" data-anchor-id="fútbol"><span class="header-section-number">7.3</span> Fútbol</h2>
-</section>
-<section id="proceso-de-dosificación-de-líquidos" class="level2" data-number="7.4">
-<h2 data-number="7.4" class="anchored" data-anchor-id="proceso-de-dosificación-de-líquidos"><span class="header-section-number">7.4</span> Proceso de dosificación de líquidos</h2>
-</section>
-<section id="ley-de-contenido-efectivo" class="level2" data-number="7.5">
-<h2 data-number="7.5" class="anchored" data-anchor-id="ley-de-contenido-efectivo"><span class="header-section-number">7.5</span> Ley de contenido efectivo</h2>
+<section id="section" class="level2" data-number="10.3">
+<h2 data-number="10.3" class="anchored" data-anchor-id="section"><span class="header-section-number">10.3</span> </h2>
 
 
 </section>
@@ -867,13 +725,13 @@ window.document.addEventListener("DOMContentLoaded", function (event) {
 </script>
 <nav class="page-navigation">
   <div class="nav-page nav-page-previous">
-      <a href="./060-forma-de-los-datos.html" class="pagination-link" aria-label="La forma de los datos">
-        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">6</span>&nbsp; <span class="chapter-title">La forma de los datos</span></span>
+      <a href="./090-distr-prob.html" class="pagination-link" aria-label="Probabilidad y distribuciones de probabilidad">
+        <i class="bi bi-arrow-left-short"></i> <span class="nav-page-text"><span class="chapter-number">9</span>&nbsp; <span class="chapter-title">Probabilidad y distribuciones de probabilidad</span></span>
       </a>          
   </div>
   <div class="nav-page nav-page-next">
-      <a href="./080-relacion-xy.html" class="pagination-link" aria-label="La relación entre las variables">
-        <span class="nav-page-text"><span class="chapter-number">8</span>&nbsp; <span class="chapter-title">La relación entre las variables</span></span> <i class="bi bi-arrow-right-short"></i>
+      <a href="./110-disexp.html" class="pagination-link" aria-label="Diseño de experimentos">
+        <span class="nav-page-text"><span class="chapter-number">11</span>&nbsp; <span class="chapter-title">Diseño de experimentos</span></span> <i class="bi bi-arrow-right-short"></i>
       </a>
   </div>
 </nav>

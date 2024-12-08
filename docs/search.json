@@ -497,157 +497,157 @@
     ]
   },
   {
-    "objectID": "070-distr-prob.html",
-    "href": "070-distr-prob.html",
-    "title": "7  Probabilidad y distribuciones de probabilidad",
+    "objectID": "070-relacion-xy.html",
+    "href": "070-relacion-xy.html",
+    "title": "7  La relación entre las variables",
     "section": "",
-    "text": "¿Qué es la Probabilidad?\nLa probabilidad es una rama de las matemáticas que se ocupa del estudio de los fenómenos aleatorios y la incertidumbre. Nos ayuda a medir la posibilidad de que ocurran ciertos eventos y a tomar decisiones informadas en situaciones de incertidumbre.",
+    "text": "7.1 Diagramas de puntos \\((x,y\\))",
     "crumbs": [
       "Técnicas básicas",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Probabilidad y distribuciones de probabilidad</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>La relación entre las variables</span>"
     ]
   },
   {
-    "objectID": "070-distr-prob.html#frecuencia-relativa-y-probabilidad",
-    "href": "070-distr-prob.html#frecuencia-relativa-y-probabilidad",
-    "title": "7  Probabilidad y distribuciones de probabilidad",
-    "section": "7.1 Frecuencia relativa y probabilidad",
-    "text": "7.1 Frecuencia relativa y probabilidad\n\nFrecuencia Relativa\nDefinición: La frecuencia relativa se refiere a la proporción de veces que ocurre un evento en relación con el número total de ensayos o experimentos realizados.\nCálculo: La frecuencia relativa se calcula como: \\[\n\\text{Frecuencia Relativa} = \\frac{\\text{Número de veces que ocurre el evento}}{\\text{Número total de ensayos}}\n\\]\nEjemplo: Si lanzas una moneda 100 veces y obtienes 52 caras, la frecuencia relativa de obtener cara es: \\[\n\\text{Frecuencia Relativa} = \\frac{52}{100} = 0.52\n\\]\nAplicación: La frecuencia relativa se utiliza principalmente en el análisis de datos experimentales y observacionales para estimar la probabilidad empírica de eventos basándose en la evidencia observada.\n\n\nProbabilidad\nDefinición La probabilidad es una medida teórica de la probabilidad de que ocurra un evento, basada en un modelo matemático o un conjunto de supuestos.\nCálculo La probabilidad de un evento \\(A\\), denotada como \\(P(A)\\), se calcula como:\n\\[\nP(A) = \\frac{\\text{Número de casos favorables}}{\\text{Número total de casos posibles}}\n\\]\nEjemplo: Para una moneda justa, la probabilidad de obtener cara es: \\[\nP(\\text{Cara}) = \\frac{1}{2} = 0.5\n\\] Aplicación: La probabilidad se utiliza en teoría de la probabilidad y estadística para predecir la ocurrencia de eventos en base a modelos matemáticos y supuestos teóricos.\n\n\nComparación\n\n\n\n\n\n\n\n\nCaracterística\nFrecuencia Relativa\nProbabilidad\n\n\n\n\nDefinición\nProporción de veces que ocurre un evento en un número de ensayos\nMedida teórica de la probabilidad de que ocurra un evento\n\n\nCálculo\n\\(\\frac{\\text{Número de veces que ocurre el evento}}{\\text{Número total de ensayos}}\\)\n\\(\\frac{\\text{Número de casos favorables}}{\\text{Número total de casos posibles}}\\)\n\n\nBasado en\nDatos experimentales u observacionales\nModelos matemáticos y supuestos teóricos\n\n\nEjemplo\nFrecuencia relativa de obtener cara en 100 lanzamientos de moneda es \\(0.52\\)\nProbabilidad de obtener cara en una moneda justa es \\(0.5\\)\n\n\nAplicación\nEstimación empírica de probabilidades\nPredicción de eventos basados en modelos teóricos\n\n\n\nEn resumen, la frecuencia relativa se basa en datos observados y se utiliza para estimar probabilidades empíricas, mientras que la probabilidad es una medida teórica basada en modelos matemáticos. Ambas son herramientas útiles en el análisis de datos y la toma de decisiones informadas.",
+    "objectID": "070-relacion-xy.html#correlación",
+    "href": "070-relacion-xy.html#correlación",
+    "title": "7  La relación entre las variables",
+    "section": "7.2 Correlación",
+    "text": "7.2 Correlación\n\nCorrelación y causalidad\nAnscombe",
     "crumbs": [
       "Técnicas básicas",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Probabilidad y distribuciones de probabilidad</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>La relación entre las variables</span>"
     ]
   },
   {
-    "objectID": "070-distr-prob.html#distribuciones-de-probabilidad",
-    "href": "070-distr-prob.html#distribuciones-de-probabilidad",
-    "title": "7  Probabilidad y distribuciones de probabilidad",
-    "section": "7.2 Distribuciones de probabilidad",
-    "text": "7.2 Distribuciones de probabilidad\n\nDistribución normal\ndirtib de frecuencia y distr normal: área bajo la curva\nHow to predict record-shattering weather events | The Economist\n\n\n\nmedia-y-varianza\n\n\nExplained: Sigma | MIT News | Massachusetts Institute of Technology\n\n\n\nimg\n\n\n\n\nOtras distribuciones\n\n\nGráficos de probabilidad",
+    "objectID": "070-relacion-xy.html#tablas-de-asociación",
+    "href": "070-relacion-xy.html#tablas-de-asociación",
+    "title": "7  La relación entre las variables",
+    "section": "7.3 Tablas de asociación",
+    "text": "7.3 Tablas de asociación",
     "crumbs": [
       "Técnicas básicas",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Probabilidad y distribuciones de probabilidad</span>"
+      "<span class='chapter-number'>7</span>  <span class='chapter-title'>La relación entre las variables</span>"
     ]
   },
   {
-    "objectID": "070-distr-prob.html#fútbol",
-    "href": "070-distr-prob.html#fútbol",
-    "title": "7  Probabilidad y distribuciones de probabilidad",
-    "section": "7.3 Fútbol",
-    "text": "7.3 Fútbol",
-    "crumbs": [
-      "Técnicas básicas",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Probabilidad y distribuciones de probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "070-distr-prob.html#proceso-de-dosificación-de-líquidos",
-    "href": "070-distr-prob.html#proceso-de-dosificación-de-líquidos",
-    "title": "7  Probabilidad y distribuciones de probabilidad",
-    "section": "7.4 Proceso de dosificación de líquidos",
-    "text": "7.4 Proceso de dosificación de líquidos",
-    "crumbs": [
-      "Técnicas básicas",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Probabilidad y distribuciones de probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "070-distr-prob.html#ley-de-contenido-efectivo",
-    "href": "070-distr-prob.html#ley-de-contenido-efectivo",
-    "title": "7  Probabilidad y distribuciones de probabilidad",
-    "section": "7.5 Ley de contenido efectivo",
-    "text": "7.5 Ley de contenido efectivo",
-    "crumbs": [
-      "Técnicas básicas",
-      "<span class='chapter-number'>7</span>  <span class='chapter-title'>Probabilidad y distribuciones de probabilidad</span>"
-    ]
-  },
-  {
-    "objectID": "080-relacion-xy.html",
-    "href": "080-relacion-xy.html",
-    "title": "8  La relación entre las variables",
-    "section": "",
-    "text": "8.1 Diagramas de puntos \\((x,y\\))",
-    "crumbs": [
-      "Técnicas básicas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>La relación entre las variables</span>"
-    ]
-  },
-  {
-    "objectID": "080-relacion-xy.html#correlación",
-    "href": "080-relacion-xy.html#correlación",
-    "title": "8  La relación entre las variables",
-    "section": "8.2 Correlación",
-    "text": "8.2 Correlación\n\nCorrelación y causalidad\nAnscombe",
-    "crumbs": [
-      "Técnicas básicas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>La relación entre las variables</span>"
-    ]
-  },
-  {
-    "objectID": "080-relacion-xy.html#tablas-de-asociación",
-    "href": "080-relacion-xy.html#tablas-de-asociación",
-    "title": "8  La relación entre las variables",
-    "section": "8.3 Tablas de asociación",
-    "text": "8.3 Tablas de asociación",
-    "crumbs": [
-      "Técnicas básicas",
-      "<span class='chapter-number'>8</span>  <span class='chapter-title'>La relación entre las variables</span>"
-    ]
-  },
-  {
-    "objectID": "090-anova.html",
-    "href": "090-anova.html",
-    "title": "9  El análisis de la varianza",
-    "section": "",
-    "text": "9.1 Introducción\nSupongamos que un analista de la OMS ha realizado la medida de la altura de un grupo de niños y niñas niña siguiendo rigurosamente el método establecido, y, por lo tanto, que está razonablemente seguro de su resultado.\nAl cabo de varias jornadas de trabajo, habrá realizado varias medidas, que representarán al conjunto de niños de la población en la que ha estado trabajando. Otros investigadores pueden haber estado trabajando a la vez en otras poblaciones, y al final de sus jornadas de trabajo, quieren comparar sus resultados: ¿Hay alguna de estas poblaciones en las que los niños sean significativamente más altos (o más bajos) que en las otras? ¿Cómo describir la altura de un conjunto de individuos de manera que se puedan hacer comparaciones con otros conjuntos?\nPara responder a estas preguntas, vamos a cambiar el entorno de trabajo a un grupo de niños imaginario, que vamos a llamar aula1: son nuestros compañeros y compañeras, a los cuales realizaremos una medida de altura siguiendo el procedimiento especificado en nuestro método. ## Análisis de la varianza de un factor",
-    "crumbs": [
-      "Técnicas básicas",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>El análisis de la varianza</span>"
-    ]
-  },
-  {
-    "objectID": "090-anova.html#análisis-de-la-varianza-de-dos-factores",
-    "href": "090-anova.html#análisis-de-la-varianza-de-dos-factores",
-    "title": "9  El análisis de la varianza",
-    "section": "9.2 Análisis de la varianza de dos factores",
-    "text": "9.2 Análisis de la varianza de dos factores",
-    "crumbs": [
-      "Técnicas básicas",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>El análisis de la varianza</span>"
-    ]
-  },
-  {
-    "objectID": "090-anova.html#section",
-    "href": "090-anova.html#section",
-    "title": "9  El análisis de la varianza",
-    "section": "9.3 ",
-    "text": "9.3",
-    "crumbs": [
-      "Técnicas básicas",
-      "<span class='chapter-number'>9</span>  <span class='chapter-title'>El análisis de la varianza</span>"
-    ]
-  },
-  {
-    "objectID": "100-disexp.html",
-    "href": "100-disexp.html",
-    "title": "10  Diseño de experimentos",
-    "section": "",
-    "text": "10.1 Experimentos factoriales\n¿La aspirina reduce el riesgo de infarto? ¿Una marca de abono es más eficaz para el cultivo de rosas que otra? ¿El cansancio es tan peligroso para un conductor como la influencia del alcohol? Este tipo de preguntas se responden con experimentos aleatorios.\nEl propósito de un experimento es investigar la relación entre dos o más variables. Cuando una variable provoca un cambio en otra, llamamos a la primera variable la variable independiente o explicativa. La variable afectada se llama variable dependiente o variable de respuesta: estímulo, respuesta. En un experimento aleatorio, el investigador manipula los valores de la variable explicativa y mide los cambios resultantes en la variable de respuesta. Los diferentes valores de la variable explicativa se denominan tratamientos. Una unidad experimental es un único objeto o persona que se va a medir.\nSupongamos que usted quiere investigar la eficacia de la vitamina E en la prevención de enfermedades. Usted recluta a un grupo de sujetos y les pregunta si toman regularmente vitamina E. Observa que los sujetos que toman vitamina E, en promedio, presentan una salud mejor que quienes no la toman. ¿Esto prueba que la vitamina E es eficaz en la prevención de enfermedades? No es así. Hay muchas diferencias entre los dos grupos comparados, además del consumo de vitamina E. Las personas que toman vitamina E con regularidad suelen tomar otras medidas para mejorar su salud: ejercicio, dieta, otros suplementos vitamínicos, elección de no fumar, etc. Cualquiera de estos factores podría estar influyendo en la salud. Como se ha descrito, este estudio no demuestra que la vitamina E sea la clave para la prevención de enfermedades.\nLas variables adicionales que pueden enturbiar un estudio se denominan variables ocultas. Para demostrar que la variable explicativa provoca un cambio en la variable de respuesta, es necesario aislar la variable explicativa. La investigadora debe diseñar su experimento de forma que solo haya una diferencia entre los grupos que se comparan: los tratamientos previstos. Esto se consigue mediante la asignación aleatoria de unidades experimentales a grupos de tratamiento. Cuando los sujetos se asignan a los tratamientos de forma aleatoria, todas las variables ocultas potenciales se reparten por igual entre los grupos. En este punto, la única diferencia entre los grupos es la impuesta por el investigador. Los diferentes resultados medidos en la variable de respuesta, por tanto, deben ser una consecuencia directa de los diferentes tratamientos. De este modo, un experimento puede demostrar una conexión causa-efecto entre las variables explicativas y las de respuesta.\nEl poder de la sugestión puede tener una importante influencia en el resultado de un experimento. Los estudios han demostrado que la expectativa del participante en el estudio puede ser tan importante como el medicamento real. En un estudio sobre fármacos que mejoran el desempeño, los investigadores señalaron:\nCuando la participación en un estudio provoca una respuesta física del participante, es difícil aislar los efectos de la variable explicativa. Para contrarrestar el poder de la sugestión, los investigadores reservaron un grupo de tratamiento como grupo de control . Este grupo recibe un tratamiento placebo, es decir, un tratamiento que no puede influir en la variable de respuesta. El grupo de control ayuda a los investigadores a equilibrar los efectos de estar en un experimento con los efectos de los tratamientos activos. Por supuesto, si usted participa en un estudio y sabe que está recibiendo una píldora que no contiene ningún medicamento real, entonces el poder de la sugestión ya no es un factor. Que un experimento aleatorio sea ciego preserva el poder de la sugestión. Cuando una persona participa en un estudio de investigación ciego, no sabe quién recibe el tratamiento activo y quién el placebo. Un experimento doble ciego es aquel en el que tanto los sujetos como los investigadores que participan en él no conocen la información del fármaco.\nNo un factyor de cada vez - explciar interaccion",
-    "crumbs": [
-      "Técnicas básicas",
-      "<span class='chapter-number'>10</span>  <span class='chapter-title'>Diseño de experimentos</span>"
-    ]
-  },
-  {
-    "objectID": "110-comunicacion.html",
-    "href": "110-comunicacion.html",
-    "title": "11  La comunicación de los resultados",
+    "objectID": "080-comunicacion.html",
+    "href": "080-comunicacion.html",
+    "title": "8  La comunicación de los resultados",
     "section": "",
     "text": "quarto markdown PowerPoint Gráficos",
     "crumbs": [
       "Técnicas básicas",
-      "<span class='chapter-number'>11</span>  <span class='chapter-title'>La comunicación de los resultados</span>"
+      "<span class='chapter-number'>8</span>  <span class='chapter-title'>La comunicación de los resultados</span>"
+    ]
+  },
+  {
+    "objectID": "090-distr-prob.html",
+    "href": "090-distr-prob.html",
+    "title": "9  Probabilidad y distribuciones de probabilidad",
+    "section": "",
+    "text": "¿Qué es la Probabilidad?\nLa probabilidad es una rama de las matemáticas que se ocupa del estudio de los fenómenos aleatorios y la incertidumbre. Nos ayuda a medir la posibilidad de que ocurran ciertos eventos y a tomar decisiones informadas en situaciones de incertidumbre.",
+    "crumbs": [
+      "Conceptos avanzados",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Probabilidad y distribuciones de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "090-distr-prob.html#frecuencia-relativa-y-probabilidad",
+    "href": "090-distr-prob.html#frecuencia-relativa-y-probabilidad",
+    "title": "9  Probabilidad y distribuciones de probabilidad",
+    "section": "9.1 Frecuencia relativa y probabilidad",
+    "text": "9.1 Frecuencia relativa y probabilidad\n\nFrecuencia Relativa\nDefinición: La frecuencia relativa se refiere a la proporción de veces que ocurre un evento en relación con el número total de ensayos o experimentos realizados.\nCálculo: La frecuencia relativa se calcula como: \\[\n\\text{Frecuencia Relativa} = \\frac{\\text{Número de veces que ocurre el evento}}{\\text{Número total de ensayos}}\n\\]\nEjemplo: Si lanzas una moneda 100 veces y obtienes 52 caras, la frecuencia relativa de obtener cara es: \\[\n\\text{Frecuencia Relativa} = \\frac{52}{100} = 0.52\n\\]\nAplicación: La frecuencia relativa se utiliza principalmente en el análisis de datos experimentales y observacionales para estimar la probabilidad empírica de eventos basándose en la evidencia observada.\n\n\nProbabilidad\nDefinición La probabilidad es una medida teórica de la probabilidad de que ocurra un evento, basada en un modelo matemático o un conjunto de supuestos.\nCálculo La probabilidad de un evento \\(A\\), denotada como \\(P(A)\\), se calcula como:\n\\[\nP(A) = \\frac{\\text{Número de casos favorables}}{\\text{Número total de casos posibles}}\n\\]\nEjemplo: Para una moneda justa, la probabilidad de obtener cara es: \\[\nP(\\text{Cara}) = \\frac{1}{2} = 0.5\n\\] Aplicación: La probabilidad se utiliza en teoría de la probabilidad y estadística para predecir la ocurrencia de eventos en base a modelos matemáticos y supuestos teóricos.\n\n\nComparación\n\n\n\n\n\n\n\n\nCaracterística\nFrecuencia Relativa\nProbabilidad\n\n\n\n\nDefinición\nProporción de veces que ocurre un evento en un número de ensayos\nMedida teórica de la probabilidad de que ocurra un evento\n\n\nCálculo\n\\(\\frac{\\text{Número de veces que ocurre el evento}}{\\text{Número total de ensayos}}\\)\n\\(\\frac{\\text{Número de casos favorables}}{\\text{Número total de casos posibles}}\\)\n\n\nBasado en\nDatos experimentales u observacionales\nModelos matemáticos y supuestos teóricos\n\n\nEjemplo\nFrecuencia relativa de obtener cara en 100 lanzamientos de moneda es \\(0.52\\)\nProbabilidad de obtener cara en una moneda justa es \\(0.5\\)\n\n\nAplicación\nEstimación empírica de probabilidades\nPredicción de eventos basados en modelos teóricos\n\n\n\nEn resumen, la frecuencia relativa se basa en datos observados y se utiliza para estimar probabilidades empíricas, mientras que la probabilidad es una medida teórica basada en modelos matemáticos. Ambas son herramientas útiles en el análisis de datos y la toma de decisiones informadas.",
+    "crumbs": [
+      "Conceptos avanzados",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Probabilidad y distribuciones de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "090-distr-prob.html#distribuciones-de-probabilidad",
+    "href": "090-distr-prob.html#distribuciones-de-probabilidad",
+    "title": "9  Probabilidad y distribuciones de probabilidad",
+    "section": "9.2 Distribuciones de probabilidad",
+    "text": "9.2 Distribuciones de probabilidad\n\nDistribución normal\ndirtib de frecuencia y distr normal: área bajo la curva\nHow to predict record-shattering weather events | The Economist\n\n\n\nmedia-y-varianza\n\n\nExplained: Sigma | MIT News | Massachusetts Institute of Technology\n\n\n\nimg\n\n\n\n\nOtras distribuciones\n\n\nGráficos de probabilidad",
+    "crumbs": [
+      "Conceptos avanzados",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Probabilidad y distribuciones de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "090-distr-prob.html#fútbol",
+    "href": "090-distr-prob.html#fútbol",
+    "title": "9  Probabilidad y distribuciones de probabilidad",
+    "section": "9.3 Fútbol",
+    "text": "9.3 Fútbol",
+    "crumbs": [
+      "Conceptos avanzados",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Probabilidad y distribuciones de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "090-distr-prob.html#proceso-de-dosificación-de-líquidos",
+    "href": "090-distr-prob.html#proceso-de-dosificación-de-líquidos",
+    "title": "9  Probabilidad y distribuciones de probabilidad",
+    "section": "9.4 Proceso de dosificación de líquidos",
+    "text": "9.4 Proceso de dosificación de líquidos",
+    "crumbs": [
+      "Conceptos avanzados",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Probabilidad y distribuciones de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "090-distr-prob.html#ley-de-contenido-efectivo",
+    "href": "090-distr-prob.html#ley-de-contenido-efectivo",
+    "title": "9  Probabilidad y distribuciones de probabilidad",
+    "section": "9.5 Ley de contenido efectivo",
+    "text": "9.5 Ley de contenido efectivo",
+    "crumbs": [
+      "Conceptos avanzados",
+      "<span class='chapter-number'>9</span>  <span class='chapter-title'>Probabilidad y distribuciones de probabilidad</span>"
+    ]
+  },
+  {
+    "objectID": "100-anova.html",
+    "href": "100-anova.html",
+    "title": "10  El análisis de la varianza",
+    "section": "",
+    "text": "10.1 Introducción\nSupongamos que un analista de la OMS ha realizado la medida de la altura de un grupo de niños y niñas niña siguiendo rigurosamente el método establecido, y, por lo tanto, que está razonablemente seguro de su resultado.\nAl cabo de varias jornadas de trabajo, habrá realizado varias medidas, que representarán al conjunto de niños de la población en la que ha estado trabajando. Otros investigadores pueden haber estado trabajando a la vez en otras poblaciones, y al final de sus jornadas de trabajo, quieren comparar sus resultados: ¿Hay alguna de estas poblaciones en las que los niños sean significativamente más altos (o más bajos) que en las otras? ¿Cómo describir la altura de un conjunto de individuos de manera que se puedan hacer comparaciones con otros conjuntos?\nPara responder a estas preguntas, vamos a cambiar el entorno de trabajo a un grupo de niños imaginario, que vamos a llamar aula1: son nuestros compañeros y compañeras, a los cuales realizaremos una medida de altura siguiendo el procedimiento especificado en nuestro método. ## Análisis de la varianza de un factor",
+    "crumbs": [
+      "Conceptos avanzados",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>El análisis de la varianza</span>"
+    ]
+  },
+  {
+    "objectID": "100-anova.html#análisis-de-la-varianza-de-dos-factores",
+    "href": "100-anova.html#análisis-de-la-varianza-de-dos-factores",
+    "title": "10  El análisis de la varianza",
+    "section": "10.2 Análisis de la varianza de dos factores",
+    "text": "10.2 Análisis de la varianza de dos factores",
+    "crumbs": [
+      "Conceptos avanzados",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>El análisis de la varianza</span>"
+    ]
+  },
+  {
+    "objectID": "100-anova.html#section",
+    "href": "100-anova.html#section",
+    "title": "10  El análisis de la varianza",
+    "section": "10.3 ",
+    "text": "10.3",
+    "crumbs": [
+      "Conceptos avanzados",
+      "<span class='chapter-number'>10</span>  <span class='chapter-title'>El análisis de la varianza</span>"
+    ]
+  },
+  {
+    "objectID": "110-disexp.html",
+    "href": "110-disexp.html",
+    "title": "11  Diseño de experimentos",
+    "section": "",
+    "text": "11.1 Experimentos factoriales\n¿La aspirina reduce el riesgo de infarto? ¿Una marca de abono es más eficaz para el cultivo de rosas que otra? ¿El cansancio es tan peligroso para un conductor como la influencia del alcohol? Este tipo de preguntas se responden con experimentos aleatorios.\nEl propósito de un experimento es investigar la relación entre dos o más variables. Cuando una variable provoca un cambio en otra, llamamos a la primera variable la variable independiente o explicativa. La variable afectada se llama variable dependiente o variable de respuesta: estímulo, respuesta. En un experimento aleatorio, el investigador manipula los valores de la variable explicativa y mide los cambios resultantes en la variable de respuesta. Los diferentes valores de la variable explicativa se denominan tratamientos. Una unidad experimental es un único objeto o persona que se va a medir.\nSupongamos que usted quiere investigar la eficacia de la vitamina E en la prevención de enfermedades. Usted recluta a un grupo de sujetos y les pregunta si toman regularmente vitamina E. Observa que los sujetos que toman vitamina E, en promedio, presentan una salud mejor que quienes no la toman. ¿Esto prueba que la vitamina E es eficaz en la prevención de enfermedades? No es así. Hay muchas diferencias entre los dos grupos comparados, además del consumo de vitamina E. Las personas que toman vitamina E con regularidad suelen tomar otras medidas para mejorar su salud: ejercicio, dieta, otros suplementos vitamínicos, elección de no fumar, etc. Cualquiera de estos factores podría estar influyendo en la salud. Como se ha descrito, este estudio no demuestra que la vitamina E sea la clave para la prevención de enfermedades.\nLas variables adicionales que pueden enturbiar un estudio se denominan variables ocultas. Para demostrar que la variable explicativa provoca un cambio en la variable de respuesta, es necesario aislar la variable explicativa. La investigadora debe diseñar su experimento de forma que solo haya una diferencia entre los grupos que se comparan: los tratamientos previstos. Esto se consigue mediante la asignación aleatoria de unidades experimentales a grupos de tratamiento. Cuando los sujetos se asignan a los tratamientos de forma aleatoria, todas las variables ocultas potenciales se reparten por igual entre los grupos. En este punto, la única diferencia entre los grupos es la impuesta por el investigador. Los diferentes resultados medidos en la variable de respuesta, por tanto, deben ser una consecuencia directa de los diferentes tratamientos. De este modo, un experimento puede demostrar una conexión causa-efecto entre las variables explicativas y las de respuesta.\nEl poder de la sugestión puede tener una importante influencia en el resultado de un experimento. Los estudios han demostrado que la expectativa del participante en el estudio puede ser tan importante como el medicamento real. En un estudio sobre fármacos que mejoran el desempeño, los investigadores señalaron:\nCuando la participación en un estudio provoca una respuesta física del participante, es difícil aislar los efectos de la variable explicativa. Para contrarrestar el poder de la sugestión, los investigadores reservaron un grupo de tratamiento como grupo de control . Este grupo recibe un tratamiento placebo, es decir, un tratamiento que no puede influir en la variable de respuesta. El grupo de control ayuda a los investigadores a equilibrar los efectos de estar en un experimento con los efectos de los tratamientos activos. Por supuesto, si usted participa en un estudio y sabe que está recibiendo una píldora que no contiene ningún medicamento real, entonces el poder de la sugestión ya no es un factor. Que un experimento aleatorio sea ciego preserva el poder de la sugestión. Cuando una persona participa en un estudio de investigación ciego, no sabe quién recibe el tratamiento activo y quién el placebo. Un experimento doble ciego es aquel en el que tanto los sujetos como los investigadores que participan en él no conocen la información del fármaco.\nNo un factyor de cada vez - explciar interaccion",
+    "crumbs": [
+      "Conceptos avanzados",
+      "<span class='chapter-number'>11</span>  <span class='chapter-title'>Diseño de experimentos</span>"
     ]
   },
   {

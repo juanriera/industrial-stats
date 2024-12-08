@@ -18,11 +18,13 @@ book:
         - 040-exploracion.qmd
         - 050-estad-simple.qmd
         - 060-forma-de-los-datos.qmd
-        - 070-distr-prob.qmd
-        - 080-relacion-xy.qmd
-        - 090-anova.qmd
-        - 100-disexp.qmd
-        - 110-comunicacion.qmd
+        - 070-relacion-xy.qmd
+        - 080-comunicacion.qmd
+    - part: "Conceptos avanzados"
+      chapters:
+        - 090-distr-prob.qmd
+        - 100-anova.qmd
+        - 110-disexp.qmd
     - part: "Aplicaciones prácticas"
       chapters:
         - 120-control-proc.qmd
