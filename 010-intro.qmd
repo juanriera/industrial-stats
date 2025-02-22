@@ -8,7 +8,7 @@ lang: es
 
 ## Introducción
 
-¿Alguna vez te has preguntado cómo podemos resolver problemas en el trabajo de forma ordenada? La estadística y el método científico nos ayudan a hacerlo, y son más sencillos de lo que parece.
+¿Alguna vez te has preguntado cómo podemos resolver problemas en el trabajo de forma sistemática y ordenada? La estadística y el método científico nos ayudan a hacerlo, y son más sencillos de lo que parece.
 
 El método científico es como una receta que seguimos para resolver problemas: primero observamos qué está pasando, luego pensamos qué puede estar causando el problema, después hacemos pruebas para comprobarlo, y finalmente sacamos conclusiones y tomamos acciones orientadas a eliminar el problema o conseguir una mejora, aunque sea parcial, y repetimos el ciclo. La estadística nos ayuda a entender si nuestras pruebas funcionaron o no, usando números y datos reales.
 
