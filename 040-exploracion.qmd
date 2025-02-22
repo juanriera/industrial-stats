@@ -689,16 +689,19 @@ df_camembert |>
    theme_minimal()
 ```
 
-Modificando el criterio de la amplitud de clase para agrupar de dos en dos en vez de uno, podemos cambiar la tabla, igual que hemos hecho en Excel.
+Modificando el criterio de la amplitud de clase podemos cambiar la tabla, igual que hemos hecho en Excel. Por ejemplo, cambiamos la opcion de agrupación en `mutate`indicando que los intervalos sean de amplitud 2 en vez de 1: `breaks = seq(40, 54, by =2)`. 
 
 ```{r message=FALSE, warning=FALSE, fig.align='center', out.width='75%'}
 library (tidyverse)
 df_camembert <- read.csv2("excel-R/camembert.csv",fileEncoding='latin1')
 df_camembert |>
+#--------------------------------------------------------------------------------------
   mutate (intervalo = cut(est, breaks = seq(40, 54, by =2), include_lowest = TRUE)) |>
+#--------------------------------------------------------------------------------------
   group_by(intervalo) |>
   summarise (frec_abs = n()) |>
   mutate(frec_rel = frec_abs / sum(frec_abs)) |>
+  print() |>
   ggplot(aes(x = intervalo, y = frec_abs)) +
    geom_bar(stat = "identity", fill = "lightblue", alpha = 0.7, color = "black") +
    labs(title = "Diagrama de Barras de Frecuencia absoluta",
@@ -1560,3 +1563,6 @@ Los gráficos de series temporales son cruciales en diversas áreas:
    - Análisis de ventas, demanda de productos y desempeño empresarial a lo largo del tiempo.
 
 Los gráficos de series temporales proporcionan una visión clara y concisa de cómo cambian los datos a lo largo del tiempo. Esta visualización es fundamental para el análisis predictivo, la toma de decisiones y la identificación de patrones y anomalías en los datos. 
+
+
+https://tidyplots.org/
