@@ -123,10 +123,39 @@ div.csl-indent {
   }
 }</script>
 
+  <script src="https://cdnjs.cloudflare.com/polyfill/v3/polyfill.min.js?features=es6"></script>
+  <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-chtml-full.js" type="text/javascript"></script>
+
+<script type="text/javascript">
+const typesetMath = (el) => {
+  if (window.MathJax) {
+    // MathJax Typeset
+    window.MathJax.typeset([el]);
+  } else if (window.katex) {
+    // KaTeX Render
+    var mathElements = el.getElementsByClassName("math");
+    var macros = [];
+    for (var i = 0; i < mathElements.length; i++) {
+      var texText = mathElements[i].firstChild;
+      if (mathElements[i].tagName == "SPAN") {
+        window.katex.render(texText.data, mathElements[i], {
+          displayMode: mathElements[i].classList.contains('display'),
+          throwOnError: false,
+          macros: macros,
+          fleqn: false
+        });
+      }
+    }
+  }
+}
+window.Quarto = {
+  typesetMath
+};
+</script>
 
 </head>
 
-<body class="nav-sidebar floating">
+<body class="nav-sidebar floating slimcontent">
 
 <div id="quarto-search-results"></div>
   <header id="quarto-header" class="headroom fixed-top">
@@ -327,7 +356,16 @@ div.csl-indent {
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#etapas-en-un-flujo-de-trabajo-estructurado." id="toc-etapas-en-un-flujo-de-trabajo-estructurado." class="nav-link active" data-scroll-target="#etapas-en-un-flujo-de-trabajo-estructurado."><span class="header-section-number">3.1</span> Etapas en un flujo de trabajo estructurado.</a>
+  <li><a href="#algunas-definiciones-importantes" id="toc-algunas-definiciones-importantes" class="nav-link active" data-scroll-target="#algunas-definiciones-importantes"><span class="header-section-number">3.1</span> Algunas definiciones importantes</a>
+  <ul class="collapse">
+  <li><a href="#población-y-muestra" id="toc-población-y-muestra" class="nav-link" data-scroll-target="#población-y-muestra">Población y muestra</a></li>
+  <li><a href="#parámetro-y-estadístico" id="toc-parámetro-y-estadístico" class="nav-link" data-scroll-target="#parámetro-y-estadístico">Parámetro y estadístico</a></li>
+  <li><a href="#variables-y-casos" id="toc-variables-y-casos" class="nav-link" data-scroll-target="#variables-y-casos">Variables y casos</a></li>
+  <li><a href="#tipos-de-variables" id="toc-tipos-de-variables" class="nav-link" data-scroll-target="#tipos-de-variables">Tipos de variables</a></li>
+  <li><a href="#reglas-básicas-para-establecer-los-nombres-de-las-variables." id="toc-reglas-básicas-para-establecer-los-nombres-de-las-variables." class="nav-link" data-scroll-target="#reglas-básicas-para-establecer-los-nombres-de-las-variables.">Reglas básicas para establecer los nombres de las variables.</a></li>
+  </ul></li>
+  <li><a href="#el-flujo-de-trabajo" id="toc-el-flujo-de-trabajo" class="nav-link" data-scroll-target="#el-flujo-de-trabajo"><span class="header-section-number">3.2</span> El flujo de trabajo</a></li>
+  <li><a href="#etapas-en-un-flujo-de-trabajo-estructurado." id="toc-etapas-en-un-flujo-de-trabajo-estructurado." class="nav-link" data-scroll-target="#etapas-en-un-flujo-de-trabajo-estructurado."><span class="header-section-number">3.3</span> Etapas en un flujo de trabajo estructurado.</a>
   <ul class="collapse">
   <li><a href="#recolección-de-datos" id="toc-recolección-de-datos" class="nav-link" data-scroll-target="#recolección-de-datos">Recolección de datos</a></li>
   <li><a href="#inspección-de-los-datos" id="toc-inspección-de-los-datos" class="nav-link" data-scroll-target="#inspección-de-los-datos">Inspección de los datos</a></li>
@@ -337,21 +375,21 @@ div.csl-indent {
   <li><a href="#modelado-de-datos" id="toc-modelado-de-datos" class="nav-link" data-scroll-target="#modelado-de-datos">Modelado de datos</a></li>
   <li><a href="#comunicación-de-resultados" id="toc-comunicación-de-resultados" class="nav-link" data-scroll-target="#comunicación-de-resultados">Comunicación de resultados</a></li>
   </ul></li>
-  <li><a href="#razones-para-seguir-un-flujo-de-trabajo" id="toc-razones-para-seguir-un-flujo-de-trabajo" class="nav-link" data-scroll-target="#razones-para-seguir-un-flujo-de-trabajo"><span class="header-section-number">3.2</span> Razones para seguir un flujo de trabajo</a></li>
-  <li><a href="#problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" id="toc-problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" class="nav-link" data-scroll-target="#problemas-de-no-seguir-un-flujo-de-trabajo-estructurado"><span class="header-section-number">3.3</span> Problemas de no seguir un flujo de trabajo estructurado</a></li>
-  <li><a href="#un-ejemplo-revisando-los-datos-existentes." id="toc-un-ejemplo-revisando-los-datos-existentes." class="nav-link" data-scroll-target="#un-ejemplo-revisando-los-datos-existentes."><span class="header-section-number">3.4</span> Un ejemplo: revisando los datos existentes.</a></li>
-  <li><a href="#los-datos-ordenados-o-arreglados-tidy-data" id="toc-los-datos-ordenados-o-arreglados-tidy-data" class="nav-link" data-scroll-target="#los-datos-ordenados-o-arreglados-tidy-data"><span class="header-section-number">3.5</span> Los datos ordenados o arreglados (<em>tidy data</em>)</a></li>
-  <li><a href="#qué-es-un-fichero-plano-y-un-fichero-csv" id="toc-qué-es-un-fichero-plano-y-un-fichero-csv" class="nav-link" data-scroll-target="#qué-es-un-fichero-plano-y-un-fichero-csv"><span class="header-section-number">3.6</span> Qué es un fichero plano y un fichero CSV</a>
+  <li><a href="#razones-para-seguir-un-flujo-de-trabajo" id="toc-razones-para-seguir-un-flujo-de-trabajo" class="nav-link" data-scroll-target="#razones-para-seguir-un-flujo-de-trabajo"><span class="header-section-number">3.4</span> Razones para seguir un flujo de trabajo</a></li>
+  <li><a href="#problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" id="toc-problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" class="nav-link" data-scroll-target="#problemas-de-no-seguir-un-flujo-de-trabajo-estructurado"><span class="header-section-number">3.5</span> Problemas de no seguir un flujo de trabajo estructurado</a></li>
+  <li><a href="#un-ejemplo-revisando-los-datos-existentes." id="toc-un-ejemplo-revisando-los-datos-existentes." class="nav-link" data-scroll-target="#un-ejemplo-revisando-los-datos-existentes."><span class="header-section-number">3.6</span> Un ejemplo: revisando los datos existentes.</a></li>
+  <li><a href="#los-datos-ordenados-o-arreglados-tidy-data" id="toc-los-datos-ordenados-o-arreglados-tidy-data" class="nav-link" data-scroll-target="#los-datos-ordenados-o-arreglados-tidy-data"><span class="header-section-number">3.7</span> Los datos ordenados o arreglados (<em>tidy data</em>)</a></li>
+  <li><a href="#qué-es-un-fichero-plano-y-un-fichero-csv" id="toc-qué-es-un-fichero-plano-y-un-fichero-csv" class="nav-link" data-scroll-target="#qué-es-un-fichero-plano-y-un-fichero-csv"><span class="header-section-number">3.8</span> Qué es un fichero plano y un fichero CSV</a>
   <ul class="collapse">
   <li><a href="#cómo-exportar-un-fichero-csv-desde-excel-a-r" id="toc-cómo-exportar-un-fichero-csv-desde-excel-a-r" class="nav-link" data-scroll-target="#cómo-exportar-un-fichero-csv-desde-excel-a-r">Cómo exportar un fichero CSV desde Excel a R</a></li>
   </ul></li>
-  <li><a href="#uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos" id="toc-uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos" class="nav-link" data-scroll-target="#uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos"><span class="header-section-number">3.7</span> Uso de los filtros de Excel para revisar y editar los datos</a></li>
-  <li><a href="#para-resolver" id="toc-para-resolver" class="nav-link" data-scroll-target="#para-resolver"><span class="header-section-number">3.8</span> Para resolver</a></li>
+  <li><a href="#uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos" id="toc-uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos" class="nav-link" data-scroll-target="#uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos"><span class="header-section-number">3.9</span> Uso de los filtros de Excel para revisar y editar los datos</a></li>
+  <li><a href="#para-resolver-1" id="toc-para-resolver-1" class="nav-link" data-scroll-target="#para-resolver-1"><span class="header-section-number">3.10</span> Para resolver</a></li>
   </ul>
 </nav>
     </div>
 <!-- main -->
-<main class="content" id="quarto-document-content">
+<main class="content page-columns page-full" id="quarto-document-content">
 
 <header id="title-block-header" class="quarto-title-block default"><nav class="quarto-page-breadcrumbs quarto-title-breadcrumbs d-none d-lg-block" aria-label="breadcrumb"><ol class="breadcrumb"><li class="breadcrumb-item"><a href="./030-organizacion.html">Técnicas básicas</a></li><li class="breadcrumb-item"><a href="./030-organizacion.html"><span class="chapter-number">3</span>&nbsp; <span class="chapter-title">La organización de los datos y el flujo de trabajo.Los datos ordenados o <em>arreglados</em> (<em>tidy data</em>)</span></a></li></ol></nav>
 <div class="quarto-title">
@@ -372,13 +410,217 @@ div.csl-indent {
 </header>
 
 
+<section id="algunas-definiciones-importantes" class="level2 page-columns page-full" data-number="3.1">
+<h2 data-number="3.1" class="anchored" data-anchor-id="algunas-definiciones-importantes"><span class="header-section-number">3.1</span> Algunas definiciones importantes</h2>
+<section id="población-y-muestra" class="level3">
+<h3 class="anchored" data-anchor-id="población-y-muestra">Población y muestra</h3>
+<p>Una <strong>población</strong> es un conjunto de de personas, cosas o, en general, objetos en estudio. A veces, una población es demasiado grande para que podamos abarcarla completa; para poder estudiarla, obtenemos una <strong>muestra</strong>, que consiste en un subconjunto de la población que hemos seleccionado para su estudio. El proceso de obtener una muestra se llama <strong>muestreo</strong>, y se realiza de acuerdo con normas y procedimientos específicos.</p>
+<p>En muchas ocasiones, cuando se recogen los datos como resultado de una experimentación, definimos la población como <em>todos los resultados que podríamos haber obtenido</em>. Llamamos a este conjunto de posibles resultados una <strong>población conceptual</strong>. Por ejemplo, cuando medimos el <span class="math inline">\(pH\)</span> de varias muestras de leche, la población es el conjunto de todos los resultados posibles que podríamos haber tenido. Muchos problemas de ingeniería y tecnología se refieren a poblaciones conceptuales.</p>
+<div class="content-visible callout callout-style-default callout-important callout-titled" data-when-format="html">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Recuerda
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>En la mayoría de las ocasiones, nuestros datos provienen de una <strong>muestra</strong> obtenida de una <strong>población</strong>,</p>
+</div>
+</div>
+<p>Cuando tomamos una muestra, debemos estar seguros de que contiene las propiedades que queremos estudiar en la población. En ese caso, decimos que la muestra es <strong>representativa</strong>: los individuos de la muestra son representativos de la población. Para que la muestra sea representativa, debe ser obtenida mediante un <strong>muestreo aleatorio</strong>. Una <strong>muestra aleatoria simple</strong> de tamaño <span class="math inline">\(n\)</span> consiste en <span class="math inline">\(n\)</span> individuos de una población, elegidos de forma que cada conjunto posible de <span class="math inline">\(n\)</span> individuos tiene la misma <strong>probabilidad</strong> de ser elegido.</p>
+<div class="content-visible callout callout-style-default callout-important callout-titled" data-when-format="html">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+¿Qué es la probabilidad?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>El concepto de probabilidad se explica en el capítulo 6</p>
+</div>
+</div>
+</section>
+<section id="parámetro-y-estadístico" class="level3">
+<h3 class="anchored" data-anchor-id="parámetro-y-estadístico">Parámetro y estadístico</h3>
+<p>Un <strong>parámetro</strong> es una característica de una población. Podemos estimar su valor mediante la extracción de una <strong>muestra</strong>, que utilizaremos para calcular un <strong>estadístico muestral</strong>. Llamamos <strong>estadístico</strong> a un número que representa una propiedad o característica de la muestra, y constituye una estimación del valor de un parámetro de la población que estamos estudiando.</p>
+</section>
+<section id="variables-y-casos" class="level3">
+<h3 class="anchored" data-anchor-id="variables-y-casos">Variables y casos</h3>
+<p>A los objetos descritos en un conjunto de datos los llamamos <strong>casos</strong>, de forma genérica. A veces, estos casos pueden corresponder a personas; en ese caso podemos llamarlos <strong>individuos</strong>. Cuando los objetos que estudiamos no son personas, como es lo habitual en el entorno industrial, utilizamos la nomenclatura genérica.</p>
+<p>Un <strong>atributo</strong> es una característica que define una propiedad de un objeto, persona o cosa. Por ejemplo, edad, peso, altura, sexo, color de ojos, son atributos de una persona. Llamamos <strong>variable</strong> a una característica cualquiera de un individuo que puede ser medida. Una variable puede tomar diferentes valores en diferentes individuos o casos.</p>
+<p>Según estas definiciones que acabamos de ver, una muestra está formada por un conjunto de casos, y cada caso contiene un determinado número de variables, que contienen los valores que hemos analizado o medido.</p>
+<div class="content-visible callout callout-style-default callout-note no-icon callout-titled" data-when-format="html">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Ejemplo 1: Muestreando una cámara de maduración de queso
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>Imagínate que tienes que analizar el extracto seco de una producción de queso que está en fase de maduración en una cámara. Como la cámara está muy llena, es difícil acceder al interior, y decides coger tu muestra de los quesos que están más a tu alcance, justo al lado de la puerta y a la altura de la vista.¿Crees que es una buena idea? ¿Podrías definir la población en este caso?.</p>
+</div>
+</div>
+<div class="content-visible callout callout-style-default callout-tip no-icon callout-titled" data-when-format="html">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-4-contents" aria-controls="callout-4" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Respuesta al ejemplo 1: Muestreando una cámara de maduración de queso
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-4" class="callout-4-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p>No es una buena idea porque no tenemos garantía de que las condiciones de humedad,temperatura y circulación de aire sean las mismas en toda la cámara. Para asegurar que nuestra muestra es representativa, debemos tomar una <strong>muestra aleatoria</strong> de la población, que en este caso es el total de quesos en la cámara.</p>
+</div>
+</div>
+</div>
+</section>
+<section id="tipos-de-variables" class="level3">
+<h3 class="anchored" data-anchor-id="tipos-de-variables">Tipos de variables</h3>
+<p>Algunas variables, como el color, sirven para clasificar los individuos en categorías. Otras, como la altura o el peso de un individuo, pueden tomar valores numéricos con los que podemos hacer cálculos. Por ejemplo, podemos sumar la altura de varias personas, pero no tiene sentido <em>sumar</em> los colores del arco-iris (aunque sí podemos <em>contarlos</em>, y hacer cálculos con estos recuentos). También podemos <em>categorizar</em> variables continuas: podemos clasificar nuestro grupo de personas en <em>altas</em> o <em>bajas</em>, y podemos contar cuántas personas entran en cada categoría.</p>
+<table class="caption-top table">
+<colgroup>
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+<col style="width: 25%">
+</colgroup>
+<thead>
+<tr class="header">
+<th>Variables cualitativas <br> o categóricas</th>
+<th></th>
+<th>Variables cuantitativas <br> o métricas</th>
+<th></th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td><strong>Nominales</strong></td>
+<td><strong>Ordinales</strong></td>
+<td><strong>Discretas</strong></td>
+<td><strong>Continuas</strong></td>
+</tr>
+<tr class="even">
+<td>Valores en categorías arbitrarias</td>
+<td>Valores en categorías ordenadas</td>
+<td>Valores enteros en escala numérica</td>
+<td>Valores continuos en escala numérica</td>
+</tr>
+<tr class="odd">
+<td>(sin unidades)</td>
+<td>(sin unidades)</td>
+<td>Unidades contadas</td>
+<td>Unidades medidas</td>
+</tr>
+</tbody>
+</table>
+<p>Una <strong>variable categórica</strong> coloca a un individuo en uno o más grupos o categorías</p>
+<p>Una <strong>variable métrica</strong> toma valores numéricos con los que tiene sentido realizar cálculos aritméticos como sumar, restar, etc.</p>
+<p>Las variables categóricas se conocen también como <strong>variables cualitativas</strong> porque indican <em>cualidades</em>.</p>
+<p>Las variables métricas se conocen también como <strong>variables cuantitativas</strong> porque indican <em>cantidades</em>.</p>
+<div class="content-visible callout callout-style-default callout-warning callout-titled" data-when-format="html">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Comentario: ¿Cualitativo quiere decir “que tiene calidad”?
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>A veces se utiliza la palabra <strong>cualitativo</strong> de forma incorrecta para indicar <strong>calidad</strong>, por ejemplo cuando alguien dice: “Este envase es muy <strong>cualitativo</strong>”. Deberíamos decir “Este envase tiene gran calidad”. <strong>Cualitativo</strong> no se deriva de <strong>calidad</strong>, sino de <strong>cualidad</strong>.</p>
+</div>
+</div>
+<div class="content-visible callout callout-style-default callout-note no-icon callout-titled">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Para resolver
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p><strong>Ejemplo 1</strong>. Tiramos un dado al aire. Describe a qué corresponde la variable y el caso.</p>
+<p><strong>Ejemplo 2</strong>. Durante un proceso de envasado de un producto que dura una hora, controlamos el peso de cada envase cada minuto. Describe la variable y el caso. ¿Puede haber más de una variable?</p>
+</div>
+</div>
+<div class="content-visible callout callout-style-default callout-tip no-icon callout-titled">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-7-contents" aria-controls="callout-7" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-icon-container">
+<i class="callout-icon no-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Respuestas: Para resolver
+</div>
+<div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
+</div>
+<div id="callout-7" class="callout-7-contents callout-collapse collapse">
+<div class="callout-body-container callout-body">
+<p><strong>Ejemplo 1</strong>: La <strong>variable</strong> es el resultado que obtenemos cada vez; podríamos denominarla, por ejemplo, <span class="math inline">\(resultado\_obtenido\)</span>. Colocaríamos este nombre en el encabezado de una columna en una hoja de cálculo. <br>Cada tirada que hacemos es un <strong>caso</strong>; iríamos colocando el resultado que obtenemos cada vez en una nueva fila de nuestra hoja de cálculo.</p>
+<p><strong>Ejemplo 2</strong>. En este caso, la <strong>variable</strong> es el <span class="math inline">\(peso\_obtenido\)</span>, y cada pesada constituye un <strong>caso</strong>. Si registrásemos, además, la hora y el minuto en el que que hemos hecho cada control de peso, podríamos definir una nueva variable, que podríamos llamar <span class="math inline">\(hora\)</span>, y que colocaríamos en una columna al lado del <span class="math inline">\(peso\_obtenido\)</span>. Incluso podríamos definir otra variable adicional, el <span class="math inline">\(numero\_de\_pesada\)</span>, que sería un número secuencial empezando en <span class="math inline">\(1\)</span> y que se incrementaría en cada pesada, de forma que al final esta variable nos daría el número de pesadas realizadas, y nos indicaría además el orden en el que las hemos realizado. <br>Puesto que hemos realizado una pesada cada minuto, tendríamos tres variables y 61 líneas (un encabezado y 60 líneas correspondientes una a cada minuto)</p>
+</div>
+</div>
+</div>
+</section>
+<section id="reglas-básicas-para-establecer-los-nombres-de-las-variables." class="level3 page-columns page-full">
+<h3 class="anchored" data-anchor-id="reglas-básicas-para-establecer-los-nombres-de-las-variables.">Reglas básicas para establecer los nombres de las variables.</h3>
+<div class="page-columns page-full"><p>Según hemos visto, existen diferentes tipos de variables, <strong>cualitativas</strong> (<em>categóricas</em>) y <strong>cuantitativas</strong> (<em>métricas</em>). Normalmente, los valores de las variables categóricas se describen mediante textos del tipo “color blanco”, “hombre”, “mujer”, “alto”, “bajo”, etc.  Suelen corresponder con características descriptivas, y por lo tanto, no puede hacerse cálculos directamente con ellos, a menos que se hayan resumido, por ejemplo, mediante un conteo. Las variables métricas consisten en valores numéricos, que pueden ser <strong>enteros</strong> o <strong>continuos</strong>, y pueden utilizarse directamente para hacer cálculos tales como sumas, etc.</p><div class="no-row-height column-margin column-container"><span class="margin-aside">A partir de aquí utilizaremos una nomenclatura compatible con las hojas de cálculo en formato europeo para escribir los números; usaremos la <strong>coma</strong> para la separación decimal y el <strong>punto y coma</strong> para la separación de los números cuando los escribamos de forma seriada.</span></div></div>
+<p>Una <strong>variable</strong> está descrita siempre por <strong>un nombre</strong>, que designa la variable, y <strong>un valor o conjunto de valores</strong>, que corresponden a los casos. Este conjunto de valores, como acabamos de ver, pueden ser textos o números.</p>
+<div class="page-columns page-full"><p></p><div class="no-row-height column-margin column-container"><span class="margin-aside">Existen también otros tipos de variables que veremos más tarde, como variables lógicas o fechas, según el tipo de dato que almacenemos en esa variable.</span></div></div>
+<p>Ejemplos de valores de texto: “Carlos”, “fruta”, “Lluvia fuerte”, “muy ácido”, “sabor a fresa”</p>
+<p>Ejemplos de valores numéricos: <span class="math inline">\(1\)</span>; <span class="math inline">\(7\)</span>; <span class="math inline">\(10,65\)</span></p>
+<p>Siempre que sea posible, utilizaremos el nombre del atributo o característica que estamos midiendo o analizando, o su abreviatura, para designar una variable; por ejemplo, si estamos recogiendo la altura de una serie de personas, llamaremos <code>altura</code> a la variable; si estamos recogiendo el peso, usaremos el nombre <code>peso</code>, etc.</p>
+<p>A veces, asignar un nombre a una variable no es todo lo fácil que podría parecer a simple vista. Por ejemplo, ¿qué nombre daríamos a una variable que va a recoger los valores de <span class="math inline">\(pH\)</span> de la leche en una cuba de queso en el momento de añadir el cuajo? Está claro que <span class="math inline">\(pH\)</span> no es suficiente, porque en el proceso hay varias medidas de <span class="math inline">\(pH\)</span> y sería bueno que pudiésemos diferenciarlas con facilidad. En un caso como éste, es probable que necesitemos utilizar varias palabras o abreviaturas que describan mejor el nombre de la variable.</p>
+<p>Para la construcción correcta de estos nombres, se han establecido un conjunto de reglas, con el objetivo de evitar errores y facilitar el intercambio de los datos entre diferentes programas de análisis. Son éstas:</p>
+<ol type="1">
+<li><p>Un nombre válido consiste en una combinación de letras, números y signo de subrayado (<span class="math inline">\(\_\)</span>)</p></li>
+<li><p>Un nombre de variable no puede empezar por un número, un punto o un signo de subrayado (<span class="math inline">\(\_\)</span>); debe empezar siempre por una letra.</p></li>
+<li><p>Los nombres de variables irán siempre en minúsculas. Según esta regla, <span class="math inline">\(Peso\)</span> no es un nombre válido, pero <span class="math inline">\(peso\)</span> si lo es.</p></li>
+<li><p>No utilizaremos espacios en blanco, acentos ni caracteres especiales como <span class="math inline">\(\tilde{n}\)</span>, <span class="math inline">\(\%\)</span>, guiones o paréntesis.</p></li>
+<li><p>Hay veces en que nos interesa unir varias palabras para construir un nombre de variable. Se utilizan diferentes formas de unir palabras, por ejemplo:</p>
+<ul>
+<li><p>un punto, como en <span class="math inline">\(peso.en.cm\)</span>,</p></li>
+<li><p>lo que se ha llamado <em>escritura de camello</em> (<em>camelCase</em>), que se llama así por el uso de mayúsculas y minúsculas mezcladas (<span class="math inline">\(PesoEnCm\)</span>)</p></li>
+<li><p>el signo de subrayado <span class="math inline">\(\_\)</span>, como en <span class="math inline">\(peso\_en\_cm\)</span></p></li>
+</ul>
+<p>Algunas de estas opciones son utilizadas en distintas comunidades de usuarios, por ejemplo la opción 1 es utilizada en la guía de estilo de Google, y la opción 2 es muy utilizada por los programadores del entorno de los lenguajes de Microsoft. Nosotros utilizaremos el signo de subrayado (<span class="math inline">\(\_\)</span>), que es la forma más usada en el entorno de programación de R.</p></li>
+<li><p>Siempre se separarán las palabras mediante el signo de subrayado (_) para facilitar la lectura. Así, aunque <span class="math inline">\(temperatura1\)</span> es un nombre válido, preferiremos <span class="math inline">\(temp\_1\)</span>; es más corto y de lectura más clara. Igualmente, preferiremos <span class="math inline">\(peso\_empaquetado\)</span> a <span class="math inline">\(pesoempaquetado\)</span></p></li>
+<li><p>Mantendremos los nombres razonablemente cortos para facilitar la lectura. Aunque podemos hacer los nombres todo lo largos que queramos, es más cómodo utilizar nombres cortos. Por ejemplo, podríamos utilizar <span class="math inline">\(temperatura\_de\_la\_leche\_al\_cuajar\)</span>, pero preferiremos abreviarlo como <span class="math inline">\(temp\_cuajo\)</span>.</p></li>
+</ol>
+<p>Nombres no válidos:</p>
+<ul>
+<li><span class="math inline">\(peso\ en\ gramos\)</span> (contiene espacios)</li>
+<li><span class="math inline">\(pH\_de\_la\_leche\_en\_Recepci\acute{o}n\)</span> (demasiado largo, tiene un acento, tiene mayúsculas)</li>
+<li><span class="math inline">\(extracto\_seco\_total\_a\_la\_salida\_de\_la\_salmuera\)</span> (demasiado largo)</li>
+</ul>
+<p>Alternativas válidas:</p>
+<ul>
+<li><span class="math inline">\(peso\_g\)</span></li>
+<li><span class="math inline">\(pH\_leche\_rec\)</span> (en este caso, de manera excepcional, podemos mantener el uso de la mayúscula por corrección formal)</li>
+<li><span class="math inline">\(est\_salida\_sal\)</span></li>
+</ul>
+<p>Un caso particular es el uso de la <span class="math inline">\(\tilde{n}\)</span>, ya que no hay una alternativa fácil para el uso en las fechas (<span class="math inline">\(a\tilde{n}o\)</span>). R admite el uso de la <span class="math inline">\(\tilde{n}\)</span> en los nombres de variables, por lo que podremos usarlo con cuidado, poniendo atención a los posibles errores que se pudiesen producir en algunas librerías.</p>
+</section>
+</section>
+<section id="el-flujo-de-trabajo" class="level2" data-number="3.2">
+<h2 data-number="3.2" class="anchored" data-anchor-id="el-flujo-de-trabajo"><span class="header-section-number">3.2</span> El flujo de trabajo</h2>
 <p>Un <strong>flujo de trabajo en análisis de datos</strong> es un proceso sistemático y estructurado que guía la manipulación, exploración y análisis de datos desde su recolección hasta la obtención de resultados finales y su comunicación. Es una hoja de ruta que asegura que cada paso se realice de manera ordenada, eficiente y reproducible, facilitando la comprensión y utilización de los datos.</p>
 <p>Hadley Wickham <span class="citation" data-cites="wickham2023">(<a href="160-bibliografia.html#ref-wickham2023" role="doc-biblioref">Garret Grolemund Hadley Wickham Mine Çetinkaya-Rundel 2023</a>)</span> ha propuesto un método de flujo de trabajo que se ha convertido en estándar en la ciencia de datos (hay versión en español: <span class="citation" data-cites="wickham2023es">(<a href="160-bibliografia.html#ref-wickham2023es" role="doc-biblioref">Garret Grolemund Hadley Wickham 2023</a>)</span>)</p>
 <p><img src="01-imagenes/data-science-explore.svg" class="img-fluid"></p>
 <p>Este flujo de trabajo abarca diversas actividades como la importación de datos, su limpieza y transformación, el análisis exploratorio, y el modelado, culminando en la interpretación y presentación de los resultados. Todo esto se hace siguiendo metodologías específicas para asegurar la calidad y precisión del análisis.</p>
 <p>La importancia de seguir un flujo de trabajo bien definido radica en la capacidad de replicar estudios, minimizar errores y fomentar la transparencia, permitiendo que cualquier persona pueda entender y validar las decisiones tomadas durante el análisis. Además, mejora la eficiencia al estandarizar procedimientos y facilita la colaboración entre diferentes analistas o equipos de trabajo.</p>
-<section id="etapas-en-un-flujo-de-trabajo-estructurado." class="level2" data-number="3.1">
-<h2 data-number="3.1" class="anchored" data-anchor-id="etapas-en-un-flujo-de-trabajo-estructurado."><span class="header-section-number">3.1</span> Etapas en un flujo de trabajo estructurado.</h2>
+</section>
+<section id="etapas-en-un-flujo-de-trabajo-estructurado." class="level2" data-number="3.3">
+<h2 data-number="3.3" class="anchored" data-anchor-id="etapas-en-un-flujo-de-trabajo-estructurado."><span class="header-section-number">3.3</span> Etapas en un flujo de trabajo estructurado.</h2>
 <section id="recolección-de-datos" class="level3">
 <h3 class="anchored" data-anchor-id="recolección-de-datos">Recolección de datos</h3>
 <p>La primera etapa es la <strong>recolección de datos</strong>. Esto implica obtener datos desde diversas fuentes como archivos CSV, bases de datos, APIs, etc. La recolección de datos es fundamental porque la calidad del análisis depende de la calidad de los datos recolectados.</p>
@@ -429,8 +671,8 @@ div.csl-indent {
 <p>Siguiendo estos pasos, puedes manejar y analizar datos de manera organizada y reproducible, facilitando la colaboración y la toma de decisiones informadas. Este flujo de trabajo asegura que los datos se traten de manera sistemática, desde su recolección hasta la comunicación de los resultados.</p>
 </section>
 </section>
-<section id="razones-para-seguir-un-flujo-de-trabajo" class="level2" data-number="3.2">
-<h2 data-number="3.2" class="anchored" data-anchor-id="razones-para-seguir-un-flujo-de-trabajo"><span class="header-section-number">3.2</span> Razones para seguir un flujo de trabajo</h2>
+<section id="razones-para-seguir-un-flujo-de-trabajo" class="level2" data-number="3.4">
+<h2 data-number="3.4" class="anchored" data-anchor-id="razones-para-seguir-un-flujo-de-trabajo"><span class="header-section-number">3.4</span> Razones para seguir un flujo de trabajo</h2>
 <ol type="1">
 <li><p><strong>Reproducibilidad</strong>: Un flujo de trabajo organizado permite que los análisis sean reproducibles. Otros pueden seguir los mismos pasos para obtener resultados similares, lo que es crucial en la investigación y en la toma de decisiones basadas en datos.</p></li>
 <li><p><strong>Consistencia</strong>: Ayuda a asegurar que los pasos se realizan de manera consistente cada vez que se ejecuta el análisis, reduciendo la posibilidad de errores humanos.</p></li>
@@ -440,8 +682,8 @@ div.csl-indent {
 <li><p><strong>Adaptabilidad</strong>: Permite adaptar y ajustar el análisis de manera más fácil cuando se presentan nuevos datos o cuando cambian los objetivos del análisis.</p></li>
 </ol>
 </section>
-<section id="problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" class="level2" data-number="3.3">
-<h2 data-number="3.3" class="anchored" data-anchor-id="problemas-de-no-seguir-un-flujo-de-trabajo-estructurado"><span class="header-section-number">3.3</span> Problemas de no seguir un flujo de trabajo estructurado</h2>
+<section id="problemas-de-no-seguir-un-flujo-de-trabajo-estructurado" class="level2" data-number="3.5">
+<h2 data-number="3.5" class="anchored" data-anchor-id="problemas-de-no-seguir-un-flujo-de-trabajo-estructurado"><span class="header-section-number">3.5</span> Problemas de no seguir un flujo de trabajo estructurado</h2>
 <ol type="1">
 <li><p><strong>Errores y Sesgos</strong>: La falta de un enfoque estructurado puede resultar en errores y sesgos inadvertidos en el análisis, lo que puede llevar a conclusiones incorrectas.</p></li>
 <li><p><strong>Dificultad para Replicar Resultados</strong>: Sin un flujo de trabajo claro, replicar resultados se vuelve complicado, lo que puede afectar la credibilidad del análisis y la capacidad de validación por otros.</p></li>
@@ -452,8 +694,8 @@ div.csl-indent {
 </ol>
 <p>En resumen, seguir un flujo de trabajo estructurado es esencial para garantizar la precisión, eficiencia, y reproducibilidad del análisis de datos, evitando problemas que puedan comprometer la integridad y utilidad de los resultados. .</p>
 </section>
-<section id="un-ejemplo-revisando-los-datos-existentes." class="level2" data-number="3.4">
-<h2 data-number="3.4" class="anchored" data-anchor-id="un-ejemplo-revisando-los-datos-existentes."><span class="header-section-number">3.4</span> Un ejemplo: revisando los datos existentes.</h2>
+<section id="un-ejemplo-revisando-los-datos-existentes." class="level2" data-number="3.6">
+<h2 data-number="3.6" class="anchored" data-anchor-id="un-ejemplo-revisando-los-datos-existentes."><span class="header-section-number">3.6</span> Un ejemplo: revisando los datos existentes.</h2>
 <p>Cuando nos incorporamos a un equipo de trabajo existente, lo más seguro es que ya se disponga de un sistema de archivo de los datos, de acuerdo con los métodos habituales del equipo. En muchos casos, el diseño de la captura de datos sigue aproximadamente el modelo manual en papel; se introducen los datos en la hoja de cálculo y una vez completados, se imprime el documento para su archivo.</p>
 <p>El error más común que se suele cometer es, precisamente, tratar la hoja de cálculo como un bloc de notas, es decir, hacer anotaciones de forma libre, colocar los datos y el resultado de los análisis al lado y en cualquier parte de la hoja, y apoyarnos en el contexto para interpretar lo que hemos guardado. Pero para que el ordenador sea capaz de analizar nuestros datos de manera eficiente, debemos estructurarlos de tal forma que el programa use la información tal como nosotros queremos.</p>
 <p>Es común utilizar una hoja para guardar múltiples tablas de datos, tal como vemos en la <a href="#fig-excel_mess" class="quarto-xref">Figura&nbsp;<span>3.1</span></a>. Esta estructura, sin embargo, resulta enormemente confusa para su análisis, o lo imposibilita completamente.</p>
@@ -481,8 +723,8 @@ Figura&nbsp;3.2: Hoja Excel con una estructura no ordenada
 <p>Si las diferentes tablas presentan situaciones diferentes, o datos que no están relacionados, podemos utilizar diferentes pestañas. Pero si los datos están vinculados, por ejemplo, se corresponden con las mismas medidas, hechas en fechas diferentes (meses, años), la respuesta es que las pestañas no son la forma correcta de almacenarlos datos; lo mejor es añadir una variable que nos permita diferenciar los datos por fecha; nuestro programa de análisis nos permitirá <em>filtrar</em> los datos según la fecha que deseemos, y todos estarán en una única tabla, facilitando la coherencia y el análisis posterior.</p>
 <p>Hay muchas formas de almacenar la información en una hoja de cálculo, pero sólo la estructura de <strong>datos ordenados o arreglados</strong> facilita la utilización de los datos tanto por la hoja de cálculo como por otros programas de análisis.</p>
 </section>
-<section id="los-datos-ordenados-o-arreglados-tidy-data" class="level2" data-number="3.5">
-<h2 data-number="3.5" class="anchored" data-anchor-id="los-datos-ordenados-o-arreglados-tidy-data"><span class="header-section-number">3.5</span> Los datos ordenados o arreglados (<em>tidy data</em>)</h2>
+<section id="los-datos-ordenados-o-arreglados-tidy-data" class="level2" data-number="3.7">
+<h2 data-number="3.7" class="anchored" data-anchor-id="los-datos-ordenados-o-arreglados-tidy-data"><span class="header-section-number">3.7</span> Los datos ordenados o arreglados (<em>tidy data</em>)</h2>
 <p>De la misma manera que la gramática permite ordenar y estructurar un escrito de acuerdo a reglas comunes, hay reglas para que el almacenamiento de los datos sea lo más homogéneo posible y se reduzcan los errores al mínimo.</p>
 <p>Las reglas principales al almacenar nuestros datos en una hoja de cálculo son tres:</p>
 <ul>
@@ -517,8 +759,8 @@ Figura&nbsp;3.4: Hoja Excel con estructura rectangular de datos ordenados
 </div>
 <p>Datos rectangulares: formato tabla</p>
 </section>
-<section id="qué-es-un-fichero-plano-y-un-fichero-csv" class="level2" data-number="3.6">
-<h2 data-number="3.6" class="anchored" data-anchor-id="qué-es-un-fichero-plano-y-un-fichero-csv"><span class="header-section-number">3.6</span> Qué es un fichero plano y un fichero CSV</h2>
+<section id="qué-es-un-fichero-plano-y-un-fichero-csv" class="level2" data-number="3.8">
+<h2 data-number="3.8" class="anchored" data-anchor-id="qué-es-un-fichero-plano-y-un-fichero-csv"><span class="header-section-number">3.8</span> Qué es un fichero plano y un fichero CSV</h2>
 <p>Se suele llamar <strong>fichero plano</strong> a un fichero de datos de texto sin ningún tipo de formato, donde los datos están separados por espacios o tabulaciones. Muchos equipos automáticos, como balanzas de laboratorio o básculas de proceso, producen ficheros planos de texto, que se pueden importar a Excel o R. Un <a href="https://es.wikipedia.org/wiki/Valores_separados_por_comas">fichero CSV</a> es un fichero plano en el que los valores están separados por un carácter especial, llamado <strong>separador</strong>. Este separador puede ser una coma <code>,</code> (cuando los decimales se separan mediante un punto, como en EEUU) o un punto y coma <code>;</code> (cuando los decimales se separan mediante una coma, como en España)</p>
 <div id="fig-ficheros-texto" class="quarto-layout-panel">
 <figure class="quarto-float quarto-float-fig figure">
@@ -575,7 +817,7 @@ Figura&nbsp;3.5: Tres tipos de ficheros planos de texto.
 <section id="paso-2-importar-el-csv-en-r-usando-base-r" class="level4">
 <h4 class="anchored" data-anchor-id="paso-2-importar-el-csv-en-r-usando-base-r">Paso 2: Importar el CSV en R usando Base R</h4>
 <div class="content-visible callout callout-style-default callout-tip no-icon callout-titled" data-when-format="html">
-<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-1-contents" aria-controls="callout-1" aria-expanded="false" aria-label="Toggle callout">
+<div class="callout-header d-flex align-content-center" data-bs-toggle="collapse" data-bs-target=".callout-8-contents" aria-controls="callout-8" aria-expanded="false" aria-label="Toggle callout">
 <div class="callout-icon-container">
 <i class="callout-icon no-icon"></i>
 </div>
@@ -584,7 +826,7 @@ Explicación del código R
 </div>
 <div class="callout-btn-toggle d-inline-block border-0 py-1 ps-1 pe-0 float-end"><i class="callout-toggle"></i></div>
 </div>
-<div id="callout-1" class="callout-1-contents callout-collapse collapse">
+<div id="callout-8" class="callout-8-contents callout-collapse collapse">
 <div class="callout-body-container callout-body">
 <p><strong>Línea 1: Lectura del archivo CSV</strong></p>
 <div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">read.csv2</span>(<span class="st">"ruta/al/archivo.csv"</span>, <span class="at">header =</span> <span class="cn">TRUE</span>, <span class="at">sep =</span> <span class="st">";"</span>, <span class="at">dec =</span> <span class="st">","</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
@@ -639,11 +881,11 @@ Practica con el CSV
 </section>
 </section>
 </section>
-<section id="uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos" class="level2" data-number="3.7">
-<h2 data-number="3.7" class="anchored" data-anchor-id="uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos"><span class="header-section-number">3.7</span> Uso de los filtros de Excel para revisar y editar los datos</h2>
+<section id="uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos" class="level2" data-number="3.9">
+<h2 data-number="3.9" class="anchored" data-anchor-id="uso-de-los-filtros-de-excel-para-revisar-y-editar-los-datos"><span class="header-section-number">3.9</span> Uso de los filtros de Excel para revisar y editar los datos</h2>
 </section>
-<section id="para-resolver" class="level2" data-number="3.8">
-<h2 data-number="3.8" class="anchored" data-anchor-id="para-resolver"><span class="header-section-number">3.8</span> Para resolver</h2>
+<section id="para-resolver-1" class="level2" data-number="3.10">
+<h2 data-number="3.10" class="anchored" data-anchor-id="para-resolver-1"><span class="header-section-number">3.10</span> Para resolver</h2>
 <p>Poner aquí distintos ejemplos de nombres de variables para ver si son válidos o no. Describir medidas y preguntar cómo llamaríamos a esa variable (por ejemplo, temperatura de la leche que acabamos de descargar de una cisterna)</p>
 
 
