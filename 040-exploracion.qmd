@@ -1,8 +1,5 @@
 ---
 lang: es
-format: 
-  html:
-    encoding: 'latin1'
 ---
 
 ```{r setup, include=FALSE}
