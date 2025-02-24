@@ -307,12 +307,12 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
     <h2 id="toc-title">Tabla de contenidos</h2>
    
   <ul>
-  <li><a href="#introducción-al-estudio-de-la-forma-de-los-datos" id="toc-introducción-al-estudio-de-la-forma-de-los-datos" class="nav-link active" data-scroll-target="#introducción-al-estudio-de-la-forma-de-los-datos">Introducción al Estudio de la Forma de los Datos</a></li>
-  <li><a href="#análisis-descriptivo" id="toc-análisis-descriptivo" class="nav-link" data-scroll-target="#análisis-descriptivo">Análisis Descriptivo</a></li>
-  <li><a href="#visualización-de-datos" id="toc-visualización-de-datos" class="nav-link" data-scroll-target="#visualización-de-datos">Visualización de Datos</a></li>
-  <li><a href="#análisis-exploratorio-de-datos-eda" id="toc-análisis-exploratorio-de-datos-eda" class="nav-link" data-scroll-target="#análisis-exploratorio-de-datos-eda">Análisis Exploratorio de Datos (EDA)</a></li>
-  <li><a href="#pruebas-estadísticas" id="toc-pruebas-estadísticas" class="nav-link" data-scroll-target="#pruebas-estadísticas">Pruebas Estadísticas</a></li>
-  <li><a href="#importancia-del-estudio-de-la-forma-de-los-datos" id="toc-importancia-del-estudio-de-la-forma-de-los-datos" class="nav-link" data-scroll-target="#importancia-del-estudio-de-la-forma-de-los-datos">Importancia del Estudio de la Forma de los Datos</a></li>
+  <li><a href="#introducción-al-análisis-de-la-forma-de-los-datos" id="toc-introducción-al-análisis-de-la-forma-de-los-datos" class="nav-link active" data-scroll-target="#introducción-al-análisis-de-la-forma-de-los-datos"><strong>Introducción al Análisis de la Forma de los Datos</strong></a></li>
+  <li><a href="#ejemplo-práctico-análisis-de-los-tiempos-de-entrega-en-una-empresa-de-reparto" id="toc-ejemplo-práctico-análisis-de-los-tiempos-de-entrega-en-una-empresa-de-reparto" class="nav-link" data-scroll-target="#ejemplo-práctico-análisis-de-los-tiempos-de-entrega-en-una-empresa-de-reparto"><strong>Ejemplo Práctico: Análisis de los Tiempos de Entrega en una Empresa de Reparto</strong></a></li>
+  <li><a href="#flujo-de-trabajo-para-el-análisis" id="toc-flujo-de-trabajo-para-el-análisis" class="nav-link" data-scroll-target="#flujo-de-trabajo-para-el-análisis"><strong>Flujo de trabajo para el análisis:</strong></a></li>
+  <li><a href="#análisis-con-excel" id="toc-análisis-con-excel" class="nav-link" data-scroll-target="#análisis-con-excel"><strong>1. Análisis con Excel</strong></a></li>
+  <li><a href="#análisis-con-r" id="toc-análisis-con-r" class="nav-link" data-scroll-target="#análisis-con-r"><strong>2. Análisis con R</strong></a></li>
+  <li><a href="#conclusiones" id="toc-conclusiones" class="nav-link" data-scroll-target="#conclusiones"><strong>Conclusiones</strong></a></li>
   </ul>
 </nav>
     </div>
@@ -338,118 +338,106 @@ pre > code.sourceCode > span > a:first-child::before { text-decoration: underlin
 </header>
 
 
-<section id="introducción-al-estudio-de-la-forma-de-los-datos" class="level3">
-<h3 class="anchored" data-anchor-id="introducción-al-estudio-de-la-forma-de-los-datos">Introducción al Estudio de la Forma de los Datos</h3>
-<p>El estudio de la forma de los datos es fundamental en el análisis de datos y la estadística. Nos permite entender la distribución, tendencias, patrones y anomalías presentes en los datos, lo cual es esencial para tomar decisiones informadas y realizar análisis precisos. En esta introducción, exploraremos varios métodos y herramientas para examinar la forma de los datos, utilizando ejemplos en R, un lenguaje de programación muy utilizado en análisis de datos.</p>
+<section id="introducción-al-análisis-de-la-forma-de-los-datos" class="level3">
+<h3 class="anchored" data-anchor-id="introducción-al-análisis-de-la-forma-de-los-datos"><strong>Introducción al Análisis de la Forma de los Datos</strong></h3>
+<p>En estadística, comprender la <strong>forma de los datos</strong> es fundamental para interpretar correctamente la distribución de una variable. El análisis de la forma nos permite identificar patrones, tendencias y anomalías en los datos que podrían pasar desapercibidos si solo nos centramos en las estadísticas descriptivas como la media o la mediana.</p>
+<p>La <strong>distribución de los datos</strong> describe cómo se distribuyen los valores de una variable en un conjunto de datos. Al analizar la forma de una distribución, podemos observar aspectos clave como la <strong>asimetría</strong>, la <strong>curtosis</strong>, y la presencia de <strong>valores atípicos</strong>. Estos elementos nos dan pistas sobre la <strong>simetría</strong> de la distribución (si los datos están equilibrados a ambos lados de la mediana), la <strong>concentración</strong> de los datos (si los datos están agrupados en torno a un valor central), y si hay valores extremos que podrían estar afectando los resultados.</p>
+<p>En este capítulo, vamos a <strong>explorar cómo analizar la forma de los datos</strong> utilizando herramientas visuales como <strong>histogramas</strong> y <strong>boxplots</strong>, que son fundamentales para identificar las características de la distribución. Para hacerlo, vamos a partir de un <strong>ejemplo práctico</strong> que ilustra cómo llevar a cabo este análisis paso a paso, usando tanto <strong>Excel</strong> como <strong>R</strong>.</p>
 </section>
-<section id="análisis-descriptivo" class="level3">
-<h3 class="anchored" data-anchor-id="análisis-descriptivo">Análisis Descriptivo</h3>
-<p>El primer paso para entender la forma de los datos es realizar un análisis descriptivo. Este análisis incluye el cálculo de medidas como la media, mediana, moda, desviación estándar y percentiles, que resumen las características principales de los datos.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar librería</span></span>
-<span id="cb1-2"><a href="#cb1-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(dplyr)</span>
-<span id="cb1-3"><a href="#cb1-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-4"><a href="#cb1-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un conjunto de datos</span></span>
-<span id="cb1-5"><a href="#cb1-5" aria-hidden="true" tabindex="-1"></a>datos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">23</span>, <span class="dv">19</span>, <span class="dv">23</span>, <span class="dv">21</span>, <span class="dv">22</span>, <span class="dv">21</span>, <span class="dv">20</span>, <span class="dv">23</span>, <span class="dv">22</span>, <span class="dv">19</span>)</span>
-<span id="cb1-6"><a href="#cb1-6" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-7"><a href="#cb1-7" aria-hidden="true" tabindex="-1"></a><span class="co"># Calcular medidas descriptivas</span></span>
-<span id="cb1-8"><a href="#cb1-8" aria-hidden="true" tabindex="-1"></a>media <span class="ot">&lt;-</span> <span class="fu">mean</span>(datos)</span>
-<span id="cb1-9"><a href="#cb1-9" aria-hidden="true" tabindex="-1"></a>mediana <span class="ot">&lt;-</span> <span class="fu">median</span>(datos)</span>
-<span id="cb1-10"><a href="#cb1-10" aria-hidden="true" tabindex="-1"></a>moda <span class="ot">&lt;-</span> <span class="fu">as.numeric</span>(<span class="fu">names</span>(<span class="fu">sort</span>(<span class="fu">table</span>(datos), <span class="at">decreasing=</span><span class="cn">TRUE</span>)[<span class="dv">1</span>]))</span>
-<span id="cb1-11"><a href="#cb1-11" aria-hidden="true" tabindex="-1"></a>desviacion_estandar <span class="ot">&lt;-</span> <span class="fu">sd</span>(datos)</span>
-<span id="cb1-12"><a href="#cb1-12" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb1-13"><a href="#cb1-13" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar resultados</span></span>
-<span id="cb1-14"><a href="#cb1-14" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Media:"</span>, media, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Media: 21.3 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Mediana:"</span>, mediana, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Mediana: 21.5 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Moda:"</span>, moda, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Moda: 23 </code></pre>
-</div>
-<div class="sourceCode cell-code" id="cb7"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb7-1"><a href="#cb7-1" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Desviación Estándar:"</span>, desviacion_estandar, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Desviación Estándar: 1.567021 </code></pre>
-</div>
-</div>
+<section id="ejemplo-práctico-análisis-de-los-tiempos-de-entrega-en-una-empresa-de-reparto" class="level3">
+<h3 class="anchored" data-anchor-id="ejemplo-práctico-análisis-de-los-tiempos-de-entrega-en-una-empresa-de-reparto"><strong>Ejemplo Práctico: Análisis de los Tiempos de Entrega en una Empresa de Reparto</strong></h3>
+<p>Imaginemos que una empresa de reparto desea analizar los <strong>tiempos de entrega</strong> de 50 paquetes en un solo día. Los tiempos se han registrado en minutos, y el objetivo es evaluar la eficiencia de las entregas a través de un análisis de la distribución de los datos.</p>
+<p>Los datos que tenemos son los siguientes:</p>
+<p><code>[30, 28, 32, 35, 31, 29, 27, 33, 34, 36, 40, 45, 50, 42, 38, 37, 39, 41, 60, 62, 65, 29, 28, 30, 33, 35, 55, 58, 32, 31, 30, 30, 31, 27, 28, 29, 34, 35, 33, 32, 70, 72, 75, 29, 28, 30, 65, 68, 40, 41]</code></p>
+<p>A través de este conjunto de datos, vamos a <strong>analizar la forma de los datos</strong> y aprender a interpretar las distribuciones. Exploraremos la simetría, la dispersión, la curtosis, y los posibles valores atípicos que podrían estar presentes.</p>
+<p>Este análisis lo realizaremos utilizando dos herramientas principales: <strong>Excel</strong> y <strong>R</strong>, las cuales nos permitirán representar visualmente los datos a través de histogramas y boxplots, y extraer conclusiones importantes sobre la distribución de los tiempos de entrega.</p>
+<hr>
 </section>
-<section id="visualización-de-datos" class="level3">
-<h3 class="anchored" data-anchor-id="visualización-de-datos">Visualización de Datos</h3>
-<p>La visualización de datos es una herramienta poderosa para estudiar la forma de los datos. Gráficos como histogramas, diagramas de cajas y gráficos de dispersión permiten visualizar la distribución y las relaciones en los datos.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb9"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb9-1"><a href="#cb9-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Cargar librería</span></span>
-<span id="cb9-2"><a href="#cb9-2" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(ggplot2)</span>
-<span id="cb9-3"><a href="#cb9-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb9-4"><a href="#cb9-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un histograma</span></span>
-<span id="cb9-5"><a href="#cb9-5" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(datos), <span class="fu">aes</span>(<span class="at">x =</span> datos)) <span class="sc">+</span></span>
-<span id="cb9-6"><a href="#cb9-6" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_histogram</span>(<span class="at">binwidth =</span> <span class="dv">1</span>, <span class="at">fill =</span> <span class="st">"blue"</span>, <span class="at">alpha =</span> <span class="fl">0.7</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb9-7"><a href="#cb9-7" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Histograma de Datos"</span>, <span class="at">x =</span> <span class="st">"Valores"</span>, <span class="at">y =</span> <span class="st">"Frecuencia"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="060-forma-de-los-datos_files/figure-html/unnamed-chunk-2-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-<div class="sourceCode cell-code" id="cb10"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb10-1"><a href="#cb10-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un diagrama de cajas</span></span>
-<span id="cb10-2"><a href="#cb10-2" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(<span class="fu">data.frame</span>(datos), <span class="fu">aes</span>(<span class="at">y =</span> datos)) <span class="sc">+</span></span>
-<span id="cb10-3"><a href="#cb10-3" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_boxplot</span>(<span class="at">fill =</span> <span class="st">"cyan"</span>, <span class="at">color =</span> <span class="st">"black"</span>) <span class="sc">+</span></span>
-<span id="cb10-4"><a href="#cb10-4" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Diagrama de Cajas de Datos"</span>, <span class="at">y =</span> <span class="st">"Valores"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="060-forma-de-los-datos_files/figure-html/unnamed-chunk-2-2.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="flujo-de-trabajo-para-el-análisis" class="level3">
+<h3 class="anchored" data-anchor-id="flujo-de-trabajo-para-el-análisis"><strong>Flujo de trabajo para el análisis:</strong></h3>
+<ol type="1">
+<li><p><strong>Distribución de frecuencia y histogramas:</strong><br>
+Veremos cómo usar Excel para calcular la frecuencia de los datos en intervalos y crear un histograma que nos permita identificar patrones de simetría o asimetría.</p></li>
+<li><p><strong>Boxplot:</strong><br>
+Aprenderemos a usar boxplots en Excel y R para identificar la mediana, los cuartiles y los valores atípicos. Esto nos ayudará a ver si algunos de los tiempos de entrega son inusualmente largos.</p></li>
+<li><p><strong>Interpretación de la forma de los datos:</strong><br>
+Al analizar los resultados, podremos determinar si la distribución es <strong>asimétrica</strong> o <strong>simétrica</strong>, si hay <strong>valores atípicos</strong> que podrían estar influyendo en la media y cómo estos factores pueden afectar la interpretación de los tiempos de entrega en la empresa.</p></li>
+</ol>
+<hr>
 </section>
-<section id="análisis-exploratorio-de-datos-eda" class="level3">
-<h3 class="anchored" data-anchor-id="análisis-exploratorio-de-datos-eda">Análisis Exploratorio de Datos (EDA)</h3>
-<p>El Análisis Exploratorio de Datos (EDA) implica técnicas gráficas y cuantitativas para descubrir patrones, detectar anomalías y verificar hipótesis. EDA es una fase preliminar clave en el análisis de datos.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb11"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb11-1"><a href="#cb11-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un conjunto de datos de ejemplo</span></span>
-<span id="cb11-2"><a href="#cb11-2" aria-hidden="true" tabindex="-1"></a><span class="fu">set.seed</span>(<span class="dv">123</span>)</span>
-<span id="cb11-3"><a href="#cb11-3" aria-hidden="true" tabindex="-1"></a>datos_eda <span class="ot">&lt;-</span> <span class="fu">data.frame</span>(</span>
-<span id="cb11-4"><a href="#cb11-4" aria-hidden="true" tabindex="-1"></a>  <span class="at">x =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>),</span>
-<span id="cb11-5"><a href="#cb11-5" aria-hidden="true" tabindex="-1"></a>  <span class="at">y =</span> <span class="fu">rnorm</span>(<span class="dv">100</span>)</span>
-<span id="cb11-6"><a href="#cb11-6" aria-hidden="true" tabindex="-1"></a>)</span>
-<span id="cb11-7"><a href="#cb11-7" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb11-8"><a href="#cb11-8" aria-hidden="true" tabindex="-1"></a><span class="co"># Crear un gráfico de dispersión</span></span>
-<span id="cb11-9"><a href="#cb11-9" aria-hidden="true" tabindex="-1"></a><span class="fu">ggplot</span>(datos_eda, <span class="fu">aes</span>(<span class="at">x =</span> x, <span class="at">y =</span> y)) <span class="sc">+</span></span>
-<span id="cb11-10"><a href="#cb11-10" aria-hidden="true" tabindex="-1"></a>  <span class="fu">geom_point</span>(<span class="at">color =</span> <span class="st">"blue"</span>) <span class="sc">+</span></span>
-<span id="cb11-11"><a href="#cb11-11" aria-hidden="true" tabindex="-1"></a>  <span class="fu">labs</span>(<span class="at">title =</span> <span class="st">"Gráfico de Dispersión"</span>, <span class="at">x =</span> <span class="st">"Variable X"</span>, <span class="at">y =</span> <span class="st">"Variable Y"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output-display">
-<div>
-<figure class="figure">
-<p><img src="060-forma-de-los-datos_files/figure-html/unnamed-chunk-3-1.png" class="img-fluid figure-img" width="672"></p>
-</figure>
-</div>
-</div>
-</div>
+<section id="análisis-con-excel" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-con-excel"><strong>1. Análisis con Excel</strong></h3>
+<section id="paso-1-crear-una-tabla-de-frecuencia" class="level4">
+<h4 class="anchored" data-anchor-id="paso-1-crear-una-tabla-de-frecuencia"><strong>Paso 1: Crear una Tabla de Frecuencia</strong></h4>
+<p>En Excel, primero introducimos los datos en una columna. A continuación, creamos una tabla de frecuencias agrupando los datos en intervalos o clases, utilizando la función <code>FRECUENCIA()</code>. Por ejemplo, podemos elegir los siguientes intervalos:<br>
+<code>25-30, 30-35, 35-40, 40-45, 45-50, 50-55, 55-60, 60-65, 65-70</code>.</p>
+<p>Una vez que tenemos las frecuencias, podemos representar visualmente los datos en un <strong>histograma</strong>, lo cual nos permitirá ver la distribución de los tiempos.</p>
 </section>
-<section id="pruebas-estadísticas" class="level3">
-<h3 class="anchored" data-anchor-id="pruebas-estadísticas">Pruebas Estadísticas</h3>
-<p>Las pruebas estadísticas, como la prueba de normalidad (Kolmogorov-Smirnov, Shapiro-Wilk), ayudan a determinar si los datos siguen una distribución específica.</p>
-<div class="cell">
-<div class="sourceCode cell-code" id="cb12"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb12-1"><a href="#cb12-1" aria-hidden="true" tabindex="-1"></a><span class="co"># Prueba de normalidad Shapiro-Wilk</span></span>
-<span id="cb12-2"><a href="#cb12-2" aria-hidden="true" tabindex="-1"></a>shapiro_test <span class="ot">&lt;-</span> <span class="fu">shapiro.test</span>(datos)</span>
-<span id="cb12-3"><a href="#cb12-3" aria-hidden="true" tabindex="-1"></a></span>
-<span id="cb12-4"><a href="#cb12-4" aria-hidden="true" tabindex="-1"></a><span class="co"># Mostrar resultado</span></span>
-<span id="cb12-5"><a href="#cb12-5" aria-hidden="true" tabindex="-1"></a><span class="fu">cat</span>(<span class="st">"Prueba de Shapiro-Wilk: p-value ="</span>, shapiro_test<span class="sc">$</span>p.value, <span class="st">"</span><span class="sc">\n</span><span class="st">"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
-<div class="cell-output cell-output-stdout">
-<pre><code>Prueba de Shapiro-Wilk: p-value = 0.1400044 </code></pre>
-</div>
-</div>
+<section id="paso-2-crear-un-histograma" class="level4">
+<h4 class="anchored" data-anchor-id="paso-2-crear-un-histograma"><strong>Paso 2: Crear un Histograma</strong></h4>
+<p>Para generar un histograma, seleccionamos los datos y usamos el gráfico de histograma disponible en las opciones de gráficos de Excel. En este histograma, podemos observar la forma general de la distribución, su <strong>asimetría</strong> (si la cola se extiende más a la derecha o a la izquierda) y si es <strong>simétrica</strong>.</p>
 </section>
-<section id="importancia-del-estudio-de-la-forma-de-los-datos" class="level3">
-<h3 class="anchored" data-anchor-id="importancia-del-estudio-de-la-forma-de-los-datos">Importancia del Estudio de la Forma de los Datos</h3>
-<p>Comprender la forma de los datos es crucial para identificar patrones, detectar anomalías, seleccionar modelos apropiados y visualizar datos de manera efectiva. Un buen entendimiento de la forma de los datos permite tomar decisiones más informadas y basadas en evidencia, mejorando la calidad del análisis y la interpretación de los resultados.</p>
-<p>En resumen, el estudio de la forma de los datos a través del análisis descriptivo, visualización de datos, EDA y pruebas estadísticas, nos proporciona una comprensión profunda de los datos y nos guía en el proceso de análisis. Utilizar herramientas como R facilita este estudio y nos permite trabajar con datos de manera más eficiente y precisa.</p>
+<section id="paso-3-crear-un-boxplot" class="level4">
+<h4 class="anchored" data-anchor-id="paso-3-crear-un-boxplot"><strong>Paso 3: Crear un Boxplot</strong></h4>
+<p>Luego, seleccionamos los datos y creamos un <strong>boxplot</strong> en Excel. Este gráfico muestra la mediana, los cuartiles y los valores atípicos (puntos fuera de los bigotes del gráfico). En este caso, los tiempos superiores a 65 minutos se mostrarían como posibles valores atípicos.</p>
+</section>
+<section id="interpretación-de-los-resultados-en-excel" class="level4">
+<h4 class="anchored" data-anchor-id="interpretación-de-los-resultados-en-excel"><strong>Interpretación de los Resultados en Excel:</strong></h4>
+<ul>
+<li><strong>Simetría:</strong> Si el histograma tiene una forma similar a una campana (simétrica), indicaría que los datos siguen una distribución normal. Si el histograma tiene una cola más larga hacia la derecha, los datos tienen <strong>asimetría positiva</strong> (sesgo a la derecha).</li>
+<li><strong>Dispersión y Concentración:</strong> El <strong>boxplot</strong> muestra si los tiempos están muy dispersos o si hay un rango reducido de tiempos de entrega. Si hay muchos valores en la parte inferior del gráfico, indica que la mayoría de las entregas se realizan rápidamente, mientras que los valores atípicos (más de 65 minutos) indican que algunas entregas se están demorando considerablemente.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="análisis-con-r" class="level3">
+<h3 class="anchored" data-anchor-id="análisis-con-r"><strong>2. Análisis con R</strong></h3>
+<section id="paso-1-cargar-los-datos-en-r" class="level4">
+<h4 class="anchored" data-anchor-id="paso-1-cargar-los-datos-en-r"><strong>Paso 1: Cargar los Datos en R</strong></h4>
+<p>Primero, cargamos los datos en R, utilizando un vector de los tiempos de entrega:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb1-1"><a href="#cb1-1" aria-hidden="true" tabindex="-1"></a>tiempos <span class="ot">&lt;-</span> <span class="fu">c</span>(<span class="dv">30</span>, <span class="dv">28</span>, <span class="dv">32</span>, <span class="dv">35</span>, <span class="dv">31</span>, <span class="dv">29</span>, <span class="dv">27</span>, <span class="dv">33</span>, <span class="dv">34</span>, <span class="dv">36</span>, <span class="dv">40</span>, <span class="dv">45</span>, <span class="dv">50</span>, <span class="dv">42</span>, <span class="dv">38</span>, <span class="dv">37</span>, <span class="dv">39</span>, <span class="dv">41</span>, <span class="dv">60</span>, <span class="dv">62</span>, <span class="dv">65</span>, <span class="dv">29</span>, <span class="dv">28</span>, <span class="dv">30</span>, <span class="dv">33</span>, <span class="dv">35</span>, <span class="dv">55</span>, <span class="dv">58</span>, <span class="dv">32</span>, <span class="dv">31</span>, <span class="dv">30</span>, <span class="dv">30</span>, <span class="dv">31</span>, <span class="dv">27</span>, <span class="dv">28</span>, <span class="dv">29</span>, <span class="dv">34</span>, <span class="dv">35</span>, <span class="dv">33</span>, <span class="dv">32</span>, <span class="dv">70</span>, <span class="dv">72</span>, <span class="dv">75</span>, <span class="dv">29</span>, <span class="dv">28</span>, <span class="dv">30</span>, <span class="dv">65</span>, <span class="dv">68</span>, <span class="dv">40</span>, <span class="dv">41</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+</section>
+<section id="paso-2-crear-un-histograma-1" class="level4">
+<h4 class="anchored" data-anchor-id="paso-2-crear-un-histograma-1"><strong>Paso 2: Crear un Histograma</strong></h4>
+<p>Usamos el comando <code>hist()</code> para crear el histograma:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb2-1"><a href="#cb2-1" aria-hidden="true" tabindex="-1"></a><span class="fu">hist</span>(tiempos, <span class="at">main=</span><span class="st">"Histograma de Tiempos de Entrega"</span>, <span class="at">xlab=</span><span class="st">"Tiempo (minutos)"</span>, <span class="at">col=</span><span class="st">"lightblue"</span>, <span class="at">border=</span><span class="st">"black"</span>, <span class="at">breaks=</span><span class="dv">10</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Este histograma nos permite visualizar si los datos están distribuidos de manera simétrica o si presentan un sesgo. En este caso, podemos observar si hay una <strong>asimetría positiva</strong>, lo que indicaría que la mayoría de las entregas son rápidas, pero algunas se demoran considerablemente.</p>
+</section>
+<section id="paso-3-crear-un-boxplot-1" class="level4">
+<h4 class="anchored" data-anchor-id="paso-3-crear-un-boxplot-1"><strong>Paso 3: Crear un Boxplot</strong></h4>
+<p>Para crear el boxplot en R, utilizamos el comando <code>boxplot()</code>:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb3-1"><a href="#cb3-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(tiempos, <span class="at">main=</span><span class="st">"Boxplot de Tiempos de Entrega"</span>, <span class="at">ylab=</span><span class="st">"Tiempo (minutos)"</span>, <span class="at">col=</span><span class="st">"lightgreen"</span>)</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>El boxplot nos mostrará la mediana, los cuartiles y los valores atípicos. Los tiempos de entrega superiores a 65 minutos serán identificados como <strong>valores atípicos</strong>.</p>
+</section>
+<section id="paso-4-evaluar-la-simetría-y-curtosis" class="level4">
+<h4 class="anchored" data-anchor-id="paso-4-evaluar-la-simetría-y-curtosis"><strong>Paso 4: Evaluar la Simetría y Curtosis</strong></h4>
+<p>Para analizar la simetría de la distribución, calculamos la <strong>asimetría</strong> (skewness) y la <strong>curtosis</strong> (kurtosis):</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb4-1"><a href="#cb4-1" aria-hidden="true" tabindex="-1"></a><span class="fu">library</span>(e1071)</span>
+<span id="cb4-2"><a href="#cb4-2" aria-hidden="true" tabindex="-1"></a><span class="fu">skewness</span>(tiempos)   <span class="co"># Asimetría</span></span>
+<span id="cb4-3"><a href="#cb4-3" aria-hidden="true" tabindex="-1"></a><span class="fu">kurtosis</span>(tiempos)   <span class="co"># Curtosis</span></span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Un valor de <strong>asimetría positiva</strong> indica que la distribución está sesgada hacia la derecha (más tiempos rápidos y unos pocos tiempos de entrega muy largos). La <strong>curtosis</strong> nos dará una idea de cuán concentrados o dispersos están los datos en torno a la mediana.</p>
+</section>
+<section id="paso-5-identificar-los-valores-atípicos" class="level4">
+<h4 class="anchored" data-anchor-id="paso-5-identificar-los-valores-atípicos"><strong>Paso 5: Identificar los Valores Atípicos</strong></h4>
+<p>Finalmente, podemos obtener los valores atípicos con el siguiente código:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode r code-with-copy"><code class="sourceCode r"><span id="cb5-1"><a href="#cb5-1" aria-hidden="true" tabindex="-1"></a><span class="fu">boxplot</span>(tiempos)<span class="sc">$</span>out</span></code><button title="Copiar al portapapeles" class="code-copy-button"><i class="bi"></i></button></pre></div>
+<p>Esto nos mostrará los valores que se encuentran fuera de los bigotes del boxplot, los cuales son posibles <strong>valores atípicos</strong>.</p>
+</section>
+<section id="interpretación-de-los-resultados-en-r" class="level4">
+<h4 class="anchored" data-anchor-id="interpretación-de-los-resultados-en-r"><strong>Interpretación de los Resultados en R:</strong></h4>
+<ul>
+<li><strong>Simetría:</strong> Si la <strong>asimetría</strong> es positiva, los tiempos de entrega son más rápidos para la mayoría de los paquetes, pero hay algunos muy retrasados. Si la <strong>asimetría</strong> es cercana a cero, los datos son aproximadamente simétricos.</li>
+<li><strong>Curtosis:</strong> Una <strong>curtosis alta</strong> indicaría que la mayoría de los datos están agrupados cerca de la mediana, con pocos valores extremos. Una <strong>curtosis baja</strong> indicaría que los datos están más dispersos.</li>
+<li><strong>Valores Atípicos:</strong> Los valores atípicos (&gt;65 minutos) pueden representar casos extremos que deberían ser investigados, ya que podrían indicar problemas en el proceso de entrega.</li>
+</ul>
+<hr>
+</section>
+</section>
+<section id="conclusiones" class="level3">
+<h3 class="anchored" data-anchor-id="conclusiones"><strong>Conclusiones</strong></h3>
+<p>El análisis de la forma de los datos a través de histogramas y boxplots permite identificar patrones clave como la <strong>asimetría</strong>, la <strong>dispersión</strong> y la <strong>presencia de valores atípicos</strong>. Al interpretar estos gráficos, podemos obtener información valiosa sobre la eficiencia del proceso de reparto y detectar áreas que necesiten mejoras, como la gestión de entregas con tiempos excesivos.</p>
+<hr>
+<p>Este ejemplo completo, con análisis en Excel y R, ofrece una manera de aplicar herramientas estadísticas para entender la distribución y la forma de los datos en situaciones prácticas.</p>
 
 
 </section>
